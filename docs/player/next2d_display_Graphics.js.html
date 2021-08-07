@@ -52,36 +52,6 @@
     <ul class="list">
     
     
-        <li class="item" data-name="GraphicsPathCommand.BITMAP_FILL">
-            <span class="title  ">
-                
-                
-                    <a href="GraphicsPathCommand.BITMAP_FILL.html">GraphicsPathCommand.BITMAP_FILL</a>
-                
-            </span>
-            
-            <ul class="members itemMembers">
-            
-            </ul>
-            
-            <ul class="typedefs itemMembers">
-            
-            </ul>
-            
-            <ul class="typedefs itemMembers">
-            
-            </ul>
-            
-            <ul class="methods itemMembers">
-            
-            </ul>
-            
-            <ul class="events itemMembers">
-            
-            </ul>
-            
-        </li>
-    
         <li class="item" data-name="Next2D">
             <span class="title  ">
                 
@@ -160,11 +130,11 @@
             
                 <li class="parent  " data-name="next2d.display.BitmapData#load"><a href="next2d.display.BitmapData.html#load">load</a></li>
             
-                <li class="parent  " data-name="next2d.display.BitmapData#toArray"><a href="next2d.display.BitmapData.html#toArray">toArray</a></li>
-            
                 <li class="parent  " data-name="next2d.display.BitmapData#toImage"><a href="next2d.display.BitmapData.html#toImage">toImage</a></li>
             
                 <li class="parent  " data-name="next2d.display.BitmapData#toString"><a href="next2d.display.BitmapData.html#toString">toString</a></li>
+            
+                <li class="parent  " data-name="next2d.display.BitmapData#toUint8Array"><a href="next2d.display.BitmapData.html#toUint8Array">toUint8Array</a></li>
             
             </ul>
             
@@ -416,15 +386,33 @@
             
                 <li class="parent  " data-name="next2d.display.DisplayObject.toString"><a href="next2d.display.DisplayObject.html#.toString">toString</a></li>
             
+                <li class="parent  " data-name="next2d.display.DisplayObject#clearGlobalVariable"><a href="next2d.display.DisplayObject.html#clearGlobalVariable">clearGlobalVariable</a></li>
+            
+                <li class="parent  " data-name="next2d.display.DisplayObject#deleteGlobalVariable"><a href="next2d.display.DisplayObject.html#deleteGlobalVariable">deleteGlobalVariable</a></li>
+            
+                <li class="parent  " data-name="next2d.display.DisplayObject#deleteLocalVariable"><a href="next2d.display.DisplayObject.html#deleteLocalVariable">deleteLocalVariable</a></li>
+            
                 <li class="parent  " data-name="next2d.display.DisplayObject#getBounds"><a href="next2d.display.DisplayObject.html#getBounds">getBounds</a></li>
             
+                <li class="parent  " data-name="next2d.display.DisplayObject#getGlobalVariable"><a href="next2d.display.DisplayObject.html#getGlobalVariable">getGlobalVariable</a></li>
+            
+                <li class="parent  " data-name="next2d.display.DisplayObject#getLocalVariable"><a href="next2d.display.DisplayObject.html#getLocalVariable">getLocalVariable</a></li>
+            
                 <li class="parent  " data-name="next2d.display.DisplayObject#globalToLocal"><a href="next2d.display.DisplayObject.html#globalToLocal">globalToLocal</a></li>
+            
+                <li class="parent  " data-name="next2d.display.DisplayObject#hasGlobalVariable"><a href="next2d.display.DisplayObject.html#hasGlobalVariable">hasGlobalVariable</a></li>
+            
+                <li class="parent  " data-name="next2d.display.DisplayObject#hasLocalVariable"><a href="next2d.display.DisplayObject.html#hasLocalVariable">hasLocalVariable</a></li>
             
                 <li class="parent  " data-name="next2d.display.DisplayObject#hitTestObject"><a href="next2d.display.DisplayObject.html#hitTestObject">hitTestObject</a></li>
             
                 <li class="parent  " data-name="next2d.display.DisplayObject#hitTestPoint"><a href="next2d.display.DisplayObject.html#hitTestPoint">hitTestPoint</a></li>
             
                 <li class="parent  " data-name="next2d.display.DisplayObject#localToGlobal"><a href="next2d.display.DisplayObject.html#localToGlobal">localToGlobal</a></li>
+            
+                <li class="parent  " data-name="next2d.display.DisplayObject#setGlobalVariable"><a href="next2d.display.DisplayObject.html#setGlobalVariable">setGlobalVariable</a></li>
+            
+                <li class="parent  " data-name="next2d.display.DisplayObject#setLocalVariable"><a href="next2d.display.DisplayObject.html#setLocalVariable">setLocalVariable</a></li>
             
                 <li class="parent  " data-name="next2d.display.DisplayObject#toString"><a href="next2d.display.DisplayObject.html#toString">toString</a></li>
             
@@ -1308,6 +1296,10 @@
             
                 <li class="parent " data-name="next2d.events.Event.SOUND_COMPLETE"><a href="next2d.events.Event.html#.SOUND_COMPLETE">SOUND_COMPLETE</a></li>
             
+                <li class="parent " data-name="next2d.events.Event.STOP"><a href="next2d.events.Event.html#.STOP">STOP</a></li>
+            
+                <li class="parent " data-name="next2d.events.Event.UPDATE"><a href="next2d.events.Event.html#.UPDATE">UPDATE</a></li>
+            
                 <li class="parent " data-name="next2d.events.Event#bubbles"><a href="next2d.events.Event.html#bubbles">bubbles</a></li>
             
                 <li class="parent " data-name="next2d.events.Event#cancelable"><a href="next2d.events.Event.html#cancelable">cancelable</a></li>
@@ -1315,6 +1307,8 @@
                 <li class="parent " data-name="next2d.events.Event#currentTarget"><a href="next2d.events.Event.html#currentTarget">currentTarget</a></li>
             
                 <li class="parent " data-name="next2d.events.Event#eventPhase"><a href="next2d.events.Event.html#eventPhase">eventPhase</a></li>
+            
+                <li class="parent " data-name="next2d.events.Event#listener"><a href="next2d.events.Event.html#listener">listener</a></li>
             
                 <li class="parent " data-name="next2d.events.Event#namespace"><a href="next2d.events.Event.html#namespace">namespace</a></li>
             
@@ -3644,71 +3638,137 @@
             
             <span class="subtitle">Methods</span>
             
+                <li class="parent  " data-name="next2d.ui.Easing.inBack"><a href="next2d.ui.Easing.html#.inBack">inBack</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inBounce"><a href="next2d.ui.Easing.html#.inBounce">inBounce</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inCirc"><a href="next2d.ui.Easing.html#.inCirc">inCirc</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inCubic"><a href="next2d.ui.Easing.html#.inCubic">inCubic</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inElastic"><a href="next2d.ui.Easing.html#.inElastic">inElastic</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inExpo"><a href="next2d.ui.Easing.html#.inExpo">inExpo</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutBack"><a href="next2d.ui.Easing.html#.inOutBack">inOutBack</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutBounce"><a href="next2d.ui.Easing.html#.inOutBounce">inOutBounce</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutCirc"><a href="next2d.ui.Easing.html#.inOutCirc">inOutCirc</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutCubic"><a href="next2d.ui.Easing.html#.inOutCubic">inOutCubic</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutElastic"><a href="next2d.ui.Easing.html#.inOutElastic">inOutElastic</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutExpo"><a href="next2d.ui.Easing.html#.inOutExpo">inOutExpo</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutQuad"><a href="next2d.ui.Easing.html#.inOutQuad">inOutQuad</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutQuart"><a href="next2d.ui.Easing.html#.inOutQuart">inOutQuart</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutQuint"><a href="next2d.ui.Easing.html#.inOutQuint">inOutQuint</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutSine"><a href="next2d.ui.Easing.html#.inOutSine">inOutSine</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inQuad"><a href="next2d.ui.Easing.html#.inQuad">inQuad</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inQuart"><a href="next2d.ui.Easing.html#.inQuart">inQuart</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inQuint"><a href="next2d.ui.Easing.html#.inQuint">inQuint</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inSine"><a href="next2d.ui.Easing.html#.inSine">inSine</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.linear"><a href="next2d.ui.Easing.html#.linear">linear</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outBack"><a href="next2d.ui.Easing.html#.outBack">outBack</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outBounce"><a href="next2d.ui.Easing.html#.outBounce">outBounce</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outCirc"><a href="next2d.ui.Easing.html#.outCirc">outCirc</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outCubic"><a href="next2d.ui.Easing.html#.outCubic">outCubic</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outElastic"><a href="next2d.ui.Easing.html#.outElastic">outElastic</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outExpo"><a href="next2d.ui.Easing.html#.outExpo">outExpo</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outQuad"><a href="next2d.ui.Easing.html#.outQuad">outQuad</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outQuart"><a href="next2d.ui.Easing.html#.outQuart">outQuart</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outQuint"><a href="next2d.ui.Easing.html#.outQuint">outQuint</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outSine"><a href="next2d.ui.Easing.html#.outSine">outSine</a></li>
+            
                 <li class="parent  " data-name="next2d.ui.Easing.toString"><a href="next2d.ui.Easing.html#.toString">toString</a></li>
             
-                <li class="parent  " data-name="next2d.ui.Easing#inBack"><a href="next2d.ui.Easing.html#inBack">inBack</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inBounce"><a href="next2d.ui.Easing.html#inBounce">inBounce</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inCirc"><a href="next2d.ui.Easing.html#inCirc">inCirc</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inCubic"><a href="next2d.ui.Easing.html#inCubic">inCubic</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inElastic"><a href="next2d.ui.Easing.html#inElastic">inElastic</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inExpo"><a href="next2d.ui.Easing.html#inExpo">inExpo</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutBack"><a href="next2d.ui.Easing.html#inOutBack">inOutBack</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutBounce"><a href="next2d.ui.Easing.html#inOutBounce">inOutBounce</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutCirc"><a href="next2d.ui.Easing.html#inOutCirc">inOutCirc</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutCubic"><a href="next2d.ui.Easing.html#inOutCubic">inOutCubic</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutElastic"><a href="next2d.ui.Easing.html#inOutElastic">inOutElastic</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutExpo"><a href="next2d.ui.Easing.html#inOutExpo">inOutExpo</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutQuad"><a href="next2d.ui.Easing.html#inOutQuad">inOutQuad</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutQuart"><a href="next2d.ui.Easing.html#inOutQuart">inOutQuart</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutQuint"><a href="next2d.ui.Easing.html#inOutQuint">inOutQuint</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutSine"><a href="next2d.ui.Easing.html#inOutSine">inOutSine</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inQuad"><a href="next2d.ui.Easing.html#inQuad">inQuad</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inQuart"><a href="next2d.ui.Easing.html#inQuart">inQuart</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inQuint"><a href="next2d.ui.Easing.html#inQuint">inQuint</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inSine"><a href="next2d.ui.Easing.html#inSine">inSine</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#linear"><a href="next2d.ui.Easing.html#linear">linear</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outBack"><a href="next2d.ui.Easing.html#outBack">outBack</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outBounce"><a href="next2d.ui.Easing.html#outBounce">outBounce</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outCirc"><a href="next2d.ui.Easing.html#outCirc">outCirc</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outCubic"><a href="next2d.ui.Easing.html#outCubic">outCubic</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outElastic"><a href="next2d.ui.Easing.html#outElastic">outElastic</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outExpo"><a href="next2d.ui.Easing.html#outExpo">outExpo</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outQuad"><a href="next2d.ui.Easing.html#outQuad">outQuad</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outQuart"><a href="next2d.ui.Easing.html#outQuart">outQuart</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outQuint"><a href="next2d.ui.Easing.html#outQuint">outQuint</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outSine"><a href="next2d.ui.Easing.html#outSine">outSine</a></li>
-            
                 <li class="parent  " data-name="next2d.ui.Easing#toString"><a href="next2d.ui.Easing.html#toString">toString</a></li>
+            
+            </ul>
+            
+            <ul class="events itemMembers">
+            
+            </ul>
+            
+        </li>
+    
+        <li class="item" data-name="next2d.ui.Job">
+            <span class="title  ">
+                
+                
+                    <a href="next2d.ui.Job.html">next2d.ui.Job</a>
+                
+            </span>
+            
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li class="parent " data-name="next2d.ui.Job.namespace"><a href="next2d.ui.Job.html#.namespace">namespace</a></li>
+            
+                <li class="parent " data-name="next2d.ui.Job.namespace"><a href="next2d.ui.Job.html#.namespace">namespace</a></li>
+            
+                <li class="parent " data-name="next2d.ui.Job#delay"><a href="next2d.ui.Job.html#delay">delay</a></li>
+            
+                <li class="parent " data-name="next2d.ui.Job#duration"><a href="next2d.ui.Job.html#duration">duration</a></li>
+            
+                <li class="parent " data-name="next2d.ui.Job#ease"><a href="next2d.ui.Job.html#ease">ease</a></li>
+            
+                <li class="parent " data-name="next2d.ui.Job#from"><a href="next2d.ui.Job.html#from">from</a></li>
+            
+                <li class="parent " data-name="next2d.ui.Job#target"><a href="next2d.ui.Job.html#target">target</a></li>
+            
+                <li class="parent " data-name="next2d.ui.Job#to"><a href="next2d.ui.Job.html#to">to</a></li>
+            
+            </ul>
+            
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li class="parent  " data-name="next2d.ui.Job.toString"><a href="next2d.ui.Job.html#.toString">toString</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Job#entries"><a href="next2d.ui.Job.html#entries">entries</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Job#initialize"><a href="next2d.ui.Job.html#initialize">initialize</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Job#start"><a href="next2d.ui.Job.html#start">start</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Job#stop"><a href="next2d.ui.Job.html#stop">stop</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Job#toString"><a href="next2d.ui.Job.html#toString">toString</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Job#update"><a href="next2d.ui.Job.html#update">update</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Job#updateProperty"><a href="next2d.ui.Job.html#updateProperty">updateProperty</a></li>
             
             </ul>
             
@@ -3747,6 +3807,8 @@
             <ul class="methods itemMembers">
             
             <span class="subtitle">Methods</span>
+            
+                <li class="parent  " data-name="next2d.ui.Tween.add"><a href="next2d.ui.Tween.html#.add">add</a></li>
             
                 <li class="parent  " data-name="next2d.ui.Tween.toString"><a href="next2d.ui.Tween.html#.toString">toString</a></li>
             
@@ -4241,7 +4303,7 @@ class Graphics
      *              Clears the graphics that were drawn to this Graphics object,
      *              and resets fill and line style settings.
      *
-     * @return {void}
+     * @return {Graphics}
      * @method
      * @public
      */
@@ -4298,6 +4360,8 @@ class Graphics
 
         // restart
         this._$restart();
+
+        return this;
     }
 
     /**
@@ -4639,6 +4703,15 @@ class Graphics
                 this._$recode = Util.$getArray();
             }
 
+            if (this._$fills[2] !== this._$fills[this._$fills.length - 2]
+                || this._$fills[3] !== this._$fills[this._$fills.length - 1]
+            ) {
+                this._$fills.push(
+                    Graphics.LINE_TO,
+                    this._$fills[2],
+                    this._$fills[3]
+                );
+            }
             this._$recode.push.apply(this._$recode, this._$fills);
 
             // clear
@@ -4961,8 +5034,19 @@ class Graphics
         Util.$poolBoundsObject(boundsBase);
         Util.$poolBoundsObject(bounds);
 
-        if (!width || !height) {
-            return ;
+        switch (true) {
+
+            case width === 0:
+            case height === 0:
+            case width === -Util.$Infinity:
+            case height === -Util.$Infinity:
+            case width === Util.$Infinity:
+            case height === Util.$Infinity:
+                return;
+
+            default:
+                break;
+
         }
 
         Util.$resetContext(context);
@@ -5021,8 +5105,20 @@ class Graphics
 
         let width  = Util.$ceil(Util.$abs(xMax - xMin));
         let height = Util.$ceil(Util.$abs(yMax - yMin));
-        if (!width || !height) {
-            return;
+
+        switch (true) {
+
+            case width === 0:
+            case height === 0:
+            case width === -Util.$Infinity:
+            case height === -Util.$Infinity:
+            case width === Util.$Infinity:
+            case height === Util.$Infinity:
+                return;
+
+            default:
+                break;
+
         }
 
         if (0 > (xMin + width) || 0 > (yMin + height)) {
@@ -5064,16 +5160,13 @@ class Graphics
         }
 
 
+        const xScale = Util.$sqrt(matrix[0] * matrix[0] + matrix[1] * matrix[1]);
+        const yScale = Util.$sqrt(matrix[2] * matrix[2] + matrix[3] * matrix[3]);
+
         // get cache
-        color_transform[3] = 1; // plain alpha
-
-        const id = (displayObject._$characterId)
-            ? `c_${displayObject._$characterId}`
-            : `i_${displayObject._$instanceId}`;
-
         const cacheKeys = Util
             .$cacheStore()
-            .generateShapeKeys(id, matrix, color_transform);
+            .generateKeys(displayObject._$instanceId, [xScale, yScale], color_transform);
 
         // cache
         let texture = Util.$cacheStore().get(cacheKeys);
@@ -5144,6 +5237,8 @@ class Graphics
                 Util.$poolFloat32Array6(aMatrix);
             }
 
+            // plain alpha
+            color_transform[3] = 1;
             this._$doDraw(context, color_transform, false);
 
             if (hasGrid) {
@@ -5261,15 +5356,10 @@ class Graphics
      */
     _$doDraw (context, color_transform, is_clip = false)
     {
-
-        if (!this._$command) {
-            this._$command = this._$buildCommand();
-        }
-
         // draw
         Util.$resetContext(context);
         context.beginPath();
-        this._$command(context, color_transform, is_clip);
+        this._$runCommand(context, color_transform, is_clip);
 
         // clip or filter and blend
         if (is_clip) {
@@ -5288,17 +5378,12 @@ class Graphics
      */
     _$hit (context, matrix, options, is_clip = false)
     {
+        context.beginPath();
         context.setTransform(
             matrix[0], matrix[1], matrix[2],
             matrix[3], matrix[4], matrix[5]
         );
-
-        // build command
-        if (!this._$command) {
-            this._$command = this._$buildCommand();
-        }
-
-        return this._$command(context, Util.$COLOR_ARRAY_IDENTITY, is_clip, options);
+        return this._$runCommand(context, null, is_clip, options);
     }
 
     /**
@@ -5330,25 +5415,17 @@ class Graphics
      */
     _$restart ()
     {
-        if (this._$command) {
+        if (this._$displayObject
+            &amp;&amp; !this._$displayObject._$isUpdated()
+        ) {
 
-            this._$command = null;
+            this._$displayObject._$doChanged();
+            Util.$isUpdated = true;
 
-            if (this._$displayObject
-                &amp;&amp; !this._$displayObject._$isUpdated()
-            ) {
+            Util
+                .$cacheStore()
+                .removeCache(this._$displayObject._$instanceId);
 
-                this._$displayObject._$doChanged();
-                Util.$isUpdated = true;
-
-                Util
-                    .$cacheStore()
-                    .removeCache(
-                        this._$displayObject._$characterId
-                        || this._$displayObject._$instanceId
-                    );
-
-            }
         }
     }
 
@@ -5550,11 +5627,15 @@ class Graphics
     }
 
     /**
-     * @return {Function}
+     * @param  {CanvasToWebGLContext|CanvasRenderingContext2D} context
+     * @param  {Float32Array} [color_transform=null]
+     * @param  {boolean}      [is_clip=false]
+     * @param  {object}       [options=null]
+     * @return {boolean}
      * @method
      * @private
      */
-    _$buildCommand ()
+    _$runCommand (context, color_transform = null, is_clip = false, options = null)
     {
         if (this._$doFill) {
             this.endFill();
@@ -5564,7 +5645,9 @@ class Graphics
             this.endLine();
         }
 
-        let command = "";
+        if (!this._$recode) {
+            return false;
+        }
 
         const recode = this._$recode;
         const length = recode.length;
@@ -5573,53 +5656,125 @@ class Graphics
             switch (recode[idx++]) {
 
                 case Graphics.BEGIN_PATH:
-                    command += GraphicsPathCommand.BEGIN_PATH();
+                    context.beginPath();
                     break;
 
                 case Graphics.MOVE_TO:
-                    command += GraphicsPathCommand.MOVE_TO(recode[idx++], recode[idx++]);
+                    context.moveTo(recode[idx++], recode[idx++]);
                     break;
 
                 case Graphics.LINE_TO:
-                    command += GraphicsPathCommand.LINE_TO(recode[idx++], recode[idx++]);
+                    context.lineTo(recode[idx++], recode[idx++]);
                     break;
 
                 case Graphics.CURVE_TO:
-                    command += GraphicsPathCommand.CURVE_TO(
-                        recode[idx++], recode[idx++], recode[idx++], recode[idx++]
+                    context.quadraticCurveTo(
+                        recode[idx++], recode[idx++],
+                        recode[idx++], recode[idx++]
                     );
                     break;
 
                 case Graphics.FILL_STYLE:
-                    command += GraphicsPathCommand.FILL_STYLE(
-                        recode[idx++], recode[idx++],
-                        recode[idx++], recode[idx++]
-                    );
+
+                    if (is_clip || options) {
+                        idx += 4;
+                        continue;
+                    }
+
+                    const fillStyle = context._$contextStyle;
+
+                    fillStyle._$fillStyle[0] = (color_transform[0] !== 1 || color_transform[4] !== 0)
+                        ? Util.$max(0, Util.$min((recode[idx++] * color_transform[0]) + color_transform[4], 255)) / 255
+                        : recode[idx++] / 255;
+
+                    fillStyle._$fillStyle[1] = (color_transform[1] !== 1 || color_transform[5] !== 0)
+                        ? Util.$max(0, Util.$min((recode[idx++] * color_transform[1]) + color_transform[5], 255)) / 255
+                        : recode[idx++] / 255;
+
+                    fillStyle._$fillStyle[2] = (color_transform[2] !== 1 || color_transform[6] !== 0)
+                        ? Util.$max(0, Util.$min((recode[idx++] * color_transform[2]) + color_transform[6], 255)) / 255
+                        : recode[idx++] / 255;
+
+                    fillStyle._$fillStyle[3] = (color_transform[3] !== 1 || color_transform[7] !== 0)
+                        ? Util.$max(0, Util.$min((recode[idx++] * color_transform[3]) + color_transform[7], 255)) / 255
+                        : recode[idx++] / 255;
+
+                    context._$style = fillStyle;
+
                     break;
 
                 case Graphics.END_FILL:
-                    command += GraphicsPathCommand.END_FILL();
+
+                    if (options) {
+
+                        if (context.isPointInPath(options.x, options.y)) {
+                            return true;
+                        }
+
+                        continue;
+                    }
+
+                    if (!is_clip) {
+                        context.fill();
+                    }
+
                     break;
 
                 case Graphics.STROKE_STYLE:
-                    command += GraphicsPathCommand.STROKE_STYLE(
-                        recode[idx++], recode[idx++],
-                        recode[idx++], recode[idx++],
-                        recode[idx++], recode[idx++],
-                        recode[idx++], recode[idx++]
-                    );
+
+                    if (is_clip || options) {
+                        idx += 8;
+                        continue;
+                    }
+
+                    context.lineWidth  = recode[idx++];
+                    context.lineCap    = recode[idx++];
+                    context.lineJoin   = recode[idx++];
+                    context.miterLimit = recode[idx++];
+
+                    const strokeStyle = context._$contextStyle;
+
+                    strokeStyle._$strokeStyle[0] = (color_transform[0] !== 1 || color_transform[4] !== 0)
+                        ? Util.$max(0, Util.$min((recode[idx++] * color_transform[0]) + color_transform[4], 255)) / 255
+                        : recode[idx++] / 255;
+
+                    strokeStyle._$strokeStyle[1] = (color_transform[1] !== 1 || color_transform[5] !== 0)
+                        ? Util.$max(0, Util.$min((recode[idx++] * color_transform[1]) + color_transform[5], 255)) / 255
+                        : recode[idx++] / 255;
+
+                    strokeStyle._$strokeStyle[2] = (color_transform[2] !== 1 || color_transform[6] !== 0)
+                        ? Util.$max(0, Util.$min((recode[idx++] * color_transform[2]) + color_transform[6], 255)) / 255
+                        : recode[idx++] / 255;
+
+                    strokeStyle._$strokeStyle[3] = (color_transform[3] !== 1 || color_transform[7] !== 0)
+                        ? Util.$max(0, Util.$min((recode[idx++] * color_transform[3]) + color_transform[7], 255)) / 255
+                        : recode[idx++] / 255;
+
+                    context._$style = strokeStyle;
                     break;
 
                 case Graphics.END_STROKE:
-                    command += GraphicsPathCommand.END_STROKE();
+
+                    if (options) {
+
+                        if (context.isPointInStroke(options.x, options.y)) {
+                            return true;
+                        }
+
+                        continue;
+                    }
+
+                    if (!is_clip) {
+                        context.stroke();
+                    }
                     break;
 
                 case Graphics.CLOSE_PATH:
-                    command += GraphicsPathCommand.CLOSE_PATH();
+                    context.closePath();
                     break;
 
                 case Graphics.CUBIC:
-                    command += GraphicsPathCommand.CUBIC(
+                    context.bezierCurveTo(
                         recode[idx++], recode[idx++],
                         recode[idx++], recode[idx++],
                         recode[idx++], recode[idx++]
@@ -5627,68 +5782,211 @@ class Graphics
                     break;
 
                 case Graphics.ARC:
-                    command += GraphicsPathCommand.ARC(
-                        recode[idx++], recode[idx++], recode[idx++]
-                    );
+                    const arcX   = recode[idx++];
+                    const arcY   = recode[idx++];
+                    const radius = recode[idx++];
+                    context.moveTo((arcX + radius), arcY);
+                    context.arc(arcX, arcY, radius, 0, 2 * Util.$PI);
                     break;
 
                 case Graphics.GRADIENT_FILL:
                     {
-                        const type  = recode[idx++];
-                        const stops = recode[idx++];
+                        if (options) {
 
-                        const matrix = recode.slice(idx, idx + 6);
-                        idx += 6;
+                            if (context.isPointInPath(options.x, options.y)) {
+                                return true;
+                            }
 
-                        command += GraphicsPathCommand.GRADIENT_FILL(
-                            type, stops, matrix,
-                            recode[idx++], recode[idx++], recode[idx++]
-                        );
+                            idx += 6;
+                            continue;
+                        }
 
-                        Util.$poolArray(matrix);
+                        if (is_clip) {
+                            idx += 6;
+                            continue;
+                        }
+
+                        const type          = recode[idx++];
+                        const stops         = recode[idx++];
+                        const matrix        = recode[idx++];
+                        const spread        = recode[idx++];
+                        const interpolation = recode[idx++];
+                        const focal         = recode[idx++];
+
+                        let css = null;
+                        if (type === GradientType.LINEAR) {
+
+                            const xy = Util.$linearGradientXY(matrix);
+                            css = context.createLinearGradient(
+                                xy[0], xy[1], xy[2], xy[3],
+                                interpolation, spread
+                            );
+
+                        } else {
+
+                            context.save();
+                            context.transform(
+                                matrix[0], matrix[1], matrix[2],
+                                matrix[3], matrix[4], matrix[5]
+                            );
+
+                            css = context.createRadialGradient(
+                                0, 0, 0, 0, 0, 819.2,
+                                interpolation, spread, focal
+                            );
+
+                        }
+
+                        const length = stops.length;
+                        for (let idx = 0; idx &lt; length; ++idx) {
+
+                            const color = stops[idx];
+
+                            css.addColorStop(color.ratio, Util.$getFloat32Array4(
+                                Util.$max(0, Util.$min(color.R * color_transform[0] + color_transform[4], 255))|0,
+                                Util.$max(0, Util.$min(color.G * color_transform[1] + color_transform[5], 255))|0,
+                                Util.$max(0, Util.$min(color.B * color_transform[2] + color_transform[6], 255))|0,
+                                Util.$max(0, Util.$min(color.A * color_transform[3] + color_transform[7], 255))|0
+                            ));
+
+                        }
+
+                        context.fillStyle = css;
+                        context.fill();
+
+                        if (type === GradientType.RADIAL) {
+                            context.restore();
+                        }
                     }
                     break;
 
                 case Graphics.GRADIENT_STROKE:
                     {
-                        const lineWidth  = recode[idx++];
-                        const caps       = recode[idx++];
-                        const joints     = recode[idx++];
-                        const miterLimit = recode[idx++];
-                        const type       = recode[idx++];
-                        const stops      = recode[idx++];
-                        const matrix     = recode.slice(idx, idx + 6);
-                        idx += 6;
+                        if (options) {
 
-                        command += GraphicsPathCommand.GRADIENT_STROKE(
-                            lineWidth, caps, joints, miterLimit,
-                            type, stops, matrix,
-                            recode[idx++], recode[idx++], recode[idx++]
-                        );
+                            if (context.isPointInStroke(options.x, options.y)) {
+                                return true;
+                            }
 
-                        Util.$poolArray(matrix);
+                            idx += 12;
+                            continue;
+                        }
+
+                        if (is_clip) {
+                            idx += 12;
+                            continue;
+                        }
+
+                        const lineWidth     = recode[idx++];
+                        const caps          = recode[idx++];
+                        const joints        = recode[idx++];
+                        const miterLimit    = recode[idx++];
+                        const type          = recode[idx++];
+                        const stops         = recode[idx++];
+                        const matrix        = recode[idx++];
+                        const spread        = recode[idx++];
+                        const interpolation = recode[idx++];
+                        const focal         = recode[idx++];
+
+                        let css = null;
+                        if (type === GradientType.LINEAR) {
+
+                            const xy = Util.$linearGradientXY(matrix);
+                            css = context.createLinearGradient(
+                                xy[0], xy[1], xy[2], xy[3],
+                                interpolation, spread
+                            );
+
+                        } else {
+
+                            context.save();
+                            context.transform(
+                                matrix[0], matrix[1], matrix[2],
+                                matrix[3], matrix[4], matrix[5]
+                            );
+
+                            css = context.createRadialGradient(
+                                0, 0, 0, 0, 0, 819.2,
+                                interpolation, spread, focal
+                            );
+
+                        }
+
+                        const length = stops.length;
+                        for (let idx = 0; idx &lt; length; ++idx) {
+
+                            const color = stops[idx];
+
+                            css.addColorStop(color.ratio, Util.$getFloat32Array4(
+                                Util.$max(0, Util.$min(color.R * color_transform[0] + color_transform[4], 255))|0,
+                                Util.$max(0, Util.$min(color.G * color_transform[1] + color_transform[5], 255))|0,
+                                Util.$max(0, Util.$min(color.B * color_transform[2] + color_transform[6], 255))|0,
+                                Util.$max(0, Util.$min(color.A * color_transform[3] + color_transform[7], 255))|0
+                            ));
+
+                        }
+
+                        context.strokeStyle = css;
+                        context.lineWidth   = lineWidth;
+                        context.lineCap     = caps;
+                        context.lineJoin    = joints;
+                        context.miterLimit  = miterLimit;
+                        context.stroke();
+
+                        if (type === GradientType.RADIAL) {
+                            context.restore();
+                        }
+
                     }
                     break;
 
                 case Graphics.BITMAP_FILL:
                     {
-                        const width  = recode[idx++];
-                        const height = recode[idx++];
-                        const length = recode[idx++];
+                        if (options) {
 
-                        const buffer = recode.slice(idx, idx + length);
-                        idx += length;
+                            if (context.isPointInPath(options.x, options.y)) {
+                                return true;
+                            }
 
-                        const matrix = recode.slice(idx, idx + 6);
-                        idx += 6;
+                            idx += 6;
+                            continue;
+                        }
 
-                        command += GraphicsPathCommand.BITMAP_FILL(
-                            width, height, buffer, matrix,
-                            recode[idx++], recode[idx++]
+                        if (is_clip) {
+                            idx += 6;
+                            continue;
+                        }
+
+                        context.save();
+                        const texture = context
+                            .frameBuffer
+                            .createTextureFromPixels(
+                                recode[idx++], recode[idx++], recode[idx++]
+                            );
+
+                        const matrix = recode[idx++];
+                        const repeat = recode[idx++];
+                        const smooth = recode[idx++];
+
+                        context.fillStyle = context
+                            .createPattern(texture, repeat, color_transform);
+
+                        context.transform(
+                            matrix[0], matrix[1], matrix[2],
+                            matrix[3], matrix[4], matrix[5]
                         );
 
-                        Util.$poolArray(buffer);
-                        Util.$poolArray(matrix);
+                        context._$imageSmoothingEnabled = smooth;
+                        context.fill();
+
+                        // restore
+                        context.restore();
+                        context._$imageSmoothingEnabled = false;
+
+                        context
+                            .frameBuffer
+                            .releaseTexture(texture);
+
                     }
                     break;
 
@@ -5696,10 +5994,10 @@ class Graphics
                     break;
 
             }
+
         }
 
-        this._$recode.length = 0;
-        return Function("ctx", "ct", "is_clip", "options", command);
+        return false;
     }
 }</code></pre>
         </article>
@@ -5714,7 +6012,7 @@ class Graphics
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Mon Jul 26 2021 11:26:23 GMT+0900 (日本標準時)
+                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sat Aug 07 2021 09:09:15 GMT+0900 (日本標準時)
             </div>
         </footer>
     </div>

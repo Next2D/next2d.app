@@ -52,36 +52,6 @@
     <ul class="list">
     
     
-        <li class="item" data-name="GraphicsPathCommand.BITMAP_FILL">
-            <span class="title  ">
-                
-                
-                    <a href="GraphicsPathCommand.BITMAP_FILL.html">GraphicsPathCommand.BITMAP_FILL</a>
-                
-            </span>
-            
-            <ul class="members itemMembers">
-            
-            </ul>
-            
-            <ul class="typedefs itemMembers">
-            
-            </ul>
-            
-            <ul class="typedefs itemMembers">
-            
-            </ul>
-            
-            <ul class="methods itemMembers">
-            
-            </ul>
-            
-            <ul class="events itemMembers">
-            
-            </ul>
-            
-        </li>
-    
         <li class="item" data-name="Next2D">
             <span class="title  ">
                 
@@ -160,11 +130,11 @@
             
                 <li class="parent  " data-name="next2d.display.BitmapData#load"><a href="next2d.display.BitmapData.html#load">load</a></li>
             
-                <li class="parent  " data-name="next2d.display.BitmapData#toArray"><a href="next2d.display.BitmapData.html#toArray">toArray</a></li>
-            
                 <li class="parent  " data-name="next2d.display.BitmapData#toImage"><a href="next2d.display.BitmapData.html#toImage">toImage</a></li>
             
                 <li class="parent  " data-name="next2d.display.BitmapData#toString"><a href="next2d.display.BitmapData.html#toString">toString</a></li>
+            
+                <li class="parent  " data-name="next2d.display.BitmapData#toUint8Array"><a href="next2d.display.BitmapData.html#toUint8Array">toUint8Array</a></li>
             
             </ul>
             
@@ -416,15 +386,33 @@
             
                 <li class="parent  " data-name="next2d.display.DisplayObject.toString"><a href="next2d.display.DisplayObject.html#.toString">toString</a></li>
             
+                <li class="parent  " data-name="next2d.display.DisplayObject#clearGlobalVariable"><a href="next2d.display.DisplayObject.html#clearGlobalVariable">clearGlobalVariable</a></li>
+            
+                <li class="parent  " data-name="next2d.display.DisplayObject#deleteGlobalVariable"><a href="next2d.display.DisplayObject.html#deleteGlobalVariable">deleteGlobalVariable</a></li>
+            
+                <li class="parent  " data-name="next2d.display.DisplayObject#deleteLocalVariable"><a href="next2d.display.DisplayObject.html#deleteLocalVariable">deleteLocalVariable</a></li>
+            
                 <li class="parent  " data-name="next2d.display.DisplayObject#getBounds"><a href="next2d.display.DisplayObject.html#getBounds">getBounds</a></li>
             
+                <li class="parent  " data-name="next2d.display.DisplayObject#getGlobalVariable"><a href="next2d.display.DisplayObject.html#getGlobalVariable">getGlobalVariable</a></li>
+            
+                <li class="parent  " data-name="next2d.display.DisplayObject#getLocalVariable"><a href="next2d.display.DisplayObject.html#getLocalVariable">getLocalVariable</a></li>
+            
                 <li class="parent  " data-name="next2d.display.DisplayObject#globalToLocal"><a href="next2d.display.DisplayObject.html#globalToLocal">globalToLocal</a></li>
+            
+                <li class="parent  " data-name="next2d.display.DisplayObject#hasGlobalVariable"><a href="next2d.display.DisplayObject.html#hasGlobalVariable">hasGlobalVariable</a></li>
+            
+                <li class="parent  " data-name="next2d.display.DisplayObject#hasLocalVariable"><a href="next2d.display.DisplayObject.html#hasLocalVariable">hasLocalVariable</a></li>
             
                 <li class="parent  " data-name="next2d.display.DisplayObject#hitTestObject"><a href="next2d.display.DisplayObject.html#hitTestObject">hitTestObject</a></li>
             
                 <li class="parent  " data-name="next2d.display.DisplayObject#hitTestPoint"><a href="next2d.display.DisplayObject.html#hitTestPoint">hitTestPoint</a></li>
             
                 <li class="parent  " data-name="next2d.display.DisplayObject#localToGlobal"><a href="next2d.display.DisplayObject.html#localToGlobal">localToGlobal</a></li>
+            
+                <li class="parent  " data-name="next2d.display.DisplayObject#setGlobalVariable"><a href="next2d.display.DisplayObject.html#setGlobalVariable">setGlobalVariable</a></li>
+            
+                <li class="parent  " data-name="next2d.display.DisplayObject#setLocalVariable"><a href="next2d.display.DisplayObject.html#setLocalVariable">setLocalVariable</a></li>
             
                 <li class="parent  " data-name="next2d.display.DisplayObject#toString"><a href="next2d.display.DisplayObject.html#toString">toString</a></li>
             
@@ -1308,6 +1296,10 @@
             
                 <li class="parent " data-name="next2d.events.Event.SOUND_COMPLETE"><a href="next2d.events.Event.html#.SOUND_COMPLETE">SOUND_COMPLETE</a></li>
             
+                <li class="parent " data-name="next2d.events.Event.STOP"><a href="next2d.events.Event.html#.STOP">STOP</a></li>
+            
+                <li class="parent " data-name="next2d.events.Event.UPDATE"><a href="next2d.events.Event.html#.UPDATE">UPDATE</a></li>
+            
                 <li class="parent " data-name="next2d.events.Event#bubbles"><a href="next2d.events.Event.html#bubbles">bubbles</a></li>
             
                 <li class="parent " data-name="next2d.events.Event#cancelable"><a href="next2d.events.Event.html#cancelable">cancelable</a></li>
@@ -1315,6 +1307,8 @@
                 <li class="parent " data-name="next2d.events.Event#currentTarget"><a href="next2d.events.Event.html#currentTarget">currentTarget</a></li>
             
                 <li class="parent " data-name="next2d.events.Event#eventPhase"><a href="next2d.events.Event.html#eventPhase">eventPhase</a></li>
+            
+                <li class="parent " data-name="next2d.events.Event#listener"><a href="next2d.events.Event.html#listener">listener</a></li>
             
                 <li class="parent " data-name="next2d.events.Event#namespace"><a href="next2d.events.Event.html#namespace">namespace</a></li>
             
@@ -3644,71 +3638,137 @@
             
             <span class="subtitle">Methods</span>
             
+                <li class="parent  " data-name="next2d.ui.Easing.inBack"><a href="next2d.ui.Easing.html#.inBack">inBack</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inBounce"><a href="next2d.ui.Easing.html#.inBounce">inBounce</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inCirc"><a href="next2d.ui.Easing.html#.inCirc">inCirc</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inCubic"><a href="next2d.ui.Easing.html#.inCubic">inCubic</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inElastic"><a href="next2d.ui.Easing.html#.inElastic">inElastic</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inExpo"><a href="next2d.ui.Easing.html#.inExpo">inExpo</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutBack"><a href="next2d.ui.Easing.html#.inOutBack">inOutBack</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutBounce"><a href="next2d.ui.Easing.html#.inOutBounce">inOutBounce</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutCirc"><a href="next2d.ui.Easing.html#.inOutCirc">inOutCirc</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutCubic"><a href="next2d.ui.Easing.html#.inOutCubic">inOutCubic</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutElastic"><a href="next2d.ui.Easing.html#.inOutElastic">inOutElastic</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutExpo"><a href="next2d.ui.Easing.html#.inOutExpo">inOutExpo</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutQuad"><a href="next2d.ui.Easing.html#.inOutQuad">inOutQuad</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutQuart"><a href="next2d.ui.Easing.html#.inOutQuart">inOutQuart</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutQuint"><a href="next2d.ui.Easing.html#.inOutQuint">inOutQuint</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inOutSine"><a href="next2d.ui.Easing.html#.inOutSine">inOutSine</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inQuad"><a href="next2d.ui.Easing.html#.inQuad">inQuad</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inQuart"><a href="next2d.ui.Easing.html#.inQuart">inQuart</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inQuint"><a href="next2d.ui.Easing.html#.inQuint">inQuint</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.inSine"><a href="next2d.ui.Easing.html#.inSine">inSine</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.linear"><a href="next2d.ui.Easing.html#.linear">linear</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outBack"><a href="next2d.ui.Easing.html#.outBack">outBack</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outBounce"><a href="next2d.ui.Easing.html#.outBounce">outBounce</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outCirc"><a href="next2d.ui.Easing.html#.outCirc">outCirc</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outCubic"><a href="next2d.ui.Easing.html#.outCubic">outCubic</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outElastic"><a href="next2d.ui.Easing.html#.outElastic">outElastic</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outExpo"><a href="next2d.ui.Easing.html#.outExpo">outExpo</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outQuad"><a href="next2d.ui.Easing.html#.outQuad">outQuad</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outQuart"><a href="next2d.ui.Easing.html#.outQuart">outQuart</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outQuint"><a href="next2d.ui.Easing.html#.outQuint">outQuint</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Easing.outSine"><a href="next2d.ui.Easing.html#.outSine">outSine</a></li>
+            
                 <li class="parent  " data-name="next2d.ui.Easing.toString"><a href="next2d.ui.Easing.html#.toString">toString</a></li>
             
-                <li class="parent  " data-name="next2d.ui.Easing#inBack"><a href="next2d.ui.Easing.html#inBack">inBack</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inBounce"><a href="next2d.ui.Easing.html#inBounce">inBounce</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inCirc"><a href="next2d.ui.Easing.html#inCirc">inCirc</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inCubic"><a href="next2d.ui.Easing.html#inCubic">inCubic</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inElastic"><a href="next2d.ui.Easing.html#inElastic">inElastic</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inExpo"><a href="next2d.ui.Easing.html#inExpo">inExpo</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutBack"><a href="next2d.ui.Easing.html#inOutBack">inOutBack</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutBounce"><a href="next2d.ui.Easing.html#inOutBounce">inOutBounce</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutCirc"><a href="next2d.ui.Easing.html#inOutCirc">inOutCirc</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutCubic"><a href="next2d.ui.Easing.html#inOutCubic">inOutCubic</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutElastic"><a href="next2d.ui.Easing.html#inOutElastic">inOutElastic</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutExpo"><a href="next2d.ui.Easing.html#inOutExpo">inOutExpo</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutQuad"><a href="next2d.ui.Easing.html#inOutQuad">inOutQuad</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutQuart"><a href="next2d.ui.Easing.html#inOutQuart">inOutQuart</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutQuint"><a href="next2d.ui.Easing.html#inOutQuint">inOutQuint</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inOutSine"><a href="next2d.ui.Easing.html#inOutSine">inOutSine</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inQuad"><a href="next2d.ui.Easing.html#inQuad">inQuad</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inQuart"><a href="next2d.ui.Easing.html#inQuart">inQuart</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inQuint"><a href="next2d.ui.Easing.html#inQuint">inQuint</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#inSine"><a href="next2d.ui.Easing.html#inSine">inSine</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#linear"><a href="next2d.ui.Easing.html#linear">linear</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outBack"><a href="next2d.ui.Easing.html#outBack">outBack</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outBounce"><a href="next2d.ui.Easing.html#outBounce">outBounce</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outCirc"><a href="next2d.ui.Easing.html#outCirc">outCirc</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outCubic"><a href="next2d.ui.Easing.html#outCubic">outCubic</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outElastic"><a href="next2d.ui.Easing.html#outElastic">outElastic</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outExpo"><a href="next2d.ui.Easing.html#outExpo">outExpo</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outQuad"><a href="next2d.ui.Easing.html#outQuad">outQuad</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outQuart"><a href="next2d.ui.Easing.html#outQuart">outQuart</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outQuint"><a href="next2d.ui.Easing.html#outQuint">outQuint</a></li>
-            
-                <li class="parent  " data-name="next2d.ui.Easing#outSine"><a href="next2d.ui.Easing.html#outSine">outSine</a></li>
-            
                 <li class="parent  " data-name="next2d.ui.Easing#toString"><a href="next2d.ui.Easing.html#toString">toString</a></li>
+            
+            </ul>
+            
+            <ul class="events itemMembers">
+            
+            </ul>
+            
+        </li>
+    
+        <li class="item" data-name="next2d.ui.Job">
+            <span class="title  ">
+                
+                
+                    <a href="next2d.ui.Job.html">next2d.ui.Job</a>
+                
+            </span>
+            
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li class="parent " data-name="next2d.ui.Job.namespace"><a href="next2d.ui.Job.html#.namespace">namespace</a></li>
+            
+                <li class="parent " data-name="next2d.ui.Job.namespace"><a href="next2d.ui.Job.html#.namespace">namespace</a></li>
+            
+                <li class="parent " data-name="next2d.ui.Job#delay"><a href="next2d.ui.Job.html#delay">delay</a></li>
+            
+                <li class="parent " data-name="next2d.ui.Job#duration"><a href="next2d.ui.Job.html#duration">duration</a></li>
+            
+                <li class="parent " data-name="next2d.ui.Job#ease"><a href="next2d.ui.Job.html#ease">ease</a></li>
+            
+                <li class="parent " data-name="next2d.ui.Job#from"><a href="next2d.ui.Job.html#from">from</a></li>
+            
+                <li class="parent " data-name="next2d.ui.Job#target"><a href="next2d.ui.Job.html#target">target</a></li>
+            
+                <li class="parent " data-name="next2d.ui.Job#to"><a href="next2d.ui.Job.html#to">to</a></li>
+            
+            </ul>
+            
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li class="parent  " data-name="next2d.ui.Job.toString"><a href="next2d.ui.Job.html#.toString">toString</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Job#entries"><a href="next2d.ui.Job.html#entries">entries</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Job#initialize"><a href="next2d.ui.Job.html#initialize">initialize</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Job#start"><a href="next2d.ui.Job.html#start">start</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Job#stop"><a href="next2d.ui.Job.html#stop">stop</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Job#toString"><a href="next2d.ui.Job.html#toString">toString</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Job#update"><a href="next2d.ui.Job.html#update">update</a></li>
+            
+                <li class="parent  " data-name="next2d.ui.Job#updateProperty"><a href="next2d.ui.Job.html#updateProperty">updateProperty</a></li>
             
             </ul>
             
@@ -3747,6 +3807,8 @@
             <ul class="methods itemMembers">
             
             <span class="subtitle">Methods</span>
+            
+                <li class="parent  " data-name="next2d.ui.Tween.add"><a href="next2d.ui.Tween.html#.add">add</a></li>
             
                 <li class="parent  " data-name="next2d.ui.Tween.toString"><a href="next2d.ui.Tween.html#.toString">toString</a></li>
             
@@ -4163,7 +4225,7 @@ class Point
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Mon Jul 26 2021 11:26:24 GMT+0900 (日本標準時)
+                Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sat Aug 07 2021 09:09:15 GMT+0900 (日本標準時)
             </div>
         </footer>
     </div>

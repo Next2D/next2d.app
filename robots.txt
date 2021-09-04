@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /src/
+Sitemap: https://next2d.app/sitemap.xml

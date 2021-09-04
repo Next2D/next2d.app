@@ -1,0 +1,46 @@
+<% const title = "Next2D | Documentation"; %>
+<% const description = "Next2D Documentation"; %>
+<% const path = "../"; %>
+
+<%- include("../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Tips</h2>
+                <ol>
+                    <li><a href="<%= path %>">Home</a></li>
+                    <li>API Tips</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Get Started Section ======= -->
+    <section id="tips" class="padd-section text-center">
+        <div class="container padd-section">
+            <div class="row">
+
+                <div class="col-md-6 col-lg-12" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="feature-block">
+                        <img src="<%= path %>assets/img/tool/logo.png" alt="img">
+                        <h4>NoCode Tool</h4>
+                        <p>An animation creation tool based mainly on NoCode development, You can intuitively create the animation you have imagined, and the exported data can be easily published by uploading it to the web.</p>
+                        <p>in preparation</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section><!-- End Get Started Section -->
+
+</main><!-- End #main -->
+
+<%- include("../_include/_footer", { "path": path }); %>

@@ -1,4 +1,3 @@
-# Documentation
+# Next2D libraries and tools.
 
-- [Player Documentation](https://next2d.app/docs/player/index.html)
-- Tool Documentation
+- [Next2D Web Site](https://next2d.app)

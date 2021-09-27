@@ -1,0 +1,61 @@
+<% const title = "Next2D | NoCode Tool How to use | Motion Tweening"; %>
+<% const description = "Motion tweening is a type of animation that uses symbols to create movement, size and rotation changes, fades, and color effects."; %>
+<% const path = "../../"; %>
+
+<%- include("../../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<%- include("../_base-header", {
+    "path": path
+}); %>
+
+<div class="col-md-12 col-lg-9">
+    <div>
+      <h3>Motion Tweening</h3>
+      <p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/0rjewWy8DXM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+      <p><%= description %></p>
+      <p>Easing List</p>
+      <p>
+        <ul>
+          <li>linear</li>
+          <li>quad-in</li>
+          <li>quad-out</li>
+          <li>quad-in-out</li>
+          <li>cubic-in</li>
+          <li>cubic-out</li>
+          <li>quart-in</li>
+          <li>quart-out</li>
+          <li>quart-in-out</li>
+          <li>quint-in</li>
+          <li>quint-out</li>
+          <li>quint-in-out</li>
+          <li>sine-in</li>
+          <li>sine-out</li>
+          <li>sine-in-out</li>
+          <li>sine-in-out</li>
+          <li>expo-in</li>
+          <li>expo-out</li>
+          <li>expo-in-out</li>
+          <li>circ-in</li>
+          <li>circ-out</li>
+          <li>circ-in-out</li>
+          <li>back-in</li>
+          <li>back-out</li>
+          <li>back-in-out</li>
+          <li>elastic-in</li>
+          <li>elastic-out</li>
+          <li>elastic-in-out</li>
+          <li>bounce-in</li>
+          <li>bounce-out</li>
+          <li>bounce-in-out</li>
+        </ul>
+      </p>
+    </div>
+</div>
+
+<%- include("../_base-footer", {
+    "path": path
+}); %>

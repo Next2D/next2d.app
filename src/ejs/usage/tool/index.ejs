@@ -1,0 +1,80 @@
+<% const title = "Next2D | NoCode Tool How to use | Tool Area"; %>
+<% const description = "There are tools to support vector drawing, and tools to rotate and transform objects placed in the Screen Area."; %>
+<% const path = "../../"; %>
+
+<%- include("../../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<%- include("../_base-header", {
+    "path": path
+}); %>
+
+<div class="col-md-12 col-lg-9">
+    <div>
+      <h3>Tool Area</h3>
+      <p><%= description %></p>
+
+      <h4><i id="transform-tool"></i>Transform Tool</h4>
+      <p>Allows you to stretch, rotate, or tilt the selection.</p>
+      <p><a href="<%= path %>usage/tool/transform.html">read more</a></p>
+
+      <h4><i id="shape-transform-tool"></i>Shape Transform Tool</h4>
+      <p>The angle and length of the direction line determine the shape and size of the curve segment. Moving the direction points will change the shape of the curve.</p>
+      <p><a href="<%= path %>usage/tool/shape-transform.html">read more</a></p>
+
+      <h4><i id="text-tool"></i>Text Tool</h4>
+      <p>Insert a text field element.</p>
+      <p><a href="<%= path %>usage/tool/text.html">read more</a></p>
+
+      <h4><i id="rectangle-tool"></i>Rectangle Tool</h4>
+      <p>Using the Rectangle tool, you can draw squares and rectangles.</p>
+      <p><a href="<%= path %>usage/tool/rectangle.html">read more</a></p>
+
+      <h4><i id="ellipse-tool"></i>Ellipse Tool</h4>
+      <p>Use the Ellipse tool to draw a regular circle or an ellipse.</p>
+      <p><a href="<%= path %>usage/tool/ellipse.html">read more</a></p>
+
+      <h4><i id="rounded-rectangle-tool"></i>Rounded Rectangle Tool</h4>
+      <p>The Rounded Rectangle tool can be used to draw rounded corners and rectangles.</p>
+      <p><a href="<%= path %>usage/tool/rounded-rectangle.html">read more</a></p>
+
+      <h4><i id="loading-project-data"></i>Loading project data</h4>
+      <p>Load data in '.n2d' format.</p>
+
+      <h4><i id="save-project-data"></i>Save project data</h4>
+      <p>Outputs the project data of the active tab in 'n2d' format.</p>
+
+      <h4><i id="export-tool"></i>Export</h4>
+      <p>Outputs the project data of the active tab in JSON format that can be played by Player.</p>
+
+      <h4><i id="setting-tool"></i>Setting</h4>
+      <p>You can set the project language, export settings, etc.</p>
+
+      <p>
+        <h5>Hidden Layers (Not Including)</h5>
+        <p>Export JSON data without including layers that are set to be hidden in the Timeline Area layer.</p>
+
+        <h5>Hidden Layers (Include)</h5>
+        <p>Export JSON data including the layer which is set to be hidden in the Timeline Area layer.</p>
+
+        <h5>Output JSON(compression)</h5>
+        <p>This is a JSON file with data compressed by zlib. The compression makes the file lighter, but it may cause an overhead in decompression on the Plyer side.</p>
+
+        <h5>Output JSON(uncompressed)</h5>
+        <p>This is an uncompressed JSON file; no decompression overhead will be incurred on the Player side, but the data size will be large.</p>
+
+        <h5>Output Video(webm)</h5>
+        <p>Output in webm format.</p>
+
+        <h5>Language</h5>
+        <p>You can change the display language settings.</p>
+      </p>
+    </div>
+</div>
+
+<%- include("../_base-footer", {
+    "path": path
+}); %>

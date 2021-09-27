@@ -1,0 +1,25 @@
+<% const title = "Next2D | NoCode Tool How to use | Mask Layer"; %>
+<% const description = "The mask will be applied to the layer placed under the mask layer. By activating the mask layer lock, you can check the masked drawing."; %>
+<% const path = "../../"; %>
+
+<%- include("../../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<%- include("../_base-header", {
+    "path": path
+}); %>
+
+<div class="col-md-12 col-lg-9">
+    <div>
+      <h3>Mask Layer</h3>
+      <p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/X3Qp_OdDxz8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+      <p><%= description %></p>
+    </div>
+</div>
+
+<%- include("../_base-footer", {
+    "path": path
+}); %>

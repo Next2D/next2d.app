@@ -1,0 +1,35 @@
+<% const title = "Next2D | NoCode Tool How to use | Filters"; %>
+<% const description = "Filters can be used to add high quality visual effects to text, and movie clips. You can also use motion tweening to animate the filter you apply."; %>
+<% const path = "../../"; %>
+
+<%- include("../../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<%- include("../_base-header", {
+    "path": path
+}); %>
+
+<div class="col-md-12 col-lg-9">
+    <div>
+      <h3>Filters</h3>
+      <p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/WyWzk34nV9A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+      <p><%= description %></p>
+      <p>
+        <ul>
+          <li><h4>DropShadow</h4>Simulates the appearance of an object casting a shadow on a surface.</li>
+          <li><h4>Blur</h4>The edges and details of objects will be smoothed.</li>
+          <li><h4>Glow</h4>Allows you to apply color to the entire perimeter of an object's edge.</li>
+          <li><h4>Bevel</h4>You can apply a highlight to an object to make it appear to be bent over a background.</li>
+          <li><h4>GradientGlow</h4>You can create the appearance of a gradient color glow across the entire glow surface.</li>
+          <li><h4>GradientBevel</h4>You can display a gradient color over the entire beveled surface, making it look like the object is lifted above the background.</li>
+        </ul>
+      </p>
+    </div>
+</div>
+
+<%- include("../_base-footer", {
+    "path": path
+}); %>

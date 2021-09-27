@@ -1,0 +1,25 @@
+<% const title = "Next2D | NoCode Tool How to use | Frame KeyFrame"; %>
+<% const description = "The length of time is divided into frames. In the timeline, these frames are manipulated to control objects. A key frame is a frame in which a new symbol instance is displayed in the timeline. Keyframes may also contain embedded code (JavaScript) that controls the object."; %>
+<% const path = "../../"; %>
+
+<%- include("../../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<%- include("../_base-header", {
+    "path": path
+}); %>
+
+<div class="col-md-12 col-lg-9">
+    <div>
+      <h3>Frame KeyFrame</h3>
+      <p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/spYJTwueM28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+      <p><%= description %></p>
+    </div>
+</div>
+
+<%- include("../_base-footer", {
+    "path": path
+}); %>

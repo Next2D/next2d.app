@@ -20,8 +20,8 @@ h4 {
   color: #000;
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-transform: capitalize;
   line-height: 2;
 }
 
@@ -79,7 +79,7 @@ span {
   font-size: 11px;
   font-weight: 600;
   padding: 15px 40px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   transition: all 0.5s ease-in-out 0s;
 }
 
@@ -447,7 +447,7 @@ span {
 
 .btn {
   font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: 400;
   font-size: 13px;
   letter-spacing: 1px;
@@ -471,7 +471,7 @@ span {
   color: #555;
   font-size: 11px;
   font-weight: 600;
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin: 4px 20px;
   text-decoration: none;
   transition: 0.3s;
@@ -614,7 +614,7 @@ section {
 #get-started,
 #docs,
 #examples,
-#tips,
+#usage,
 #tutorials
 {
   display: inline-block;
@@ -625,8 +625,7 @@ section {
 #get-started .feature-block,
 #docs .feature-block,
 #examples .feature-block,
-#tips .feature-block,
-#tutorials .feature-block
+#usage .feature-block
 {
   background: #fff none repeat scroll 0 0;
   padding: 30px 20px;
@@ -636,8 +635,7 @@ section {
 #get-started .feature-block img,
 #docs .feature-block img,
 #examples .feature-block img,
-#tips .feature-block img,
-#tutorials .feature-block img
+#usage .feature-block img
 {
   height: 60px;
   margin-bottom: 30px;
@@ -648,8 +646,7 @@ section {
   #get-started .feature-block,
   #docs .feature-block,
   #examples .feature-block,
-  #tips .feature-block,
-  #tutorials .feature-block
+  #usage .feature-block
   {
     margin-bottom: 30px;
   }
@@ -658,8 +655,7 @@ section {
 #get-started .feature-block:hover,
 #docs .feature-block:hover,
 #examples .feature-block:hover,
-#tips .feature-block:hover,
-#tutorials .feature-block:hover
+#usage .feature-block:hover
 {
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease-in-out 0s;
@@ -668,8 +664,7 @@ section {
 #get-started .feature-block h4,
 #docs .feature-block h4,
 #examples .feature-block h4,
-#tips .feature-block h4,
-#tutorials .feature-block h4
+#usage .feature-block h4
 {
   margin-bottom: 20px;
 }
@@ -677,8 +672,7 @@ section {
 #get-started .feature-block p,
 #docs .feature-block p,
 #examples .feature-block p,
-#tips .feature-block p,
-#tutorials .feature-block p
+#usage .feature-block p
 {
   margin-bottom: 20px;
 }
@@ -686,8 +680,7 @@ section {
 #get-started .feature-block a,
 #docs .feature-block a,
 #examples .feature-block a,
-#tips .feature-block a,
-#tutorials .feature-block a
+#usage .feature-block a
 {
   color: #505050;
   font-size: 12px;
@@ -700,8 +693,7 @@ section {
 #get-started .feature-block a:hover,
 #docs .feature-block a:hover,
 #examples .feature-block a:hover,
-#tips .feature-block a:hover,
-#tutorials .feature-block a:hover
+#usage .feature-block a:hover
 {
   color: #1461A0;
 }
@@ -718,7 +710,6 @@ section {
 
 #about-us .about-content h2 {
   color: #252525;
-  font-family: "roboto";
   font-size: 39px;
   font-weight: 100;
   letter-spacing: 2px;
@@ -811,6 +802,200 @@ section {
   margin-bottom: 0;
 }
 
+/* Tutorial List Section
+--------------------------------*/
+#tutorials .container,
+#usage .container
+{
+  padding-top: 20px;
+}
+
+#tutorials .docs,
+#usage .docs
+{
+  margin-bottom: 30px;
+}
+
+#tutorials .block-list .content-list,
+#usage .block-list .content-list
+{
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 4px 0 rgba(0, 0, 0, 0.19);
+  display: inline-block;
+  min-height: 125px;
+  padding: 20px 10px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+#tutorials .block-list .content-list p,
+#usage .block-list .content-list p
+{
+  line-height: 24px;
+  text-transform: capitalize;
+  font-weight: normal;
+  letter-spacing: 0;
+  font-size: 16px;
+  margin: 0;
+}
+
+#tutorials .block-list .content-list h4,
+#usage .block-list .content-list h4
+{
+  line-height: 24px;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  font-weight: normal;
+  letter-spacing: 0;
+  font-size: 16px;
+}
+
+#tutorials .block-list .content-list h4 a,
+#usage .block-list .content-list h4 a
+{
+  color: #555;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#tutorials .block-list .content-list h4 a:hover,
+#usage .block-list .content-list h4 a:hover
+{
+  color: #1461A0;
+}
+
+#tutorials .block-list .content-list > span,
+#usage .block-list .content-list > span
+{
+  float: left;
+  font-size: 12px;
+}
+
+#tutorials .block-list .content-list a.read-more,
+#usage .block-list .content-list a.read-more
+{
+  color: #505050;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+  letter-spacing: 0;
+  text-transform: capitalize;
+}
+
+#tutorials .block-list .content-list a.read-more:hover,
+#usage .block-list .content-list a.read-more:hover
+{
+  color: #1461A0;
+}
+
+#tutorials .list-menu ul li a,
+#usage .list-menu ul li a
+{
+  color: #222;
+  font-size: 14px;
+  padding-left: 5px;
+  text-decoration: none;
+  letter-spacing: 0;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+#tutorials .list-menu ul li a:hover,
+#usage .list-menu ul li a:hover
+{
+  color: #1461A0;
+}
+
+#usage .workspace-image
+{
+  padding: 0;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#usage .workspace-image img
+{
+  max-width: 85%;
+}
+
+#usage iframe
+{
+  margin-top: 20px;
+}
+
+#usage h4
+{
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+#usage a
+{
+  color: #505050;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+
+#usage a:hover
+{
+  color: #1461A0;
+}
+
+/* Contact Section
+--------------------------------*/
+#contact {
+  background: #fff;
+}
+
+#contact .info {
+  color: #222;
+}
+
+#contact .info i {
+  font-size: 32px;
+  color: #1461A0;
+  float: left;
+  line-height: 0;
+}
+
+#contact .info p {
+  padding: 0 0 10px 50px;
+  margin-bottom: 20px;
+  line-height: 22px;
+  font-size: 14px;
+}
+
+#contact .info .email p {
+  padding-top: 5px;
+}
+
+#contact .social-links {
+  padding: 20px 0;
+}
+
+#contact .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #1461A0;
+  color: #fff;
+  line-height: 1;
+  padding: 9px 0 8px 2px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#contact .social-links a:hover {
+  background: #1461A0;
+  color: #fff;
+}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -841,6 +1026,12 @@ section {
 .footer .list-menu > h4 {
   color: #fff;
   padding-bottom: 20px;
+}
+
+.footer .list-menu p {
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 .footer .list-menu ul li a {
@@ -894,4 +1085,83 @@ section {
 .footer .copyrights p a, .footer .copyrights .credits a {
   letter-spacing: 0;
   color: #1461A0;
+}
+
+/*--------------------------------------------------------------
+# Icons
+--------------------------------------------------------------*/
+#usage h4 i
+{
+  width  : 34px;
+  height : 34px;
+}
+
+#transform-tool
+{
+  background-image    : url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"><path d="M4 0l16 12.279-6.78 1.138 4.256 8.676-3.902 1.907-4.281-8.758-5.293 4.581z"/></svg>');
+  background-repeat   : no-repeat;
+  background-position : center center;
+}
+
+#shape-transform-tool
+{
+  background-image    : url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"><path d="M12.849 24l-3.96-7.853-4.889 4.142v-20.289l16 12.875-6.192 1.038 3.901 7.696-4.86 2.391zm-3.299-10.979l4.194 8.3 1.264-.617-4.213-8.313 4.632-.749-9.427-7.559v11.984l3.55-3.046z"/></svg>');
+  background-repeat   : no-repeat;
+  background-position : center center;
+}
+
+#text-tool
+{
+  background-image    : url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"><path d="M24 20v1h-4v-1h.835c.258 0 .405-.178.321-.422l-.473-1.371h-2.231l-.575-1.59h2.295l-1.362-4.077-1.154 3.451-.879-2.498.921-2.493h2.222l3.033 8.516c.111.315.244.484.578.484h.469zm-6-1h1v2h-7v-2h.532c.459 0 .782-.453.633-.887l-.816-2.113h-6.232l-.815 2.113c-.149.434.174.887.633.887h1.065v2h-7v-2h.43c.593 0 1.123-.375 1.32-.935l5.507-15.065h3.952l5.507 15.065c.197.56.69.935 1.284.935zm-10.886-6h4.238l-2.259-6.199-1.979 6.199z"/></svg>');
+  background-repeat   : no-repeat;
+  background-position : center center;
+}
+
+#rectangle-tool
+{
+  background-image    : url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"><path d="M24 0h-24v24h24v-24z"/></svg>');
+  background-repeat   : no-repeat;
+  background-position : center center;
+}
+
+#ellipse-tool
+{
+  background-image    : url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12"/></svg>');
+  background-repeat   : no-repeat;
+  background-position : center center;
+}
+
+#rounded-rectangle-tool
+{
+  background-image    : url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"><path d="M24 5c0-2.761-2.238-5-5-5h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14z"/></svg>');
+  background-repeat   : no-repeat;
+  background-position : center center;
+}
+
+#loading-project-data
+{
+  background-image    : url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"><path d="M16 16h-3v5h-2v-5h-3l4-4 4 4zm3.479-5.908c-.212-3.951-3.473-7.092-7.479-7.092s-7.267 3.141-7.479 7.092c-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h3.5v-2h-3.5c-1.93 0-3.5-1.57-3.5-3.5 0-2.797 2.479-3.833 4.433-3.72-.167-4.218 2.208-6.78 5.567-6.78 3.453 0 5.891 2.797 5.567 6.78 1.745-.046 4.433.751 4.433 3.72 0 1.93-1.57 3.5-3.5 3.5h-3.5v2h3.5c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408z"/></svg>');
+  background-repeat   : no-repeat;
+  background-position : center center;
+}
+
+#save-project-data
+{
+  background-image    : url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"><path d="M8 20h3v-5h2v5h3l-4 4-4-4zm11.479-12.908c-.212-3.951-3.473-7.092-7.479-7.092s-7.267 3.141-7.479 7.092c-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h3.5v-2h-3.5c-1.93 0-3.5-1.57-3.5-3.5 0-2.797 2.479-3.833 4.433-3.72-.167-4.218 2.208-6.78 5.567-6.78 3.453 0 5.891 2.797 5.567 6.78 1.745-.046 4.433.751 4.433 3.72 0 1.93-1.57 3.5-3.5 3.5h-3.5v2h3.5c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408z"/></svg>');
+  background-repeat   : no-repeat;
+  background-position : center center;
+}
+
+#export-tool
+{
+  background-image    : url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M16 2v7h-2v-5h-12v16h12v-5h2v7h-16v-20h16zm2 9v-4l6 5-6 5v-4h-10v-2h10z"/></svg>');
+  background-repeat   : no-repeat;
+  background-position : center center;
+}
+
+#setting-tool
+{
+  background-image    : url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"><path d="M24 13.616v-3.232c-1.651-.587-2.694-.752-3.219-2.019v-.001c-.527-1.271.1-2.134.847-3.707l-2.285-2.285c-1.561.742-2.433 1.375-3.707.847h-.001c-1.269-.526-1.435-1.576-2.019-3.219h-3.232c-.582 1.635-.749 2.692-2.019 3.219h-.001c-1.271.528-2.132-.098-3.707-.847l-2.285 2.285c.745 1.568 1.375 2.434.847 3.707-.527 1.271-1.584 1.438-3.219 2.02v3.232c1.632.58 2.692.749 3.219 2.019.53 1.282-.114 2.166-.847 3.707l2.285 2.286c1.562-.743 2.434-1.375 3.707-.847h.001c1.27.526 1.436 1.579 2.019 3.219h3.232c.582-1.636.75-2.69 2.027-3.222h.001c1.262-.524 2.12.101 3.698.851l2.285-2.286c-.744-1.563-1.375-2.433-.848-3.706.527-1.271 1.588-1.44 3.221-2.021zm-12 2.384c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"/></svg>');
+  background-repeat   : no-repeat;
+  background-position : center center;
 }

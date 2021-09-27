@@ -1,0 +1,41 @@
+<% const title = "Next2D | NoCode Tool How to use | WorkSpace"; %>
+<% const description = "The work space is divided into Tool Area, Screen Area, Timeline Area, and Controller Area, The functions of each area are as follows."; %>
+<% const path = "../"; %>
+
+<%- include("../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<%- include("_base-header", {
+    "path": path
+}); %>
+
+<div class="col-md-12 col-lg-9">
+    <div>
+      <h3>WorkSpace</h3>
+      <p class="workspace-image"><img src="<%= path %>assets/img/usage/workspace.png" alt="WorkSpace"></p>
+      <p><%= description %></p>
+
+      <h4>Tool Area</h4>
+      <p>There are tools to support vector drawing, and tools to rotate and transform objects placed in the Screen Area.</p>
+      <p><a href="<%= path %>usage/tool">read more</a></p>
+
+      <h4>Screen Area</h4>
+      <p>Place each objects, and the objects in the Stage will be displayed and played by the Player. Command+Enter or Ctrl+Enter will play the preview that is actually displayed in the Player.</p>
+      <p><a href="<%= path %>usage/screen">read more</a></p>
+
+      <h4>Timeline Area</h4>
+      <p>The length of time is divided into frames. Layers are analogous to multiple film strips stacked in layers, with different objects contained in each layer appearing on stage.</p>
+      <p><a href="<%= path %>usage/timeline">read more</a></p>
+
+      <h4>Controller Area</h4>
+      <p>A property area that controls transformations, color processing, blend modes, and filters. The Library area displays a list of imported images, sounds, videos, and created MovieClips, and the Script area displays a list of JavaScript embedded in the timeline.</p>
+      <p><a href="<%= path %>usage/controller">read more</a></p>
+    </div>
+</div>
+
+<%- include("_base-footer", {
+    "path": path
+}); %>

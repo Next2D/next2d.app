@@ -1,0 +1,25 @@
+<% const title = "Next2D | NoCode Tool How to use | Normal Layer"; %>
+<% const description = "Each layer is independent, so drawing or editing an object on one layer does not affect objects on other layers. In a stage area where there are no objects on a layer, you can see through the layer below. In addition, you can show/hide, lock/unlock, and rearrange layers."; %>
+<% const path = "../../"; %>
+
+<%- include("../../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<%- include("../_base-header", {
+    "path": path
+}); %>
+
+<div class="col-md-12 col-lg-9">
+    <div>
+      <h3>Normal Layer</h3>
+      <p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/ZSignNRYluQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+      <p><%= description %></p>
+    </div>
+</div>
+
+<%- include("../_base-footer", {
+    "path": path
+}); %>

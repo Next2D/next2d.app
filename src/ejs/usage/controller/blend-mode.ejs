@@ -1,0 +1,42 @@
+<% const title = "Next2D | NoCode Tool How to use | Blend Mode"; %>
+<% const description = "Blending mode can be used to create compound images. Compounding is the process of changing the transparency or color interaction of multiple overlapping objects. Blending allows you to blend colors in overlapping movie clips to create unique effects."; %>
+<% const path = "../../"; %>
+
+<%- include("../../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<%- include("../_base-header", {
+    "path": path
+}); %>
+
+<div class="col-md-12 col-lg-9">
+    <div>
+      <h3>Blend Mode</h3>
+      <p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/krMptdKTMAs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+      <p><%= description %></p>
+      <p>Blend Mode List
+        <ul>
+          <li><h4>normal</h4>The color is applied as normal and does not interact with the base color.</li>
+          <li><h4>layer</h4>Allows you to superimpose movie clips without affecting the color.</li>
+          <li><h4>darken</h4>Only areas lighter than the blend color will be replaced. Areas darker than the blend color will not be changed.</li>
+          <li><h4>multiply</h4>The base color and the blend color are multiplied, resulting in a darker color.</li>
+          <li><h4>lighten</h4>Only pixels darker than the blend color will be replaced. Areas lighter than the blend color will not be changed.</li>
+          <li><h4>screen</h4>The blended color will be multiplied by the inverted color and the base color, resulting in a whitening effect.</li>
+          <li><h4>overlay</h4>The color will be multiplied or screened depending on the base color.</li>
+          <li><h4>hardlight</h4>Colors will be multiplied or screened depending on the blend mode color. The effect is as if a spotlight were shining on the object.</li>
+          <li><h4>add</h4>It is usually used to animate a dissolve that dilutes the color between two images.</li>
+          <li><h4>subtract</h4>It is usually used to animate the dissolve effect, which darkens the colors between two images.</li>
+          <li><h4>difference</h4>Subtracts the lower brightness from the higher brightness of the base color and the blend color. This effect is similar to color inversion.</li>
+          <li><h4>invert</h4>The base color will be inverted.</li>
+          <li><h4>alpha</h4>The alpha mask will be applied.</li>
+          <li><h4>erase</h4>All base color pixels will be removed, including the base color of the background image.</li>
+        </ul>
+    </div>
+</div>
+
+<%- include("../_base-footer", {
+    "path": path
+}); %>

@@ -21,7 +21,6 @@ h4 {
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 1px;
-  text-transform: capitalize;
   line-height: 2;
 }
 
@@ -51,7 +50,6 @@ li {
   font-weight: 400;
   letter-spacing: 2px;
   line-height: 30px;
-  text-transform: capitalize;
 }
 
 p {
@@ -843,7 +841,6 @@ section {
 {
   line-height: 24px;
   margin-bottom: 20px;
-  text-transform: capitalize;
   font-weight: normal;
   letter-spacing: 0;
   font-size: 16px;
@@ -905,6 +902,44 @@ section {
 {
   color: #1461A0;
 }
+
+#tutorials .tutorial-image
+{
+  padding: 0;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#tutorials .tutorial-image img
+{
+  max-width: 90%;
+}
+
+#tutorials h3
+{
+  margin-bottom: 10px;
+}
+
+#tutorials pre
+{
+  max-width: 100%;
+  background-color: #2a2c30;
+  color: #f8f9fa;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 10px;
+  text-align: left;
+}
+
+#example-preview
+{
+  max-width: 90%;
+  height: 240px;
+  text-align: center;
+}
+
+
 
 #usage .workspace-image
 {

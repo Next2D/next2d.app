@@ -1,0 +1,69 @@
+<% const title = "Next2D | Tutorial & Pocket Reference | Reference and change DisplayObject properties 'scale9Grid'"; %>
+<% const description = "scale9Grid is a property that sets the grid for scaling up/down 9 slices. The default value is null, and the Rectangle object is assigned when setting it."; %>
+<% const path = "../"; %>
+
+<%- include("../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Reference and change DisplayObject properties "scale9Grid".</h2>
+                <ol>
+                    <li><a href="<%= path %>">Home</a></li>
+                    <li><a href="<%= path %>tutorials">Tutorials</a></li>
+                    <li>Day 15</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Tutorial List Section ======= -->
+    <section id="tutorials" class="padd-section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 offset-md-3">
+
+            <h3>scale9Grid</h3>
+            <p>scale9Grid is a property that sets the grid for scaling up/down 9 slices. The default value is null, and the Rectangle object is assigned when setting it.</p>
+            <p class="tutorial-image"><img src="<%= path %>assets/img/tutorial/scale9Grid.svg" alt="scale9Grid image"></p>
+
+            <p>
+              Top, bottom, left, right and center area => zoom in/out as usual<br>
+              Top, bottom, left and right corners => fixed without enlargement/reduction<br>
+              Top, bottom, left and right center area => magnify/reduce only in left/right direction<br>
+              Top and bottom center area of left and right => zoom in/out only in up/down direction
+            </p>
+
+            <h5>Example</h5>
+            <p><pre>const {Rectangle} = next2d.geom;
+const {Shape, Sprite} = next2d.display;
+
+const shape = new Shape();
+shape
+    .graphics
+    .beginFill()
+    .drawRoundRect(0, 0, 60, 60, 10);
+
+const sprite = new Sprite();
+sprite.addChild(shape);
+sprite.scale9Grid = new Rectangle(10, 10, 40, 40);</pre></p>
+
+            <p><a class="float-end read-more" href="16.html">next day</a></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End List Section -->
+
+</main><!-- End #main -->
+
+<%- include("../_include/_footer", { "path": path }); %>

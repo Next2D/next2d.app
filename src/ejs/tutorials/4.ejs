@@ -1,0 +1,83 @@
+<% const title = "Next2D | Tutorial & Pocket Reference | Checking/changing the stacking order in a container"; %>
+<% const description = "getChildIndex method returns the index of the DisplayObject specified by the argument in the order of overlap.swapChildrenAt method swaps the overlapping order (index position) of the two DisplayObjects specified by the argument index. addChild method can be used to reposition the display object to the topmost position."; %>
+<% const path = "../"; %>
+
+<%- include("../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Checking/changing the stacking order in a container.</h2>
+                <ol>
+                    <li><a href="<%= path %>">Home</a></li>
+                    <li><a href="<%= path %>tutorials">Tutorials</a></li>
+                    <li>Day 04</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Tutorial List Section ======= -->
+    <section id="tutorials" class="padd-section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 offset-md-3">
+            <h3>getChildIndex</h3>
+            <p>getChildIndex method returns the index of the DisplayObject specified by the argument in the order of overlap.</p>
+
+            <h5>Example</h5>
+            <p><pre>const {Shape} = next2d.display;
+const shape = new Shape();
+this.addChild(shape);
+console.log(this.getChildIndex(shape));</pre></p>
+
+            <h3>setChildIndex</h3>
+            <p>setChildIndex method repositions the DisplayObject specified in the first argument to the second index position. This same repositioning can be done with the addChildAt method.</p>
+
+            <p><pre>const {Shape} = next2d.display;
+const shape = new Shape();
+this.addChild(new Shape());
+this.addChild(new Shape());
+this.setChildIndex(shape, 2);</pre></p>
+
+            <h3>swapChildren</h3>
+            <p>swapChildren method swaps the order of overlap (index position) between the two DisplayObjects specified by the arguments.</p>
+
+            <p><pre>const {Shape} = next2d.display;
+const shape1 = new Shape();
+const shape2 = new Shape();
+this.addChild(shape1);
+this.addChild(shape2);
+this.swapChildren(shape1, shape2);</pre></p>
+
+            <h3>swapChildrenAt</h3>
+            <p>swapChildrenAt method swaps the overlapping order (index position) of the two DisplayObjects specified by the argument index. addChild method can be used to reposition the display object to the topmost position.</p>
+
+            <p><pre>const {Shape} = next2d.display;
+const shape1 = new Shape();
+const shape2 = new Shape();
+const shape3 = new Shape();
+this.addChild(shape1);
+this.addChild(shape2);
+this.addChild(shape3);
+this.swapChildrenAt(0, 2);</pre></p>
+
+            <p><a class="float-end read-more" href="5.html">next day</a></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End List Section -->
+
+</main><!-- End #main -->
+
+<%- include("../_include/_footer", { "path": path }); %>

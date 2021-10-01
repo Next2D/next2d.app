@@ -1,0 +1,88 @@
+<% const title = "Next2D | Tutorial & Pocket Reference | Events when added/removed from the container"; %>
+<% const description = "added event is an Event object that is sent when a DisplayObjectContainer is added to a DisplayObjectContainer using the addChild or addChildAt method."; %>
+<% const path = "../"; %>
+
+<%- include("../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Events when added/removed from the container.</h2>
+                <ol>
+                    <li><a href="<%= path %>">Home</a></li>
+                    <li><a href="<%= path %>tutorials">Tutorials</a></li>
+                    <li>Day 03</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Tutorial List Section ======= -->
+    <section id="tutorials" class="padd-section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 offset-md-3">
+
+            <h3>Event.ADDED</h3>
+            <p>added event is an Event object that is sent when a DisplayObjectContainer is added to a DisplayObjectContainer using the addChild or addChildAt method.</p>
+
+            <h5>Example</h5>
+            <p><pre>const {Event} = next2d.events;
+this.addEventListener(Event.ADDED, onAdded);
+function onAdded (event)
+{
+    console.log("ADDED: ", event);
+}</pre></p>
+
+            <h3>Event.ADDED_TO_STAGE</h3>
+            <p>addedToStage event is a similar event. The addedToStage event is a similar event, but it is an Event object that is sent out when a DisplayObjectContainer is added to a DisplayList and displayed on the screen.</p>
+
+            <h5>Example</h5>
+            <p><pre>const {Event} = next2d.events;
+this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+function onAddedToStage (event)
+{
+    console.log("ADDED_TO_STAGE: ", event);
+}</pre></p>
+
+            <h3>Event.REMOVED</h3>
+            <p>removed event is an Event object that is sent when a DisplayObjectContainer is removed from a DisplayObjectContainer using the removeChild and removeChildAt methods. It is also sent when a DisplayObjectContainer is repositioned from its existing position to a specified position using the addChild and addChildAt methods.</p>
+
+            <h5>Example</h5>
+            <p><pre>const {Event} = next2d.events;
+this.addEventListener(Event.REMOVED, onRemoved);
+function onRemoved (event)
+{
+    console.log("REMOVED: ", event);
+}</pre></p>
+
+            <h3>Event.REMOVED_FROM_STAGE</h3>
+            <p>removedFromStage event is a similar event, but is an Event object that is sent out when a DisplayObjectContainer is removed from the DisplayList and disappears from the screen.</p>
+
+            <h5>Example</h5>
+            <p><pre>const {Event} = next2d.events;
+this.addEventListener(Event.REMOVED_FROM_STAGE, onRemovedFromStage);
+function onRemovedFromStage (event)
+{
+    console.log("REMOVED_FROM_STAGE: ", event);
+}</pre></p>
+
+            <p><a class="float-end read-more" href="4.html">next day</a></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End List Section -->
+
+</main><!-- End #main -->
+
+<%- include("../_include/_footer", { "path": path }); %>

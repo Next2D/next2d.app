@@ -1,0 +1,58 @@
+<% const title = "Next2D | Tutorial & Pocket Reference | When the mouse pointer enters/exits the area"; %>
+<% const description = "The MOUSE_OVER event is sent when the mouse pointer enters the hit area of a MovieClip, TextField, Sprite, Loader, or Stage object, and the MOUSE_OUT event is sent when the mouse pointer goes out of the hit area. The ROLL_OVER and ROLL_OUT events are also MouseEvents that are sent out when the mouse pointer enters or leaves the hit area."; %>
+<% const path = "../"; %>
+
+<%- include("../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>When the mouse pointer enters/exits the area.</h2>
+                <ol>
+                    <li><a href="<%= path %>">Home</a></li>
+                    <li><a href="<%= path %>tutorials">Tutorials</a></li>
+                    <li>Day 25</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Tutorial List Section ======= -->
+    <section id="tutorials" class="padd-section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 offset-md-3">
+
+            <h3>MOUSE_OVER/MOUSE_OUT/ROLL_OVER/ROLL_OUT</h3>
+            <p>The MOUSE_OVER event is sent when the mouse pointer enters the hit area of a MovieClip, TextField, Sprite, Loader, or Stage object, and the MOUSE_OUT event is sent when the mouse pointer goes out of the hit area. The ROLL_OVER and ROLL_OUT events are also MouseEvents that are sent out when the mouse pointer enters or leaves the hit area. The difference between them lies in the difference in the child display objects in the events fired in the DisplayObjectContainer where the event listener is registered: the MOUSE_OVER and MOUSE_OUT events distinguish multiple child display objects in the container, and the ROLL_OVER and ROLL_OUT events are sent when the child display object The MOUSE_OVER and MOUSE_OUT events distinguish between multiple child display objects in a container, and an event is fired each time the mouse is moved between them. On the other hand, the ROLL_OVER and ROLL_OUT events do not distinguish between multiple child display objects and consider them identical. Therefore, mouse movement between child display objects will not generate an event.</p>
+
+            <h5>Example</h5>
+            <p><pre>const {MouseEvent} = next2d.events;
+
+// When the mouse pointer enters the hit area
+this.addEventListener(MouseEvent.MOUSE_OVER, (event) => {}));
+this.addEventListener(MouseEvent.ROLL_OVER, (event) => {}));
+
+// When the mouse pointer leaves the hit area
+this.addEventListener(MouseEvent.MOUSE_OUT, (event) => {}));
+this.addEventListener(MouseEvent.ROLL_OUT, (event) => {}));</pre></p>
+
+            <p><a class="float-end read-more" href="26.html">next day</a></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End List Section -->
+
+</main><!-- End #main -->
+
+<%- include("../_include/_footer", { "path": path }); %>

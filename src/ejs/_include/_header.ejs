@@ -58,11 +58,27 @@
           <ul class="list-unstyled">
             <li><a class="nav-link scrollto" href="<%= path %>#hero">Home</a></li>
             <li><a class="nav-link scrollto" href="<%= path %>#get-started">About</a></li>
-            <li><a class="nav-link scrollto" href="<%= path %>#player">Player</a></li>
-            <li><a class="nav-link scrollto" href="<%= path %>#tool">NoCode Tool</a></li>
-            <li><a class="nav-link scrollto" href="<%= path %>#framework">Framework</a></li>
-            <li><a class="nav-link scrollto" href="<%= path %>tutorials">Tutorials</span></a></li>
-            <li><a class="nav-link scrollto" href="<%= path %>usage">NoCode Usage</a></li>
+            <li class="dropdown"><a href="#"><span>Player</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="https://github.com/Next2D/Player">GitHub</a></li>
+                <li><a href="<%= path %>docs/player">API Docs</a></li>
+                <li><a href="<%= path %>tutorials">Tutorials</a></li>
+                <li><a href="<%= path %>#player">Features</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="#"><span>NoCode Tool</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="https://tool.next2d.app">Web Site</a></li>
+                <li><a href="<%= path %>usage">Usage</a></li>
+                <li><a href="<%= path %>#tool">Features</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="#"><span>Framework</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="https://github.com/Next2D/Framework">GitHub</a></li>
+                <li><a href="<%= path %>#framework">Features</a></li>
+              </ul>
+            </li>
           </ul>
 
           <i class="bi bi-list mobile-nav-toggle"></i>

@@ -3,6 +3,21 @@
     <url>
         <loc>https://next2d.app/</loc>
         <priority>1.0</priority>
-        <lastmod>2021-09-06</lastmod>
+        <lastmod>2021-10-05</lastmod>
+    </url>
+    <url>
+        <loc>https://next2d.app/usage/</loc>
+        <priority>0.8</priority>
+        <lastmod>2021-10-05</lastmod>
+    </url>
+    <url>
+        <loc>https://next2d.app/tutorials/</loc>
+        <priority>0.7</priority>
+        <lastmod>2021-10-05</lastmod>
+    </url>
+    <url>
+        <loc>https://next2d.app/privacy/</loc>
+        <priority>0.5</priority>
+        <lastmod>2021-10-05</lastmod>
     </url>
 </urlset>

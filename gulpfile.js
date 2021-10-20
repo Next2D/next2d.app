@@ -15,7 +15,7 @@ const options = minimist(process.argv.slice(2), {
     }
 });
 
-function buildEJS ()
+const buildEJS = function ()
 {
     return gulp
         .src([
@@ -25,14 +25,14 @@ function buildEJS ()
         .pipe(ejs())
         .pipe(rename({ "extname": ".html" }))
         .pipe(gulp.dest("docs"));
-}
+};
 
 /**
  * @description HTMLをminifyして出力
  * @return {*}
  * @public
  */
-function minifyHTML ()
+const minifyHTML = function ()
 {
     return gulp
         .src(["docs/index.html", "docs/**/*.html"])
@@ -41,14 +41,14 @@ function minifyHTML ()
             "removeComments"     : true
         }))
         .pipe(gulp.dest("docs"));
-}
+};
 
 /**
  * @description JavaScriptをまとめてminifyして出力
  * @return {*}
  * @public
  */
-function buildJavaScript()
+const buildJavaScript = function ()
 {
     const build = gulp
         .src(["src/javascript/*.js"])
@@ -59,28 +59,28 @@ function buildJavaScript()
     }
 
     return build.pipe(gulp.dest("docs/assets/js"));
-}
+};
 
 /**
  * @description StyleSheetをまとめてminifyして出力
  * @return {*}
  * @public
  */
-function buildStyleSheet ()
+const buildStyleSheet = function ()
 {
     return gulp
         .src("src/stylesheet/*.css")
         .pipe(cleanCSS())
         .pipe(rename({ "extname": ".min.css" }))
         .pipe(gulp.dest("docs/assets/css/"));
-}
+};
 
 /**
  * @description local serverを起動
  * @return {void}
  * @public
  */
-function browser (done)
+const browser = function (done)
 {
     browserSync.init({
         "server": {
@@ -90,25 +90,25 @@ function browser (done)
         "reloadOnRestart": true
     });
     done();
-}
+};
 
 /**
  * @description local serverを再読込
  * @return {void}
  * @public
  */
-function reload (done)
+const reload = function (done)
 {
     browserSync.reload();
     done();
-}
+};
 
 /**
  * @description ファイルを監視、変更があればビルドしてlocal serverを再読込
  * @return {void}
  * @public
  */
-function watchFiles ()
+const watchFiles = function ()
 {
     gulp
         .watch("src/stylesheet/*.css")
@@ -121,7 +121,7 @@ function watchFiles ()
     gulp
         .watch("src/ejs/**/*.ejs")
         .on("change", gulp.series(buildEJS, minifyHTML, reload));
-}
+};
 
 exports.default = gulp.series(
     buildStyleSheet,
@@ -130,4 +130,11 @@ exports.default = gulp.series(
     minifyHTML,
     browser,
     watchFiles
+);
+
+exports.build = gulp.series(
+    buildStyleSheet,
+    buildJavaScript,
+    buildEJS,
+    minifyHTML
 );

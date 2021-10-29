@@ -610,10 +610,9 @@ section {
 /* Get Started Section
 --------------------------------*/
 #get-started,
-#docs,
-#examples,
 #usage,
-#tutorials
+#tutorials,
+#load-map
 {
   display: inline-block;
   height: 100%;
@@ -621,9 +620,8 @@ section {
 }
 
 #get-started .feature-block,
-#docs .feature-block,
-#examples .feature-block,
-#usage .feature-block
+#usage .feature-block,
+#load-map .feature-block
 {
   background: #fff none repeat scroll 0 0;
   padding: 30px 20px;
@@ -631,28 +629,29 @@ section {
 }
 
 #get-started .feature-block img,
-#docs .feature-block img,
-#examples .feature-block img,
 #usage .feature-block img
 {
-  height: 60px;
+  height: 90px;
+  width: 90px;
+  margin-bottom: 20px;
+}
+
+#load-map .feature-block img
+{
+  width: 80vw;
   margin-bottom: 30px;
-  width: 60px;
 }
 
 @media (max-width: 991px) {
   #get-started .feature-block,
-  #docs .feature-block,
-  #examples .feature-block,
-  #usage .feature-block
+  #usage .feature-block,
+  #load-map .feature-block
   {
     margin-bottom: 30px;
   }
 }
 
 #get-started .feature-block:hover,
-#docs .feature-block:hover,
-#examples .feature-block:hover,
 #usage .feature-block:hover
 {
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
@@ -660,8 +659,6 @@ section {
 }
 
 #get-started .feature-block h4,
-#docs .feature-block h4,
-#examples .feature-block h4,
 #usage .feature-block h4
 {
   margin-bottom: 20px;

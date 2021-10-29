@@ -1,0 +1,91 @@
+<% const title = "Next2D Player | Tutorial & Pocket Reference | Convert between global and local coordinates"; %>
+<% const description = "Get the bounding box of a DisplayObject as a Rectangle object."; %>
+<% const path = "../../"; %>
+
+<%- include("../../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Convert between global and local coordinates.</h2>
+                <ol>
+                    <li><a href="<%= path %>">Home</a></li>
+                    <li><a href="<%= path %>tutorials">Tutorials</a></li>
+                    <li>Day 20</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Tutorial List Section ======= -->
+    <section id="tutorials" class="padd-section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 offset-md-3">
+
+            <h3>globalToLocal/localToGlobal</h3>
+            <p>globalToLocal method converts the global coordinates of the argument Point object to local coordinates, and conversely, the localToGlobal method converts the local coordinates to global coordinates.</p>
+            <p class="tutorial-image"><img src="<%= path %>assets/img/tutorial/coordinates.svg" alt="bounds image"></p>
+
+            <h5>Example</h5>
+            <p><pre>const {Shape, Sprite} = next2d.display;
+const {Point} = next2d.geom;
+
+const sprite1 = new Sprite();
+const sprite2 = new Sprite();
+const sprite3 = new Sprite();
+const shape1 = new Shape();
+const shape2 = new Shape();
+const shape3 = new Shape();
+
+shape1
+    .graphics
+    .lineStyle()
+    .drawRect(0, 0, 200, 150);
+
+sprite1.addChild(shape1);
+
+shape2
+    .graphics
+    .lineStyle()
+    .drawRect(0, 0, 160, 110);
+
+sprite2.x = 30;
+sprite2.y = 30;
+sprite2.addChild(shape2);
+
+shape3
+    .graphics
+    .lineStyle()
+    .drawRect(0, 0, 90, 60);
+
+sprite3.x = 60;
+sprite3.y = 30;
+sprite3.addChild(shape3);
+
+sprite2.addChild(sprite3);
+sprite1.addChild(sprite2);
+this.addChild(sprite1);
+
+console.log(sprite3.globalToLocal(new Point(90, 60))); // 0, 0
+console.log(sprite3.localToGlobal(new Point(0, 0))); // 90, 60</pre></p>
+
+            <p><a class="float-end read-more" href="20.html">next day</a></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End List Section -->
+
+</main><!-- End #main -->
+
+<%- include("../../_include/_footer", { "path": path }); %>

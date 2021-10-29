@@ -1,0 +1,59 @@
+<% const title = "Next2D Player | Tutorial & Pocket Reference | Properties used in the MovieClip timeline"; %>
+<% const description = "currentFrame returns the current frame number, currentFrameLabel returns the FrameLabel class of the label information in the current frame, and currentLabels returns an array of FrameLabel objects in the current scene."; %>
+<% const path = "../../"; %>
+
+<%- include("../../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Properties used in the MovieClip timeline</h2>
+                <ol>
+                    <li><a href="<%= path %>">Home</a></li>
+                    <li><a href="<%= path %>tutorials">Tutorials</a></li>
+                    <li>Day 23</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Tutorial List Section ======= -->
+    <section id="tutorials" class="padd-section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 offset-md-3">
+
+            <h3>current(Frame | FrameLabel | Labels)</h3>
+            <p>currentFrame returns the current frame number, currentFrameLabel returns the FrameLabel class of the label information in the current frame, and currentLabels returns an array of FrameLabel objects in the current scene.</p>
+
+            <h5>Example</h5>
+            <p><pre>// 3 frames back and stop
+this.gotoAndStop(this.currentFrame - 3);
+
+// current label name
+console.log(this.currentFrameLabel.name);
+
+const labels = this.currentLabels;
+for (let idx = 0; labels.length > idx; idx++) {
+    console.log(labels[idx].name);
+}</pre></p>
+
+            <p><a class="float-end read-more" href="24.html">next day</a></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End List Section -->
+
+</main><!-- End #main -->
+
+<%- include("../../_include/_footer", { "path": path }); %>

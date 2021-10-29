@@ -1,0 +1,56 @@
+<% const title = "Next2D Player | Tutorial & Pocket Reference | drag and drop"; %>
+<% const description = ""; %>
+<% const path = "../../"; %>
+
+<%- include("../../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>drag and drop.</h2>
+                <ol>
+                    <li><a href="<%= path %>">Home</a></li>
+                    <li><a href="<%= path %>tutorials">Tutorials</a></li>
+                    <li>Day 30</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Tutorial List Section ======= -->
+    <section id="tutorials" class="padd-section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 offset-md-3">
+
+            <h3>startDrag/stopDrag</h3>
+            <p></p>
+
+            <h5>Example</h5>
+            <p><pre>const {MouseEvent} = next2d.events;
+
+this.addEventListener(MouseEvent.MOUSE_MOVE, (event) =>
+{
+    console.log(event.target.mouseX, event.target.mouseY);
+});
+</pre></p>
+
+            <p><a class="float-end read-more" href="31.html">next day</a></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End List Section -->
+
+</main><!-- End #main -->
+
+<%- include("../../_include/_footer", { "path": path }); %>

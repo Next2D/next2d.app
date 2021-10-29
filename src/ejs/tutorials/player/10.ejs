@@ -1,0 +1,83 @@
+<% const title = "Next2D Player | Tutorial & Pocket Reference | Reference and change DisplayObject properties 'rotation'"; %>
+<% const description = "rotation angle of the DisplayObject. The unit is degrees (°). Negative values and values greater than 360° can be specified, but internally they will be replaced with the range of 0 to 360°."; %>
+<% const path = "../../"; %>
+
+<%- include("../../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Reference and change DisplayObject properties 'rotation'.</h2>
+                <ol>
+                    <li><a href="<%= path %>">Home</a></li>
+                    <li><a href="<%= path %>tutorials">Tutorials</a></li>
+                    <li>Day 10</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Tutorial List Section ======= -->
+    <section id="tutorials" class="padd-section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 offset-md-3">
+
+            <h3>rotation</h3>
+            <p>rotation angle of the DisplayObject. The unit is degrees (°). Negative values and values greater than 360° can be specified, but internally they will be replaced with the range of 0 to 360°.</p>
+            <p class="tutorial-image"><img src="<%= path %>assets/img/tutorial/rotation.svg" alt="rotation image"></p>
+
+            <h5>Example</h5>
+            <p><pre>const {Shape, BitmapData} = next2d.display;
+const image = new Image();
+image.src = "[[image path]]";
+
+const bitmapData = new BitmapData();
+bitmapData.image = image;
+
+// rotation 45
+const shape1 = new Shape();
+shape1
+    .graphics
+    .beginBitmapFill(bitmapData)
+    .drawRect(0, 0, bitmapData.width, bitmapData.height);
+
+shape1.rotation = 45;
+
+// rotation -45
+const shape2 = new Shape();
+shape2
+    .graphics
+    .beginBitmapFill(bitmapData)
+    .drawRect(0, 0, bitmapData.width, bitmapData.height);
+
+shape2.rotation = -45;
+
+// rotation 405
+const shape3 = new Shape();
+shape3
+    .graphics
+    .beginBitmapFill(bitmapData)
+    .drawRect(0, 0, bitmapData.width, bitmapData.height);
+
+shape2.rotation = 405;</pre></p>
+
+            <p><a class="float-end read-more" href="11.html">next day</a></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End List Section -->
+
+</main><!-- End #main -->
+
+<%- include("../../_include/_footer", { "path": path }); %>

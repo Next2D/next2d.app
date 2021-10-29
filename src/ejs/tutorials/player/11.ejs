@@ -1,0 +1,76 @@
+<% const title = "Next2D Player | Tutorial & Pocket Reference | Reference and change DisplayObject properties 'visible'"; %>
+<% const description = "Properties that show/hide the DisplayObject. The data type is Boolean and defaults to true; assigning false will hide the DisplayObject. Hidden objects cannot get user events such as mouse, tap, and so on."; %>
+<% const path = "../../"; %>
+
+<%- include("../../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Reference and change DisplayObject properties "visible".</h2>
+                <ol>
+                    <li><a href="<%= path %>">Home</a></li>
+                    <li><a href="<%= path %>tutorials">Tutorials</a></li>
+                    <li>Day 11</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Tutorial List Section ======= -->
+    <section id="tutorials" class="padd-section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 offset-md-3">
+
+            <h3>visible</h3>
+            <p>Properties that show/hide the DisplayObject. The data type is Boolean and defaults to true; assigning false will hide the DisplayObject. Hidden objects cannot get user events such as mouse, tap, and so on.</p>
+            <p class="tutorial-image"><img src="<%= path %>assets/img/tutorial/visible.svg" alt="visible image"></p>
+
+            <h5>Example</h5>
+            <p><pre>const {Shape, Sprite} = next2d.display;
+// rotation 45
+const shape = new Shape();
+shape
+    .graphics
+    .drawRect(0, 0, 100, 50);
+
+const {MouseEvent} = next2d.events;
+
+const sprite1 = new Sprite();
+sprite1.addChild(shape);
+sprite1.visible = true;
+
+sprite1.addEventListener(MouseEvent.CLICK, (e) =>
+{
+    console.log("active");
+});
+
+const sprite2 = new Sprite();
+sprite2.addChild(shape);
+sprite2.visible = false;
+
+sprite2.addEventListener(MouseEvent.CLICK, (e) =>
+{
+    console.log("inactive");
+});</pre></p>
+
+            <p><a class="float-end read-more" href="12.html">next day</a></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End List Section -->
+
+</main><!-- End #main -->
+
+<%- include("../../_include/_footer", { "path": path }); %>

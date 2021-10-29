@@ -1,0 +1,85 @@
+<% const title = "Next2D Player | Tutorial & Pocket Reference | DisplayList,DisplayObject and DisplayObjectContainer"; %>
+<% const description = "DisplayList consists of three major elements: 'Stage', 'DisplayObjectContainer', and 'DisplayObject'."; %>
+<% const path = "../../"; %>
+
+<%- include("../../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>DisplayList,DisplayObject and DisplayObjectContainer.</h2>
+                <ol>
+                    <li><a href="<%= path %>">Home</a></li>
+                    <li><a href="<%= path %>tutorials">Tutorials</a></li>
+                    <li>Day 01</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Tutorial List Section ======= -->
+    <section id="tutorials" class="padd-section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 offset-md-3">
+            <h3>DisplayList</h3>
+            <p>DisplayList consists of three major elements: 'Stage', 'DisplayObjectContainer', and 'DisplayObject'.</p>
+
+            <h4>Stage</h4>
+            <p>'Stage' is an object that holds all 'DisplayObject'.</p>
+
+            <h4>DisplayObjectContainer</h4>
+            <p>'DisplayObjectContainer' is a DisplayObject from which DisplayObjects can be hung.' There are four classes that inherit from 'DisplayObjectContainer' as follows.
+              <ul>
+                <li>Loader</li>
+                <li>MovieClip</li>
+                <li>Sprite</li>
+                <li>Stage</li>
+              </ul>
+            </p>
+
+            <h4>DisplayObject</h4>
+            <p>'DisplayObject' is an object that performs the drawing process. There are the following nine classes that inherit from 'DisplayObject'.
+              <ul>
+                <li>DisplayObjectContainer</li>
+                <li>Loader</li>
+                <li>MovieClip</li>
+                <li>Sprite</li>
+                <li>Stage</li>
+                <li>InteractiveObject</li>
+                <li>Shape</li>
+                <li>TextField</li>
+                <li>Video</li>
+              </ul>
+            </p>
+            <p class="tutorial-image"><img src="<%= path %>assets/img/tutorial/succession-relation.svg" alt="succession relation"></p>
+
+            <h4>Adding Objects</h4>
+            <p>To add a 'DisplayObject' to a 'DisplayObjectContainer', use the addChild method of the DisplayObjectContainer.</p>
+
+            <h5>Example</h5>
+            <p><pre>const {TextField} = next2d.text;
+const textField = new TextField();
+textField.text = "Hello, World.";
+const root = next2d.createRootMovieClip();
+root.addChild(textField);</pre></p>
+
+            <p><a class="float-end read-more" href="2.html">next day</a></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End List Section -->
+
+</main><!-- End #main -->
+
+<%- include("../../_include/_footer", { "path": path }); %>

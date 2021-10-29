@@ -1,0 +1,61 @@
+<% const title = "Next2D Player | Tutorial & Pocket Reference | Reference and change DisplayObject properties 'name'"; %>
+<% const description = "A property that represents an instance name. Both reference and substitution are possible."; %>
+<% const path = "../../"; %>
+
+<%- include("../../_include/_header", {
+    "title": title,
+    "description": description,
+    "path": path
+}); %>
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Reference and change DisplayObject properties 'name'.</h2>
+                <ol>
+                    <li><a href="<%= path %>">Home</a></li>
+                    <li><a href="<%= path %>tutorials">Tutorials</a></li>
+                    <li>Day 08</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Tutorial List Section ======= -->
+    <section id="tutorials" class="padd-section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 offset-md-3">
+            <h3>name</h3>
+            <p>A property that represents an instance name. Both reference and substitution are possible.</p>
+
+            <h5>Example</h5>
+            <p><pre>const {Sprite} = next2d.display;
+const sprite1 = new Sprite();
+sprite1.name = "sprite1";
+
+const {Shape} = next2d.display;
+const shape1 = new Shape();
+shape1.name = "shape1";
+
+sprite1.addChild(shape1);
+
+console.log(shape1.name); // shape1
+console.log(shape1.parent.name); // sprite1
+</pre></p>
+
+            <p><a class="float-end read-more" href="9.html">next day</a></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End List Section -->
+
+</main><!-- End #main -->
+
+<%- include("../../_include/_footer", { "path": path }); %>

@@ -3,7 +3,7 @@
     <url>
         <loc>https://next2d.app/</loc>
         <priority>1.0</priority>
-        <lastmod>2021-10-05</lastmod>
+        <lastmod>2021-11-04</lastmod>
     </url>
     <url>
         <loc>https://next2d.app/usage/</loc>
@@ -11,9 +11,9 @@
         <lastmod>2021-10-05</lastmod>
     </url>
     <url>
-        <loc>https://next2d.app/tutorials/</loc>
+        <loc>https://next2d.app/tutorials/player/</loc>
         <priority>0.7</priority>
-        <lastmod>2021-10-05</lastmod>
+        <lastmod>2021-11-04</lastmod>
     </url>
     <url>
         <loc>https://next2d.app/privacy/</loc>

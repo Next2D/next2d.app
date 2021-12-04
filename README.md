@@ -12,7 +12,7 @@ It is a library that fully supports WebGL, allowing you to create rich, interact
 [Player Features](https://next2d.app/#player)
 
 ## Next2D NoCode Tool
-An animation creation tool based mainly on NoCode development, You can intuitively create the animation you have imagined, and the exported data can be easily published by uploading it to the web.\
+This is an authoring tool that runs on a web browser, mainly for NoCode development, You can intuitively create the animation you have imagined, and the exported data can be easily published by uploading it to the Web.
 [NoCode Tool Features](https://next2d.app/#tool)
 
 ## Next2D Framework

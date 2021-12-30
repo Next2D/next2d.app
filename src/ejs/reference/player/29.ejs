@@ -1,0 +1,53 @@
+<% const title = "Next2D Player | Tutorial & Pocket Reference | Find out the coordinates of the mouse/touch pointer"; %>
+<% const path = "../../../"; %>
+<%- include("../../_include/_header", {
+    "title": title,
+    "path": path
+}); %>
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Find out the coordinates of the mouse/touch pointer.</h2>
+                <ol>
+                    <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
+                    <li><a href="<%= path %>${{ main.lang }}$/reference/player">Reference</a></li>
+                    <li>Day 29</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Tutorial List Section ======= -->
+    <section id="tutorials" class="padd-section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 offset-md-3">
+
+            <h3>mouseX/mouseY</h3>
+            <p>Indicates the x-coordinate (mouseX) and y-coordinate (mouseY) of the mouse/touch pointer. Note that, unlike the x and y properties, the coordinates are not local to the parent container.</p>
+
+            <h5>Example</h5>
+            <p><pre>const {MouseEvent} = next2d.events;
+
+this.addEventListener(MouseEvent.MOUSE_MOVE, (event) =>
+{
+    console.log(event.target.mouseX, event.target.mouseY);
+});
+</pre></p>
+
+<!--             <p><a class="float-end read-more" href="30.html">next day</a></p> -->
+          </div>
+        </div>
+      </div>
+    </section><!-- End List Section -->
+
+</main><!-- End #main -->
+
+<%- include("../../_include/_footer", { "path": path }); %>

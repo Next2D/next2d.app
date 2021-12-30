@@ -1,12 +1,11 @@
 <% const title = "Next2D | Documentation"; %>
 <% const description = "Next2D Documentation"; %>
-<% const path = "../"; %>
+<% const path = "../../"; %>
 
 <%- include("../_include/_header", {
     "title": title,
     "description": description,
-    "path": path,
-    "player": "off"
+    "path": path
 }); %>
 
 <main id="main">
@@ -17,7 +16,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <h2>Privacy Policy</h2>
                 <ol>
-                    <li><a href="<%= path %>">Home</a></li>
+                    <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
                     <li>Privacy Policy</li>
                 </ol>
             </div>

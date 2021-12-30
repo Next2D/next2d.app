@@ -2,74 +2,74 @@
 <section id="framework" class="padd-section text-center">
     <div class="container" data-aos="fade-up">
       <div class="section-title text-center">
-        <h2>Framework Features.</h2>
-        <img src="assets/img/framework/logo.svg" width="120px" height="120px" alt="Next2D Framework">
-        <p class="separator">Support systematic team development.</p>
+        <h2>${{ framework.title }}$</h2>
+        <img src="<%= path %>assets/img/framework/logo.svg" width="120px" height="120px" alt="Next2D Framework">
+        <p class="separator">${{ framework.description }}$</p>
       </div>
 
       <div class="row" data-aos="fade-up" data-aos-delay="100">
 
         <div class="col-md-6 col-lg-3">
           <div class="feature-block">
-            <img loading="lazy" src="assets/img/framework/feature-01.svg" width="60px" height="60px" alt="Open Source">
-            <h4>Open Source</h4>
-            <p>Next2D Framework is available free of charge as open source software for personal and commercial use.</p>
+            <img loading="lazy" src="<%= path %>assets/img/framework/feature-01.svg" width="60px" height="60px" alt="Open Source">
+            <h4>${{ framework.feature1-title }}$</h4>
+            <p>${{ framework.feature1-description }}$</p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3">
           <div class="feature-block">
-            <img loading="lazy" src="assets/img/framework/feature-02.svg" width="60px" height="60px" alt="Quick Start">
-            <h4>Quick Start</h4>
-            <p>You can create a Next2D app by simply executing one command without any build settings.<br>[Command]<br>npx create-next2d-app app-name</p>
+            <img loading="lazy" src="<%= path %>assets/img/framework/feature-02.svg" width="60px" height="60px" alt="Quick Start">
+            <h4>${{ framework.feature2-title }}$</h4>
+            <p>${{ framework.feature2-description }}$<br>[Command]<br><pre>npx create-next2d-app app-name</pre></p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3">
           <div class="feature-block">
-            <img loading="lazy" src="assets/img/framework/feature-03.svg" width="60px" height="60px" alt="MVVM pattern.">
-            <h4>MVVM pattern</h4>
-            <p>Model-View-ViewModel (MVVM) pattern, looking toward a future where UI designers and programmers collaborate to create applications.</p>
+            <img loading="lazy" src="<%= path %>assets/img/framework/feature-03.svg" width="60px" height="60px" alt="MVVM pattern.">
+            <h4>${{ framework.feature3-title }}$</h4>
+            <p>${{ framework.feature3-description }}$</p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3">
           <div class="feature-block">
-            <img loading="lazy" src="assets/img/framework/feature-04.svg" width="60px" height="60px" alt="team development">
-            <h4>team development</h4>
-            <p>Fixed development pattern (MVVM) for readability and simplified sharing.</p>
+            <img loading="lazy" src="<%= path %>assets/img/framework/feature-04.svg" width="60px" height="60px" alt="team development">
+            <h4>${{ framework.feature4-title }}$</h4>
+            <p>${{ framework.feature4-description }}$</p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3">
           <div class="feature-block">
-            <img loading="lazy" src="assets/img/framework/feature-05.svg" width="60px" height="60px" alt="Work with NoCode Tool">
-            <h4>Work with NoCode Tool</h4>
-            <p>As in the Flash era, symbol management is possible, allowing animators and programmers to create applications without conflicts.</p>
+            <img loading="lazy" src="<%= path %>assets/img/framework/feature-05.svg" width="60px" height="60px" alt="Work with NoCode Tool">
+            <h4>${{ framework.feature5-title }}$</h4>
+            <p>${{ framework.feature5-description }}$</p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3">
           <div class="feature-block">
-            <img loading="lazy" src="assets/img/framework/feature-06.svg" width="60px" height="60px" alt="Single Page Application">
-            <h4>Single Page Application</h4>
-            <p>It is now possible to manage scenes by URL, which has been difficult with previous Canvas/WebGL applications.</p>
+            <img loading="lazy" src="<%= path %>assets/img/framework/feature-06.svg" width="60px" height="60px" alt="Single Page Application">
+            <h4>${{ framework.feature6-title }}$</h4>
+            <p>${{ framework.feature6-description }}$</p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3">
           <div class="feature-block">
-            <img loading="lazy" src="assets/img/framework/feature-07.svg" width="60px" height="60px" alt="OUTPUT">
-            <h4>OUTPUT</h4>
-            <p>You can easily export each environment and consolidate the files into one.</p>
+            <img loading="lazy" src="<%= path %>assets/img/framework/feature-07.svg" width="60px" height="60px" alt="OUTPUT">
+            <h4>${{ framework.feature7-title }}$</h4>
+            <p>${{ framework.feature7-description }}$</p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3">
           <div class="feature-block">
-            <img loading="lazy" src="assets/img/framework/feature-08.svg" width="60px" height="60px" alt="Documentation and Tutorials">
-            <h4>Documentation/Tutorials</h4>
-            <p>Extensive documentation and tutorials to support you from initial learning to practical use.</p>
+            <img loading="lazy" src="<%= path %>assets/img/framework/feature-08.svg" width="60px" height="60px" alt="Documentation and Tutorials">
+            <h4>${{ framework.feature8-title }}$</h4>
+            <p>${{ framework.feature8-description }}$</p>
           </div>
         </div>
 
@@ -79,7 +79,7 @@
       <nav class="feature-nav">
         <ul class="list-unstyled">
           <li><a href="https://github.com/Next2D/Framework" class="btn"><i class="bi bi-github"></i> GitHub</a></li>
-          <li><a href="<%= path %>docs/framework" class="btn"><i class="bi bi-book"></i> API Docs</a></li>
+          <li><a href="<%= path %>docs/framework" class="btn"><i class="bi bi-book"></i> ${{ main.docs-title }}$</a></li>
 <!--           <li><a href="<%= path %>tutorials/framework" class="btn"><i class="bi bi-lightbulb"></i> Tutorial & Reference</a></li> -->
 <!--           <li><a href="<%= path %>examples/framework" class="btn"><i class="bi bi-code-slash"></i> Example</a></li> -->
         </ul>

@@ -1,0 +1,20 @@
+{
+  "title": "Player Features.",
+  "description": "Aims to provide a fast 2D player.",
+  "feature1-title": "Open Source",
+  "feature1-description": "Next2D Player is available free of charge as open source software for personal and commercial use.",
+  "feature2-title": "Fast Rendering",
+  "feature2-description": "Experience lightweight, fast, and beautiful anti-aliased rendering.",
+  "feature3-title": "Full WebGL support",
+  "feature3-description": "The emulation technology of \"swf2js\" is ported to realize Flash-like rendering such as Filter and Shape in WebGL.",
+  "feature4-title": "Various Text Functions",
+  "feature4-description": "Various text features such as fixed text, dynamic text input, and HTML text are included.",
+  "feature5-title": "Multi-Platform Support",
+  "feature5-description": "Deliver interactive and visually appealing content from desktop to mobile with a single piece of code.",
+  "feature6-title": "Browser Support",
+  "feature6-description": "It is interoperable with the latest desktop and mobile browsers, and has been thoroughly tested to deliver performance and reliability across the widest possible range of browsers.",
+  "feature7-title": "API",
+  "feature7-description": "Extensive documentation, sample code, and tutorials for initial introduction make it easy for new and old developers to get up to speed quickly.",
+  "feature8-title": "MP3/MP4",
+  "feature8-description": "Supports reading audio and video, including MP3 and MP4."
+}

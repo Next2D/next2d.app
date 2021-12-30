@@ -1,26 +1,10 @@
 <% const title = "Next2D | Rendering Engine, NoCode Tool, Underlying Framework."; %>
-<% const description = "Next2D libraries and tool. Rendering Engine, NoCode Tool, Underlying Framework. 2D entertainment development made easy! Fast! Comfortable!"; %>
-<% const path = "./"; %>
+<% const path = "../"; %>
 
 <%- include("./_include/_header", {
     "title": title,
-    "description": description,
-    "path": path,
-    "player": "on"
+    "path": path
 }); %>
-
-    <!-- ======= Hero Section ======= -->
-    <section id="hero">
-      <div class="hero-container" data-aos="fade-in">
-        <h1>Next2D</h1>
-        <h2>2D entertainment development made easy! Fast! Comfortable!</h2>
-        <div data-aos="zoom-out" data-aos-delay="100" id="next2d"></div>
-        <script type="text/javascript">
-          next2d.load("assets/js/sample.json", { "tagId": "next2d", "bgColor": false });
-        </script>
-        <a href="#get-started" class="btn scrollto">Get Started</a>
-      </div>
-    </section><!-- End Hero Section -->
 
     <main id="main">
 
@@ -29,39 +13,45 @@
 
         <div class="container" data-aos="fade-up">
           <div class="section-title text-center">
-            <h2>Next2D libraries and tool.</h2>
-            <p class="separator">Rendering Engine, NoCode Tool, Underlying Framework.</p>
+            <h2>${{ main.title }}$</h2>
+            <p class="separator">${{ main.description }}$</p>
           </div>
         </div>
 
         <div class="container">
 
+          <div class="row text-center top-image">
+            <div class="col-md-12" data-aos="zoom-in" data-aos-delay="0">
+                <img loading="lazy" class="img-fluid" src="<%= path %>assets/img/image.png" width="600" title="Next2D Project Image">
+            </div>
+          </div>
+
           <div class="row">
 
-            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-md-4 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
               <div class="feature-block">
-                <img loading="lazy" src="assets/img/player/logo.svg" width="60px" height="60px" alt="Player">
+                <img loading="lazy" src="<%= path %>assets/img/player/logo.svg" width="60px" height="60px" alt="Player">
                 <h4>Player</h4>
-                <p>It is a library that fully supports WebGL, allowing you to create rich, interactive graphics, cross-platform applications, and games without having to deal with browser or device compatibility.</p>
-                <a class="scrollto" href="#player">read more</a>
+                <p>${{ main.player-description }}$</p>
+                <a class="scrollto" href="#player">${{ main.read-more }}$</a>
               </div>
             </div>
 
-            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="col-md-4 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
               <div class="feature-block">
-                <img loading="lazy" src="assets/img/tool/logo.svg" width="60px" height="60px" alt="NoCode Tool">
+                <img loading="lazy" src="<%= path %>assets/img/tool/logo.svg" width="60px" height="60px" alt="NoCode Tool">
                 <h4>NoCode Tool</h4>
-                <p>This is an authoring tool that runs on a web browser, mainly for NoCode development, You can intuitively create the animation you have imagined, and the exported data can be easily published by uploading it to the Web.</p>
-                <a class="scrollto" href="#tool">read more</a>
+                <p>${{ main.tool-description }}$</p>
+                <a class="scrollto" href="#tool">${{ main.read-more }}$</a>
               </div>
             </div>
 
-            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="col-md-4 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
               <div class="feature-block">
-                <img loading="lazy" src="assets/img/framework/logo.svg" width="60px" height="60px" alt="Framework">
+                <img loading="lazy" src="<%= path %>assets/img/framework/logo.svg" width="60px" height="60px" alt="Framework">
                 <h4>Framework</h4>
-                <p>MVVM architecture is adopted. It supports efficient development for individuals and teams, regardless of scale, using modern development methods.</p>
-                <a class="scrollto" href="#framework">read more</a>
+                <p>${{ main.framework-description }}$</p>
+                <a class="scrollto" href="#framework">${{ main.read-more }}$</a>
               </div>
             </div>
 
@@ -84,7 +74,7 @@
 
             <div class="col-md-12 col-lg-12" data-aos="zoom-in" data-aos-delay="100">
               <div class="feature-block">
-                <img loading="lazy" src="assets/img/roadmap.svg" alt="Develop Roadmap" width="70vw">
+                <img loading="lazy" class="img-fluid" src="<%= path %>assets/img/roadmap.svg" alt="Develop Roadmap" width="70vw">
               </div>
             </div>
 
@@ -111,7 +101,7 @@
 
             <div class="section-title text-center">
               <h2>Contact</h2>
-              <p class="separator">Please feel free to contact us.</p>
+              <p class="separator">${{ main.contact }}$</p>
             </div>
 
             <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
@@ -139,4 +129,6 @@
 
     </main><!-- End #main -->
 
-<%- include("./_include/_footer", { "path": path }); %>
+<%- include("./_include/_footer", {
+    "path": path
+}); %>

@@ -1,0 +1,20 @@
+{
+  "title": "NoCode Toolの特徴",
+  "description": "Webブラウザ上で動作するオーサリングツールです。",
+  "feature1-title": "ノーコード",
+  "feature1-description": "コードを書くことなく、思い描いたアニメーションを直感的に作成することができ、書き出したデータはWebにアップロードすることで簡単に公開することができます。",
+  "feature2-title": "インストール不要",
+  "feature2-description": "アクセスすれば誰でもすぐに利用できるWebサービスです。",
+  "feature3-title": "トランスフォーム",
+  "feature3-description": "マウスを使って、コンテンツの上下左右への移動、変形、拡大・縮小、回転などが簡単にでき、色の追加や減算も可能です。",
+  "feature4-title": "ブレンドモード",
+  "feature4-description": "足し算、引き算、掛け算、反転などの視覚効果をマウスで追加、削除ができ、それらを簡単に操作することができます。",
+  "feature5-title": "フィルター",
+  "feature5-description": "ブラー、グロー、ドロップシャドウ、グラデーションなどのフィルターをマウスで簡単に追加、削除ができ、それらを簡単に操作することができます。",
+  "feature6-title": "イージング",
+  "feature6-description": "The easing function allows you to make your animations more realistic and dynamic.",
+  "feature7-title": "書き出し",
+  "feature7-description": "JSON、WEBM、アニメーションGIFへの書き出しが可能で、JSONはNext2D Playerで読み込みし描画する事ができます。",
+  "feature8-title": "SWF",
+  "feature8-description": "簡易的ではありますが、SWFファイルの読み込みも可能です。"
+}

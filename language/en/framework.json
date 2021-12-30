@@ -1,0 +1,20 @@
+{
+  "title": "Framework Features.",
+  "description": "It is a framework that simplifies readability and shareability by fixing development patterns.",
+  "feature1-title": "Open Source",
+  "feature1-description": "Next2D Framework is available free of charge as open source software for personal and commercial use.",
+  "feature2-title": "Quick Start",
+  "feature2-description": "You can create an application by simply executing the following command.",
+  "feature3-title": "MVVM Pattern",
+  "feature3-description": "Model-View-ViewModel (MVVM) pattern, looking toward a future where UI designers and programmers collaborate to create applications.",
+  "feature4-title": "Team Development",
+  "feature4-description": "Fixed development patterns (MVVM) for readability and simplified sharing. It allows for comfortable team development.",
+  "feature5-title": "Cooperation with NoCode Tool",
+  "feature5-description": "As in the Flash era, symbol management is possible, allowing animators and programmers to create applications without conflicts.",
+  "feature6-title": "Single Page Application",
+  "feature6-description": "It is now possible to manage scenes by URL, which has been difficult with previous Canvas/WebGL applications.",
+  "feature7-title": "Output",
+  "feature7-description": "Multiple environment variables can be easily exported and combined into a single file.",
+  "feature8-title": "Documentation/Tutorials",
+  "feature8-description": "Extensive documentation and tutorials support you from learning to practical use."
+}

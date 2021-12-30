@@ -5,25 +5,25 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title><%= title %></title>
-    <meta content="<%= description %>" name="description">
+    <meta content="${{ header.description }}$" name="description">
     <meta content="Next2D,Next2D Player,NoCode Tool,Next2D Framework" name="keywords">
 
     <!-- Google / Search Engine Tags -->
-    <meta itemprop="name" content="Next2D | Rendering Engine, NoCode Tool, Underlying Framework.">
-    <meta itemprop="description" content="Next2D Libraries and Tool. Rendering Engine, NoCode Tool, Underlying Framework. 2D entertainment development made easy! Fast! Comfortable!">
+    <meta itemprop="name" content="<%= title %>">
+    <meta itemprop="description" content="${{ header.description }}$">
     <meta itemprop="image" content="https://next2d.app/assets/img/ogp.png">
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://next2d.app">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Next2D | Rendering Engine, NoCode Tool, Underlying Framework.">
-    <meta property="og:description" content="Next2D libraries and tool. Rendering Engine, NoCode Tool, Underlying Framework. 2D entertainment development made easy! Fast! Comfortable!">
+    <meta property="og:title" content="<%= title %>">
+    <meta property="og:description" content="${{ header.description }}$">
     <meta property="og:image" content="https://next2d.app/assets/img/ogp.png">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Next2D | Rendering Engine, NoCode Tool, Underlying Framework.">
-    <meta name="twitter:description" content="Next2D libraries and tool. Rendering Engine, NoCode Tool, Underlying Framework. 2D entertainment development made easy! Fast! Comfortable!">
+    <meta name="twitter:title" content="<%= title %>">
+    <meta name="twitter:description" content="${{ header.description }}$">
     <meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png">
 
     <!-- Favicons -->
@@ -37,10 +37,6 @@
 
     <!-- Template Main CSS File -->
     <link href="<%= path %>assets/css/main.min.css" rel="stylesheet">
-
-<% if (player === "on") { %>
-    <script src="<%= path %>assets/js/next2d.js"></script>
-<% } %>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script>
@@ -60,38 +56,43 @@
       <div class="container d-flex align-items-center justify-content-between">
 
         <div id="logo">
-          <a href="<%= path %>"><img loading="lazy" src="<%= path %>assets/img/logo.svg" alt="Next2D Rendering Engine, NoCode Tool, Underlying Framework." title="Next2D Rendering Engine, NoCode Tool, Underlying Framework." /></a>
+          <a href="<%= path %>${{ main.lang }}$"><img loading="lazy" src="<%= path %>assets/img/logo.svg" alt="Next2D Rendering Engine, NoCode Tool, Underlying Framework." title="Next2D Rendering Engine, NoCode Tool, Underlying Framework." /></a>
         </div>
 
         <nav id="navbar" class="navbar">
           <ul class="list-unstyled">
-            <li><a class="nav-link scrollto" href="<%= path %>#hero">Home</a></li>
-            <li><a class="nav-link scrollto" href="<%= path %>#get-started">About</a></li>
-            <li><a class="nav-link scrollto" href="<%= path %>#roadmap">Roadmap</a></li>
+            <li><a class="nav-link scrollto" href="<%= path %>${{ main.lang }}$/#get-started">Home</a></li>
+            <li><a class="nav-link scrollto" href="<%= path %>${{ main.lang }}$/#roadmap">Roadmap</a></li>
             <li class="dropdown"><a class="nav-link scrollto" href="#"><span>Player</span> <i class="bi bi-chevron-down"></i></a>
               <ul>
                 <li><a href="https://github.com/Next2D/Player">GitHub</a></li>
-                <li><a href="<%= path %>docs/player">API Docs</a></li>
-                <li><a href="<%= path %>tutorials/player">Tutorial & Reference</a></li>
-                <li><a href="<%= path %>#player">Features</a></li>
+                <li><a href="<%= path %>docs/player">${{ main.docs-title }}$</a></li>
+                <li><a href="<%= path %>${{ main.lang }}$/reference/player">${{ main.reference-title }}$</a></li>
+                <li><a href="<%= path %>${{ main.lang }}$/#player">${{ main.features-title }}$</a></li>
               </ul>
             </li>
             <li class="dropdown"><a class="nav-link scrollto" href="#"><span>NoCode Tool</span> <i class="bi bi-chevron-down"></i></a>
               <ul>
                 <li><a href="https://tool.next2d.app">Web Site</a></li>
-                <li><a href="<%= path %>usage">Usage</a></li>
+                <li><a href="<%= path %>${{ main.lang }}$/usage">${{ main.usage-title }}$</a></li>
                 <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos">YouTube</a></li>
-                <li><a href="<%= path %>#tool">Features</a></li>
+                <li><a href="<%= path %>${{ main.lang }}$/#tool">${{ main.features-title }}$</a></li>
               </ul>
             </li>
             <li class="dropdown"><a class="nav-link scrollto" href="#"><span>Framework</span> <i class="bi bi-chevron-down"></i></a>
               <ul>
                 <li><a href="https://github.com/Next2D/Framework">GitHub</a></li>
-                <li><a href="<%= path %>docs/framework">API Docs</a></li>
-                <li><a href="<%= path %>#framework">Features</a></li>
+                <li><a href="<%= path %>docs/framework">${{ main.docs-title }}$</a></li>
+                <li><a href="<%= path %>${{ main.lang }}$/#framework">${{ main.features-title }}$</a></li>
               </ul>
             </li>
-            <li><a class="nav-link scrollto" href="<%= path %>#contact">Contact</a></li>
+            <li class="dropdown"><a class="nav-link scrollto" href="#"><span>Language</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="<%= path %>en">English</a></li>
+                <li><a href="<%= path %>ja">日本語</a></li>
+              </ul>
+            </li>
+            <li><a class="nav-link scrollto" href="<%= path %>${{ main.lang }}$/#contact">Contact</a></li>
           </ul>
 
           <i class="bi bi-list mobile-nav-toggle"></i>

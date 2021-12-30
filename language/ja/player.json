@@ -1,0 +1,20 @@
+{
+  "title": "Playerの特徴",
+  "description": "高速な2Dプレーヤーを目指しています。",
+  "feature1-title": "オープンソース",
+  "feature1-description": "Next2D Playerは、オープンソースソフトウェアとして、個人・商用を問わず無償で利用することができます。",
+  "feature2-title": "高速レンダリング",
+  "feature2-description": "軽量、高速、美しいアンチエイリアスレンダリングを体験してください。",
+  "feature3-title": "WebGLに対応",
+  "feature3-description": "「swf2js」のエミュレーション技術を移植し、FilterやShapeなどのFlashライクな描画をWebGLで実現してます。",
+  "feature4-title": "多彩なテキスト機能",
+  "feature4-description": "固定テキスト、動的テキスト入力、HTMLテキストなど、さまざまなテキスト機能を搭載しています。",
+  "feature5-title": "マルチプラットフォームへの対応",
+  "feature5-description": "デスクトップからモバイルまで、インタラクティブで視覚的に魅力的なコンテンツを、単一のコードで提供します。",
+  "feature6-title": "対応ブラウザ",
+  "feature6-description": "最新のデスクトップおよびモバイルブラウザとの相互運用が可能で、可能な限り幅広いブラウザで、パフォーマンスと信頼性を実現するための徹底的なテストが行われています。",
+  "feature7-title": "API",
+  "feature7-description": "豊富なドキュメント、サンプルコード、初期導入のためのチュートリアルにより、新旧の開発者がすぐに使いこなすことができるようになっています。",
+  "feature8-title": "MP3/MP4",
+  "feature8-description": "MP3、MP4などのオーディオ、ビデオの読み込みにも対応。"
+}

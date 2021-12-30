@@ -5,12 +5,12 @@
 body {
   background-color: #fff;
   color: #333;
-  font-family: "Helvetica Neue",
-  Arial,
-  "Hiragino Kaku Gothic ProN",
-  "Hiragino Sans",
-  Meiryo,
-  sans-serif;
+  font-family:
+      "Hiragino Sans",
+      "Helvetica Neue",
+      Arial,
+      Meiryo,
+      sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -97,6 +97,11 @@ span {
   text-decoration: none;
   font-size: 13px;
 }
+
+#main {
+  margin-top: 40px;
+}
+
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -385,11 +390,11 @@ span {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: calc(100vh - 40px);
+  text-align: center;
+  height: 100vh;
   background: url(../img/background.png) center bottom no-repeat;
   background-size: 100%;
   position: relative;
-  margin-top: 40px;
 }
 
 @media (min-width: 1025px) {
@@ -433,11 +438,22 @@ span {
   font-weight: 300;
 }
 
+#hero .hero-link {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
   #hero h2 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
+  }
+
+  #hero .hero-link {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 }
 
@@ -467,7 +483,7 @@ span {
   color: #fff;
 }
 
-#hero .btns a {
+#hero .btn a {
   color: #555;
   font-size: 11px;
   font-weight: 600;
@@ -478,19 +494,25 @@ span {
 }
 
 @media (max-width: 575px) {
-  #hero .btns a {
+  #hero .btn a {
     margin: 4px 8px;
   }
 }
 
-#hero .btns a:hover {
+#hero .btn a:hover {
   color: #1461A0;
+}
+
+#hero .btn {
+  width: 140px;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 #next2d {
   width: 768px;
   height: 398px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 
@@ -609,7 +631,13 @@ section {
 
 /* Get Started Section
 --------------------------------*/
-#get-started,
+#get-started {
+  margin-top: 10px;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
 #usage,
 #tutorials,
 #roadmap
@@ -626,6 +654,10 @@ section {
   background: #fff none repeat scroll 0 0;
   padding: 30px 20px;
   transition: all 0.5s ease-in-out 0s;
+}
+
+#get-started .top-image {
+  margin-bottom: 20px;
 }
 
 #get-started .feature-block img,

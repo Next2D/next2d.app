@@ -1,0 +1,20 @@
+{
+  "title": "Frameworkの特徴",
+  "description": "開発パターンを固定化することで可読性・共有性をシンプルにしたフレームワークです。",
+  "feature1-title": "オープンソース",
+  "feature1-description": "Next2D Frameworkは、オープンソースソフトウェアとして、個人・商用を問わず無償で利用することができます。",
+  "feature2-title": "クイックスタート",
+  "feature2-description": "下記のコマンドを実行するだけでアプリケーションを作成することができます。",
+  "feature3-title": "MVVMパターン",
+  "feature3-description": "UIデザイナーとプログラマーが協働してアプリケーションを作る未来を見据えて、MVVM（Model-View-ViewModel）パターンを採用しています。",
+  "feature4-title": "チーム開発",
+  "feature4-description": "開発パターンの固定化（MVVM）により、可読性と共有の簡素化を実現。快適なチーム開発ができます。",
+  "feature5-title": "NoCode Toolとの連携",
+  "feature5-description": "Flash時代と同様、シンボル管理が可能なので、アニメーターとプログラマーがコンフリクトすることなくアプリケーションを作成することができます。",
+  "feature6-title": "シングルページアプリケーション",
+  "feature6-description": "これまでのCanvas/WebGLアプリケーションでは困難だった、URLによるシーン管理が可能になりました。",
+  "feature7-title": "書き出し",
+  "feature7-description": "複数の環境変数を簡単にエクスポートして、ファイルを1つにまとめることができます。",
+  "feature8-title": "ドキュメント/チュートリアル",
+  "feature8-description": "豊富なドキュメントとチュートリアルで、学習から実用化までをサポートします。"
+}

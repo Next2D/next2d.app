@@ -1,0 +1,73 @@
+<% const title = "Next2D Player | Tutorial & Pocket Reference | Check if it overlaps with the specified coordinate (collision detection)"; %>
+<% const path = "../../../"; %>
+<%- include("../../_include/_header", {
+    "title": title,
+    "path": path
+}); %>
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Check if it overlaps with the specified coordinate (collision detection)</h2>
+                <ol>
+                    <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
+                    <li><a href="<%= path %>${{ main.lang }}$/reference/player">Reference</a></li>
+                    <li>Day 21</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Tutorial List Section ======= -->
+    <section id="tutorials" class="padd-section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 offset-md-3">
+
+            <h3>hitTestObject/hitTestPoint</h3>
+            <p>hitTestObject method is used to test the overlap between a DisplayObject and a DisplayObject. hitTestPoint method is used to test the overlap between a DisplayObject and a specified xy coordinate. For the third argument of the hitTestPoint method, set the test condition to "true" if the test is to be performed on an area with a line or fill, or "false" (default) if the test is to be performed on a bounding box.</p>
+            <p class="tutorial-image"><img src="<%= path %>assets/img/tutorial/hit-test.svg" alt="collision detection image"></p>
+
+            <h5>Example</h5>
+            <p><pre>const {Shape, Sprite} = next2d.display;
+const {MouseEvent} = next2d.events;
+
+const sprite = new Sprite();
+const shape = new Shape();
+
+shape
+    .graphics
+    .beginFill()
+    .drawCircle(0, 0, 50);
+
+sprite.name = "hitSprite";
+sprite.addChild(shape);
+
+sprite.x = 100;
+sprite.y = 100;
+this.addChild(sprite);
+
+this.stage.addEventListener(MouseEvent.CLICK, (e) =>
+{
+    const stage = e.currentTarget;
+    const root = stage.getChildAt(0);
+    if (root.hitSprite.hitTestPoint(stage.mouseX, stage.mouseY, true)) {
+        console.log("hit!");
+    }
+});</pre></p>
+
+            <p><a class="float-end read-more" href="22.html">next day</a></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End List Section -->
+
+</main><!-- End #main -->
+
+<%- include("../../_include/_footer", { "path": path }); %>

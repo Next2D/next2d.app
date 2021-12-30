@@ -4,18 +4,33 @@ const uglify      = require("gulp-uglify-es").default;
 const cleanCSS    = require("gulp-clean-css");
 const rename      = require("gulp-rename");
 const browserSync = require("browser-sync").create();
-const minimist    = require("minimist");
 const htmlmin     = require("gulp-htmlmin");
 const ejs         = require("gulp-ejs");
+const i18n        = require("gulp-html-i18n");
 
-const options = minimist(process.argv.slice(2), {
-    "boolean": [ "prodBuild" ],
-    "default": {
-        "prodBuild": false
-    }
-});
+/**
+ * @description TOPページを書き出し
+ * @return {*}
+ * @public
+ */
+const buildTopEJS = () =>
+{
+    return gulp
+        .src(["src/ejs/**/_top.ejs"])
+        .pipe(ejs())
+        .pipe(rename({
+            "basename": "index",
+            "extname": ".html"
+        }))
+        .pipe(gulp.dest("docs"));
+};
 
-const buildEJS = function ()
+/**
+ * @description EJSからHTMLを生成
+ * @return {*}
+ * @public
+ */
+const buildEJS = () =>
 {
     return gulp
         .src([
@@ -24,7 +39,7 @@ const buildEJS = function ()
         ])
         .pipe(ejs())
         .pipe(rename({ "extname": ".html" }))
-        .pipe(gulp.dest("docs"));
+        .pipe(gulp.dest("dist"));
 };
 
 /**
@@ -32,10 +47,10 @@ const buildEJS = function ()
  * @return {*}
  * @public
  */
-const minifyHTML = function ()
+const minifyHTML = () =>
 {
     return gulp
-        .src(["docs/index.html", "docs/**/*.html"])
+        .src(["docs/**/*.html"])
         .pipe(htmlmin({
             "collapseWhitespace" : true,
             "removeComments"     : true
@@ -48,17 +63,13 @@ const minifyHTML = function ()
  * @return {*}
  * @public
  */
-const buildJavaScript = function ()
+const buildJavaScript = () =>
 {
-    const build = gulp
+    return gulp
         .src(["src/javascript/*.js"])
-        .pipe(concat("main.min.js"));
-
-    if (options.prodBuild) {
-        build.pipe(uglify({ "output": { "comments": /^!/ } }));
-    }
-
-    return build.pipe(gulp.dest("docs/assets/js"));
+        .pipe(concat("main.min.js"))
+        .pipe(uglify({ "output": { "comments": /^!/ } }))
+        .pipe(gulp.dest("docs/assets/js"));
 };
 
 /**
@@ -66,7 +77,7 @@ const buildJavaScript = function ()
  * @return {*}
  * @public
  */
-const buildStyleSheet = function ()
+const buildStyleSheet = () =>
 {
     return gulp
         .src("src/stylesheet/*.css")
@@ -80,7 +91,7 @@ const buildStyleSheet = function ()
  * @return {void}
  * @public
  */
-const browser = function (done)
+const browser = (done) =>
 {
     browserSync.init({
         "server": {
@@ -97,7 +108,7 @@ const browser = function (done)
  * @return {void}
  * @public
  */
-const reload = function (done)
+const reload = (done) =>
 {
     browserSync.reload();
     done();
@@ -105,10 +116,27 @@ const reload = function (done)
 
 /**
  * @description ファイルを監視、変更があればビルドしてlocal serverを再読込
+ * @return {*}
+ * @public
+ */
+const buildLang = () =>
+{
+    return gulp
+        .src("dist/**/*.html")
+        .pipe(i18n({
+            "langDir": "./language",
+            "createLangDirs": true,
+            "renderEngine": "mustache"
+        }))
+        .pipe(gulp.dest("docs"));
+};
+
+/**
+ * @description ファイルを監視、変更があればビルドしてlocal serverを再読込
  * @return {void}
  * @public
  */
-const watchFiles = function ()
+const watchFiles = () =>
 {
     gulp
         .watch("src/stylesheet/*.css")
@@ -119,14 +147,25 @@ const watchFiles = function ()
         .on("change", gulp.series(buildJavaScript, reload));
 
     gulp
-        .watch("src/ejs/**/*.ejs")
-        .on("change", gulp.series(buildEJS, minifyHTML, reload));
+        .watch([
+            "src/ejs/**/*.ejs",
+            "language/**/*.json"
+        ])
+        .on("change", gulp.series(
+            buildEJS,
+            buildTopEJS,
+            buildLang,
+            minifyHTML,
+            reload
+        ));
 };
 
 exports.default = gulp.series(
     buildStyleSheet,
     buildJavaScript,
     buildEJS,
+    buildTopEJS,
+    buildLang,
     minifyHTML,
     browser,
     watchFiles
@@ -136,5 +175,7 @@ exports.build = gulp.series(
     buildStyleSheet,
     buildJavaScript,
     buildEJS,
+    buildTopEJS,
+    buildLang,
     minifyHTML
 );

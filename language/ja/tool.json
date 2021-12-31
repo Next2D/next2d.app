@@ -12,7 +12,7 @@
   "feature5-title": "フィルター",
   "feature5-description": "ブラー、グロー、ドロップシャドウ、グラデーションなどのフィルターをマウスで簡単に追加、削除ができ、それらを簡単に操作することができます。",
   "feature6-title": "イージング",
-  "feature6-description": "The easing function allows you to make your animations more realistic and dynamic.",
+  "feature6-description": "イージング機能により、よりリアルでダイナミックなアニメーションを作成することができます。",
   "feature7-title": "書き出し",
   "feature7-description": "JSON、WEBM、アニメーションGIFへの書き出しが可能で、JSONはNext2D Playerで読み込みし描画する事ができます。",
   "feature8-title": "SWF",

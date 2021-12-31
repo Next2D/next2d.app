@@ -1060,6 +1060,27 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Contributors
+--------------------------------------------------------------*/
+#contributors {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px 20px;
+}
+
+#contributors div {
+  width: 60px;
+  height: 60px;
+}
+
+#contributors img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+/*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 .footer {

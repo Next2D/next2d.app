@@ -148,7 +148,7 @@ const watchFiles = () =>
 
     gulp
         .watch([
-            "src/ejs/**/*.ejs",
+            "src/**/*.ejs",
             "language/**/*.json"
         ])
         .on("change", gulp.series(

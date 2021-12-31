@@ -639,7 +639,7 @@ section {
 }
 
 #usage,
-#tutorials,
+#references,
 #roadmap
 {
   display: inline-block;
@@ -831,19 +831,19 @@ section {
 
 /* Tutorial List Section
 --------------------------------*/
-#tutorials .container,
+#references .container,
 #usage .container
 {
   padding-top: 20px;
 }
 
-#tutorials .docs,
+#references .docs,
 #usage .docs
 {
   margin-bottom: 30px;
 }
 
-#tutorials .block-list .content-list,
+#references .block-list .content-list,
 #usage .block-list .content-list
 {
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 4px 0 rgba(0, 0, 0, 0.19);
@@ -854,7 +854,7 @@ section {
   margin-bottom: 30px;
 }
 
-#tutorials .block-list .content-list p,
+#references .block-list .content-list p,
 #usage .block-list .content-list p
 {
   line-height: 24px;
@@ -865,7 +865,7 @@ section {
   margin: 0;
 }
 
-#tutorials .block-list .content-list h4,
+#references .block-list .content-list h4,
 #usage .block-list .content-list h4
 {
   line-height: 24px;
@@ -875,7 +875,7 @@ section {
   font-size: 16px;
 }
 
-#tutorials .block-list .content-list h4 a,
+#references .block-list .content-list h4 a,
 #usage .block-list .content-list h4 a
 {
   color: #555;
@@ -883,20 +883,20 @@ section {
   transition: 0.3s;
 }
 
-#tutorials .block-list .content-list h4 a:hover,
+#references .block-list .content-list h4 a:hover,
 #usage .block-list .content-list h4 a:hover
 {
   color: #1461A0;
 }
 
-#tutorials .block-list .content-list > span,
+#references .block-list .content-list > span,
 #usage .block-list .content-list > span
 {
   float: left;
   font-size: 12px;
 }
 
-#tutorials .block-list .content-list a.read-more,
+#references .block-list .content-list a.read-more,
 #usage .block-list .content-list a.read-more
 {
   color: #505050;
@@ -908,13 +908,13 @@ section {
   text-transform: capitalize;
 }
 
-#tutorials .block-list .content-list a.read-more:hover,
+#references .block-list .content-list a.read-more:hover,
 #usage .block-list .content-list a.read-more:hover
 {
   color: #1461A0;
 }
 
-#tutorials .list-menu ul li a,
+#references .list-menu ul li a,
 #usage .list-menu ul li a
 {
   color: #222;
@@ -926,30 +926,30 @@ section {
   transition: 0.3s;
 }
 
-#tutorials .list-menu ul li a:hover,
+#references .list-menu ul li a:hover,
 #usage .list-menu ul li a:hover
 {
   color: #1461A0;
 }
 
-#tutorials .tutorial-image
+#references .tutorial-image
 {
   padding: 0;
   text-align: center;
   margin-top: 30px;
 }
 
-#tutorials .tutorial-image img
+#references .tutorial-image img
 {
   max-width: 90%;
 }
 
-#tutorials h3
+#references h3
 {
   margin-bottom: 10px;
 }
 
-#tutorials pre
+#references pre
 {
   max-width: 100%;
   background-color: #2a2c30;
@@ -959,6 +959,17 @@ section {
   margin-bottom: 30px;
   padding: 10px;
   text-align: left;
+}
+
+#references .next-chapter
+{
+  margin-top: 30px;
+}
+
+#references .example
+{
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 #example-preview

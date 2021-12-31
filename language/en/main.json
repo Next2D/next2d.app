@@ -10,5 +10,6 @@
   "tool-description": "This is an authoring tool that runs on a web browser, mainly for NoCode development, You can intuitively create the animation you have imagined, and the exported data can be easily published by uploading it to the Web.",
   "framework-description": "It is a framework dedicated to Next2D that enables scene management by URL (SPA), which has been difficult with conventional Canvas/WebGL applications, and simplifies readability and shareability by fixing the development pattern (MVVM).",
   "read-more": "read more",
+  "next-chapter": "Next Chapter",
   "contact": "Please feel free to contact us."
 }

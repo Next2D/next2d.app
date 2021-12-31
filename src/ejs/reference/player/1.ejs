@@ -15,28 +15,28 @@
                 <ol>
                     <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
                     <li><a href="<%= path %>${{ main.lang }}$/reference/player">Reference</a></li>
-                    <li>Day 01</li>
+                    <li>Chapter 01</li>
                 </ol>
             </div>
         </div>
     </section><!-- End Breadcrumbs -->
 
-    <!-- ======= Tutorial List Section ======= -->
-    <section id="tutorials" class="padd-section">
+    <!-- ======= Reference List Section ======= -->
+    <section id="references" class="padd-section">
 
       <div class="container" data-aos="fade-up">
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
 
-          <div class="col-md-6 offset-md-3">
+          <div class="col-md-8 offset-md-2">
             <h3>DisplayList</h3>
-            <p>DisplayList consists of three major elements: 'Stage', 'DisplayObjectContainer', and 'DisplayObject'.</p>
+            <p>${{ player-reference.chapter1.text1 }}$</p>
 
             <h4>Stage</h4>
-            <p>'Stage' is an object that holds all 'DisplayObject'.</p>
+            <p>${{ player-reference.chapter1.text2 }}$</p>
 
             <h4>DisplayObjectContainer</h4>
-            <p>'DisplayObjectContainer' is a DisplayObject from which DisplayObjects can be hung.' There are four classes that inherit from 'DisplayObjectContainer' as follows.
+            <p>${{ player-reference.chapter1.text3 }}$
               <ul>
                 <li>Loader</li>
                 <li>MovieClip</li>
@@ -46,7 +46,7 @@
             </p>
 
             <h4>DisplayObject</h4>
-            <p>'DisplayObject' is an object that performs the drawing process. There are the following nine classes that inherit from 'DisplayObject'.
+            <p>${{ player-reference.chapter1.text4 }}$
               <ul>
                 <li>DisplayObjectContainer</li>
                 <li>Loader</li>
@@ -59,19 +59,22 @@
                 <li>Video</li>
               </ul>
             </p>
-            <p class="tutorial-image"><img src="<%= path %>assets/img/tutorial/succession-relation.svg" alt="succession relation"></p>
+
+            <p class="tutorial-image"><img src="<%= path %>assets/img/tutorial/succession-relation.svg" alt="Inheritance Relationship Diagram"></p>
 
             <h4>Adding Objects</h4>
-            <p>To add a 'DisplayObject' to a 'DisplayObjectContainer', use the addChild method of the DisplayObjectContainer.</p>
+            <p>${{ player-reference.chapter1.text5 }}$</p>
 
-            <h5>Example</h5>
-            <p><pre>const {TextField} = next2d.text;
-const textField = new TextField();
-textField.text = "Hello, World.";
-const root = next2d.createRootMovieClip();
-root.addChild(textField);</pre></p>
+            <h4>Example</h4>
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 01" src="https://codepen.io/next2d/embed/OJxvVzO?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/OJxvVzO">
+                  [Next2D Reference] Chapter 01</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
 
-            <p><a class="float-end read-more" href="2.html">next day</a></p>
+            <p class="next-chapter"><a class="float-end read-more" href="2.html">${{ main.next-chapter }}$</a></p>
           </div>
         </div>
       </div>

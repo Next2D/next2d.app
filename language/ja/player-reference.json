@@ -1,0 +1,15 @@
+{
+  "chapter1": {
+    "text1": "DisplayListは大きく3つの要素から構成されています。Stage、DisplayObjectContainer、DisplayObjectの3つの主要な要素で構成されています。",
+    "text2": "Stageは全てのDisplayObjectを保持する親オブジェクトです。",
+    "text3": "DisplayObjectContainerはDisplayObjectを配置することができるDisplayObjectです。DisplayObjectContainerを継承するクラスは以下の4つです。",
+    "text4": "DisplayObjectは描画処理を実行するオブジェクトです。DisplayObjectを継承するクラスは以下の9つです。",
+    "text5": "DisplayObjectContainerにDisplayObjectを追加するには、DisplayObjectContainerのaddChildメソッドを使います。"
+  },
+  "chapter2": {
+    "text1": "indexは0から始まる連番の整数で、0が最も後ろ、それ以上の値が最も前になります。インデックスは負の値や、現在の最高値のインデックスに1を足した値より大きい数値にはできません。",
+    "text2": "addChildメソッドは、DisplayObjectContainerの最前面にDisplayObjectを追加するメソッドです。",
+    "text3": "addChildAtメソッドは、DisplayObjectContainer内の指定されたインデックス位置にDisplayObjectを追加します。",
+    "text4": "removeChildおよびremoveChildAtメソッドは、DisplayObjectContainerから指定されたDisplayObjectを削除するメソッドです。削除されたインデックスの後にDisplayObjectがある場合、それらはより小さいインデックス位置に再配置されます。"
+  }
+}

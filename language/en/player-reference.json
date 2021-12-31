@@ -1,5 +1,6 @@
 {
   "chapter1": {
+    "title": "DisplayList, DisplayObject, and DisplayObjectContainer.",
     "text1": "DisplayList consists of three major elements: 'Stage', 'DisplayObjectContainer', and 'DisplayObject'.",
     "text2": "'Stage' is an object that holds all 'DisplayObject'.",
     "text3": "'DisplayObjectContainer' is a 'DisplayObject' that can be used to place DisplayObjects, and it inherits from the following four classes.",
@@ -7,6 +8,7 @@
     "text5": "To add a 'DisplayObject' to a 'DisplayObjectContainer', use the addChild method of the DisplayObjectContainer."
   },
   "chapter2": {
+    "title": "Adding and removing DisplayObjects from DisplayObjectContainer.",
     "text1": "index is a sequentially numbered integer starting from 0, with 0 being the farthest back and higher values being the farthest forward. The index cannot be a negative value or a number greater than the current highest index plus one.",
     "text2": "addChild method adds a DisplayObject to the foremost position in the DisplayObjectContainer.",
     "text3": "addChildAt method adds a DisplayObject to the specified index position in the DisplayObjectContainer.",

@@ -1,0 +1,15 @@
+{
+  "lang": "cn",
+  "title": "下一个2D图书馆和工具",
+  "description": "渲染引擎，NoCode创作工具，以及底层框架。",
+  "docs-title": "API文件",
+  "reference-title": "参考资料",
+  "features-title": "特点",
+  "usage-title": "使用方法",
+  "player-description": "体验WebGL的快速和美丽的抗锯齿渲染。你可以创建丰富的互动图形、跨平台的应用程序和游戏，而不必担心浏览器或设备的兼容性。",
+  "tool-description": "这是一个在网络浏览器上运行的创作工具，主要用于NoCode开发，你可以直观地创建你所想象的动画，导出的数据可以通过上传到网络轻松发布。",
+  "framework-description": "它是一个专用于Next2D的框架，通过URL（SPA）实现了传统Canvas/WebGL应用程序难以实现的场景管理，并通过固定的开发模式（MVVM）简化了可读性和共享性。",
+  "read-more": "阅读更多",
+  "next-chapter": "下一章",
+  "contact": "请随时与我们联系。"
+}

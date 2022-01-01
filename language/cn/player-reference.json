@@ -1,0 +1,24 @@
+{
+  "chapter1": {
+    "title": "DisplayList，DisplayObject，和DisplayObjectContainer",
+    "text1": "DisplayList由三个主要元素组成。舞台\"、\"DisplayObjectContainer \"和 \"DisplayObject\"。",
+    "text2": "'舞台'是一个容纳所有'DisplayObject'的对象。",
+    "text3": "'DisplayObjectContainer'是一个'DisplayObject'，可以用来放置DisplayObjects，它继承于以下四个类。",
+    "text4": "'DisplayObject'是一个执行绘图过程的对象。从'DisplayObject'继承的9个类如下。",
+    "text5": "要将一个 \"DisplayObject \"添加到一个 \"DisplayObjectContainer \"中，请使用DisplayObjectContainer的addChild方法。"
+  },
+  "chapter2": {
+    "title": "从DisplayObjectContainer中添加和删除DisplayObjects",
+    "text1": "index是一个按顺序编号的整数，从0开始，0是最靠后的，更高的值是最靠前的。索引不能是一个负值，也不能是一个大于当前最高索引加1的数字。",
+    "text2": "addChild方法将一个DisplayObject添加到DisplayObjectContainer中最前面的位置。",
+    "text3": "addChildAt方法在DisplayObjectContainer中的指定索引位置添加一个DisplayObject。",
+    "text4": "removeChild和removeChildAt方法从DisplayObjectContainer中移除指定的DisplayObject。如果在移除的索引之后还有任何DisplayObjects，它们将被重新定位到一个较小的索引位置。"
+  },
+  "chapter3": {
+    "title": "当DisplayObjects被添加到DisplayObjectContainer或从DisplayObjectContainer中移除时的事件",
+    "text1": "index是一个按顺序编号的整数，从0开始，0是最靠后的，更高的值是最靠前的。索引不能是一个负值，也不能是一个大于当前最高索引加1的数字。",
+    "text2": "addChild方法将一个DisplayObject添加到DisplayObjectContainer中最前面的位置。",
+    "text3": "addChildAt方法在DisplayObjectContainer中的指定索引位置添加一个DisplayObject。",
+    "text4": "removeChild和removeChildAt方法从DisplayObjectContainer中移除指定的DisplayObject。如果在移除的索引之后还有任何DisplayObjects，它们将被重新定位到一个较小的索引位置。"
+  }
+}

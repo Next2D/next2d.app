@@ -1,6 +1,6 @@
 {
   "lang": "en",
-  "title": "Next2D Libraries and Tool.",
+  "title": "Next2D Libraries and Tool",
   "description": "Rendering engine, NoCode authoring tool, and underlying framework.",
   "docs-title": "API Docs",
   "reference-title": "Reference",
@@ -9,7 +9,7 @@
   "player-description": "Experience the fast and beautiful anti-aliased rendering of WebGL. You can create rich, interactive graphics, cross-platform applications and games without worrying about browser or device compatibility.",
   "tool-description": "This is an authoring tool that runs on a web browser, mainly for NoCode development, You can intuitively create the animation you have imagined, and the exported data can be easily published by uploading it to the Web.",
   "framework-description": "It is a framework dedicated to Next2D that enables scene management by URL (SPA), which has been difficult with conventional Canvas/WebGL applications, and simplifies readability and shareability by fixing the development pattern (MVVM).",
-  "read-more": "read more",
+  "read-more": "Read More",
   "next-chapter": "Next Chapter",
   "contact": "Please feel free to contact us."
 }

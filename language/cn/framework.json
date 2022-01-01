@@ -1,0 +1,20 @@
+{
+  "title": "框架特点",
+  "description": "它是一个框架，通过固定开发模式简化了可读性和可共享性。",
+  "feature1-title": "开放源码",
+  "feature1-description": "Next2D框架作为开放源码软件免费提供给个人和商业使用。",
+  "feature2-title": "快速启动",
+  "feature2-description": "你可以通过简单地执行以下命令来创建一个应用程序。",
+  "feature3-title": "MVVM模式",
+  "feature3-description": "MVVM（Model-View-ViewModel）模式，着眼于UI设计师和程序员合作创建应用程序的未来。",
+  "feature4-title": "团队发展",
+  "feature4-description": "固定的开发模式（MVVM），可读性和简化的共享。它允许舒适的团队开发。",
+  "feature5-title": "与NoCode工具的合作",
+  "feature5-description": "与Flash时代一样，符号管理是可能的，允许动画师和程序员创建没有冲突的应用程序。",
+  "feature6-title": "单页应用",
+  "feature6-description": "现在可以通过URL来管理场景，这在以前的Canvas/WebGL应用程序中是很困难的。",
+  "feature7-title": "输出",
+  "feature7-description": "多个环境变量可以很容易地被导出并合并到一个文件中。",
+  "feature8-title": "文档/教程",
+  "feature8-description": "广泛的文档和教程支持你从学习到实际使用。"
+}

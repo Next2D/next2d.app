@@ -1,0 +1,20 @@
+{
+  "title": "玩家特点",
+  "description": "旨在提供一个快速的2D播放器。",
+  "feature1-title": "开放源码",
+  "feature1-description": "Next2D Player作为开放源码软件免费提供给个人和商业使用。",
+  "feature2-title": "快速渲染",
+  "feature2-description": "体验轻量级、快速、漂亮的抗锯齿渲染。",
+  "feature3-title": "完全支持WebGL",
+  "feature3-description": "移植了 \"swf2js \"的仿真技术，以实现类似Flash的渲染，如WebGL中的Filter和Shape。",
+  "feature4-title": "各种文本功能",
+  "feature4-description": "包括各种文本功能，如固定文本、动态文本输入和HTML文本。",
+  "feature5-title": "多平台支持",
+  "feature5-description": "只需一段代码，就可以从桌面到移动端提供互动的、具有视觉吸引力的内容。",
+  "feature6-title": "浏览器支持",
+  "feature6-description": "它与最新的桌面和移动浏览器具有互操作性，并经过全面测试，在尽可能广泛的浏览器中提供性能和可靠性。",
+  "feature7-title": "API",
+  "feature7-description": "广泛的文档、示例代码和初步介绍的教程使新老开发者都能轻松地迅速上手。",
+  "feature8-title": "MP3/MP4",
+  "feature8-description": "支持阅读音频和视频，包括MP3和MP4。"
+}

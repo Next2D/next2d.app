@@ -528,9 +528,19 @@ section {
   padding-top: 80px;
 }
 
+.reference-section {
+  padding-bottom: 80px;
+  padding-top: 20px;
+}
+
 @media (max-width: 992px) {
   .padd-section {
     padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .reference-section {
+    padding-top: 20px;
     padding-bottom: 40px;
   }
 }
@@ -570,7 +580,6 @@ section {
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 20px 0;
-  /*background-color: #1461A0;*/
   min-height: 40px;
   margin-top: 82px;
 }
@@ -831,7 +840,7 @@ section {
 
 /* Tutorial List Section
 --------------------------------*/
-#references .container,
+#references .container
 #usage .container
 {
   padding-top: 20px;
@@ -942,6 +951,11 @@ section {
 #references .tutorial-image img
 {
   max-width: 90%;
+}
+
+#references h2
+{
+  margin-bottom: 20px;
 }
 
 #references h3

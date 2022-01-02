@@ -11,7 +11,6 @@
     <section class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h2>${{ player-reference.chapter3.title }}$</h2>
                 <ol>
                     <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
                     <li><a href="<%= path %>${{ main.lang }}$/reference/player">Reference</a></li>
@@ -22,59 +21,64 @@
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Tutorial List Section ======= -->
-    <section id="references" class="padd-section">
+    <section id="references" class="reference-section">
 
       <div class="container" data-aos="fade-up">
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
 
-          <div class="col-md-6 offset-md-3">
+          <div class="col-md-8 offset-md-2">
+            <h2>${{ player-reference.chapter3.title }}$</h2>
 
             <h3>Event.ADDED</h3>
-            <p>added event is an Event object that is sent when a DisplayObjectContainer is added to a DisplayObjectContainer using the addChild or addChildAt method.</p>
+            <p>${{ player-reference.chapter3.text1 }}$</p>
 
             <h5>Example</h5>
-            <p><pre>const {Event} = next2d.events;
-this.addEventListener(Event.ADDED, onAdded);
-function onAdded (event)
-{
-    console.log("ADDED: ", event);
-}</pre></p>
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 03-1" src="https://codepen.io/next2d/embed/mdBxxdq?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/mdBxxdq">
+                  [Next2D Reference] Chapter 03-1</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
 
             <h3>Event.ADDED_TO_STAGE</h3>
-            <p>addedToStage event is a similar event. The addedToStage event is a similar event, but it is an Event object that is sent out when a DisplayObjectContainer is added to a DisplayList and displayed on the screen.</p>
+            <p>${{ player-reference.chapter3.text2 }}$</p>
 
             <h5>Example</h5>
-            <p><pre>const {Event} = next2d.events;
-this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
-function onAddedToStage (event)
-{
-    console.log("ADDED_TO_STAGE: ", event);
-}</pre></p>
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 03-2" src="https://codepen.io/next2d/embed/WNZzzvL?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/WNZzzvL">
+                  [Next2D Reference] Chapter 03-2</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
 
             <h3>Event.REMOVED</h3>
-            <p>removed event is an Event object that is sent when a DisplayObjectContainer is removed from a DisplayObjectContainer using the removeChild and removeChildAt methods. It is also sent when a DisplayObjectContainer is repositioned from its existing position to a specified position using the addChild and addChildAt methods.</p>
+            <p>${{ player-reference.chapter3.text3 }}$</p>
 
             <h5>Example</h5>
-            <p><pre>const {Event} = next2d.events;
-this.addEventListener(Event.REMOVED, onRemoved);
-function onRemoved (event)
-{
-    console.log("REMOVED: ", event);
-}</pre></p>
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 03-3" src="https://codepen.io/next2d/embed/poWLLgm?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/poWLLgm">
+                  [Next2D Reference] Chapter 03-3</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
 
             <h3>Event.REMOVED_FROM_STAGE</h3>
-            <p>removedFromStage event is a similar event, but is an Event object that is sent out when a DisplayObjectContainer is removed from the DisplayList and disappears from the screen.</p>
+            <p>${{ player-reference.chapter3.text4 }}$</p>
 
             <h5>Example</h5>
-            <p><pre>const {Event} = next2d.events;
-this.addEventListener(Event.REMOVED_FROM_STAGE, onRemovedFromStage);
-function onRemovedFromStage (event)
-{
-    console.log("REMOVED_FROM_STAGE: ", event);
-}</pre></p>
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 03-4" src="https://codepen.io/next2d/embed/ExwEEyK?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/ExwEEyK">
+                  [Next2D Reference] Chapter 03-4</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
 
-            <p><a class="float-end read-more" href="4.html">${{ main.next-chapter }}$</a></p>
+            <p class="next-chapter"><a class="float-end read-more" href="4.html">${{ main.next-chapter }}$</a></p>
           </div>
         </div>
       </div>

@@ -16,9 +16,9 @@
   },
   "chapter3": {
     "title": "Events when DisplayObjects are added to or removed from DisplayObjectContainer",
-    "text1": "index is a sequentially numbered integer starting from 0, with 0 being the farthest back and higher values being the farthest forward. The index cannot be a negative value or a number greater than the current highest index plus one.",
-    "text2": "addChild method adds a DisplayObject to the foremost position in the DisplayObjectContainer.",
-    "text3": "addChildAt method adds a DisplayObject to the specified index position in the DisplayObjectContainer.",
-    "text4": "removeChild and removeChildAt methods remove the specified DisplayObject from the DisplayObjectContainer. If there are any DisplayObjects after the removed index, they will be relocated to a smaller index position."
+    "text1": "The added event is an Event object that is sent when a DisplayObject is added by the addChild or addChildAt function of DisplayObjectContainer.",
+    "text2": "The addedToStage event is a similar event, but it is an Event object that is sent out when a DisplayObjectContainer is added to a DisplayList and displayed on the screen.",
+    "text3": "The removed event is an event object that is sent when a DisplayObject is removed from a DisplayObjectContainer using the removeChild or removeChildAt function of the DisplayObjectContainer. The removed event is an event object sent when a DisplayObject is removed from the DisplayObjectContainer using the removeChild or removeChildAt function of the DisplayObjectContainer. It is also sent when a DisplayObjectContainer is moved from its existing position to a specified position using the addChild and addChildAt functions.",
+    "text4": "The removedFromStage event is a similar event, but it is an Event object that is sent out when the DisplayObjectContainer is removed from the DisplayList and disappears from the screen."
   }
 }

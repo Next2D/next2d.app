@@ -16,9 +16,9 @@
   },
   "chapter3": {
     "title": "当DisplayObjects被添加到DisplayObjectContainer或从DisplayObjectContainer中移除时的事件",
-    "text1": "index是一个按顺序编号的整数，从0开始，0是最靠后的，更高的值是最靠前的。索引不能是一个负值，也不能是一个大于当前最高索引加1的数字。",
-    "text2": "addChild方法将一个DisplayObject添加到DisplayObjectContainer中最前面的位置。",
-    "text3": "addChildAt方法在DisplayObjectContainer中的指定索引位置添加一个DisplayObject。",
-    "text4": "removeChild和removeChildAt方法从DisplayObjectContainer中移除指定的DisplayObject。如果在移除的索引之后还有任何DisplayObjects，它们将被重新定位到一个较小的索引位置。"
+    "text1": "添加事件是一个事件对象，当一个DisplayObject被DisplayObjectContainer的addChild或addChildAt函数添加时被发送。",
+    "text2": "addedToStage事件是一个类似的事件，但它是一个事件对象，当一个DisplayObjectContainer被添加到DisplayList并显示在屏幕上时被发送出去。",
+    "text3": "removed事件是一个事件对象，当使用DisplayObjectContainer的removeChild或removeChildAt函数将一个DisplayObject从DisplayObjectContainer中移除时，它被发送。removed事件是一个事件对象，当使用DisplayObjectContainer的removeChild或removeChildAt函数将一个DisplayObject从DisplayObjectContainer中移除时被发送。当使用addChild和addChildAt函数将DisplayObjectContainer从其现有位置移动到指定位置时，也会发送该事件。",
+    "text4": "removedFromStage事件是一个类似的事件，但它是一个事件对象，当DisplayObjectContainer从DisplayList中被移除并从屏幕上消失时，它被发送出去。"
   }
 }

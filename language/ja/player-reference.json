@@ -16,9 +16,9 @@
   },
   "chapter3": {
     "title": "DisplayObjectContainerにDisplayObjectを追加・削除した時のイベント",
-    "text1": "indexは0から始まる連番の整数で、0が最も後ろ、それ以上の値が最も前になります。インデックスは負の値や、現在の最高値のインデックスに1を足した値より大きい数値にはできません。",
-    "text2": "addChildメソッドは、DisplayObjectContainerの最前面にDisplayObjectを追加するメソッドです。",
-    "text3": "addChildAtメソッドは、DisplayObjectContainer内の指定されたインデックス位置にDisplayObjectを追加します。",
-    "text4": "removeChildおよびremoveChildAtメソッドは、DisplayObjectContainerから指定されたDisplayObjectを削除するメソッドです。削除されたインデックスの後にDisplayObjectがある場合、それらはより小さいインデックス位置に再配置されます。"
+    "text1": "addedイベントは、DisplayObjectContainerのaddChildまたはaddChildAt関数でDisplayObjectが追加されたときに送られるEventオブジェクトです。",
+    "text2": "addedToStageイベントは、同様のイベントですが、DisplayObjectContainerがDisplayListに追加され、画面に表示されたときに送出されるEventオブジェクトとなります。",
+    "text3": "removed イベントは、DisplayObjectContainerのremoveChild もしくはremoveChildAt関数を用いて DisplayObjectContainerからDisplayObjectが削除される際に送られるイベントオブジェクトです。また、addChildとaddChildAt関数を使用して、DisplayObjectContainer が既存の位置から指定された位置に移動された場合にも送られます。",
+    "text4": "removedFromStageイベントは、同様のイベントですが、DisplayObjectContainerがDisplayListから削除され、画面から消えたときに送出されるEventオブジェクトです。"
   }
 }

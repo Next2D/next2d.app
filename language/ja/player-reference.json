@@ -20,5 +20,26 @@
     "text2": "addedToStageイベントは、同様のイベントですが、DisplayObjectContainerがDisplayListに追加され、画面に表示されたときに送出されるEventオブジェクトとなります。",
     "text3": "removed イベントは、DisplayObjectContainerのremoveChild もしくはremoveChildAt関数を用いて DisplayObjectContainerからDisplayObjectが削除される際に送られるイベントオブジェクトです。また、addChildとaddChildAt関数を使用して、DisplayObjectContainer が既存の位置から指定された位置に移動された場合にも送られます。",
     "text4": "removedFromStageイベントは、同様のイベントですが、DisplayObjectContainerがDisplayListから削除され、画面から消えたときに送出されるEventオブジェクトです。"
+  },
+  "chapter4": {
+    "title": "コンテナ内のDisplayObjectの重なり順を調べる・変更する",
+    "text1": "getChildIndexメソッドは、引数で指定されたDisplayObjectの重なり順のインデックスを返すメソッドです。",
+    "text2": "setChildIndex関数は、第一引数で指定されたDisplayObjectを第二引数の位置に配置し直します。この再配置は、addChildAtメソッドでも同様に行うことができます。",
+    "text3": "swapChildren関数は、引数で指定された2つの DisplayObjectの重なり順（インデックス位置）を入れ替えるものです。",
+    "text4": "swapChildrenAt関数は、引数indexで指定された二つの DisplayObjectの重なり順（インデックス位置）を入れ替えます。 addChildメソッドは、DisplayObjectを最上位に再配置するために使用します。"
+  },
+  "chapter5": {
+    "title": "DisplayObjectの数や、コンテナ内のDisplayObjectかの判定を行う",
+    "text1": "numChildrenは、子要素に含まれるDisplayObjectの個数を表します。孫要素は数に含まれません。",
+    "text2": "containsは、引数で指定されたDisplayObjectが DisplayObjectContainerの子要素であるかどうかを確認する関数です。戻り値はブール値で、DisplayObjectが子オブジェクトまたはDisplayObjectContainer自体の場合はtrue、そうでない場合はfalseです。"
+  },
+
+
+  "chapter0": {
+    "title": "",
+    "text1": "",
+    "text2": "",
+    "text3": "",
+    "text4": ""
   }
 }

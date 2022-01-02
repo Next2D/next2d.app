@@ -11,7 +11,6 @@
     <section class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Checking/changing the stacking order in a container.</h2>
                 <ol>
                     <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
                     <li><a href="<%= path %>${{ main.lang }}$/reference/player">Reference</a></li>
@@ -22,54 +21,61 @@
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Tutorial List Section ======= -->
-    <section id="references" class="padd-section">
+    <section id="references" class="reference-section">
 
       <div class="container" data-aos="fade-up">
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
 
-          <div class="col-md-6 offset-md-3">
+          <div class="col-md-8 offset-md-2">
+            <h2>${{ player-reference.chapter4.title }}$</h2>
+
             <h3>getChildIndex</h3>
-            <p>getChildIndex method returns the index of the DisplayObject specified by the argument in the order of overlap.</p>
+            <p>${{ player-reference.chapter4.text1 }}$</p>
 
             <h5>Example</h5>
-            <p><pre>const {Shape} = next2d.display;
-const shape = new Shape();
-this.addChild(shape);
-console.log(this.getChildIndex(shape));</pre></p>
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 04-1" src="https://codepen.io/next2d/embed/vYeRVJK?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/vYeRVJK">
+                  [Next2D Reference] Chapter 04-1</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
 
             <h3>setChildIndex</h3>
-            <p>setChildIndex method repositions the DisplayObject specified in the first argument to the second index position. This same repositioning can be done with the addChildAt method.</p>
+            <p>${{ player-reference.chapter4.text2 }}$</p>
 
-            <p><pre>const {Shape} = next2d.display;
-const shape = new Shape();
-this.addChild(new Shape());
-this.addChild(new Shape());
-this.setChildIndex(shape, 2);</pre></p>
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 04-2" src="https://codepen.io/next2d/embed/PoJRyaK?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/PoJRyaK">
+                  [Next2D Reference] Chapter 04-2</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
 
             <h3>swapChildren</h3>
-            <p>swapChildren method swaps the order of overlap (index position) between the two DisplayObjects specified by the arguments.</p>
+            <p>${{ player-reference.chapter4.text3 }}$</p>
 
-            <p><pre>const {Shape} = next2d.display;
-const shape1 = new Shape();
-const shape2 = new Shape();
-this.addChild(shape1);
-this.addChild(shape2);
-this.swapChildren(shape1, shape2);</pre></p>
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 04-3" src="https://codepen.io/next2d/embed/abLYRMz?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/abLYRMz">
+                  [Next2D Reference] Chapter 04-3</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
 
             <h3>swapChildrenAt</h3>
-            <p>swapChildrenAt method swaps the overlapping order (index position) of the two DisplayObjects specified by the argument index. addChild method can be used to reposition the display object to the topmost position.</p>
+            <p>${{ player-reference.chapter4.text4 }}$</p>
 
-            <p><pre>const {Shape} = next2d.display;
-const shape1 = new Shape();
-const shape2 = new Shape();
-const shape3 = new Shape();
-this.addChild(shape1);
-this.addChild(shape2);
-this.addChild(shape3);
-this.swapChildrenAt(0, 2);</pre></p>
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 04-4" src="https://codepen.io/next2d/embed/QWqmZPZ?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/QWqmZPZ">
+                  [Next2D Reference] Chapter 04-4</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
 
-            <p><a class="float-end read-more" href="5.html">${{ main.next-chapter }}$</a></p>
+            <p class="next-chapter"><a class="float-end read-more" href="5.html">${{ main.next-chapter }}$</a></p>
           </div>
         </div>
       </div>

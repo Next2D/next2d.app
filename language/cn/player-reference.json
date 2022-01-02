@@ -20,5 +20,27 @@
     "text2": "addedToStage事件是一个类似的事件，但它是一个事件对象，当一个DisplayObjectContainer被添加到DisplayList并显示在屏幕上时被发送出去。",
     "text3": "removed事件是一个事件对象，当使用DisplayObjectContainer的removeChild或removeChildAt函数将一个DisplayObject从DisplayObjectContainer中移除时，它被发送。removed事件是一个事件对象，当使用DisplayObjectContainer的removeChild或removeChildAt函数将一个DisplayObject从DisplayObjectContainer中移除时被发送。当使用addChild和addChildAt函数将DisplayObjectContainer从其现有位置移动到指定位置时，也会发送该事件。",
     "text4": "removedFromStage事件是一个类似的事件，但它是一个事件对象，当DisplayObjectContainer从DisplayList中被移除并从屏幕上消失时，它被发送出去。"
+  },
+  "chapter4": {
+    "title": "检查和改变一个容器中DisplayObjects的重叠顺序",
+    "text1": "getChildIndex方法返回参数所指定的DisplayObject的索引，其顺序是重叠的。",
+    "text2": "setChildIndex函数将第一个参数中指定的显示对象重新定位到第二个参数中指定的位置。这种重新定位可以用addChildAt方法的同样方式进行。",
+    "text3": "swapChildren函数交换由参数指定的两个显示对象的重叠顺序（索引位置）。",
+    "text4": "swapChildrenAt函数交换了由参数index指定的两个DisplayObject的重叠顺序（索引位置）。addChild方法用于重新定位一个DisplayObject到顶层。"
+  },
+  "chapter5": {
+    "title": "确定DisplayObjects的数量以及它们是否是容器中的DisplayObjects",
+    "text1": "numChildren属性表示子元素中DisplayObject的数量。它不包括孙子元素。",
+    "text2": "contains是一个函数，用于检查由参数指定的DisplayObject是否是DisplayObjectContainer的一个子元素。 返回值是一个布尔值，如果DisplayObject是一个子对象或DisplayObjectContainer本身，则为真，否则为假。"
+  },
+
+
+
+  "chapter0": {
+    "title": "",
+    "text1": "",
+    "text2": "",
+    "text3": "",
+    "text4": ""
   }
 }

@@ -20,5 +20,26 @@
     "text2": "The addedToStage event is a similar event, but it is an Event object that is sent out when a DisplayObjectContainer is added to a DisplayList and displayed on the screen.",
     "text3": "The removed event is an event object that is sent when a DisplayObject is removed from a DisplayObjectContainer using the removeChild or removeChildAt function of the DisplayObjectContainer. The removed event is an event object sent when a DisplayObject is removed from the DisplayObjectContainer using the removeChild or removeChildAt function of the DisplayObjectContainer. It is also sent when a DisplayObjectContainer is moved from its existing position to a specified position using the addChild and addChildAt functions.",
     "text4": "The removedFromStage event is a similar event, but it is an Event object that is sent out when the DisplayObjectContainer is removed from the DisplayList and disappears from the screen."
+  },
+  "chapter4": {
+    "title": "Checking and changing the overlapping order of DisplayObjects in a container",
+    "text1": "getChildIndex method returns the index of the DisplayObject specified by the argument in the order of overlap.",
+    "text2": "The setChildIndex function repositions the DisplayObject specified in the first argument to the position specified in the second argument. This repositioning can be done in the same way with the addChildAt method.",
+    "text3": "The swapChildren function swaps the overlapping order (index position) of two DisplayObjects specified by the argument.",
+    "text4": "The swapChildrenAt function swaps the overlapping order (index position) of two DisplayObjects specified by the argument index. The addChild method is used to reposition a DisplayObject to the top level."
+  },
+  "chapter5": {
+    "title": "Determine the number of DisplayObjects and whether they are DisplayObjects in a container",
+    "text1": "numChildren property represents the number of DisplayObject in the child element. It does not include the grandchild elements.",
+    "text2": "contains is a function that checks if the DisplayObject specified in the argument is a child element of DisplayObjectContainer. The return value is a boolean value, true if the DisplayObject is a child object or DisplayObjectContainer itself, false otherwise."
+  },
+
+
+  "chapter0": {
+    "title": "",
+    "text1": "",
+    "text2": "",
+    "text3": "",
+    "text4": ""
   }
 }

@@ -11,7 +11,6 @@
     <section class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Determine the number of DisplayObjects and child elements.</h2>
                 <ol>
                     <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
                     <li><a href="<%= path %>${{ main.lang }}$/reference/player">Reference</a></li>
@@ -28,33 +27,33 @@
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
 
-          <div class="col-md-6 offset-md-3">
+          <div class="col-md-8 offset-md-2">
+            <h2>${{ player-reference.chapter5.title }}$</h2>
+
             <h3>numChildren</h3>
-            <p>numChildren property represents the number of objects in the child element. It does not include the grandchild elements.</p>
+            <p>${{ player-reference.chapter5.text1 }}$</p>
 
             <h5>Example</h5>
-            <p><pre>const {Shape} = next2d.display;
-const shape = new Shape();
-console.log(this.numChildren); // 1</pre></p>
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 05-1" src="https://codepen.io/next2d/embed/PoJRxWa?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/PoJRxWa">
+                  [Next2D Reference] Chapter 05-1</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
 
             <h3>contains</h3>
-            <p>contains is a method to check whether the DisplayObject specified in the argument is a child element of DisplayObjectContainer. The return value is a boolean value, true if the DisplayObject is a child object or DisplayObjectContainer itself, false otherwise.</p>
+            <p>${{ player-reference.chapter5.text2 }}$</p>
 
-            <p><pre>const {Sprite} = next2d.display;
-const sprite1 = new Sprite();
-const sprite2 = new Sprite();
-const sprite3 = new Sprite();
-const sprite4 = new Sprite();
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 05-2" src="https://codepen.io/next2d/embed/gOGeQxj?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/gOGeQxj">
+                  [Next2D Reference] Chapter 05-2</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
 
-sprite1.addChild(sprite2);
-sprite3.addChild(sprite3);
-
-console.log(this.contains(sprite1)); // true
-console.log(this.contains(sprite2)); // true
-console.log(this.contains(sprite3)); // true
-console.log(this.contains(sprite4)); // false</pre></p>
-
-            <p><a class="float-end read-more" href="6.html">${{ main.next-chapter }}$</a></p>
+            <p class="next-chapter"><a class="float-end read-more" href="6.html">${{ main.next-chapter }}$</a></p>
           </div>
         </div>
       </div>

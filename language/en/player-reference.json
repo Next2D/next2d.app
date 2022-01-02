@@ -33,6 +33,13 @@
     "text1": "numChildren property represents the number of DisplayObject in the child element. It does not include the grandchild elements.",
     "text2": "contains is a function that checks if the DisplayObject specified in the argument is a child element of DisplayObjectContainer. The return value is a boolean value, true if the DisplayObject is a child object or DisplayObjectContainer itself, false otherwise."
   },
+  "chapter6": {
+    "title": "Refers to a DisplayObject in a container by specifying the index instance name",
+    "text1": "The getChildAt function gets the reference to the child element object from the index of the stacking order.",
+    "text2": "The getChildByName function obtains a reference to a child element object from its instance name."
+  },
+
+
 
 
   "chapter0": {

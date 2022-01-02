@@ -11,7 +11,6 @@
     <section class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Referencing a DisplayObject in a DisplayObjectContainer.</h2>
                 <ol>
                     <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
                     <li><a href="<%= path %>${{ main.lang }}$/reference/player">Reference</a></li>
@@ -22,32 +21,39 @@
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Tutorial List Section ======= -->
-    <section id="references" class="padd-section">
+    <section id="references" class="reference-section">
 
       <div class="container" data-aos="fade-up">
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
 
-          <div class="col-md-6 offset-md-3">
+          <div class="col-md-8 offset-md-2">
+            <h2>${{ player-reference.chapter6.title }}$</h2>
+
             <h3>getChildAt</h3>
-            <p>getChildAt method gets the reference to the child element object from the index of the stacking order.</p>
+            <p>${{ player-reference.chapter6.text1 }}$</p>
 
             <h5>Example</h5>
-            <p><pre>const {Shape} = next2d.display;
-const shape = new Shape();
-this.addChild(shape);
-console.log(this.getChildAt(0) === shape);</pre></p>
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 06-1" src="https://codepen.io/next2d/embed/LYzdMEm?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/LYzdMEm">
+                  [Next2D Reference] Chapter 06-1</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
 
             <h3>getChildByName</h3>
-            <p>getChildByName method gets the reference to the child element object from the instance name.</p>
+            <p>${{ player-reference.chapter6.text2 }}$</p>
 
-            <p><pre>const {Sprite} = next2d.display;
-const sprite = new Sprite();
-sprite.name = "child_sprite";
-this.addChild(sprite);
-console.log(this.getChildByName("child_sprite") === sprite);</pre></p>
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 06-2" src="https://codepen.io/next2d/embed/qBPoLbY?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/qBPoLbY">
+                  [Next2D Reference] Chapter 06-2</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
 
-            <p><a class="float-end read-more" href="7.html">${{ main.next-chapter }}$</a></p>
+            <p class="next-chapter"><a class="float-end read-more" href="7.html">${{ main.next-chapter }}$</a></p>
           </div>
         </div>
       </div>

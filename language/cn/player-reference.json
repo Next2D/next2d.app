@@ -33,6 +33,13 @@
     "text1": "numChildren属性表示子元素中DisplayObject的数量。它不包括孙子元素。",
     "text2": "contains是一个函数，用于检查由参数指定的DisplayObject是否是DisplayObjectContainer的一个子元素。 返回值是一个布尔值，如果DisplayObject是一个子对象或DisplayObjectContainer本身，则为真，否则为假。"
   },
+  "chapter6": {
+    "title": "通过指定索引实例名称来指代容器中的一个DisplayObject",
+    "text1": "getChildAt函数从堆叠顺序的索引中获得对子元素对象的引用。",
+    "text2": "getChildByName函数从一个子元素对象的实例名称中获得对它的引用。"
+  },
+
+
 
 
 

@@ -33,6 +33,13 @@
     "text1": "numChildrenは、子要素に含まれるDisplayObjectの個数を表します。孫要素は数に含まれません。",
     "text2": "containsは、引数で指定されたDisplayObjectが DisplayObjectContainerの子要素であるかどうかを確認する関数です。戻り値はブール値で、DisplayObjectが子オブジェクトまたはDisplayObjectContainer自体の場合はtrue、そうでない場合はfalseです。"
   },
+  "chapter6": {
+    "title": "コンテナ内のDisplayObjectをインデックス・インスタンス名を指定して参照する",
+    "text1": "getChildAt関数は、重ね順のインデックスから子要素オブジェクトへの参照を取得します。",
+    "text2": "getChildByName関数は、インスタンス名から子要素オブジェクトへの参照を取得します。"
+  },
+
+
 
 
   "chapter0": {

@@ -43,6 +43,17 @@
     "text1": "parentプロパティは、親であるDisplayObjectContainerを指します。複数のparentを使用して、先祖にさかのぼることができます。但し、DisplayObjectContainerの子要素に登録がない場合はnullを返します。",
     "text2": "rootプロパティは、最も高い階層の親DisplayObjectContainerを指します。殆どの場合はStage直下のDisplayObjectContainerを指す事が多です。但し、DisplayObjectContainerの子要素に登録がない場合はnullを返します。"
   },
+  "chapter8": {
+    "title": "DisplayObject名を設定・変更する。",
+    "text1": "DisplayObject名を表すプロパティです。参照と代入の両方が可能です。名前には英数字とアンダースコア(_)の利用を推奨してます。名前をつけたDisplayObjectにはthis.{{ DisplayObject名 }}でアクセスが可能になります。"
+  },
+  "chapter9": {
+    "title": "DisplayObjectの位置を移動する",
+    "text1": "親DisplayObjectContainerのローカル座標を基準にしたDisplayObjectのx座標、y座標を表します。xyプロパティーに値(Number)を代入する事で移動する事が可能です。"
+  },
+
+
+
 
 
 

@@ -43,6 +43,16 @@
     "text1": "父属性指向父DisplayObjectContainer。 你可以使用多个父母来回溯到一个祖先。 但是，如果没有注册DisplayObjectContainer的子元素，将返回null。",
     "text2": "根属性指向层次结构中最高级别的父级DisplayObjectContainer。 在大多数情况下，这将是舞台正下方的DisplayObjectContainer。 然而，如果没有注册的DisplayObjectContainer的孩子，它将返回空。"
   },
+  "chapter8": {
+    "title": "设置或改变DisplayObject的名称。",
+    "text1": "这个属性代表DisplayObject的名称。 它既可以被引用，也可以被分配。 建议在名称中使用字母数字字符和下划线（_）。 命名的DisplayObject可以使用this.{{DisplayObject name }}访问。"
+  },
+  "chapter9": {
+    "title": "移动一个显示对象的位置",
+    "text1": "DisplayObject的x和y坐标相对于父DisplayObjectContainer的本地坐标，可以通过给xy属性赋值（Number）来移动。"
+  },
+
+
 
 
 

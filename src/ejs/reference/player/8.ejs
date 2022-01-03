@@ -11,7 +11,6 @@
     <section class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Reference and change DisplayObject properties 'name'.</h2>
                 <ol>
                     <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
                     <li><a href="<%= path %>${{ main.lang }}$/reference/player">Reference</a></li>
@@ -29,25 +28,21 @@
         <div class="row" data-aos="fade-up" data-aos-delay="100">
 
           <div class="col-md-8 offset-md-2">
+            <h2>${{ player-reference.chapter8.title }}$</h2>
+
             <h3>name</h3>
-            <p>A property that represents an instance name. Both reference and substitution are possible.</p>
+            <p>${{ player-reference.chapter8.text1 }}$</p>
 
             <h5>Example</h5>
-            <p><pre>const {Sprite} = next2d.display;
-const sprite1 = new Sprite();
-sprite1.name = "sprite1";
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 08" src="https://codepen.io/next2d/embed/poWVjQv?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/poWVjQv">
+                  [Next2D Reference] Chapter 08</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
 
-const {Shape} = next2d.display;
-const shape1 = new Shape();
-shape1.name = "shape1";
-
-sprite1.addChild(shape1);
-
-console.log(shape1.name); // shape1
-console.log(shape1.parent.name); // sprite1
-</pre></p>
-
-            <p><a class="float-end read-more" href="9.html">${{ main.next-chapter }}$</a></p>
+            <p class="next-chapter"><a class="float-end read-more" href="9.html">${{ main.next-chapter }}$</a></p>
           </div>
         </div>
       </div>

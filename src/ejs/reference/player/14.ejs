@@ -1,4 +1,4 @@
-<% const title = "Next2D Player | Pocket Reference Chapter 14"; %>
+<% const title = "Next2D Player | Pocket Reference Chapter 13"; %>
 <% const path = "../../../"; %>
 <%- include("../../_include/_header", {
     "title": title,
@@ -11,7 +11,7 @@
     <section class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Reference and change DisplayObject properties "blendMode".</h2>
+                <h2>Reference and change DisplayObject properties "mask".</h2>
                 <ol>
                     <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
                     <li><a href="<%= path %>${{ main.lang }}$/reference/player">Reference</a></li>
@@ -30,28 +30,11 @@
 
           <div class="col-md-8 offset-md-2">
 
-            <h3>blendMode</h3>
-            <p>Sets the DisplayObject's BlendMode. According to the set BlendMode, the DisplayObject and background colors (RGB) are compared, added and subtracted for each corresponding pixel, and drawn based on the result.
-              <ul>
-                <li>BlendMode.NORMAL(default)</li>
-                <li>BlendMode.ADD</li>
-                <li>BlendMode.ALPHA</li>
-                <li>BlendMode.DARKEN</li>
-                <li>BlendMode.DIFFERENCE</li>
-                <li>BlendMode.ERASE</li>
-                <li>BlendMode.HARDLIGHT</li>
-                <li>BlendMode.INVERT</li>
-                <li>BlendMode.LAYER</li>
-                <li>BlendMode.LIGHTEN</li>
-                <li>BlendMode.MULTIPLY</li>
-                <li>BlendMode.OVERLAY</li>
-                <li>BlendMode.SCREEN</li>
-                <li>BlendMode.SUBTRACT</li>
-              </ul>
-            </p>
+            <h3>mask</h3>
+            <p>Set the DisplayObject to be the mask of the DisplayObject. The default value is null. To set the mask, assign a DisplayObject. To remove the mask, assign null.</p>
 
             <h5>Example</h5>
-            <p><pre>const {Shape, BitmapData, Sprite, BlendMode} = next2d.display;
+            <p><pre>const {Shape, BitmapData, Sprite} = next2d.display;
 const image = new Image();
 image.src = "[[image path]]";
 
@@ -66,9 +49,15 @@ shape
 
 const sprite = new Sprite();
 sprite.addChild(shape);
-sprite.blendMode = BlendMode.SCREEN;</pre></p>
 
-            <p><a class="float-end read-more" href="15.html">${{ main.next-chapter }}$</a></p>
+const maskShape = new Shape();
+maskShape
+    .graphics
+    .drawCircle(0, 0, 50);
+
+sprite.mask = maskShape;</pre></p>
+
+            <p class="next-chapter"><a class="float-end read-more" href="15.html">${{ main.next-chapter }}$</a></p>
           </div>
         </div>
       </div>

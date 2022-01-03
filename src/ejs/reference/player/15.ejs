@@ -1,4 +1,4 @@
-<% const title = "Next2D Player | Pocket Reference Chapter 15"; %>
+<% const title = "Next2D Player | Pocket Reference Chapter 14"; %>
 <% const path = "../../../"; %>
 <%- include("../../_include/_header", {
     "title": title,
@@ -11,9 +11,9 @@
     <section class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Reference and change DisplayObject properties "scale9Grid".</h2>
+                <h2>Reference and change DisplayObject properties "blendMode".</h2>
                 <ol>
-                    <li><a href="<%= path %>${{ main.lang }}$/">Home</a></li>
+                    <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
                     <li><a href="<%= path %>${{ main.lang }}$/reference/player">Reference</a></li>
                     <li>Chapter 15</li>
                 </ol>
@@ -30,32 +30,45 @@
 
           <div class="col-md-8 offset-md-2">
 
-            <h3>scale9Grid</h3>
-            <p>scale9Grid is a property that sets the grid for scaling up/down 9 slices. The default value is null, and the Rectangle object is assigned when setting it.</p>
-            <p class="tutorial-image"><img src="<%= path %>assets/img/tutorial/scale9Grid.svg" alt="scale9Grid image"></p>
-
-            <p>
-              Top, bottom, left, right and center area => zoom in/out as usual<br>
-              Top, bottom, left and right corners => fixed without enlargement/reduction<br>
-              Top, bottom, left and right center area => magnify/reduce only in left/right direction<br>
-              Top and bottom center area of left and right => zoom in/out only in up/down direction
+            <h3>blendMode</h3>
+            <p>Sets the DisplayObject's BlendMode. According to the set BlendMode, the DisplayObject and background colors (RGB) are compared, added and subtracted for each corresponding pixel, and drawn based on the result.
+              <ul>
+                <li>BlendMode.NORMAL(default)</li>
+                <li>BlendMode.ADD</li>
+                <li>BlendMode.ALPHA</li>
+                <li>BlendMode.DARKEN</li>
+                <li>BlendMode.DIFFERENCE</li>
+                <li>BlendMode.ERASE</li>
+                <li>BlendMode.HARDLIGHT</li>
+                <li>BlendMode.INVERT</li>
+                <li>BlendMode.LAYER</li>
+                <li>BlendMode.LIGHTEN</li>
+                <li>BlendMode.MULTIPLY</li>
+                <li>BlendMode.OVERLAY</li>
+                <li>BlendMode.SCREEN</li>
+                <li>BlendMode.SUBTRACT</li>
+              </ul>
             </p>
 
             <h5>Example</h5>
-            <p><pre>const {Rectangle} = next2d.geom;
-const {Shape, Sprite} = next2d.display;
+            <p><pre>const {Shape, BitmapData, Sprite, BlendMode} = next2d.display;
+const image = new Image();
+image.src = "[[image path]]";
+
+const bitmapData = new BitmapData();
+bitmapData.image = image;
 
 const shape = new Shape();
 shape
     .graphics
-    .beginFill()
-    .drawRoundRect(0, 0, 60, 60, 10);
+    .beginBitmapFill(bitmapData)
+    .drawRect(0, 0, bitmapData.width, bitmapData.height);
 
 const sprite = new Sprite();
 sprite.addChild(shape);
-sprite.scale9Grid = new Rectangle(10, 10, 40, 40);</pre></p>
+sprite.blendMode = BlendMode.SCREEN;</pre></p>
 
-            <p><a class="float-end read-more" href="16.html">${{ main.next-chapter }}$</a></p>
+            <p class="next-chapter"><a class="float-end read-more" href="16.html">${{ main.next-chapter }}$</a></p>
           </div>
         </div>
       </div>

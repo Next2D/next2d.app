@@ -1,4 +1,4 @@
-<% const title = "Next2D Player | Pocket Reference Chapter 09"; %>
+<% const title = "Next2D Player | Pocket Reference Chapter 08"; %>
 <% const path = "../../../"; %>
 <%- include("../../_include/_header", {
     "title": title,
@@ -11,7 +11,6 @@
     <section class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Reference and change DisplayObject properties 'scaleX/scaleY'.</h2>
                 <ol>
                     <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
                     <li><a href="<%= path %>${{ main.lang }}$/reference/player">Reference</a></li>
@@ -29,48 +28,23 @@
         <div class="row" data-aos="fade-up" data-aos-delay="100">
 
           <div class="col-md-8 offset-md-2">
+            <h2>${{ player-reference.chapter9.title }}$</h2>
 
-            <h3>scaleX/scaleY</h3>
-            <p>Indicates the scaling ratio of the DisplayObject's width (scaleX) and height (scaleY). A value of 0.0 to 1.0 represents a scale of 0 to 100%; to scale a DisplayObject, assign a value to this property. To scale a DisplayObject, assign a value to this property. A negative value will flip the display object left to right or up and down.</p>
-            <p class="tutorial-image"><img src="<%= path %>assets/img/tutorial/scale-xy.svg" alt="scale image"></p>
+            <h3>x/y</h3>
+            <p>${{ player-reference.chapter9.text1 }}$</p>
+
+            <p class="tutorial-image"><img src="<%= path %>assets/img/reference/move-xy.svg" alt="Reference Point"></p>
 
             <h5>Example</h5>
-            <p><pre>const {Shape, BitmapData} = next2d.display;
-const image = new Image();
-image.src = "[[image path]]";
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 09-1" src="https://codepen.io/next2d/embed/poWVgWN?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/poWVgWN">
+                  [Next2D Reference] Chapter 09-1</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
 
-const bitmapData = new BitmapData();
-bitmapData.image = image;
-
-// scaleX 1.5
-const shape1 = new Shape();
-shape1
-    .graphics
-    .beginBitmapFill(bitmapData)
-    .drawRect(0, 0, bitmapData.width, bitmapData.height);
-
-shape1.scaleX = 1.5;
-
-// scaleY 1.5
-const shape2 = new Shape();
-shape2
-    .graphics
-    .beginBitmapFill(bitmapData)
-    .drawRect(0, 0, bitmapData.width, bitmapData.height);
-
-shape2.scaleY = 1.5;
-
-// scaleX ans scaleY 1.5
-const shape3 = new Shape();
-shape3
-    .graphics
-    .beginBitmapFill(bitmapData)
-    .drawRect(0, 0, bitmapData.width, bitmapData.height);
-
-shape3.scaleX = 1.5;
-shape3.scaleY = 1.5;</pre></p>
-
-            <p><a class="float-end read-more" href="10.html">${{ main.next-chapter }}$</a></p>
+            <p class="next-chapter"><a class="float-end read-more" href="10.html">${{ main.next-chapter }}$</a></p>
           </div>
         </div>
       </div>

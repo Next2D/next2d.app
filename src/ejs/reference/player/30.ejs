@@ -1,4 +1,4 @@
-<% const title = "Next2D Player | Pocket Reference Chapter 30"; %>
+<% const title = "Next2D Player | Pocket Reference Chapter 29"; %>
 <% const path = "../../../"; %>
 <%- include("../../_include/_header", {
     "title": title,
@@ -11,7 +11,7 @@
     <section class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h2>drag and drop.</h2>
+                <h2>Find out the coordinates of the mouse/touch pointer.</h2>
                 <ol>
                     <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
                     <li><a href="<%= path %>${{ main.lang }}$/reference/player">Reference</a></li>
@@ -30,8 +30,8 @@
 
           <div class="col-md-8 offset-md-2">
 
-            <h3>startDrag/stopDrag</h3>
-            <p></p>
+            <h3>mouseX/mouseY</h3>
+            <p>Indicates the x-coordinate (mouseX) and y-coordinate (mouseY) of the mouse/touch pointer. Note that, unlike the x and y properties, the coordinates are not local to the parent container.</p>
 
             <h5>Example</h5>
             <p><pre>const {MouseEvent} = next2d.events;
@@ -42,7 +42,7 @@ this.addEventListener(MouseEvent.MOUSE_MOVE, (event) =>
 });
 </pre></p>
 
-            <p><a class="float-end read-more" href="31.html">${{ main.next-chapter }}$</a></p>
+<!--             <p class="next-chapter"><a class="float-end read-more" href="31.html">${{ main.next-chapter }}$</a></p> -->
           </div>
         </div>
       </div>

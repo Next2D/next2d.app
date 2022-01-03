@@ -43,6 +43,17 @@
     "text1": "The parent property points to the parent DisplayObjectContainer. Multiple parents can be used to go back to the ancestor. However, if no child elements of the DisplayObjectContainer are registered, null will be returned.",
     "text2": "The root property points to the parent DisplayObjectContainer at the highest level of the hierarchy. In most cases this will be the DisplayObjectContainer directly below the Stage. However, it will return null if there are no children of the DisplayObjectContainer registered."
   },
+  "chapter8": {
+    "title": "Set or change the DisplayObject name.",
+    "text1": "A property that represents the DisplayObject name. Both reference and assignment are possible. We recommend using alphanumeric characters and underscore (_) for the name. The named DisplayObject can be accessed with this.{{ DisplayObject name }}."
+  },
+  "chapter9": {
+    "title": "Move the position of the DisplayObject",
+    "text1": "The x and y coordinates of the DisplayObject with respect to the local coordinates of the parent DisplayObjectContainer, which can be moved by assigning a value (Number) to the xy property."
+  },
+
+
+
 
 
 

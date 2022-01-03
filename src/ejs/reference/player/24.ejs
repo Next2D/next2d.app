@@ -1,4 +1,4 @@
-<% const title = "Next2D Player | Pocket Reference Chapter 24"; %>
+<% const title = "Next2D Player | Pocket Reference Chapter 23"; %>
 <% const path = "../../../"; %>
 <%- include("../../_include/_header", {
     "title": title,
@@ -11,7 +11,7 @@
     <section class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Change the playback speed.</h2>
+                <h2>Properties used in the MovieClip timeline</h2>
                 <ol>
                     <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
                     <li><a href="<%= path %>${{ main.lang }}$/reference/player">Reference</a></li>
@@ -30,13 +30,22 @@
 
           <div class="col-md-8 offset-md-2">
 
-            <h3>frameRate</h3>
-            <p>Indicates the frame rate. The unit is frames per second (fps). The frame rate you set will be applied to all timelines.</p>
+            <h3>current(Frame | FrameLabel | Labels)</h3>
+            <p>currentFrame returns the current frame number, currentFrameLabel returns the FrameLabel class of the label information in the current frame, and currentLabels returns an array of FrameLabel objects in the current scene.</p>
 
             <h5>Example</h5>
-            <p><pre>this.stage.frameRate = 60;</pre></p>
+            <p><pre>// 3 frames back and stop
+this.gotoAndStop(this.currentFrame - 3);
 
-            <p><a class="float-end read-more" href="25.html">${{ main.next-chapter }}$</a></p>
+// current label name
+console.log(this.currentFrameLabel.name);
+
+const labels = this.currentLabels;
+for (let idx = 0; labels.length > idx; idx++) {
+    console.log(labels[idx].name);
+}</pre></p>
+
+            <p class="next-chapter"><a class="float-end read-more" href="25.html">${{ main.next-chapter }}$</a></p>
           </div>
         </div>
       </div>

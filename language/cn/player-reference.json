@@ -38,6 +38,11 @@
     "text1": "getChildAt函数从堆叠顺序的索引中获得对子元素对象的引用。",
     "text2": "getChildByName函数从一个子元素对象的实例名称中获得对它的引用。"
   },
+  "chapter7": {
+    "title": "对父级DisplayObjectContainer和根级DisplayObjectContainer的引用",
+    "text1": "父属性指向父DisplayObjectContainer。 你可以使用多个父母来回溯到一个祖先。 但是，如果没有注册DisplayObjectContainer的子元素，将返回null。",
+    "text2": "根属性指向层次结构中最高级别的父级DisplayObjectContainer。 在大多数情况下，这将是舞台正下方的DisplayObjectContainer。 然而，如果没有注册的DisplayObjectContainer的孩子，它将返回空。"
+  },
 
 
 

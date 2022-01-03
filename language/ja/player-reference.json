@@ -38,6 +38,12 @@
     "text1": "getChildAt関数は、重ね順のインデックスから子要素オブジェクトへの参照を取得します。",
     "text2": "getChildByName関数は、インスタンス名から子要素オブジェクトへの参照を取得します。"
   },
+  "chapter7": {
+    "title": "親DisplayObjectContainer、ルートDisplayObjectContainerへの参照",
+    "text1": "parentプロパティは、親であるDisplayObjectContainerを指します。複数のparentを使用して、先祖にさかのぼることができます。但し、DisplayObjectContainerの子要素に登録がない場合はnullを返します。",
+    "text2": "rootプロパティは、最も高い階層の親DisplayObjectContainerを指します。殆どの場合はStage直下のDisplayObjectContainerを指す事が多です。但し、DisplayObjectContainerの子要素に登録がない場合はnullを返します。"
+  },
+
 
 
 

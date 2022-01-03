@@ -38,6 +38,12 @@
     "text1": "The getChildAt function gets the reference to the child element object from the index of the stacking order.",
     "text2": "The getChildByName function obtains a reference to a child element object from its instance name."
   },
+  "chapter7": {
+    "title": "Reference to parent DisplayObjectContainer and root DisplayObjectContainer",
+    "text1": "The parent property points to the parent DisplayObjectContainer. Multiple parents can be used to go back to the ancestor. However, if no child elements of the DisplayObjectContainer are registered, null will be returned.",
+    "text2": "The root property points to the parent DisplayObjectContainer at the highest level of the hierarchy. In most cases this will be the DisplayObjectContainer directly below the Stage. However, it will return null if there are no children of the DisplayObjectContainer registered."
+  },
+
 
 
 

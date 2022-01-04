@@ -51,7 +51,11 @@
     "title": "DisplayObjectの位置を移動する",
     "text1": "親DisplayObjectContainerのローカル座標を基準にしたDisplayObjectのx座標、y座標を表します。xyプロパティーに値(Number)を代入する事で移動する事が可能です。"
   },
-
+  "chapter10": {
+    "title": "DisplayObjectの幅/高さ/拡大値・縮小値を調べる・設定する",
+    "text1": "DisplayObjectContainerの水平方向の幅、垂直方向の高さをピクセル単位で表します。親DisplayObjectContainerを基準とした幅・高さであるため子のDisplayObjectが回転すると幅と高さの値は変化します。width/heightプロパティーに値を代入すると拡大/縮小が行えます。widthはscaleX、heightはscaleYと連動しています。",
+    "text2": "DisplayObject の幅（scaleX）、高さ（scaleY）の拡大縮小率を表します。0.0～1.0は0～100%の範囲を示し、DisplayObjectを拡大縮小する場合は、このプロパティに数値を代入します。負の値を代入するとDisplayObjectを左右または上下が反転します。"
+  },
 
 
 

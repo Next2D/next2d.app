@@ -51,7 +51,11 @@
     "title": "Move the position of the DisplayObject",
     "text1": "The x and y coordinates of the DisplayObject with respect to the local coordinates of the parent DisplayObjectContainer, which can be moved by assigning a value (Number) to the xy property."
   },
-
+  "chapter10": {
+    "title": "To examine and set DisplayObject width/height/scaling values",
+    "text1": "This property represents the horizontal width and vertical height of a DisplayObjectContainer in pixels. Since the width and height are based on the parent DisplayObjectContainer, the width and height values will change when the child DisplayObject is rotated. width and height can be scaled by assigning values to the width/height properties. width is linked to scaleX and height to scaleY. scaleX and height is linked to scaleY.",
+    "text2": "This property represents the scaling ratio of the DisplayObject's width (scaleX) and height (scaleY). 0.0 to 1.0 indicates a range of 0 to 100%, and to scale the DisplayObject, assign a numerical value to this property. Assigning a negative value will flip the DisplayObject left/right or up/down."
+  },
 
 
 

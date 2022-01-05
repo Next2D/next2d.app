@@ -57,8 +57,8 @@
     "text2": "This property represents the scaling ratio of the DisplayObject's width (scaleX) and height (scaleY). 0.0 to 1.0 indicates a range of 0 to 100%, and to scale the DisplayObject, assign a numerical value to this property. Assigning a negative value will flip the DisplayObject left/right or up/down."
   },
   "chapter11": {
-    "title": "",
-    "text1": ""
+    "title": "Rotate the DisplayObject",
+    "text1": "Specifies the rotation angle of the DisplayObject. The unit is degrees (°). Negative values and values greater than 360° can be specified, but they will be replaced internally by the range 0-360°."
   },
 
 

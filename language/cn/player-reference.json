@@ -57,8 +57,8 @@
     "text2": "这个属性表示DisplayObject的宽度（scaleX）和高度（scaleY）的缩放系数。0.0到1.0表示0到100%的范围，在缩放DisplayObject的时候，你应该给这个属性指定一个数值。指定一个负值将使DisplayObject向左、向右或倒转。"
   },
   "chapter11": {
-    "title": "",
-    "text1": ""
+    "title": "旋转一个显示对象",
+    "text1": "指定DisplayObject的旋转角度。 单位是度（°）。 可以指定负值和大于360°的值，但在内部会被0-360°的范围取代。"
   },
 
 

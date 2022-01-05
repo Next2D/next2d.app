@@ -57,8 +57,8 @@
     "text2": "DisplayObject の幅（scaleX）、高さ（scaleY）の拡大縮小率を表します。0.0～1.0は0～100%の範囲を示し、DisplayObjectを拡大縮小する場合は、このプロパティに数値を代入します。負の値を代入するとDisplayObjectを左右または上下が反転します。"
   },
   "chapter11": {
-    "title": "",
-    "text1": ""
+    "title": "DisplayObjectを回転させる",
+    "text1": "DisplayObjectの回転角度を指定します。単位は度(°)です。負の値や360°を超える値も指定できますが、内部的には0～360°の範囲で置き換えられます。"
   },
 
 

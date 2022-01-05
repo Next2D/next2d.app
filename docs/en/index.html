@@ -1,4 +1,610 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1" name="viewport"><title>Next2D | Rendering Engine, NoCode Tool, Underlying Framework.</title><meta content="Next2D is a project to develop a rendering engine, NoCode authoring tool and infrastructure framework. Fast! Comfortable!" name="description"><meta content="Next2D,Next2D Player,NoCode Tool,Next2D Framework" name="keywords"><meta itemprop="name" content="Next2D | Rendering Engine, NoCode Tool, Underlying Framework."><meta itemprop="description" content="Next2D is a project to develop a rendering engine, NoCode authoring tool and infrastructure framework. Fast! Comfortable!"><meta itemprop="image" content="https://next2d.app/assets/img/ogp.png"><meta property="og:url" content="https://next2d.app"><meta property="og:type" content="website"><meta property="og:title" content="Next2D | Rendering Engine, NoCode Tool, Underlying Framework."><meta property="og:description" content="Next2D is a project to develop a rendering engine, NoCode authoring tool and infrastructure framework. Fast! Comfortable!"><meta property="og:image" content="https://next2d.app/assets/img/ogp.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Next2D | Rendering Engine, NoCode Tool, Underlying Framework."><meta name="twitter:description" content="Next2D is a project to develop a rendering engine, NoCode authoring tool and infrastructure framework. Fast! Comfortable!"><meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png"><link href="../assets/img/favicon.png" rel="icon"><link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon"><link href="../assets/vendor/aos/aos.css" rel="stylesheet"><link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"><link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"><link href="../assets/css/main.min.css" rel="stylesheet"><script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script><script>window.dataLayer = window.dataLayer || [];
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Next2D | Rendering Engine, NoCode Tool, Underlying Framework.</title>
+    <meta content="Next2D is a project to develop a rendering engine, NoCode authoring tool and infrastructure framework. Fast! Comfortable!" name="description">
+    <meta content="Next2D,Next2D Player,NoCode Tool,Next2D Framework" name="keywords">
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Next2D | Rendering Engine, NoCode Tool, Underlying Framework.">
+    <meta itemprop="description" content="Next2D is a project to develop a rendering engine, NoCode authoring tool and infrastructure framework. Fast! Comfortable!">
+    <meta itemprop="image" content="https://next2d.app/assets/img/ogp.png">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://next2d.app">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Next2D | Rendering Engine, NoCode Tool, Underlying Framework.">
+    <meta property="og:description" content="Next2D is a project to develop a rendering engine, NoCode authoring tool and infrastructure framework. Fast! Comfortable!">
+    <meta property="og:image" content="https://next2d.app/assets/img/ogp.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Next2D | Rendering Engine, NoCode Tool, Underlying Framework.">
+    <meta name="twitter:description" content="Next2D is a project to develop a rendering engine, NoCode authoring tool and infrastructure framework. Fast! Comfortable!">
+    <meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png">
+
+    <!-- Favicons -->
+    <link href="../assets/img/favicon.png" rel="icon">
+    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/main.min.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag("js", new Date());
-        gtag("config", "G-8GJWF4S3RH");</script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head><body><header id="header" class="header fixed-top d-flex align-items-center"><div class="container d-flex align-items-center justify-content-between"><div id="logo"><a href="../en"><img loading="lazy" src="../assets/img/logo.svg" alt="Next2D Rendering Engine, NoCode Tool, Underlying Framework." title="Next2D Rendering Engine, NoCode Tool, Underlying Framework."></a></div><nav id="navbar" class="navbar"><ul class="list-unstyled"><li><a class="nav-link scrollto" href="../en/#get-started">Home</a></li><li><a class="nav-link scrollto" href="../en/#roadmap">Roadmap</a></li><li class="dropdown"><a class="nav-link scrollto" href="#"><span>Player</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="https://github.com/Next2D/Player">GitHub</a></li><li><a href="../docs/player">API Docs</a></li><li><a href="../en/reference/player">Reference</a></li><li><a href="../en/#player">Features</a></li></ul></li><li class="dropdown"><a class="nav-link scrollto" href="#"><span>NoCode Tool</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="https://tool.next2d.app">Web Site</a></li><li><a href="../en/usage">Usage</a></li><li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos">YouTube</a></li><li><a href="../en/#tool">Features</a></li></ul></li><li class="dropdown"><a class="nav-link scrollto" href="#"><span>Framework</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="https://github.com/Next2D/Framework">GitHub</a></li><li><a href="../docs/framework">API Docs</a></li><li><a href="../en/#framework">Features</a></li></ul></li><li class="dropdown"><a class="nav-link scrollto" href="#"><span>Language</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="../en">English</a></li><li><a href="../ja">日本語</a></li><li><a href="../cn">简体中文</a></li></ul></li><li><a class="nav-link scrollto" href="../en/#contact">Contact</a></li></ul><i class="bi bi-list mobile-nav-toggle"></i></nav></div></header><main id="main"><section id="get-started" class="padd-section text-center"><div class="container" data-aos="fade-up"><div class="section-title text-center"><h2>Next2D Libraries and Tool</h2><p class="separator">Rendering engine, NoCode authoring tool, and underlying framework.</p></div></div><div class="container"><div class="row text-center top-image"><div class="col-md-12" data-aos="zoom-in" data-aos-delay="0"><img loading="lazy" class="img-fluid" src="../assets/img/image.png" width="600" title="Next2D Project Image"></div></div><div class="row"><div class="col-md-4 col-lg-4" data-aos="zoom-in" data-aos-delay="100"><div class="feature-block"><img loading="lazy" src="../assets/img/player/logo.svg" width="60px" height="60px" alt="Player"><h4>Player</h4><p>Experience the fast and beautiful anti-aliased rendering of WebGL. You can create rich, interactive graphics, cross-platform applications and games without worrying about browser or device compatibility.</p><a class="scrollto" href="#player">Read More</a></div></div><div class="col-md-4 col-lg-4" data-aos="zoom-in" data-aos-delay="200"><div class="feature-block"><img loading="lazy" src="../assets/img/tool/logo.svg" width="60px" height="60px" alt="NoCode Tool"><h4>NoCode Tool</h4><p>This is an authoring tool that runs on a web browser, mainly for NoCode development, You can intuitively create the animation you have imagined, and the exported data can be easily published by uploading it to the Web.</p><a class="scrollto" href="#tool">Read More</a></div></div><div class="col-md-4 col-lg-4" data-aos="zoom-in" data-aos-delay="300"><div class="feature-block"><img loading="lazy" src="../assets/img/framework/logo.svg" width="60px" height="60px" alt="Framework"><h4>Framework</h4><p>It is a framework dedicated to Next2D that enables scene management by URL (SPA), which has been difficult with conventional Canvas&#x2F;WebGL applications, and simplifies readability and shareability by fixing the development pattern (MVVM).</p><a class="scrollto" href="#framework">Read More</a></div></div></div></div></section><section id="roadmap" class="padd-section text-center"><div class="container" data-aos="fade-up"><div class="section-title text-center"><h2>Roadmap</h2></div></div><div class="container"><div class="row"><div class="col-md-12 col-lg-12" data-aos="zoom-in" data-aos-delay="100"><div class="feature-block"><img loading="lazy" class="img-fluid" src="../assets/img/roadmap.svg" alt="Develop Roadmap" width="70vw"></div></div></div></div></section><section id="player" class="padd-section text-center"><div class="container" data-aos="fade-up"><div class="section-title text-center"><h2>Player Features</h2><img src="../assets/img/player/logo.svg" width="120px" height="120px" alt="Next2D Player"><p class="separator">Aims to provide a fast 2D player.</p></div><div class="row" data-aos="fade-up" data-aos-delay="100"><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/player/feature-01.svg" width="60px" height="60px" alt="Open Source"><h4>Open Source</h4><p>Next2D Player is available free of charge as open source software for personal and commercial use.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/player/feature-02.svg" width="60px" height="60px" alt="Fast"><h4>Fast Rendering</h4><p>Experience lightweight, fast, and beautiful anti-aliased rendering.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/player/feature-03.svg" width="60px" height="60px" alt="Full WebGL support"><h4>Full WebGL support</h4><p>The emulation technology of &quot;swf2js&quot; is ported to realize Flash-like rendering such as Filter and Shape in WebGL.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/player/feature-04.svg" width="60px" height="60px" alt="Various Text Functions"><h4>Various Text Functions</h4><p>Various text features such as fixed text, dynamic text input, and HTML text are included.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/player/feature-05.svg" width="60px" height="60px" alt="Multi-Platform Support"><h4>Multi-Platform Support</h4><p>Deliver interactive and visually appealing content from desktop to mobile with a single piece of code.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/player/chrome.svg" width="60px" height="60px" alt="chrome"> <img loading="lazy" src="../assets/img/player/firefox.svg" width="60px" height="60px" alt="firefox"> <img loading="lazy" src="../assets/img/player/safari.svg" width="60px" height="60px" alt="safari"> <img loading="lazy" src="../assets/img/player/edge.svg" width="60px" height="60px" alt="edge"><h4>Browser Support</h4><p>It is interoperable with the latest desktop and mobile browsers, and has been thoroughly tested to deliver performance and reliability across the widest possible range of browsers.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/player/feature-06.svg" width="60px" height="60px" alt="API"><h4>API</h4><p>Extensive documentation, sample code, and tutorials for initial introduction make it easy for new and old developers to get up to speed quickly.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/player/feature-07.svg" width="60px" height="60px" alt="MP3"> <img loading="lazy" src="../assets/img/player/feature-08.svg" width="60px" height="60px" alt="MP4"><h4>MP3&#x2F;MP4</h4><p>Supports reading audio and video, including MP3 and MP4.</p></div></div></div><nav class="feature-nav"><ul class="list-unstyled"><li><a href="https://github.com/Next2D/Player/releases" class="btn"><i class="bi bi-github"></i> Download</a></li><li><a href="../docs/player" class="btn"><i class="bi bi-book"></i> API Docs</a></li><li><a href="../en/reference/player" class="btn"><i class="bi bi-lightbulb"></i> Reference</a></li></ul></nav></div></section><section id="tool" class="padd-section text-center"><div class="container" data-aos="fade-up"><div class="section-title text-center"><h2>NoCode Tool Features</h2><img src="../assets/img/tool/logo.svg" width="100px" height="100px" alt="Next2D NoCode Tool"><p class="separator">An authoring tool that runs on a Web browser.</p></div><div class="row" data-aos="fade-up" data-aos-delay="100"><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/tool/feature-01.svg" width="60px" height="60px" alt="No Code"><h4>No Code</h4><p>You can intuitively create the animation you have in mind without writing any code, and the exported data can be easily published by uploading it to the Web.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/tool/feature-02.svg" width="60px" height="60px" alt="No installation required"><h4>No installation required</h4><p>It is a web service that can be used immediately by anyone who accesses it.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/tool/feature-03.svg" width="60px" height="60px" alt="Transform"><h4>Transform</h4><p>Using the mouse, you can easily move the content up, down, left, right, transform, zoom in and out, rotate, etc., and add and subtract colors.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/tool/feature-04.svg" width="60px" height="60px" alt="Blend Mode"><h4>Blend Mode</h4><p>Visual effects such as addition, subtraction, multiplication, and inversion can be added or removed with the mouse, and these can be easily manipulated.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/tool/feature-05.svg" width="60px" height="60px" alt="Filter"><h4>Filter</h4><p>Filters such as blur, glow, drop shadow, gradient, etc. can be easily added or removed with the mouse, and they can be easily manipulated.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/tool/feature-06.svg" width="60px" height="60px" alt="Easing"><h4>Easing</h4><p>The easing function allows you to make your animations more realistic and dynamic.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/tool/feature-07.svg" width="60px" height="60px" alt="JSON"> <img loading="lazy" src="../assets/img/tool/feature-08.svg" width="60px" height="60px" alt="WEBM"> <img loading="lazy" src="../assets/img/tool/feature-09.svg" width="60px" height="60px" alt="GIF"><h4>Output</h4><p>Export to JSON, WEBM, and animated GIF is possible, and JSON can be read and drawn by Next2D Player.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/tool/feature-10.svg" width="60px" height="60px" alt="SWF"><h4>SWF</h4><p>Although it is simple, it is also possible to read SWF files.</p></div></div></div><nav class="feature-nav"><ul class="list-unstyled"><li><a href="https://tool.next2d.app" class="btn"><i class="bi bi-cloud"></i> Web Site(α)</a></li><li><a href="../en/usage" class="btn"><i class="bi bi-lightbulb"></i> Usage</a></li><li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" class="btn"><i class="bi bi-youtube"></i> YouTube</a></li></ul></nav></div></section><section id="framework" class="padd-section text-center"><div class="container" data-aos="fade-up"><div class="section-title text-center"><h2>Framework Features</h2><img src="../assets/img/framework/logo.svg" width="120px" height="120px" alt="Next2D Framework"><p class="separator">It is a framework that simplifies readability and shareability by fixing development patterns.</p></div><div class="row" data-aos="fade-up" data-aos-delay="100"><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/framework/feature-01.svg" width="60px" height="60px" alt="Open Source"><h4>Open Source</h4><p>Next2D Framework is available free of charge as open source software for personal and commercial use.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/framework/feature-02.svg" width="60px" height="60px" alt="Quick Start"><h4>Quick Start</h4><p>You can create an application by simply executing the following command.<br>[Command]<br><pre>npx create-next2d-app app-name</pre></p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/framework/feature-03.svg" width="60px" height="60px" alt="MVVM pattern."><h4>MVVM Pattern</h4><p>MVVM（Model-View-ViewModel）pattern, looking toward a future where UI designers and programmers collaborate to create applications.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/framework/feature-04.svg" width="60px" height="60px" alt="team development"><h4>Team Development</h4><p>Fixed development patterns (MVVM) for readability and simplified sharing. It allows for comfortable team development.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/framework/feature-05.svg" width="60px" height="60px" alt="Work with NoCode Tool"><h4>Cooperation with NoCode Tool</h4><p>As in the Flash era, symbol management is possible, allowing animators and programmers to create applications without conflicts.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/framework/feature-06.svg" width="60px" height="60px" alt="Single Page Application"><h4>Single Page Application</h4><p>It is now possible to manage scenes by URL, which has been difficult with previous Canvas&#x2F;WebGL applications.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/framework/feature-07.svg" width="60px" height="60px" alt="OUTPUT"><h4>Output</h4><p>Multiple environment variables can be easily exported and combined into a single file.</p></div></div><div class="col-md-6 col-lg-3"><div class="feature-block"><img loading="lazy" src="../assets/img/framework/feature-08.svg" width="60px" height="60px" alt="Documentation and Tutorials"><h4>Documentation&#x2F;Tutorials</h4><p>Extensive documentation and tutorials support you from learning to practical use.</p></div></div></div><nav class="feature-nav"><ul class="list-unstyled"><li><a href="https://github.com/Next2D/Framework" class="btn"><i class="bi bi-github"></i> GitHub</a></li><li><a href="../docs/framework" class="btn"><i class="bi bi-book"></i> API Docs</a></li></ul></nav></div></section><section id="contributor" class="padd-section"><div class="container" data-aos="fade-up"><div class="section-title text-center"><h2>Contributors</h2><p class="separator">Next2D is being improved daily by a wonderful community.</p></div><div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100"><div id="contributors" class="col-md-12 col-lg-12"></div></div></div></section><section id="contact" class="padd-section"><div class="container" data-aos="fade-up"><div class="section-title text-center"><h2>Contact</h2><p class="separator">Please feel free to contact us.</p></div><div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100"><div class="col-md-6 offset-md-3"><div class="info"><div class="email"><i class="bi bi-envelope"></i><p>developer@next2d.app</p></div></div><div class="social-links"><a href="https://twitter.com/Next2D" class="twitter"><i class="bi bi-twitter"></i></a> <a href="https://github.com/Next2D" class="github"><i class="bi bi-github"></i></a> <a href="https://discord.gg/6c9rv5Uns5" class="discord"><i class="bi bi-discord"></i></a></div></div></div></div></section></main><footer class="footer" data-aos="fade-up"><div class="container"><div class="row"><div class="col-md-12 col-lg-4"><div class="footer-logo"><a class="navbar-brand" href="../en">Next2D</a><p>Next2D, a project derived from the JavaScript FlashPlayer &quot;swf2js&quot;, aims to provide the fastest 2D engine that works on any device.<br>Created by Toshiyuki Ienaga.</p></div><div class="list-sns-menu"><ul class="list-unstyled"><li><a href="https://twitter.com/ienagatoshiyuki"><i class="bi bi-twitter"></i></a></li><li><a href="https://github.com/ienaga"><i class="bi bi-github"></i></a></li></ul></div></div><div class="col-sm-6 col-md-3 col-lg-2"><div class="list-menu"><h4>Player</h4><ul class="list-unstyled"><li><a href="https://github.com/Next2D/Player">GitHub</a></li><li><a href="../docs/player">API Docs</a></li><li><a href="../en/reference/player">Reference</a></li><li><a href="../en/#player">Features</a></li></ul></div></div><div class="col-sm-6 col-md-3 col-lg-2"><div class="list-menu"><h4>Tool</h4><ul class="list-unstyled"><li><a href="https://tool.next2d.app">Web Site</a></li><li><a href="../en/usage">Usage</a></li><li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos">YouTube</a></li><li><a href="../en/#tool">Features</a></li></ul></div></div><div class="col-sm-6 col-md-3 col-lg-2"><div class="list-menu"><h4>Framework</h4><ul class="list-unstyled"><li><a href="https://github.com/Next2D/Framework">GitHub</a></li><li><a href="../docs/framework">API Docs</a></li><li><a href="../en/#framework">Features</a></li></ul></div></div><div class="col-sm-6 col-md-3 col-lg-2"><div class="list-menu"><h4>About US</h4><ul class="list-unstyled"><li><a href="../en/#contact">Contact</a></li><li><a href="../en/privacy">Privacy Policy</a></li></ul></div></div></div></div><div class="copyrights"><div class="container"><p>&copy; Copyrights Next2D. All rights reserved.</p></div></div></footer><a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a><script src="../assets/vendor/aos/aos.js"></script><script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script><script src="../assets/js/main.min.js"></script></body></html>
+        gtag("config", "G-8GJWF4S3RH");
+    </script>
+    <script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  </head>
+
+  <body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+
+        <div id="logo">
+          <a href="../en"><img loading="lazy" src="../assets/img/logo.svg" alt="Next2D Rendering Engine, NoCode Tool, Underlying Framework." title="Next2D Rendering Engine, NoCode Tool, Underlying Framework." /></a>
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul class="list-unstyled">
+            <li><a class="nav-link scrollto" href="../en/#get-started">Home</a></li>
+            <li><a class="nav-link scrollto" href="../en/#roadmap">Roadmap</a></li>
+            <li class="dropdown"><a class="nav-link scrollto" href="#"><span>Player</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="https://github.com/Next2D/Player">GitHub</a></li>
+                <li><a href="../docs/player">API Docs</a></li>
+                <li><a href="../en/reference/player">Reference</a></li>
+                <li><a href="../en/#player">Features</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="nav-link scrollto" href="#"><span>NoCode Tool</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="https://tool.next2d.app">Web Site</a></li>
+                <li><a href="../en/usage">Usage</a></li>
+                <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos">YouTube</a></li>
+                <li><a href="../en/#tool">Features</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="nav-link scrollto" href="#"><span>Framework</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="https://github.com/Next2D/Framework">GitHub</a></li>
+                <li><a href="../docs/framework">API Docs</a></li>
+                <li><a href="../en/#framework">Features</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="nav-link scrollto" href="#"><span>Language</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="../en">English</a></li>
+                <li><a href="../ja">日本語</a></li>
+                <li><a href="../cn">简体中文</a></li>
+              </ul>
+            </li>
+            <li><a class="nav-link scrollto" href="../en/#contact">Contact</a></li>
+          </ul>
+
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+      </div>
+    </header><!-- End Header -->
+
+    <main id="main">
+
+      <!-- ======= Get Started Section ======= -->
+      <section id="get-started" class="padd-section text-center">
+
+        <div class="container" data-aos="fade-up">
+          <div class="section-title text-center">
+            <h2>Next2D Libraries and Tool</h2>
+            <p class="separator">Rendering engine, NoCode authoring tool, and underlying framework.</p>
+          </div>
+        </div>
+
+        <div class="container">
+
+          <div class="row text-center top-image">
+            <div class="col-md-12" data-aos="zoom-in" data-aos-delay="0">
+                <img loading="lazy" class="img-fluid" src="../assets/img/image.png" width="600" title="Next2D Project Image">
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-4 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="feature-block">
+                <img loading="lazy" src="../assets/img/player/logo.svg" width="60px" height="60px" alt="Player">
+                <h4>Player</h4>
+                <p>Experience the fast and beautiful anti-aliased rendering of WebGL. You can create rich, interactive graphics, cross-platform applications and games without worrying about browser or device compatibility.</p>
+                <a class="scrollto" href="#player">Read More</a>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+              <div class="feature-block">
+                <img loading="lazy" src="../assets/img/tool/logo.svg" width="60px" height="60px" alt="NoCode Tool">
+                <h4>NoCode Tool</h4>
+                <p>This is an authoring tool that runs on a web browser, mainly for NoCode development, You can intuitively create the animation you have imagined, and the exported data can be easily published by uploading it to the Web.</p>
+                <a class="scrollto" href="#tool">Read More</a>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+              <div class="feature-block">
+                <img loading="lazy" src="../assets/img/framework/logo.svg" width="60px" height="60px" alt="Framework">
+                <h4>Framework</h4>
+                <p>It is a framework dedicated to Next2D that enables scene management by URL (SPA), which has been difficult with conventional Canvas&#x2F;WebGL applications, and simplifies readability and shareability by fixing the development pattern (MVVM).</p>
+                <a class="scrollto" href="#framework">Read More</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section><!-- End Get Started Section -->
+
+<!-- ======= Get Started Section ======= -->
+<section id="roadmap" class="padd-section text-center">
+
+<div class="container" data-aos="fade-up">
+  <div class="section-title text-center">
+    <h2>Roadmap</h2>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-12 col-lg-12" data-aos="zoom-in" data-aos-delay="100">
+      <div class="feature-block">
+        <img loading="lazy" class="img-fluid" src="../assets/img/roadmap.svg" alt="Develop Roadmap" width="70vw">
+      </div>
+    </div>
+
+  </div>
+</div>
+</section><!-- End Get Started Section -->
+
+<!-- ======= Player Section ======= -->
+<section id="player" class="padd-section text-center">
+
+<div class="container" data-aos="fade-up">
+  <div class="section-title text-center">
+    <h2>Player Features</h2>
+    <img src="../assets/img/player/logo.svg" width="120px" height="120px" alt="Next2D Player">
+    <p class="separator">Aims to provide a fast 2D player.</p>
+  </div>
+
+  <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src="../assets/img/player/feature-01.svg" width="60px" height="60px" alt="Open Source">
+        <h4>Open Source</h4>
+        <p>Next2D Player is available free of charge as open source software for personal and commercial use.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src="../assets/img/player/feature-02.svg" width="60px" height="60px" alt="Fast">
+        <h4>Fast Rendering</h4>
+        <p>Experience lightweight, fast, and beautiful anti-aliased rendering.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src="../assets/img/player/feature-03.svg" width="60px" height="60px" alt="Full WebGL support">
+        <h4>Full WebGL support</h4>
+        <p>The emulation technology of &quot;swf2js&quot; is ported to realize Flash-like rendering such as Filter and Shape in WebGL.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src="../assets/img/player/feature-04.svg" width="60px" height="60px" alt="Various Text Functions">
+        <h4>Various Text Functions</h4>
+        <p>Various text features such as fixed text, dynamic text input, and HTML text are included.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src="../assets/img/player/feature-05.svg" width="60px" height="60px" alt="Multi-Platform Support">
+        <h4>Multi-Platform Support</h4>
+        <p>Deliver interactive and visually appealing content from desktop to mobile with a single piece of code.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src="../assets/img/player/chrome.svg" width="60px" height="60px" alt="chrome">
+        <img loading="lazy" src="../assets/img/player/firefox.svg" width="60px" height="60px" alt="firefox">
+        <img loading="lazy" src="../assets/img/player/safari.svg" width="60px" height="60px" alt="safari">
+        <img loading="lazy" src="../assets/img/player/edge.svg" width="60px" height="60px" alt="edge">
+        <h4>Browser Support</h4>
+        <p>It is interoperable with the latest desktop and mobile browsers, and has been thoroughly tested to deliver performance and reliability across the widest possible range of browsers.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src="../assets/img/player/feature-06.svg" width="60px" height="60px" alt="API">
+        <h4>API</h4>
+        <p>Extensive documentation, sample code, and tutorials for initial introduction make it easy for new and old developers to get up to speed quickly.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src="../assets/img/player/feature-07.svg" width="60px" height="60px" alt="MP3">
+        <img loading="lazy" src="../assets/img/player/feature-08.svg" width="60px" height="60px" alt="MP4">
+        <h4>MP3&#x2F;MP4</h4>
+        <p>Supports reading audio and video, including MP3 and MP4.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <nav class="feature-nav">
+    <ul class="list-unstyled">
+      <li><a href="https://github.com/Next2D/Player/releases" class="btn"><i class="bi bi-github"></i> Download</a></li>
+      <li><a href="../docs/player" class="btn"><i class="bi bi-book"></i> API Docs</a></li>
+      <li><a href="../en/reference/player" class="btn"><i class="bi bi-lightbulb"></i> Reference</a></li>
+    </ul>
+  </nav>
+
+</div>
+</section><!-- End Player Section -->
+
+<!-- ======= NoCode Tool Section ======= -->
+<section id="tool" class="padd-section text-center">
+
+<div class="container" data-aos="fade-up">
+  <div class="section-title text-center">
+    <h2>NoCode Tool Features</h2>
+    <img src="../assets/img/tool/logo.svg" width="100px" height="100px" alt="Next2D NoCode Tool">
+    <p class="separator">An authoring tool that runs on a Web browser.</p>
+  </div>
+
+  <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src="../assets/img/tool/feature-01.svg" width="60px" height="60px" alt="No Code">
+        <h4>No Code</h4>
+        <p>You can intuitively create the animation you have in mind without writing any code, and the exported data can be easily published by uploading it to the Web.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src="../assets/img/tool/feature-02.svg" width="60px" height="60px" alt="No installation required">
+        <h4>No installation required</h4>
+        <p>It is a web service that can be used immediately by anyone who accesses it.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src="../assets/img/tool/feature-03.svg" width="60px" height="60px" alt="Transform">
+        <h4>Transform</h4>
+        <p>Using the mouse, you can easily move the content up, down, left, right, transform, zoom in and out, rotate, etc., and add and subtract colors.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src="../assets/img/tool/feature-04.svg" width="60px" height="60px" alt="Blend Mode">
+        <h4>Blend Mode</h4>
+        <p>Visual effects such as addition, subtraction, multiplication, and inversion can be added or removed with the mouse, and these can be easily manipulated.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src="../assets/img/tool/feature-05.svg" width="60px" height="60px" alt="Filter">
+        <h4>Filter</h4>
+        <p>Filters such as blur, glow, drop shadow, gradient, etc. can be easily added or removed with the mouse, and they can be easily manipulated.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src="../assets/img/tool/feature-06.svg" width="60px" height="60px" alt="Easing">
+        <h4>Easing</h4>
+        <p>The easing function allows you to make your animations more realistic and dynamic.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src="../assets/img/tool/feature-07.svg" width="60px" height="60px" alt="JSON">
+        <img loading="lazy" src="../assets/img/tool/feature-08.svg" width="60px" height="60px" alt="WEBM">
+        <img loading="lazy" src="../assets/img/tool/feature-09.svg" width="60px" height="60px" alt="GIF">
+        <h4>Output</h4>
+        <p>Export to JSON, WEBM, and animated GIF is possible, and JSON can be read and drawn by Next2D Player.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src="../assets/img/tool/feature-10.svg" width="60px" height="60px" alt="SWF">
+        <h4>SWF</h4>
+        <p>Although it is simple, it is also possible to read SWF files.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <nav class="feature-nav">
+    <ul class="list-unstyled">
+      <li><a href="https://tool.next2d.app" class="btn"><i class="bi bi-cloud"></i> Web Site(α)</a></li>
+      <li><a href="../en/usage" class="btn"><i class="bi bi-lightbulb"></i> Usage</a></li>
+      <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" class="btn"><i class="bi bi-youtube"></i> YouTube</a></li>
+    </ul>
+  </nav>
+
+</div>
+</section><!-- End NoCode Tool -->
+
+<!-- ======= Framework Section ======= -->
+<section id="framework" class="padd-section text-center">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title text-center">
+        <h2>Framework Features</h2>
+        <img src="../assets/img/framework/logo.svg" width="120px" height="120px" alt="Next2D Framework">
+        <p class="separator">It is a framework that simplifies readability and shareability by fixing development patterns.</p>
+      </div>
+
+      <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-block">
+            <img loading="lazy" src="../assets/img/framework/feature-01.svg" width="60px" height="60px" alt="Open Source">
+            <h4>Open Source</h4>
+            <p>Next2D Framework is available free of charge as open source software for personal and commercial use.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-block">
+            <img loading="lazy" src="../assets/img/framework/feature-02.svg" width="60px" height="60px" alt="Quick Start">
+            <h4>Quick Start</h4>
+            <p>You can create an application by simply executing the following command.<br>[Command]<br><pre>npx create-next2d-app app-name</pre></p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-block">
+            <img loading="lazy" src="../assets/img/framework/feature-03.svg" width="60px" height="60px" alt="MVVM pattern.">
+            <h4>MVVM Pattern</h4>
+            <p>MVVM（Model-View-ViewModel）pattern, looking toward a future where UI designers and programmers collaborate to create applications.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-block">
+            <img loading="lazy" src="../assets/img/framework/feature-04.svg" width="60px" height="60px" alt="team development">
+            <h4>Team Development</h4>
+            <p>Fixed development patterns (MVVM) for readability and simplified sharing. It allows for comfortable team development.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-block">
+            <img loading="lazy" src="../assets/img/framework/feature-05.svg" width="60px" height="60px" alt="Work with NoCode Tool">
+            <h4>Cooperation with NoCode Tool</h4>
+            <p>As in the Flash era, symbol management is possible, allowing animators and programmers to create applications without conflicts.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-block">
+            <img loading="lazy" src="../assets/img/framework/feature-06.svg" width="60px" height="60px" alt="Single Page Application">
+            <h4>Single Page Application</h4>
+            <p>It is now possible to manage scenes by URL, which has been difficult with previous Canvas&#x2F;WebGL applications.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-block">
+            <img loading="lazy" src="../assets/img/framework/feature-07.svg" width="60px" height="60px" alt="OUTPUT">
+            <h4>Output</h4>
+            <p>Multiple environment variables can be easily exported and combined into a single file.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-block">
+            <img loading="lazy" src="../assets/img/framework/feature-08.svg" width="60px" height="60px" alt="Documentation and Tutorials">
+            <h4>Documentation&#x2F;Tutorials</h4>
+            <p>Extensive documentation and tutorials support you from learning to practical use.</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <nav class="feature-nav">
+        <ul class="list-unstyled">
+          <li><a href="https://github.com/Next2D/Framework" class="btn"><i class="bi bi-github"></i> GitHub</a></li>
+          <li><a href="../docs/framework" class="btn"><i class="bi bi-book"></i> API Docs</a></li>
+<!--           <li><a href="../tutorials/framework" class="btn"><i class="bi bi-lightbulb"></i> Tutorial & Reference</a></li> -->
+<!--           <li><a href="../examples/framework" class="btn"><i class="bi bi-code-slash"></i> Example</a></li> -->
+        </ul>
+      </nav>
+
+    </div>
+</section><!-- End Framework Section -->
+
+<!-- ======= Contributors Section ======= -->
+<section id="contributor" class="padd-section">
+
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title text-center">
+      <h2>Contributors</h2>
+      <p class="separator">Next2D is being improved daily by a wonderful community.</p>
+    </div>
+
+    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+      <div id="contributors" class="col-md-12 col-lg-12"></div>
+    </div>
+
+  </div>
+</section><!-- End Contributors Section -->
+
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="padd-section">
+
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title text-center">
+      <h2>Contact</h2>
+      <p class="separator">Please feel free to contact us.</p>
+    </div>
+
+    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="col-md-6 offset-md-3">
+
+        <div class="info">
+          <div class="email">
+            <i class="bi bi-envelope"></i>
+            <p>developer@next2d.app</p>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="https://twitter.com/Next2D" class="twitter"><i class="bi bi-twitter"></i></a>
+          <a href="https://github.com/Next2D" class="github"><i class="bi bi-github"></i></a>
+          <a href="https://discord.gg/6c9rv5Uns5" class="discord"><i class="bi bi-discord"></i></a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section><!-- End Contact Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer class="footer" data-aos="fade-up">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-12 col-lg-4">
+            <div class="footer-logo">
+
+              <a class="navbar-brand" href="../en">Next2D</a>
+              <p>
+                Next2D, a project derived from the JavaScript FlashPlayer &quot;swf2js&quot;, aims to provide the fastest 2D engine that works on any device.<br>
+                Created by Toshiyuki Ienaga.
+              </p>
+
+            </div>
+
+            <div class="list-sns-menu">
+              <ul class="list-unstyled">
+                <li><a href="https://twitter.com/ienagatoshiyuki"><i class="bi bi-twitter"></i></a></li>
+                <li><a href="https://github.com/ienaga"><i class="bi bi-github"></i></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-3 col-lg-2">
+            <div class="list-menu">
+
+              <h4>Player</h4>
+
+              <ul class="list-unstyled">
+                <li><a href="https://github.com/Next2D/Player">GitHub</a></li>
+                <li><a href="../docs/player">API Docs</a></li>
+                <li><a href="../en/reference/player">Reference</a></li>
+                <li><a href="../en/#player">Features</a></li>
+              </ul>
+
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-3 col-lg-2">
+            <div class="list-menu">
+
+              <h4>Tool</h4>
+
+              <ul class="list-unstyled">
+                <li><a href="https://tool.next2d.app">Web Site</a></li>
+                <li><a href="../en/usage">Usage</a></li>
+                <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos">YouTube</a></li>
+                <li><a href="../en/#tool">Features</a></li>
+              </ul>
+
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-3 col-lg-2">
+            <div class="list-menu">
+
+              <h4>Framework</h4>
+
+              <ul class="list-unstyled">
+                <li><a href="https://github.com/Next2D/Framework">GitHub</a></li>
+                <li><a href="../docs/framework">API Docs</a></li>
+                <li><a href="../en/#framework">Features</a></li>
+<!--                 <li><a href="../examples/framework">Examples</a></li> -->
+              </ul>
+
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-3 col-lg-2">
+            <div class="list-menu">
+                <h4>About US</h4>
+
+                <ul class="list-unstyled">
+                    <li><a href="../en/#contact">Contact</a></li>
+                    <li><a href="../en/privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyrights">
+        <div class="container">
+          <p>&copy; Copyrights Next2D. All rights reserved.</p>
+        </div>
+      </div>
+
+    </footer><!-- End  Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.min.js"></script>
+
+  </body>
+</html>

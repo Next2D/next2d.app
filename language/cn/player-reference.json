@@ -56,6 +56,12 @@
     "text1": "这个属性表示DisplayObjectContainer的水平宽度和垂直高度，单位是像素。由于宽度和高度是基于父DisplayObjectContainer的，所以当子DisplayObject被旋转时，宽度和高度值会发生变化。宽度和高度可以通过给宽度/高度属性赋值来进行缩放。宽度与scaleX相连，高度与scaleY相连。",
     "text2": "这个属性表示DisplayObject的宽度（scaleX）和高度（scaleY）的缩放系数。0.0到1.0表示0到100%的范围，在缩放DisplayObject的时候，你应该给这个属性指定一个数值。指定一个负值将使DisplayObject向左、向右或倒转。"
   },
+  "chapter11": {
+    "title": "",
+    "text1": ""
+  },
+
+
 
 
 

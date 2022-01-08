@@ -64,6 +64,11 @@
     "title": "Completely hide the DisplayObject",
     "text1": "Properties that show/hide the DisplayObject. The data type is Boolean and defaults to true; assigning false will hide the DisplayObject. Hidden objects cannot get user events such as mouse, tap, and so on."
   },
+  "chapter13": {
+    "title": "Referencing and changing the transparency of a DisplayObject",
+    "text1": "This property represents the transparency of a DisplayObject. The data type is Number, and valid values are 0.0 to 1.0."
+  },
+
 
 
 

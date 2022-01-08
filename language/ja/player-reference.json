@@ -64,6 +64,12 @@
     "title": "DisplayObjectを完全な非表示にする",
     "text1": "DisplayObjectの表示・非表示を設定するプロパティです。データ型はBooleanで、デフォルトはtrueです。falseを代入すると、DisplayObjectは非表示になります。非表示にしたオブジェクトは、マウスやタップなどのユーザーイベントを取得することができません。"
   },
+  "chapter13": {
+    "title": "DisplayObjectの透明度を参照・変更する",
+    "text1": "DisplayObjectの透明度を表すプロパティです。データ型はNumberで、有効な値は0.0から1.0です。"
+  },
+
+
 
 
 

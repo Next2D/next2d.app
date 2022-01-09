@@ -68,7 +68,10 @@
     "title": "引用和改变一个显示对象的透明度",
     "text1": "这个属性表示DisplayObject的透明度。 数据类型是Number，有效值在0.0和1.0之间。"
   },
-
+  "chapter14": {
+    "title": "将掩码应用于一个显示对象",
+    "text1": "将DisplayObject设置为DisplayObject的掩码。 默认值为空。 要设置掩码，请指定一个DisplayObject。 要取消掩码，请指定为空。"
+  },
 
 
 

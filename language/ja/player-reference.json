@@ -68,6 +68,11 @@
     "title": "DisplayObjectの透明度を参照・変更する",
     "text1": "DisplayObjectの透明度を表すプロパティです。データ型はNumberで、有効な値は0.0から1.0です。"
   },
+  "chapter14": {
+    "title": "DisplayObjectにマスクを適用する",
+    "text1": "DisplayObjectのマスクとなるDisplayObjectを設定します。初期値はnullで、マスクを設定する時は、DisplayObjectを代入します。マスクを解除するには、nullを代入します。"
+  },
+
 
 
 

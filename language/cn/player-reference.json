@@ -75,7 +75,21 @@
   "chapter15": {
     "title": "引用和改变显示对象的混合模式",
     "text1": "DisplayObjectのBlendModeを設定します。設定されたBlendModeに従って、DisplayObjectと背景色（RGB）を比較します。対応するピクセル毎に加算・減算し、その結果を基に描画を行います。",
-    "text2": "常数和概述"
+    "text2": "常数和概述",
+    "text3": "DisplayObject被显示在背景的前面。",
+    "text4": "将DisplayObject的元素颜色值添加到背景颜色中，上限为0xFF。",
+    "text5": "将DisplayObject的每个像素的alpha值应用于背景。",
+    "text6": "选择DisplayObject的元素颜色和背景颜色中较深的（低值）。",
+    "text7": "将DisplayObject的元素颜色与背景颜色进行比较，并从两个元素颜色中较浅的颜色中减去较深的值。",
+    "text8": "根据DisplayObject的alpha值擦除背景。",
+    "text9": "根据DisplayObject的暗度，调整每个像素的颜色。",
+    "text10": "反映背景。",
+    "text11": "强制创建一个关于DisplayObject的透明度组。",
+    "text12": "选择DisplayObject的元素颜色和背景颜色中较浅的（高值）。",
+    "text13": "通过将DisplayObject的元素颜色值乘以背景色的元素颜色值来加深颜色，然后除以0xFF来规范化。",
+    "text14": "根据DisplayObject的暗度，调整每个像素的颜色。",
+    "text15": "漂白效果是通过将DisplayObject的颜色的补色（反色）乘以背景颜色的补色而获得的。",
+    "text16": "将显示对象的元素颜色值减去其背景颜色值，结果的下限为0。"
   },
 
 

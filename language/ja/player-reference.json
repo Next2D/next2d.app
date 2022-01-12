@@ -75,7 +75,21 @@
   "chapter15": {
     "title": "DisplayObjectのblendModeを参照・変更する",
     "text1": "DisplayObjectのBlendModeを設定します。設定されたBlendModeに従って、DisplayObjectと背景色（RGB）を比較します。対応するピクセル毎に加算・減算し、その結果を基に描画を行います。",
-    "text2": "定数と概要"
+    "text2": "定数と概要",
+    "text3": "DisplayObjectは、背景の前に表示されます。",
+    "text4": "DisplayObjectの要素カラーの値を背景色に加算し、その際に上限0xFFを適用します。",
+    "text5": "DisplayObjectの各ピクセルのアルファ値を背景に適用します。",
+    "text6": "DisplayObjectの要素カラーと背景色のうち暗い方（値が小さい方）の色を選択します。",
+    "text7": "DisplayObjectの要素カラーと背景色を比較し、2つの要素カラーのうち明るい方の値から暗い方の値を差し引きます。",
+    "text8": "DisplayObjectのアルファ値に基づいて背景を消去します。",
+    "text9": "DisplayObjectの暗さに基づいて、各ピクセルの色を調整します。",
+    "text10": "背景を反転します。",
+    "text11": "DisplayObjectに関する透明度グループを強制的に作成します。",
+    "text12": "DisplayObjectの要素カラーと背景色のうち明るい方（値が大きい方）の色を選択します。",
+    "text13": "DisplayObjectの要素カラーの値と背景色の要素カラーの値を乗算した後、0xFFで割って正規化し、色を暗くします。",
+    "text14": "DisplayObjectの暗さに基づいて、各ピクセルの色を調整します。",
+    "text15": "DisplayObjectの色の補数（逆）と背景色の補数を乗算して、ブリーチ効果を得ます。",
+    "text16": "結果の下限を0として、表示オブジェクトの要素カラーの値をその背景色の値から減算します。"
   },
 
 

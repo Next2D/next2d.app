@@ -75,7 +75,21 @@
   "chapter15": {
     "title": "Referencing and changing DisplayObject's blendMode",
     "text1": "Sets the DisplayObject's BlendMode. According to the set BlendMode, the DisplayObject and background colors (RGB) are compared, added and subtracted for each corresponding pixel, and drawn based on the result.",
-    "text2": "Constants and Overview"
+    "text2": "Constants and Overview",
+    "text3": "The DisplayObject will be displayed before the background.",
+    "text4": "Adds the value of the DisplayObject's element color to the background color, applying an upper limit of 0xFF in doing so.。",
+    "text5": "Applies the alpha value of each pixel of the DisplayObject to the background.",
+    "text6": "Selects the darker (lower value) of the DisplayObject's element color and background color.",
+    "text7": "Compares the DisplayObject's element color with the background color and subtracts the darker value from the lighter of the two element colors.",
+    "text8": "Erases the background based on the DisplayObject's alpha value.",
+    "text9": "Adjusts the color of each pixel based on the darkness of the DisplayObject.",
+    "text10": "Inverts the background.",
+    "text11": "Forces the creation of transparency groups related to DisplayObjects.",
+    "text12": "Selects the lighter (higher value) of the DisplayObject's element color and background color.",
+    "text13": "After multiplying the element color value of the DisplayObject by the element color value of the background color, divide by 0xFF to normalize and darken the color.",
+    "text14": "Adjusts the color of each pixel based on the darkness of the DisplayObject.",
+    "text15": "Multiply the complement of the DisplayObject's color (inverse) by the complement of the background color to get the bleach effect.",
+    "text16": "Subtracts the element color value of the display object from its background color value, setting the lower limit of the result to 0."
   },
 
 

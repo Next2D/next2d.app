@@ -72,7 +72,11 @@
     "title": "DisplayObjectにマスクを適用する",
     "text1": "DisplayObjectのマスクとなるDisplayObjectを設定します。初期値はnullで、マスクを設定する時は、DisplayObjectを代入します。マスクを解除するには、nullを代入します。"
   },
-
+  "chapter15": {
+    "title": "DisplayObjectのblendModeを参照・変更する",
+    "text1": "DisplayObjectのBlendModeを設定します。設定されたBlendModeに従って、DisplayObjectと背景色（RGB）を比較します。対応するピクセル毎に加算・減算し、その結果を基に描画を行います。",
+    "text2": "定数と概要"
+  },
 
 
 

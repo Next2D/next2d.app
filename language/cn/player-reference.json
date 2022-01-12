@@ -72,7 +72,11 @@
     "title": "将掩码应用于一个显示对象",
     "text1": "将DisplayObject设置为DisplayObject的掩码。 默认值为空。 要设置掩码，请指定一个DisplayObject。 要取消掩码，请指定为空。"
   },
-
+  "chapter15": {
+    "title": "引用和改变显示对象的混合模式",
+    "text1": "DisplayObjectのBlendModeを設定します。設定されたBlendModeに従って、DisplayObjectと背景色（RGB）を比較します。対応するピクセル毎に加算・減算し、その結果を基に描画を行います。",
+    "text2": "常数和概述"
+  },
 
 
 

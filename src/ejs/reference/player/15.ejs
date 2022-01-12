@@ -11,7 +11,6 @@
     <section class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Reference and change DisplayObject properties "blendMode".</h2>
                 <ol>
                     <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
                     <li><a href="<%= path %>${{ main.lang }}$/reference/player">Reference</a></li>
@@ -29,9 +28,12 @@
         <div class="row" data-aos="fade-up" data-aos-delay="100">
 
           <div class="col-md-8 offset-md-2">
+            <h2>${{ player-reference.chapter15.title }}$</h2>
 
             <h3>blendMode</h3>
-            <p>Sets the DisplayObject's BlendMode. According to the set BlendMode, the DisplayObject and background colors (RGB) are compared, added and subtracted for each corresponding pixel, and drawn based on the result.
+            <p>${{ player-reference.chapter15.text1 }}$</p>
+            <p>
+              <h4>${{ player-reference.chapter15.text2 }}$</h4>
               <ul>
                 <li>BlendMode.NORMAL(default)</li>
                 <li>BlendMode.ADD</li>
@@ -51,22 +53,13 @@
             </p>
 
             <h5>Example</h5>
-            <p><pre>const {Shape, BitmapData, Sprite, BlendMode} = next2d.display;
-const image = new Image();
-image.src = "[[image path]]";
-
-const bitmapData = new BitmapData();
-bitmapData.image = image;
-
-const shape = new Shape();
-shape
-    .graphics
-    .beginBitmapFill(bitmapData)
-    .drawRect(0, 0, bitmapData.width, bitmapData.height);
-
-const sprite = new Sprite();
-sprite.addChild(shape);
-sprite.blendMode = BlendMode.SCREEN;</pre></p>
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 15" src="https://codepen.io/next2d/embed/LYzXOQM?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/LYzXOQM">
+                  [Next2D Reference] Chapter 15</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
 
             <p class="next-chapter"><a class="float-end read-more" href="16.html">${{ main.next-chapter }}$</a></p>
           </div>

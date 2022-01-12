@@ -72,7 +72,11 @@
     "title": "Applying a mask to a DisplayObject",
     "text1": "Set the DisplayObject to be the mask of the DisplayObject. The initial value is null. To set the mask, assign a DisplayObject. To remove the mask, assign null."
   },
-
+  "chapter15": {
+    "title": "Referencing and changing DisplayObject's blendMode",
+    "text1": "Sets the DisplayObject's BlendMode. According to the set BlendMode, the DisplayObject and background colors (RGB) are compared, added and subtracted for each corresponding pixel, and drawn based on the result.",
+    "text2": "Constants and Overview"
+  },
 
 
 

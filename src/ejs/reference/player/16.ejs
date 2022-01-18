@@ -28,33 +28,43 @@
         <div class="row" data-aos="fade-up" data-aos-delay="100">
 
           <div class="col-md-8 offset-md-2">
-
-            <h2>Reference and change DisplayObject properties "scale9Grid".</h2>
+            <h2>${{ player-reference.chapter16.title }}$</h2>
 
             <h3>scale9Grid</h3>
-            <p>scale9Grid is a property that sets the grid for scaling up/down 9 slices. The default value is null, and the Rectangle object is assigned when setting it.</p>
+            <p>${{ player-reference.chapter16.text1 }}$</p>
             <p class="tutorial-image"><img src="<%= path %>assets/img/reference/scale9Grid.svg" alt="scale9Grid image"></p>
 
             <p>
-              Top, bottom, left, right and center area => zoom in/out as usual<br>
-              Top, bottom, left and right corners => fixed without enlargement/reduction<br>
-              Top, bottom, left and right center area => magnify/reduce only in left/right direction<br>
-              Top and bottom center area of left and right => zoom in/out only in up/down direction
+              <h4>${{ player-reference.chapter16.text2 }}$</h4>
+
+              <ul>
+                <li>
+                  <h5>${{ player-reference.chapter16.text3 }}$</h5>
+                  <p>${{ player-reference.chapter16.text4 }}$</p>
+                </li>
+                <li>
+                  <h5>${{ player-reference.chapter16.text5 }}$</h5>
+                  <p>${{ player-reference.chapter16.text6 }}$</p>
+                </li>
+                <li>
+                  <h5>${{ player-reference.chapter16.text7 }}$</h5>
+                  <p>${{ player-reference.chapter16.text8 }}$</p>
+                </li>
+                <li>
+                  <h5>${{ player-reference.chapter16.text9 }}$</h5>
+                  <p>${{ player-reference.chapter16.text10 }}$</p>
+                </li>
+              </ul>
             </p>
 
             <h5>Example</h5>
-            <p><pre>const {Rectangle} = next2d.geom;
-const {Shape, Sprite} = next2d.display;
-
-const shape = new Shape();
-shape
-    .graphics
-    .beginFill()
-    .drawRoundRect(0, 0, 60, 60, 10);
-
-const sprite = new Sprite();
-sprite.addChild(shape);
-sprite.scale9Grid = new Rectangle(10, 10, 40, 40);</pre></p>
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 16" src="https://codepen.io/next2d/embed/LYzaBVx?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/LYzaBVx">
+                  [Next2D Reference] Chapter 16</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
 
             <p class="next-chapter"><a class="float-end read-more" href="17.html">${{ main.next-chapter }}$</a></p>
           </div>

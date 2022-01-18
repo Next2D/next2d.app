@@ -91,7 +91,19 @@
     "text15": "Multiply the complement of the DisplayObject's color (inverse) by the complement of the background color to get the bleach effect.",
     "text16": "Subtracts the element color value of the display object from its background color value, setting the lower limit of the result to 0."
   },
-
+  "chapter16": {
+    "title": "Grid settings for zooming in and out of 9 slices",
+    "text1": "scale9Grid is a property that sets the grid for scaling up/down the 9 slices. The default value is null, and the Rectangle object is assigned to it when it is set.",
+    "text2": "9Slice expansion/reduction direction",
+    "text3": "Top, Bottom, Left, Right and Center area",
+    "text4": "zoom in/out as usual.",
+    "text5": "Top, Bottom, Left, Right, and four corner areas",
+    "text6": "fixed without enlargement/reduction",
+    "text7": "Top and Bottom Left and Right center areas",
+    "text8": "magnify/reduce only in left/right direction",
+    "text9": "Left, Right, up, down, center area",
+    "text10": "Zoom in/out vertically only"
+  },
 
 
 

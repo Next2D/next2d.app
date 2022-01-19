@@ -104,6 +104,24 @@
     "text9": "Left, Right, up, down, center area",
     "text10": "Zoom in/out vertically only"
   },
+  "chapter17": {
+    "title": "Apply the DropShadow effect",
+    "text1": "DropShadowFilter is a class that stores information about drop shadow effects. Objects can be created by specifying the value of each property in the constructor arguments, or they can be created by default with no arguments, and only properties that need to be changed can be reassigned.",
+    "text2": "The offset distance for the shadow, in pixels",
+    "text3": "The angle of the shadow",
+    "text4": "The color of shadow color",
+    "text5": "The alpha transparency value for the color",
+    "text6": "The amount of horizontal blur",
+    "text7": "The amount of vertical blur",
+    "text8": "The strength of the imprint or spread",
+    "text9": "The number of times to perform the blur",
+    "text10": "Specifies whether the glow is an inner glow",
+    "text11": "Specifies whether the object has a knockout effect",
+    "text12": "Indicates whether or not the object is hidden"
+  },
+
+
+
 
 
 

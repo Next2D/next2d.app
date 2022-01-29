@@ -119,7 +119,13 @@
     "text11": "Specifies whether the object has a knockout effect",
     "text12": "Indicates whether or not the object is hidden"
   },
-
+  "chapter18": {
+    "title": "Apply the Blur effect",
+    "text1": "BlurFilter is a class that stores information about blur effects. Objects can be created by specifying the value of each property in the constructor arguments, or they can be created by default with no arguments, and only the properties that need to be changed can be reassigned.",
+    "text2": "The amount of horizontal blur",
+    "text3": "The amount of vertical blur",
+    "text4": "The number of times to perform the blur"
+  },
 
 
 

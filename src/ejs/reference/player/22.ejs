@@ -11,7 +11,6 @@
     <section class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Check if it overlaps with the specified coordinate (collision detection)</h2>
                 <ol>
                     <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
                     <li><a href="<%= path %>${{ main.lang }}$/reference/player">Reference</a></li>
@@ -29,38 +28,60 @@
         <div class="row" data-aos="fade-up" data-aos-delay="100">
 
           <div class="col-md-8 offset-md-2">
+            <h2>${{ player-reference.chapter22.title }}$</h2>
 
-            <h3>hitTestObject/hitTestPoint</h3>
-            <p>hitTestObject method is used to test the overlap between a DisplayObject and a DisplayObject. hitTestPoint method is used to test the overlap between a DisplayObject and a specified xy coordinate. For the third argument of the hitTestPoint method, set the test condition to "true" if the test is to be performed on an area with a line or fill, or "false" (default) if the test is to be performed on a bounding box.</p>
-            <p class="tutorial-image"><img src="<%= path %>assets/img/reference/hit-test.svg" alt="collision detection image"></p>
+            <h3>ConvolutionFilter</h3>
+            <p>${{ player-reference.chapter22.text1 }}$</p>
+
+            <p>
+              <ul>
+                <li>
+                    <h5>matrixX</h5>
+                    <p>${{ player-reference.chapter22.text2 }}$</p>
+                </li>
+                <li>
+                    <h5>matrixY</h5>
+                    <p>${{ player-reference.chapter22.text3 }}$</p>
+                </li>
+                <li>
+                    <h5>matrix</h5>
+                    <p>${{ player-reference.chapter22.text4 }}$</p>
+                </li>
+                <li>
+                    <h5>divisor</h5>
+                    <p>${{ player-reference.chapter22.text5 }}$</p>
+                </li>
+                <li>
+                    <h5>bias</h5>
+                    <p>${{ player-reference.chapter22.text6 }}$</p>
+                </li>
+                <li>
+                    <h5>preserveAlpha</h5>
+                    <p>${{ player-reference.chapter22.text7 }}$</p>
+                </li>
+                <li>
+                    <h5>clamp</h5>
+                    <p>${{ player-reference.chapter22.text8 }}$</p>
+                </li>
+                <li>
+                    <h5>color</h5>
+                    <p>${{ player-reference.chapter22.text9 }}$</p>
+                </li>
+                <li>
+                    <h5>alpha</h5>
+                    <p>${{ player-reference.chapter22.text10 }}$</p>
+                </li>
+              </ul>
+            </p>
 
             <h5>Example</h5>
-            <p><pre>const {Shape, Sprite} = next2d.display;
-const {MouseEvent} = next2d.events;
-
-const sprite = new Sprite();
-const shape = new Shape();
-
-shape
-    .graphics
-    .beginFill()
-    .drawCircle(0, 0, 50);
-
-sprite.name = "hitSprite";
-sprite.addChild(shape);
-
-sprite.x = 100;
-sprite.y = 100;
-this.addChild(sprite);
-
-this.stage.addEventListener(MouseEvent.CLICK, (e) =>
-{
-    const stage = e.currentTarget;
-    const root = stage.getChildAt(0);
-    if (root.hitSprite.hitTestPoint(stage.mouseX, stage.mouseY, true)) {
-        console.log("hit!");
-    }
-});</pre></p>
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 23" src="https://codepen.io/next2d/embed/QWOpwJB?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/QWOpwJB">
+                  [Next2D Reference] Chapter 23</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
 
             <p class="next-chapter"><a class="float-end read-more" href="23.html">${{ main.next-chapter }}$</a></p>
           </div>

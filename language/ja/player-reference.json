@@ -1,5 +1,5 @@
 {
-  "title": "Next2D Player Pocket Reference",
+  "title": "Player Pocket Reference",
   "description": "Next2D Playerの機能解説とサンプルコードを掲載しています",
   "chapter1": {
     "title": "DisplayListとDisplayObjectとDisplayObjectContainerの関係性",

@@ -22,7 +22,7 @@
     "stage": "ステージ設定",
     "object": "オブジェクト設定",
     "transform": "変形",
-    "color-transform": "カラー",
+    "color-transform": "カラートランスフォーム",
     "blend-mode": "ブレンドモード",
     "filters": "フィルター",
     "sound": "サウンド"

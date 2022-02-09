@@ -2,13 +2,73 @@
   "title": "NoCode Tool How to use",
   "description": "The work space is divided into Tool Area, Screen Area, Timeline Area, and Controller Area, The functions of each area are as follows.",
   "sub-title": "How to use and sample videos",
-  "text1": "This area contains various tools and settings such as drawing tools, text tools, project loading and saving, export settings, and language settings.",
-  "text2": "This is the area where you can check the drawing information such as viewing, placement, and stacking order of the DisplayObjects displayed on the Stage in the current frame. You can preview and play the Player by pressing Command+Enter or Ctrl+Enter.",
-  "text3": "This is the area where you can control layers, animation keyframes, etc. You can set the Label name, embed any JavaScript in the frame, and control the addition and removal of tweens for each layer.",
-  "text4": "In this area, you can perform operations such as scaling, rotation, color manipulation, BlendMode, Filter, etc. on DisplayObjects in the screen area. The JavaScript tab allows you to view and edit the list of JavaScript embedded in the entire project.",
+  "tool": {
+    "title": "NoCode Tool How to use | Tool Area",
+    "description": "This area contains various tools and settings such as drawing tools, text tools, project loading and saving, export settings, and language settings.",
+    "ellipse": {
+      "title": "NoCode Tool How to use | Ellipse Tool",
+      "description": "Use the Ellipse tool to draw a regular circle or an ellipse."
+    },
+    "rectangle": {
+      "title": "NoCode Tool How to use | Rectangle Tool",
+      "description": "Using the Rectangle tool, you can draw squares and rectangles."
+    },
+    "rounded-rectangle": {
+      "title": "NoCode Tool How to use | Rounded Rectangle Tool",
+      "description": "The Rounded Rectangle tool can be used to draw rounded corners and rectangles."
+    },
+    "shape-transform": {
+      "title": "NoCode Tool How to use | Shape Transform Tool",
+      "description": "The square pointer controls straight lines, while the circle pointer controls curves."
+    },
+    "text": {
+      "title": "NoCode Tool How to use | Text Tool",
+      "description": "A text area will be added by selecting the tool and specifying the range in Screen Area. By double-clicking on the created text area, you can switch to input mode and insert text of your choice; by selecting text in the Screen Area, the style information of the selected text will be displayed in the Controller Area."
+    },
+    "transform": {
+      "title": "NoCode Tool How to use | Transform Tool",
+      "description": "Allows you to stretch, rotate, or tilt the selection."
+    }
+  },
+  "screen": {
+    "title": "NoCode Tool How to use | Screen Area",
+    "description": "This is the area where you can check the drawing information such as viewing, placement, and stacking order of the DisplayObjects displayed on the Stage in the current frame. You can preview and play the Player by pressing Command+Enter or Ctrl+Enter.",
+    "align": {
+      "title": "NoCode Tool How to use | Align",
+      "description": "Allows you to align the selected objects along the horizontal or vertical axis. Vertically, you can align them along the right, center, or left edge of the selected object; horizontally, you can align them along the top or bottom edge of the selected object."
+    },
+    "layer": {
+      "title": "NoCode Tool How to use | Layer",
+      "description": "It is possible to control the stacking order of objects inside a layer."
+    },
+    "tabs": {
+      "title": "NoCode Tool How to use | Tabs",
+      "description": "You can add or delete a new project, or specify the project you are currently working on."
+    }
+  },
+  "timeline": {
+    "title": "NoCode Tool How to use | Timeline Area",
+    "description": "This is the area where you can control layers, animation keyframes, etc. You can set the Label name, embed any JavaScript in the frame, and control the addition and removal of tweens for each layer.",
+    "frame-keyframe": {
+      "title": "NoCode Tool How to use | Frame KeyFrame",
+      "description": "The length of time is divided into frames. In the timeline, these frames are manipulated to control objects. A key frame is a frame in which a new symbol instance is displayed in the timeline. Keyframes may also contain embedded code (JavaScript) that controls the object."
+    },
+    "mask-layer": {
+      "title": "NoCode Tool How to use | Mask Layer",
+      "description": "The mask will be applied to the layer placed under the mask layer. By activating the mask layer lock, you can check the masked drawing."
+    },
+    "motion-tweening": {
+      "title": "NoCode Tool How to use | Motion Tweening",
+      "description": "Motion tweening is a type of animation that uses symbols to create movement, size and rotation changes, fades, and color effects."
+    },
+    "normal-layer": {
+      "title": "NoCode Tool How to use | Normal Layer",
+      "description": "Each layer is independent, so drawing or editing an object on one layer does not affect objects on other layers. In a stage area where there are no objects on a layer, you can see through the layer below. In addition, you can show/hide, lock/unlock, and rearrange layers."
+    }
+  },
   "controller": {
     "title": "NoCode Tool How to use | Controller Area",
-    "description": "This area can be used to manipulate DisplayObjects in the Screen Area, such as scaling, rotation, color manipulation, BlendMode, and Filter. The Library tab allows you to load external data (images, MP4, MP3, SWF), and the JavaScript tags allow you to view and edit a list of JavaScript tags embedded in the entire project. You can also check and edit the list of JavaScript tags embedded in the entire project.",
+    "description": "In this area, you can perform operations such as scaling, rotation, color manipulation, BlendMode, Filter, etc. on DisplayObjects in the screen area. The JavaScript tab allows you to view and edit the list of JavaScript embedded in the entire project.",
     "blend-mode": {
       "title": "NoCode Tool How to use | Blend Mode",
       "description": "Blending mode can be used to create compound images. Compounding is the process of changing the transparency or color interaction of multiple overlapping objects. Blending allows you to blend colors in overlapping movie clips to create unique effects."
@@ -40,70 +100,6 @@
     "transform": {
       "title": "NoCode Tool How to use | Transform",
       "description": "Controls the width, height, scaling, and rotation of the displayed object"
-    }
-  },
-  "screen": {
-    "title": "NoCode Tool How to use | Screen Area",
-    "description": "Place each objects, and the objects in the Stage will be displayed and played by the Player. Command+Enter or Ctrl+Enter will play the preview that is actually displayed in the Player.",
-    "align": {
-      "title": "NoCode Tool How to use | Align",
-      "description": "Allows you to align the selected objects along the horizontal or vertical axis. Vertically, you can align them along the right, center, or left edge of the selected object; horizontally, you can align them along the top or bottom edge of the selected object."
-    },
-    "layer": {
-      "title": "NoCode Tool How to use | Layer",
-      "description": "It is possible to control the stacking order of objects inside a layer."
-    },
-    "tabs": {
-      "title": "NoCode Tool How to use | Tabs",
-      "description": "You can add or delete a new project, or specify the project you are currently working on."
-    }
-  },
-  "timeline": {
-    "title": "NoCode Tool How to use | Timeline Area",
-    "description": "The length of time is divided into frames. Layers are analogous to multiple film strips stacked in layers, with different objects contained in each layer appearing on stage.",
-    "frame-keyframe": {
-      "title": "NoCode Tool How to use | Frame KeyFrame",
-      "description": "The length of time is divided into frames. In the timeline, these frames are manipulated to control objects. A key frame is a frame in which a new symbol instance is displayed in the timeline. Keyframes may also contain embedded code (JavaScript) that controls the object."
-    },
-    "mask-layer": {
-      "title": "NoCode Tool How to use | Mask Layer",
-      "description": "The mask will be applied to the layer placed under the mask layer. By activating the mask layer lock, you can check the masked drawing."
-    },
-    "motion-tweening": {
-      "title": "NoCode Tool How to use | Motion Tweening",
-      "description": "Motion tweening is a type of animation that uses symbols to create movement, size and rotation changes, fades, and color effects."
-    },
-    "normal-layer": {
-      "title": "NoCode Tool How to use | Normal Layer",
-      "description": "Each layer is independent, so drawing or editing an object on one layer does not affect objects on other layers. In a stage area where there are no objects on a layer, you can see through the layer below. In addition, you can show/hide, lock/unlock, and rearrange layers."
-    }
-  },
-  "tool": {
-    "title": "NoCode Tool How to use | Tool Area",
-    "description": "There are tools to support vector drawing, and tools to rotate and transform objects placed in the Screen Area.",
-    "ellipse": {
-      "title": "NoCode Tool How to use | Ellipse Tool",
-      "description": "Use the Ellipse tool to draw a regular circle or an ellipse."
-    },
-    "rectangle": {
-      "title": "NoCode Tool How to use | Rectangle Tool",
-      "description": "Using the Rectangle tool, you can draw squares and rectangles."
-    },
-    "rounded-rectangle": {
-      "title": "NoCode Tool How to use | Rounded Rectangle Tool",
-      "description": "The Rounded Rectangle tool can be used to draw rounded corners and rectangles."
-    },
-    "shape-transform": {
-      "title": "NoCode Tool How to use | Shape Transform Tool",
-      "description": "The square pointer controls straight lines, while the circle pointer controls curves."
-    },
-    "text": {
-      "title": "NoCode Tool How to use | Text Tool",
-      "description": "Insert a text field element."
-    },
-    "transform": {
-      "title": "NoCode Tool How to use | Transform Tool",
-      "description": "Allows you to stretch, rotate, or tilt the selection."
     }
   }
 }

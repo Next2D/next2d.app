@@ -1,8 +1,7 @@
-<% const title = "Next2D | NoCode Tool How to use | Blend Mode"; %>
-<% const description = "Blending mode can be used to create compound images. Compounding is the process of changing the transparency or color interaction of multiple overlapping objects. Blending allows you to blend colors in overlapping movie clips to create unique effects."; %>
 <% const path = "../../../"; %>
 <%- include("../../_include/_header", {
-    "title": title,
+    "title": "tool-usage.controller.blend-mode.title",
+    "description": "tool-usage.controller.blend-mode.description",
     "path": path,
 }); %>
 
@@ -14,7 +13,7 @@
     <div>
       <h3>Blend Mode</h3>
       <p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/krMptdKTMAs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-      <p><%= description %></p>
+      <p>${{ tool-usage.controller.blend-mode.description }}$</p>
       <p>Blend Mode List
         <ul>
           <li><h4>normal</h4>The color is applied as normal and does not interact with the base color.</li>

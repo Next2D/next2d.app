@@ -1,0 +1,104 @@
+{
+  "title": "NoCode Tool How to use",
+  "description": "The work space is divided into Tool Area, Screen Area, Timeline Area, and Controller Area, The functions of each area are as follows.",
+  "controller": {
+    "title": "NoCode Tool How to use | Controller Area",
+    "description": "This area can be used to manipulate DisplayObjects in the Screen Area, such as scaling, rotation, color manipulation, BlendMode, and Filter. The Library tab allows you to load external data (images, MP4, MP3, SWF), and the JavaScript tags allow you to view and edit a list of JavaScript tags embedded in the entire project. You can also check and edit the list of JavaScript tags embedded in the entire project.",
+    "blend-mode": {
+      "title": "NoCode Tool How to use | Blend Mode",
+      "description": "Blending mode can be used to create compound images. Compounding is the process of changing the transparency or color interaction of multiple overlapping objects. Blending allows you to blend colors in overlapping movie clips to create unique effects."
+    },
+    "color-transform": {
+      "title": "NoCode Tool How to use | Color Transform",
+      "description": "Add and subtract red, green, blue, and transparency."
+    },
+    "filter": {
+      "title": "NoCode Tool How to use | Filters",
+      "description": "Filters can be used to add high quality visual effects to text, and movie clips. You can also use motion tweening to animate the filter you apply."
+    },
+    "javascript": {
+      "title": "NoCode Tool How to use | JavaScript",
+      "description": "It is possible to check the list of JavaScript embedded in the frame."
+    },
+    "object-setting": {
+      "title": "NoCode Tool How to use | Object Setting",
+      "description": "Set the name and symbol of the display object. The name can be accessed with this.[[name]] in javaScript, and the symbol can be used as a class."
+    },
+    "sound": {
+      "title": "NoCode Tool How to use | Sound",
+      "description": "Play the loaded sound data at any frame."
+    },
+    "stage-setting": {
+      "title": "NoCode Tool How to use | Stage Setting",
+      "description": "Set the width, height, frame rate, and background color of the display area (Stage)."
+    },
+    "transform": {
+      "title": "NoCode Tool How to use | Transform",
+      "description": "Controls the width, height, scaling, and rotation of the displayed object"
+    }
+  },
+  "screen": {
+    "title": "NoCode Tool How to use | Screen Area",
+    "description": "Place each objects, and the objects in the Stage will be displayed and played by the Player. Command+Enter or Ctrl+Enter will play the preview that is actually displayed in the Player.",
+    "align": {
+      "title": "NoCode Tool How to use | Align",
+      "description": "Allows you to align the selected objects along the horizontal or vertical axis. Vertically, you can align them along the right, center, or left edge of the selected object; horizontally, you can align them along the top or bottom edge of the selected object."
+    },
+    "layer": {
+      "title": "NoCode Tool How to use | Layer",
+      "description": "It is possible to control the stacking order of objects inside a layer."
+    },
+    "tabs": {
+      "title": "NoCode Tool How to use | Tabs",
+      "description": "You can add or delete a new project, or specify the project you are currently working on."
+    }
+  },
+  "timeline": {
+    "title": "NoCode Tool How to use | Timeline Area",
+    "description": "The length of time is divided into frames. Layers are analogous to multiple film strips stacked in layers, with different objects contained in each layer appearing on stage.",
+    "frame-keyframe": {
+      "title": "NoCode Tool How to use | Frame KeyFrame",
+      "description": "The length of time is divided into frames. In the timeline, these frames are manipulated to control objects. A key frame is a frame in which a new symbol instance is displayed in the timeline. Keyframes may also contain embedded code (JavaScript) that controls the object."
+    },
+    "mask-layer": {
+      "title": "NoCode Tool How to use | Mask Layer",
+      "description": "The mask will be applied to the layer placed under the mask layer. By activating the mask layer lock, you can check the masked drawing."
+    },
+    "motion-tweening": {
+      "title": "NoCode Tool How to use | Motion Tweening",
+      "description": "Motion tweening is a type of animation that uses symbols to create movement, size and rotation changes, fades, and color effects."
+    },
+    "normal-layer": {
+      "title": "NoCode Tool How to use | Normal Layer",
+      "description": "Each layer is independent, so drawing or editing an object on one layer does not affect objects on other layers. In a stage area where there are no objects on a layer, you can see through the layer below. In addition, you can show/hide, lock/unlock, and rearrange layers."
+    }
+  },
+  "tool": {
+    "title": "NoCode Tool How to use | Tool Area",
+    "description": "There are tools to support vector drawing, and tools to rotate and transform objects placed in the Screen Area.",
+    "ellipse": {
+      "title": "NoCode Tool How to use | Ellipse Tool",
+      "description": "Use the Ellipse tool to draw a regular circle or an ellipse."
+    },
+    "rectangle": {
+      "title": "NoCode Tool How to use | Rectangle Tool",
+      "description": "Using the Rectangle tool, you can draw squares and rectangles."
+    },
+    "rounded-rectangle": {
+      "title": "NoCode Tool How to use | Rounded Rectangle Tool",
+      "description": "The Rounded Rectangle tool can be used to draw rounded corners and rectangles."
+    },
+    "shape-transform": {
+      "title": "NoCode Tool How to use | Shape Transform Tool",
+      "description": "The square pointer controls straight lines, while the circle pointer controls curves."
+    },
+    "text": {
+      "title": "NoCode Tool How to use | Text Tool",
+      "description": "Insert a text field element."
+    },
+    "transform": {
+      "title": "NoCode Tool How to use | Transform Tool",
+      "description": "Allows you to stretch, rotate, or tilt the selection."
+    }
+  }
+}

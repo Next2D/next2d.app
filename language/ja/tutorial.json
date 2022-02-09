@@ -1,0 +1,18 @@
+{
+  "title": "Next2D Tutorial",
+  "description": "Next2D Tutorial",
+  "puzzle": {
+    "chapter1": {
+      "title": "Next2D Tutorial | Number Puzzle 01",
+      "description": "Next2D Tutorial | Number Puzzle 01"
+    },
+    "chapter2": {
+      "title": "Next2D Tutorial | Number Puzzle 02",
+      "description": "Next2D Tutorial | Number Puzzle 02"
+    },
+    "chapter3": {
+      "title": "Next2D Tutorial | Number Puzzle 03",
+      "description": "Next2D Tutorial | Number Puzzle 03"
+    }
+  }
+}

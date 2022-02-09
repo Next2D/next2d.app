@@ -1,4 +1,6 @@
 {
+  "title": "Next2D Player Pocket Reference",
+  "description": "Next2D播放器的功能描述和示例代码",
   "chapter1": {
     "title": "DisplayList，DisplayObject，和DisplayObjectContainer",
     "text1": "DisplayList由三个主要元素组成。舞台\"、\"DisplayObjectContainer \"和 \"DisplayObject\"。",
@@ -172,7 +174,19 @@
     "text9": "用颜色替换源图像以外的像素",
     "text10": "颜色的阿尔法透明度值"
   },
-
+  "chapter23": {
+    "title": "应用卷积效应",
+    "text1": "",
+    "text2": "",
+    "text3": "",
+    "text4": "",
+    "text5": "",
+    "text6": "",
+    "text7": "",
+    "text8": "",
+    "text9": "",
+    "text10": ""
+  },
 
 
 

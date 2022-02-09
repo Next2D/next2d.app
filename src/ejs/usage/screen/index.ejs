@@ -1,8 +1,7 @@
-<% const title = "Next2D | NoCode Tool How to use | Screen Area"; %>
-<% const description = "Place each objects, and the objects in the Stage will be displayed and played by the Player. Command+Enter or Ctrl+Enter will play the preview that is actually displayed in the Player."; %>
 <% const path = "../../../"; %>
 <%- include("../../_include/_header", {
-    "title": title,
+    "title": "tool-usage.screen.title",
+    "description": "tool-usage.screen.description",
     "path": path,
 }); %>
 
@@ -13,19 +12,19 @@
 <div class="col-md-12 col-lg-9">
     <div>
       <h3>Screen Area</h3>
-      <p><%= description %></p>
+      <p>${{ tool-usage.screen.description }}$</p>
 
       <h4>Tabs</h4>
       <p>You can add or delete a new project, or specify the project you are currently working on.</p>
-      <p><a href="<%= path %>usage/screen/tabs.html">read more</a></p>
+      <p><a href="<%= path %>${{ main.lang }}$/usage/screen/tabs.html">read more</a></p>
 
       <h4>Layer</h4>
       <p>It is possible to control the stacking order of objects inside a layer.</p>
-      <p><a href="<%= path %>usage/screen/layer.html">read more</a></p>
+      <p><a href="<%= path %>${{ main.lang }}$/usage/screen/layer.html">read more</a></p>
 
       <h4>Align</h4>
       <p>Allows you to align the selected objects along the horizontal or vertical axis. Vertically, you can align them along the right, center, or left edge of the selected object; horizontally, you can align them along the top or bottom edge of the selected object.</p>
-      <p><a href="<%= path %>usage/screen/align.html">read more</a></p>
+      <p><a href="<%= path %>${{ main.lang }}$/usage/screen/align.html">read more</a></p>
 
     </div>
 </div>

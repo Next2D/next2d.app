@@ -1,8 +1,7 @@
-<% const title = "Next2D | NoCode Tool How to use | Layer"; %>
-<% const description = "It is possible to control the stacking order of objects inside a layer."; %>
 <% const path = "../../../"; %>
 <%- include("../../_include/_header", {
-    "title": title,
+    "title": "tool-usage.screen.layer.title",
+    "description": "tool-usage.screen.layer.description",
     "path": path,
 }); %>
 
@@ -14,7 +13,7 @@
     <div>
       <h3>Layer</h3>
       <p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/Ynn3mX_BVcU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-      <p><%= description %></p>
+      <p>${{ tool-usage.screen.layer.description }}$</p>
     </div>
 </div>
 

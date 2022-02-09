@@ -1,8 +1,7 @@
-<% const title = "Next2D | NoCode Tool How to use | WorkSpace"; %>
-<% const description = "Allows you to stretch, rotate, or tilt the selection."; %>
 <% const path = "../../../"; %>
 <%- include("../../_include/_header", {
-    "title": title,
+    "title": "tool-usage.tool.transform.title",
+    "description": "tool-usage.tool.transform.description",
     "path": path,
 }); %>
 
@@ -14,7 +13,7 @@
     <div>
       <h3>Transform Tool</h3>
       <p><iframe loading="lazy" width="560px" height="350px" src="https://www.youtube.com/embed/j28BwvPO5gE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-      <h4><%= description %></h4>
+      <h4>${{ tool-usage.tool.transform.description }}$</h4>
       <p>Used to select an entire object. You can select multiple objects by clicking on the target object or dragging a rectangle around the object to draw a selection.</p>
       <p>By dragging the selected objects, you can move them to any x-coordinate or y-coordinate.<br>You can also use the arrow buttons on the keyboard to move it. You can also use the arrow buttons on the keyboard to move the object, but the movement is in 1px units.</p>
       <p>Eight pointers will appear on the selected objects, the corner pointers allow you to change the xy scale, and the side pointers allow you to change the width and height values.</p>

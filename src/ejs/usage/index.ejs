@@ -1,8 +1,7 @@
-<% const title = "Next2D | NoCode Tool How to use | WorkSpace"; %>
-<% const description = "The work space is divided into Tool Area, Screen Area, Timeline Area, and Controller Area, The functions of each area are as follows."; %>
 <% const path = "../../"; %>
 <%- include("../_include/_header", {
-    "title": title,
+    "title": "tool-usage.title",
+    "description": "tool-usage.description",
     "path": path,
 }); %>
 
@@ -14,23 +13,23 @@
     <div>
       <h3>WorkSpace</h3>
       <p class="workspace-image"><img loading="lazy" src="<%= path %>assets/img/usage/workspace.png" alt="WorkSpace"></p>
-      <p><%= description %></p>
+      <p>${{ tool-usage.description }}$</p>
 
       <h4>Tool Area</h4>
       <p>This area contains various tools and settings such as drawing tools, text tools, project loading and saving, export settings, and language settings.</p>
-      <p><a href="<%= path %>usage/tool">read more</a></p>
+      <p><a href="<%= path %>${{ main.lang }}$/usage/tool">read more</a></p>
 
       <h4>Screen Area</h4>
       <p>This is the area where you can check the drawing information such as viewing, placement, and stacking order of the DisplayObjects displayed on the Stage in the current frame. You can preview and play the Player by pressing Command+Enter or Ctrl+Enter.</p>
-      <p><a href="<%= path %>usage/screen">read more</a></p>
+      <p><a href="<%= path %>${{ main.lang }}$/usage/screen">read more</a></p>
 
       <h4>Timeline Area</h4>
       <p>This is the area where you can control layers, animation keyframes, etc. You can set the Label name, embed any JavaScript in the frame, and control the addition and removal of tweens for each layer.</p>
-      <p><a href="<%= path %>usage/timeline">read more</a></p>
+      <p><a href="<%= path %>${{ main.lang }}$/usage/timeline">read more</a></p>
 
       <h4>Controller Area</h4>
       <p>This area can be used to manipulate DisplayObjects in the Screen Area, such as scaling, rotation, color manipulation, BlendMode, and Filter. The Library tab allows you to load external data (images, MP4, MP3, SWF), and the JavaScript tags allow you to view and edit a list of JavaScript tags embedded in the entire project. You can also check and edit the list of JavaScript tags embedded in the entire project.</p>
-      <p><a href="<%= path %>usage/controller">read more</a></p>
+      <p><a href="<%= path %>${{ main.lang }}$/usage/controller">read more</a></p>
     </div>
 </div>
 

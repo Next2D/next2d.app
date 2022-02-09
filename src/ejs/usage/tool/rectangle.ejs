@@ -1,8 +1,7 @@
-<% const title = "Next2D | NoCode Tool How to use | WorkSpace"; %>
-<% const description = "Using the Rectangle tool, you can draw squares and rectangles."; %>
 <% const path = "../../../"; %>
 <%- include("../../_include/_header", {
-    "title": title,
+    "title": "tool-usage.tool.rectangle.title",
+    "description": "tool-usage.tool.rectangle.description",
     "path": path,
 }); %>
 
@@ -14,7 +13,7 @@
     <div>
       <h3>Rectangle Tool</h3>
       <p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/eJiIN1fqQrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-      <p><%= description %></p>
+      <p>${{ tool-usage.tool.rectangle.description }}$</p>
     </div>
 </div>
 

@@ -1,8 +1,7 @@
-<% const title = "Next2D | NoCode Tool How to use | Color Transform"; %>
-<% const description = "Add and subtract red, green, blue, and transparency."; %>
 <% const path = "../../../"; %>
 <%- include("../../_include/_header", {
-    "title": title,
+    "title": "tool-usage.controller.color-transform.title",
+    "description": "tool-usage.controller.color-transform.description",
     "path": path,
 }); %>
 
@@ -14,7 +13,7 @@
     <div>
       <h3>Color Transform</h3>
       <p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/idqgkrERaE8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-      <p><%= description %></p>
+      <p>${{ tool-usage.controller.color-transform.description }}$</p>
     </div>
 </div>
 

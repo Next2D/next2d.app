@@ -1,4 +1,6 @@
 {
+  "title": "Next2D Player Pocket Reference",
+  "description": "Next2D Player function description and sample code are available",
   "chapter1": {
     "title": "DisplayList, DisplayObject, and DisplayObjectContainer",
     "text1": "DisplayList consists of three major elements: 'Stage', 'DisplayObjectContainer', and 'DisplayObject'.",
@@ -172,7 +174,19 @@
     "text9": "Color to replace pixels outside of the source image",
     "text10": "Alpha transparency value of the color"
   },
-
+  "chapter23": {
+    "title": "Apply convolution effect",
+    "text1": "",
+    "text2": "",
+    "text3": "",
+    "text4": "",
+    "text5": "",
+    "text6": "",
+    "text7": "",
+    "text8": "",
+    "text9": "",
+    "text10": ""
+  },
 
 
 

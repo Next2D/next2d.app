@@ -1,4 +1,6 @@
 {
+  "title": "Next2D Player Pocket Reference",
+  "description": "Next2D Playerの機能解説とサンプルコードを掲載しています",
   "chapter1": {
     "title": "DisplayListとDisplayObjectとDisplayObjectContainerの関係性",
     "text1": "DisplayListは大きく3つの要素から構成されています。Stage、DisplayObjectContainer、DisplayObjectの3つの主要な要素で構成されています。",
@@ -172,7 +174,19 @@
     "text9": "ソースイメージの外にあるピクセルを置換するカラー",
     "text10": "カラーのアルファ透明度の値"
   },
-
+  "chapter23": {
+    "title": "畳み込み効果を適用する",
+    "text1": "",
+    "text2": "",
+    "text3": "",
+    "text4": "",
+    "text5": "",
+    "text6": "",
+    "text7": "",
+    "text8": "",
+    "text9": "",
+    "text10": ""
+  },
 
 
 

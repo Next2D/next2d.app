@@ -1,0 +1,94 @@
+<% const path = "../../../"; %>
+<%- include("../../_include/_header", {
+    "title": "player-reference.chapter23.title",
+    "description": "player-reference.chapter23.text1",
+    "path": path
+}); %>
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <ol>
+                    <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
+                    <li><a href="<%= path %>${{ main.lang }}$/reference/player">Reference</a></li>
+                    <li>Chapter 23</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Tutorial List Section ======= -->
+    <section id="references" class="reference-section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-8 offset-md-2">
+            <h2>${{ player-reference.chapter23.title }}$</h2>
+
+            <h3>ConvolutionFilter</h3>
+            <p>${{ player-reference.chapter23.text1 }}$</p>
+
+            <p>
+              <ul>
+                <li>
+                    <h5>mapBitmap</h5>
+                    <p>${{ player-reference.chapter23.text2 }}$</p>
+                </li>
+                <li>
+                    <h5>mapPoint</h5>
+                    <p>${{ player-reference.chapter23.text3 }}$</p>
+                </li>
+                <li>
+                    <h5>componentX</h5>
+                    <p>${{ player-reference.chapter23.text4 }}$</p>
+                </li>
+                <li>
+                    <h5>componentY</h5>
+                    <p>${{ player-reference.chapter23.text5 }}$</p>
+                </li>
+                <li>
+                    <h5>scaleX</h5>
+                    <p>${{ player-reference.chapter23.text6 }}$</p>
+                </li>
+                <li>
+                    <h5>scaleY</h5>
+                    <p>${{ player-reference.chapter23.text7 }}$</p>
+                </li>
+                <li>
+                    <h5>mode</h5>
+                    <p>${{ player-reference.chapter23.text8 }}$</p>
+                </li>
+                <li>
+                    <h5>color</h5>
+                    <p>${{ player-reference.chapter23.text9 }}$</p>
+                </li>
+                <li>
+                    <h5>alpha</h5>
+                    <p>${{ player-reference.chapter23.text10 }}$</p>
+                </li>
+              </ul>
+            </p>
+
+            <h5>Example</h5>
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 23" src="https://codepen.io/next2d/embed/QWOpwJB?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/QWOpwJB">
+                  [Next2D Reference] Chapter 23</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
+
+            <p class="next-chapter"><a class="float-end read-more" href="24.html">${{ main.next-chapter }}$</a></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End List Section -->
+
+</main><!-- End #main -->
+
+<%- include("../../_include/_footer", { "path": path }); %>

@@ -1,8 +1,7 @@
-<% const title = "Next2D | NoCode Tool How to use | Tool Area"; %>
-<% const description = "There are tools to support vector drawing, and tools to rotate and transform objects placed in the Screen Area."; %>
 <% const path = "../../../"; %>
 <%- include("../../_include/_header", {
-    "title": title,
+    "title": "tool-usage.tool.title",
+    "description": "tool-usage.tool.description",
     "path": path,
 }); %>
 
@@ -13,31 +12,31 @@
 <div class="col-md-12 col-lg-9">
     <div>
       <h3>Tool Area</h3>
-      <p><%= description %></p>
+      <p>${{ tool-usage.tool.description }}$</p>
 
       <h4><i id="transform-tool"></i>Transform Tool</h4>
       <p>Allows you to stretch, rotate, or tilt the selection.</p>
-      <p><a href="<%= path %>usage/tool/transform.html">read more</a></p>
+      <p><a href="<%= path %>${{ main.lang }}$/usage/tool/transform.html">read more</a></p>
 
       <h4><i id="shape-transform-tool"></i>Shape Transform Tool</h4>
       <p>The square pointer controls straight lines, while the circle pointer controls curves.</p>
-      <p><a href="<%= path %>usage/tool/shape-transform.html">read more</a></p>
+      <p><a href="<%= path %>${{ main.lang }}$/usage/tool/shape-transform.html">read more</a></p>
 
       <h4><i id="text-tool"></i>Text Tool</h4>
       <p>Insert a text field element.</p>
-      <p><a href="<%= path %>usage/tool/text.html">read more</a></p>
+      <p><a href="<%= path %>${{ main.lang }}$/usage/tool/text.html">read more</a></p>
 
       <h4><i id="rectangle-tool"></i>Rectangle Tool</h4>
       <p>Using the Rectangle tool, you can draw squares and rectangles.</p>
-      <p><a href="<%= path %>usage/tool/rectangle.html">read more</a></p>
+      <p><a href="<%= path %>${{ main.lang }}$/usage/tool/rectangle.html">read more</a></p>
 
       <h4><i id="ellipse-tool"></i>Ellipse Tool</h4>
       <p>Use the Ellipse tool to draw a regular circle or an ellipse.</p>
-      <p><a href="<%= path %>usage/tool/ellipse.html">read more</a></p>
+      <p><a href="<%= path %>${{ main.lang }}$/usage/tool/ellipse.html">read more</a></p>
 
       <h4><i id="rounded-rectangle-tool"></i>Rounded Rectangle Tool</h4>
       <p>The Rounded Rectangle tool can be used to draw rounded corners and rectangles.</p>
-      <p><a href="<%= path %>usage/tool/rounded-rectangle.html">read more</a></p>
+      <p><a href="<%= path %>${{ main.lang }}$/usage/tool/rounded-rectangle.html">read more</a></p>
 
       <h4><i id="loading-project-data"></i>Loading project data</h4>
       <p>Load data in '.n2d' format.</p>

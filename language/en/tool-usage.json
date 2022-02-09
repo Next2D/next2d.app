@@ -1,6 +1,11 @@
 {
   "title": "NoCode Tool How to use",
   "description": "The work space is divided into Tool Area, Screen Area, Timeline Area, and Controller Area, The functions of each area are as follows.",
+  "sub-title": "How to use and sample videos",
+  "text1": "This area contains various tools and settings such as drawing tools, text tools, project loading and saving, export settings, and language settings.",
+  "text2": "This is the area where you can check the drawing information such as viewing, placement, and stacking order of the DisplayObjects displayed on the Stage in the current frame. You can preview and play the Player by pressing Command+Enter or Ctrl+Enter.",
+  "text3": "This is the area where you can control layers, animation keyframes, etc. You can set the Label name, embed any JavaScript in the frame, and control the addition and removal of tweens for each layer.",
+  "text4": "In this area, you can perform operations such as scaling, rotation, color manipulation, BlendMode, Filter, etc. on DisplayObjects in the screen area. The JavaScript tab allows you to view and edit the list of JavaScript embedded in the entire project.",
   "controller": {
     "title": "NoCode Tool How to use | Controller Area",
     "description": "This area can be used to manipulate DisplayObjects in the Screen Area, such as scaling, rotation, color manipulation, BlendMode, and Filter. The Library tab allows you to load external data (images, MP4, MP3, SWF), and the JavaScript tags allow you to view and edit a list of JavaScript tags embedded in the entire project. You can also check and edit the list of JavaScript tags embedded in the entire project.",

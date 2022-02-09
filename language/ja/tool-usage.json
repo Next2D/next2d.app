@@ -1,6 +1,11 @@
 {
-  "title": "NoCode Tool How to use",
-  "description": "The work space is divided into Tool Area, Screen Area, Timeline Area, and Controller Area, The functions of each area are as follows.",
+  "title": "NoCode Tool 使い方",
+  "description": "作業スペースは、ツールエリア、スクリーンエリア、タイムラインエリア、コントローラーエリアに分かれており、各エリアの機能は次のとおりです。",
+  "sub-title": "使い方とサンプル動画",
+  "text1": "このエリアには、描画ツール、テキストツール、プロジェクトの読み込みと保存、エクスポート設定、言語設定など、さまざまなツールや設定が含まれています。",
+  "text2": "現在のフレームでStageに表示されているDisplayObjectの表示、配置、重ね順などの描画情報を確認できるエリアです。Command+Enter、Ctrl+EnterでPlayerのプレビュー、再生が可能です。",
+  "text3": "レイヤーやアニメーションのキーフレームなどを制御するエリアです。ラベル名の設定、フレームへの任意のJavaScriptの埋め込み、各レイヤーのTweenの追加・削除の制御が可能です。",
+  "text4": "このエリアでは、スクリーンエリア内のDisplayObjectに対して、拡大縮小、回転、色操作、BlendMode、Filterなどの操作を行うことができます。Libraryタブでは、外部データ（画像、MP4、MP3、SWF）の読み込み、JavaScriptでは、プロジェクト全体に埋め込まれているJavaScriptの一覧を表示・編集することが可能です。",
   "controller": {
     "title": "NoCode Tool How to use | Controller Area",
     "description": "This area can be used to manipulate DisplayObjects in the Screen Area, such as scaling, rotation, color manipulation, BlendMode, and Filter. The Library tab allows you to load external data (images, MP4, MP3, SWF), and the JavaScript tags allow you to view and edit a list of JavaScript tags embedded in the entire project. You can also check and edit the list of JavaScript tags embedded in the entire project.",

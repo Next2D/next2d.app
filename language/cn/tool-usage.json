@@ -1,6 +1,11 @@
 {
-  "title": "NoCode Tool How to use",
-  "description": "The work space is divided into Tool Area, Screen Area, Timeline Area, and Controller Area, The functions of each area are as follows.",
+  "title": "如何使用NoCode Tool",
+  "description": "工作空间分为工具区、屏幕区、时间线区和控制器区，各区域的功能如下。",
+  "sub-title": "使用方法和电影样本",
+  "text1": "这个区域包含各种工具和设置，如绘图工具、文本工具、项目加载和保存、导出设置和语言设置。",
+  "text2": "在这个区域，你可以检查绘图信息，如当前帧中显示在舞台上的DisplayObjects的查看、放置和堆叠顺序。你可以通过按Command+Enter或Ctrl+Enter来预览和播放播放器。",
+  "text3": "这是你可以控制层、动画关键帧等的区域。你可以设置标签名称，在框架中嵌入任何JavaScript，并控制每个层的Tweens的添加和删除。",
+  "text4": "这个区域允许你对屏幕区域的DisplayObjects进行操作，如缩放、旋转、颜色处理、混合模式、过滤等。\"库 \"选项卡允许你加载外部数据（图像、MP4、MP3、SWF），编辑 JavaScript标签允许你查看和编辑嵌入整个项目的JavaScript列表。",
   "controller": {
     "title": "NoCode Tool How to use | Controller Area",
     "description": "This area can be used to manipulate DisplayObjects in the Screen Area, such as scaling, rotation, color manipulation, BlendMode, and Filter. The Library tab allows you to load external data (images, MP4, MP3, SWF), and the JavaScript tags allow you to view and edit a list of JavaScript tags embedded in the entire project. You can also check and edit the list of JavaScript tags embedded in the entire project.",

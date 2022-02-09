@@ -1,0 +1,30 @@
+{
+  "tool": {
+    "selection": "选择工具",
+    "shape-transform": "形状转换工具",
+    "text": "文本工具",
+    "rectangle": "矩形工具",
+    "ellipse": "椭圆工具",
+    "rounded-rectangle": "圆角矩形工具"
+  },
+  "screen": {
+    "tabs": "标签",
+    "layer": "层数",
+    "align": "对齐"
+  },
+  "timeline": {
+    "frame-keyframe": "框架和关键帧",
+    "normal-layer": "普通层",
+    "mask-layer": "掩膜层",
+    "motion-tweening": "运动调整"
+  },
+  "controller": {
+    "stage": "舞台设置",
+    "object": "对象设置",
+    "transform": "转型",
+    "color-transform": "颜色转换",
+    "blend-mode": "混合模式",
+    "filters": "过滤器",
+    "sound": "声音"
+  }
+}

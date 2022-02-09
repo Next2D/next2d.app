@@ -27,7 +27,12 @@
     },
     "transform": {
       "title": "NoCode Tool How to use | Transform Tool",
-      "description": "Allows you to stretch, rotate, or tilt the selection."
+      "description": "Allows you to stretch, rotate, or tilt the selection.",
+      "text1": "Used to select an entire object. You can select multiple objects by clicking on the target object or dragging a rectangle around the object to draw a selection.",
+      "text2": "By dragging the selected objects, you can move them to any x-coordinate or y-coordinate. You can also use the arrow buttons on the keyboard to move it. You can also use the arrow buttons on the keyboard to move the object, but the movement is in 1px units.",
+      "text3": "Eight pointers will appear on the selected objects, the corner pointers allow you to change the xy scale, and the side pointers allow you to change the width and height values.",
+      "text4": "By pressing the Rotate button and moving it left or right, you can rotate the target object.",
+      "text5": "Press the Backspace or Delete button to delete the target object."
     }
   },
   "screen": {

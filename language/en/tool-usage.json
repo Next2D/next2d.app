@@ -19,11 +19,17 @@
     },
     "shape-transform": {
       "title": "NoCode Tool How to use | Shape Transform Tool",
-      "description": "The square pointer controls straight lines, while the circle pointer controls curves."
+      "description": "The square pointer controls straight lines, while the circle pointer controls curves.",
+      "text1": "Double-click to add a new square pointer. Double-clicking on a square pointer will add a circle pointer to control the curve.",
+      "text2": "Select either the square pointer or the circle pointer, and press the Delete button to delete the selected pointer.",
+      "text3": "If you want to cut out or merge paths, select the base shape, and then select the shape you want to merge while holding down Shift on your keyboard.",
+      "text4": "Finally, by clicking \"Integrating paths\" on the right-click menu, the path information will be integrated into the shape you selected as the base."
     },
     "text": {
       "title": "NoCode Tool How to use | Text Tool",
-      "description": "A text area will be added by selecting the tool and specifying the range in Screen Area. By double-clicking on the created text area, you can switch to input mode and insert text of your choice; by selecting text in the Screen Area, the style information of the selected text will be displayed in the Controller Area."
+      "description": "A text area will be added by selecting the tool and specifying the range in Screen Area.",
+      "text1": "Double-clicking on the created text area will switch to input mode, allowing you to insert any text.",
+      "text2": "When you select a text in the Screen Area, the style information of the selected text will be displayed in the Controller Area."
     },
     "transform": {
       "title": "NoCode Tool How to use | Transform Tool",

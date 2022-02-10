@@ -19,11 +19,17 @@
     },
     "shape-transform": {
       "title": "NoCode Tool 如何使用 | 形状转换工具",
-      "description": "The square pointer controls straight lines, while the circle pointer controls curves."
+      "description": "方形指针控制直线，而圆形指针控制曲线。",
+      "text1": "双击可以添加一个新的方形指针。双击方形指针会增加一个圆形指针来控制曲线。",
+      "text2": "选择方形指针或圆形指针，并按下删除按钮来删除所选指针。",
+      "text3": "如果你想切出或合并路径，选择基本形状，然后选择你想合并的形状，同时按住键盘上的Shift。",
+      "text4": "最后，通过点击右键菜单上的 \"Integrating paths\"，路径信息将被整合到你选择的形状中作为基础。"
     },
     "text": {
       "title": "NoCode Tool 如何使用 | 文本工具",
-      "description": "通过选择工具并在屏幕区域指定一个范围，将添加一个文本区域。 通过双击创建的文本区，你可以切换到输入模式，插入你选择的文本；当你在屏幕区选择文本时，所选文本的样式信息将显示在控制器区。"
+      "description": "通过选择工具并使用 \"屏幕区域 \"来指定区域，可以添加一个文本区域。",
+      "text1": "双击创建的文本区域将切换到输入模式，允许你插入任何你想要的文本。",
+      "text2": "当你在屏幕区选择一个文本时，所选文本的样式信息将显示在控制器区。"
     },
     "transform": {
       "title": "NoCode Tool 如何使用 | 选择工具",

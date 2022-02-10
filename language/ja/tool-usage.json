@@ -19,11 +19,17 @@
     },
     "shape-transform": {
       "title": "NoCode Tool 使い方 | Shape変形ツール",
-      "description": "The square pointer controls straight lines, while the circle pointer controls curves."
+      "description": "四角いポインターで直線を、丸いポインターで曲線を操作することができます。",
+      "text1": "ダブルクリックすると、新しい四角いポインタが追加されます。四角いポインタをダブルクリックすると、曲線を制御するための円形ポインタが追加されます。",
+      "text2": "四角いポインターまたは丸いポインターのいずれかを選択し、［削除］ボタンを押 すと、選択したポインターが削除されます。",
+      "text3": "中抜きを行う場合は、ベースとなるシェイプを選択し、キーボードのShiftキーを押しながら結合したいシェイプを選択します。",
+      "text4": "最後に右クリックメニューの「Integrating paths」をクリックすると、ベースとして選択した形状にパスの情報が統合されます。"
     },
     "text": {
       "title": "NoCode Tool 使い方 | テキストツール",
-      "description": "ツールを選択してScreen Areaで範囲指定を行うことでテキストエリアが追加されます。作成されたテキストエリアをダブルクリックすると入力モードに切り替わり、任意のテキストを挿入する事が可能になります。Screen Areaのテキストを選択すると、Controller Areaに選択したテキストのスタイル情報が表示されます。"
+      "description": "ツールを選択してScreen Areaで範囲指定を行うことでテキストエリアが追加されます。",
+      "text1": "作成されたテキストエリアをダブルクリックすると入力モードに切り替わり、任意のテキストを挿入する事が可能になります。",
+      "text2": "Screen Areaのテキストを選択すると、Controller Areaに選択したテキストのスタイル情報が表示されます。"
     },
     "transform": {
       "title": "NoCode Tool 使い方 | 選択ツール",

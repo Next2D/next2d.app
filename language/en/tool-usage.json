@@ -7,15 +7,18 @@
     "description": "This area contains various tools and settings such as drawing tools, text tools, project loading and saving, export settings, and language settings.",
     "ellipse": {
       "title": "NoCode Tool How to use | Ellipse Tool",
-      "description": "Use the Ellipse tool to draw a regular circle or an ellipse."
+      "description": "Use the Ellipse tool to draw a regular circle or an ellipse.",
+      "text1": "To draw a line, select the tool after setting the thickness. If you set the line thickness to 0, the line will not be drawn."
     },
     "rectangle": {
       "title": "NoCode Tool How to use | Rectangle Tool",
-      "description": "Using the Rectangle tool, you can draw squares and rectangles."
+      "description": "Using the Rectangle tool, you can draw squares and rectangles.",
+      "text1": "To draw a line, select the tool after setting the thickness. If you set the line thickness to 0, the line will not be drawn."
     },
     "rounded-rectangle": {
       "title": "NoCode Tool How to use | Rounded Rectangle Tool",
-      "description": "The Rounded Rectangle tool can be used to draw rounded corners and rectangles."
+      "description": "The Rounded Rectangle tool can be used to draw rounded corners and rectangles.",
+      "text1": "To draw a line, select the tool after setting the thickness. If you set the line thickness to 0, the line will not be drawn."
     },
     "shape-transform": {
       "title": "NoCode Tool How to use | Shape Transform Tool",

@@ -1,4 +1,313 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1" name="viewport"><title>Next2D | Referencing and changing DisplayObject&#39;s blendMode</title><meta content="Sets the DisplayObject&#39;s BlendMode. According to the set BlendMode, the DisplayObject and background colors (RGB) are compared, added and subtracted for each corresponding pixel, and drawn based on the result." name="description"><meta content="Next2D,Next2D Player,NoCode Tool,Next2D Framework" name="keywords"><meta itemprop="name" content="Next2D | Referencing and changing DisplayObject&#39;s blendMode"><meta itemprop="description" content="Sets the DisplayObject&#39;s BlendMode. According to the set BlendMode, the DisplayObject and background colors (RGB) are compared, added and subtracted for each corresponding pixel, and drawn based on the result."><meta itemprop="image" content="https://next2d.app/assets/img/ogp.png"><meta property="og:url" content="https://next2d.app"><meta property="og:type" content="website"><meta property="og:title" content="Next2D | Referencing and changing DisplayObject&#39;s blendMode"><meta property="og:description" content="Sets the DisplayObject&#39;s BlendMode. According to the set BlendMode, the DisplayObject and background colors (RGB) are compared, added and subtracted for each corresponding pixel, and drawn based on the result."><meta property="og:image" content="https://next2d.app/assets/img/ogp.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Next2D | Referencing and changing DisplayObject&#39;s blendMode"><meta name="twitter:description" content="Sets the DisplayObject&#39;s BlendMode. According to the set BlendMode, the DisplayObject and background colors (RGB) are compared, added and subtracted for each corresponding pixel, and drawn based on the result."><meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png"><link href="../../../assets/img/favicon.png" rel="icon"><link href="../../../assets/img/apple-touch-icon.png" rel="apple-touch-icon"><link href="../../../assets/vendor/aos/aos.css" rel="stylesheet"><link href="../../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"><link href="../../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"><link href="../../../assets/css/main.min.css" rel="stylesheet"><script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script><script>window.dataLayer = window.dataLayer || [];
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Next2D | Referencing and changing DisplayObject&#39;s blendMode</title>
+    <meta content="Sets the DisplayObject&#39;s BlendMode. According to the set BlendMode, the DisplayObject and background colors (RGB) are compared, added and subtracted for each corresponding pixel, and drawn based on the result." name="description">
+    <meta content="Next2D,Next2D Player,NoCode Tool,Next2D Framework" name="keywords">
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Next2D | Referencing and changing DisplayObject&#39;s blendMode">
+    <meta itemprop="description" content="Sets the DisplayObject&#39;s BlendMode. According to the set BlendMode, the DisplayObject and background colors (RGB) are compared, added and subtracted for each corresponding pixel, and drawn based on the result.">
+    <meta itemprop="image" content="https://next2d.app/assets/img/ogp.png">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://next2d.app">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Next2D | Referencing and changing DisplayObject&#39;s blendMode">
+    <meta property="og:description" content="Sets the DisplayObject&#39;s BlendMode. According to the set BlendMode, the DisplayObject and background colors (RGB) are compared, added and subtracted for each corresponding pixel, and drawn based on the result.">
+    <meta property="og:image" content="https://next2d.app/assets/img/ogp.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Next2D | Referencing and changing DisplayObject&#39;s blendMode">
+    <meta name="twitter:description" content="Sets the DisplayObject&#39;s BlendMode. According to the set BlendMode, the DisplayObject and background colors (RGB) are compared, added and subtracted for each corresponding pixel, and drawn based on the result.">
+    <meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png">
+
+    <!-- Favicons -->
+    <link href="../../../assets/img/favicon.png" rel="icon">
+    <link href="../../../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="../../../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../../../assets/css/main.min.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag("js", new Date());
-        gtag("config", "G-8GJWF4S3RH");</script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head><body><header id="header" class="header fixed-top d-flex align-items-center"><div class="container d-flex align-items-center justify-content-between"><div id="logo"><a href="../../../en"><img loading="lazy" src="../../../assets/img/logo.svg" alt="Next2D Rendering Engine, NoCode Tool, Underlying Framework." title="Next2D Rendering Engine, NoCode Tool, Underlying Framework."></a></div><nav id="navbar" class="navbar"><ul class="list-unstyled"><li><a class="nav-link scrollto" href="../../../en/#get-started">Home</a></li><li><a class="nav-link scrollto" href="../../../en/#roadmap">Roadmap</a></li><li class="dropdown"><a class="nav-link scrollto" href="#"><span>Player</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="https://github.com/Next2D/Player">GitHub</a></li><li><a href="../../../docs/player">API Docs</a></li><li><a href="../../../en/reference/player">Reference</a></li><li><a href="../../../en/#player">Features</a></li></ul></li><li class="dropdown"><a class="nav-link scrollto" href="#"><span>NoCode Tool</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="https://tool.next2d.app">Web Site</a></li><li><a href="../../../en/usage">Usage</a></li><li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos">YouTube</a></li><li><a href="../../../en/#tool">Features</a></li></ul></li><li class="dropdown"><a class="nav-link scrollto" href="#"><span>Framework</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="https://github.com/Next2D/Framework">GitHub</a></li><li><a href="../../../docs/framework">API Docs</a></li><li><a href="../../../en/#framework">Features</a></li></ul></li><li class="dropdown"><a class="nav-link scrollto" href="#"><span>Language</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="../../../en">English</a></li><li><a href="../../../ja">日本語</a></li><li><a href="../../../cn">简体中文</a></li></ul></li><li><a class="nav-link scrollto" href="../../../en/#contact">Contact</a></li></ul><i class="bi bi-list mobile-nav-toggle"></i></nav></div></header><main id="main"><section class="breadcrumbs"><div class="container"><div class="d-flex justify-content-between align-items-center"><ol><li><a href="../../../en">Home</a></li><li><a href="../../../en/reference/player">Reference</a></li><li>Chapter 15</li></ol></div></div></section><section id="references" class="reference-section"><div class="container" data-aos="fade-up"><div class="row" data-aos="fade-up" data-aos-delay="100"><div class="col-md-8 offset-md-2"><h2>Referencing and changing DisplayObject&#39;s blendMode</h2><h3>blendMode</h3><p>Sets the DisplayObject&#39;s BlendMode. According to the set BlendMode, the DisplayObject and background colors (RGB) are compared, added and subtracted for each corresponding pixel, and drawn based on the result.</p><p></p><h4>Constants and Overview</h4><ul><li><h5>BlendMode.NORMAL(default)</h5><p>The DisplayObject will be displayed before the background.</p></li><li><h5>BlendMode.ADD</h5><p>Adds the value of the DisplayObject&#39;s element color to the background color, applying an upper limit of 0xFF in doing so.。</p></li><li><h5>BlendMode.ALPHA</h5><p>Applies the alpha value of each pixel of the DisplayObject to the background.</p></li><li><h5>BlendMode.DARKEN</h5><p>Selects the darker (lower value) of the DisplayObject&#39;s element color and background color.</p></li><li><h5>BlendMode.DIFFERENCE</h5><p>Compares the DisplayObject&#39;s element color with the background color and subtracts the darker value from the lighter of the two element colors.</p></li><li><h5>BlendMode.ERASE</h5><p>Erases the background based on the DisplayObject&#39;s alpha value.</p></li><li><h5>BlendMode.HARDLIGHT</h5><p>Adjusts the color of each pixel based on the darkness of the DisplayObject.</p></li><li><h5>BlendMode.INVERT</h5><p>Inverts the background.</p></li><li><h5>BlendMode.LAYER</h5><p>Forces the creation of transparency groups related to DisplayObjects.</p></li><li><h5>BlendMode.LIGHTEN</h5><p>Selects the lighter (higher value) of the DisplayObject&#39;s element color and background color.</p></li><li><h5>BlendMode.MULTIPLY</h5><p>After multiplying the element color value of the DisplayObject by the element color value of the background color, divide by 0xFF to normalize and darken the color.</p></li><li><h5>BlendMode.OVERLAY</h5><p>Adjusts the color of each pixel based on the darkness of the DisplayObject.</p></li><li><h5>BlendMode.SCREEN</h5><p>Multiply the complement of the DisplayObject&#39;s color (inverse) by the complement of the background color to get the bleach effect.</p></li><li><h5>BlendMode.SUBTRACT</h5><p>Subtracts the element color value of the display object from its background color value, setting the lower limit of the result to 0.</p></li></ul><p></p><h5>Example</h5><p class="example"><iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 15" src="https://codepen.io/next2d/embed/LYzXOQM?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/next2d/pen/LYzXOQM">[Next2D Reference] Chapter 15</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>) on <a href="https://codepen.io">CodePen</a>.</iframe></p><p class="next-chapter"><a class="float-end read-more" href="16.html">Next Chapter</a></p></div></div></div></section></main><footer class="footer" data-aos="fade-up"><div class="container"><div class="row"><div class="col-md-12 col-lg-4"><div class="footer-logo"><a class="navbar-brand" href="../../../en">Next2D</a><p>Next2D, a project derived from the JavaScript FlashPlayer &quot;swf2js&quot;, aims to provide the fastest 2D engine that works on any device.<br>Created by Toshiyuki Ienaga.</p></div><div class="list-sns-menu"><ul class="list-unstyled"><li><a href="https://twitter.com/ienagatoshiyuki"><i class="bi bi-twitter"></i></a></li><li><a href="https://github.com/ienaga"><i class="bi bi-github"></i></a></li></ul></div></div><div class="col-sm-6 col-md-3 col-lg-2"><div class="list-menu"><h4>Player</h4><ul class="list-unstyled"><li><a href="https://github.com/Next2D/Player">GitHub</a></li><li><a href="../../../docs/player">API Docs</a></li><li><a href="../../../en/reference/player">Reference</a></li><li><a href="../../../en/#player">Features</a></li></ul></div></div><div class="col-sm-6 col-md-3 col-lg-2"><div class="list-menu"><h4>Tool</h4><ul class="list-unstyled"><li><a href="https://tool.next2d.app">Web Site</a></li><li><a href="../../../en/usage">Usage</a></li><li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos">YouTube</a></li><li><a href="../../../en/#tool">Features</a></li></ul></div></div><div class="col-sm-6 col-md-3 col-lg-2"><div class="list-menu"><h4>Framework</h4><ul class="list-unstyled"><li><a href="https://github.com/Next2D/Framework">GitHub</a></li><li><a href="../../../docs/framework">API Docs</a></li><li><a href="../../../en/#framework">Features</a></li></ul></div></div><div class="col-sm-6 col-md-3 col-lg-2"><div class="list-menu"><h4>About US</h4><ul class="list-unstyled"><li><a href="../../../en/#contact">Contact</a></li><li><a href="../../../en/privacy">Privacy Policy</a></li></ul></div></div></div></div><div class="copyrights"><div class="container"><p>&copy; Copyrights Next2D. All rights reserved.</p></div></div></footer><a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a><script src="../../../assets/vendor/aos/aos.js"></script><script src="../../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script><script src="../../../assets/js/main.min.js"></script></body></html>
+        gtag("config", "G-8GJWF4S3RH");
+    </script>
+    <script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  </head>
+
+  <body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+
+        <div id="logo">
+          <a href="../../../en"><img loading="lazy" src="../../../assets/img/logo.svg" alt="Next2D Rendering Engine, NoCode Tool, Underlying Framework." title="Next2D Rendering Engine, NoCode Tool, Underlying Framework." /></a>
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul class="list-unstyled">
+            <li><a class="nav-link scrollto" href="../../../en/#get-started">Home</a></li>
+            <li><a class="nav-link scrollto" href="../../../en/#roadmap">Roadmap</a></li>
+            <li class="dropdown"><a class="nav-link scrollto" href="#"><span>Player</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="https://github.com/Next2D/Player">GitHub</a></li>
+                <li><a href="../../../docs/player">API Docs</a></li>
+                <li><a href="../../../en/reference/player">Reference</a></li>
+                <li><a href="../../../en/#player">Features</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="nav-link scrollto" href="#"><span>NoCode Tool</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="https://tool.next2d.app">Web Site</a></li>
+                <li><a href="../../../en/usage">Usage</a></li>
+                <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos">YouTube</a></li>
+                <li><a href="../../../en/#tool">Features</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="nav-link scrollto" href="#"><span>Framework</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="https://github.com/Next2D/Framework">GitHub</a></li>
+                <li><a href="../../../docs/framework">API Docs</a></li>
+                <li><a href="../../../en/#framework">Features</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="nav-link scrollto" href="#"><span>Language</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="../../../en">English</a></li>
+                <li><a href="../../../ja">日本語</a></li>
+                <li><a href="../../../cn">简体中文</a></li>
+              </ul>
+            </li>
+            <li><a class="nav-link scrollto" href="../../../en/#contact">Contact</a></li>
+          </ul>
+
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+      </div>
+    </header><!-- End Header -->
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <ol>
+                    <li><a href="../../../en">Home</a></li>
+                    <li><a href="../../../en/reference/player">Reference</a></li>
+                    <li>Chapter 15</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Tutorial List Section ======= -->
+    <section id="references" class="reference-section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-8 offset-md-2">
+            <h2>Referencing and changing DisplayObject&#39;s blendMode</h2>
+
+            <h3>blendMode</h3>
+            <p>Sets the DisplayObject&#39;s BlendMode. According to the set BlendMode, the DisplayObject and background colors (RGB) are compared, added and subtracted for each corresponding pixel, and drawn based on the result.</p>
+            <p>
+              <h4>Constants and Overview</h4>
+
+              <ul>
+                <li>
+                    <h5>BlendMode.NORMAL(default)</h5>
+                    <p>The DisplayObject will be displayed before the background.</p>
+                </li>
+                <li>
+                    <h5>BlendMode.ADD</h5>
+                    <p>Adds the value of the DisplayObject&#39;s element color to the background color, applying an upper limit of 0xFF in doing so.。</p>
+                </li>
+                <li>
+                    <h5>BlendMode.ALPHA</h5>
+                    <p>Applies the alpha value of each pixel of the DisplayObject to the background.</p>
+                </li>
+                <li>
+                    <h5>BlendMode.DARKEN</h5>
+                    <p>Selects the darker (lower value) of the DisplayObject&#39;s element color and background color.</p>
+                </li>
+                <li>
+                    <h5>BlendMode.DIFFERENCE</h5>
+                    <p>Compares the DisplayObject&#39;s element color with the background color and subtracts the darker value from the lighter of the two element colors.</p>
+                </li>
+                <li>
+                    <h5>BlendMode.ERASE</h5>
+                    <p>Erases the background based on the DisplayObject&#39;s alpha value.</p>
+                </li>
+                <li>
+                    <h5>BlendMode.HARDLIGHT</h5>
+                    <p>Adjusts the color of each pixel based on the darkness of the DisplayObject.</p>
+                </li>
+                <li>
+                    <h5>BlendMode.INVERT</h5>
+                    <p>Inverts the background.</p>
+                </li>
+                <li>
+                    <h5>BlendMode.LAYER</h5>
+                    <p>Forces the creation of transparency groups related to DisplayObjects.</p>
+                </li>
+                <li>
+                    <h5>BlendMode.LIGHTEN</h5>
+                    <p>Selects the lighter (higher value) of the DisplayObject&#39;s element color and background color.</p>
+                </li>
+                <li>
+                    <h5>BlendMode.MULTIPLY</h5>
+                    <p>After multiplying the element color value of the DisplayObject by the element color value of the background color, divide by 0xFF to normalize and darken the color.</p>
+                </li>
+                <li>
+                    <h5>BlendMode.OVERLAY</h5>
+                    <p>Adjusts the color of each pixel based on the darkness of the DisplayObject.</p>
+                </li>
+                <li>
+                    <h5>BlendMode.SCREEN</h5>
+                    <p>Multiply the complement of the DisplayObject&#39;s color (inverse) by the complement of the background color to get the bleach effect.</p>
+                </li>
+                <li>
+                    <h5>BlendMode.SUBTRACT</h5>
+                    <p>Subtracts the element color value of the display object from its background color value, setting the lower limit of the result to 0.</p>
+                </li>
+              </ul>
+            </p>
+
+            <h5>Example</h5>
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] Chapter 15" src="https://codepen.io/next2d/embed/LYzXOQM?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/LYzXOQM">
+                  [Next2D Reference] Chapter 15</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
+
+            <p class="next-chapter"><a class="float-end read-more" href="16.html">Next Chapter</a></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End List Section -->
+
+</main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer class="footer" data-aos="fade-up">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-12 col-lg-4">
+            <div class="footer-logo">
+
+              <a class="navbar-brand" href="../../../en">Next2D</a>
+              <p>
+                Next2D, a project derived from the JavaScript FlashPlayer &quot;swf2js&quot;, aims to provide the fastest 2D engine that works on any device.<br>
+                Created by Toshiyuki Ienaga.
+              </p>
+
+            </div>
+
+            <div class="list-sns-menu">
+              <ul class="list-unstyled">
+                <li><a href="https://twitter.com/ienagatoshiyuki"><i class="bi bi-twitter"></i></a></li>
+                <li><a href="https://github.com/ienaga"><i class="bi bi-github"></i></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-3 col-lg-2">
+            <div class="list-menu">
+
+              <h4>Player</h4>
+
+              <ul class="list-unstyled">
+                <li><a href="https://github.com/Next2D/Player">GitHub</a></li>
+                <li><a href="../../../docs/player">API Docs</a></li>
+                <li><a href="../../../en/reference/player">Reference</a></li>
+                <li><a href="../../../en/#player">Features</a></li>
+              </ul>
+
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-3 col-lg-2">
+            <div class="list-menu">
+
+              <h4>Tool</h4>
+
+              <ul class="list-unstyled">
+                <li><a href="https://tool.next2d.app">Web Site</a></li>
+                <li><a href="../../../en/usage">Usage</a></li>
+                <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos">YouTube</a></li>
+                <li><a href="../../../en/#tool">Features</a></li>
+              </ul>
+
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-3 col-lg-2">
+            <div class="list-menu">
+
+              <h4>Framework</h4>
+
+              <ul class="list-unstyled">
+                <li><a href="https://github.com/Next2D/Framework">GitHub</a></li>
+                <li><a href="../../../docs/framework">API Docs</a></li>
+                <li><a href="../../../en/#framework">Features</a></li>
+<!--                 <li><a href="../../../examples/framework">Examples</a></li> -->
+              </ul>
+
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-3 col-lg-2">
+            <div class="list-menu">
+                <h4>About US</h4>
+
+                <ul class="list-unstyled">
+                    <li><a href="../../../en/#contact">Contact</a></li>
+                    <li><a href="../../../en/privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyrights">
+        <div class="container">
+          <p>&copy; Copyrights Next2D. All rights reserved.</p>
+        </div>
+      </div>
+
+    </footer><!-- End  Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="../../../assets/vendor/aos/aos.js"></script>
+    <script src="../../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="../../../assets/js/main.min.js"></script>
+
+  </body>
+</html>

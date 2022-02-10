@@ -7,15 +7,18 @@
     "description": "このエリアには、描画ツール、テキストツール、プロジェクトの読み込みと保存、エクスポート設定、言語設定など、さまざまなツールや設定が含まれています。",
     "ellipse": {
       "title": "NoCode Tool 使い方 | 楕円ツール",
-      "description": "Use the Ellipse tool to draw a regular circle or an ellipse."
+      "description": "楕円ツールを使って、通常の円や楕円を描くことができます。",
+      "text1": "線の描画を行う場合は太さの設定後にツールを選択してください。線の太さを0にした場合は線の描画は行われません。"
     },
     "rectangle": {
       "title": "NoCode Tool 使い方 | 短形ツール",
-      "description": "Using the Rectangle tool, you can draw squares and rectangles."
+      "description": "矩形ツールを使うと、正方形や長方形を描くことができます。",
+      "text1": "線の描画を行う場合は太さの設定後にツールを選択してください。線の太さを0にした場合は線の描画は行われません。"
     },
     "rounded-rectangle": {
       "title": "NoCode Tool 使い方 | 角丸矩形ツール",
-      "description": "The Rounded Rectangle tool can be used to draw rounded corners and rectangles."
+      "description": "角丸矩形ツールは、角の丸い矩形を描画することができます。",
+      "text1": "線の描画を行う場合は太さの設定後にツールを選択してください。線の太さを0にした場合は線の描画は行われません。"
     },
     "shape-transform": {
       "title": "NoCode Tool 使い方 | Shape変形ツール",

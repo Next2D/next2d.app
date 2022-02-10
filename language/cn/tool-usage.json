@@ -7,15 +7,18 @@
     "description": "这个区域包含各种工具和设置，如绘图工具、文本工具、项目加载和保存、导出设置和语言设置。",
     "ellipse": {
       "title": "NoCode Tool 如何使用 | 椭圆工具",
-      "description": "Use the Ellipse tool to draw a regular circle or an ellipse."
+      "description": "你可以使用椭圆工具来绘制常规的圆和椭圆。",
+      "text1": "要画一条线，在设置好厚度后选择工具。 如果你把线的厚度设置为0，就不会画线。"
     },
     "rectangle": {
       "title": "NoCode Tool 如何使用 | 矩形工具",
-      "description": "Using the Rectangle tool, you can draw squares and rectangles."
+      "description": "使用矩形工具，你可以画正方形和矩形。",
+      "text1": "要画一条线，在设置好厚度后选择工具。 如果你把线的厚度设置为0，就不会画线。"
     },
     "rounded-rectangle": {
       "title": "NoCode Tool 如何使用 | 圆角矩形工具",
-      "description": "The Rounded Rectangle tool can be used to draw rounded corners and rectangles."
+      "description": "圆角矩形工具允许你画一个有圆角的矩形。",
+      "text1": "要画一条线，在设置好厚度后选择工具。 如果你把线的厚度设置为0，就不会画线。"
     },
     "shape-transform": {
       "title": "NoCode Tool 如何使用 | 形状转换工具",

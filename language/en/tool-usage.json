@@ -78,11 +78,11 @@
     "description": "This is the area where you can check the drawing information such as viewing, placement, and stacking order of the DisplayObjects displayed on the Stage in the current frame. You can preview and play the Player by pressing Command+Enter or Ctrl+Enter.",
     "align": {
       "title": "NoCode Tool How to use | Align",
-      "description": "Allows you to align the selected objects along the horizontal or vertical axis. Vertically, you can align them along the right, center, or left edge of the selected object; horizontally, you can align them along the top or bottom edge of the selected object."
+      "description": "The selected display object can be aligned horizontally or vertically. Vertically, it can be aligned with the right, center, or left edge of the selected display object; horizontally, it can be aligned with the top or bottom edge of the selected display object."
     },
     "layer": {
       "title": "NoCode Tool How to use | Layer",
-      "description": "It is possible to control the stacking order of objects inside a layer."
+      "description": "Allows you to control the stacking order of the displayed objects."
     },
     "tabs": {
       "title": "NoCode Tool How to use | Tabs",

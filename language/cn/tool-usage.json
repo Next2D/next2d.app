@@ -77,16 +77,16 @@
     "title": "NoCode Tool 如何使用 | Screen Area",
     "description": "在这个区域，你可以检查绘图信息，如当前帧中显示在舞台上的DisplayObjects的查看、放置和堆叠顺序。你可以通过按Command+Enter或Ctrl+Enter来预览和播放播放器。",
     "align": {
-      "title": "NoCode Tool 如何使用 | Align",
-      "description": "Allows you to align the selected objects along the horizontal or vertical axis. Vertically, you can align them along the right, center, or left edge of the selected object; horizontally, you can align them along the top or bottom edge of the selected object."
+      "title": "NoCode Tool 如何使用 | 统一口径",
+      "description": "你可以将选定的显示对象水平或垂直地对齐。 在垂直方向上，所选的显示对象可以在所选显示对象的右边、中间或左边对齐，在水平方向上，它们可以在所选显示对象的顶部或底部对齐。"
     },
     "layer": {
-      "title": "NoCode Tool 如何使用 | Layer",
-      "description": "It is possible to control the stacking order of objects inside a layer."
+      "title": "NoCode Tool 如何使用 | 分层",
+      "description": "你可以控制显示对象的堆叠顺序。"
     },
     "tabs": {
-      "title": "NoCode Tool 如何使用 | Tabs",
-      "description": "You can add or delete a new project, or specify the project you are currently working on."
+      "title": "NoCode Tool 如何使用 | 标签",
+      "description": "你可以添加或删除新项目，或指定你目前正在进行的项目。"
     }
   },
   "timeline": {

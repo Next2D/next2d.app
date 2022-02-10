@@ -77,16 +77,16 @@
     "title": "NoCode Tool 使い方 | Screen Area",
     "description": "現在のフレームでStageに表示されているDisplayObjectの表示、配置、重ね順などの描画情報を確認できるエリアです。Command+Enter、Ctrl+EnterでPlayerのプレビュー、再生が可能です。",
     "align": {
-      "title": "NoCode Tool 使い方 | Align",
-      "description": "Allows you to align the selected objects along the horizontal or vertical axis. Vertically, you can align them along the right, center, or left edge of the selected object; horizontally, you can align them along the top or bottom edge of the selected object."
+      "title": "NoCode Tool 使い方 | 整列",
+      "description": "選択した表示オブジェクトを水平または垂直方向に整列させることができます。垂直方向には、選択した表示オブジェクトの右端、中央、左端に沿わせることができ、水平方向には、選択した表示オブジェクトの上端、下端に沿わせることができます。"
     },
     "layer": {
-      "title": "NoCode Tool 使い方 | Layer",
-      "description": "It is possible to control the stacking order of objects inside a layer."
+      "title": "NoCode Tool 使い方 | レイヤー",
+      "description": "表示オブジェクトの重ね順を制御することができます。"
     },
     "tabs": {
-      "title": "NoCode Tool 使い方 | Tabs",
-      "description": "You can add or delete a new project, or specify the project you are currently working on."
+      "title": "NoCode Tool 使い方 | タブ",
+      "description": "新規プロジェクトの追加や削除、現在作業中のプロジェクトを指定することができます。"
     }
   },
   "timeline": {

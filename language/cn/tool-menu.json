@@ -2,6 +2,7 @@
   "tool": {
     "selection": "选择工具",
     "shape-transform": "形状转换工具",
+    "pen": "钢笔工具",
     "text": "文本工具",
     "rectangle": "矩形工具",
     "ellipse": "椭圆工具",

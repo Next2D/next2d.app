@@ -5,6 +5,10 @@
   "tool": {
     "title": "NoCode Tool How to use | Tool Area",
     "description": "This area contains various tools and settings such as drawing tools, text tools, project loading and saving, export settings, and language settings.",
+    "pen": {
+      "title": "NoCode Tool 使い方 | Pen Tool",
+      "description": "You can draw freehand lines, and use the Shape Transform tool to change the path freely."
+    },
     "ellipse": {
       "title": "NoCode Tool How to use | Ellipse Tool",
       "description": "Use the Ellipse tool to draw a regular circle or an ellipse.",

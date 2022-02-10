@@ -5,6 +5,10 @@
   "tool": {
     "title": "NoCode Tool 如何使用 | Tool Area",
     "description": "这个区域包含各种工具和设置，如绘图工具、文本工具、项目加载和保存、导出设置和语言设置。",
+    "pen": {
+      "title": "NoCode Tool 使い方 | 钢笔工具",
+      "description": "你可以自由地画线，并使用形状变换工具来自由地改变路径。"
+    },
     "ellipse": {
       "title": "NoCode Tool 如何使用 | 椭圆工具",
       "description": "你可以使用椭圆工具来绘制常规的圆和椭圆。",

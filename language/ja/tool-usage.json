@@ -5,6 +5,10 @@
   "tool": {
     "title": "NoCode Tool 使い方 | Tool Area",
     "description": "このエリアには、描画ツール、テキストツール、プロジェクトの読み込みと保存、エクスポート設定、言語設定など、さまざまなツールや設定が含まれています。",
+    "pen": {
+      "title": "NoCode Tool 使い方 | ペンツール",
+      "description": "フリーハンドでの線の描画を行えます。Shape変形ツールを使う事で、パスを自由に変更できます。"
+    },
     "ellipse": {
       "title": "NoCode Tool 使い方 | 楕円ツール",
       "description": "楕円ツールを使って、通常の円や楕円を描くことができます。",

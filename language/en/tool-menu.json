@@ -2,6 +2,7 @@
   "tool": {
     "selection": "Selection Tool",
     "shape-transform": "Shape Transform Tool",
+    "pen": "Pen Tool",
     "text": "Text Tool",
     "rectangle": "Rectangle Tool",
     "ellipse": "Ellipse Tool",

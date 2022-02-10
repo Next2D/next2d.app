@@ -42,6 +42,35 @@
       "text3": "选定的对象上会出现八个指针，角落的指针允许你改变xy比例，侧面的指针允许你改变宽度和高度值。",
       "text4": "通过按下旋转按钮并向左或向右移动它，你可以旋转目标对象。",
       "text5": "按Backspace或Delete按钮来删除目标对象。"
+    },
+    "loading": {
+      "title": "保存项目数据",
+      "description": "你可以通过加载以'.n2d'格式保存的数据来重新启动项目。"
+    },
+    "save": {
+      "title": "保存项目数据",
+      "description": "以'.n2d'格式输出活动标签的项目数据。"
+    },
+    "export": {
+      "title": "出口",
+      "description": "以JSON格式导出活动标签的项目数据，可由播放器播放。 你还可以导出GIF动画，webm和其他格式。 输出的格式可以在设置中设定。"
+    },
+    "setting": {
+      "title": "设置",
+      "description": "你可以设置项目语言、导出设置等。",
+      "text1": "隐藏层（不包括）",
+      "description1": "导出时不包括设置为隐藏在时间线图层中的图层。",
+      "text2": "隐蔽层（包括）",
+      "description2": "这将包括隐藏在时间线层中的任何层。",
+      "text3": "JSON(压缩版本)",
+      "description3": "这是一个JSON文件，数据用zlib压缩。 压缩使文件更轻，但可能招致播放器方面的解压缩开销。",
+      "text4": "JSON(未经压缩的版本)",
+      "description4": "对于播放器来说，没有解压缩的开销，但数据大小较大。",
+      "text5": "Video(webm)",
+      "description5": "以webm格式输出。",
+      "text6": "GIF(Animation)",
+      "description6": "以GIF动画格式输出。",
+      "language": "你可以改变显示语言设置。"
     }
   },
   "screen": {

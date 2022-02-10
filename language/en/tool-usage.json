@@ -42,6 +42,35 @@
       "text3": "Eight pointers will appear on the selected objects, the corner pointers allow you to change the xy scale, and the side pointers allow you to change the width and height values.",
       "text4": "By pressing the Rotate button and moving it left or right, you can rotate the target object.",
       "text5": "Press the Backspace or Delete button to delete the target object."
+    },
+    "loading": {
+      "title": "Loading project data",
+      "description": "You can restart the project by loading the saved data in '.n2d' format."
+    },
+    "save": {
+      "title": "Save project data",
+      "description": "Outputs the project data of the active tab in 'n2d' format."
+    },
+    "export": {
+      "title": "Export",
+      "description": "Outputs the project data of the active tab in JSON format that can be played by Player. Other formats such as animated GIFs and webm can also be exported. The export format can be selected from the settings."
+    },
+    "setting": {
+      "title": "Setting",
+      "description": "You can set the project language, export settings, etc.",
+      "text1": "Hidden Layers (Not Including)",
+      "description1": "Export without including layers that are set to be hidden in the timeline layers.",
+      "text2": "Hidden Layers (Include)",
+      "description2": "Export layers including those that are set to be hidden in the timeline layers.",
+      "text3": "JSON(compression)",
+      "description3": "This is a JSON file with data compressed by zlib. The compression makes the file lighter, but it may cause an overhead in decompression on the Player side.",
+      "text4": "JSON(uncompressed)",
+      "description4": "This is an uncompressed JSON file; no decompression overhead will be incurred on the Player side, but the data size will be large.",
+      "text5": "Video(webm)",
+      "description5": "Output in webm format.",
+      "text6": "GIF(Animation)",
+      "description6": "Output in GIF animation format.",
+      "language": "You can change the display language settings."
     }
   },
   "screen": {

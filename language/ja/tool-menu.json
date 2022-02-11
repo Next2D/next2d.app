@@ -17,7 +17,9 @@
     "frame-keyframe": "フレームとキーフレーム",
     "normal-layer": "通常レイヤー",
     "mask-layer": "マスクレイヤー",
-    "motion-tweening": "モーショントゥイーン"
+    "motion-tweening": "モーショントゥイーン",
+    "onion-skin": "オニオンスキン",
+    "preview": "プレビュー"
   },
   "controller": {
     "stage": "ステージ設定",

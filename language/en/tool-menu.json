@@ -17,7 +17,9 @@
     "frame-keyframe": "Frame KeyFrame",
     "normal-layer": "Normal Layer",
     "mask-layer": "Mask Layer",
-    "motion-tweening": "Motion Tweening"
+    "motion-tweening": "Motion Tweening",
+    "onion-skin": "Onion Skin",
+    "preview": "Preview"
   },
   "controller": {
     "stage": "Stage Setting",

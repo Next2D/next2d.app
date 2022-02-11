@@ -98,19 +98,27 @@
     "description": "This is the area where you can control layers, animation keyframes, etc. You can set the Label name, embed any JavaScript in the frame, and control the addition and removal of tweens for each layer.",
     "frame-keyframe": {
       "title": "NoCode Tool How to use | Frame KeyFrame",
-      "description": "The length of time is divided into frames. In the timeline, these frames are manipulated to control objects. A key frame is a frame in which a new symbol instance is displayed in the timeline. Keyframes may also contain embedded code (JavaScript) that controls the object."
+      "description": "The length of time (frames) will be divided according to the FPS value. You can control the display objects placed on the frames in the timeline. A keyframe is a frame on the timeline where a new symbol instance will be displayed. Keyframes can also embed code (JavaScript) that controls the display object."
     },
     "mask-layer": {
       "title": "NoCode Tool How to use | Mask Layer",
-      "description": "The mask will be applied to the layer placed under the mask layer. By activating the mask layer lock, you can check the masked drawing."
+      "description": "The display object placed on the layer under the mask layer will be drawn as a mask. By activating the mask layer lock, you can check the masked drawing status."
     },
     "motion-tweening": {
       "title": "NoCode Tool How to use | Motion Tweening",
-      "description": "Motion tweening is a type of animation that uses symbols to create movement, size and rotation changes, fades, and color effects."
+      "description": "Motion tweening is a type of animation that uses symbols to express movement, changes in size and rotation, fades, and color effects. The pattern of the performance can be done from the easing of the controller area."
     },
     "normal-layer": {
       "title": "NoCode Tool How to use | Normal Layer",
-      "description": "Each layer is independent, so drawing or editing an object on one layer does not affect objects on other layers. In a stage area where there are no objects on a layer, you can see through the layer below. In addition, you can show/hide, lock/unlock, and rearrange layers."
+      "description": "Each layer is independent, and drawing or editing a display object on one layer does not affect the display objects on other layers. In the stage area where there are no display objects on a layer, you can see through the layer below. You can also show/hide, lock/unlock, and reorder layers."
+    },
+    "onion-skin": {
+      "title": "NoCode Tool How to use | Onion Skin",
+      "description": "Turning on the Onion Skin feature allows you to see the movement of the displayed object before and after the specified keyframe."
+    },
+    "preview": {
+      "title": "NoCode Tool How to use | Preview",
+      "description": "If you turn on the preview function and hover the mouse over a layer in the timeline, you can preview the drawing result of the display object placed on that layer."
     }
   },
   "controller": {

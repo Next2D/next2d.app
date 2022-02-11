@@ -119,6 +119,12 @@
     "preview": {
       "title": "NoCode Tool 如何使用 | 预览",
       "description": "如果预览功能被打开，你把鼠标悬停在时间线上的一个图层上，你将能够预览放置在该图层上的显示对象的绘制结果。"
+    },
+    "javascript": {
+      "title": "NoCode Tool 使い方 | JavaScript",
+      "description": "像关键帧一样，JavaScript控件可以逐帧添加，主要是为了让动画和电影有反应，或者控制时间线上的显示对象。",
+      "text1": "NoCode工具的JavaScript作用域（this）被设置为MovieClip作为执行JavaScript的作用域。 请注意，如果没有范围（这个），该工具将无法正常运行。",
+      "text2": "除此之外，它和普通的JavaScript没有什么不同，所以它可以用传统的和ES6的方式使用。"
     }
   },
   "controller": {
@@ -129,32 +135,42 @@
       "description": "混合模式可用于创建复合图像。复合是指改变多个重叠对象的透明度或色彩互动的过程。混合允许你在重叠的电影片段中混合颜色以创造独特的效果。"
     },
     "color-transform": {
-      "title": "NoCode Tool 如何使用 | Color Transform",
-      "description": "Add and subtract red, green, blue, and transparency."
+      "title": "NoCode Tool 如何使用 | 颜色转换",
+      "description": "你可以通过加、减或乘以红、绿、蓝和透明来调整显示对象的颜色值。"
     },
-    "filter": {
-      "title": "NoCode Tool 如何使用 | Filters",
-      "description": "Filters can be used to add high quality visual effects to text, and movie clips. You can also use motion tweening to animate the filter you apply."
+    "filters": {
+      "title": "NoCode Tool 如何使用 | 过滤器",
+      "description": "滤波器可以用来为文本和电影片段添加高质量的视觉效果。你也可以使用运动调整来使你应用的过滤器产生动画效果。",
+      "DropShadow": "它模拟了一个物体在表面投下阴影的外观。 阴影算法是基于模糊滤镜所使用的相同的盒式滤镜。 阴影的风格有几个选项，包括内阴影、外阴影和淘汰模式。",
+      "Blur": "模糊效果模糊了图像的细节。 你可以创建一个软焦点模糊或一个朦胧的高斯模糊，就像你通过半透明的玻璃观看图像一样。 将这个滤镜的质量属性设置为低值，可以使模糊看起来像软焦点，而将质量属性设置为高值，则可以得到类似于高斯模糊滤镜的效果。",
+      "Glow": "发光方式有几种选择，包括内发光、外发光和淘汰模式。 辉光过滤器非常类似于将距离和角度属性设置为0的水滴阴影过滤器。",
+      "Bevel": "将斜面效果应用于按钮等物体，使其具有三维的外观。 你可以通过使用不同的高光和阴影颜色、斜面的模糊程度、斜面的角度、斜面的位置和敲击效果来定制斜面的外观。",
+      "GradientGlow": "渐变辉光是一种具有可控颜色渐变的逼真辉光。 渐变辉光可以应用在一个物体的内部或外部边缘，或在一个物体的顶部。",
+      "GradientBevel": "梯度斜面是指在物体的外部、内部或顶部的斜面边缘，通过梯度颜色来强调。 倒角的边缘使物体具有三维的外观。"
     },
     "javascript": {
       "title": "NoCode Tool 如何使用 | JavaScript",
-      "description": "It is possible to check the list of JavaScript embedded in the frame."
+      "description": "可以检查嵌入框架中的JavaScript列表。"
     },
     "object-setting": {
-      "title": "NoCode Tool 如何使用 | Object Setting",
-      "description": "Set the name and symbol of the display object. The name can be accessed with this.[[name]] in javaScript, and the symbol can be used as a class."
+      "title": "NoCode Tool 如何使用 | 对象配置",
+      "description": "你可以设置显示对象的名称和符号。 这个名字可以用JavaScript this.[[name]]来访问，这个符号可以作为一个动态类与框架一起使用。"
     },
     "sound": {
-      "title": "NoCode Tool 如何使用 | Sound",
-      "description": "Play the loaded sound data at any frame."
+      "title": "NoCode Tool 如何使用 | 声音",
+      "description": "你可以把加载的声音数据放在任何框架中。 你可以设置每一帧的循环和音量。"
     },
     "stage-setting": {
-      "title": "NoCode Tool 如何使用 | Stage Setting",
-      "description": "Set the width, height, frame rate, and background color of the display area (Stage)."
+      "title": "NoCode Tool 如何使用 | 舞台设置",
+      "description": "设置显示区域（舞台）的宽度、高度、帧率和背景颜色。"
     },
     "transform": {
-      "title": "NoCode Tool 如何使用 | Transform",
-      "description": "Controls the width, height, scaling, and rotation of the displayed object"
+      "title": "NoCode Tool 如何使用 | 转型",
+      "description": "控制显示对象的宽度、高度、缩放和旋转。"
+    },
+    "library": {
+      "title": "Library",
+      "description": "你可以导入图片（jpeg、gif、png）、音频（mp3）、视频（mp4）和SWF文件作为外部数据。 你还可以管理在屏幕上创建的矢量图、文本和电影剪辑。"
     }
   }
 }

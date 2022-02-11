@@ -119,6 +119,12 @@
     "preview": {
       "title": "NoCode Tool How to use | Preview",
       "description": "If you turn on the preview function and hover the mouse over a layer in the timeline, you can preview the drawing result of the display object placed on that layer."
+    },
+    "javascript": {
+      "title": "NoCode Tool 使い方 | JavaScript",
+      "description": "Like keyframes, JavaScript controls can be added on a frame-by-frame basis, mainly to make animations and movies react, and to control DisplayObjects on the timeline.",
+      "text1": "NoCode Tool's JavaScript scope (this) is set to MovieClip, which executes JavaScript, as its scope. Please note that without the scope (this), it will not start correctly.",
+      "text2": "Other than that, it is no different from normal JavaScript, so it can be run using either the conventional writing method or ES6 writing."
     }
   },
   "controller": {
@@ -130,11 +136,17 @@
     },
     "color-transform": {
       "title": "NoCode Tool How to use | Color Transform",
-      "description": "Add and subtract red, green, blue, and transparency."
+      "description": "You can adjust the color value of the display object by adding, subtracting, or multiplying red, green, blue, and transparent."
     },
-    "filter": {
+    "filters": {
       "title": "NoCode Tool How to use | Filters",
-      "description": "Filters can be used to add high quality visual effects to text, and movie clips. You can also use motion tweening to animate the filter you apply."
+      "description": "Filters can be used to add high quality visual effects to text, and movie clips. You can also use motion tweening to animate the filter you apply.",
+      "DropShadow": "It simulates the appearance of an object casting a shadow on a surface. The shadow algorithm is based on the same box filter used in the Blur filter. There are multiple options for the drop shadow style, including inner shadow, outer shadow, and knockout mode.",
+      "Blur": "The Blur effect blurs the details of an image. You can create a blur that looks like soft focus, or a Gaussian blur that looks hazy, as if you are viewing the image through translucent glass. If you set the quality property of this filter to low, the blur will appear to be soft-focused; if you set the quality property to high, it will resemble a Gaussian blur filter.",
+      "Glow": "There are multiple options for the glow style, including inner glow, outer glow, and knockout mode. The glow filter is very similar to the drop shadow filter with the distance and angle properties set to 0.",
+      "Bevel": "Apply the bevel effect to objects such as buttons to give them a three-dimensional representation. You can customize the appearance of the bevel by using different highlight colors, shadow colors, amount of bevel blur, bevel angle, bevel placement, and knockout effects.",
+      "GradientGlow": "Gradation glow is a realistic glow with a controllable color gradient. Gradation glow can be applied around the inner or outer edges of an object, or on top of an object.",
+      "GradientBevel": "Gradient bevels are beveled edges on the outside, inside, or top of an object, which are emphasized by a gradient color. The beveled edges give the object a three-dimensional appearance."
     },
     "javascript": {
       "title": "NoCode Tool How to use | JavaScript",
@@ -142,11 +154,11 @@
     },
     "object-setting": {
       "title": "NoCode Tool How to use | Object Setting",
-      "description": "Set the name and symbol of the display object. The name can be accessed with this.[[name]] in javaScript, and the symbol can be used as a class."
+      "description": "The name and symbol of the display object can be set. The name can be accessed with the JavaScript this.[[name]], and the symbol can be used as a dynamic class in conjunction with the framework."
     },
     "sound": {
       "title": "NoCode Tool How to use | Sound",
-      "description": "Play the loaded sound data at any frame."
+      "description": "You can place the loaded sound data on any frame. Loop and volume settings can be made for each frame."
     },
     "stage-setting": {
       "title": "NoCode Tool How to use | Stage Setting",
@@ -154,7 +166,11 @@
     },
     "transform": {
       "title": "NoCode Tool How to use | Transform",
-      "description": "Controls the width, height, scaling, and rotation of the displayed object"
+      "description": "Controls the width, height, scaling, and rotation of the displayed object."
+    },
+    "library": {
+      "title": "Library",
+      "description": "You can load images (jpeg, gif, png), audio (mp3), video (mp4), and SWF files as external data. It can also manage vector diagrams, text, and movie clips created on the screen."
     }
   }
 }

@@ -1,0 +1,102 @@
+<% const path = "../../../"; %>
+<%- include("../../_include/_header", {
+    "title": "player-reference.gradient-bevel.title",
+    "description": "player-reference.gradient-bevel.text1",
+    "path": path
+}); %>
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <ol>
+                    <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
+                    <li><a href="<%= path %>${{ main.lang }}$/reference/player">Reference</a></li>
+                    <li>Filter</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Tutorial List Section ======= -->
+    <section id="references" class="reference-section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-8 offset-md-2">
+            <h2>${{ player-reference.gradient-bevel.title }}$</h2>
+
+            <h3>GradientBevelFilter</h3>
+            <p>${{ player-reference.gradient-bevel.text1 }}$</p>
+
+            <p>
+              <ul>
+                <li>
+                    <h5>distance</h5>
+                    <p>${{ player-reference.gradient-bevel.text2 }}$</p>
+                </li>
+                <li>
+                    <h5>angle</h5>
+                    <p>${{ player-reference.gradient-bevel.text3 }}$</p>
+                </li>
+                <li>
+                    <h5>colors</h5>
+                    <p>${{ player-reference.gradient-bevel.text4 }}$</p>
+                </li>
+                <li>
+                    <h5>alphas</h5>
+                    <p>${{ player-reference.gradient-bevel.text5 }}$</p>
+                </li>
+                <li>
+                    <h5>ratios</h5>
+                    <p>${{ player-reference.gradient-bevel.text6 }}$</p>
+                </li>
+                <li>
+                    <h5>blurX</h5>
+                    <p>${{ player-reference.gradient-bevel.text7 }}$</p>
+                </li>
+                <li>
+                    <h5>blurY</h5>
+                    <p>${{ player-reference.gradient-bevel.text8 }}$</p>
+                </li>
+                <li>
+                    <h5>strength</h5>
+                    <p>${{ player-reference.gradient-bevel.text9 }}$</p>
+                </li>
+                <li>
+                    <h5>quality</h5>
+                    <p>${{ player-reference.gradient-bevel.text10 }}$</p>
+                </li>
+                <li>
+                    <h5>type</h5>
+                    <p>${{ player-reference.gradient-bevel.text11 }}$</p>
+                </li>
+                <li>
+                    <h5>knockout</h5>
+                    <p>${{ player-reference.gradient-bevel.text12 }}$</p>
+                </li>
+              </ul>
+            </p>
+
+            <h5>Example</h5>
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] GradientBevelFilter" src="https://codepen.io/next2d/embed/ExbwjQr?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/ExbwjQr">
+                  [Next2D Reference] GradientBevelFilter</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
+
+            <p class="next-chapter"><a class="float-end read-more" href="gradient-glow.html">GradientGLowFilter</a></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End List Section -->
+
+</main><!-- End #main -->
+
+<%- include("../../_include/_footer", { "path": path }); %>

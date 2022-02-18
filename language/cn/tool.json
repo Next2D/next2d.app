@@ -14,7 +14,7 @@
   "feature6-title": "缓和",
   "feature6-description": "缓和功能允许你使你的动画更加逼真和动态。",
   "feature7-title": "输出",
-  "feature7-description": "可以导出为JSON、WEBM和GIF动画，JSON可以由Next2D Player读取和绘制。",
+  "feature7-description": "可以导出为JSON、WEBM、APNG和GIF动画，JSON可以由Next2D Player读取和绘制。",
   "feature8-title": "SWF",
   "feature8-description": "虽然它很简单，但也可以读取SWF文件。"
 }

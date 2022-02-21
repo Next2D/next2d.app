@@ -106,6 +106,33 @@
     "text9": "Left, Right, up, down, center area",
     "text10": "Zoom in/out vertically only"
   },
+  "chapter17": {
+    "title": "Bounding box of DisplayObject",
+    "text1": "Returns a rectangle that defines the area of the display object with respect to the coordinate system of the object of the first argument."
+  },
+
+
+
+
+
+
+
+
+
+
+
+  "chapter0": {
+    "title": "",
+    "text1": "",
+    "text2": "",
+    "text3": "",
+    "text4": ""
+  },
+
+
+
+
+
   "drop-shadow": {
     "title": "Apply the DropShadow effect",
     "text1": "DropShadowFilter is a class that stores information about drop shadow effects. Objects can be created by specifying the value of each property in the constructor arguments, or they can be created by default with no arguments, and only properties that need to be changed can be reassigned.",
@@ -212,27 +239,5 @@
     "text8": "The amount of vertical blur",
     "text9": "Filter effect",
     "text10": "Specifies whether the object has a knockout effect"
-  },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  "chapter0": {
-    "title": "",
-    "text1": "",
-    "text2": "",
-    "text3": "",
-    "text4": ""
   }
 }

@@ -110,7 +110,10 @@
     "title": "Bounding box of DisplayObject",
     "text1": "Returns a rectangle that defines the area of the display object with respect to the coordinate system of the object of the first argument."
   },
-
+  "chapter18": {
+    "title": "Convert between global and local coordinates",
+    "text1": "globalToLocal method converts the global coordinates of the argument Point object to local coordinates, and conversely, the localToGlobal method converts the local coordinates to global coordinates."
+  },
 
 
 

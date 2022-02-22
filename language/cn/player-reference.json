@@ -114,7 +114,10 @@
     "title": "全局坐标和局部坐标之间的转换",
     "text1": "globalToLocal方法将参数Point对象的全局坐标转换为本地坐标，反之，localToGlobal方法将本地坐标转换为全局坐标。"
   },
-
+  "chapter19": {
+    "title": "检查是否与指定的坐标重叠（碰撞检测）",
+    "text1": "hitTestObject方法用于测试一个DisplayObject和一个DisplayObject之间的重叠。 hitTestPoint方法用于测试一个DisplayObject和一个指定的xy坐标之间的重叠。对于hitTestPoint方法的第三个参数，如果要在一个有线条或填充物的区域上进行测试，则将测试条件设置为 \"true\"；如果要在一个边界框上进行测试，则设置为 \"false\"（默认）。"
+  },
 
 
 

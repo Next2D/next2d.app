@@ -114,7 +114,10 @@
     "title": "Convert between global and local coordinates",
     "text1": "globalToLocal method converts the global coordinates of the argument Point object to local coordinates, and conversely, the localToGlobal method converts the local coordinates to global coordinates."
   },
-
+  "chapter19": {
+    "title": "Check if it overlaps with the specified coordinate (collision detection)",
+    "text1": "hitTestObject method is used to test the overlap between a DisplayObject and a DisplayObject. hitTestPoint method is used to test the overlap between a DisplayObject and a specified xy coordinate. For the third argument of the hitTestPoint method, set the test condition to \"true\" if the test is to be performed on an area with a line or fill, or \"false\" (default) if the test is to be performed on a bounding box."
+  },
 
 
 

@@ -118,7 +118,10 @@
     "title": "Check if it overlaps with the specified coordinate (collision detection)",
     "text1": "hitTestObject method is used to test the overlap between a DisplayObject and a DisplayObject. hitTestPoint method is used to test the overlap between a DisplayObject and a specified xy coordinate. For the third argument of the hitTestPoint method, set the test condition to \"true\" if the test is to be performed on an area with a line or fill, or \"false\" (default) if the test is to be performed on a bounding box."
   },
-
+  "chapter20": {
+    "title": "Change the playback speed.",
+    "text1": "Indicates the frame rate. The unit is frames per second (fps). The frame rate you set will be applied to all timelines."
+  },
 
 
 

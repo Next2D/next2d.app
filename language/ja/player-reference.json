@@ -118,7 +118,10 @@
     "title": "指定した座標と重なるかどうかを確認する（衝突判定）",
     "text1": "hitTestObjectメソッドは、DisplayObjectとDisplayObjectの重なりをテストするために使用します。hitTestPointメソッドの第3引数には、線または塗りつぶしのある領域に対してテストを行う場合は「true」、バウンディングボックスに対してテストを行う場合は「false」（デフォルト）のテスト条件を設定してください。"
   },
-
+  "chapter20": {
+    "title": "Change the playback speed.",
+    "text1": "Indicates the frame rate. The unit is frames per second (fps). The frame rate you set will be applied to all timelines."
+  },
 
 
 

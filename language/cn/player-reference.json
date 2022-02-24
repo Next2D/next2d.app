@@ -118,7 +118,10 @@
     "title": "检查是否与指定的坐标重叠（碰撞检测）",
     "text1": "hitTestObject方法用于测试一个DisplayObject和一个DisplayObject之间的重叠。 hitTestPoint方法用于测试一个DisplayObject和一个指定的xy坐标之间的重叠。对于hitTestPoint方法的第三个参数，如果要在一个有线条或填充物的区域上进行测试，则将测试条件设置为 \"true\"；如果要在一个边界框上进行测试，则设置为 \"false\"（默认）。"
   },
-
+  "chapter20": {
+    "title": "Change the playback speed.",
+    "text1": "Indicates the frame rate. The unit is frames per second (fps). The frame rate you set will be applied to all timelines."
+  },
 
 
 

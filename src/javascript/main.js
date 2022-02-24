@@ -11,7 +11,6 @@
             return [...document.querySelectorAll(el)];
         }
         return document.querySelector(el);
-
     };
 
     /**

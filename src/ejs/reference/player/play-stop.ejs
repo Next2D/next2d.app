@@ -1,0 +1,59 @@
+<% const path = "../../../"; %>
+<%- include("../../_include/_header", {
+    "title": "player-reference.play-stop.title",
+    "description": "player-reference.play-stop.text1",
+    "path": path
+}); %>
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <ol>
+                    <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
+                    <li><a href="<%= path %>${{ main.lang }}$/reference/player">${{ main.reference-title }}$</a></li>
+                    <li>Play/Stop</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Tutorial List Section ======= -->
+    <section id="references" class="reference-section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-8 offset-md-2">
+            <h2>${{ player-reference.play-stop.title }}$</h2>
+
+            <h3>play/stop</h3>
+            <p>${{ player-reference.play-stop.text1 }}$</p>
+
+            <h3>gotoAndPlay/gotoAndStop</h3>
+            <p>${{ player-reference.play-stop.text2 }}$</p>
+
+            <h3>nextFrame/prevFrame</h3>
+            <p>${{ player-reference.play-stop.text3 }}$</p>
+
+            <h5>Example</h5>
+            <p class="example">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="[Next2D Reference] MovieClip Play/Stop" src="https://codepen.io/next2d/embed/bGYjGzN?default-tab=js%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/next2d/pen/bGYjGzN">
+                  [Next2D Reference] MovieClip Play/Stop</a> by Next2D (<a href="https://codepen.io/next2d">@next2d</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </p>
+
+            <p class="next-chapter"><a class="float-end read-more" href="mc-properties.html">${{ main.next-chapter }}$</a></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End List Section -->
+
+</main><!-- End #main -->
+
+<%- include("../../_include/_footer", { "path": path }); %>

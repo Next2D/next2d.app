@@ -134,8 +134,16 @@
   },
 
 
-
-
+  "play-stop": {
+    "title": "播放/停止一个电影片断",
+    "text1": "播放和停止方法播放/停止MovieClip的时间线，由于MovieClip的时间线是独立的，它们只播放/停止一条时间线，不影响父、子等的时间线。",
+    "text2": "gotoAndPlay和gotoAndStop方法将MovieClip的播放头像移动到指定的帧，并播放/停止它。",
+    "text3": "nextFrame方法从当前帧移动到下一帧，prevFrame方法从当前帧移动到前一帧并停止。"
+  },
+  "mc-properties": {
+    "title": "在MovieClip时间线中可用的属性",
+    "text1": "currentFrame返回当前帧号，currentFrameLabel返回当前帧中标签信息的FrameLabel类，currentLabels返回当前场景中FrameLabel对象的数组。"
+  },
   "drop-shadow": {
     "title": "应用水滴阴影效果",
     "text1": "DropShadowFilter是一个存储水滴阴影效果信息的类。 可以通过在构造函数参数中指定每个属性的值来创建对象，也可以在默认情况下创建对象，没有参数，只有需要改变的属性可以重新分配。",

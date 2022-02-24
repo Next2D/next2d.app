@@ -136,9 +136,16 @@
   },
 
 
-
-
-
+  "play-stop": {
+    "title": "Play/Stop a MovieClip",
+    "text1": "play and stop methods play/stop the timeline of MovieClip, and since the timeline of MovieClip is independent, they play/stop only one timeline and do not affect the parent, child, etc. timelines.",
+    "text2": "gotoAndPlay and gotoAndStop methods move the MovieClip's playhead to the specified frame and play/stop it.",
+    "text3": "nextFrame method moves from the current frame to the next frame, and the prevFrame method moves from the current frame to the previous frame and stops."
+  },
+  "mc-properties": {
+    "title": "Properties used in the MovieClip timeline",
+    "text1": "currentFrame returns the current frame number, currentFrameLabel returns the FrameLabel class of the label information in the current frame, and currentLabels returns an array of FrameLabel objects in the current scene."
+  },
   "drop-shadow": {
     "title": "Apply the DropShadow effect",
     "text1": "DropShadowFilter is a class that stores information about drop shadow effects. Objects can be created by specifying the value of each property in the constructor arguments, or they can be created by default with no arguments, and only properties that need to be changed can be reassigned.",

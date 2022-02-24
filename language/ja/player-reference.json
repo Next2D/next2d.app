@@ -135,10 +135,16 @@
 
 
 
-
-
-
-
+  "play-stop": {
+    "title": "ムービークリップの再生／停止",
+    "text1": "playメソッドとstopメソッドは、MovieClipのタイムラインを再生／停止します。MovieClipのタイムラインは独立しているので、1つのタイムラインだけを再生／停止し、親や子などのタイムラインには影響を与えません。",
+    "text2": "gotoAndPlay、gotoAndStopメソッドは、MovieClipの再生ヘッドを指定したフレームに移動し、再生/停止を行います。",
+    "text3": "nextFrame メソッドは現在のフレームから次のフレームに移動し、prevFrame メソッドは現在のフレームから前のフレームに移動して停止します。"
+  },
+  "mc-properties": {
+    "title": "MovieClipのタイムラインで使用できるプロパティ",
+    "text1": "currentFrame は現在のフレーム番号を、currentFrameLabel は現在のフレーム内のラベル情報の FrameLabel クラスを、currentLabels は現在のシーン内の FrameLabel オブジェクトの配列を、それぞれ返します。"
+  },
   "drop-shadow": {
     "title": "ドロップシャドウ効果を適用する",
     "text1": "DropShadowFilterは、ドロップシャドウ効果の情報を格納するクラスです。オブジェクトは、コンストラクタの引数で各プロパティの値を指定して生成するか、引数なしのデフォルトで生成し、変更が必要なプロパティのみを再割り当てすることも可能です。",

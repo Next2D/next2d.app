@@ -1,5 +1,6 @@
 {
   "tool": {
+    "title": "Tool Area",
     "selection": "选择工具",
     "shape-transform": "形状转换工具",
     "pen": "钢笔工具",
@@ -9,25 +10,30 @@
     "rounded-rectangle": "圆角矩形工具"
   },
   "screen": {
+    "title": "Screen Area",
     "tabs": "标签",
     "layer": "层数",
     "align": "对齐"
   },
   "timeline": {
+    "title": "Timeline Area",
     "frame-keyframe": "框架和关键帧",
     "normal-layer": "普通层",
     "mask-layer": "掩膜层",
     "motion-tweening": "运动调整",
     "onion-skin": "洋葱皮",
-    "preview": "预览"
+    "preview": "预览",
+    "javascript": "JavaScript"
   },
   "controller": {
+    "title": "Controller Area",
     "stage": "舞台设置",
     "object": "对象设置",
     "transform": "转型",
     "color-transform": "颜色转换",
     "blend-mode": "混合模式",
     "filters": "过滤器",
-    "sound": "声音"
+    "sound": "声音",
+    "library": "图书馆"
   }
 }

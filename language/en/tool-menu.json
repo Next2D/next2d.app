@@ -1,5 +1,6 @@
 {
   "tool": {
+    "title": "Tool Area",
     "selection": "Selection Tool",
     "shape-transform": "Shape Transform Tool",
     "pen": "Pen Tool",
@@ -9,25 +10,30 @@
     "rounded-rectangle": "Rounded Rectangle Tool"
   },
   "screen": {
+    "title": "Screen Area",
     "tabs": "Tabs",
     "layer": "Layer",
     "align": "Align"
   },
   "timeline": {
+    "title": "Timeline Area",
     "frame-keyframe": "Frame KeyFrame",
     "normal-layer": "Normal Layer",
     "mask-layer": "Mask Layer",
     "motion-tweening": "Motion Tweening",
     "onion-skin": "Onion Skin",
-    "preview": "Preview"
+    "preview": "Preview",
+    "javascript": "JavaScript"
   },
   "controller": {
+    "title": "Controller Area",
     "stage": "Stage Setting",
     "object": "Object Setting",
     "transform": "Transform",
     "color-transform": "Color Transform",
     "blend-mode": "Blend Mode",
     "filters": "Filters",
-    "sound": "Sound"
+    "sound": "Sound",
+    "library": "Library"
   }
 }

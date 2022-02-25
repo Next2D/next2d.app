@@ -132,7 +132,21 @@
     "description": "In this area, you can perform operations such as scaling, rotation, color manipulation, BlendMode, Filter, etc. on DisplayObjects in the screen area. The JavaScript tab allows you to view and edit the list of JavaScript embedded in the entire project.",
     "blend-mode": {
       "title": "NoCode Tool How to use | Blend Mode",
-      "description": "Blending mode can be used to create compound images. Compounding is the process of changing the transparency or color interaction of multiple overlapping objects. Blending allows you to blend colors in overlapping movie clips to create unique effects."
+      "description": "Blending mode can be used to create compound images. Compounding is the process of changing the transparency or color interaction of multiple overlapping objects. Blending allows you to blend colors in overlapping movie clips to create unique effects.",
+      "normal": "The color is applied as normal and does not interact with the base color.",
+      "layer": "Allows you to superimpose movie clips without affecting the color.",
+      "darken": "Only areas lighter than the blend color will be replaced. Areas darker than the blend color will not be changed.",
+      "multiply": "The base color and the blend color are multiplied, resulting in a darker color.",
+      "lighten": "Only pixels darker than the blend color will be replaced. Areas lighter than the blend color will not be changed.",
+      "screen": "The blended color will be multiplied by the inverted color and the base color, resulting in a whitening effect.",
+      "overlay": "The color will be multiplied or screened depending on the base color.",
+      "hardlight": "Colors will be multiplied or screened depending on the blend mode color. The effect is as if a spotlight were shining on the object.",
+      "add": "It is usually used to animate a dissolve that dilutes the color between two images.",
+      "subtract": "It is usually used to animate the dissolve effect, which darkens the colors between two images.",
+      "difference": "Subtracts the lower brightness from the higher brightness of the base color and the blend color. This effect is similar to color inversion.",
+      "invert": "The base color will be inverted.",
+      "alpha": "The alpha mask will be applied.",
+      "erase": "All base color pixels will be removed, including the base color of the background image."
     },
     "color-transform": {
       "title": "NoCode Tool How to use | Color Transform",
@@ -169,7 +183,7 @@
       "description": "Controls the width, height, scaling, and rotation of the displayed object."
     },
     "library": {
-      "title": "Library",
+      "title": "NoCode Tool How to use | Library",
       "description": "You can load images (jpeg, gif, png), audio (mp3), video (mp4), and SWF files as external data. It can also manage vector diagrams, text, and movie clips created on the screen."
     }
   }

@@ -6,12 +6,13 @@
 }); %>
 
 <%- include("../_base-header", {
+    "subTitle": "tool-menu.controller.library",
     "path": path
 }); %>
 
 <div class="col-md-12 col-lg-9">
     <div>
-      <h3>Library</h3>
+      <h3>${{ tool-menu.controller.library }}$</h3>
       <p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/Kk05qJAPx0E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
       <p>${{ tool-usage.controller.library.description }}$</p>
     </div>

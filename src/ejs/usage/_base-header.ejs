@@ -7,7 +7,12 @@
                 <h2>${{ tool-usage.title }}$</h2>
                 <ol>
                     <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
+                    <% if (subTitle) { %>
+                    <li><a href="<%= path %>${{ main.lang }}$/usage">${{ main.usage-title }}$</a></li>
+                    <li>${{ <%= subTitle %> }}$</li>
+                    <% } else { %>
                     <li>${{ main.usage-title }}$</li>
+                    <% } %>
                 </ol>
             </div>
         </div>

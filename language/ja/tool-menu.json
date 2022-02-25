@@ -1,5 +1,6 @@
 {
   "tool": {
+    "title": "Tool Area",
     "selection": "選択ツール",
     "shape-transform": "Shape変形ツール",
     "pen": "ペンツール",
@@ -9,25 +10,30 @@
     "rounded-rectangle": "角丸矩形ツール"
   },
   "screen": {
+    "title": "Screen Area",
     "tabs": "タブ",
     "layer": "レイヤー",
     "align": "整列"
   },
   "timeline": {
+    "title": "Timeline Area",
     "frame-keyframe": "フレームとキーフレーム",
     "normal-layer": "通常レイヤー",
     "mask-layer": "マスクレイヤー",
     "motion-tweening": "モーショントゥイーン",
     "onion-skin": "オニオンスキン",
-    "preview": "プレビュー"
+    "preview": "プレビュー",
+    "javascript": "JavaScript"
   },
   "controller": {
+    "title": "Controller Area",
     "stage": "ステージ設定",
     "object": "オブジェクト設定",
     "transform": "変形",
     "color-transform": "カラートランスフォーム",
     "blend-mode": "ブレンドモード",
     "filters": "フィルター",
-    "sound": "サウンド"
+    "sound": "サウンド",
+    "library": "ライブラリ"
   }
 }

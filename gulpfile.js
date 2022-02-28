@@ -43,6 +43,21 @@ const buildEJS = () =>
 };
 
 /**
+ * @description JSDocで生成されたStyleSheetをassetsへコピー
+ * @return {*}
+ * @public
+ */
+const copyStyleSheet = () =>
+{
+    return gulp
+        .src([
+            "dist/docs/framework/styles/*.css",
+            "dist/docs/player/styles/*.css"
+        ])
+        .pipe(gulp.dest("docs/assets/css"));
+};
+
+/**
  * @description HTMLをminifyして出力
  * @return {*}
  * @public
@@ -166,6 +181,7 @@ exports.default = gulp.series(
     buildEJS,
     buildTopEJS,
     buildLang,
+    copyStyleSheet,
     minifyHTML,
     browser,
     watchFiles
@@ -177,5 +193,6 @@ exports.build = gulp.series(
     buildEJS,
     buildTopEJS,
     buildLang,
+    copyStyleSheet,
     minifyHTML
 );

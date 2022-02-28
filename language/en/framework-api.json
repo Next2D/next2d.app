@@ -1,0 +1,41 @@
+{
+  "detail": "Create Next2D apps with no build configuration.",
+  "dir-detail": "Directory Configuration",
+  "chart-detail": "Chart Flow",
+  "command": {
+    "title": "Commands",
+    "text1": "Starts the development server.",
+    "text2": "Generate the necessary View and ViewModel classes from the routing JSON file.",
+    "text3": "Write out the production app for the specified environment variables.",
+    "text4": "Starts the test runner."
+  },
+  "stage": {
+    "text1": "This is the setting for the width of the display area.",
+    "text2": "This is the setting for the height of the display area.",
+    "text3": "The number of times to draw per second."
+  },
+  "config": {
+    "detail": "You can set a common value for each environment. The values below all are available for all environments.",
+    "text1": "As a Single Page Application, the scene can be controlled by URL.",
+    "text2": "Sets whether or not to display the loading screen until the preparation for screen transition is complete. Call the start and end functions of the class set as callback.",
+    "text3": "You can specify the class to call back after the `gotoView` function finishes."
+  },
+  "routing": {
+    "detail": "The top properties that can be set for routing are alphanumeric characters, slashes, hyphens, and underscores. Access the View class in CamelCase using the slash, hyphen, and underscore as keys.",
+    "example": "In the case of the sample below, access is enabled at `https://example.com/quest/list` and the context is set to `QuestListView.js`.",
+    "detail2": "Second level property settings",
+    "text1": "This is used to control direct access in SPA mode; if set to true and accessed directly, the View set in redirect will be loaded.",
+    "text2": "When private is true, the page set here will be loaded. If it is not set, TopView will be loaded.",
+    "text3": "Send a request to the specified location before accessing the View. The information received will be set in next2d.fw.response with name as the key.",
+    "detail3": "Properties that can be set in the requests property.",
+    "text4": "The following fixed values are available for this property. `json`, `content`, `image` and `custom`",
+    "text5": "Get the value of the string enclosed in {{***}} from config.json. e.g. {{ api.endPoint }}path/to/api",
+    "text6": "When the name is set, the data retrieved with the name as the key will be set in the Response Map.",
+    "text7": "Caches the retrieved data using the value set in name as a key.",
+    "text8": "You can specify the class to call back after the request is completed. The value will be set to the first argument of the contractor of the specified class and will be taken over.",
+    "text9": "You can specify the class that will execute the request. (it will only be invoked when type is custom)",
+    "text10": "Allows you to specify access to the function that will perform the request. You can specify `public` or `static`. (Only invoked when type is custom)",
+    "text11": "You can specify a function to execute the request. (only fired when type is custom)"
+  },
+  "conf-detail": "Configuration JSON"
+}

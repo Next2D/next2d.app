@@ -83,7 +83,6 @@ span {
   font-size: 11px;
   font-weight: 600;
   padding: 15px 40px;
-  text-transform: capitalize;
   transition: all 0.5s ease-in-out 0s;
 }
 
@@ -243,7 +242,6 @@ span {
 
 .navbar .dropdown ul a {
   padding: 10px 20px;
-  text-transform: none;
 }
 
 .navbar .dropdown ul a i {
@@ -285,7 +283,9 @@ span {
 /**
 * Mobile Navigation
 */
-.mobile-nav-toggle {
+.mobile-nav-toggle,
+.mobile-sub-nav-toggle
+{
   color: #222;
   font-size: 28px;
   cursor: pointer;
@@ -294,20 +294,29 @@ span {
   transition: 0.5s;
 }
 
-.mobile-nav-toggle.bi-x {
+.mobile-nav-toggle.bi-x,
+.mobile-sub-nav-toggle.bi-x
+{
   color: #fff;
 }
 
 @media (max-width: 991px) {
-  .mobile-nav-toggle {
+  .mobile-nav-toggle,
+  .mobile-sub-nav-toggle
+  {
     display: block;
   }
   .navbar ul {
     display: none;
   }
+  .sub-navbar ul {
+    display: none;
+  }
 }
 
-.navbar-mobile {
+.navbar-mobile,
+.sub-navbar-mobile
+{
   position: fixed;
   overflow: hidden;
   top: 0;
@@ -319,10 +328,30 @@ span {
   z-index: 999;
 }
 
-.navbar-mobile .mobile-nav-toggle {
+.navbar-mobile .mobile-nav-toggle,
+.sub-navbar-mobile .mobile-sub-nav-toggle
+{
   position: absolute;
   top: 15px;
   right: 15px;
+}
+
+.sub-navbar-mobile ul {
+  display: block;
+}
+
+.sub-navbar-mobile .list-unstyled {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0 0 30px;
+  border-radius: 6px;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
 }
 
 .navbar-mobile ul {
@@ -339,13 +368,18 @@ span {
   transition: 0.3s;
 }
 
-.navbar-mobile a {
+.navbar-mobile a,
+.sub-navbar-mobile a
+{
   padding: 10px 20px;
   font-size: 15px;
   color: #222;
 }
 
-.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover > a
+{
   color: #1461A0;
 }
 
@@ -463,7 +497,6 @@ span {
 }
 
 .btn {
-  text-transform: capitalize;
   font-weight: 400;
   font-size: 13px;
   letter-spacing: 1px;
@@ -487,7 +520,6 @@ span {
   color: #555;
   font-size: 11px;
   font-weight: 600;
-  text-transform: capitalize;
   margin: 4px 20px;
   text-decoration: none;
   transition: 0.3s;
@@ -560,7 +592,6 @@ section {
   font-weight: 100;
   letter-spacing: 2px;
   margin-bottom: 20px;
-  text-transform: capitalize;
 }
 
 .section-title .separator {
@@ -572,7 +603,6 @@ section {
   font-size: 15px;
   font-weight: 300;
   margin-bottom: 30px;
-  text-transform: capitalize;
 }
 
 /*--------------------------------------------------------------
@@ -648,6 +678,7 @@ section {
 }
 
 #usage,
+#docs,
 #references,
 #roadmap
 {
@@ -657,6 +688,7 @@ section {
 }
 
 #get-started .feature-block,
+#docs .feature-block,
 #usage .feature-block,
 #roadmap .feature-block
 {
@@ -670,7 +702,8 @@ section {
 }
 
 #get-started .feature-block img,
-#usage .feature-block img
+#usage .feature-block img,
+#docs .feature-block img
 {
   height: 90px;
   width: 90px;
@@ -686,6 +719,7 @@ section {
 @media (max-width: 991px) {
   #get-started .feature-block,
   #usage .feature-block,
+  #docs .feature-block,
   #roadmap .feature-block
   {
     margin-bottom: 30px;
@@ -693,6 +727,7 @@ section {
 }
 
 #get-started .feature-block:hover,
+#docs .feature-block:hover,
 #usage .feature-block:hover
 {
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
@@ -700,35 +735,35 @@ section {
 }
 
 #get-started .feature-block h4,
+#docs .feature-block h4,
 #usage .feature-block h4
 {
   margin-bottom: 20px;
 }
 
 #get-started .feature-block p,
-#docs .feature-block p,
 #examples .feature-block p,
+#docs .feature-block p,
 #usage .feature-block p
 {
   margin-bottom: 20px;
 }
 
 #get-started .feature-block a,
-#docs .feature-block a,
 #examples .feature-block a,
+#docs .feature-block a,
 #usage .feature-block a
 {
   color: #505050;
   font-size: 12px;
   font-weight: 600;
   text-decoration: none;
-  text-transform: capitalize;
   transition: 0.3s;
 }
 
 #get-started .feature-block a:hover,
-#docs .feature-block a:hover,
 #examples .feature-block a:hover,
+#docs .feature-block a:hover,
 #usage .feature-block a:hover
 {
   color: #1461A0;
@@ -750,13 +785,11 @@ section {
   font-weight: 100;
   letter-spacing: 2px;
   margin-bottom: 20px;
-  text-transform: capitalize;
 }
 
 #about-us .about-content span {
   font-weight: 700;
   padding-right: 10px;
-  text-transform: uppercase;
 }
 
 #about-us .about-content ul li {
@@ -840,19 +873,22 @@ section {
 
 /* Tutorial List Section
 --------------------------------*/
-#references .container
+#references .container,
+#docs .container,
 #usage .container
 {
   padding-top: 20px;
 }
 
 #references .docs,
+#docs .docs,
 #usage .docs
 {
   margin-bottom: 30px;
 }
 
 #references .block-list .content-list,
+#docs .block-list .content-list,
 #usage .block-list .content-list
 {
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 4px 0 rgba(0, 0, 0, 0.19);
@@ -864,10 +900,10 @@ section {
 }
 
 #references .block-list .content-list p,
+#docs .block-list .content-list p,
 #usage .block-list .content-list p
 {
   line-height: 24px;
-  text-transform: capitalize;
   font-weight: normal;
   letter-spacing: 0;
   font-size: 16px;
@@ -875,6 +911,7 @@ section {
 }
 
 #references .block-list .content-list h4,
+#docs .block-list .content-list h4,
 #usage .block-list .content-list h4
 {
   line-height: 24px;
@@ -885,6 +922,7 @@ section {
 }
 
 #references .block-list .content-list h4 a,
+#docs .block-list .content-list h4 a,
 #usage .block-list .content-list h4 a
 {
   color: #555;
@@ -893,12 +931,14 @@ section {
 }
 
 #references .block-list .content-list h4 a:hover,
+#docs .block-list .content-list h4 a:hover,
 #usage .block-list .content-list h4 a:hover
 {
   color: #1461A0;
 }
 
 #references .block-list .content-list > span,
+#docs .block-list .content-list > span,
 #usage .block-list .content-list > span
 {
   float: left;
@@ -906,6 +946,7 @@ section {
 }
 
 #references .block-list .content-list a.read-more,
+#docs .block-list .content-list a.read-more,
 #usage .block-list .content-list a.read-more
 {
   color: #505050;
@@ -914,16 +955,17 @@ section {
   text-decoration: none;
   transition: 0.3s;
   letter-spacing: 0;
-  text-transform: capitalize;
 }
 
 #references .block-list .content-list a.read-more:hover,
+#docs .block-list .content-list a.read-more:hover,
 #usage .block-list .content-list a.read-more:hover
 {
   color: #1461A0;
 }
 
 #references .list-menu ul li a,
+#docs .list-menu ul li a,
 #usage .list-menu ul li a
 {
   color: #222;
@@ -936,6 +978,7 @@ section {
 }
 
 #references .list-menu ul li a:hover,
+#docs .list-menu ul li a:hover,
 #usage .list-menu ul li a:hover
 {
   color: #1461A0;
@@ -1025,7 +1068,6 @@ section {
   font-size: 12px;
   font-weight: 600;
   text-decoration: none;
-  text-transform: capitalize;
   transition: 0.3s;
 }
 

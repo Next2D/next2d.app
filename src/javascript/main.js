@@ -114,6 +114,13 @@
         this.classList.toggle("bi-x");
     });
 
+    on("click", ".mobile-sub-nav-toggle", function ()
+    {
+        select("#sub-navbar").classList.toggle("sub-navbar-mobile");
+        this.classList.toggle("bi-list");
+        this.classList.toggle("bi-x");
+    });
+
     /**
      * Mobile nav dropdowns activate
      */

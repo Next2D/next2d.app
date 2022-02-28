@@ -9,62 +9,62 @@
                 {
                     const value = event.currentTarget.value.trim();
 
-                    document
-                        .getElementById("sub-navbar")
-                        .classList.remove("searching");
+                    // reset
+                    const element = document.getElementById("sub-navbar");
+                    element.classList.remove("searching");
+
+                    const items = document
+                        .getElementsByClassName("parent");
+
+                    for (let idx = 0; idx < items.length; ++idx) {
+
+                        const item = items[idx];
+                        item.classList.remove("match", "no-match");
+
+                        let parent = item.parentNode;
+                        parent.classList.remove("match", "no-match");
+
+                        parent
+                            .parentNode
+                            .classList.remove("match", "no-match", "match-padding");
+
+                    }
 
                     if (value) {
 
-                        const element = document.getElementById("sub-navbar");
-
                         element.classList.add("searching");
 
-                        const items = document
-                            .getElementsByClassName("parent");
-
                         const regexp = new RegExp(value, "i");
-
-                        // reset
-                        for (let idx = 0; idx < items.length; ++idx) {
-                            const item = items[idx];
-                            item.classList.remove("match", "no-match");
-
-                            let parent = items[idx].parentNode;
-                            parent.classList.remove("match", "no-match");
-
-                             parent
-                                .parentNode
-                                .classList.remove("match", "no-match");
-                        }
-
                         for (let idx = 0; idx < items.length; ++idx) {
 
                             const item = items[idx];
 
                             let parent = item.parentNode;
-                            if (!item.dataset.name || !regexp.test(item.dataset.name)) {
+                            if (item.dataset.name && regexp.test(item.dataset.name)) {
 
-                                if (!parent.classList.contains("match")) {
-                                    parent.classList.add("no-match");
-                                }
+                                parent.classList.remove("no-match");
+                                parent.classList.add("match");
 
                                 parent = parent.parentNode;
-                                if (!parent.classList.contains("match")) {
-                                    parent.classList.add("no-match");
-                                }
+                                parent.classList.remove("no-match");
+                                parent.classList.add("match", "match-padding");
 
-                                item.classList.add("no-match");
+                                item.classList.add("match");
 
                             } else {
 
-                                parent.classList.remove("no-match");
-                                parent.classList.add("match");
+                                if (!parent.classList.contains("match")) {
+                                    parent.classList.add("no-match");
+                                }
 
                                 parent = parent.parentNode;
-                                parent.classList.remove("no-match");
-                                parent.classList.add("match");
+                                if (!parent.classList.contains("match")) {
+                                    parent.classList.remove("match-padding");
+                                    parent.classList.add("no-match");
+                                }
 
-                                item.classList.add("match");
+                                item.classList.remove("match");
+                                item.classList.add("no-match");
 
                             }
                         }

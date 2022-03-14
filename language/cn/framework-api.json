@@ -1,13 +1,13 @@
 {
-  "detail": "创建没有构建配置的Next2D应用程序。",
-  "dir-detail": "目录配置",
-  "chart-detail": "图表流程",
+  "detail": "快速创建 Next2D 应用程序。",
+  "dir-detail": "目录结构",
+  "chart-detail": "流程图",
   "command": {
     "title": "命令",
     "text1": "启动开发服务器。",
-    "text2": "从路由的JSON文件中生成必要的View和ViewModel类。",
-    "text3": "写出指定环境变量的生产应用。",
-    "text4": "启动测试运行器。"
+    "text2": "根据 routing.json 生成必要的 View 和 ViewModel 类。",
+    "text3": "指定环境变量的输出生产构建。",
+    "text4": "启动测试。"
   },
   "stage": {
     "text1": "设置显示区域的宽度。",
@@ -15,27 +15,27 @@
     "text3": "每秒绘制的次数。"
   },
   "config": {
-    "detail": "你可以设置每个环境通用的值。 带 \"all \"的值在所有环境中都可用。",
+    "detail": "你可以为每个环境设置通用值。 带 \"all\" 的值在所有环境中都可用。",
     "text1": "作为一个单页应用程序，可以通过URL来控制场景。",
-    "text2": "设置是否显示加载屏幕，直到屏幕转换的准备工作完成。调用设置为回调的类的开始和结束函数。",
-    "text3": "你可以指定在`gotoView`函数完成后回调的类。"
+    "text2": "设置是否展示屏幕过渡的准备工作完成之前的加载页。调用类的开始和结束函数作为回调。",
+    "text3": "你可以指定在 `gotoView` 函数完成后回调的类。"
   },
   "routing": {
-    "detail": "可以为路由设置的最高属性是字母数字字符、斜线、连字符和下划线。在CamelCase中使用斜线、连字符和下划线作为键访问视图类。",
-    "example": "在下面的例子中，访问在`https://example.com/quest/list`被启用，上下文被设置为`QuestListView.js`。",
-    "detail2": "第二层属性设置",
-    "text1": "这是用来控制SPA模式下的直接访问；如果设置为真并直接访问，在重定向中设置的视图将被加载。",
-    "text2": "当private为真时，这里设置的页面将被加载。如果没有设置，将加载TopView。",
-    "text3": "在访问视图之前，向指定的位置发送一个请求。收到的信息将被设置在next2d.fw.response中，名称是关键。",
-    "detail3": "可在 \"请求属性 \"中设置的属性。",
-    "text4": "此属性有以下固定值。`json`, `content`, `image` 和 `custom`。",
-    "text5": "从config.json中获取包含在{{****}中的字符串的值。 例如，{{ api.endPoint }}path/to/api",
-    "text6": "当名称被设置后，以该名称为键的检索数据将被设置在响应地图中。",
-    "text7": "使用name中设置的值作为键来缓存检索的数据",
-    "text8": "你可以指定在请求完成后回调的类。该值将被设置为指定类的承包人的第一个参数并被接管。",
-    "text9": "你可以指定将执行请求的类。(只有当类型为自定义时才会被调用)",
-    "text10": "允许你指定对将执行请求的函数的访问。你可以指定`public`或`static`。(只有当类型是自定义时才会调用)",
-    "text11": "你可以指定一个函数来执行该请求。(只有当类型为自定义时才会触发)"
+    "detail": "路由声明可以使用英文字母、数字、斜线、连字符和下划线。其对应的大驼峰名称包含斜线、连字符和下划线，作为键使用访问对应的视图类。",
+    "example": "在下面的例子中，`https://example.com/quest/list` 可被访问，其上下文被设置为 `QuestListView.js`。",
+    "detail2": "子配置项",
+    "text1": "这用于控制SPA模式下的访问权限；如果设置为真，在 redirect 中设置的视图将被加载。",
+    "text2": "当 private 为真时，这里设置的页面将被加载。如果没有设置，将加载 TopView。",
+    "text3": "在访问视图之前，向指定的地址发送一个请求。收到的信息将被设置在 next2d.fw.response 中，以 name 作为键。",
+    "detail3": "可在 \"request\" 中设置的属性。",
+    "text4": "此属性有以下可选值，`json`、`content`、`image` 和 `custom`。",
+    "text5": "从 config.json 中获取包含在 {{****}} 中的字符串值。 例如，{{ api.endPoint }}path/to/api",
+    "text6": "name 被设置后，作为在 Response Map 中检索数据的键。",
+    "text7": "缓存 name 为键、对应收到数据的值",
+    "text8": "你可以指定在请求完成后回调的类。该值将被设置为指定类构造函数的第一个参数，并被接管。",
+    "text9": "你可以指定执行请求的类。（只有当 type 为 custom 时才会被调用）",
+    "text10": "你可以指定执行请求函数的访问权限，可以设置为 `public` 或 `static`。（只有当 type 为 custom 时才会被调用）",
+    "text11": "你可以指定一个函数来执行请求。（只有当 type 为 custom 时才会被调用）"
   },
-  "conf-detail": "JSON设置"
+  "conf-detail": "JSON 配置项"
 }

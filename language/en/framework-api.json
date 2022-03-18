@@ -15,7 +15,7 @@
     "text3": "The number of times to draw per second."
   },
   "config": {
-    "detail": "You can set a common value for each environment. The values below all are available for all environments.",
+    "detail": "Different variable values can be set for each environment. Values set with `all` are available in all environments.",
     "text1": "As a Single Page Application, the scene can be controlled by URL.",
     "text2": "Sets whether or not to display the loading screen until the preparation for screen transition is complete. Call the start and end functions of the class set as callback.",
     "text3": "You can specify the class to call back after the `gotoView` function finishes."

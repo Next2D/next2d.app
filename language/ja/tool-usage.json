@@ -91,6 +91,10 @@
     "tabs": {
       "title": "NoCode Tool 使い方 | タブ",
       "description": "新規プロジェクトの追加や削除、現在作業中のプロジェクトを指定することができます。"
+    },
+    "distribute": {
+      "title": "NoCode Tool 使い方 | キーフレーム/レイヤーの配分",
+      "description": "スクリーンエリア上で選択した複数のDisplayObjectを各キーフレームもしくは各レイヤーに配分できます。スクリーンエリア上のDisplayObjectを右クリックし、「Distribute to Layers」もしくは「Distribute to Keyframes」を選択します。"
     }
   },
   "timeline": {

@@ -13,7 +13,8 @@
     "title": "Screen Area",
     "tabs": "タブ",
     "layer": "レイヤー",
-    "align": "整列"
+    "align": "整列",
+    "distribute": "キーフレーム/レイヤーに配分"
   },
   "timeline": {
     "title": "Timeline Area",

@@ -6,7 +6,7 @@
     "title": "NoCode Tool How to use | Tool Area",
     "description": "This area contains various tools and settings such as drawing tools, text tools, project loading and saving, export settings, and language settings.",
     "pen": {
-      "title": "NoCode Tool 使い方 | Pen Tool",
+      "title": "NoCode Tool How to use | Pen Tool",
       "description": "You can draw freehand lines, and use the Shape Transform tool to change the path freely."
     },
     "ellipse": {
@@ -91,6 +91,10 @@
     "tabs": {
       "title": "NoCode Tool How to use | Tabs",
       "description": "You can add or delete a new project, or specify the project you are currently working on."
+    },
+    "distribute": {
+      "title": "NoCode Tool How to use | Distribute to Keyframes/Layers",
+      "description": "Multiple DisplayObjects selected on the screen area can be distributed to each keyframe or layer. Right-click on a DisplayObject in the screen area and select \"Distribute to Layers\" or \"Distribute to Keyframes\"."
     }
   },
   "timeline": {
@@ -109,7 +113,7 @@
       "description": "Motion tweening is a type of animation that uses symbols to express movement, size and rotation changes, fades, and color effects. Curve points can be added from the right-click menu, and the added curve points can be controlled On/Off by double-clicking. If a curve point is no longer needed, it can be deleted with the delete key."
     },
     "custom-tweening": {
-      "title": "NoCode Tool 使い方 | Custom Motion Tweening",
+      "title": "NoCode Tool How to use | Custom Motion Tweening",
       "description": "Custom tweening is the ability to customize tween movement speed and other parameters using curve pointers. Pointers can be added with a double-click, and added pointers can be controlled On/Off with a double-click. Unnecessary pointers can be deleted with the Delete button."
     },
     "normal-layer": {
@@ -125,7 +129,7 @@
       "description": "If you turn on the preview function and hover the mouse over a layer in the timeline, you can preview the drawing result of the display object placed on that layer."
     },
     "javascript": {
-      "title": "NoCode Tool 使い方 | JavaScript",
+      "title": "NoCode Tool How to use | JavaScript",
       "description": "Like keyframes, JavaScript controls can be added on a frame-by-frame basis, mainly to make animations and movies react, and to control DisplayObjects on the timeline.",
       "text1": "NoCode Tool's JavaScript scope (this) is set to MovieClip, which executes JavaScript, as its scope. Please note that without the scope (this), it will not start correctly.",
       "text2": "Other than that, it is no different from normal JavaScript, so it can be run using either the conventional writing method or ES6 writing."

@@ -1,0 +1,23 @@
+<% const path = "../../../"; %>
+<%- include("../../_include/_header", {
+    "title": "tool-usage.timeline.custom-tweening.title",
+    "description": "tool-usage.timeline.custom-tweening.description",
+    "path": path,
+}); %>
+
+<%- include("../_base-header", {
+    "subTitle": "tool-menu.timeline.custom-tweening",
+    "path": path
+}); %>
+
+<div class="col-md-12 col-lg-9">
+    <div>
+      <h3>${{ tool-menu.timeline.custom-tweening }}$</h3>
+      <p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/yyAwx9uhSLA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+      <p>${{ tool-usage.timeline.custom-tweening.description }}$</p>
+    </div>
+</div>
+
+<%- include("../_base-footer", {
+    "path": path
+}); %>

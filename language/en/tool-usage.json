@@ -108,6 +108,10 @@
       "title": "NoCode Tool How to use | Motion Tweening",
       "description": "Motion tweening is a type of animation that uses symbols to express movement, size and rotation changes, fades, and color effects. Curve points can be added from the right-click menu, and the added curve points can be controlled On/Off by double-clicking. If a curve point is no longer needed, it can be deleted with the delete key."
     },
+    "custom-tweening": {
+      "title": "NoCode Tool 使い方 | Custom Motion Tweening",
+      "description": "Custom tweening is the ability to customize tween movement speed and other parameters using curve pointers. Pointers can be added with a double-click, and added pointers can be controlled On/Off with a double-click. Unnecessary pointers can be deleted with the Delete button."
+    },
     "normal-layer": {
       "title": "NoCode Tool How to use | Normal Layer",
       "description": "Each layer is independent, and drawing or editing a display object on one layer does not affect the display objects on other layers. In the stage area where there are no display objects on a layer, you can see through the layer below. You can also show/hide, lock/unlock, and reorder layers."

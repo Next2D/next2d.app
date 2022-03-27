@@ -15,6 +15,6 @@
   "feature6-description": "イージング機能により、よりリアルでダイナミックなアニメーションを作成することができます。",
   "feature7-title": "書き出し",
   "feature7-description": "JSON、WEBM、APNG、アニメーションGIFへの書き出しが可能で、JSONはNext2D Playerで読み込みし描画する事ができます。",
-  "feature8-title": "SWF",
-  "feature8-description": "簡易的ではありますが、SWFファイルの読み込みも可能です。"
+  "feature8-title": "読み込み",
+  "feature8-description": "画像(JPEG/PNG/GIF/SVG)、映像(MP4)、音声(MP3)を読み込む事ができます。簡易的ではありますが、SWFファイルの読み込みも可能です。"
 }

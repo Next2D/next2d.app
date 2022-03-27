@@ -31,6 +31,7 @@
     "title": "Controller Area",
     "stage": "ステージ設定",
     "object": "オブジェクト設定",
+    "frame-picker": "フレームピッカー",
     "transform": "変形",
     "color-transform": "カラートランスフォーム",
     "blend-mode": "ブレンドモード",

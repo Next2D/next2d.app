@@ -178,6 +178,10 @@
       "title": "NoCode Tool 如何使用 | 对象配置",
       "description": "你可以设置显示对象的名称和符号。 这个名字可以用JavaScript this.[[name]]来访问，这个符号可以作为一个动态类与框架一起使用。"
     },
+    "frame-picker": {
+      "title": "NoCode Tool 如何使用 | 框选器",
+      "description": "帧选择器帮助你直观地预览和选择MovieClip的第一帧。 这一功能改善了动画工作流程的用户体验，如唇语。"
+    },
     "sound": {
       "title": "NoCode Tool 如何使用 | 声音",
       "description": "你可以把加载的声音数据放在任何框架中。 你可以设置每一帧的循环和音量。"

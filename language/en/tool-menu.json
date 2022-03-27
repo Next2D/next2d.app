@@ -31,6 +31,7 @@
     "title": "Controller Area",
     "stage": "Stage Setting",
     "object": "Object Setting",
+    "frame-picker": "Frame Picker",
     "transform": "Transform",
     "color-transform": "Color Transform",
     "blend-mode": "Blend Mode",

@@ -178,6 +178,10 @@
       "title": "NoCode Tool How to use | Object Setting",
       "description": "The name and symbol of the display object can be set. The name can be accessed with the JavaScript this.[[name]], and the symbol can be used as a dynamic class in conjunction with the framework."
     },
+    "frame-picker": {
+      "title": "NoCode Tool How to use | Frame Picker",
+      "description": "The frame picker helps you visually preview and select the first frame of a MovieClip. This feature improves the user experience for animation workflows such as lip-sync."
+    },
     "sound": {
       "title": "NoCode Tool How to use | Sound",
       "description": "You can place the loaded sound data on any frame. Loop and volume settings can be made for each frame."

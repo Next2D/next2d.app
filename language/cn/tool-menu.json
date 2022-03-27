@@ -31,6 +31,7 @@
     "title": "Controller Area",
     "stage": "舞台设置",
     "object": "对象设置",
+    "frame-picker": "框选器",
     "transform": "转型",
     "color-transform": "颜色转换",
     "blend-mode": "混合模式",

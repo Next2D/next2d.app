@@ -1,0 +1,23 @@
+<% const path = "../../../"; %>
+<%- include("../../_include/_header", {
+    "title": "tool-usage.controller.frame-picker.title",
+    "description": "tool-usage.controller.frame-picker.description",
+    "path": path,
+}); %>
+
+<%- include("../_base-header", {
+    "subTitle": "tool-menu.controller.frame-picker",
+    "path": path
+}); %>
+
+<div class="col-md-12 col-lg-9">
+    <div>
+      <h3>${{ tool-menu.controller.frame-picker }}$</h3>
+      <p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/m6NuOXvCk5k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+      <p>${{ tool-usage.controller.frame-picker.description }}$</p>
+    </div>
+</div>
+
+<%- include("../_base-footer", {
+    "path": path
+}); %>

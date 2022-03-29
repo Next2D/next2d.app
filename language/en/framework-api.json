@@ -1,7 +1,7 @@
 {
   "detail": "Create Next2D apps with no build configuration.",
   "dir-detail": "Directory Configuration",
-  "chart-detail": "Chart Flow",
+  "chart-detail": "Flowchart",
   "command": {
     "title": "Commands",
     "text1": "Starts the development server.",

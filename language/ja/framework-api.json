@@ -1,7 +1,7 @@
 {
   "detail": "ビルド設定なしで、Next2Dアプリを作成する事ができます。",
   "dir-detail": "ディレクトリ構成",
-  "chart-detail": "チャートフロー",
+  "chart-detail": "フローチャート",
   "command": {
     "title": "コマンド",
     "text1": "開発サーバーを起動します。",

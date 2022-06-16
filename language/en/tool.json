@@ -1,6 +1,8 @@
 {
   "title": "NoCode Tool Features",
   "description": "An authoring tool that runs on a Web browser.",
+  "feature0-title": "Open Source",
+  "feature0-description": "Next2D NoCode Tool is available free of charge as open source software for personal and commercial use.",
   "feature1-title": "No Code",
   "feature1-description": "You can intuitively create the animation you have in mind without writing any code, and the exported data can be easily published by uploading it to the Web.",
   "feature2-title": "No installation required",
@@ -13,8 +15,6 @@
   "feature5-description": "Filters such as blur, glow, drop shadow, gradient, etc. can be easily added or removed with the mouse, and they can be easily manipulated.",
   "feature6-title": "Easing",
   "feature6-description": "The easing function allows you to make your animations more realistic and dynamic.",
-  "feature7-title": "Output",
-  "feature7-description": "Export to JSON, WEBM, APNG and animated GIF is possible, and JSON can be read and drawn by Next2D Player.",
-  "feature8-title": "Load",
-  "feature8-description": "Images (JPEG/PNG/GIF/SVG), video (MP4), and audio (MP3) can be imported. SWF files can also be read, albeit in a simplified manner."
+  "feature7-title": "Load/Output",
+  "feature7-description": "Images (JPEG/PNG/GIF/SVG), video (MP4), and audio (MP3) can be read. SWF files can also be imported, albeit in a simplified manner. Export to JSON, WEBM, APNG, and animated GIF is possible, and JSON can be read and drawn by Next2D Player."
 }

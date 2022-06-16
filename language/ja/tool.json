@@ -1,6 +1,8 @@
 {
   "title": "NoCode Toolの特徴",
   "description": "Webブラウザ上で動作するオーサリングツールです。",
+  "feature0-title": "オープンソース",
+  "feature0-description": "Next2D NoCode Toolは、オープンソースソフトウェアとして、個人・商用を問わず無償で利用することができます。",
   "feature1-title": "ノーコード",
   "feature1-description": "コードを書くことなく、思い描いたアニメーションを直感的に作成することができ、書き出したデータはWebにアップロードすることで簡単に公開することができます。",
   "feature2-title": "インストール不要",
@@ -13,8 +15,6 @@
   "feature5-description": "ブラー、グロー、ドロップシャドウ、グラデーションなどのフィルターをマウスで簡単に追加、削除ができ、それらを簡単に操作することができます。",
   "feature6-title": "イージング",
   "feature6-description": "イージング機能により、よりリアルでダイナミックなアニメーションを作成することができます。",
-  "feature7-title": "書き出し",
-  "feature7-description": "JSON、WEBM、APNG、アニメーションGIFへの書き出しが可能で、JSONはNext2D Playerで読み込みし描画する事ができます。",
-  "feature8-title": "読み込み",
-  "feature8-description": "画像(JPEG/PNG/GIF/SVG)、映像(MP4)、音声(MP3)を読み込む事ができます。簡易的ではありますが、SWFファイルの読み込みも可能です。"
+  "feature7-title": "読み込み/書き出し",
+  "feature7-description": "画像(JPEG/PNG/GIF/SVG)、映像(MP4)、音声(MP3)を読み込む事ができます。簡易的ではありますが、SWFファイルの読み込みも可能です。書き出しはJSON、WEBM、APNG、アニメーションGIFへの書き出しが可能で、JSONはNext2D Playerで読み込みし描画する事ができます。"
 }

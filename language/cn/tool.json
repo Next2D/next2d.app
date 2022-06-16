@@ -1,6 +1,8 @@
 {
   "title": "NoCode工具的特点",
   "description": "一个在网络浏览器上运行的创作工具。",
+  "feature0-title": "开放源码",
+  "feature0-description": "Next2D NoCode Tool作为开放源码软件免费提供给个人和商业使用。",
   "feature1-title": "没有代码",
   "feature1-description": "你可以直观地创建你心目中的动画，而无需编写任何代码，导出的数据可以很容易地通过上传到网络上发布。",
   "feature2-title": "不需要安装",
@@ -13,8 +15,6 @@
   "feature5-description": "诸如模糊、发光、阴影、渐变等滤镜可以用鼠标轻松添加或删除，而且可以轻松操作。",
   "feature6-title": "缓和",
   "feature6-description": "缓和功能允许你使你的动画更加逼真和动态。",
-  "feature7-title": "输出",
-  "feature7-description": "可以导出为JSON、WEBM、APNG和GIF动画，JSON可以由Next2D Player读取和绘制。",
-  "feature8-title": "负载",
-  "feature8-description": "可以读取图像（JPEG/PNG/GIF/SVG）、视频（MP4）和音频（MP3）。 SWF文件也可以被读取，尽管是以一种简化的形式。"
+  "feature7-title": "负载/输出",
+  "feature7-description": "可以加载图像（JPEG/PNG/GIF/SVG）、视频（MP4）和音频（MP3）。 SWF文件也可以被读取，尽管是以一种简化的形式。 可以导出为JSON、WEBM、APNG和GIF动画，而且JSON可以被Next2D Player读取和绘制。"
 }

@@ -679,8 +679,7 @@ section {
 
 #usage,
 #docs,
-#references,
-#roadmap
+#references
 {
   display: inline-block;
   height: 100%;
@@ -689,8 +688,7 @@ section {
 
 #get-started .feature-block,
 #docs .feature-block,
-#usage .feature-block,
-#roadmap .feature-block
+#usage .feature-block
 {
   background: #fff none repeat scroll 0 0;
   padding: 30px 20px;
@@ -710,17 +708,10 @@ section {
   margin-bottom: 20px;
 }
 
-#roadmap .feature-block img
-{
-  width: 70vw;
-  margin-bottom: 30px;
-}
-
 @media (max-width: 991px) {
   #get-started .feature-block,
   #usage .feature-block,
-  #docs .feature-block,
-  #roadmap .feature-block
+  #docs .feature-block
   {
     margin-bottom: 30px;
   }

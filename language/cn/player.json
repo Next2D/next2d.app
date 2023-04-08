@@ -15,6 +15,6 @@
   "feature6-description": "它与最新的桌面和移动浏览器具有互操作性，并经过全面测试，在尽可能广泛的浏览器中提供性能和可靠性。",
   "feature7-title": "API",
   "feature7-description": "广泛的文档、示例代码和初步介绍的教程使新老开发者都能轻松地迅速上手。",
-  "feature8-title": "MP3/MP4",
-  "feature8-description": "支持阅读音频和视频，包括MP3和MP4。"
+  "feature8-title": "MP3/MP4/Images",
+  "feature8-description": "它还可以读取音频（MP3）、视频（MP4）和图像（JPEG/PNG/GIF/SVG）。"
 }

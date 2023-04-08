@@ -15,6 +15,6 @@
   "feature6-description": "最新のデスクトップおよびモバイルブラウザとの相互運用が可能で、可能な限り幅広いブラウザで、パフォーマンスと信頼性を実現するための徹底的なテストが行われています。",
   "feature7-title": "API",
   "feature7-description": "豊富なドキュメント、サンプルコード、初期導入のためのチュートリアルにより、新旧の開発者がすぐに使いこなすことができるようになっています。",
-  "feature8-title": "MP3/MP4",
-  "feature8-description": "MP3、MP4などのオーディオ、ビデオの読み込みにも対応。"
+  "feature8-title": "MP3/MP4/Images",
+  "feature8-description": "音声(MP3)、映像(MP4)、画像(JPEG/PNG/GIF/SVG)などの読み込みにも対応。"
 }

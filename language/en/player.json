@@ -15,6 +15,6 @@
   "feature6-description": "It is interoperable with the latest desktop and mobile browsers, and has been thoroughly tested to deliver performance and reliability across the widest possible range of browsers.",
   "feature7-title": "API",
   "feature7-description": "Extensive documentation, sample code, and tutorials for initial introduction make it easy for new and old developers to get up to speed quickly.",
-  "feature8-title": "MP3/MP4",
-  "feature8-description": "Supports reading audio and video, including MP3 and MP4."
+  "feature8-title": "MP3/MP4/Images",
+  "feature8-description": "It also supports importing audio (MP3), video (MP4), and images (JPEG/PNG/GIF/SVG)."
 }

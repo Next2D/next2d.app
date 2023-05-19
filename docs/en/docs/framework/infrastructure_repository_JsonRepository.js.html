@@ -1,0 +1,162 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1" name="viewport"><title>Next2D | Framework API Documentation</title><meta itemprop="name" content="Next2D | Framework API Documentation"><meta itemprop="description" content="Framework API Documentation."><meta itemprop="image" content="https://next2d.app/assets/img/ogp.png"><meta property="og:url" content="https://next2d.app/"><meta property="og:type" content="website"><meta property="og:title" content="Next2D | Framework API Documentation"><meta property="og:description" content="Framework API Documentation."><meta property="og:image" content="https://next2d.app/assets/img/ogp.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Next2D | Framework API Documentation"><meta name="twitter:description" content="Framework API Documentation."><meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png"><link href="../../../assets/img/favicon.png" rel="icon"><link href="../../../assets/img/apple-touch-icon.png" rel="apple-touch-icon"><link href="../../../assets/vendor/aos/aos.css" rel="stylesheet"><link href="../../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"><link href="../../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"><link href="../../../assets/css/main.min.css" rel="stylesheet"><link href="../../../assets/css/jsdoc.min.css" rel="stylesheet"><script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag("js", new Date());
+        gtag("config", "G-8GJWF4S3RH");</script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head><body><header id="header" class="header fixed-top d-flex align-items-center"><div class="container d-flex align-items-center justify-content-between"><div id="logo"><a href="../../../en"><img loading="lazy" src="../../../assets/img/logo.svg" alt="Next2D Rendering Engine, NoCode Tool, Underlying Framework." title="Next2D Rendering Engine, NoCode Tool, Underlying Framework."></a></div><nav id="navbar" class="navbar"><ul class="list-unstyled"><li><a class="nav-link scrollto" href="../../../en/#get-started">Home</a></li><li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>Player</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li><li><a href="../../../en/docs/player">API Docs</a></li><li><a href="../../../en/reference/player">Reference</a></li><li><a href="../../../en/#player">Features</a></li></ul></li><li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>NoCode Tool</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li><li><a href="../../../en/usage">Usage</a></li><li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li><li><a href="../../../en/docs/tool">API Docs</a></li><li><a href="../../../en/#tool">Features</a></li><li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li></ul></li><li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>Framework</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li><li><a href="../../../en/docs/framework">API Docs</a></li><li><a href="../../../en/#framework">Features</a></li></ul></li><li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>Language</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="../../../en">English</a></li><li><a href="../../../ja">日本語</a></li><li><a href="../../../cn">简体中文</a></li></ul></li><li class="dropdown"><a class="nav-link"><span>Support US</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li><li><a href="https://www.patreon.com/next2d" target="_blank">patreon</a></li></ul></li><li><a class="nav-link scrollto" href="../../../en/#contact">Contact</a></li></ul><i class="bi bi-list mobile-nav-toggle"></i></nav></div></header><main id="main"><section class="breadcrumbs"><div class="container"><div class="d-flex justify-content-between align-items-center"><h2>Framework API Documentation</h2><ol><li><a href="../../../en">Home</a></li><li>Framework API Documentation</li></ol></div></div></section><section id="docs" class="padd-section"><div class="container" data-aos="fade-up"><div class="row docs" data-aos="fade-up" data-aos-delay="100"><div class="col-md-12 col-lg-3"><div class="search"><input id="search" type="text" class="form-control input-md" placeholder="Search..."><script type="text/javascript">(() =>
+        {
+            document
+                .getElementById("search")
+                .addEventListener("keyup", (event) =>
+                {
+                    const value = event.currentTarget.value.trim();
+
+                    document
+                        .getElementById("sub-navbar")
+                        .classList.remove("searching");
+
+                    if (value) {
+
+                        const element = document.getElementById("sub-navbar");
+
+                        element.classList.add("searching");
+
+                        const items = document
+                            .getElementsByClassName("parent");
+
+                        const regexp = new RegExp(value, "i");
+
+                        // reset
+                        for (let idx = 0; idx < items.length; ++idx) {
+                            const item = items[idx];
+                            item.classList.remove("match", "no-match");
+
+                            let parent = items[idx].parentNode;
+                            parent.classList.remove("match", "no-match");
+
+                             parent
+                                .parentNode
+                                .classList.remove("match", "no-match");
+                        }
+
+                        for (let idx = 0; idx < items.length; ++idx) {
+
+                            const item = items[idx];
+
+                            let parent = item.parentNode;
+                            if (!item.dataset.name || !regexp.test(item.dataset.name)) {
+
+                                if (!parent.classList.contains("match")) {
+                                    parent.classList.add("no-match");
+                                }
+
+                                parent = parent.parentNode;
+                                if (!parent.classList.contains("match")) {
+                                    parent.classList.add("no-match");
+                                }
+
+                                item.classList.add("no-match");
+
+                            } else {
+
+                                parent.classList.remove("no-match");
+                                parent.classList.add("match");
+
+                                parent = parent.parentNode;
+                                parent.classList.remove("no-match");
+                                parent.classList.add("match");
+
+                                item.classList.add("match");
+
+                            }
+                        }
+                    }
+                });
+        })();</script></div><nav id="sub-navbar" class="sub-navbar"><ul class="list-unstyled"><li class="docs-item"><span class="title"><a href="Application.html">Application</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"><span class="subtitle">Methods</span><li class="parent" data-name="Application#gotoView"><a href="Application.html#gotoView">gotoView</a></li><li class="parent" data-name="Application#initialize"><a href="Application.html#initialize">initialize</a></li></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="Callback.html">Callback</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"><span class="subtitle">Methods</span><li class="parent" data-name="Callback#execute"><a href="Callback.html#execute">execute</a></li></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="Capture.html">Capture</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"><span class="subtitle">Methods</span><li class="parent" data-name="Capture#execute"><a href="Capture.html#execute">execute</a></li></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="ConfigParser.html">ConfigParser</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"><span class="subtitle">Methods</span><li class="parent" data-name="ConfigParser#execute"><a href="ConfigParser.html#execute">execute</a></li></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="Content_Content.html">Content#Content</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="ContentRepository.html">ContentRepository</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"><span class="subtitle">Methods</span><li class="parent" data-name="ContentRepository#execute"><a href="ContentRepository.html#execute">execute</a></li></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="ContentService.html">ContentService</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"><span class="subtitle">Methods</span><li class="parent" data-name="ContentService#execute"><a href="ContentService.html#execute">execute</a></li></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="Context.html">Context</a></span><ul class="members itemMembers"><span class="subtitle">Members</span><li class="parent" data-name="Context#root"><a href="Context.html#root">root</a></li><li class="parent" data-name="Context#view"><a href="Context.html#view">view</a></li><li class="parent" data-name="Context#viewModel"><a href="Context.html#viewModel">viewModel</a></li><li class="parent" data-name="Context#viewName"><a href="Context.html#viewName">viewName</a></li></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"><span class="subtitle">Methods</span><li class="parent" data-name="Context#addChild"><a href="Context.html#addChild">addChild</a></li></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="CustomRepository.html">CustomRepository</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"><span class="subtitle">Methods</span><li class="parent" data-name="CustomRepository#execute"><a href="CustomRepository.html#execute">execute</a></li></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="CustomService.html">CustomService</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"><span class="subtitle">Methods</span><li class="parent" data-name="CustomService#execute"><a href="CustomService.html#execute">execute</a></li></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="DefaultLoading.html">DefaultLoading</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"><span class="subtitle">Methods</span><li class="parent" data-name="DefaultLoading#end"><a href="DefaultLoading.html#end">end</a></li><li class="parent" data-name="DefaultLoading#start"><a href="DefaultLoading.html#start">start</a></li></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="JsonRepository.html">JsonRepository</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"><span class="subtitle">Methods</span><li class="parent" data-name="JsonRepository#execute"><a href="JsonRepository.html#execute">execute</a></li></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="JsonService.html">JsonService</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"><span class="subtitle">Methods</span><li class="parent" data-name="JsonService#execute"><a href="JsonService.html#execute">execute</a></li></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="Loading.html">Loading</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"><span class="subtitle">Methods</span><li class="parent" data-name="Loading#end"><a href="Loading.html#end">end</a></li><li class="parent" data-name="Loading#start"><a href="Loading.html#start">start</a></li></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="QueryParser.html">QueryParser</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"><span class="subtitle">Methods</span><li class="parent" data-name="QueryParser#execute"><a href="QueryParser.html#execute">execute</a></li></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="RemoveResponse.html">RemoveResponse</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"><span class="subtitle">Methods</span><li class="parent" data-name="RemoveResponse#execute"><a href="RemoveResponse.html#execute">execute</a></li></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="RequestParser.html">RequestParser</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"><span class="subtitle">Methods</span><li class="parent" data-name="RequestParser#execute"><a href="RequestParser.html#execute">execute</a></li></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="RequestType.html">RequestType</a></span><ul class="members itemMembers"><span class="subtitle">Members</span><li class="parent" data-name="RequestType.CLUSTER"><a href="RequestType.html#.CLUSTER">CLUSTER</a></li><li class="parent" data-name="RequestType.CONTENT"><a href="RequestType.html#.CONTENT">CONTENT</a></li><li class="parent" data-name="RequestType.CUSTOM"><a href="RequestType.html#.CUSTOM">CUSTOM</a></li><li class="parent" data-name="RequestType.IMAGE"><a href="RequestType.html#.IMAGE">IMAGE</a></li><li class="parent" data-name="RequestType.JSON"><a href="RequestType.html#.JSON">JSON</a></li></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="RequestUseCase.html">RequestUseCase</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"><span class="subtitle">Methods</span><li class="parent" data-name="RequestUseCase#execute"><a href="RequestUseCase.html#execute">execute</a></li></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="ResponseDTO.html">ResponseDTO</a></span><ul class="members itemMembers"><span class="subtitle">Members</span><li class="parent" data-name="ResponseDTO#name"><a href="ResponseDTO.html#name">name</a></li><li class="parent" data-name="ResponseDTO#response"><a href="ResponseDTO.html#response">response</a></li></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="ToCamelCase.html">ToCamelCase</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"><span class="subtitle">Methods</span><li class="parent" data-name="ToCamelCase#execute"><a href="ToCamelCase.html#execute">execute</a></li></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="View_View.html">View#View</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"></ul><ul class="events itemMembers"></ul></li><li class="docs-item"><span class="title"><a href="ViewModel.html">ViewModel</a></span><ul class="members itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="typedefs itemMembers"></ul><ul class="methods itemMembers"><span class="subtitle">Methods</span><li class="parent" data-name="ViewModel#bind"><a href="ViewModel.html#bind">bind</a></li><li class="parent" data-name="ViewModel#factory"><a href="ViewModel.html#factory">factory</a></li><li class="parent" data-name="ViewModel#unbind"><a href="ViewModel.html#unbind">unbind</a></li></ul><ul class="events itemMembers"></ul></li></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav></div><div class="col-md-12 col-lg-9"><div><div class="page-title" data-filename="infrastructure_repository_JsonRepository.js.html">Source: infrastructure/repository/JsonRepository.js</div><section><header><div class="header content-size"><h1>infrastructure/repository/JsonRepository.js</h1></div></header><article><pre id="source-code" class="prettyprint source linenums"><code>/**
+ * JSON取得時のリクエストとレスポンスの管理クラス
+ * Request and Response management class for JSON acquisition
+ *
+ * @class
+ */
+export class JsonRepository {
+    /**
+     * @description 指定先のJSONを非同期で取得
+     *              Asynchronously obtain JSON of the specified destination
+     *
+     * @param  {object} object
+     * @return {Promise}
+     * @method
+     * @public
+     */
+    execute(object) {
+        // @ts-ignore
+        const parser = next2d.fw.parser;
+        const options = {};
+        const method = options.method = object.method
+            ? parser.execute(object.method).toUpperCase()
+            : "GET";
+        const body = object.body
+            &amp;&amp; method === "POST" || method === "PUT"
+            ? JSON.stringify(object.body)
+            : null;
+        if (body) {
+            options.body = body;
+        }
+        if (object.headers) {
+            options.headers = object.headers;
+        }
+        return fetch(`${parser.execute(object.path)}`, options)
+            .then((response) => {
+            return response.json();
+        });
+    }
+}
+</code></pre></article></section><script type="text/javascript">(() =>
+    {
+        let counter = 1;
+
+        const source = document.getElementById("source-code");
+        if (source) {
+            const code = source.getElementsByTagName("code")[0];
+
+            let numbered = code.innerHTML.split("\n");
+            numbered = numbered.map((item) =>
+            {
+                return `<li id="line${counter++}"><code>${item}</code></li>`;
+            });
+
+            code.remove();
+
+            const ol = document.createElement("ol");
+            ol.classList.add("linenums");
+
+            source.appendChild(ol);
+            ol.innerHTML = numbered.join("");
+        }
+
+    })();</script></div></div></div></div></section></main><footer class="footer" data-aos="fade-up"><div class="container"><div class="row"><div class="col-md-12 col-lg-4"><div class="footer-logo"><a class="navbar-brand" href="../../../en">Next2D</a><p>Next2D, a project derived from the JavaScript FlashPlayer &quot;swf2js&quot;, aims to provide the fastest 2D engine that works on any device.<br>Created by Toshiyuki Ienaga.</p></div><div class="list-sns-menu"><ul class="list-unstyled"><li><a href="https://twitter.com/ienagatoshiyuki" target="_blank"><i class="bi bi-twitter"></i></a></li><li><a href="https://github.com/ienaga" target="_blank"><i class="bi bi-github"></i></a></li></ul></div></div><div class="col-sm-6 col-md-3 col-lg-2"><div class="list-menu"><h4>Player</h4><ul class="list-unstyled"><li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li><li><a href="../../../en/docs/player">API Docs</a></li><li><a href="../../../en/reference/player">Reference</a></li><li><a href="../../../en/#player">Features</a></li></ul></div></div><div class="col-sm-6 col-md-3 col-lg-2"><div class="list-menu"><h4>Tool</h4><ul class="list-unstyled"><li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li><li><a href="../../../en/usage">Usage</a></li><li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li><li><a href="../../../en/docs/tool">API Docs</a></li><li><a href="../../../en/#tool">Features</a></li><li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li></ul></div></div><div class="col-sm-6 col-md-3 col-lg-2"><div class="list-menu"><h4>Framework</h4><ul class="list-unstyled"><li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li><li><a href="../../../en/docs/framework">API Docs</a></li><li><a href="../../../en/#framework">Features</a></li></ul></div></div><div class="col-sm-6 col-md-3 col-lg-2"><div class="list-menu"><h4>About US</h4><ul class="list-unstyled"><li><a href="../../../en/#contact">Contact</a></li><li><a href="../../../en/privacy">Privacy Policy</a></li></ul></div></div></div></div><div class="copyrights"><div class="container"><p>&copy; Copyrights Next2D. All rights reserved.</p></div></div></footer><a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a><script src="../../../assets/vendor/aos/aos.js"></script><script src="../../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script><script src="../../../assets/js/main.min.js"></script><script type="text/javascript">(() =>
+    {
+        const filename = document
+            .getElementsByClassName("page-title")[0]
+            .dataset.filename
+            .replace(".html", "");
+
+        const items = document
+            .getElementsByClassName("docs-item");
+
+        for (let idx = 0; idx < items.length; ++idx) {
+
+            const item = items[idx];
+            if (item.firstChild.textContent !== filename) {
+                continue;
+            }
+
+            item.classList.add("current");
+            if (idx) {
+                const parent = item.parentNode;
+                item.remove();
+                parent.insertBefore(item, items[0]);
+            }
+
+            break;
+        }
+
+    })();</script></body></html>

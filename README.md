@@ -2,25 +2,25 @@
 <img src="https://next2d.app/assets/img/logo.svg" width="100" height="100" alt="Next2D Logo">
 
 ## What is Next2D Project
-The Next2D project aims to provide a high-speed 2D rendering engine using WebGL, an authoring tool for no-code animation production, and a framework for collaborative development and efficiency. \
+Next2D project provides a WebGL 2D rendering engine, animation tools for creating animations, and a framework to support team development. \
 [Next2D WebSite](https://next2d.app)
 
 ### Next2D Player
 <img src="https://next2d.app/assets/img/player/logo.svg" width="100" height="100" alt="Next2D Player Logo">
 
-Experience the fast and beautiful anti-aliased rendering of WebGL. You can create rich, interactive graphics, cross-platform applications and games without worrying about browser or device compatibility. \
+With support for vector drawing, tween animation, text, audio, video, and many other elements, it can be used for game production, interactive data visualization, creative web applications, and other projects requiring rich expression. The software is expected to be used in game production, interactive data visualization, creative web applications and other projects requiring rich expression. \
 [Player Features](https://next2d.app/#player)
 
-### Next2D NoCode Tool
-<img src="https://next2d.app/assets/img/tool/logo.svg" width="100" height="100" alt="Next2D NoCode Tool Logo">
+### Next2D Animation Tool
+<img src="https://next2d.app/assets/img/tool/logo.svg" width="100" height="100" alt="Next2D Animation Tool Logo">
 
-This is an authoring tool that runs on a web browser, mainly for NoCode development, You can intuitively create the animation you have imagined, and the exported data can be easily published by uploading it to the Web. \
-[NoCode Tool Features](https://next2d.app/#tool)
+It is an animation creation tool that runs in a web browser and has an intuitive interface and rich functionality, making it easy for anyone to use. It allows users to create high-quality, engaging content by combining a variety of media formats, including text, images, audio, and video. \
+[Animation Tool Features](https://next2d.app/#tool)
 
 ### Next2D Framework
 <img src="https://next2d.app/assets/img/framework/logo.svg" width="100" height="100" alt="Next2D Framework Logo">
 
-It is a framework dedicated to Next2D that enables scene management by URL (SPA), which has been difficult with conventional Canvas/WebGL applications, and simplifies readability and shareability by fixing the development pattern (MVVM). \
+The UI is designed to be efficient and easy to maintain by using atomic design, subdividing components, and designing reusable modules. Atomic design is recommended for UI construction, and the segmentation of components, reusable module design, and other features enable efficient UI construction and maintenance. \
 [Framework Features](https://next2d.app/#framework)
 
 If you find the Next2D tools and libraries useful, we would be happy to have you support the Next2D project.

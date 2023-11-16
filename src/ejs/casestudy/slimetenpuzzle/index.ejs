@@ -1,0 +1,46 @@
+<% const path = "../../../"; %>
+<%- include("../../_include/_header", {
+    "title": "slimetenpuzzle.title",
+    "description": "slimetenpuzzle.description",
+    "path": path
+}); %>
+
+<main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <ol>
+                    <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
+                    <li>${{ slimetenpuzzle.title }}$</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section id="case-example">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title text-center">
+                <h2>${{ slimetenpuzzle.title }}$</h2>
+            </div>
+
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-center">
+                    <img src="<%= path %>assets/img/casestudy/slimetenpuzzle/game_image.png">
+                </div>
+
+                <div class="col-md-10 col-lg-10" data-aos="fade-up" data-aos-delay="200">
+                    <h3>${{ slimetenpuzzle.animation }}$</h3>
+                    <div class="text-center">
+                        <video controls src="<%= path %>assets/img/casestudy/slimetenpuzzle/movie.mp4"></video>
+                        <p>${{ slimetenpuzzle.development }}$</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<%- include("../../_include/_footer", { "path": path }); %>

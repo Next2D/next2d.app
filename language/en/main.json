@@ -1,14 +1,14 @@
 {
   "lang": "en",
   "title": "Next2D Libraries and Tool",
-  "description": "Rendering engine, NoCode authoring tool, and underlying framework.",
+  "description": "Drawing engines, animation tools and frameworks",
   "docs-title": "API Docs",
   "reference-title": "Reference",
   "features-title": "Features",
   "usage-title": "Usage",
-  "player-description": "Experience the fast and beautiful anti-aliased rendering of WebGL. Create rich, interactive web content and games without worrying about browser or device compatibility.",
-  "tool-description": "This is an authoring tool that runs on a web browser, mainly for NoCode development, You can intuitively create the animation you have imagined, and the exported data can be easily published by uploading it to the Web.",
-  "framework-description": "It is a framework dedicated to Next2D that enables scene management by URL (SPA), which has been difficult with conventional Canvas/WebGL applications, and simplifies readability and shareability by fixing the development pattern (MVVM).",
+  "player-description": "With support for vector drawing, tween animation, text, audio, video, and many other elements, it can be used for game production, interactive data visualization, creative web applications, and other projects requiring rich expression. The software is expected to be used in game production, interactive data visualization, creative web applications and other projects requiring rich expression.",
+  "tool-description": "It is an animation creation tool that runs in a web browser and has an intuitive interface and rich functionality, making it easy for anyone to use. It allows users to create high-quality, engaging content by combining a variety of media formats, including text, images, audio, and video.",
+  "framework-description": "The UI is designed to be efficient and easy to maintain by using atomic design, subdividing components, and designing reusable modules. Atomic design is recommended for UI construction, and the segmentation of components, reusable module design, and other features enable efficient UI construction and maintenance.",
   "read-more": "Read More",
   "next-chapter": "Next Chapter",
   "contact": "Please feel free to contact us."

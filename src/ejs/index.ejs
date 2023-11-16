@@ -39,7 +39,7 @@
             <div class="col-md-4 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
               <div class="feature-block">
                 <img loading="lazy" src="<%= path %>assets/img/tool/logo.svg" width="60px" height="60px" alt="NoCode Tool">
-                <h4>NoCode Tool</h4>
+                <h4>Animation Tool</h4>
                 <p>${{ main.tool-description }}$</p>
                 <a class="scrollto" href="#tool">${{ main.read-more }}$</a>
               </div>
@@ -57,6 +57,10 @@
           </div>
         </div>
       </section><!-- End Get Started Section -->
+
+<%- include("./_include/_casestudy", {
+    "path": path
+}); %>
 
 <%- include("./_include/_player", {
     "path": path

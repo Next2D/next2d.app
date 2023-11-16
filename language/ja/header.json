@@ -1,4 +1,4 @@
 {
-  "title": "Rendering Engine, NoCode Tool, Underlying Framework.",
-  "description": "Next2Dは、描画エンジン、ノーコード・オーサリングツール、基盤フレームワークを開発するプロジェクトです。2Dエンターテインメント開発を簡単に！快速に！快適に！"
+  "title": "Rendering Engine, Animation Tool, Underlying Framework.",
+  "description": "Next2Dプロジェクトは、WebGLを用いた高速2Dレンダリングエンジン、アニメーション制作のためのオーサリングツール、共同開発・効率化のためのフレームワークの提供を目指しています。"
 }

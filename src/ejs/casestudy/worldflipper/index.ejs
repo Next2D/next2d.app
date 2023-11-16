@@ -1,0 +1,72 @@
+<% const path = "../../../"; %>
+<%- include("../../_include/_header", {
+    "title": "worldflipper.title",
+    "description": "worldflipper.description",
+    "path": path
+}); %>
+
+<main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <ol>
+                    <li><a href="<%= path %>${{ main.lang }}$">Home</a></li>
+                    <li>${{ worldflipper.title }}$</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section id="case-example">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title text-center">
+                <h2>${{ worldflipper.title }}$</h2>
+                <p>© Cygames, Inc. / Citail Inc.</p>
+            </div>
+
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-center">
+                    <img src="<%= path %>assets/img/casestudy/worldflipper/tool_use_image.png">
+                </div>
+
+                <div class="col-md-10 col-lg-10" data-aos="fade-up" data-aos-delay="200">
+                    <h3>${{ worldflipper.introduction }}$</h3>
+                    <div class="case-example-text">
+                        『WORLD FLIPPER』は、株式会社Cygamesと株式会社シテイルが共同制作したスマートフォン向けのゲームです。<br>
+                        このゲームは、キャラクターそのものがピンボールとなり、敵にぶつかりながらダメージを与えていく独特のゲームプレイを楽しむことができます。バトルシーンでは、各キャラクターがドットで描かれ、まるで実際に体当たりしているかのような感覚を味わえます。特にキャラクターのスキル発動時には、精巧なドット絵アニメーションがプレイヤーを魅了します。<br>
+                    </div>
+                </div>
+
+                <div class="col-md-10 col-lg-10" data-aos="fade-up" data-aos-delay="100">
+                    <h3>${{ worldflipper.case-study }}$</h3>
+
+                    <div class="text-center">
+                        <img src="<%= path %>assets/img/casestudy/worldflipper/tool_use_image2.png">
+                    </div>
+
+                    <div class="case-example-text">
+                        アニメーションの制作はAdobe Animateが採用されており、JSFL(JavaScript for Flash)という、JavaScriptがベースとなっている言語を利用して、作業のコマンド化・効率化・自動化行われています。<br>
+                        <br>
+                        Next2D Animation Toolにもプラグイン機能があり、同じくJavaScriptでタイムラインやレイヤーの操作をコマンド化・効率化・自動化する事が可能です。<br>
+                        <br>
+                        『WORLD FLIPPER』では、Next2D Animation Toolのプラグイン機能を利用したアニメーション制作手法が導入され、クリエイターは手間のかかる作業から解放され、よりクリエイティブな表現に集中できるよう努めました。<br>
+                        <br>
+                        制作したアニメーションは、iOS/Androidで読み込みができるよう、独自のJSONや画像データとして書き出しました。書き出し機能はプラグイン機能のJavaScriptでコントロールする事で柔軟に書き出すことが可能です。
+                    </div>
+                </div>
+
+                <div class="col-md-10 col-lg-10" data-aos="fade-up" data-aos-delay="200">
+                    <h3>${{ worldflipper.animation }}$</h3>
+                    <div class="text-center">
+                        <video controls src="<%= path %>assets/img/casestudy/worldflipper/movie.mp4"></video>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<%- include("../../_include/_footer", { "path": path }); %>

@@ -2,14 +2,14 @@
   "name": "next2d-web-site",
   "description": "Next2D Web Site",
   "version": "1.0.0",
-  "author": "Toshiyuki Ienaga<ienaga@tvon.jp>",
+  "author": "Toshiyuki Ienaga<ienaga@next2d.app>",
   "license": "Next2D",
   "scripts": {
     "start": "gulp",
     "build": "gulp build"
   },
   "devDependencies": {
-    "browser-sync": "^2.29.1",
+    "browser-sync": "^2.29.3",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",

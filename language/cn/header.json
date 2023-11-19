@@ -1,4 +1,4 @@
 {
-  "title": "Rendering Engine, NoCode Tool, Underlying Framework.",
-  "description": "Next2D 项目旨在提供一个使用 WebGL 的快速二维渲染引擎、用于动画制作的创作工具以及一个用于协作开发和提高效率的框架。"
+  "title": "渲染引擎, 无代码工具, 基础框架。",
+  "description": "Next2D 项目旨在提供一个基于 WebGL 的二维快速渲染引擎、用于动画制作的创作工具以及一个用于协作开发和提高效率的框架。"
 }

@@ -2,6 +2,11 @@
 
     "use strict";
 
+    // inject styles
+    if (/^\/cn\//.test(location.pathname)) {
+        document.body.classList.add("lang-cn");
+    }
+
     /**
      * Easy selector helper function
      */

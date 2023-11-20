@@ -3,7 +3,7 @@
   "description": "工作空间分为工具区、屏幕区、时间线区和控制器区，各区域的功能如下。",
   "sub-title": "使用方法和电影样本",
   "tool": {
-    "title": "NoCode Tool 如何使用 | Tool Area",
+    "title": "NoCode Tool 如何使用 | 工具区域",
     "description": "这个区域包含各种工具和设置，如绘图工具、文本工具、项目加载和保存、导出设置和语言设置。",
     "pen": {
       "title": "NoCode Tool 如何使用 | 钢笔工具",
@@ -78,7 +78,7 @@
     }
   },
   "screen": {
-    "title": "NoCode Tool 如何使用 | Screen Area",
+    "title": "NoCode Tool 如何使用 | 银幕区域",
     "description": "在这个区域，你可以检查绘图信息，如当前帧中显示在舞台上的DisplayObjects的查看、放置和堆叠顺序。你可以通过按Command+Enter或Ctrl+Enter来预览和播放播放器。",
     "align": {
       "title": "NoCode Tool 如何使用 | 统一口径",
@@ -98,26 +98,26 @@
     }
   },
   "timeline": {
-    "title": "NoCode Tool 如何使用 | Timeline Area",
+    "title": "NoCode Tool 如何使用 | 时间线区域",
     "description": "这是你可以控制层、动画关键帧等的区域。你可以设置标签名称，在框架中嵌入任何JavaScript，并控制每个层的Tweens的添加和删除。\"",
     "frame-keyframe": {
-      "title": "NoCode Tool 如何使用 | 框架和关键帧",
+      "title": "NoCode Tool 如何使用 | 帧和关键帧",
       "description": "时间长度（帧）将根据FPS值来划分。 你可以控制放置在时间线上的框架上的显示对象。 关键帧是时间线中显示一个新符号实例的帧。 关键帧也可以包含控制显示对象的嵌入式代码（JavaScript）。"
     },
     "mask-layer": {
-      "title": "NoCode Tool 如何使用 | 掩膜层",
+      "title": "NoCode Tool 如何使用 | 遮罩层",
       "description": "放在遮罩层下面的显示对象将被作为遮罩画出来。 通过激活遮蔽层锁定，你可以看到遮蔽的绘图状态。"
     },
     "motion-tweening": {
-      "title": "NoCode Tool 如何使用 | 运动型青少年",
+      "title": "NoCode Tool 如何使用 | 运动调整",
       "description": "运动调整（Motion tweening）是一种使用符号来表达运动、大小和旋转变化、淡化和颜色效果的动画。 曲线点可以从右键菜单中添加，而添加的曲线点可以通过双击来控制开/关。 如果不再需要某个曲线点，可以用删除键将其删除。"
     },
     "custom-tweening": {
-      "title": "NoCode Tool 如何使用 | 自定义运动温差",
+      "title": "NoCode Tool 如何使用 | 自定义运动",
       "description": "自定义调整是一个允许使用曲线指针自定义调整运动速度和其他参数的功能。 指针可以通过双击来添加，添加的指针可以通过双击来控制开/关。 不再需要的指针可以用删除按钮来删除。"
     },
     "normal-layer": {
-      "title": "NoCode Tool 如何使用 | 正常层",
+      "title": "NoCode Tool 如何使用 | 常规层",
       "description": "每个层都是独立的，所以在一个层上绘制或编辑显示对象不会影响到其他层上的显示对象。 在一个层上没有显示对象的舞台区域，你可以看到下面的层。 你还可以显示/隐藏、锁定/解锁和重新排序你的图层。"
     },
     "onion-skin": {
@@ -157,12 +157,12 @@
       "erase": "所有的基色像素将被移除，包括背景图像的基色。"
     },
     "color-transform": {
-      "title": "NoCode Tool 如何使用 | 颜色转换",
+      "title": "NoCode Tool 如何使用 | 颜色变换",
       "description": "你可以通过加、减或乘以红、绿、蓝和透明来调整显示对象的颜色值。"
     },
     "filters": {
-      "title": "NoCode Tool 如何使用 | 过滤器",
-      "description": "滤波器可以用来为文本和电影片段添加高质量的视觉效果。你也可以使用运动调整来使你应用的过滤器产生动画效果。",
+      "title": "NoCode Tool 如何使用 | 滤镜",
+      "description": "滤镜可以用来为文本和电影片段添加高质量的视觉效果。你也可以使用运动调整来使你应用的过滤器产生动画效果。",
       "DropShadow": "它模拟了一个物体在表面投下阴影的外观。 阴影算法是基于模糊滤镜所使用的相同的盒式滤镜。 阴影的风格有几个选项，包括内阴影、外阴影和淘汰模式。",
       "Blur": "模糊效果模糊了图像的细节。 你可以创建一个软焦点模糊或一个朦胧的高斯模糊，就像你通过半透明的玻璃观看图像一样。 将这个滤镜的质量属性设置为低值，可以使模糊看起来像软焦点，而将质量属性设置为高值，则可以得到类似于高斯模糊滤镜的效果。",
       "Glow": "发光方式有几种选择，包括内发光、外发光和淘汰模式。 辉光过滤器非常类似于将距离和角度属性设置为0的水滴阴影过滤器。",
@@ -175,11 +175,11 @@
       "description": "可以检查嵌入框架中的JavaScript列表。"
     },
     "object-setting": {
-      "title": "NoCode Tool 如何使用 | 对象配置",
+      "title": "NoCode Tool 如何使用 | 对象设置",
       "description": "你可以设置显示对象的名称和符号。 这个名字可以用JavaScript this.[[name]]来访问，这个符号可以作为一个动态类与框架一起使用。"
     },
     "frame-picker": {
-      "title": "NoCode Tool 如何使用 | 框选器",
+      "title": "NoCode Tool 如何使用 | 帧选择器",
       "description": "帧选择器帮助你直观地预览和选择MovieClip的第一帧。 这一功能改善了动画工作流程的用户体验，如唇语。"
     },
     "sound": {
@@ -191,11 +191,11 @@
       "description": "设置显示区域（舞台）的宽度、高度、帧率和背景颜色。"
     },
     "transform": {
-      "title": "NoCode Tool 如何使用 | 转型",
+      "title": "NoCode Tool 如何使用 | 变换",
       "description": "控制显示对象的宽度、高度、缩放和旋转。"
     },
     "library": {
-      "title": "NoCode Tool 如何使用 | 图书馆",
+      "title": "NoCode Tool 如何使用 | 库",
       "description": "你可以导入图片（jpeg、gif、png）、音频（mp3）、视频（mp4）和SWF文件作为外部数据。 你还可以管理在屏幕上创建的矢量图、文本和电影剪辑。"
     }
   }

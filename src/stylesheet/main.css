@@ -699,6 +699,15 @@ section {
   transition: all 0.5s ease-in-out 0s;
 }
 
+.feature-block pre {
+  text-wrap: wrap;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 10px 20px;
+  color: white;
+}
+
 #case-example
 {
   background: #fff none repeat scroll 0 0;

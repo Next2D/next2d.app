@@ -6,10 +6,17 @@
   "reference-title": "リファレンス",
   "features-title": "特徴",
   "usage-title": "使い方",
+  "player": "Player",
   "player-description": "ベクター描画、Tweenアニメーション、テキスト、音声、動画など、さまざまな要素をサポートしているので、ゲーム制作、インタラクティブなデータビジュアライゼーション、クリエイティブなウェブアプリケーションなど、豊かな表現が必要とされるプロジェクトで活用が期待できます。",
+  "tool": "Animation Tool",
   "tool-description": "Webブラウザ上で動作するアニメーション制作ツールで、直感的なインターフェースと豊富な機能を備えており、どなたでも簡単に扱う事ができます。テキスト、画像、音声、ビデオなど、さまざまなメディア形式を組み合わせて、高品質で魅力的なコンテンツを作成する事が可能です。",
+  "framework": "Framework",
   "framework-description": "従来のCanvas/WebGLアプリケーションでは困難だったURLによるシーン管理（SPA）を可能にし、シーン毎のUI開発・画面確認が可能になりました。UI構築にはアトミックデザインを推奨しており、コンポーネントの細分化、再利用可能なモジュール設計など、効率的なUI構築と保守が可能となっています。",
+  "case-studies": "Case Studies",
+  "contributors": "Contributors",
   "read-more": "詳しく見る",
   "next-chapter": "次のチャプター",
-  "contact": "お気軽にお問い合わせください。"
+  "contact-title": "Contact",
+  "contact": "お気軽にお問い合わせください。",
+  "about-us": "About Us"
 }

@@ -4,7 +4,7 @@
     <div class="container" data-aos="fade-up">
   
       <div class="section-title text-center">
-        <h2>Case Studies</h2>
+        <h2>${{ main.case-studies }}$</h2>
       </div>
   
       <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
@@ -38,15 +38,15 @@
               <div class="casestudy-tool-block">
                 <div class="casestudy-tool">
                   <i><img src="<%= path %>assets/img/player/logo.svg" alt="Player"></i>
-                  Player
+                  ${{ main.player }}$
                 </div>
                 <div class="casestudy-tool">
                   <i><img src="<%= path %>assets/img/tool/logo.svg" alt="Animation Tool"></i>
-                  Animation Tool
+                  ${{ main.tool }}$
                 </div>
                 <div class="casestudy-tool">
                   <i><img src="<%= path %>assets/img/framework/logo.svg" alt="Framework"></i>
-                  Framework
+                  ${{ main.framework }}$
                 </div>
               </div>
               <div class="casestudy-creator-block">

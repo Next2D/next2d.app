@@ -1,101 +1,101 @@
 {
-  "title": "Next2D Player Pocket Reference",
+  "title": "Next2D 播放器(Player) 参考口袋书",
   "description": "Next2D播放器的功能描述和示例代码",
   "chapter1": {
-    "title": "DisplayList，DisplayObject，和DisplayObjectContainer",
-    "text1": "DisplayList由三个主要元素组成。舞台\"、\"DisplayObjectContainer \"和 \"DisplayObject\"。",
-    "text2": "'舞台'是一个容纳所有'DisplayObject'的对象。",
-    "text3": "'DisplayObjectContainer'是一个'DisplayObject'，可以用来放置DisplayObjects，它继承于以下四个类。",
-    "text4": "'DisplayObject'是一个执行绘图过程的对象。从'DisplayObject'继承的9个类如下。",
-    "text5": "要将一个 \"DisplayObject \"添加到一个 \"DisplayObjectContainer \"中，请使用DisplayObjectContainer的addChild方法。"
+    "title": "DisplayList、DisplayObject 和 DisplayObjectContainer",
+    "text1": "DisplayList 由三个主要元素组成。Stage、DisplayObjectContainer 和 DisplayObject。",
+    "text2": "Stage 是一个容纳所有 DisplayObject 的对象。",
+    "text3": "DisplayObjectContainer 是一个 DisplayObject，可以用来放置 DisplayObjects，它继承于以下四个类。",
+    "text4": "DisplayObject 是一个执行绘图过程的对象。从 DisplayObject 继承的9个类如下。",
+    "text5": "要将一个 DisplayObject 添加到一个 DisplayObjectContainer 中，请使用 DisplayObjectContainer 的 addChild 方法。"
   },
   "chapter2": {
-    "title": "从DisplayObjectContainer中添加和删除DisplayObjects",
-    "text1": "index是一个按顺序编号的整数，从0开始，0是最靠后的，更高的值是最靠前的。索引不能是一个负值，也不能是一个大于当前最高索引加1的数字。",
-    "text2": "addChild方法将一个DisplayObject添加到DisplayObjectContainer中最前面的位置。",
-    "text3": "addChildAt方法在DisplayObjectContainer中的指定索引位置添加一个DisplayObject。",
-    "text4": "removeChild和removeChildAt方法从DisplayObjectContainer中移除指定的DisplayObject。如果在移除的索引之后还有任何DisplayObjects，它们将被重新定位到一个较小的索引位置。"
+    "title": "从 DisplayObjectContainer 中添加和删除 DisplayObjects",
+    "text1": "index 是一个按顺序编号的整数，从0开始，0是最靠后的，更高的值是最靠前的。索引不能是一个负值，也不能是一个大于当前最高索引加1的数字。",
+    "text2": "addChild 方法将一个 DisplayObject 添加到 DisplayObjectContainer 中最前面的位置。",
+    "text3": "addChildAt 方法在 DisplayObjectContainer 中的指定索引位置添加一个 DisplayObject。",
+    "text4": "removeChild 和 removeChildAt 方法从 DisplayObjectContainer 中移除指定的 DisplayObject。如果在移除的索引之后还有任何 DisplayObjects ，它们将被重新定位到一个较小的索引位置。"
   },
   "chapter3": {
-    "title": "当DisplayObjects被添加到DisplayObjectContainer或从DisplayObjectContainer中移除时的事件",
-    "text1": "添加事件是一个事件对象，当一个DisplayObject被DisplayObjectContainer的addChild或addChildAt函数添加时被发送。",
-    "text2": "addedToStage事件是一个类似的事件，但它是一个事件对象，当一个DisplayObjectContainer被添加到DisplayList并显示在屏幕上时被发送出去。",
-    "text3": "removed事件是一个事件对象，当使用DisplayObjectContainer的removeChild或removeChildAt函数将一个DisplayObject从DisplayObjectContainer中移除时，它被发送。removed事件是一个事件对象，当使用DisplayObjectContainer的removeChild或removeChildAt函数将一个DisplayObject从DisplayObjectContainer中移除时被发送。当使用addChild和addChildAt函数将DisplayObjectContainer从其现有位置移动到指定位置时，也会发送该事件。",
-    "text4": "removedFromStage事件是一个类似的事件，但它是一个事件对象，当DisplayObjectContainer从DisplayList中被移除并从屏幕上消失时，它被发送出去。"
+    "title": "当 DisplayObjects 被添加到 DisplayObjectContainer 或从 DisplayObjectContainer 中移除时的事件",
+    "text1": "添加事件是一个事件对象，当一个 DisplayObject 被 DisplayObjectContainer 的 addChild 或 addChildAt 函数添加时被发送。",
+    "text2": "addedToStage 事件是一个类似的事件，但它是一个事件对象，当一个 DisplayObjectContainer 被添加到 DisplayList 并显示在屏幕上时被发送出去。",
+    "text3": "removed 事件是一个事件对象，当使用 DisplayObjectContainer 的 removeChild 或 removeChildAt 函数将一个 DisplayObject 从 DisplayObjectContainer 中移除时，它被发送。removed事件是一个事件对象，当使用 DisplayObjectContainer 的 removeChild 或 removeChildAt 函数将一个 DisplayObject 从 DisplayObjectContainer 中移除时被发送。当使用 addChild 和 addChildAt 函数将 DisplayObjectContainer 从其现有位置移动到指定位置时，也会发送该事件。",
+    "text4": "removedFromStage 事件是一个类似的事件，但它是一个事件对象，当 DisplayObjectContainer 从 DisplayList 中被移除并从屏幕上消失时，它被发送出去。"
   },
   "chapter4": {
-    "title": "检查和改变一个容器中DisplayObjects的重叠顺序",
-    "text1": "getChildIndex方法返回参数所指定的DisplayObject的索引，其顺序是重叠的。",
-    "text2": "setChildIndex函数将第一个参数中指定的显示对象重新定位到第二个参数中指定的位置。这种重新定位可以用addChildAt方法的同样方式进行。",
-    "text3": "swapChildren函数交换由参数指定的两个显示对象的重叠顺序（索引位置）。",
-    "text4": "swapChildrenAt函数交换了由参数index指定的两个DisplayObject的重叠顺序（索引位置）。addChild方法用于重新定位一个DisplayObject到顶层。"
+    "title": "检查和改变一个容器中 DisplayObjects 的重叠顺序",
+    "text1": "getChildIndex 方法返回参数所指定的 DisplayObject 的索引，其顺序是重叠的。",
+    "text2": "setChildIndex 函数将第一个参数中指定的显示对象重新定位到第二个参数中指定的位置。这种重新定位可以用 addChildAt 方法的同样方式进行。",
+    "text3": "swapChildren 函数交换由参数指定的两个显示对象的重叠顺序（索引位置）。",
+    "text4": "swapChildrenAt 函数交换了由参数index指定的两个 DisplayObject 的重叠顺序（索引位置）。addChild 方法用于重新定位一个 DisplayObject 到顶层。"
   },
   "chapter5": {
-    "title": "确定DisplayObjects的数量以及它们是否是容器中的DisplayObjects",
-    "text1": "numChildren属性表示子元素中DisplayObject的数量。它不包括孙子元素。",
-    "text2": "contains是一个函数，用于检查由参数指定的DisplayObject是否是DisplayObjectContainer的一个子元素。 返回值是一个布尔值，如果DisplayObject是一个子对象或DisplayObjectContainer本身，则为真，否则为假。"
+    "title": "确定 DisplayObjects 的数量以及它们是否是容器中的 DisplayObjects",
+    "text1": "numChildren 属性表示子元素中 DisplayObject 的数量。它不包括孙子元素。",
+    "text2": "contains 是一个函数，用于检查由参数指定的 DisplayObject 是否是 DisplayObjectContainer 的一个子元素。返回值是一个布尔值，如果 DisplayObject 是一个子对象或 DisplayObjectContainer 本身，则为真，否则为假。"
   },
   "chapter6": {
-    "title": "通过指定索引实例名称来指代容器中的一个DisplayObject",
-    "text1": "getChildAt函数从堆叠顺序的索引中获得对子元素对象的引用。",
-    "text2": "getChildByName函数从一个子元素对象的实例名称中获得对它的引用。"
+    "title": "通过指定索引实例名称来指代容器中的一个 DisplayObject",
+    "text1": "getChildAt 函数从堆叠顺序的索引中获得对子元素对象的引用。",
+    "text2": "getChildByName 函数从一个子元素对象的实例名称中获得对它的引用。"
   },
   "chapter7": {
-    "title": "对父级DisplayObjectContainer和根级DisplayObjectContainer的引用",
-    "text1": "父属性指向父DisplayObjectContainer。 你可以使用多个父母来回溯到一个祖先。 但是，如果没有注册DisplayObjectContainer的子元素，将返回null。",
-    "text2": "根属性指向层次结构中最高级别的父级DisplayObjectContainer。 在大多数情况下，这将是舞台正下方的DisplayObjectContainer。 然而，如果没有注册的DisplayObjectContainer的孩子，它将返回空。"
+    "title": "对父级 DisplayObjectContainer 和根级 DisplayObjectContainer 的引用",
+    "text1": "父属性指向父 DisplayObjectContainer。你可以使用多个父母来回溯到一个祖先。但是，如果没有注册 DisplayObjectContainer 的子元素，将返回null。",
+    "text2": "根属性指向层次结构中最高级别的父级 DisplayObjectContainer。在大多数情况下，这将是Stage正下方的 DisplayObjectContainer。然而，如果没有注册的 DisplayObjectContainer 的孩子，它将返回空。"
   },
   "chapter8": {
-    "title": "设置或改变DisplayObject的名称。",
-    "text1": "这个属性代表DisplayObject的名称。 它既可以被引用，也可以被分配。 建议在名称中使用字母数字字符和下划线（_）。 命名的DisplayObject可以使用this.{{DisplayObject name }}访问。"
+    "title": "设置或改变 DisplayObject 的名称。",
+    "text1": "这个属性代表 DisplayObject 的名称。它既可以被引用，也可以被分配。建议在名称中使用字母数字字符和下划线（_）。命名的 DisplayObject 可以使用this.{{ DisplayObject  name }}访问。"
   },
   "chapter9": {
     "title": "移动一个显示对象的位置",
-    "text1": "DisplayObject的x和y坐标相对于父DisplayObjectContainer的本地坐标，可以通过给xy属性赋值（Number）来移动。"
+    "text1": "DisplayObject 的x和y坐标相对于父 DisplayObjectContainer 的本地坐标，可以通过给xy属性赋值（Number）来移动。"
   },
   "chapter10": {
-    "title": "要找出并设置一个DisplayObject的宽度/高度/比例值",
-    "text1": "这个属性表示DisplayObjectContainer的水平宽度和垂直高度，单位是像素。由于宽度和高度是基于父DisplayObjectContainer的，所以当子DisplayObject被旋转时，宽度和高度值会发生变化。宽度和高度可以通过给宽度/高度属性赋值来进行缩放。宽度与scaleX相连，高度与scaleY相连。",
-    "text2": "这个属性表示DisplayObject的宽度（scaleX）和高度（scaleY）的缩放系数。0.0到1.0表示0到100%的范围，在缩放DisplayObject的时候，你应该给这个属性指定一个数值。指定一个负值将使DisplayObject向左、向右或倒转。"
+    "title": "要找出并设置一个 DisplayObject 的宽度/高度/比例值",
+    "text1": "这个属性表示 DisplayObjectContainer 的水平宽度和垂直高度，单位是像素。由于宽度和高度是基于父 DisplayObjectContainer 的，所以当子 DisplayObject 被旋转时，宽度和高度值会发生变化。宽度和高度可以通过给宽度/高度属性赋值来进行缩放。宽度与scaleX相连，高度与scaleY相连。",
+    "text2": "这个属性表示 DisplayObject 的宽度（scaleX）和高度（scaleY）的缩放系数。0.0到1.0表示0到100%的范围，在缩放 DisplayObject 的时候，你应该给这个属性指定一个数值。指定一个负值将使 DisplayObject 向左、向右或倒转。"
   },
   "chapter11": {
     "title": "旋转一个显示对象",
-    "text1": "指定DisplayObject的旋转角度。 单位是度（°）。 可以指定负值和大于360°的值，但在内部会被0-360°的范围取代。"
+    "text1": "指定 DisplayObject 的旋转角度。单位是度（°）。可以指定负值和大于360°的值，但在内部会被0-360°的范围取代。"
   },
   "chapter12": {
-    "title": "完全隐藏DisplayObject",
-    "text1": "显示/隐藏DisplayObject的属性。数据类型是布尔值，默认为真；指定为假将隐藏显示对象。被隐藏的对象不能获得用户事件，如鼠标、点击等。"
+    "title": "完全隐藏 DisplayObject",
+    "text1": "显示/隐藏 DisplayObject 的属性。数据类型是布尔值，默认为真；指定为假将隐藏显示对象。被隐藏的对象不能获得用户事件，如鼠标、点击等。"
   },
   "chapter13": {
     "title": "引用和改变一个显示对象的透明度",
-    "text1": "这个属性表示DisplayObject的透明度。 数据类型是Number，有效值在0.0和1.0之间。"
+    "text1": "这个属性表示 DisplayObject 的透明度。数据类型是Number，有效值在0.0和1.0之间。"
   },
   "chapter14": {
     "title": "将掩码应用于一个显示对象",
-    "text1": "将DisplayObject设置为DisplayObject的掩码。 默认值为空。 要设置掩码，请指定一个DisplayObject。 要取消掩码，请指定为空。"
+    "text1": "将 DisplayObject 设置为 DisplayObject 的掩码。默认值为空。要设置掩码，请指定一个 DisplayObject。要取消掩码，请指定为空。"
   },
   "chapter15": {
     "title": "引用和改变显示对象的混合模式",
-    "text1": "DisplayObjectのBlendModeを設定します。設定されたBlendModeに従って、DisplayObjectと背景色（RGB）を比較します。対応するピクセル毎に加算・減算し、その結果を基に描画を行います。",
+    "text1": "DisplayObject の BlendMode を設定します。設定された BlendMode に従って、DisplayObject と背景色（RGB）を比較します。対応するピクセル毎に加算・減算し、その結果を基に描画を行います。",
     "text2": "常数和概述",
-    "text3": "DisplayObject被显示在背景的前面。",
-    "text4": "将DisplayObject的元素颜色值添加到背景颜色中，上限为0xFF。",
-    "text5": "将DisplayObject的每个像素的alpha值应用于背景。",
-    "text6": "选择DisplayObject的元素颜色和背景颜色中较深的（低值）。",
-    "text7": "将DisplayObject的元素颜色与背景颜色进行比较，并从两个元素颜色中较浅的颜色中减去较深的值。",
-    "text8": "根据DisplayObject的alpha值擦除背景。",
-    "text9": "根据DisplayObject的暗度，调整每个像素的颜色。",
+    "text3": "DisplayObject 被显示在背景的前面。",
+    "text4": "将 DisplayObject 的元素颜色值添加到背景颜色中，上限为0xFF。",
+    "text5": "将 DisplayObject 的每个像素的alpha值应用于背景。",
+    "text6": "选择 DisplayObject 的元素颜色和背景颜色中较深的（低值）。",
+    "text7": "将 DisplayObject 的元素颜色与背景颜色进行比较，并从两个元素颜色中较浅的颜色中减去较深的值。",
+    "text8": "根据 DisplayObject 的alpha值擦除背景。",
+    "text9": "根据 DisplayObject 的暗度，调整每个像素的颜色。",
     "text10": "反映背景。",
-    "text11": "强制创建一个关于DisplayObject的透明度组。",
-    "text12": "选择DisplayObject的元素颜色和背景颜色中较浅的（高值）。",
-    "text13": "通过将DisplayObject的元素颜色值乘以背景色的元素颜色值来加深颜色，然后除以0xFF来规范化。",
-    "text14": "根据DisplayObject的暗度，调整每个像素的颜色。",
-    "text15": "漂白效果是通过将DisplayObject的颜色的补色（反色）乘以背景颜色的补色而获得的。",
+    "text11": "强制创建一个关于 DisplayObject 的透明度组。",
+    "text12": "选择 DisplayObject 的元素颜色和背景颜色中较浅的（高值）。",
+    "text13": "通过将 DisplayObject 的元素颜色值乘以背景色的元素颜色值来加深颜色，然后除以0xFF来规范化。",
+    "text14": "根据 DisplayObject 的暗度，调整每个像素的颜色。",
+    "text15": "漂白效果是通过将 DisplayObject 的颜色的补色（反色）乘以背景颜色的补色而获得的。",
     "text16": "将显示对象的元素颜色值减去其背景颜色值，结果的下限为0。"
   },
   "chapter16": {
     "title": "9切片膨胀和收缩网格设置",
-    "text1": "scale9Grid是一个属性，用于设置缩放9个片子的网格。 默认值为空，设置时分配矩形对象。",
+    "text1": "scale9Grid是一个属性，用于设置缩放9个片子的网格。默认值为空，设置时分配矩形对象。",
     "text2": "9切片扩展/减少方向",
     "text3": "顶部、底部、左侧、右侧和中心区域",
     "text4": "像往常一样放大/缩小",
@@ -112,15 +112,15 @@
   },
   "chapter18": {
     "title": "全局坐标和局部坐标之间的转换",
-    "text1": "globalToLocal方法将参数Point对象的全局坐标转换为本地坐标，反之，localToGlobal方法将本地坐标转换为全局坐标。"
+    "text1": "globalToLocal 方法将参数Point对象的全局坐标转换为本地坐标，反之， localToGlobal 方法将本地坐标转换为全局坐标。"
   },
   "chapter19": {
     "title": "检查是否与指定的坐标重叠（碰撞检测）",
-    "text1": "hitTestObject方法用于测试一个DisplayObject和一个DisplayObject之间的重叠。 hitTestPoint方法用于测试一个DisplayObject和一个指定的xy坐标之间的重叠。对于hitTestPoint方法的第三个参数，如果要在一个有线条或填充物的区域上进行测试，则将测试条件设置为 \"true\"；如果要在一个边界框上进行测试，则设置为 \"false\"（默认）。"
+    "text1": "hitTestObject 方法用于测试一个 DisplayObject 和一个 DisplayObject 之间的重叠。 hitTestPoint 方法用于测试一个 DisplayObject 和一个指定的xy坐标之间的重叠。对于 hitTestPoint 方法的第三个参数，如果要在一个有线条或填充物的区域上进行测试，则将测试条件设置为 \"true\"；如果要在一个边界框上进行测试，则设置为 \"false\"（默认）。"
   },
   "chapter20": {
-    "title": "Change the playback speed.",
-    "text1": "Indicates the frame rate. The unit is frames per second (fps). The frame rate you set will be applied to all timelines."
+    "title": "Change the  playback  speed.",
+    "text1": "Indicates  the frame rate. The unit is frames per second (fps). The frame rate you set will be applied to all  timelines ."
   },
 
 
@@ -139,17 +139,17 @@
 
   "play-stop": {
     "title": "播放/停止一个电影片断",
-    "text1": "播放和停止方法播放/停止MovieClip的时间线，由于MovieClip的时间线是独立的，它们只播放/停止一条时间线，不影响父、子等的时间线。",
-    "text2": "gotoAndPlay和gotoAndStop方法将MovieClip的播放头像移动到指定的帧，并播放/停止它。",
-    "text3": "nextFrame方法从当前帧移动到下一帧，prevFrame方法从当前帧移动到前一帧并停止。"
+    "text1": "播放和停止方法播放/停止 MovieClip 的时间线，由于 MovieClip 的时间线是独立的，它们只播放/停止一条时间线，不影响父、子等的时间线。",
+    "text2": "gotoAndPlay 和 gotoAndStop 方法将 MovieClip 的播放头像移动到指定的帧，并播放/停止它。",
+    "text3": "nextFrame 方法从当前帧移动到下一帧， prevFrame 方法从当前帧移动到前一帧并停止。"
   },
-  "mc-properties": {
-    "title": "在MovieClip时间线中可用的属性",
-    "text1": "currentFrame返回当前帧号，currentFrameLabel返回当前帧中标签信息的FrameLabel类，currentLabels返回当前场景中FrameLabel对象的数组。"
+  "mc- properties": {
+    "title": "在 MovieClip 时间线中可用的属性",
+    "text1": "currentFrame 返回当前帧号， currentFrameLabel 返回当前帧中标签信息的 FrameLabel 类， currentLabels 返回当前场景中 FrameLabel 对象的数组。"
   },
   "drop-shadow": {
     "title": "应用水滴阴影效果",
-    "text1": "DropShadowFilter是一个存储水滴阴影效果信息的类。 可以通过在构造函数参数中指定每个属性的值来创建对象，也可以在默认情况下创建对象，没有参数，只有需要改变的属性可以重新分配。",
+    "text1": "DropShadowFilter 是一个存储水滴阴影效果信息的类。可以通过在构造函数参数中指定每个属性的值来创建对象，也可以在默认情况下创建对象，没有参数，只有需要改变的属性可以重新分配。",
     "text2": "阴影的偏移距离，单位是像素",
     "text3": "阴影的角度",
     "text4": "阴影的颜色",
@@ -164,14 +164,14 @@
   },
   "blur": {
     "title": "应用模糊效果",
-    "text1": "BlurFilter是一个存储模糊效果信息的类。 可以通过指定每个属性的值作为构造函数的参数来创建对象，也可以在默认情况下创建对象，没有参数，只有需要改变的属性可以被重新分配。",
+    "text1": "BlurFilter 是一个存储模糊效果信息的类。可以通过指定每个属性的值作为构造函数的参数来创建对象，也可以在默认情况下创建对象，没有参数，只有需要改变的属性可以被重新分配。",
     "text2": "水平模糊的数量",
     "text3": "纵向模糊的数量",
     "text4": "进行模糊处理的次数"
   },
   "glow": {
     "title": "应用辉光效果",
-    "text1": "GlowFilter是一个存储辉光效果信息的类。 可以通过指定每个属性的值作为构造函数的参数来创建对象，也可以在默认情况下创建对象，没有参数，只有需要改变的属性可以被重新分配。",
+    "text1": "GlowFilter 是一个存储辉光效果信息的类。可以通过指定每个属性的值作为构造函数的参数来创建对象，也可以在默认情况下创建对象，没有参数，只有需要改变的属性可以被重新分配。",
     "text2": "荧光色",
     "text3": "颜色的阿尔法透明度值",
     "text4": "水平模糊的数量",
@@ -183,7 +183,7 @@
   },
   "bevel": {
     "title": "应用辉光效果",
-    "text1": "BevelFilter是一个存储斜面效果信息的类。 可以通过指定每个属性的值作为构造函数的参数来创建对象，也可以在默认情况下创建对象，没有参数，只有需要改变的属性可以被重新分配。",
+    "text1": "BevelFilter 是一个存储斜面效果信息的类。可以通过指定每个属性的值作为构造函数的参数来创建对象，也可以在默认情况下创建对象，没有参数，只有需要改变的属性可以被重新分配。",
     "text2": "阴影的偏移距离，单位是像素",
     "text3": "阴影的角度",
     "text4": "斜面高光色",
@@ -199,12 +199,12 @@
   },
   "color-matrix": {
     "title": "应用颜色矩阵效果",
-    "text1": "通过对输入图像中每个像素的RGBA颜色和阿尔法值进行4×5的矩阵变换，可以创建一个由新的RGBA颜色和阿尔法值组成的结果。 这允许使用各种效果，包括饱和度变化、色调旋转和亮度α转换。",
+    "text1": "通过对输入图像中每个像素的RGBA颜色和阿尔法值进行4×5的矩阵变换，可以创建一个由新的RGBA颜色和阿尔法值组成的结果。这允许使用各种效果，包括饱和度变化、色调旋转和亮度α转换。",
     "text2": "4 x 5阵列用于颜色转换"
   },
   "convolution": {
     "title": "应用卷积效应",
-    "text1": "你可以应用矩阵卷积滤波器效果。 卷积通过将输入图像中的像素与相邻的像素结合在一起来创建一个图像。 卷积可以用来实现广泛的图像效果，如模糊、边缘检测、锐化、浮雕和倒角。",
+    "text1": "你可以应用矩阵卷积滤波器效果。卷积通过将输入图像中的像素与相邻的像素结合在一起来创建一个图像。卷积可以用来实现广泛的图像效果，如模糊、边缘检测、锐化、浮雕和倒角。",
     "text2": "矩阵的X维",
     "text3": "矩阵的Y维",
     "text4": "一个用于矩阵转换的数值数组",
@@ -215,10 +215,10 @@
     "text9": "用颜色替换源图像以外的像素",
     "text10": "颜色的阿尔法透明度值"
   },
-  "displacement-map": {
+  "displacement -map": {
     "title": "应用位移图效果",
-    "text1": "DisplacementMapFilter类使用指定的BitmapData对象（称为替换地图图像）的像素值执行对象替换（位移）。 这个过滤器可以用来给继承自DisplayObject类的对象应用扭曲和斑点效果，比如MovieClip、TextField和Video对象。",
-    "text2": "包含替换地图数据的BitmapData对象",
+    "text1": "DisplacementMapFilter 类使用指定的 BitmapData 对象（称为替换地图图像）的像素值执行对象替换（位移）。这个过滤器可以用来给继承自 DisplayObject 类的对象应用扭曲和斑点效果，比如 MovieClip、TextField 和Video对象。",
+    "text2": "包含替换地图数据的 BitmapData 对象",
     "text3": "一个包含目标显示对象的左上角相对于地图图像左上角的偏移的值",
     "text4": "指定在置换x的结果时，应该在地图图像中使用哪些颜色通道",
     "text5": "指定在置换y的结果时，应该在地图图像中使用哪些颜色通道",
@@ -228,9 +228,9 @@
     "text9": "指定用于超范围更换的颜色",
     "text10": "用于超范围替换的Alpha透明度值"
   },
-  "gradient-bevel": {
+  "gradient -bevel": {
     "title": "应用渐变斜面效果",
-    "text1": "GradientBevelFilter类可用于对对象应用和显示渐变斜面效果。 梯度斜面是指在物体的外部、内部或顶部的斜面边缘，用梯度颜色突出。 倒角的边缘使物体具有三维的外观。",
+    "text1": "GradientBevelFilter 类可用于对对象应用和显示渐变斜面效果。梯度斜面是指在物体的外部、内部或顶部的斜面边缘，用梯度颜色突出。倒角的边缘使物体具有三维的外观。",
     "text2": "指定阴影的偏移距离，以像素为单位",
     "text3": "阴影角度",
     "text4": "梯度中使用的颜色值数组",
@@ -241,9 +241,9 @@
     "text9": "过滤效果",
     "text10": "指定该对象是否具有淘汰效果"
   },
-  "gradient-glow": {
+  "gradient -glow": {
     "title": "应用渐变的光辉效果",
-    "text1": "GradientGlowFilter类允许你对显示的对象应用渐变的发光效果。梯度发光是一种具有可控颜色梯度的逼真发光。渐变辉光可以应用在一个物体的内部或外部边缘，或在一个物体的顶部。",
+    "text1": "GradientGlowFilter 类允许你对显示的对象应用渐变的发光效果。梯度发光是一种具有可控颜色梯度的逼真发光。渐变辉光可以应用在一个物体的内部或外部边缘，或在一个物体的顶部。",
     "text2": "指定阴影的偏移距离，以像素为单位",
     "text3": "阴影角度",
     "text4": "梯度中使用的颜色值数组",

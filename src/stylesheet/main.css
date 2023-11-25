@@ -13,6 +13,10 @@ body {
       sans-serif;
 }
 
+.lang-cn {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
@@ -693,6 +697,15 @@ section {
   background: #fff none repeat scroll 0 0;
   padding: 30px 20px;
   transition: all 0.5s ease-in-out 0s;
+}
+
+.feature-block pre {
+  text-wrap: wrap;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 10px 20px;
+  color: white;
 }
 
 #case-example

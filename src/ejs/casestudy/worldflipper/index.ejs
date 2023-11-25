@@ -12,6 +12,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <ol>
                     <li><a href="<%= path %>${{ main.lang }}$">${{ navbar.home }}$</a></li>
+                    <li>${{ worldflipper.case-study }}$</li>
                     <li>${{ worldflipper.title }}$</li>
                 </ol>
             </div>
@@ -25,19 +26,20 @@
                 <h2>${{ worldflipper.case-study }}$</h2>
             </div>
 
-            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-md-10 col-lg-10" data-aos="fade-up" data-aos-delay="200">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-10" data-aos="fade-up" data-aos-delay="150">
                     <div class="case-example-text">
+                        ${{ worldflipper.introductionTitle }}$<br>
                         ${{ worldflipper.introductionText }}$<br>
                         <br>
                         ${{ worldflipper.detail }}$
                     </div>
-                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                        <img src="<%= path %>assets/img/casestudy/worldflipper/tool_use_image2.png">
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <img loading="lazy" src="<%= path %>assets/img/casestudy/worldflipper/tool_use_image2.png">
                     </div>
                 </div>
 
-                <div class="col-md-10 col-lg-10" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-md-10 col-lg-10" data-aos="fade-up" data-aos-delay="250">
                     <h3>${{ worldflipper.animation }}$</h3>
                     <div class="text-center">
                         <video controls src="<%= path %>assets/img/casestudy/worldflipper/movie.mp4"></video>

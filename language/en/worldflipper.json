@@ -4,6 +4,7 @@
     "introduction": "Game Introduction",
     "case-study": "Case Study",
     "animation": "Animation",
-    "introductionText": "WORLD FLIPPER is a game for smartphones co-produced by Cygames, Inc. and Citeil, Inc.",
-    "detail": "An animation production method using the Animation Tool's plug-in functionality has been introduced. The plug-in function enables direct manipulation of the Animation Tool via JavaScript, making it possible to command, streamline, and automate timeline and layer manipulation. The created animations were exported as original JSON and image data via the plug-in function so that they can be read by iOS/Android."
+    "introductionTitle": "『WORLD FLIPPER』",
+    "introductionText": "Pinball game for smartphones co-produced by Cygames, Inc. and Citail, Inc",
+    "detail": "Animation Tool plug-in functionality was used to create the animation, which can be manipulated with JavaScript to improve the production efficiency by making commands for timeline and layer manipulation. The animation created this time was processed in JavaScript as the producer's own JSON and image data, and exported to a format compatible with iOS/Android."
 }

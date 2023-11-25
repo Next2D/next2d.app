@@ -3,5 +3,7 @@
     "description": "「WORLD FLIPPER」案例研究",
     "introduction": "游戏介绍",
     "case-study": "案例研究",
-    "animation": "动画"
+    "animation": "动画",
+    "introductionText": "WORLD FLIPPER 是由 Cygames 公司和 Citeil 公司联合制作的一款智能手机游戏。",
+    "detail": "使用动画工具插件功能的动画制作方法已经推出。 插件功能允许通过 JavaScript 直接操作动画工具，从而使时间线和图层操作的命令化、简化和自动化成为可能。 通过插件功能将创建的动画导出为原始 JSON 和图像数据，以便 iOS/Android 可以读取。"
 }

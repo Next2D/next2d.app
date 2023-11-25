@@ -3,5 +3,7 @@
     "description": "「WORLD FLIPPER」での導入事例",
     "introduction": "ゲーム紹介",
     "case-study": "導入事例",
-    "animation": "アニメーション"
+    "animation": "アニメーション",
+    "introductionText": "『WORLD FLIPPER』は、株式会社Cygamesと株式会社シテイルが共同制作したスマートフォン向けのゲームです。",
+    "detail": "Animation Toolのプラグイン機能を利用したアニメーション制作手法が導入されました。プラグイン機能はJavaScriptで直接Animation Toolを操作する事ができる為、タイムラインやレイヤーの操作をコマンド化・効率化・自動化する事が可能です。制作したアニメーションは、iOS/Androidで読み込みができるよう、プラグイン機能を経由して独自のJSONや画像データとして書き出しました。"
 }

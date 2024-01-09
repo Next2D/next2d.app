@@ -9,7 +9,7 @@
   "feature3-description": "UIデザイナーとプログラマーが協働してアプリケーションを作る未来を見据えて、MVVM（Model-View-ViewModel）パターンを採用しています。",
   "feature4-title": "チーム開発",
   "feature4-description": "開発パターンの固定化（MVVM）により、可読性と共有の簡素化を実現。快適なチーム開発ができます。",
-  "feature5-title": "NoCode Toolとの連携",
+  "feature5-title": "Animation Toolとの連携",
   "feature5-description": "Flash時代と同様、シンボル管理が可能なので、アニメーターとプログラマーがコンフリクトすることなくアプリケーションを作成することができます。",
   "feature6-title": "シングルページアプリケーション",
   "feature6-description": "これまでのCanvas/WebGLアプリケーションでは困難だった、URLによるシーン管理が可能になりました。",

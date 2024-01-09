@@ -1,31 +1,31 @@
 {
-  "title": "NoCode Tool 使い方",
+  "title": "Animation Tool 使い方",
   "description": "作業スペースは、ツールエリア、スクリーンエリア、タイムラインエリア、コントローラーエリアに分かれており、各エリアの機能は次のとおりです。",
   "sub-title": "使い方とサンプル動画",
   "tool": {
-    "title": "NoCode Tool 使い方 | Tool Area",
+    "title": "Animation Tool 使い方 | Tool Area",
     "description": "このエリアには、描画ツール、テキストツール、プロジェクトの読み込みと保存、エクスポート設定、言語設定など、さまざまなツールや設定が含まれています。",
     "pen": {
-      "title": "NoCode Tool 使い方 | ペンツール",
+      "title": "Animation Tool 使い方 | ペンツール",
       "description": "フリーハンドでの線の描画を行えます。Shape変形ツールを使う事で、パスを自由に変更できます。"
     },
     "ellipse": {
-      "title": "NoCode Tool 使い方 | 楕円ツール",
+      "title": "Animation Tool 使い方 | 楕円ツール",
       "description": "楕円ツールを使って、通常の円や楕円を描くことができます。",
       "text1": "線の描画を行う場合は太さの設定後にツールを選択してください。線の太さを0にした場合は線の描画は行われません。"
     },
     "rectangle": {
-      "title": "NoCode Tool 使い方 | 短形ツール",
+      "title": "Animation Tool 使い方 | 短形ツール",
       "description": "矩形ツールを使うと、正方形や長方形を描くことができます。",
       "text1": "線の描画を行う場合は太さの設定後にツールを選択してください。線の太さを0にした場合は線の描画は行われません。"
     },
     "rounded-rectangle": {
-      "title": "NoCode Tool 使い方 | 角丸矩形ツール",
+      "title": "Animation Tool 使い方 | 角丸矩形ツール",
       "description": "角丸矩形ツールは、角の丸い矩形を描画することができます。",
       "text1": "線の描画を行う場合は太さの設定後にツールを選択してください。線の太さを0にした場合は線の描画は行われません。"
     },
     "shape-transform": {
-      "title": "NoCode Tool 使い方 | Shape変形ツール",
+      "title": "Animation Tool 使い方 | Shape変形ツール",
       "description": "四角いポインターで直線を、丸いポインターで曲線を操作することができます。",
       "text1": "ダブルクリックすると、新しい四角いポインタが追加されます。四角いポインタをダブルクリックすると、曲線を制御するための円形ポインタが追加されます。",
       "text2": "四角いポインターまたは丸いポインターのいずれかを選択し、［削除］ボタンを押 すと、選択したポインターが削除されます。",
@@ -33,13 +33,13 @@
       "text4": "最後に右クリックメニューの「Integrating paths」をクリックすると、ベースとして選択した形状にパスの情報が統合されます。"
     },
     "text": {
-      "title": "NoCode Tool 使い方 | テキストツール",
+      "title": "Animation Tool 使い方 | テキストツール",
       "description": "ツールを選択してScreen Areaで範囲指定を行うことでテキストエリアが追加されます。",
       "text1": "作成されたテキストエリアをダブルクリックすると入力モードに切り替わり、任意のテキストを挿入する事が可能になります。",
       "text2": "Screen Areaのテキストを選択すると、Controller Areaに選択したテキストのスタイル情報が表示されます。"
     },
     "transform": {
-      "title": "NoCode Tool 使い方 | 選択ツール",
+      "title": "Animation Tool 使い方 | 選択ツール",
       "description": "選択範囲を伸縮、回転、傾けることができます。",
       "text1": "オブジェクト全体を選択するときに使用します。対象となるオブジェクトをクリックするか、オブジェクトの周囲に矩形をドラッグして選択範囲を描けば、複数のオブジェクトを選択することができます。",
       "text2": "選択したオブジェクトをドラッグすることで、任意のX座標、Y座標に移動することができます。また、キーボードの矢印ボタンでも移動できます。キーボードの矢印ボタンでも移動できますが、移動は1px単位となります。",
@@ -78,68 +78,68 @@
     }
   },
   "screen": {
-    "title": "NoCode Tool 使い方 | Screen Area",
+    "title": "Animation Tool 使い方 | Screen Area",
     "description": "現在のフレームでStageに表示されているDisplayObjectの表示、配置、重ね順などの描画情報を確認できるエリアです。Command+Enter、Ctrl+EnterでPlayerのプレビュー、再生が可能です。",
     "align": {
-      "title": "NoCode Tool 使い方 | 整列",
+      "title": "Animation Tool 使い方 | 整列",
       "description": "選択した表示オブジェクトを水平または垂直方向に整列させることができます。垂直方向には、選択した表示オブジェクトの右端、中央、左端に沿わせることができ、水平方向には、選択した表示オブジェクトの上端、下端に沿わせることができます。"
     },
     "layer": {
-      "title": "NoCode Tool 使い方 | レイヤー",
+      "title": "Animation Tool 使い方 | レイヤー",
       "description": "表示オブジェクトの重ね順を制御することができます。"
     },
     "tabs": {
-      "title": "NoCode Tool 使い方 | タブ",
+      "title": "Animation Tool 使い方 | タブ",
       "description": "新規プロジェクトの追加や削除、現在作業中のプロジェクトを指定することができます。"
     },
     "distribute": {
-      "title": "NoCode Tool 使い方 | キーフレーム/レイヤーの配分",
+      "title": "Animation Tool 使い方 | キーフレーム/レイヤーの配分",
       "description": "スクリーンエリア上で選択した複数のDisplayObjectを各キーフレームもしくは各レイヤーに配分できます。スクリーンエリア上のDisplayObjectを右クリックし、「Distribute to Layers」もしくは「Distribute to Keyframes」を選択します。"
     }
   },
   "timeline": {
-    "title": "NoCode Tool 使い方 | Timeline Area",
+    "title": "Animation Tool 使い方 | Timeline Area",
     "description": "レイヤーやアニメーションのキーフレームなどを制御するエリアです。ラベル名の設定、フレームへの任意のJavaScriptの埋め込み、各レイヤーのTweenの追加・削除の制御が可能です。",
     "frame-keyframe": {
-      "title": "NoCode Tool 使い方 | フレームとキーフレーム",
+      "title": "Animation Tool 使い方 | フレームとキーフレーム",
       "description": "時間の長さ(フレーム)は、FPSの値に合わせて分割されます。タイムライン上のフレームに設置した表示オブジェクトを制御する事ができます。キーフレームとは、タイムライン上に新しいシンボルインスタンスが表示されるフレームのことです。キーフレームには、表示オブジェクトを制御するコード（JavaScript）を埋め込む事もできます。"
     },
     "mask-layer": {
-      "title": "NoCode Tool 使い方 | マスクレイヤー",
+      "title": "Animation Tool 使い方 | マスクレイヤー",
       "description": "マスクレイヤーの下に配置されたレイヤーに設置された表示オブジェクトがマスクとして描画されます。マスクレイヤーのロックを有効にすることで、マスクされた描画状態を確認することができます。"
     },
     "motion-tweening": {
-      "title": "NoCode Tool 使い方 | モーショントゥイーン",
+      "title": "Animation Tool 使い方 | モーショントゥイーン",
       "description": "モーショントゥイーンとは、シンボルを使って動きや大きさ、回転の変化、フェード、色の効果などを表現するアニメーションの一種です。右クリックのメニューからカーブポイントを追加でき、追加したカーブポイントはダブルクリックでOn/Offのコントロールができます。カーブポイントが不要になった場合はdeleteキーで削除が可能です。"
     },
     "custom-tweening": {
-      "title": "NoCode Tool 使い方 | カスタムモーショントゥイーン",
+      "title": "Animation Tool 使い方 | カスタムモーショントゥイーン",
       "description": "カスタムトゥイーンは、カーブポインターを用いてトゥイーンの動き速度などをカスタマイズする機能です。ポインターはダブルクリックで追加でき、追加したポインターはダブルクリックでOn/Offを制御できます。不要になったポインターはDeleteボタンで削除することができます。"
     },
     "normal-layer": {
-      "title": "NoCode Tool 使い方 | 通常レイヤー",
+      "title": "Animation Tool 使い方 | 通常レイヤー",
       "description": "各レイヤーは独立しており、あるレイヤーにある表示オブジェクトを描画・編集しても、他のレイヤーにある表示オブジェクトには影響を与えません。レイヤー上に表示オブジェクトがないステージエリアでは、下のレイヤーを透かして見ることができます。また、レイヤーの表示/非表示、ロック/アンロック、並べ替えも可能です。"
     },
     "onion-skin": {
-      "title": "NoCode Tool 使い方 | オニオンスキン",
+      "title": "Animation Tool 使い方 | オニオンスキン",
       "description": "オニオンスキンの機能をONすると指定したキーフレームの前後の表示オブジェクトの動きを確認する事ができます。"
     },
     "preview": {
-      "title": "NoCode Tool 使い方 | プレビュー",
+      "title": "Animation Tool 使い方 | プレビュー",
       "description": "プレビューの機能をONにし、タイムラインのレイヤーにマウスを重ねると、そのレイヤーに設置した表示オブジェクトの描画結果をプレビューする事ができます。"
     },
     "javascript": {
-      "title": "NoCode Tool 使い方 | JavaScript",
+      "title": "Animation Tool 使い方 | JavaScript",
       "description": "JavaScriptの制御はキーフレームと同じく、フレーム毎に追加が可能で、主にアニメーションやムービーを反応させたり、タイムライン上でDisplayObjectを制御させたりすることができます。",
-      "text1": "NoCode ToolのJavaScriptのスコープ(this)はJavaScriptを実行するMovieClipをスコープとして設定しています。スコープ(this)がないと正しく起動しませんのでご注意ください。",
+      "text1": "Animation ToolのJavaScriptのスコープ(this)はJavaScriptを実行するMovieClipをスコープとして設定しています。スコープ(this)がないと正しく起動しませんのでご注意ください。",
       "text2": "それ以外は通常のJavaScriptと何も変わらないため、これまでの記述方法でもES6記述でも動かす事が可能です。"
     }
   },
   "controller": {
-    "title": "NoCode Tool 使い方 | コントローラーエリア",
+    "title": "Animation Tool 使い方 | コントローラーエリア",
     "description": "このエリアでは、スクリーンエリア内のDisplayObjectに対して、拡大縮小、回転、色操作、BlendMode、Filterなどの操作を行うことができます。Libraryタブでは、外部データ（画像、MP4、MP3、SWF）の読み込み、JavaScriptでは、プロジェクト全体に埋め込まれているJavaScriptの一覧を表示・編集することが可能です。",
     "blend-mode": {
-      "title": "NoCode Tool 使い方 | ブレンドモード",
+      "title": "Animation Tool 使い方 | ブレンドモード",
       "description": "ブレンドモードは、複合画像を作成するために使用することができます。複合化とは、重なり合う複数のオブジェクトの透明度や色の相互作用を変化させることです。ブレンディングでは、重なり合ったムービークリップの色をブレンドして、ユニークな効果を作り出すことができます。",
       "normal": "カラーは通常通り塗布され、ベースカラーとの相互作用はありません。",
       "layer": "ムービークリップを色に影響を与えずに重ね合わせることができます。",
@@ -157,11 +157,11 @@
       "erase": "背景画像のベースカラーを含む、すべてのベースカラーピクセルが削除されます。"
     },
     "color-transform": {
-      "title": "NoCode Tool 使い方 | カラートランスフォーム",
+      "title": "Animation Tool 使い方 | カラートランスフォーム",
       "description": "赤、緑、青、透明を加算・減算・乗算する事で表示オブジェクトのカラー値を調整することができます。"
     },
     "filters": {
-      "title": "NoCode Tool 使い方 | フィルター",
+      "title": "Animation Tool 使い方 | フィルター",
       "description": "フィルターを使って、テキストやムービークリップに高品質なビジュアルエフェクトを追加することができます。また、モーショントゥイーンを使って、適用したフィルタをアニメーション化することもできます。",
       "DropShadow": "オブジェクトが表面に影を落としているように見える様にシミュレートします。シャドウアルゴリズムは、ぼかしフィルターで使用するのと同じボックスフィルターに基づいています。ドロップシャドウのスタイルには複数のオプションがあり、内側シャドウ、外側シャドウ、ノックアウトモードなどがあります。",
       "Blur": "ぼかし効果は、イメージの細部をぼかします。ソフトフォーカスがかかっているように見えるぼかしから、半透明ガラスを通してイメージを見るようにかすんで見えるガウスぼかしまで作成できます。このフィルターのqualityプロパティを低く設定すると、ソフトフォーカスがかかっているように見えるぼかしになります。qualityプロパティを高く設定すると、ガウスぼかしフィルターに似たものになります。",
@@ -171,31 +171,31 @@
       "GradientBevel": "グラデーションベベルは、オブジェクトの外側、内側、または上側が斜めになったエッジであり、グラデーションカラーで強調されます。斜めのエッジによってオブジェクトが 3 次元に見えます。"
     },
     "javascript": {
-      "title": "NoCode Tool 使い方 | JavaScript",
+      "title": "Animation Tool 使い方 | JavaScript",
       "description": "フレームに埋め込まれているJavaScriptの一覧を確認することが可能です。"
     },
     "frame-picker": {
-      "title": "NoCode Tool 使い方 | フレームピッカー",
+      "title": "Animation Tool 使い方 | フレームピッカー",
       "description": "フレームピッカーは、MovieClipの最初のフレームを視覚的にプレビューして選択するのに役立ちます。この機能により、リップシンクなどのアニメーションワークフローのユーザーエクスペリエンスが向上します。"
     },
     "object-setting": {
-      "title": "NoCode Tool 使い方 | オブジェクト設定",
+      "title": "Animation Tool 使い方 | オブジェクト設定",
       "description": "表示オブジェクトの名前とシンボルの設定ができます。名前はJavaScriptのthis.[[name]]でアクセスでき、シンボルはフレームワークと連携して動的なクラスとして使用することができます。"
     },
     "sound": {
-      "title": "NoCode Tool 使い方 | サウンド",
+      "title": "Animation Tool 使い方 | サウンド",
       "description": "読み込んだサウンドデータを任意のフレームに設置する事ができます。各フレームでループやボリュームの設定を行えます。"
     },
     "stage-setting": {
-      "title": "NoCode Tool 使い方 | ステージ設定",
+      "title": "Animation Tool 使い方 | ステージ設定",
       "description": "表示領域（ステージ）の幅、高さ、フレームレート、背景色を設定します。"
     },
     "transform": {
-      "title": "NoCode Tool 使い方 | 変形",
+      "title": "Animation Tool 使い方 | 変形",
       "description": "表示オブジェクトの幅、高さ、拡大縮小、回転を制御します。"
     },
     "library": {
-      "title": "NoCode Tool 使い方 | ライブラリ",
+      "title": "Animation Tool 使い方 | ライブラリ",
       "description": "外部データとして、画像（jpeg、gif、png）、音声（mp3）、動画（mp4）、SWFファイルを読み込むことがでます。また、画面上で作成したベクター図やテキスト、ムービークリップも管理することが可能です。"
     }
   }

@@ -9,7 +9,7 @@
   "feature3-description": "MVVM（Model-View-ViewModel）pattern, looking toward a future where UI designers and programmers collaborate to create applications.",
   "feature4-title": "Team Development",
   "feature4-description": "Fixed development patterns (MVVM) for readability and simplified sharing. It allows for comfortable team development.",
-  "feature5-title": "Cooperation with NoCode Tool",
+  "feature5-title": "Cooperation with Animation Tool",
   "feature5-description": "As in the Flash era, symbol management is possible, allowing animators and programmers to create applications without conflicts.",
   "feature6-title": "Single Page Application",
   "feature6-description": "It is now possible to manage scenes by URL, which has been difficult with previous Canvas/WebGL applications.",

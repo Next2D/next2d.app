@@ -36,6 +36,11 @@ const getAlternatePath = (targetLang: string) => {
     <meta content={description} name="description" />
     <meta content="Next2D,Next2D Player,Animation Tool,Next2D Framework" name="keywords" />
 
+    <!-- DNS Prefetch / Preconnect for external resources -->
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
     <!-- SEO: Canonical URL -->
     <link rel="canonical" href={canonicalURL.href} />
 
@@ -95,6 +100,62 @@ const getAlternatePath = (targetLang: string) => {
       "logo": "https://next2d.app/assets/img/ogp.png",
       "sameAs": [
         "https://github.com/Next2D"
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Next2D Player",
+          "description": "WebGL/WebGPU-based 2D rendering engine for web browsers",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Web Browser",
+          "url": "https://next2d.app",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Next2D"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Next2D Animation Tool",
+          "description": "Browser-based animation creation tool for 2D content",
+          "applicationCategory": "MultimediaApplication",
+          "operatingSystem": "Web Browser",
+          "url": "https://tool.next2d.app",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Next2D"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Next2D Framework",
+          "description": "Underlying framework for building 2D web applications",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Web Browser",
+          "url": "https://next2d.app",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Next2D"
+          }
+        }
       ]
     })} />
     {breadcrumbs && breadcrumbs.length > 0 && (

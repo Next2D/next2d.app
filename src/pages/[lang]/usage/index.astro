@@ -1,0 +1,50 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro';
+import { getTranslations, supportedLanguages, isValidLanguage } from '../../../i18n';
+
+export function getStaticPaths() {
+  return supportedLanguages.map((lang) => ({
+    params: { lang }
+  }));
+}
+
+const { lang } = Astro.params;
+if (!isValidLanguage(lang)) {
+  return Astro.redirect('/ja/usage/');
+}
+
+const t = await getTranslations(lang);
+const basePath = import.meta.env.BASE_URL;
+
+const breadcrumbs = [
+  { label: t.navbar?.home || 'Home', href: `${basePath}${lang}/` },
+  { label: t.main?.['usage-title'] || 'Usage' }
+];
+---
+
+<DocsLayout
+  title={t.toolusage?.title || 'Animation Tool Usage'}
+  description={t.toolusage?.description || ''}
+  lang={lang}
+  t={t}
+  breadcrumbs={breadcrumbs}
+  menuType="usage"
+>
+  <div>
+    <h3>WorkSpace</h3>
+    <p class="workspace-image"><img loading="lazy" src={`${basePath}assets/img/usage/workspace.png`} alt="WorkSpace"></p>
+    <p>{t.toolusage?.description || ''}</p>
+
+    <h4 id="tool">Tool Area</h4>
+    <p>{t.toolusage?.tool?.description || ''}</p>
+
+    <h4 id="screen">Screen Area</h4>
+    <p>{t.toolusage?.screen?.description || ''}</p>
+
+    <h4 id="timeline">Timeline Area</h4>
+    <p>{t.toolusage?.timeline?.description || ''}</p>
+
+    <h4 id="controller">Controller Area</h4>
+    <p>{t.toolusage?.controller?.description || ''}</p>
+  </div>
+</DocsLayout>

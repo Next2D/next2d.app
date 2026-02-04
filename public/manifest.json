@@ -1,0 +1,29 @@
+{
+  "name": "Next2D",
+  "short_name": "Next2D",
+  "description": "Rendering Engine, Animation Tool, Underlying Framework",
+  "start_url": "/ja/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#5777ba",
+  "icons": [
+    {
+      "src": "/assets/img/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/ogp.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "lang": "ja",
+  "categories": ["developer tools", "graphics", "utilities"]
+}

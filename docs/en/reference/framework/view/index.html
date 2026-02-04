@@ -1,0 +1,387 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Next2D | View and ViewModel</title><meta content="Next2D Framework Reference. Learn about MVVM pattern, routing, and configuration." name="description"><meta content="Next2D,Next2D Player,Animation Tool,Next2D Framework" name="keywords"><!-- SEO: Canonical URL --><link rel="canonical" href="https://next2d.app/en/reference/framework/view/"><!-- SEO: hreflang for multi-language --><link rel="alternate" hreflang="ja" href="https://next2d.app/ja/reference/framework/view/"><link rel="alternate" hreflang="en" href="https://next2d.app/en/reference/framework/view/"><link rel="alternate" hreflang="zh-CN" href="https://next2d.app/cn/reference/framework/view/"><link rel="alternate" hreflang="x-default" href="https://next2d.app/ja/reference/framework/view/"><!-- Google / Search Engine Tags --><meta itemprop="name" content="Next2D | View and ViewModel"><meta itemprop="description" content="Next2D Framework Reference. Learn about MVVM pattern, routing, and configuration."><meta itemprop="image" content="https://next2d.app/assets/img/ogp.png"><!-- Facebook Meta Tags --><meta property="og:url" content="https://next2d.app/en/reference/framework/view/"><meta property="og:type" content="website"><meta property="og:title" content="Next2D | View and ViewModel"><meta property="og:description" content="Next2D Framework Reference. Learn about MVVM pattern, routing, and configuration."><meta property="og:image" content="https://next2d.app/assets/img/ogp.png"><meta property="og:locale" content="en"><meta property="og:site_name" content="Next2D"><!-- Twitter Meta Tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Next2D"><meta name="twitter:creator" content="@Next2D"><meta name="twitter:title" content="Next2D | View and ViewModel"><meta name="twitter:description" content="Next2D Framework Reference. Learn about MVVM pattern, routing, and configuration."><meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png"><!-- Theme Color --><meta name="theme-color" content="#5777ba"><!-- Web App Manifest --><link rel="manifest" href="/manifest.json"><!-- JSON-LD Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Next2D","url":"https://next2d.app","description":"Next2D - Rendering Engine, Animation Tool, Underlying Framework","inLanguage":["en"],"potentialAction":{"@type":"SearchAction","target":"https://next2d.app/{lang}/reference/player/?q={search_term_string}","query-input":"required name=search_term_string"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Next2D","url":"https://next2d.app","logo":"https://next2d.app/assets/img/ogp.png","sameAs":["https://github.com/Next2D"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://next2d.app/en/"},{"@type":"ListItem","position":2,"name":"Framework","item":"https://next2d.app/en/reference/framework/"},{"@type":"ListItem","position":3,"name":"View and ViewModel"}]}</script><!-- Favicons --><link href="/assets/img/favicon.png" rel="icon"><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"><!-- Vendor CSS --><link href="/assets/css/vendor/aos.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap-icons.min.css" rel="stylesheet"><!-- Main CSS --><link href="/assets/css/main.css" rel="stylesheet"><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-8GJWF4S3RH");
+    </script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style>.docs-content[data-astro-cid-shibjrt4] h1{font-size:2rem;margin-bottom:1.5rem}.docs-content[data-astro-cid-shibjrt4] h2{font-size:1.5rem;margin-top:2rem;margin-bottom:1rem}.docs-content[data-astro-cid-shibjrt4] h3{font-size:1.25rem;margin-top:1.5rem;margin-bottom:.75rem}.docs-content[data-astro-cid-shibjrt4] pre{background-color:#2a2c30;color:#f8f9fa;border-radius:8px;padding:1rem;overflow-x:auto;margin:1rem 0}.docs-content[data-astro-cid-shibjrt4] code{font-family:Monaco,Menlo,monospace;font-size:.9em}.docs-content[data-astro-cid-shibjrt4] table{width:100%;border-collapse:collapse;margin:1rem 0}.docs-content[data-astro-cid-shibjrt4] th,.docs-content[data-astro-cid-shibjrt4] td{border:1px solid #ddd;padding:.5rem;text-align:left}.docs-content[data-astro-cid-shibjrt4] th{background-color:#f5f5f5}
+</style></head> <body class>  <header id="header" class="header fixed-top d-flex align-items-center"> <div class="container d-flex align-items-center justify-content-between"> <div id="logo"> <a href="/en"><img loading="lazy" src="/assets/img/logo.svg" alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework."></a> </div> <nav id="navbar" class="navbar"> <ul class="list-unstyled"> <li><a class="nav-link scrollto" href="/en/#get-started">Home</a></li> <li><a class="nav-link scrollto" href="/en/#casestudy">Case Studies</a></li> <li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>Player</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/en/reference/player">Reference</a></li> <li><a href="/en/#player">Features</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>Animation Tool</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/en/usage">Usage</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="/en/#tool">Features</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>Framework</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/en/reference/framework">Reference</a></li> <li><a href="/en/#framework">Features</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>Language</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="/en">English</a></li> <li><a href="/ja">日本語</a></li> <li><a href="/cn">简体中文</a></li> </ul> </li> <li class="dropdown"><a class="nav-link"><span>Support US</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li> </ul> </li> <li><a class="nav-link scrollto" href="/en/#contact">Contact</a></li> </ul> <i class="bi bi-list mobile-nav-toggle"></i> </nav> </div> </header> <section class="breadcrumbs"> <div class="container"> <div class="d-flex justify-content-between align-items-center"> <h2>View and ViewModel</h2> <ol> <li> <a href="/en/">Home</a> </li><li> <a href="/en/reference/framework/">Framework</a> </li><li> View and ViewModel </li> </ol> </div> </div> </section> <section id="references" class="reference-section"> <div class="container" data-aos="fade-up"> <div class="row"> <div class="col-lg-3 col-md-4"> <nav id="sub-navbar" class="list-menu sub-navbar"><ul class="list-unstyled"><li><strong>Player</strong></li><ul><li><a href="/en/reference/player">Overview</a></li><li><a href="/en/reference/player/display-object">DisplayObject</a></li><li><a href="/en/reference/player/sprite">Sprite</a></li><li><a href="/en/reference/player/movie-clip">MovieClip</a></li><li><a href="/en/reference/player/shape">Shape</a></li><li><a href="/en/reference/player/text-field">TextField</a></li><li><a href="/en/reference/player/video">Video</a></li><li><a href="/en/reference/player/sound">Sound</a></li><li><a href="/en/reference/player/events">Events</a></li><li><a href="/en/reference/player/filters">Filters</a></li><li><a href="/en/reference/player/tween">Tween</a></li></ul><li><strong>Framework</strong></li><ul><li><a href="/en/reference/framework">Overview</a></li><li><a href="/en/reference/framework/view">View/ViewModel</a></li><li><a href="/en/reference/framework/routing">Routing</a></li><li><a href="/en/reference/framework/config">Configuration</a></li><li><a href="/en/reference/framework/animation-tool">Animation Tool Integration</a></li></ul></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav> </div> <div class="col-lg-9 col-md-8">  <div class="docs-content" data-astro-cid-shibjrt4> <h1 id="view-and-viewmodel">View and ViewModel</h1>
+<p>Next2D Framework adopts the MVVM (Model-View-ViewModel) pattern. The basic style is to create one set of View and ViewModel per screen.</p>
+<h2 id="architecture">Architecture</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">graph TB</span></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph ViewLayer["View Layer"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        ViewRole["Handles screen structure and display"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        ViewRule["No business logic"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph ViewModelLayer["ViewModel Layer"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        VMRole1["Bridge between View and Model"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        VMRole2["Holds UseCases"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        VMRole3["Event handling"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph ModelLayer["Model Layer"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        ModelRole1["Business logic (UseCase)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        ModelRole2["Data access (Repository)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    ViewLayer &#x3C;-->|Bidirectional| ViewModelLayer</span></span>
+<span class="line"><span style="color:#E1E4E8">    ViewModelLayer &#x3C;--> ModelLayer</span></span></code></pre>
+<h2 id="directory-structure">Directory Structure</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>src/</span></span>
+<span class="line"><span>└── view/</span></span>
+<span class="line"><span>    ├── top/</span></span>
+<span class="line"><span>    │   ├── TopView.ts</span></span>
+<span class="line"><span>    │   └── TopViewModel.ts</span></span>
+<span class="line"><span>    └── home/</span></span>
+<span class="line"><span>        ├── HomeView.ts</span></span>
+<span class="line"><span>        └── HomeViewModel.ts</span></span></code></pre>
+<h2 id="view">View</h2>
+<p>View is a container attached to the main context. View handles only the display structure and delegates business logic to the ViewModel.</p>
+<h3 id="view-responsibilities">View Responsibilities</h3>
+<ul>
+<li><strong>Screen structure definition</strong> - UI component placement and coordinate settings</li>
+<li><strong>Event listener registration</strong> - Connection with ViewModel methods</li>
+<li><strong>Lifecycle management</strong> - <code>initialize</code>, <code>onEnter</code>, <code>onExit</code></li>
+</ul>
+<h3 id="basic-structure">Basic Structure</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#F97583"> type</span><span style="color:#E1E4E8"> { TopViewModel } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./TopViewModel"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { View } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { TopPage } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@/ui/component/page/top/TopPage"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> TopView</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> View</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">TopViewModel</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> readonly</span><span style="color:#FFAB70"> _topPage</span><span style="color:#F97583">:</span><span style="color:#B392F0"> TopPage</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    constructor</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">vm</span><span style="color:#F97583">:</span><span style="color:#B392F0"> TopViewModel</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">        super</span><span style="color:#E1E4E8">(vm);</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._topPage </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TopPage</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">._topPage);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> initialize</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._topPage.</span><span style="color:#B392F0">initialize</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">.vm);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> onEnter</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        await</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">._topPage.</span><span style="color:#B392F0">onEnter</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> onExit</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#F97583"> void</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="lifecycle">Lifecycle</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">sequenceDiagram</span></span>
+<span class="line"><span style="color:#E1E4E8">    participant Framework as Framework</span></span>
+<span class="line"><span style="color:#E1E4E8">    participant VM as ViewModel</span></span>
+<span class="line"><span style="color:#E1E4E8">    participant View as View</span></span>
+<span class="line"><span style="color:#E1E4E8">    participant UI as UI Components</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    Note over Framework,UI: Screen transition starts</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    Framework->>VM: new ViewModel()</span></span>
+<span class="line"><span style="color:#E1E4E8">    Framework->>VM: initialize()</span></span>
+<span class="line"><span style="color:#E1E4E8">    Note over VM: ViewModel initializes first</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    Framework->>View: new View(vm)</span></span>
+<span class="line"><span style="color:#E1E4E8">    Framework->>View: initialize()</span></span>
+<span class="line"><span style="color:#E1E4E8">    View->>UI: Create components</span></span>
+<span class="line"><span style="color:#E1E4E8">    View->>VM: Register event listeners</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    Framework->>View: onEnter()</span></span>
+<span class="line"><span style="color:#E1E4E8">    View->>UI: Start animations</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    Note over Framework,UI: User interacts with screen</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    Framework->>View: onExit()</span></span>
+<span class="line"><span style="color:#E1E4E8">    View->>UI: Clean up</span></span></code></pre>
+<h4 id="initialize---initialization">initialize() - Initialization</h4>
+<p><strong>When Called:</strong></p>
+<ul>
+<li>Immediately after View instance is created</li>
+<li>Called only once during screen transition</li>
+<li>Executed <strong>after</strong> ViewModel’s <code>initialize()</code></li>
+</ul>
+<p><strong>Primary Usage:</strong></p>
+<ul>
+<li>Create and arrange UI components</li>
+<li>Register event listeners</li>
+<li>Add child elements (<code>addChild</code>)</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#E1E4E8">async </span><span style="color:#B392F0">initialize</span><span style="color:#E1E4E8">(): </span><span style="color:#79B8FF">Promise</span><span style="color:#F97583">&#x3C;void></span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">HomeBtnMolecule</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#F97583"> import</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"@/ui/component/molecule/HomeBtnMolecule"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">PointerEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> homeContent</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> HomeBtnMolecule</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    homeContent.x </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 120</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    homeContent.y </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 120</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // Delegate events to ViewModel</span></span>
+<span class="line"><span style="color:#E1E4E8">    homeContent.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">        PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.vm.homeContentPointerDownEvent</span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">    this</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(homeContent);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h4 id="onenter---on-screen-shown">onEnter() - On Screen Shown</h4>
+<p><strong>When Called:</strong></p>
+<ul>
+<li>After <code>initialize()</code> completes</li>
+<li>Just before the screen is displayed</li>
+</ul>
+<p><strong>Primary Usage:</strong></p>
+<ul>
+<li>Start entrance animations</li>
+<li>Start timers and intervals</li>
+<li>Set focus</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#E1E4E8">async </span><span style="color:#B392F0">onEnter</span><span style="color:#E1E4E8">(): </span><span style="color:#79B8FF">Promise</span><span style="color:#F97583">&#x3C;void></span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> topBtn</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">getChildByName</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"topBtn"</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">as</span><span style="color:#B392F0"> TopBtnMolecule</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    topBtn.</span><span style="color:#B392F0">playEntrance</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Animation completed"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h4 id="onexit---on-screen-hidden">onExit() - On Screen Hidden</h4>
+<p><strong>When Called:</strong></p>
+<ul>
+<li>Just before transitioning to another screen</li>
+<li>Before View is destroyed</li>
+</ul>
+<p><strong>Primary Usage:</strong></p>
+<ul>
+<li>Stop animations</li>
+<li>Clear timers and intervals</li>
+<li>Release resources</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#E1E4E8">async </span><span style="color:#B392F0">onExit</span><span style="color:#E1E4E8">(): </span><span style="color:#79B8FF">Promise</span><span style="color:#F97583">&#x3C;void></span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">.autoSlideTimer) {</span></span>
+<span class="line"><span style="color:#B392F0">        clearInterval</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">.autoSlideTimer);</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.autoSlideTimer </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="viewmodel">ViewModel</h2>
+<p>ViewModel acts as a bridge between View and Model. It holds UseCases and processes events from View to execute business logic.</p>
+<h3 id="viewmodel-responsibilities">ViewModel Responsibilities</h3>
+<ul>
+<li><strong>Event processing</strong> - Receive events from View</li>
+<li><strong>UseCase execution</strong> - Call business logic</li>
+<li><strong>Dependency management</strong> - Hold UseCase instances</li>
+<li><strong>State management</strong> - Manage screen-specific state</li>
+</ul>
+<h3 id="basic-structure-1">Basic Structure</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { ViewModel, app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { NavigateToViewUseCase } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@/model/application/top/usecase/NavigateToViewUseCase"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> TopViewModel</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> ViewModel</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> readonly</span><span style="color:#FFAB70"> navigateToViewUseCase</span><span style="color:#F97583">:</span><span style="color:#B392F0"> NavigateToViewUseCase</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#FFAB70"> topText</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> ""</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    constructor</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">        super</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.navigateToViewUseCase </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> NavigateToViewUseCase</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> initialize</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#6A737D">        // Receive data from routing.json requests</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">getResponse</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.topText </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">has</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"TopText"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">            ?</span><span style="color:#E1E4E8"> (response.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"TopText"</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> { </span><span style="color:#FFAB70">word</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8"> }).word</span></span>
+<span class="line"><span style="color:#F97583">            :</span><span style="color:#9ECBFF"> ""</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">    getTopText</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">.topText;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> onClickStartButton</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        await</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">.navigateToViewUseCase.</span><span style="color:#B392F0">execute</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"home"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="viewmodel-initialization-timing">ViewModel Initialization Timing</h3>
+<p><strong>Important: ViewModel’s <code>initialize()</code> is called before View’s <code>initialize()</code>.</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>1. ViewModel instance created</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>2. ViewModel.initialize() ← ViewModel first</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>3. View instance created (ViewModel injected)</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>4. View.initialize()</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>5. View.onEnter()</span></span></code></pre>
+<p>This ensures ViewModel data is ready when View initializes.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#6A737D">// HomeViewModel.ts</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> HomeViewModel</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> ViewModel</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#FFAB70"> homeText</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> ""</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> initialize</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#6A737D">        // Fetch data in ViewModel's initialize</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> HomeTextRepository.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.homeText </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> data.word;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">    getHomeText</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">.homeText;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// HomeView.ts</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> HomeView</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> View</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">HomeViewModel</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    constructor</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">private</span><span style="color:#F97583"> readonly</span><span style="color:#FFAB70"> vm</span><span style="color:#F97583">:</span><span style="color:#B392F0"> HomeViewModel</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">        super</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> initialize</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#6A737D">        // At this point, vm.initialize() is already complete</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> text</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">.vm.</span><span style="color:#B392F0">getHomeText</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">        // Build UI using fetched data</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> textField</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextAtom</span><span style="color:#E1E4E8">(text);</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(textField);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="screen-transition">Screen Transition</h2>
+<p>Use <code>app.gotoView()</code> for screen transitions.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Navigate to specified View</span></span>
+<span class="line"><span style="color:#F97583">await</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">gotoView</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"home"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Navigate with parameters</span></span>
+<span class="line"><span style="color:#F97583">await</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">gotoView</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"user/detail?id=123"</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="screen-transition-in-usecase">Screen Transition in UseCase</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> NavigateToViewUseCase</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> execute</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">viewName</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">)</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        await</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">gotoView</span><span style="color:#E1E4E8">(viewName);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="getting-response-data">Getting Response Data</h2>
+<p>Data from <code>requests</code> in <code>routing.json</code> can be retrieved with <code>app.getResponse()</code>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">async </span><span style="color:#B392F0">initialize</span><span style="color:#E1E4E8">(): </span><span style="color:#79B8FF">Promise</span><span style="color:#F97583">&#x3C;void></span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">getResponse</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (response.</span><span style="color:#B392F0">has</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"UserData"</span><span style="color:#E1E4E8">)) {</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> userData</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"UserData"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.userName </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userData.name;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="getting-cache-data">Getting Cache Data</h2>
+<p>Data with <code>cache: true</code> can be retrieved with <code>app.getCache()</code>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> cache</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">getCache</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (cache.</span><span style="color:#B392F0">has</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"MasterData"</span><span style="color:#E1E4E8">)) {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> masterData</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> cache.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"MasterData"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="design-principles">Design Principles</h2>
+<h3 id="1-separation-of-concerns">1. Separation of Concerns</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#6A737D">// Good: View handles display only, ViewModel handles logic</span></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> HomeView</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> View</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">HomeViewModel</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> initialize</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> btn</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> HomeBtnMolecule</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">        btn.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">.vm.onClick);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> HomeViewModel</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> ViewModel</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">    onClick</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#F97583">:</span><span style="color:#B392F0"> PointerEvent</span><span style="color:#E1E4E8">)</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> void</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.someUseCase.</span><span style="color:#B392F0">execute</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="2-dependency-inversion">2. Dependency Inversion</h3>
+<p>ViewModel depends on interfaces, not concrete classes.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#6A737D">// Good: Depend on interfaces</span></span>
+<span class="line"><span style="color:#B392F0">homeContentPointerDownEvent</span><span style="color:#E1E4E8">(event: PointerEvent): </span><span style="color:#F97583">void</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> target</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> event.currentTarget </span><span style="color:#F97583">as</span><span style="color:#79B8FF"> unknown</span><span style="color:#F97583"> as</span><span style="color:#B392F0"> IDraggable</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    this</span><span style="color:#E1E4E8">.startDragUseCase.</span><span style="color:#B392F0">execute</span><span style="color:#E1E4E8">(target);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="3-always-delegate-events-to-viewmodel">3. Always Delegate Events to ViewModel</h3>
+<p>Never handle events entirely within View; always delegate to ViewModel.</p>
+<h2 id="viewviewmodel-templates">View/ViewModel Templates</h2>
+<h3 id="view-1">View</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#F97583"> type</span><span style="color:#E1E4E8"> { YourViewModel } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./YourViewModel"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { View } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> YourView</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> View</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">YourViewModel</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    constructor</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">vm</span><span style="color:#F97583">:</span><span style="color:#B392F0"> YourViewModel</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">        super</span><span style="color:#E1E4E8">(vm);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> initialize</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#6A737D">        // Create and arrange UI components</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> onEnter</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#6A737D">        // On screen shown</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> onExit</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#6A737D">        // On screen hidden</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="viewmodel-1">ViewModel</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { ViewModel } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { YourUseCase } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@/model/application/your/usecase/YourUseCase"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> YourViewModel</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> ViewModel</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> readonly</span><span style="color:#FFAB70"> yourUseCase</span><span style="color:#F97583">:</span><span style="color:#B392F0"> YourUseCase</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    constructor</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">        super</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.yourUseCase </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> YourUseCase</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> initialize</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#F97583"> void</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">    yourEventHandler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Event</span><span style="color:#E1E4E8">)</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> void</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.yourUseCase.</span><span style="color:#B392F0">execute</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="/en/reference/framework/routing">Routing</a></li>
+<li><a href="/en/reference/framework/config">Configuration</a></li>
+</ul> </div>  </div> </div> </div> </section> <footer class="footer" data-aos="fade-up"> <div class="container"> <div class="row"> <div class="col-md-12 col-lg-4"> <div class="footer-logo"> <a class="navbar-brand" href="/en">Next2D</a> <p> Next2D, a project derived from the JavaScript FlashPlayer &quot;swf2js&quot;, aims to provide the fastest 2D engine that works on any device.<br>
+Created by Toshiyuki Ienaga.
+</p> </div> <div class="list-sns-menu"> <ul class="list-unstyled"> <li><a href="https://twitter.com/ienagatoshiyuki" target="_blank"><i class="bi bi-twitter"></i></a></li> <li><a href="https://github.com/ienaga" target="_blank"><i class="bi bi-github"></i></a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Player</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/en/reference/player">Reference</a></li> <li><a href="/en/#player">Features</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Animation Tool</h4> <ul class="list-unstyled"> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/en/usage">Usage</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Framework</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/en/reference/framework">Reference</a></li> <li><a href="/en/#framework">Features</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>About Us</h4> <ul class="list-unstyled"> <li><a href="/en/#contact">Contact</a></li> <li><a href="/en/privacy">Privacy Policy</a></li> </ul> </div> </div> </div> </div> <div class="copyrights"> <div class="container"> <p>&copy; Copyrights Next2D. All rights reserved.</p> </div> </div> </footer> <script type="module" src="/assets/DocsLayout.astro_astro_type_script_index_0_lang.yTAR6D4i.js"></script>  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> <!-- Vendor JS --> <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script> <script src="/assets/js/vendor/aos.js"></script> <!-- Main JS --> <script src="/assets/js/main.js"></script> </body> </html> 

@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Next2D | AnimationTool Integration</title><meta content="Next2D Framework Reference. Learn about MVVM pattern, routing, and configuration." name="description"><meta content="Next2D,Next2D Player,Animation Tool,Next2D Framework" name="keywords"><!-- SEO: Canonical URL --><link rel="canonical" href="https://next2d.app/en/reference/framework/animation-tool/"><!-- SEO: hreflang for multi-language --><link rel="alternate" hreflang="ja" href="https://next2d.app/ja/reference/framework/animation-tool/"><link rel="alternate" hreflang="en" href="https://next2d.app/en/reference/framework/animation-tool/"><link rel="alternate" hreflang="zh-CN" href="https://next2d.app/cn/reference/framework/animation-tool/"><link rel="alternate" hreflang="x-default" href="https://next2d.app/ja/reference/framework/animation-tool/"><!-- Google / Search Engine Tags --><meta itemprop="name" content="Next2D | AnimationTool Integration"><meta itemprop="description" content="Next2D Framework Reference. Learn about MVVM pattern, routing, and configuration."><meta itemprop="image" content="https://next2d.app/assets/img/ogp.png"><!-- Facebook Meta Tags --><meta property="og:url" content="https://next2d.app/en/reference/framework/animation-tool/"><meta property="og:type" content="website"><meta property="og:title" content="Next2D | AnimationTool Integration"><meta property="og:description" content="Next2D Framework Reference. Learn about MVVM pattern, routing, and configuration."><meta property="og:image" content="https://next2d.app/assets/img/ogp.png"><meta property="og:locale" content="en"><meta property="og:site_name" content="Next2D"><!-- Twitter Meta Tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Next2D"><meta name="twitter:creator" content="@Next2D"><meta name="twitter:title" content="Next2D | AnimationTool Integration"><meta name="twitter:description" content="Next2D Framework Reference. Learn about MVVM pattern, routing, and configuration."><meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png"><!-- Theme Color --><meta name="theme-color" content="#5777ba"><!-- Web App Manifest --><link rel="manifest" href="/manifest.json"><!-- JSON-LD Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Next2D","url":"https://next2d.app","description":"Next2D - Rendering Engine, Animation Tool, Underlying Framework","inLanguage":["en"],"potentialAction":{"@type":"SearchAction","target":"https://next2d.app/{lang}/reference/player/?q={search_term_string}","query-input":"required name=search_term_string"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Next2D","url":"https://next2d.app","logo":"https://next2d.app/assets/img/ogp.png","sameAs":["https://github.com/Next2D"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://next2d.app/en/"},{"@type":"ListItem","position":2,"name":"Framework","item":"https://next2d.app/en/reference/framework/"},{"@type":"ListItem","position":3,"name":"AnimationTool Integration"}]}</script><!-- Favicons --><link href="/assets/img/favicon.png" rel="icon"><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"><!-- Vendor CSS --><link href="/assets/css/vendor/aos.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap-icons.min.css" rel="stylesheet"><!-- Main CSS --><link href="/assets/css/main.css" rel="stylesheet"><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-8GJWF4S3RH");
+    </script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style>.docs-content[data-astro-cid-shibjrt4] h1{font-size:2rem;margin-bottom:1.5rem}.docs-content[data-astro-cid-shibjrt4] h2{font-size:1.5rem;margin-top:2rem;margin-bottom:1rem}.docs-content[data-astro-cid-shibjrt4] h3{font-size:1.25rem;margin-top:1.5rem;margin-bottom:.75rem}.docs-content[data-astro-cid-shibjrt4] pre{background-color:#2a2c30;color:#f8f9fa;border-radius:8px;padding:1rem;overflow-x:auto;margin:1rem 0}.docs-content[data-astro-cid-shibjrt4] code{font-family:Monaco,Menlo,monospace;font-size:.9em}.docs-content[data-astro-cid-shibjrt4] table{width:100%;border-collapse:collapse;margin:1rem 0}.docs-content[data-astro-cid-shibjrt4] th,.docs-content[data-astro-cid-shibjrt4] td{border:1px solid #ddd;padding:.5rem;text-align:left}.docs-content[data-astro-cid-shibjrt4] th{background-color:#f5f5f5}
+</style></head> <body class>  <header id="header" class="header fixed-top d-flex align-items-center"> <div class="container d-flex align-items-center justify-content-between"> <div id="logo"> <a href="/en"><img loading="lazy" src="/assets/img/logo.svg" alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework."></a> </div> <nav id="navbar" class="navbar"> <ul class="list-unstyled"> <li><a class="nav-link scrollto" href="/en/#get-started">Home</a></li> <li><a class="nav-link scrollto" href="/en/#casestudy">Case Studies</a></li> <li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>Player</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/en/reference/player">Reference</a></li> <li><a href="/en/#player">Features</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>Animation Tool</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/en/usage">Usage</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="/en/#tool">Features</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>Framework</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/en/reference/framework">Reference</a></li> <li><a href="/en/#framework">Features</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>Language</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="/en">English</a></li> <li><a href="/ja">日本語</a></li> <li><a href="/cn">简体中文</a></li> </ul> </li> <li class="dropdown"><a class="nav-link"><span>Support US</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li> </ul> </li> <li><a class="nav-link scrollto" href="/en/#contact">Contact</a></li> </ul> <i class="bi bi-list mobile-nav-toggle"></i> </nav> </div> </header> <section class="breadcrumbs"> <div class="container"> <div class="d-flex justify-content-between align-items-center"> <h2>AnimationTool Integration</h2> <ol> <li> <a href="/en/">Home</a> </li><li> <a href="/en/reference/framework/">Framework</a> </li><li> AnimationTool Integration </li> </ol> </div> </div> </section> <section id="references" class="reference-section"> <div class="container" data-aos="fade-up"> <div class="row"> <div class="col-lg-3 col-md-4"> <nav id="sub-navbar" class="list-menu sub-navbar"><ul class="list-unstyled"><li><strong>Player</strong></li><ul><li><a href="/en/reference/player">Overview</a></li><li><a href="/en/reference/player/display-object">DisplayObject</a></li><li><a href="/en/reference/player/sprite">Sprite</a></li><li><a href="/en/reference/player/movie-clip">MovieClip</a></li><li><a href="/en/reference/player/shape">Shape</a></li><li><a href="/en/reference/player/text-field">TextField</a></li><li><a href="/en/reference/player/video">Video</a></li><li><a href="/en/reference/player/sound">Sound</a></li><li><a href="/en/reference/player/events">Events</a></li><li><a href="/en/reference/player/filters">Filters</a></li><li><a href="/en/reference/player/tween">Tween</a></li></ul><li><strong>Framework</strong></li><ul><li><a href="/en/reference/framework">Overview</a></li><li><a href="/en/reference/framework/view">View/ViewModel</a></li><li><a href="/en/reference/framework/routing">Routing</a></li><li><a href="/en/reference/framework/config">Configuration</a></li><li><a href="/en/reference/framework/animation-tool">Animation Tool Integration</a></li></ul></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav> </div> <div class="col-lg-9 col-md-8">  <div class="docs-content" data-astro-cid-shibjrt4> <h1 id="animationtool-integration">AnimationTool Integration</h1>
+<p>Next2D Framework seamlessly integrates with assets created in AnimationTool.</p>
+<h2 id="overview">Overview</h2>
+<p>AnimationTool is a tool for creating animations and UI components for Next2D Player. The output JSON files can be loaded in the framework and used as MovieClips.</p>
+<h2 id="directory-structure">Directory Structure</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>src/</span></span>
+<span class="line"><span>├── ui/</span></span>
+<span class="line"><span>│   ├── content/              # Animation Tool generated content</span></span>
+<span class="line"><span>│   │   ├── TopContent.ts</span></span>
+<span class="line"><span>│   │   └── HomeContent.ts</span></span>
+<span class="line"><span>│   │</span></span>
+<span class="line"><span>│   ├── component/            # Atomic Design components</span></span>
+<span class="line"><span>│   │   ├── atom/             # Smallest unit components</span></span>
+<span class="line"><span>│   │   │   ├── ButtonAtom.ts</span></span>
+<span class="line"><span>│   │   │   └── TextAtom.ts</span></span>
+<span class="line"><span>│   │   ├── molecule/         # Combined Atom components</span></span>
+<span class="line"><span>│   │   │   ├── TopBtnMolecule.ts</span></span>
+<span class="line"><span>│   │   │   └── HomeBtnMolecule.ts</span></span>
+<span class="line"><span>│   │   ├── organism/         # Multiple Molecule combinations</span></span>
+<span class="line"><span>│   │   ├── template/         # Page templates</span></span>
+<span class="line"><span>│   │   └── page/             # Page components</span></span>
+<span class="line"><span>│   │       ├── top/</span></span>
+<span class="line"><span>│   │       │   └── TopPage.ts</span></span>
+<span class="line"><span>│   │       └── home/</span></span>
+<span class="line"><span>│   │           └── HomePage.ts</span></span>
+<span class="line"><span>│   │</span></span>
+<span class="line"><span>│   └── animation/            # Code animation definitions</span></span>
+<span class="line"><span>│       └── top/</span></span>
+<span class="line"><span>│           └── TopBtnShowAnimation.ts</span></span>
+<span class="line"><span>│</span></span>
+<span class="line"><span>└── file/                     # Animation Tool output files</span></span>
+<span class="line"><span>    └── sample.n2d</span></span></code></pre>
+<h2 id="movieclipcontent">MovieClipContent</h2>
+<p>A class that wraps content created with Animation Tool.</p>
+<h3 id="basic-structure">Basic Structure</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { MovieClipContent } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/**</span></span>
+<span class="line"><span style="color:#6A737D"> * </span><span style="color:#F97583">@see</span><span style="color:#B392F0"> file</span><span style="color:#6A737D">/sample.n2d</span></span>
+<span class="line"><span style="color:#6A737D"> */</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> TopContent</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> MovieClipContent</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * Returns the symbol name set in Animation Tool</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#F97583">    get</span><span style="color:#B392F0"> namespace</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#9ECBFF"> "TopContent"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="role-of-namespace">Role of namespace</h3>
+<p>The <code>namespace</code> property should match the symbol name created in Animation Tool. This name is used to generate the corresponding MovieClip from the loaded JSON data.</p>
+<h2 id="loading-content">Loading Content</h2>
+<h3 id="configuration-in-routingjson">Configuration in routing.json</h3>
+<p>Animation Tool JSON files are loaded via <code>requests</code> in <code>routing.json</code>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">    "@sample"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "requests"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">            {</span></span>
+<span class="line"><span style="color:#79B8FF">                "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"content"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">                "path"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"{{ content.endPoint }}content/sample.json"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">                "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"MainContent"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">                "cache"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        ]</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#79B8FF">    "top"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "requests"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">            {</span></span>
+<span class="line"><span style="color:#79B8FF">                "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"cluster"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">                "path"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"@sample"</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        ]</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h4 id="request-configuration">Request Configuration</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>Specify <code>"content"</code></td></tr><tr><td><code>path</code></td><td>string</td><td>Path to the JSON file</td></tr><tr><td><code>name</code></td><td>string</td><td>Key name registered in response</td></tr><tr><td><code>cache</code></td><td>boolean</td><td>Whether to cache</td></tr></tbody></table>
+<h4 id="cluster-feature">Cluster Feature</h4>
+<p>Keys starting with <code>@</code> are defined as clusters and can be shared across multiple routes. Reference them with <code>type: "cluster"</code>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">    "@common"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "requests"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">            {</span></span>
+<span class="line"><span style="color:#79B8FF">                "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"content"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">                "path"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"{{ content.endPoint }}common.json"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">                "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"CommonContent"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">                "cache"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        ]</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#79B8FF">    "top"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "requests"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">            { </span><span style="color:#79B8FF">"type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"cluster"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">"path"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"@common"</span><span style="color:#E1E4E8"> }</span></span>
+<span class="line"><span style="color:#E1E4E8">        ]</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#79B8FF">    "home"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "requests"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">            { </span><span style="color:#79B8FF">"type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"cluster"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">"path"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"@common"</span><span style="color:#E1E4E8"> }</span></span>
+<span class="line"><span style="color:#E1E4E8">        ]</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="/en/reference/framework/view">View/ViewModel</a></li>
+<li><a href="/en/reference/framework/routing">Routing</a></li>
+<li><a href="/en/reference/framework/config">Configuration</a></li>
+</ul> </div>  </div> </div> </div> </section> <footer class="footer" data-aos="fade-up"> <div class="container"> <div class="row"> <div class="col-md-12 col-lg-4"> <div class="footer-logo"> <a class="navbar-brand" href="/en">Next2D</a> <p> Next2D, a project derived from the JavaScript FlashPlayer &quot;swf2js&quot;, aims to provide the fastest 2D engine that works on any device.<br>
+Created by Toshiyuki Ienaga.
+</p> </div> <div class="list-sns-menu"> <ul class="list-unstyled"> <li><a href="https://twitter.com/ienagatoshiyuki" target="_blank"><i class="bi bi-twitter"></i></a></li> <li><a href="https://github.com/ienaga" target="_blank"><i class="bi bi-github"></i></a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Player</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/en/reference/player">Reference</a></li> <li><a href="/en/#player">Features</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Animation Tool</h4> <ul class="list-unstyled"> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/en/usage">Usage</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Framework</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/en/reference/framework">Reference</a></li> <li><a href="/en/#framework">Features</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>About Us</h4> <ul class="list-unstyled"> <li><a href="/en/#contact">Contact</a></li> <li><a href="/en/privacy">Privacy Policy</a></li> </ul> </div> </div> </div> </div> <div class="copyrights"> <div class="container"> <p>&copy; Copyrights Next2D. All rights reserved.</p> </div> </div> </footer> <script type="module" src="/assets/DocsLayout.astro_astro_type_script_index_0_lang.yTAR6D4i.js"></script>  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> <!-- Vendor JS --> <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script> <script src="/assets/js/vendor/aos.js"></script> <!-- Main JS --> <script src="/assets/js/main.js"></script> </body> </html> 

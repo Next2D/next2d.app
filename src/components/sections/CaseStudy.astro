@@ -1,0 +1,70 @@
+---
+interface Props {
+  lang: string;
+  t: Record<string, any>;
+}
+
+const { lang, t } = Astro.props;
+const basePath = import.meta.env.BASE_URL;
+---
+
+<section id="casestudy" class="padd-section">
+
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title text-center">
+      <h2>{t.main?.['case-studies'] || 'Case Studies'}</h2>
+    </div>
+
+    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-md-6 col-lg-3">
+        <a href={`${basePath}${lang}/casestudy/worldflipper`}>
+          <div class="feature-block">
+            <div class="text-center">
+              <img class="casestudy-img" loading="lazy" src={`${basePath}assets/img/casestudy/worldflipper/logo.jpeg`} alt="WORLD FLIPPER">
+              <h4>WORLD FLIPPER</h4>
+            </div>
+            <div class="casestudy-tool-block">
+              <div class="casestudy-tool">
+                <i><img src={`${basePath}assets/img/tool/logo.svg`} alt="Animation Tool"></i>
+                Animation Tool
+              </div>
+            </div>
+            <div class="casestudy-creator-block">
+              {t.main?.['read-more'] || 'Read More'}
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <a href={`${basePath}${lang}/casestudy/slimetenpuzzle`}>
+          <div class="feature-block">
+            <div class="text-center">
+              <img class="casestudy-img" loading="lazy" src={`${basePath}assets/img/casestudy/slimetenpuzzle/logo.png`} alt="Slime Ten Puzzle">
+              <h4>Slime Ten Puzzle</h4>
+            </div>
+            <div class="casestudy-tool-block">
+              <div class="casestudy-tool">
+                <i><img src={`${basePath}assets/img/player/logo.svg`} alt="Player"></i>
+                {t.main?.player || 'Player'}
+              </div>
+              <div class="casestudy-tool">
+                <i><img src={`${basePath}assets/img/tool/logo.svg`} alt="Animation Tool"></i>
+                {t.main?.tool || 'Animation Tool'}
+              </div>
+              <div class="casestudy-tool">
+                <i><img src={`${basePath}assets/img/framework/logo.svg`} alt="Framework"></i>
+                {t.main?.framework || 'Framework'}
+              </div>
+            </div>
+            <div class="casestudy-creator-block">
+              {t.main?.['read-more'] || 'Read More'}
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>

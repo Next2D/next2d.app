@@ -1,0 +1,811 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Next2D | 滤镜</title><meta content="Next2D播放器的功能描述和示例代码" name="description"><meta content="Next2D,Next2D Player,Animation Tool,Next2D Framework" name="keywords"><!-- SEO: Canonical URL --><link rel="canonical" href="https://next2d.app/cn/reference/player/filters/"><!-- SEO: hreflang for multi-language --><link rel="alternate" hreflang="ja" href="https://next2d.app/ja/reference/player/filters/"><link rel="alternate" hreflang="en" href="https://next2d.app/en/reference/player/filters/"><link rel="alternate" hreflang="zh-CN" href="https://next2d.app/cn/reference/player/filters/"><link rel="alternate" hreflang="x-default" href="https://next2d.app/ja/reference/player/filters/"><!-- Google / Search Engine Tags --><meta itemprop="name" content="Next2D | 滤镜"><meta itemprop="description" content="Next2D播放器的功能描述和示例代码"><meta itemprop="image" content="https://next2d.app/assets/img/ogp.png"><!-- Facebook Meta Tags --><meta property="og:url" content="https://next2d.app/cn/reference/player/filters/"><meta property="og:type" content="website"><meta property="og:title" content="Next2D | 滤镜"><meta property="og:description" content="Next2D播放器的功能描述和示例代码"><meta property="og:image" content="https://next2d.app/assets/img/ogp.png"><meta property="og:locale" content="zh-CN"><meta property="og:site_name" content="Next2D"><!-- Twitter Meta Tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Next2D"><meta name="twitter:creator" content="@Next2D"><meta name="twitter:title" content="Next2D | 滤镜"><meta name="twitter:description" content="Next2D播放器的功能描述和示例代码"><meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png"><!-- Theme Color --><meta name="theme-color" content="#5777ba"><!-- Web App Manifest --><link rel="manifest" href="/manifest.json"><!-- JSON-LD Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Next2D","url":"https://next2d.app","description":"Next2D - Rendering Engine, Animation Tool, Underlying Framework","inLanguage":["zh-CN"],"potentialAction":{"@type":"SearchAction","target":"https://next2d.app/{lang}/reference/player/?q={search_term_string}","query-input":"required name=search_term_string"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Next2D","url":"https://next2d.app","logo":"https://next2d.app/assets/img/ogp.png","sameAs":["https://github.com/Next2D"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://next2d.app/cn/"},{"@type":"ListItem","position":2,"name":"Player","item":"https://next2d.app/cn/reference/player/"},{"@type":"ListItem","position":3,"name":"滤镜"}]}</script><!-- Favicons --><link href="/assets/img/favicon.png" rel="icon"><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"><!-- Vendor CSS --><link href="/assets/css/vendor/aos.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap-icons.min.css" rel="stylesheet"><!-- Main CSS --><link href="/assets/css/main.css" rel="stylesheet"><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-8GJWF4S3RH");
+    </script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style>.docs-content[data-astro-cid-xt6eahls] h1{font-size:2rem;margin-bottom:1.5rem}.docs-content[data-astro-cid-xt6eahls] h2{font-size:1.5rem;margin-top:2rem;margin-bottom:1rem}.docs-content[data-astro-cid-xt6eahls] h3{font-size:1.25rem;margin-top:1.5rem;margin-bottom:.75rem}.docs-content[data-astro-cid-xt6eahls] pre{background-color:#2a2c30;color:#f8f9fa;border-radius:8px;padding:1rem;overflow-x:auto;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] code{font-family:Monaco,Menlo,monospace;font-size:.9em}.docs-content[data-astro-cid-xt6eahls] table{width:100%;border-collapse:collapse;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] th,.docs-content[data-astro-cid-xt6eahls] td{border:1px solid #ddd;padding:.5rem;text-align:left}.docs-content[data-astro-cid-xt6eahls] th{background-color:#f5f5f5}
+</style></head> <body class="lang-cn">  <header id="header" class="header fixed-top d-flex align-items-center"> <div class="container d-flex align-items-center justify-content-between"> <div id="logo"> <a href="/cn"><img loading="lazy" src="/assets/img/logo.svg" alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework."></a> </div> <nav id="navbar" class="navbar"> <ul class="list-unstyled"> <li><a class="nav-link scrollto" href="/cn/#get-started">首页</a></li> <li><a class="nav-link scrollto" href="/cn/#casestudy">学习案例</a></li> <li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>播放器 (Player)</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/cn/reference/player">参考资料</a></li> <li><a href="/cn/#player">特性</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>动画工具</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/cn/usage">使用方法</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="/cn/#tool">特性</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>框架</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/cn/reference/framework">参考资料</a></li> <li><a href="/cn/#framework">特性</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>语言</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="/en">English</a></li> <li><a href="/ja">日本語</a></li> <li><a href="/cn">简体中文</a></li> </ul> </li> <li class="dropdown"><a class="nav-link"><span>支持我们</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li> </ul> </li> <li><a class="nav-link scrollto" href="/cn/#contact">联系我们</a></li> </ul> <i class="bi bi-list mobile-nav-toggle"></i> </nav> </div> </header> <section class="breadcrumbs"> <div class="container"> <div class="d-flex justify-content-between align-items-center"> <h2>滤镜</h2> <ol> <li> <a href="/cn/">首页</a> </li><li> <a href="/cn/reference/player/">Player</a> </li><li> 滤镜 </li> </ol> </div> </div> </section> <section id="references" class="reference-section"> <div class="container" data-aos="fade-up"> <div class="row"> <div class="col-lg-3 col-md-4"> <nav id="sub-navbar" class="list-menu sub-navbar"><ul class="list-unstyled"><li><strong>Player</strong></li><ul><li><a href="/cn/reference/player">概述</a></li><li><a href="/cn/reference/player/display-object">DisplayObject</a></li><li><a href="/cn/reference/player/sprite">Sprite</a></li><li><a href="/cn/reference/player/movie-clip">MovieClip</a></li><li><a href="/cn/reference/player/shape">Shape</a></li><li><a href="/cn/reference/player/text-field">TextField</a></li><li><a href="/cn/reference/player/video">Video</a></li><li><a href="/cn/reference/player/sound">Sound</a></li><li><a href="/cn/reference/player/events">事件</a></li><li><a href="/cn/reference/player/filters">滤镜</a></li><li><a href="/cn/reference/player/tween">Tween</a></li></ul><li><strong>Framework</strong></li><ul><li><a href="/cn/reference/framework">概述</a></li><li><a href="/cn/reference/framework/view">View/ViewModel</a></li><li><a href="/cn/reference/framework/routing">路由</a></li><li><a href="/cn/reference/framework/config">配置文件</a></li><li><a href="/cn/reference/framework/animation-tool">Animation Tool集成</a></li></ul></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav> </div> <div class="col-lg-9 col-md-8">  <div class="docs-content" data-astro-cid-xt6eahls> <h1 id="滤镜">滤镜</h1>
+<p>Next2D Player 提供各种可应用于 DisplayObject 的视觉滤镜。</p>
+<h2 id="应用滤镜">应用滤镜</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Sprite</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">BlurFilter</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">DropShadowFilter</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">GlowFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> sprite</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Sprite</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 单个滤镜</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.filters </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span><span style="color:#F97583">new</span><span style="color:#B392F0"> BlurFilter</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">)];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 多个滤镜</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.filters </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> DropShadowFilter</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">45</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0x000000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.5</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> GlowFilter</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0xff0000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">8</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">8</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 移除滤镜</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.filters </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">;</span></span></code></pre>
+<h2 id="可用滤镜">可用滤镜</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>滤镜</th><th>说明</th></tr></thead><tbody><tr><td>BlurFilter</td><td>模糊效果</td></tr><tr><td>DropShadowFilter</td><td>投影效果</td></tr><tr><td>GlowFilter</td><td>发光效果</td></tr><tr><td>BevelFilter</td><td>斜角效果</td></tr><tr><td>ColorMatrixFilter</td><td>颜色矩阵变换</td></tr><tr><td>ConvolutionFilter</td><td>卷积效果</td></tr><tr><td>DisplacementMapFilter</td><td>位移贴图效果</td></tr><tr><td>GradientBevelFilter</td><td>渐变斜角效果</td></tr><tr><td>GradientGlowFilter</td><td>渐变发光效果</td></tr></tbody></table>
+<hr>
+<h2 id="blurfilter">BlurFilter</h2>
+<p>应用模糊效果。您可以创建从柔和失焦到高斯模糊的各种模糊效果。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">BlurFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> BlurFilter</span><span style="color:#E1E4E8">(blurX, blurY, quality);</span></span></code></pre>
+<h3 id="属性">属性</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>默认值</th><th>说明</th></tr></thead><tbody><tr><td>blurX</td><td>number</td><td>4</td><td>水平模糊量（0-255）</td></tr><tr><td>blurY</td><td>number</td><td>4</td><td>垂直模糊量（0-255）</td></tr><tr><td>quality</td><td>number</td><td>1</td><td>执行模糊的次数（0-15）</td></tr></tbody></table>
+<hr>
+<h2 id="dropshadowfilter">DropShadowFilter</h2>
+<p>应用投影效果。样式选项包括内阴影、外阴影和挖空模式。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">DropShadowFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> DropShadowFilter</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    distance, angle, color, alpha,</span></span>
+<span class="line"><span style="color:#E1E4E8">    blurX, blurY, strength, quality,</span></span>
+<span class="line"><span style="color:#E1E4E8">    inner, knockout, hideObject</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="属性-1">属性</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>默认值</th><th>说明</th></tr></thead><tbody><tr><td>alpha</td><td>number</td><td>1</td><td>阴影的 alpha 透明度值（0-1）</td></tr><tr><td>angle</td><td>number</td><td>45</td><td>阴影的角度（-360 到 360 度）</td></tr><tr><td>blurX</td><td>number</td><td>4</td><td>水平模糊量（0-255）</td></tr><tr><td>blurY</td><td>number</td><td>4</td><td>垂直模糊量（0-255）</td></tr><tr><td>color</td><td>number</td><td>0</td><td>阴影的颜色（0x000000-0xFFFFFF）</td></tr><tr><td>distance</td><td>number</td><td>4</td><td>阴影的偏移距离（-255 到 255 像素）</td></tr><tr><td>hideObject</td><td>boolean</td><td>false</td><td>指示对象是否被隐藏</td></tr><tr><td>inner</td><td>boolean</td><td>false</td><td>指定阴影是否为内阴影</td></tr><tr><td>knockout</td><td>boolean</td><td>false</td><td>指定对象是否具有挖空效果</td></tr><tr><td>quality</td><td>number</td><td>1</td><td>执行模糊的次数（0-15）</td></tr><tr><td>strength</td><td>number</td><td>1</td><td>印记或扩展的强度（0-255）</td></tr></tbody></table>
+<hr>
+<h2 id="glowfilter">GlowFilter</h2>
+<p>应用发光效果。样式选项包括内发光、外发光和挖空模式。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">GlowFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> GlowFilter</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    color, alpha, blurX, blurY,</span></span>
+<span class="line"><span style="color:#E1E4E8">    strength, quality, inner, knockout</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="属性-2">属性</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>默认值</th><th>说明</th></tr></thead><tbody><tr><td>alpha</td><td>number</td><td>1</td><td>发光的 alpha 透明度值（0-1）</td></tr><tr><td>blurX</td><td>number</td><td>4</td><td>水平模糊量（0-255）</td></tr><tr><td>blurY</td><td>number</td><td>4</td><td>垂直模糊量（0-255）</td></tr><tr><td>color</td><td>number</td><td>0</td><td>发光的颜色（0x000000-0xFFFFFF）</td></tr><tr><td>inner</td><td>boolean</td><td>false</td><td>指定发光是否为内发光</td></tr><tr><td>knockout</td><td>boolean</td><td>false</td><td>指定对象是否具有挖空效果</td></tr><tr><td>quality</td><td>number</td><td>1</td><td>执行模糊的次数（0-15）</td></tr><tr><td>strength</td><td>number</td><td>1</td><td>印记或扩展的强度（0-255）</td></tr></tbody></table>
+<hr>
+<h2 id="bevelfilter">BevelFilter</h2>
+<p>应用斜角效果。使对象具有三维外观。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">BevelFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> BevelFilter</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    distance, angle, highlightColor, highlightAlpha,</span></span>
+<span class="line"><span style="color:#E1E4E8">    shadowColor, shadowAlpha, blurX, blurY,</span></span>
+<span class="line"><span style="color:#E1E4E8">    strength, quality, type, knockout</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="属性-3">属性</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>默认值</th><th>说明</th></tr></thead><tbody><tr><td>angle</td><td>number</td><td>45</td><td>斜角的角度（-360 到 360 度）</td></tr><tr><td>blurX</td><td>number</td><td>4</td><td>水平模糊量（0-255）</td></tr><tr><td>blurY</td><td>number</td><td>4</td><td>垂直模糊量（0-255）</td></tr><tr><td>distance</td><td>number</td><td>4</td><td>斜角的偏移距离（-255 到 255 像素）</td></tr><tr><td>highlightAlpha</td><td>number</td><td>1</td><td>高光颜色的 alpha 透明度值（0-1）</td></tr><tr><td>highlightColor</td><td>number</td><td>0xFFFFFF</td><td>斜角的高光颜色（0x000000-0xFFFFFF）</td></tr><tr><td>knockout</td><td>boolean</td><td>false</td><td>指定对象是否具有挖空效果</td></tr><tr><td>quality</td><td>number</td><td>1</td><td>执行模糊的次数（0-15）</td></tr><tr><td>shadowAlpha</td><td>number</td><td>1</td><td>阴影颜色的 alpha 透明度值（0-1）</td></tr><tr><td>shadowColor</td><td>number</td><td>0</td><td>斜角的阴影颜色（0x000000-0xFFFFFF）</td></tr><tr><td>strength</td><td>number</td><td>1</td><td>印记或扩展的强度（0-255）</td></tr><tr><td>type</td><td>string</td><td>”inner”</td><td>斜角的位置（“inner”、“outer”、“full”）</td></tr></tbody></table>
+<hr>
+<h2 id="colormatrixfilter">ColorMatrixFilter</h2>
+<p>应用 4x5 颜色矩阵变换。可以调整亮度、对比度、饱和度、色调等。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">ColorMatrixFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> ColorMatrixFilter</span><span style="color:#E1E4E8">(matrix);</span></span></code></pre>
+<h3 id="属性-4">属性</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>默认值</th><th>说明</th></tr></thead><tbody><tr><td>matrix</td><td>number[]</td><td>单位矩阵</td><td>用于 4x5 颜色变换的 20 个项目的数组</td></tr></tbody></table>
+<h3 id="默认矩阵值单位矩阵">默认矩阵值（单位矩阵）</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#E1E4E8">[</span></span>
+<span class="line"><span style="color:#79B8FF">    1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span></span>
+<span class="line"><span style="color:#E1E4E8">]</span></span></code></pre>
+<hr>
+<h2 id="convolutionfilter">ConvolutionFilter</h2>
+<p>应用矩阵卷积滤镜效果。可以实现模糊、边缘检测、锐化、浮雕、斜角等效果。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">ConvolutionFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> ConvolutionFilter</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    matrixX, matrixY, matrix, divisor, bias,</span></span>
+<span class="line"><span style="color:#E1E4E8">    preserveAlpha, clamp, color, alpha</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="属性-5">属性</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>默认值</th><th>说明</th></tr></thead><tbody><tr><td>alpha</td><td>number</td><td>0</td><td>超出边界像素的 alpha 透明度值（0-1）</td></tr><tr><td>bias</td><td>number</td><td>0</td><td>添加到矩阵变换结果的偏差量</td></tr><tr><td>clamp</td><td>boolean</td><td>true</td><td>指示图像是否应被钳位</td></tr><tr><td>color</td><td>number</td><td>0</td><td>用于超出边界像素的十六进制颜色（0x000000-0xFFFFFF）</td></tr><tr><td>divisor</td><td>number</td><td>1</td><td>矩阵变换期间使用的除数</td></tr><tr><td>matrix</td><td>number[] | null</td><td>null</td><td>用于矩阵变换的值数组</td></tr><tr><td>matrixX</td><td>number</td><td>0</td><td>矩阵的 x 维度（列数，0-15）</td></tr><tr><td>matrixY</td><td>number</td><td>0</td><td>矩阵的 y 维度（行数，0-15）</td></tr><tr><td>preserveAlpha</td><td>boolean</td><td>true</td><td>指示 alpha 通道是否在没有滤镜效果的情况下保留</td></tr></tbody></table>
+<hr>
+<h2 id="displacementmapfilter">DisplacementMapFilter</h2>
+<p>使用 BitmapData 对象的像素值对对象执行位移。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">DisplacementMapFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> DisplacementMapFilter</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    bitmapBuffer, bitmapWidth, bitmapHeight,</span></span>
+<span class="line"><span style="color:#E1E4E8">    mapPointX, mapPointY, componentX, componentY,</span></span>
+<span class="line"><span style="color:#E1E4E8">    scaleX, scaleY, mode, color, alpha</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="属性-6">属性</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>默认值</th><th>说明</th></tr></thead><tbody><tr><td>alpha</td><td>number</td><td>0</td><td>超出边界位移的 alpha 透明度值（0-1）</td></tr><tr><td>bitmapBuffer</td><td>Uint8Array | null</td><td>null</td><td>包含位移贴图数据的缓冲区</td></tr><tr><td>bitmapHeight</td><td>number</td><td>0</td><td>位移贴图图像的高度</td></tr><tr><td>bitmapWidth</td><td>number</td><td>0</td><td>位移贴图图像的宽度</td></tr><tr><td>color</td><td>number</td><td>0</td><td>用于超出边界位移的颜色（0x000000-0xFFFFFF）</td></tr><tr><td>componentX</td><td>number</td><td>0</td><td>用于位移 x 结果的贴图图像中的颜色通道</td></tr><tr><td>componentY</td><td>number</td><td>0</td><td>用于位移 y 结果的贴图图像中的颜色通道</td></tr><tr><td>mapPointX</td><td>number</td><td>0</td><td>贴图点的 X 偏移</td></tr><tr><td>mapPointY</td><td>number</td><td>0</td><td>贴图点的 Y 偏移</td></tr><tr><td>mode</td><td>string</td><td>”wrap”</td><td>滤镜的模式（“wrap”、“clamp”、“ignore”、“color”）</td></tr><tr><td>scaleX</td><td>number</td><td>0</td><td>缩放 x 位移结果的乘数（-65535 到 65535）</td></tr><tr><td>scaleY</td><td>number</td><td>0</td><td>缩放 y 位移结果的乘数（-65535 到 65535）</td></tr></tbody></table>
+<hr>
+<h2 id="gradientbevelfilter">GradientBevelFilter</h2>
+<p>应用渐变斜角效果。使用渐变颜色增强的斜边使对象看起来具有三维效果。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">GradientBevelFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> GradientBevelFilter</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    distance, angle, colors, alphas, ratios,</span></span>
+<span class="line"><span style="color:#E1E4E8">    blurX, blurY, strength, quality, type, knockout</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="属性-7">属性</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>默认值</th><th>说明</th></tr></thead><tbody><tr><td>alphas</td><td>number[] | null</td><td>null</td><td>相应颜色的 alpha 透明度值数组（每个值 0-1）</td></tr><tr><td>angle</td><td>number</td><td>45</td><td>斜角的角度（-360 到 360 度）</td></tr><tr><td>blurX</td><td>number</td><td>4</td><td>水平模糊量（0-255）</td></tr><tr><td>blurY</td><td>number</td><td>4</td><td>垂直模糊量（0-255）</td></tr><tr><td>colors</td><td>number[] | null</td><td>null</td><td>用于渐变的 RGB 十六进制颜色值数组</td></tr><tr><td>distance</td><td>number</td><td>4</td><td>斜角的偏移距离（-255 到 255 像素）</td></tr><tr><td>knockout</td><td>boolean</td><td>false</td><td>指定对象是否具有挖空效果</td></tr><tr><td>quality</td><td>number</td><td>1</td><td>执行模糊的次数（0-15）</td></tr><tr><td>ratios</td><td>number[] | null</td><td>null</td><td>相应颜色的颜色分布比例数组（每个值 0-255）</td></tr><tr><td>strength</td><td>number</td><td>1</td><td>印记或扩展的强度（0-255）</td></tr><tr><td>type</td><td>string</td><td>”inner”</td><td>斜角的位置（“inner”、“outer”、“full”）</td></tr></tbody></table>
+<hr>
+<h2 id="gradientglowfilter">GradientGlowFilter</h2>
+<p>应用渐变发光效果。具有可控颜色渐变的逼真发光效果。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">GradientGlowFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> GradientGlowFilter</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    distance, angle, colors, alphas, ratios,</span></span>
+<span class="line"><span style="color:#E1E4E8">    blurX, blurY, strength, quality, type, knockout</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="属性-8">属性</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>默认值</th><th>说明</th></tr></thead><tbody><tr><td>alphas</td><td>number[] | null</td><td>null</td><td>相应颜色的 alpha 透明度值数组（每个值 0-1）</td></tr><tr><td>angle</td><td>number</td><td>45</td><td>发光的角度（-360 到 360 度）</td></tr><tr><td>blurX</td><td>number</td><td>4</td><td>水平模糊量（0-255）</td></tr><tr><td>blurY</td><td>number</td><td>4</td><td>垂直模糊量（0-255）</td></tr><tr><td>colors</td><td>number[] | null</td><td>null</td><td>用于渐变的 RGB 十六进制颜色值数组</td></tr><tr><td>distance</td><td>number</td><td>4</td><td>发光的偏移距离（-255 到 255 像素）</td></tr><tr><td>knockout</td><td>boolean</td><td>false</td><td>指定对象是否具有挖空效果</td></tr><tr><td>quality</td><td>number</td><td>1</td><td>执行模糊的次数（0-15）</td></tr><tr><td>ratios</td><td>number[] | null</td><td>null</td><td>相应颜色的颜色分布比例数组（每个值 0-255）</td></tr><tr><td>strength</td><td>number</td><td>1</td><td>印记或扩展的强度（0-255）</td></tr><tr><td>type</td><td>string</td><td>”outer”</td><td>发光的位置（“inner”、“outer”、“full”）</td></tr></tbody></table>
+<hr>
+<h2 id="使用示例">使用示例</h2>
+<h3 id="按钮悬停效果">按钮悬停效果</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Sprite</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">GlowFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> button</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Sprite</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">button.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"rollOver"</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    button.filters </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#F97583">        new</span><span style="color:#B392F0"> GlowFilter</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0x00ff00</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.8</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    ];</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">button.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"rollOut"</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    button.filters </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="带阴影的文本">带阴影的文本</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">TextField</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.text;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">DropShadowFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> textField</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextField</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.text </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "Hello World"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.filters </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> DropShadowFilter</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">45</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0x000000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.5</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span></code></pre>
+<h3 id="组合滤镜">组合滤镜</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">GlowFilter</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">DropShadowFilter</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">BlurFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">sprite.filters </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#6A737D">    // 外发光</span></span>
+<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> GlowFilter</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0x0088ff</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.8</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">15</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">15</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#6A737D">    // 投影</span></span>
+<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> DropShadowFilter</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">45</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0x000000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.6</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#6A737D">    // 轻微模糊</span></span>
+<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> BlurFilter</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span></code></pre>
+<h3 id="使用-colormatrixfilter-实现灰度">使用 ColorMatrixFilter 实现灰度</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">ColorMatrixFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 灰度变换矩阵</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> grayscaleMatrix</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#79B8FF">    0.299</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.587</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.114</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    0.299</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.587</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.114</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    0.299</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.587</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.114</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    0</span><span style="color:#E1E4E8">,     </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,     </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,     </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">sprite.filters </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span><span style="color:#F97583">new</span><span style="color:#B392F0"> ColorMatrixFilter</span><span style="color:#E1E4E8">(grayscaleMatrix)];</span></span></code></pre>
+<h3 id="渐变发光效果">渐变发光效果</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">GradientGlowFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">sprite.filters </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> GradientGlowFilter</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#79B8FF">        4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">45</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        [</span><span style="color:#79B8FF">0xff0000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0x00ff00</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0x0000ff</span><span style="color:#E1E4E8">], </span><span style="color:#6A737D">// 颜色</span></span>
+<span class="line"><span style="color:#E1E4E8">        [</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">],                       </span><span style="color:#6A737D">// alpha</span></span>
+<span class="line"><span style="color:#E1E4E8">        [</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">128</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">],                   </span><span style="color:#6A737D">// 比例</span></span>
+<span class="line"><span style="color:#79B8FF">        10</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"outer"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">false</span></span>
+<span class="line"><span style="color:#E1E4E8">    )</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span></code></pre>
+<hr>
+<h2 id="相关">相关</h2>
+<ul>
+<li><a href="/cn/reference/player/display-object">DisplayObject</a></li>
+<li><a href="/cn/reference/player/movie-clip">MovieClip</a></li>
+</ul> </div>  </div> </div> </div> </section> <footer class="footer" data-aos="fade-up"> <div class="container"> <div class="row"> <div class="col-md-12 col-lg-4"> <div class="footer-logo"> <a class="navbar-brand" href="/cn">Next2D</a> <p> Next2D 源于一个 JavaScript Flash 播放器项目 &quot;swf2js&quot;，旨在提供一个在任何设备上都可以运行的、最快的 2D 引擎。<br>
+Created by Toshiyuki Ienaga.
+</p> </div> <div class="list-sns-menu"> <ul class="list-unstyled"> <li><a href="https://twitter.com/ienagatoshiyuki" target="_blank"><i class="bi bi-twitter"></i></a></li> <li><a href="https://github.com/ienaga" target="_blank"><i class="bi bi-github"></i></a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>播放器 (Player)</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/cn/reference/player">参考资料</a></li> <li><a href="/cn/#player">特性</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>动画制作工具 (Animation Tool)</h4> <ul class="list-unstyled"> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/cn/usage">使用方法</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>框架 (Framework)</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/cn/reference/framework">参考资料</a></li> <li><a href="/cn/#framework">特性</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>关于我们</h4> <ul class="list-unstyled"> <li><a href="/cn/#contact">联系我们</a></li> <li><a href="/cn/privacy">隐私政策</a></li> </ul> </div> </div> </div> </div> <div class="copyrights"> <div class="container"> <p>&copy; Copyrights Next2D. All rights reserved.</p> </div> </div> </footer> <script type="module" src="/assets/DocsLayout.astro_astro_type_script_index_0_lang.yTAR6D4i.js"></script>  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> <!-- Vendor JS --> <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script> <script src="/assets/js/vendor/aos.js"></script> <!-- Main JS --> <script src="/assets/js/main.js"></script> </body> </html> 

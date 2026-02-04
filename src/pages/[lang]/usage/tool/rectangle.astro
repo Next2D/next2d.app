@@ -1,0 +1,41 @@
+---
+import DocsLayout from '../../../../layouts/DocsLayout.astro';
+import { getTranslations, supportedLanguages, isValidLanguage } from '../../../../i18n';
+
+export function getStaticPaths() {
+  return supportedLanguages.map((lang) => ({
+    params: { lang }
+  }));
+}
+
+const { lang } = Astro.params;
+if (!isValidLanguage(lang)) {
+  return Astro.redirect('/ja/usage/tool/rectangle');
+}
+
+const t = await getTranslations(lang);
+const basePath = import.meta.env.BASE_URL;
+
+const breadcrumbs = [
+  { label: t.navbar?.home || 'Home', href: `${basePath}${lang}/` },
+  { label: t.main?.['usage-title'] || 'Usage', href: `${basePath}${lang}/usage/` },
+  { label: 'Tool Area', href: `${basePath}${lang}/usage/tool/` },
+  { label: t.toolmenu?.tool?.rectangle || '短形ツール' }
+];
+---
+
+<DocsLayout
+  title={t.toolusage?.tool?.rectangle?.title || '短形ツール'}
+  description={t.toolusage?.tool?.rectangle?.description || ''}
+  lang={lang}
+  t={t}
+  breadcrumbs={breadcrumbs}
+  menuType="usage"
+>
+  <div>
+    <h3>{t.toolmenu?.tool?.rectangle || '短形ツール'}</h3>
+    <p><iframe loading="lazy" width="560" height="350" src="https://www.youtube.com/embed/eJiIN1fqQrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+    <h4>{t.toolusage?.tool?.rectangle?.description || ''}</h4>
+    <p>{t.toolusage?.tool?.rectangle?.text1 || ''}</p>
+  </div>
+</DocsLayout>

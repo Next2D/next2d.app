@@ -1,0 +1,343 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Next2D | MovieClip</title><meta content="Next2D Player function description and sample code are available" name="description"><meta content="Next2D,Next2D Player,Animation Tool,Next2D Framework" name="keywords"><!-- SEO: Canonical URL --><link rel="canonical" href="https://next2d.app/en/reference/player/movie-clip/"><!-- SEO: hreflang for multi-language --><link rel="alternate" hreflang="ja" href="https://next2d.app/ja/reference/player/movie-clip/"><link rel="alternate" hreflang="en" href="https://next2d.app/en/reference/player/movie-clip/"><link rel="alternate" hreflang="zh-CN" href="https://next2d.app/cn/reference/player/movie-clip/"><link rel="alternate" hreflang="x-default" href="https://next2d.app/ja/reference/player/movie-clip/"><!-- Google / Search Engine Tags --><meta itemprop="name" content="Next2D | MovieClip"><meta itemprop="description" content="Next2D Player function description and sample code are available"><meta itemprop="image" content="https://next2d.app/assets/img/ogp.png"><!-- Facebook Meta Tags --><meta property="og:url" content="https://next2d.app/en/reference/player/movie-clip/"><meta property="og:type" content="website"><meta property="og:title" content="Next2D | MovieClip"><meta property="og:description" content="Next2D Player function description and sample code are available"><meta property="og:image" content="https://next2d.app/assets/img/ogp.png"><meta property="og:locale" content="en"><meta property="og:site_name" content="Next2D"><!-- Twitter Meta Tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Next2D"><meta name="twitter:creator" content="@Next2D"><meta name="twitter:title" content="Next2D | MovieClip"><meta name="twitter:description" content="Next2D Player function description and sample code are available"><meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png"><!-- Theme Color --><meta name="theme-color" content="#5777ba"><!-- Web App Manifest --><link rel="manifest" href="/manifest.json"><!-- JSON-LD Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Next2D","url":"https://next2d.app","description":"Next2D - Rendering Engine, Animation Tool, Underlying Framework","inLanguage":["en"],"potentialAction":{"@type":"SearchAction","target":"https://next2d.app/{lang}/reference/player/?q={search_term_string}","query-input":"required name=search_term_string"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Next2D","url":"https://next2d.app","logo":"https://next2d.app/assets/img/ogp.png","sameAs":["https://github.com/Next2D"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://next2d.app/en/"},{"@type":"ListItem","position":2,"name":"Player","item":"https://next2d.app/en/reference/player/"},{"@type":"ListItem","position":3,"name":"MovieClip"}]}</script><!-- Favicons --><link href="/assets/img/favicon.png" rel="icon"><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"><!-- Vendor CSS --><link href="/assets/css/vendor/aos.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap-icons.min.css" rel="stylesheet"><!-- Main CSS --><link href="/assets/css/main.css" rel="stylesheet"><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-8GJWF4S3RH");
+    </script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style>.docs-content[data-astro-cid-xt6eahls] h1{font-size:2rem;margin-bottom:1.5rem}.docs-content[data-astro-cid-xt6eahls] h2{font-size:1.5rem;margin-top:2rem;margin-bottom:1rem}.docs-content[data-astro-cid-xt6eahls] h3{font-size:1.25rem;margin-top:1.5rem;margin-bottom:.75rem}.docs-content[data-astro-cid-xt6eahls] pre{background-color:#2a2c30;color:#f8f9fa;border-radius:8px;padding:1rem;overflow-x:auto;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] code{font-family:Monaco,Menlo,monospace;font-size:.9em}.docs-content[data-astro-cid-xt6eahls] table{width:100%;border-collapse:collapse;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] th,.docs-content[data-astro-cid-xt6eahls] td{border:1px solid #ddd;padding:.5rem;text-align:left}.docs-content[data-astro-cid-xt6eahls] th{background-color:#f5f5f5}
+</style></head> <body class>  <header id="header" class="header fixed-top d-flex align-items-center"> <div class="container d-flex align-items-center justify-content-between"> <div id="logo"> <a href="/en"><img loading="lazy" src="/assets/img/logo.svg" alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework."></a> </div> <nav id="navbar" class="navbar"> <ul class="list-unstyled"> <li><a class="nav-link scrollto" href="/en/#get-started">Home</a></li> <li><a class="nav-link scrollto" href="/en/#casestudy">Case Studies</a></li> <li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>Player</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/en/reference/player">Reference</a></li> <li><a href="/en/#player">Features</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>Animation Tool</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/en/usage">Usage</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="/en/#tool">Features</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>Framework</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/en/reference/framework">Reference</a></li> <li><a href="/en/#framework">Features</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>Language</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="/en">English</a></li> <li><a href="/ja">日本語</a></li> <li><a href="/cn">简体中文</a></li> </ul> </li> <li class="dropdown"><a class="nav-link"><span>Support US</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li> </ul> </li> <li><a class="nav-link scrollto" href="/en/#contact">Contact</a></li> </ul> <i class="bi bi-list mobile-nav-toggle"></i> </nav> </div> </header> <section class="breadcrumbs"> <div class="container"> <div class="d-flex justify-content-between align-items-center"> <h2>MovieClip</h2> <ol> <li> <a href="/en/">Home</a> </li><li> <a href="/en/reference/player/">Player</a> </li><li> MovieClip </li> </ol> </div> </div> </section> <section id="references" class="reference-section"> <div class="container" data-aos="fade-up"> <div class="row"> <div class="col-lg-3 col-md-4"> <nav id="sub-navbar" class="list-menu sub-navbar"><ul class="list-unstyled"><li><strong>Player</strong></li><ul><li><a href="/en/reference/player">Overview</a></li><li><a href="/en/reference/player/display-object">DisplayObject</a></li><li><a href="/en/reference/player/sprite">Sprite</a></li><li><a href="/en/reference/player/movie-clip">MovieClip</a></li><li><a href="/en/reference/player/shape">Shape</a></li><li><a href="/en/reference/player/text-field">TextField</a></li><li><a href="/en/reference/player/video">Video</a></li><li><a href="/en/reference/player/sound">Sound</a></li><li><a href="/en/reference/player/events">Events</a></li><li><a href="/en/reference/player/filters">Filters</a></li><li><a href="/en/reference/player/tween">Tween</a></li></ul><li><strong>Framework</strong></li><ul><li><a href="/en/reference/framework">Overview</a></li><li><a href="/en/reference/framework/view">View/ViewModel</a></li><li><a href="/en/reference/framework/routing">Routing</a></li><li><a href="/en/reference/framework/config">Configuration</a></li><li><a href="/en/reference/framework/animation-tool">Animation Tool Integration</a></li></ul></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav> </div> <div class="col-lg-9 col-md-8">  <div class="docs-content" data-astro-cid-xt6eahls> <h1 id="movieclip">MovieClip</h1>
+<p>MovieClip is a DisplayObjectContainer with timeline animation. Animations created with Open Animation Tool are played as MovieClips.</p>
+<h2 id="inheritance">Inheritance</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">classDiagram</span></span>
+<span class="line"><span style="color:#E1E4E8">    DisplayObject &#x3C;|-- InteractiveObject</span></span>
+<span class="line"><span style="color:#E1E4E8">    InteractiveObject &#x3C;|-- DisplayObjectContainer</span></span>
+<span class="line"><span style="color:#E1E4E8">    DisplayObjectContainer &#x3C;|-- Sprite</span></span>
+<span class="line"><span style="color:#E1E4E8">    Sprite &#x3C;|-- MovieClip</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    class DisplayObject {</span></span>
+<span class="line"><span style="color:#E1E4E8">        +x: Number</span></span>
+<span class="line"><span style="color:#E1E4E8">        +y: Number</span></span>
+<span class="line"><span style="color:#E1E4E8">        +visible: Boolean</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">    class MovieClip {</span></span>
+<span class="line"><span style="color:#E1E4E8">        +currentFrame: Number</span></span>
+<span class="line"><span style="color:#E1E4E8">        +totalFrames: Number</span></span>
+<span class="line"><span style="color:#E1E4E8">        +play()</span></span>
+<span class="line"><span style="color:#E1E4E8">        +stop()</span></span>
+<span class="line"><span style="color:#E1E4E8">        +gotoAndPlay()</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span></code></pre>
+<h2 id="properties">Properties</h2>
+<h3 id="movieclip-specific-properties">MovieClip-Specific Properties</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>currentFrame</code></td><td><code>number</code></td><td>Specifies the number of the frame in which the playhead is located in the timeline (starts from 1, read-only)</td></tr><tr><td><code>totalFrames</code></td><td><code>number</code></td><td>The total number of frames in the MovieClip instance (read-only)</td></tr><tr><td><code>currentFrameLabel</code></td><td><code>FrameLabel | null</code></td><td>The label at the current frame in the timeline of the MovieClip instance (read-only)</td></tr><tr><td><code>currentLabels</code></td><td><code>FrameLabel[] | null</code></td><td>Returns an array of FrameLabel objects from the current scene (read-only)</td></tr><tr><td><code>isPlaying</code></td><td><code>boolean</code></td><td>A Boolean value that indicates whether a movie clip is currently playing (read-only)</td></tr><tr><td><code>isTimelineEnabled</code></td><td><code>boolean</code></td><td>Returns whether the display object has MovieClip functionality (read-only)</td></tr></tbody></table>
+<h3 id="properties-inherited-from-displayobjectcontainer">Properties Inherited from DisplayObjectContainer</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>numChildren</code></td><td><code>number</code></td><td>Returns the number of children of this object (read-only)</td></tr><tr><td><code>mouseChildren</code></td><td><code>boolean</code></td><td>Determines whether the children of the object are mouse or user input device enabled</td></tr><tr><td><code>mask</code></td><td><code>DisplayObject | null</code></td><td>The calling display object is masked by the specified mask object</td></tr><tr><td><code>isContainerEnabled</code></td><td><code>boolean</code></td><td>Returns whether the display object has container functionality (read-only)</td></tr></tbody></table>
+<h2 id="methods">Methods</h2>
+<h3 id="movieclip-specific-methods">MovieClip-Specific Methods</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Return Type</th><th>Description</th></tr></thead><tbody><tr><td><code>play()</code></td><td><code>void</code></td><td>Moves the playhead in the timeline of the movie clip</td></tr><tr><td><code>stop()</code></td><td><code>void</code></td><td>Stops the playhead in the movie clip</td></tr><tr><td><code>gotoAndPlay(frame: string | number)</code></td><td><code>void</code></td><td>Starts playing the file at the specified frame</td></tr><tr><td><code>gotoAndStop(frame: string | number)</code></td><td><code>void</code></td><td>Brings the playhead to the specified frame and stops it there</td></tr><tr><td><code>nextFrame()</code></td><td><code>void</code></td><td>Sends the playhead to the next frame and stops it</td></tr><tr><td><code>prevFrame()</code></td><td><code>void</code></td><td>Sends the playhead to the previous frame and stops it</td></tr><tr><td><code>addFrameLabel(frame_label: FrameLabel)</code></td><td><code>void</code></td><td>Dynamically adds a label to the timeline</td></tr></tbody></table>
+<h3 id="methods-inherited-from-displayobjectcontainer">Methods Inherited from DisplayObjectContainer</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Return Type</th><th>Description</th></tr></thead><tbody><tr><td><code>addChild(display_object: DisplayObject)</code></td><td><code>DisplayObject</code></td><td>Adds a child DisplayObject instance to this DisplayObjectContainer instance</td></tr><tr><td><code>addChildAt(display_object: DisplayObject, index: number)</code></td><td><code>DisplayObject</code></td><td>Adds a child DisplayObject instance at the specified index position</td></tr><tr><td><code>removeChild(display_object: DisplayObject)</code></td><td><code>void</code></td><td>Removes the specified child DisplayObject instance from the child list</td></tr><tr><td><code>removeChildAt(index: number)</code></td><td><code>void</code></td><td>Removes a child DisplayObject from the specified index position in the child list</td></tr><tr><td><code>removeChildren(...indexes: number[])</code></td><td><code>void</code></td><td>Removes children at the specified indexes from the container</td></tr><tr><td><code>getChildAt(index: number)</code></td><td><code>DisplayObject | null</code></td><td>Returns the child display object instance that exists at the specified index</td></tr><tr><td><code>getChildByName(name: string)</code></td><td><code>DisplayObject | null</code></td><td>Returns the child display object that exists with the specified name</td></tr><tr><td><code>getChildIndex(display_object: DisplayObject)</code></td><td><code>number</code></td><td>Returns the index position of a child DisplayObject instance</td></tr><tr><td><code>contains(display_object: DisplayObject)</code></td><td><code>boolean</code></td><td>Determines whether the specified display object is a child of the DisplayObjectContainer instance or the instance itself</td></tr><tr><td><code>setChildIndex(display_object: DisplayObject, index: number)</code></td><td><code>void</code></td><td>Changes the position of an existing child in the display object container</td></tr><tr><td><code>swapChildren(display_object1: DisplayObject, display_object2: DisplayObject)</code></td><td><code>void</code></td><td>Swaps the z-order (front-to-back order) of the two specified child objects</td></tr><tr><td><code>swapChildrenAt(index1: number, index2: number)</code></td><td><code>void</code></td><td>Swaps the z-order (front-to-back order) of the child objects at the two specified index positions</td></tr></tbody></table>
+<h2 id="events">Events</h2>
+<h3 id="enterframe">enterFrame</h3>
+<p>Event that occurs each frame:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">movieClip.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"enterFrame"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Frame:"</span><span style="color:#E1E4E8">, event.target.currentFrame);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="frameconstructed">frameConstructed</h3>
+<p>Occurs when frame construction is complete:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">movieClip.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"frameConstructed"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#6A737D">    // Before frame script execution</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="exitframe">exitFrame</h3>
+<p>Occurs when leaving a frame:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">movieClip.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"exitFrame"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#6A737D">    // Before moving to next frame</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h2 id="usage-examples">Usage Examples</h2>
+<h3 id="basic-animation-control">Basic Animation Control</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Loader</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">URLRequest</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.net;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Load MovieClip from JSON</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> loader</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Loader</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">await</span><span style="color:#E1E4E8"> loader.</span><span style="color:#B392F0">load</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">new</span><span style="color:#B392F0"> URLRequest</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"animation.json"</span><span style="color:#E1E4E8">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> mc</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> loader.content;</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(mc);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Stop initially</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">stop</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Play/pause on button click</span></span>
+<span class="line"><span style="color:#E1E4E8">button.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (mc.isPlaying) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        mc.</span><span style="color:#B392F0">stop</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        mc.</span><span style="color:#B392F0">play</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="control-with-frame-labels">Control with Frame Labels</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Move to label position</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">gotoAndStop</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"idle"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// State change</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> changeState</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">state</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    switch</span><span style="color:#E1E4E8"> (state) {</span></span>
+<span class="line"><span style="color:#F97583">        case</span><span style="color:#9ECBFF"> "idle"</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">            mc.</span><span style="color:#B392F0">gotoAndPlay</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"idle"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">            break</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        case</span><span style="color:#9ECBFF"> "walk"</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">            mc.</span><span style="color:#B392F0">gotoAndPlay</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"walk_start"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">            break</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        case</span><span style="color:#9ECBFF"> "attack"</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">            mc.</span><span style="color:#B392F0">gotoAndPlay</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"attack"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">            break</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="controlling-nested-movieclips">Controlling Nested MovieClips</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Access child MovieClip</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> childMc</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> mc.</span><span style="color:#B392F0">getChildByName</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"character"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">childMc.</span><span style="color:#B392F0">gotoAndPlay</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"run"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Access grandchild MovieClip</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> grandChild</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> mc.character.arm;</span></span>
+<span class="line"><span style="color:#E1E4E8">grandChild.</span><span style="color:#B392F0">play</span><span style="color:#E1E4E8">();</span></span></code></pre>
+<h3 id="child-object-operations">Child Object Operations</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Add child object</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> sprite</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Sprite</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(sprite);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Add at specific index</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">addChildAt</span><span style="color:#E1E4E8">(sprite, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Remove child object</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">removeChild</span><span style="color:#E1E4E8">(sprite);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Remove by index</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">removeChildAt</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Remove multiple children</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">removeChildren</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Get child object</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> child</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> mc.</span><span style="color:#B392F0">getChildAt</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> namedChild</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> mc.</span><span style="color:#B392F0">getChildByName</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"myChild"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Get child index</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> index</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> mc.</span><span style="color:#B392F0">getChildIndex</span><span style="color:#E1E4E8">(sprite);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Change child index</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">setChildIndex</span><span style="color:#E1E4E8">(sprite, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Swap child order</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">swapChildren</span><span style="color:#E1E4E8">(sprite1, sprite2);</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">swapChildrenAt</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="dynamically-adding-frame-labels">Dynamically Adding Frame Labels</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">FrameLabel</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Create and add a new label</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> label</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> FrameLabel</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"myLabel"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">addFrameLabel</span><span style="color:#E1E4E8">(label);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Navigate using the label</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">gotoAndPlay</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"myLabel"</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="changing-frame-rate">Changing Frame Rate</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Change stage frame rate</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.frameRate </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 30</span><span style="color:#E1E4E8">;</span></span></code></pre>
+<h2 id="framelabel">FrameLabel</h2>
+<p>A class that holds frame label information:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Get all labels in current scene</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> labels</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> mc.currentLabels;</span></span>
+<span class="line"><span style="color:#E1E4E8">labels.</span><span style="color:#B392F0">forEach</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">label</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(label.name </span><span style="color:#F97583">+</span><span style="color:#9ECBFF"> ": frame "</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> label.frame);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="/en/reference/player/sprite">Sprite</a></li>
+<li><a href="/en/reference/player/events">Event System</a></li>
+</ul> </div>  </div> </div> </div> </section> <footer class="footer" data-aos="fade-up"> <div class="container"> <div class="row"> <div class="col-md-12 col-lg-4"> <div class="footer-logo"> <a class="navbar-brand" href="/en">Next2D</a> <p> Next2D, a project derived from the JavaScript FlashPlayer &quot;swf2js&quot;, aims to provide the fastest 2D engine that works on any device.<br>
+Created by Toshiyuki Ienaga.
+</p> </div> <div class="list-sns-menu"> <ul class="list-unstyled"> <li><a href="https://twitter.com/ienagatoshiyuki" target="_blank"><i class="bi bi-twitter"></i></a></li> <li><a href="https://github.com/ienaga" target="_blank"><i class="bi bi-github"></i></a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Player</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/en/reference/player">Reference</a></li> <li><a href="/en/#player">Features</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Animation Tool</h4> <ul class="list-unstyled"> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/en/usage">Usage</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Framework</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/en/reference/framework">Reference</a></li> <li><a href="/en/#framework">Features</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>About Us</h4> <ul class="list-unstyled"> <li><a href="/en/#contact">Contact</a></li> <li><a href="/en/privacy">Privacy Policy</a></li> </ul> </div> </div> </div> </div> <div class="copyrights"> <div class="container"> <p>&copy; Copyrights Next2D. All rights reserved.</p> </div> </div> </footer> <script type="module" src="/assets/DocsLayout.astro_astro_type_script_index_0_lang.yTAR6D4i.js"></script>  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> <!-- Vendor JS --> <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script> <script src="/assets/js/vendor/aos.js"></script> <!-- Main JS --> <script src="/assets/js/main.js"></script> </body> </html> 

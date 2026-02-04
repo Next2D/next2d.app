@@ -2,7 +2,7 @@
 <img src="https://next2d.app/assets/img/logo.svg" width="100" height="100" alt="Next2D Logo">
 
 ## What is Next2D Project
-Next2D project provides a WebGL 2D rendering engine, animation tools for creating animations, and a framework to support team development. \
+Next2D project provides a WebGL/WebGPU 2D rendering engine, animation tools for creating animations, and a framework to support team development. \
 [Next2D WebSite](https://next2d.app)
 
 ### Next2D Player

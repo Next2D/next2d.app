@@ -1,0 +1,387 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Next2D | View と ViewModel</title><meta content="Next2D Frameworkのリファレンス。MVVMパターン、ルーティング、設定方法を解説します。" name="description"><meta content="Next2D,Next2D Player,Animation Tool,Next2D Framework" name="keywords"><!-- SEO: Canonical URL --><link rel="canonical" href="https://next2d.app/ja/reference/framework/view/"><!-- SEO: hreflang for multi-language --><link rel="alternate" hreflang="ja" href="https://next2d.app/ja/reference/framework/view/"><link rel="alternate" hreflang="en" href="https://next2d.app/en/reference/framework/view/"><link rel="alternate" hreflang="zh-CN" href="https://next2d.app/cn/reference/framework/view/"><link rel="alternate" hreflang="x-default" href="https://next2d.app/ja/reference/framework/view/"><!-- Google / Search Engine Tags --><meta itemprop="name" content="Next2D | View と ViewModel"><meta itemprop="description" content="Next2D Frameworkのリファレンス。MVVMパターン、ルーティング、設定方法を解説します。"><meta itemprop="image" content="https://next2d.app/assets/img/ogp.png"><!-- Facebook Meta Tags --><meta property="og:url" content="https://next2d.app/ja/reference/framework/view/"><meta property="og:type" content="website"><meta property="og:title" content="Next2D | View と ViewModel"><meta property="og:description" content="Next2D Frameworkのリファレンス。MVVMパターン、ルーティング、設定方法を解説します。"><meta property="og:image" content="https://next2d.app/assets/img/ogp.png"><meta property="og:locale" content="ja"><meta property="og:site_name" content="Next2D"><!-- Twitter Meta Tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Next2D"><meta name="twitter:creator" content="@Next2D"><meta name="twitter:title" content="Next2D | View と ViewModel"><meta name="twitter:description" content="Next2D Frameworkのリファレンス。MVVMパターン、ルーティング、設定方法を解説します。"><meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png"><!-- Theme Color --><meta name="theme-color" content="#5777ba"><!-- Web App Manifest --><link rel="manifest" href="/manifest.json"><!-- JSON-LD Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Next2D","url":"https://next2d.app","description":"Next2D - Rendering Engine, Animation Tool, Underlying Framework","inLanguage":["ja"],"potentialAction":{"@type":"SearchAction","target":"https://next2d.app/{lang}/reference/player/?q={search_term_string}","query-input":"required name=search_term_string"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Next2D","url":"https://next2d.app","logo":"https://next2d.app/assets/img/ogp.png","sameAs":["https://github.com/Next2D"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://next2d.app/ja/"},{"@type":"ListItem","position":2,"name":"Framework","item":"https://next2d.app/ja/reference/framework/"},{"@type":"ListItem","position":3,"name":"View と ViewModel"}]}</script><!-- Favicons --><link href="/assets/img/favicon.png" rel="icon"><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"><!-- Vendor CSS --><link href="/assets/css/vendor/aos.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap-icons.min.css" rel="stylesheet"><!-- Main CSS --><link href="/assets/css/main.css" rel="stylesheet"><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-8GJWF4S3RH");
+    </script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style>.docs-content[data-astro-cid-shibjrt4] h1{font-size:2rem;margin-bottom:1.5rem}.docs-content[data-astro-cid-shibjrt4] h2{font-size:1.5rem;margin-top:2rem;margin-bottom:1rem}.docs-content[data-astro-cid-shibjrt4] h3{font-size:1.25rem;margin-top:1.5rem;margin-bottom:.75rem}.docs-content[data-astro-cid-shibjrt4] pre{background-color:#2a2c30;color:#f8f9fa;border-radius:8px;padding:1rem;overflow-x:auto;margin:1rem 0}.docs-content[data-astro-cid-shibjrt4] code{font-family:Monaco,Menlo,monospace;font-size:.9em}.docs-content[data-astro-cid-shibjrt4] table{width:100%;border-collapse:collapse;margin:1rem 0}.docs-content[data-astro-cid-shibjrt4] th,.docs-content[data-astro-cid-shibjrt4] td{border:1px solid #ddd;padding:.5rem;text-align:left}.docs-content[data-astro-cid-shibjrt4] th{background-color:#f5f5f5}
+</style></head> <body class>  <header id="header" class="header fixed-top d-flex align-items-center"> <div class="container d-flex align-items-center justify-content-between"> <div id="logo"> <a href="/ja"><img loading="lazy" src="/assets/img/logo.svg" alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework."></a> </div> <nav id="navbar" class="navbar"> <ul class="list-unstyled"> <li><a class="nav-link scrollto" href="/ja/#get-started">Home</a></li> <li><a class="nav-link scrollto" href="/ja/#casestudy">Case Studies</a></li> <li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>Player</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/ja/reference/player">リファレンス</a></li> <li><a href="/ja/#player">特徴</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>Animation Tool</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/ja/usage">使い方</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="/ja/#tool">特徴</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>Framework</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/ja/reference/framework">リファレンス</a></li> <li><a href="/ja/#framework">特徴</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>Language</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="/en">English</a></li> <li><a href="/ja">日本語</a></li> <li><a href="/cn">简体中文</a></li> </ul> </li> <li class="dropdown"><a class="nav-link"><span>Support US</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li> </ul> </li> <li><a class="nav-link scrollto" href="/ja/#contact">Contact</a></li> </ul> <i class="bi bi-list mobile-nav-toggle"></i> </nav> </div> </header> <section class="breadcrumbs"> <div class="container"> <div class="d-flex justify-content-between align-items-center"> <h2>View と ViewModel</h2> <ol> <li> <a href="/ja/">Home</a> </li><li> <a href="/ja/reference/framework/">Framework</a> </li><li> View と ViewModel </li> </ol> </div> </div> </section> <section id="references" class="reference-section"> <div class="container" data-aos="fade-up"> <div class="row"> <div class="col-lg-3 col-md-4"> <nav id="sub-navbar" class="list-menu sub-navbar"><ul class="list-unstyled"><li><strong>Player</strong></li><ul><li><a href="/ja/reference/player">概要</a></li><li><a href="/ja/reference/player/display-object">DisplayObject</a></li><li><a href="/ja/reference/player/sprite">Sprite</a></li><li><a href="/ja/reference/player/movie-clip">MovieClip</a></li><li><a href="/ja/reference/player/shape">Shape</a></li><li><a href="/ja/reference/player/text-field">TextField</a></li><li><a href="/ja/reference/player/video">Video</a></li><li><a href="/ja/reference/player/sound">Sound</a></li><li><a href="/ja/reference/player/events">イベント</a></li><li><a href="/ja/reference/player/filters">フィルター</a></li><li><a href="/ja/reference/player/tween">Tween</a></li></ul><li><strong>Framework</strong></li><ul><li><a href="/ja/reference/framework">概要</a></li><li><a href="/ja/reference/framework/view">View/ViewModel</a></li><li><a href="/ja/reference/framework/routing">ルーティング</a></li><li><a href="/ja/reference/framework/config">設定ファイル</a></li><li><a href="/ja/reference/framework/animation-tool">Animation Tool連携</a></li></ul></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav> </div> <div class="col-lg-9 col-md-8">  <div class="docs-content" data-astro-cid-shibjrt4> <h1 id="view-と-viewmodel">View と ViewModel</h1>
+<p>Next2D FrameworkはMVVM（Model-View-ViewModel）パターンを採用しています。1画面にViewとViewModelをワンセット作成するのが基本スタイルです。</p>
+<h2 id="アーキテクチャ">アーキテクチャ</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">graph TB</span></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph ViewLayer["View Layer"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        ViewRole["画面の構造と表示を担当"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        ViewRule["ビジネスロジックは持たない"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph ViewModelLayer["ViewModel Layer"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        VMRole1["ViewとModelの橋渡し"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        VMRole2["UseCaseを保持"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        VMRole3["イベントハンドリング"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph ModelLayer["Model Layer"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        ModelRole1["ビジネスロジック（UseCase）"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        ModelRole2["データアクセス（Repository）"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    ViewLayer &#x3C;-->|双方向| ViewModelLayer</span></span>
+<span class="line"><span style="color:#E1E4E8">    ViewModelLayer &#x3C;--> ModelLayer</span></span></code></pre>
+<h2 id="ディレクトリ構造">ディレクトリ構造</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>src/</span></span>
+<span class="line"><span>└── view/</span></span>
+<span class="line"><span>    ├── top/</span></span>
+<span class="line"><span>    │   ├── TopView.ts</span></span>
+<span class="line"><span>    │   └── TopViewModel.ts</span></span>
+<span class="line"><span>    └── home/</span></span>
+<span class="line"><span>        ├── HomeView.ts</span></span>
+<span class="line"><span>        └── HomeViewModel.ts</span></span></code></pre>
+<h2 id="view">View</h2>
+<p>Viewはメインコンテキストにアタッチされるコンテナです。Viewは表示構造のみを担当し、ビジネスロジックはViewModelに委譲します。</p>
+<h3 id="viewの責務">Viewの責務</h3>
+<ul>
+<li><strong>画面の構造定義</strong> - UIコンポーネントの配置と座標設定</li>
+<li><strong>イベントリスナーの登録</strong> - ViewModelのメソッドと接続</li>
+<li><strong>ライフサイクル管理</strong> - <code>initialize</code>, <code>onEnter</code>, <code>onExit</code></li>
+</ul>
+<h3 id="基本構造">基本構造</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#F97583"> type</span><span style="color:#E1E4E8"> { TopViewModel } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./TopViewModel"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { View } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { TopPage } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@/ui/component/page/top/TopPage"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> TopView</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> View</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">TopViewModel</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> readonly</span><span style="color:#FFAB70"> _topPage</span><span style="color:#F97583">:</span><span style="color:#B392F0"> TopPage</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    constructor</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">vm</span><span style="color:#F97583">:</span><span style="color:#B392F0"> TopViewModel</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">        super</span><span style="color:#E1E4E8">(vm);</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._topPage </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TopPage</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">._topPage);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> initialize</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._topPage.</span><span style="color:#B392F0">initialize</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">.vm);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> onEnter</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        await</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">._topPage.</span><span style="color:#B392F0">onEnter</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> onExit</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#F97583"> void</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="ライフサイクル">ライフサイクル</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">sequenceDiagram</span></span>
+<span class="line"><span style="color:#E1E4E8">    participant Framework as Framework</span></span>
+<span class="line"><span style="color:#E1E4E8">    participant VM as ViewModel</span></span>
+<span class="line"><span style="color:#E1E4E8">    participant View as View</span></span>
+<span class="line"><span style="color:#E1E4E8">    participant UI as UI Components</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    Note over Framework,UI: 画面遷移開始</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    Framework->>VM: new ViewModel()</span></span>
+<span class="line"><span style="color:#E1E4E8">    Framework->>VM: initialize()</span></span>
+<span class="line"><span style="color:#E1E4E8">    Note over VM: ViewModelが先に初期化される</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    Framework->>View: new View(vm)</span></span>
+<span class="line"><span style="color:#E1E4E8">    Framework->>View: initialize()</span></span>
+<span class="line"><span style="color:#E1E4E8">    View->>UI: コンポーネント作成</span></span>
+<span class="line"><span style="color:#E1E4E8">    View->>VM: イベントリスナー登録</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    Framework->>View: onEnter()</span></span>
+<span class="line"><span style="color:#E1E4E8">    View->>UI: アニメーション開始</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    Note over Framework,UI: ユーザーが画面を操作</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    Framework->>View: onExit()</span></span>
+<span class="line"><span style="color:#E1E4E8">    View->>UI: クリーンアップ</span></span></code></pre>
+<h4 id="initialize---初期化">initialize() - 初期化</h4>
+<p><strong>呼び出しタイミング:</strong></p>
+<ul>
+<li>Viewのインスタンスが生成された直後</li>
+<li>画面遷移時に1回だけ呼び出される</li>
+<li>ViewModelの<code>initialize()</code>より<strong>後</strong>に実行される</li>
+</ul>
+<p><strong>主な用途:</strong></p>
+<ul>
+<li>UIコンポーネントの生成と配置</li>
+<li>イベントリスナーの登録</li>
+<li>子要素の追加（<code>addChild</code>）</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#E1E4E8">async </span><span style="color:#B392F0">initialize</span><span style="color:#E1E4E8">(): </span><span style="color:#79B8FF">Promise</span><span style="color:#F97583">&#x3C;void></span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">HomeBtnMolecule</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#F97583"> import</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"@/ui/component/molecule/HomeBtnMolecule"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">PointerEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> homeContent</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> HomeBtnMolecule</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    homeContent.x </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 120</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    homeContent.y </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 120</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // イベントをViewModelに委譲</span></span>
+<span class="line"><span style="color:#E1E4E8">    homeContent.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">        PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.vm.homeContentPointerDownEvent</span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">    this</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(homeContent);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h4 id="onenter---画面表示時">onEnter() - 画面表示時</h4>
+<p><strong>呼び出しタイミング:</strong></p>
+<ul>
+<li><code>initialize()</code>の実行完了後</li>
+<li>画面が表示される直前</li>
+</ul>
+<p><strong>主な用途:</strong></p>
+<ul>
+<li>入場アニメーションの開始</li>
+<li>タイマーやインターバルの開始</li>
+<li>フォーカス設定</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#E1E4E8">async </span><span style="color:#B392F0">onEnter</span><span style="color:#E1E4E8">(): </span><span style="color:#79B8FF">Promise</span><span style="color:#F97583">&#x3C;void></span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> topBtn</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">getChildByName</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"topBtn"</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">as</span><span style="color:#B392F0"> TopBtnMolecule</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    topBtn.</span><span style="color:#B392F0">playEntrance</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"アニメーション完了"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h4 id="onexit---画面非表示時">onExit() - 画面非表示時</h4>
+<p><strong>呼び出しタイミング:</strong></p>
+<ul>
+<li>別の画面に遷移する直前</li>
+<li>Viewが破棄される前</li>
+</ul>
+<p><strong>主な用途:</strong></p>
+<ul>
+<li>アニメーションの停止</li>
+<li>タイマーやインターバルのクリア</li>
+<li>リソースの解放</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#E1E4E8">async </span><span style="color:#B392F0">onExit</span><span style="color:#E1E4E8">(): </span><span style="color:#79B8FF">Promise</span><span style="color:#F97583">&#x3C;void></span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">.autoSlideTimer) {</span></span>
+<span class="line"><span style="color:#B392F0">        clearInterval</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">.autoSlideTimer);</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.autoSlideTimer </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="viewmodel">ViewModel</h2>
+<p>ViewModelはViewとModelの橋渡しを行います。UseCaseを保持し、Viewからのイベントを処理してビジネスロジックを実行します。</p>
+<h3 id="viewmodelの責務">ViewModelの責務</h3>
+<ul>
+<li><strong>イベント処理</strong> - Viewからのイベントを受け取る</li>
+<li><strong>UseCaseの実行</strong> - ビジネスロジックを呼び出す</li>
+<li><strong>依存性の管理</strong> - UseCaseのインスタンスを保持</li>
+<li><strong>状態管理</strong> - 画面固有の状態を管理</li>
+</ul>
+<h3 id="基本構造-1">基本構造</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { ViewModel, app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { NavigateToViewUseCase } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@/model/application/top/usecase/NavigateToViewUseCase"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> TopViewModel</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> ViewModel</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> readonly</span><span style="color:#FFAB70"> navigateToViewUseCase</span><span style="color:#F97583">:</span><span style="color:#B392F0"> NavigateToViewUseCase</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#FFAB70"> topText</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> ""</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    constructor</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">        super</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.navigateToViewUseCase </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> NavigateToViewUseCase</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> initialize</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#6A737D">        // routing.jsonのrequestsで取得したデータを受け取る</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">getResponse</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.topText </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">has</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"TopText"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">            ?</span><span style="color:#E1E4E8"> (response.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"TopText"</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> { </span><span style="color:#FFAB70">word</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8"> }).word</span></span>
+<span class="line"><span style="color:#F97583">            :</span><span style="color:#9ECBFF"> ""</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">    getTopText</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">.topText;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> onClickStartButton</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        await</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">.navigateToViewUseCase.</span><span style="color:#B392F0">execute</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"home"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="viewmodelの初期化タイミング">ViewModelの初期化タイミング</h3>
+<p><strong>重要: ViewModelの<code>initialize()</code>はViewの<code>initialize()</code>より前に呼び出されます。</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>1. ViewModel のインスタンス生成</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>2. ViewModel.initialize() ← ViewModelが先</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>3. View のインスタンス生成（ViewModelを注入）</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>4. View.initialize()</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>5. View.onEnter()</span></span></code></pre>
+<p>これにより、Viewの初期化時にはViewModelのデータが既に準備されています。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#6A737D">// HomeViewModel.ts</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> HomeViewModel</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> ViewModel</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#FFAB70"> homeText</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> ""</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> initialize</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#6A737D">        // ViewModelのinitializeで事前にデータ取得</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> HomeTextRepository.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.homeText </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> data.word;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">    getHomeText</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">.homeText;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// HomeView.ts</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> HomeView</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> View</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">HomeViewModel</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    constructor</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">private</span><span style="color:#F97583"> readonly</span><span style="color:#FFAB70"> vm</span><span style="color:#F97583">:</span><span style="color:#B392F0"> HomeViewModel</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">        super</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> initialize</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#6A737D">        // この時点でvm.initialize()は既に完了している</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> text</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">.vm.</span><span style="color:#B392F0">getHomeText</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">        // 取得済みのデータを使ってUIを構築</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> textField</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextAtom</span><span style="color:#E1E4E8">(text);</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(textField);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="画面遷移">画面遷移</h2>
+<p>画面遷移には<code>app.gotoView()</code>を使用します。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 指定のViewに遷移</span></span>
+<span class="line"><span style="color:#F97583">await</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">gotoView</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"home"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// パラメータ付きで遷移</span></span>
+<span class="line"><span style="color:#F97583">await</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">gotoView</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"user/detail?id=123"</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="usecaseでの画面遷移">UseCaseでの画面遷移</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> NavigateToViewUseCase</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> execute</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">viewName</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">)</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        await</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">gotoView</span><span style="color:#E1E4E8">(viewName);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="レスポンスデータの取得">レスポンスデータの取得</h2>
+<p><code>routing.json</code>で設定した<code>requests</code>のデータは<code>app.getResponse()</code>で取得できます。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">async </span><span style="color:#B392F0">initialize</span><span style="color:#E1E4E8">(): </span><span style="color:#79B8FF">Promise</span><span style="color:#F97583">&#x3C;void></span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">getResponse</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (response.</span><span style="color:#B392F0">has</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"UserData"</span><span style="color:#E1E4E8">)) {</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> userData</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"UserData"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.userName </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userData.name;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="キャッシュデータの取得">キャッシュデータの取得</h2>
+<p><code>cache: true</code>を設定したデータは<code>app.getCache()</code>で取得できます。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> cache</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">getCache</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (cache.</span><span style="color:#B392F0">has</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"MasterData"</span><span style="color:#E1E4E8">)) {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> masterData</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> cache.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"MasterData"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="設計原則">設計原則</h2>
+<h3 id="1-関心の分離">1. 関心の分離</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#6A737D">// 良い例: Viewは表示のみ、ViewModelはロジック</span></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> HomeView</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> View</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">HomeViewModel</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> initialize</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> btn</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> HomeBtnMolecule</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">        btn.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">.vm.onClick);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> HomeViewModel</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> ViewModel</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">    onClick</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#F97583">:</span><span style="color:#B392F0"> PointerEvent</span><span style="color:#E1E4E8">)</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> void</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.someUseCase.</span><span style="color:#B392F0">execute</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="2-依存性の逆転">2. 依存性の逆転</h3>
+<p>ViewModelはインターフェースに依存し、具象クラスに依存しません。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#6A737D">// 良い例: インターフェースに依存</span></span>
+<span class="line"><span style="color:#B392F0">homeContentPointerDownEvent</span><span style="color:#E1E4E8">(event: PointerEvent): </span><span style="color:#F97583">void</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> target</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> event.currentTarget </span><span style="color:#F97583">as</span><span style="color:#79B8FF"> unknown</span><span style="color:#F97583"> as</span><span style="color:#B392F0"> IDraggable</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    this</span><span style="color:#E1E4E8">.startDragUseCase.</span><span style="color:#B392F0">execute</span><span style="color:#E1E4E8">(target);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="3-イベントは必ずviewmodelに委譲">3. イベントは必ずViewModelに委譲</h3>
+<p>View内でイベント処理を完結させず、必ずViewModelに委譲します。</p>
+<h2 id="viewviewmodel作成のテンプレート">View/ViewModel作成のテンプレート</h2>
+<h3 id="view-1">View</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#F97583"> type</span><span style="color:#E1E4E8"> { YourViewModel } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./YourViewModel"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { View } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> YourView</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> View</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">YourViewModel</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    constructor</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">vm</span><span style="color:#F97583">:</span><span style="color:#B392F0"> YourViewModel</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">        super</span><span style="color:#E1E4E8">(vm);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> initialize</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#6A737D">        // UIコンポーネントの作成と配置</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> onEnter</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#6A737D">        // 画面表示時の処理</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> onExit</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#6A737D">        // 画面非表示時の処理</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="viewmodel-1">ViewModel</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { ViewModel } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { YourUseCase } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@/model/application/your/usecase/YourUseCase"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> YourViewModel</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> ViewModel</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> readonly</span><span style="color:#FFAB70"> yourUseCase</span><span style="color:#F97583">:</span><span style="color:#B392F0"> YourUseCase</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    constructor</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">        super</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.yourUseCase </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> YourUseCase</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> initialize</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">void</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#F97583"> void</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">    yourEventHandler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Event</span><span style="color:#E1E4E8">)</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> void</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.yourUseCase.</span><span style="color:#B392F0">execute</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="関連項目">関連項目</h2>
+<ul>
+<li><a href="/ja/reference/framework/routing">ルーティング</a></li>
+<li><a href="/ja/reference/framework/config">設定ファイル</a></li>
+</ul> </div>  </div> </div> </div> </section> <footer class="footer" data-aos="fade-up"> <div class="container"> <div class="row"> <div class="col-md-12 col-lg-4"> <div class="footer-logo"> <a class="navbar-brand" href="/ja">Next2D</a> <p> Next2Dは、JavaScript製FlashPlayer「swf2js」から派生したプロジェクトで、あらゆるデバイスで動作する最速の2Dエンジンを提供することを目的としています。<br>
+Created by Toshiyuki Ienaga.
+</p> </div> <div class="list-sns-menu"> <ul class="list-unstyled"> <li><a href="https://twitter.com/ienagatoshiyuki" target="_blank"><i class="bi bi-twitter"></i></a></li> <li><a href="https://github.com/ienaga" target="_blank"><i class="bi bi-github"></i></a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Player</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/ja/reference/player">リファレンス</a></li> <li><a href="/ja/#player">特徴</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Animation Tool</h4> <ul class="list-unstyled"> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/ja/usage">使い方</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Framework</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/ja/reference/framework">リファレンス</a></li> <li><a href="/ja/#framework">特徴</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>About Us</h4> <ul class="list-unstyled"> <li><a href="/ja/#contact">Contact</a></li> <li><a href="/ja/privacy">Privacy Policy</a></li> </ul> </div> </div> </div> </div> <div class="copyrights"> <div class="container"> <p>&copy; Copyrights Next2D. All rights reserved.</p> </div> </div> </footer> <script type="module" src="/assets/DocsLayout.astro_astro_type_script_index_0_lang.yTAR6D4i.js"></script>  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> <!-- Vendor JS --> <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script> <script src="/assets/js/vendor/aos.js"></script> <!-- Main JS --> <script src="/assets/js/main.js"></script> </body> </html> 

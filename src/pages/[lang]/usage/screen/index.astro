@@ -1,0 +1,54 @@
+---
+import DocsLayout from '../../../../layouts/DocsLayout.astro';
+import { getTranslations, supportedLanguages, isValidLanguage } from '../../../../i18n';
+
+export function getStaticPaths() {
+  return supportedLanguages.map((lang) => ({
+    params: { lang }
+  }));
+}
+
+const { lang } = Astro.params;
+if (!isValidLanguage(lang)) {
+  return Astro.redirect('/ja/usage/screen/');
+}
+
+const t = await getTranslations(lang);
+const basePath = import.meta.env.BASE_URL;
+
+const breadcrumbs = [
+  { label: t.navbar?.home || 'Home', href: `${basePath}${lang}/` },
+  { label: t.main?.['usage-title'] || 'Usage', href: `${basePath}${lang}/usage/` },
+  { label: 'Screen Area' }
+];
+---
+
+<DocsLayout
+  title={t.toolusage?.screen?.title || 'Screen Area'}
+  description={t.toolusage?.screen?.description || ''}
+  lang={lang}
+  t={t}
+  breadcrumbs={breadcrumbs}
+  menuType="usage"
+>
+  <div>
+    <h3>Screen Area</h3>
+    <p>{t.toolusage?.screen?.description || ''}</p>
+
+    <h4>{t.toolmenu?.screen?.tabs || 'タブ'}</h4>
+    <p>{t.toolusage?.screen?.tabs?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/screen/tabs`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+
+    <h4>{t.toolmenu?.screen?.layer || 'レイヤー'}</h4>
+    <p>{t.toolusage?.screen?.layer?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/screen/layer`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+
+    <h4>{t.toolmenu?.screen?.align || '整列'}</h4>
+    <p>{t.toolusage?.screen?.align?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/screen/align`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+
+    <h4>{t.toolmenu?.screen?.distribute || 'キーフレーム/レイヤーに配分'}</h4>
+    <p>{t.toolusage?.screen?.distribute?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/screen/distribute`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+  </div>
+</DocsLayout>

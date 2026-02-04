@@ -1,0 +1,40 @@
+---
+import DocsLayout from '../../../../layouts/DocsLayout.astro';
+import { getTranslations, supportedLanguages, isValidLanguage } from '../../../../i18n';
+
+export function getStaticPaths() {
+  return supportedLanguages.map((lang) => ({
+    params: { lang }
+  }));
+}
+
+const { lang } = Astro.params;
+if (!isValidLanguage(lang)) {
+  return Astro.redirect('/ja/usage/timeline/mask-layer');
+}
+
+const t = await getTranslations(lang);
+const basePath = import.meta.env.BASE_URL;
+
+const breadcrumbs = [
+  { label: t.navbar?.home || 'Home', href: `${basePath}${lang}/` },
+  { label: t.main?.['usage-title'] || 'Usage', href: `${basePath}${lang}/usage/` },
+  { label: 'Timeline Area', href: `${basePath}${lang}/usage/timeline/` },
+  { label: t.toolmenu?.timeline?.['mask-layer'] || 'マスクレイヤー' }
+];
+---
+
+<DocsLayout
+  title={t.toolusage?.timeline?.['mask-layer']?.title || 'マスクレイヤー'}
+  description={t.toolusage?.timeline?.['mask-layer']?.description || ''}
+  lang={lang}
+  t={t}
+  breadcrumbs={breadcrumbs}
+  menuType="usage"
+>
+  <div>
+    <h3>{t.toolmenu?.timeline?.['mask-layer'] || 'マスクレイヤー'}</h3>
+    <p><iframe loading="lazy" width="560" height="350" src="https://www.youtube.com/embed/X3Qp_OdDxz8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+    <p>{t.toolusage?.timeline?.['mask-layer']?.description || ''}</p>
+  </div>
+</DocsLayout>

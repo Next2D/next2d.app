@@ -1,0 +1,645 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Next2D | Shape</title><meta content="Next2D Playerの機能解説とサンプルコードを掲載しています" name="description"><meta content="Next2D,Next2D Player,Animation Tool,Next2D Framework" name="keywords"><!-- SEO: Canonical URL --><link rel="canonical" href="https://next2d.app/ja/reference/player/shape/"><!-- SEO: hreflang for multi-language --><link rel="alternate" hreflang="ja" href="https://next2d.app/ja/reference/player/shape/"><link rel="alternate" hreflang="en" href="https://next2d.app/en/reference/player/shape/"><link rel="alternate" hreflang="zh-CN" href="https://next2d.app/cn/reference/player/shape/"><link rel="alternate" hreflang="x-default" href="https://next2d.app/ja/reference/player/shape/"><!-- Google / Search Engine Tags --><meta itemprop="name" content="Next2D | Shape"><meta itemprop="description" content="Next2D Playerの機能解説とサンプルコードを掲載しています"><meta itemprop="image" content="https://next2d.app/assets/img/ogp.png"><!-- Facebook Meta Tags --><meta property="og:url" content="https://next2d.app/ja/reference/player/shape/"><meta property="og:type" content="website"><meta property="og:title" content="Next2D | Shape"><meta property="og:description" content="Next2D Playerの機能解説とサンプルコードを掲載しています"><meta property="og:image" content="https://next2d.app/assets/img/ogp.png"><meta property="og:locale" content="ja"><meta property="og:site_name" content="Next2D"><!-- Twitter Meta Tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Next2D"><meta name="twitter:creator" content="@Next2D"><meta name="twitter:title" content="Next2D | Shape"><meta name="twitter:description" content="Next2D Playerの機能解説とサンプルコードを掲載しています"><meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png"><!-- Theme Color --><meta name="theme-color" content="#5777ba"><!-- Web App Manifest --><link rel="manifest" href="/manifest.json"><!-- JSON-LD Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Next2D","url":"https://next2d.app","description":"Next2D - Rendering Engine, Animation Tool, Underlying Framework","inLanguage":["ja"],"potentialAction":{"@type":"SearchAction","target":"https://next2d.app/{lang}/reference/player/?q={search_term_string}","query-input":"required name=search_term_string"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Next2D","url":"https://next2d.app","logo":"https://next2d.app/assets/img/ogp.png","sameAs":["https://github.com/Next2D"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://next2d.app/ja/"},{"@type":"ListItem","position":2,"name":"Player","item":"https://next2d.app/ja/reference/player/"},{"@type":"ListItem","position":3,"name":"Shape"}]}</script><!-- Favicons --><link href="/assets/img/favicon.png" rel="icon"><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"><!-- Vendor CSS --><link href="/assets/css/vendor/aos.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap-icons.min.css" rel="stylesheet"><!-- Main CSS --><link href="/assets/css/main.css" rel="stylesheet"><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-8GJWF4S3RH");
+    </script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style>.docs-content[data-astro-cid-xt6eahls] h1{font-size:2rem;margin-bottom:1.5rem}.docs-content[data-astro-cid-xt6eahls] h2{font-size:1.5rem;margin-top:2rem;margin-bottom:1rem}.docs-content[data-astro-cid-xt6eahls] h3{font-size:1.25rem;margin-top:1.5rem;margin-bottom:.75rem}.docs-content[data-astro-cid-xt6eahls] pre{background-color:#2a2c30;color:#f8f9fa;border-radius:8px;padding:1rem;overflow-x:auto;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] code{font-family:Monaco,Menlo,monospace;font-size:.9em}.docs-content[data-astro-cid-xt6eahls] table{width:100%;border-collapse:collapse;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] th,.docs-content[data-astro-cid-xt6eahls] td{border:1px solid #ddd;padding:.5rem;text-align:left}.docs-content[data-astro-cid-xt6eahls] th{background-color:#f5f5f5}
+</style></head> <body class>  <header id="header" class="header fixed-top d-flex align-items-center"> <div class="container d-flex align-items-center justify-content-between"> <div id="logo"> <a href="/ja"><img loading="lazy" src="/assets/img/logo.svg" alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework."></a> </div> <nav id="navbar" class="navbar"> <ul class="list-unstyled"> <li><a class="nav-link scrollto" href="/ja/#get-started">Home</a></li> <li><a class="nav-link scrollto" href="/ja/#casestudy">Case Studies</a></li> <li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>Player</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/ja/reference/player">リファレンス</a></li> <li><a href="/ja/#player">特徴</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>Animation Tool</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/ja/usage">使い方</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="/ja/#tool">特徴</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>Framework</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/ja/reference/framework">リファレンス</a></li> <li><a href="/ja/#framework">特徴</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>Language</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="/en">English</a></li> <li><a href="/ja">日本語</a></li> <li><a href="/cn">简体中文</a></li> </ul> </li> <li class="dropdown"><a class="nav-link"><span>Support US</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li> </ul> </li> <li><a class="nav-link scrollto" href="/ja/#contact">Contact</a></li> </ul> <i class="bi bi-list mobile-nav-toggle"></i> </nav> </div> </header> <section class="breadcrumbs"> <div class="container"> <div class="d-flex justify-content-between align-items-center"> <h2>Shape</h2> <ol> <li> <a href="/ja/">Home</a> </li><li> <a href="/ja/reference/player/">Player</a> </li><li> Shape </li> </ol> </div> </div> </section> <section id="references" class="reference-section"> <div class="container" data-aos="fade-up"> <div class="row"> <div class="col-lg-3 col-md-4"> <nav id="sub-navbar" class="list-menu sub-navbar"><ul class="list-unstyled"><li><strong>Player</strong></li><ul><li><a href="/ja/reference/player">概要</a></li><li><a href="/ja/reference/player/display-object">DisplayObject</a></li><li><a href="/ja/reference/player/sprite">Sprite</a></li><li><a href="/ja/reference/player/movie-clip">MovieClip</a></li><li><a href="/ja/reference/player/shape">Shape</a></li><li><a href="/ja/reference/player/text-field">TextField</a></li><li><a href="/ja/reference/player/video">Video</a></li><li><a href="/ja/reference/player/sound">Sound</a></li><li><a href="/ja/reference/player/events">イベント</a></li><li><a href="/ja/reference/player/filters">フィルター</a></li><li><a href="/ja/reference/player/tween">Tween</a></li></ul><li><strong>Framework</strong></li><ul><li><a href="/ja/reference/framework">概要</a></li><li><a href="/ja/reference/framework/view">View/ViewModel</a></li><li><a href="/ja/reference/framework/routing">ルーティング</a></li><li><a href="/ja/reference/framework/config">設定ファイル</a></li><li><a href="/ja/reference/framework/animation-tool">Animation Tool連携</a></li></ul></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav> </div> <div class="col-lg-9 col-md-8">  <div class="docs-content" data-astro-cid-xt6eahls> <h1 id="shape">Shape</h1>
+<p>Shapeは、ベクターグラフィックスの描画専用クラスです。Spriteと異なり子オブジェクトを持てませんが、軽量でパフォーマンスに優れています。</p>
+<h2 id="継承関係">継承関係</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">classDiagram</span></span>
+<span class="line"><span style="color:#E1E4E8">    DisplayObject &#x3C;|-- Shape</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    class Shape {</span></span>
+<span class="line"><span style="color:#E1E4E8">        +graphics: Graphics</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span></code></pre>
+<h2 id="プロパティ">プロパティ</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>プロパティ</th><th>型</th><th>説明</th></tr></thead><tbody><tr><td><code>graphics</code></td><td>Graphics</td><td>この Shape オブジェクトに描画されるベクターの描画コマンドを保持する Graphics オブジェクト（読み取り専用）</td></tr><tr><td><code>isShape</code></td><td>boolean</td><td>Shapeの機能を所持しているかを返却（読み取り専用）</td></tr><tr><td><code>cacheKey</code></td><td>number</td><td>ビルドされたキャッシュキー</td></tr><tr><td><code>cacheParams</code></td><td>number[]</td><td>キャッシュのビルドに利用されるパラメータ（読み取り専用）</td></tr><tr><td><code>isBitmap</code></td><td>boolean</td><td>ビットマップ描画の判定フラグ</td></tr><tr><td><code>src</code></td><td>string</td><td>指定されたパスから画像を読み込み、Graphicsを生成する</td></tr><tr><td><code>bitmapData</code></td><td>BitmapData</td><td>ビットマップデータを返却（読み取り専用）</td></tr><tr><td><code>namespace</code></td><td>string</td><td>指定されたオブジェクトの空間名を返却（読み取り専用）</td></tr></tbody></table>
+<h2 id="メソッド">メソッド</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>メソッド</th><th>戻り値</th><th>説明</th></tr></thead><tbody><tr><td><code>load(url: string)</code></td><td>Promise&#x3C;void></td><td>指定されたURLから画像を非同期で読み込み、Graphicsを生成する</td></tr><tr><td><code>clearBitmapBuffer()</code></td><td>void</td><td>ビットマップデータを解放する</td></tr><tr><td><code>setBitmapBuffer(width: number, height: number, buffer: Uint8Array)</code></td><td>void</td><td>RGBAの画像データを設定する</td></tr></tbody></table>
+<h2 id="spriteとshapeの違い">SpriteとShapeの違い</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>特徴</th><th>Shape</th><th>Sprite</th></tr></thead><tbody><tr><td>子オブジェクト</td><td>持てない</td><td>持てる</td></tr><tr><td>インタラクション</td><td>なし</td><td>クリック等可能</td></tr><tr><td>パフォーマンス</td><td>軽量</td><td>やや重い</td></tr><tr><td>用途</td><td>静的な背景、装飾</td><td>ボタン、コンテナ</td></tr></tbody></table>
+<h2 id="使用例">使用例</h2>
+<h3 id="基本的な描画">基本的な描画</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> shape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 塗りつぶし矩形</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.graphics.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0x3498db</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.graphics.</span><span style="color:#B392F0">drawRect</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">150</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.graphics.</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(shape);</span></span></code></pre>
+<h3 id="複合図形の描画">複合図形の描画</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> shape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> g</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> shape.graphics;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 背景</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0xecf0f1</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">drawRoundRect</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">150</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 枠線</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineStyle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0x2c3e50</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">drawRoundRect</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">150</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 内側の装飾</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0xe74c3c</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">drawCircle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">75</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(shape);</span></span></code></pre>
+<h3 id="パスの描画">パスの描画</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> shape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> g</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> shape.graphics;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0x9b59b6</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 星形を描画</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">moveTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">61</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">35</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">98</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">35</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">68</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">57</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">79</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">91</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">70</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">21</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">91</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">32</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">57</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">35</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">39</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">35</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(shape);</span></span></code></pre>
+<h3 id="ベジェ曲線">ベジェ曲線</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> shape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> g</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> shape.graphics;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineStyle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0x1abc9c</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 二次ベジェ曲線</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">moveTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">curveTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);  </span><span style="color:#6A737D">// 制御点, 終点</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">curveTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">150</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(shape);</span></span></code></pre>
+<h3 id="グラデーション背景">グラデーション背景</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Matrix</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.geom;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> shape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> g</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> shape.graphics;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// グラデーション用マトリックス</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> matrix</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Matrix</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">matrix.</span><span style="color:#B392F0">createGradientBox</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    stage.stageWidth,</span></span>
+<span class="line"><span style="color:#E1E4E8">    stage.stageHeight,</span></span>
+<span class="line"><span style="color:#E1E4E8">    Math.</span><span style="color:#79B8FF">PI</span><span style="color:#F97583"> /</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">,  </span><span style="color:#6A737D">// 90度（縦方向）</span></span>
+<span class="line"><span style="color:#79B8FF">    0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 放射状グラデーション</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">beginGradientFill</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#9ECBFF">    "radial"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    [</span><span style="color:#79B8FF">0x667eea</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0x764ba2</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#E1E4E8">    [</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#E1E4E8">    [</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#E1E4E8">    matrix</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">drawRect</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, stage.stageWidth, stage.stageHeight);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 最背面に配置</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChildAt</span><span style="color:#E1E4E8">(shape, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="動的な再描画">動的な再描画</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> shape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(shape);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> angle </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// フレームごとに再描画</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"enterFrame"</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> g</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> shape.graphics;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // 前の描画をクリア</span></span>
+<span class="line"><span style="color:#E1E4E8">    g.</span><span style="color:#B392F0">clear</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // 新しい位置に描画</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> x</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 200</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> Math.</span><span style="color:#B392F0">cos</span><span style="color:#E1E4E8">(angle) </span><span style="color:#F97583">*</span><span style="color:#79B8FF"> 100</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> y</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 150</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> Math.</span><span style="color:#B392F0">sin</span><span style="color:#E1E4E8">(angle) </span><span style="color:#F97583">*</span><span style="color:#79B8FF"> 100</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    g.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0xe74c3c</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    g.</span><span style="color:#B392F0">drawCircle</span><span style="color:#E1E4E8">(x, y, </span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    g.</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    angle </span><span style="color:#F97583">+=</span><span style="color:#79B8FF"> 0.05</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="複数のshapeで構成">複数のShapeで構成</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 背景レイヤー</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> bgShape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">bgShape.graphics.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0x2c3e50</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">bgShape.graphics.</span><span style="color:#B392F0">drawRect</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">bgShape.graphics.</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 装飾レイヤー</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> decorShape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">decorShape.graphics.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0x3498db</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.5</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">decorShape.graphics.</span><span style="color:#B392F0">drawCircle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">80</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">decorShape.graphics.</span><span style="color:#B392F0">drawCircle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">60</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">decorShape.graphics.</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 前面レイヤー</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> frontShape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">frontShape.graphics.</span><span style="color:#B392F0">lineStyle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0xecf0f1</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">frontShape.graphics.</span><span style="color:#B392F0">drawRect</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(bgShape);</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(decorShape);</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(frontShape);</span></span></code></pre>
+<h2 id="パフォーマンスのヒント">パフォーマンスのヒント</h2>
+<ol>
+<li><strong>静的な描画にはShapeを使用</strong>: インタラクションが不要な背景や装飾にはShapeが最適</li>
+<li><strong>描画の最小化</strong>: 頻繁に変更されない場合は一度だけ描画</li>
+<li><strong>clear()の使用</strong>: 動的な再描画時は必ずclear()を呼ぶ</li>
+<li><strong>複雑な図形はキャッシュ</strong>: cacheAsBitmapプロパティで描画をキャッシュ</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#6A737D">// 複雑な図形をビットマップとしてキャッシュ</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span></code></pre>
+<h2 id="graphics-クラス">Graphics クラス</h2>
+<p>Graphicsクラスは、ベクターグラフィックスを描画するための描画APIを提供します。Shape.graphicsプロパティを通じてアクセスします。</p>
+<h3 id="塗りつぶしメソッド">塗りつぶしメソッド</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>メソッド</th><th>説明</th></tr></thead><tbody><tr><td><code>beginFill(color: number, alpha?: number)</code></td><td>単色の塗りつぶしを開始。alphaのデフォルトは1</td></tr><tr><td><code>beginGradientFill(type, colors, alphas, ratios, matrix?, spreadMethod?, interpolationMethod?, focalPointRatio?)</code></td><td>グラデーション塗りつぶしを開始</td></tr><tr><td><code>beginBitmapFill(bitmapData, matrix?, repeat?, smooth?)</code></td><td>ビットマップ塗りつぶしを開始</td></tr><tr><td><code>endFill()</code></td><td>塗りつぶしを終了</td></tr></tbody></table>
+<h4 id="begingradientfill-パラメータ">beginGradientFill パラメータ</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>パラメータ</th><th>型</th><th>説明</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>”linear” または “radial”</td></tr><tr><td><code>colors</code></td><td>number[]</td><td>色の配列（16進数）</td></tr><tr><td><code>alphas</code></td><td>number[]</td><td>各色の透明度（0-1）</td></tr><tr><td><code>ratios</code></td><td>number[]</td><td>各色の位置（0-255）</td></tr><tr><td><code>matrix</code></td><td>Matrix</td><td>グラデーションの変形マトリックス</td></tr><tr><td><code>spreadMethod</code></td><td>string</td><td>”pad”, “reflect”, “repeat”（デフォルト: “pad”）</td></tr><tr><td><code>interpolationMethod</code></td><td>string</td><td>”rgb” または “linearRGB”（デフォルト: “rgb”）</td></tr><tr><td><code>focalPointRatio</code></td><td>number</td><td>放射状グラデーションの焦点位置（-1 to 1）</td></tr></tbody></table>
+<h3 id="線スタイルメソッド">線スタイルメソッド</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>メソッド</th><th>説明</th></tr></thead><tbody><tr><td><code>lineStyle(thickness?, color?, alpha?, pixelHinting?, scaleMode?, caps?, joints?, miterLimit?)</code></td><td>線のスタイルを設定</td></tr><tr><td><code>lineGradientStyle(type, colors, alphas, ratios, matrix?, spreadMethod?, interpolationMethod?, focalPointRatio?)</code></td><td>グラデーション線スタイルを設定</td></tr><tr><td><code>lineBitmapStyle(bitmapData, matrix?, repeat?, smooth?)</code></td><td>ビットマップ線スタイルを設定</td></tr><tr><td><code>endLine()</code></td><td>線スタイルを終了</td></tr></tbody></table>
+<h4 id="linestyle-パラメータ">lineStyle パラメータ</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>パラメータ</th><th>型</th><th>デフォルト</th><th>説明</th></tr></thead><tbody><tr><td><code>thickness</code></td><td>number</td><td>0</td><td>線の太さ（ピクセル）</td></tr><tr><td><code>color</code></td><td>number</td><td>0</td><td>線の色（16進数）</td></tr><tr><td><code>alpha</code></td><td>number</td><td>1</td><td>透明度（0-1）</td></tr><tr><td><code>pixelHinting</code></td><td>boolean</td><td>false</td><td>ピクセルスナップ</td></tr><tr><td><code>scaleMode</code></td><td>string</td><td>”normal"</td><td>"normal”, “none”, “vertical”, “horizontal”</td></tr><tr><td><code>caps</code></td><td>string</td><td>null</td><td>”none”, “round”, “square”</td></tr><tr><td><code>joints</code></td><td>string</td><td>null</td><td>”bevel”, “miter”, “round”</td></tr><tr><td><code>miterLimit</code></td><td>number</td><td>3</td><td>マイター結合の限界値</td></tr></tbody></table>
+<h3 id="パスメソッド">パスメソッド</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>メソッド</th><th>説明</th></tr></thead><tbody><tr><td><code>moveTo(x: number, y: number)</code></td><td>描画位置を移動</td></tr><tr><td><code>lineTo(x: number, y: number)</code></td><td>現在位置から指定座標まで直線を描画</td></tr><tr><td><code>curveTo(controlX, controlY, anchorX, anchorY)</code></td><td>二次ベジェ曲線を描画</td></tr><tr><td><code>cubicCurveTo(controlX1, controlY1, controlX2, controlY2, anchorX, anchorY)</code></td><td>三次ベジェ曲線を描画</td></tr></tbody></table>
+<h3 id="図形メソッド">図形メソッド</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>メソッド</th><th>説明</th></tr></thead><tbody><tr><td><code>drawRect(x, y, width, height)</code></td><td>矩形を描画</td></tr><tr><td><code>drawRoundRect(x, y, width, height, ellipseWidth, ellipseHeight?)</code></td><td>角丸矩形を描画</td></tr><tr><td><code>drawCircle(x, y, radius)</code></td><td>円を描画</td></tr><tr><td><code>drawEllipse(x, y, width, height)</code></td><td>楕円を描画</td></tr></tbody></table>
+<h3 id="ユーティリティメソッド">ユーティリティメソッド</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>メソッド</th><th>説明</th></tr></thead><tbody><tr><td><code>clear()</code></td><td>すべての描画コマンドをクリア</td></tr><tr><td><code>clone()</code></td><td>Graphicsオブジェクトを複製</td></tr><tr><td><code>copyFrom(source: Graphics)</code></td><td>別のGraphicsから描画コマンドをコピー</td></tr></tbody></table>
+<h3 id="詳細な使用例">詳細な使用例</h3>
+<h4 id="線形グラデーション">線形グラデーション</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Matrix</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.geom;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> shape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> g</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> shape.graphics;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> matrix</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Matrix</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">matrix.</span><span style="color:#B392F0">createGradientBox</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);  </span><span style="color:#6A737D">// 幅, 高さ, 回転, x, y</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">beginGradientFill</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#9ECBFF">    "linear"</span><span style="color:#E1E4E8">,                    </span><span style="color:#6A737D">// タイプ</span></span>
+<span class="line"><span style="color:#E1E4E8">    [</span><span style="color:#79B8FF">0xff0000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0x00ff00</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0x0000ff</span><span style="color:#E1E4E8">],  </span><span style="color:#6A737D">// 色</span></span>
+<span class="line"><span style="color:#E1E4E8">    [</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">],                   </span><span style="color:#6A737D">// 透明度</span></span>
+<span class="line"><span style="color:#E1E4E8">    [</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">127</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">],               </span><span style="color:#6A737D">// 比率</span></span>
+<span class="line"><span style="color:#E1E4E8">    matrix</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">drawRect</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(shape);</span></span></code></pre>
+<h4 id="三次ベジェ曲線">三次ベジェ曲線</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> shape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> g</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> shape.graphics;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineStyle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0x3498db</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 滑らかなS字曲線</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">moveTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">cubicCurveTo</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#79B8FF">    50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,     </span><span style="color:#6A737D">// 制御点1</span></span>
+<span class="line"><span style="color:#79B8FF">    150</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">,  </span><span style="color:#6A737D">// 制御点2</span></span>
+<span class="line"><span style="color:#79B8FF">    200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#6A737D">   // 終点</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(shape);</span></span></code></pre>
+<h4 id="ビットマップ塗りつぶし">ビットマップ塗りつぶし</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Loader</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> loader</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Loader</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">await</span><span style="color:#E1E4E8"> loader.</span><span style="color:#B392F0">load</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"texture.png"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> bitmapData</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> loader.contentLoaderInfo</span></span>
+<span class="line"><span style="color:#E1E4E8">    .content.bitmapData;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> shape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> g</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> shape.graphics;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">beginBitmapFill</span><span style="color:#E1E4E8">(bitmapData, </span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">drawRect</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(shape);</span></span></code></pre>
+<h4 id="グラデーション線">グラデーション線</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Matrix</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.geom;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> shape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> g</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> shape.graphics;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> matrix</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Matrix</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">matrix.</span><span style="color:#B392F0">createGradientBox</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineGradientStyle</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#9ECBFF">    "linear"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    [</span><span style="color:#79B8FF">0xff0000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0x0000ff</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#E1E4E8">    [</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#E1E4E8">    [</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#E1E4E8">    matrix</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineStyle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">moveTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">190</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">190</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">190</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">190</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(shape);</span></span></code></pre>
+<h4 id="複雑な図形の組み合わせ">複雑な図形の組み合わせ</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> shape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> g</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> shape.graphics;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 外側の矩形（塗りつぶし）</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0x2c3e50</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">drawRoundRect</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">150</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">15</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">15</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 内側の円（別の色で塗りつぶし）</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0xe74c3c</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">drawCircle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">75</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">40</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 装飾線</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineStyle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0xecf0f1</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">moveTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">180</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">moveTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">130</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">g.</span><span style="color:#B392F0">lineTo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">180</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">130</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(shape);</span></span></code></pre>
+<h2 id="関連項目">関連項目</h2>
+<ul>
+<li><a href="/ja/reference/player/display-object">DisplayObject</a></li>
+<li><a href="/ja/reference/player/sprite">Sprite</a></li>
+<li><a href="/ja/reference/player/filters">フィルター</a></li>
+</ul> </div>  </div> </div> </div> </section> <footer class="footer" data-aos="fade-up"> <div class="container"> <div class="row"> <div class="col-md-12 col-lg-4"> <div class="footer-logo"> <a class="navbar-brand" href="/ja">Next2D</a> <p> Next2Dは、JavaScript製FlashPlayer「swf2js」から派生したプロジェクトで、あらゆるデバイスで動作する最速の2Dエンジンを提供することを目的としています。<br>
+Created by Toshiyuki Ienaga.
+</p> </div> <div class="list-sns-menu"> <ul class="list-unstyled"> <li><a href="https://twitter.com/ienagatoshiyuki" target="_blank"><i class="bi bi-twitter"></i></a></li> <li><a href="https://github.com/ienaga" target="_blank"><i class="bi bi-github"></i></a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Player</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/ja/reference/player">リファレンス</a></li> <li><a href="/ja/#player">特徴</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Animation Tool</h4> <ul class="list-unstyled"> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/ja/usage">使い方</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Framework</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/ja/reference/framework">リファレンス</a></li> <li><a href="/ja/#framework">特徴</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>About Us</h4> <ul class="list-unstyled"> <li><a href="/ja/#contact">Contact</a></li> <li><a href="/ja/privacy">Privacy Policy</a></li> </ul> </div> </div> </div> </div> <div class="copyrights"> <div class="container"> <p>&copy; Copyrights Next2D. All rights reserved.</p> </div> </div> </footer> <script type="module" src="/assets/DocsLayout.astro_astro_type_script_index_0_lang.yTAR6D4i.js"></script>  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> <!-- Vendor JS --> <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script> <script src="/assets/js/vendor/aos.js"></script> <!-- Main JS --> <script src="/assets/js/main.js"></script> </body> </html> 

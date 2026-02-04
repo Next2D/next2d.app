@@ -1,0 +1,343 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Next2D | MovieClip</title><meta content="Next2D播放器的功能描述和示例代码" name="description"><meta content="Next2D,Next2D Player,Animation Tool,Next2D Framework" name="keywords"><!-- SEO: Canonical URL --><link rel="canonical" href="https://next2d.app/cn/reference/player/movie-clip/"><!-- SEO: hreflang for multi-language --><link rel="alternate" hreflang="ja" href="https://next2d.app/ja/reference/player/movie-clip/"><link rel="alternate" hreflang="en" href="https://next2d.app/en/reference/player/movie-clip/"><link rel="alternate" hreflang="zh-CN" href="https://next2d.app/cn/reference/player/movie-clip/"><link rel="alternate" hreflang="x-default" href="https://next2d.app/ja/reference/player/movie-clip/"><!-- Google / Search Engine Tags --><meta itemprop="name" content="Next2D | MovieClip"><meta itemprop="description" content="Next2D播放器的功能描述和示例代码"><meta itemprop="image" content="https://next2d.app/assets/img/ogp.png"><!-- Facebook Meta Tags --><meta property="og:url" content="https://next2d.app/cn/reference/player/movie-clip/"><meta property="og:type" content="website"><meta property="og:title" content="Next2D | MovieClip"><meta property="og:description" content="Next2D播放器的功能描述和示例代码"><meta property="og:image" content="https://next2d.app/assets/img/ogp.png"><meta property="og:locale" content="zh-CN"><meta property="og:site_name" content="Next2D"><!-- Twitter Meta Tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Next2D"><meta name="twitter:creator" content="@Next2D"><meta name="twitter:title" content="Next2D | MovieClip"><meta name="twitter:description" content="Next2D播放器的功能描述和示例代码"><meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png"><!-- Theme Color --><meta name="theme-color" content="#5777ba"><!-- Web App Manifest --><link rel="manifest" href="/manifest.json"><!-- JSON-LD Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Next2D","url":"https://next2d.app","description":"Next2D - Rendering Engine, Animation Tool, Underlying Framework","inLanguage":["zh-CN"],"potentialAction":{"@type":"SearchAction","target":"https://next2d.app/{lang}/reference/player/?q={search_term_string}","query-input":"required name=search_term_string"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Next2D","url":"https://next2d.app","logo":"https://next2d.app/assets/img/ogp.png","sameAs":["https://github.com/Next2D"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://next2d.app/cn/"},{"@type":"ListItem","position":2,"name":"Player","item":"https://next2d.app/cn/reference/player/"},{"@type":"ListItem","position":3,"name":"MovieClip"}]}</script><!-- Favicons --><link href="/assets/img/favicon.png" rel="icon"><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"><!-- Vendor CSS --><link href="/assets/css/vendor/aos.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap-icons.min.css" rel="stylesheet"><!-- Main CSS --><link href="/assets/css/main.css" rel="stylesheet"><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-8GJWF4S3RH");
+    </script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style>.docs-content[data-astro-cid-xt6eahls] h1{font-size:2rem;margin-bottom:1.5rem}.docs-content[data-astro-cid-xt6eahls] h2{font-size:1.5rem;margin-top:2rem;margin-bottom:1rem}.docs-content[data-astro-cid-xt6eahls] h3{font-size:1.25rem;margin-top:1.5rem;margin-bottom:.75rem}.docs-content[data-astro-cid-xt6eahls] pre{background-color:#2a2c30;color:#f8f9fa;border-radius:8px;padding:1rem;overflow-x:auto;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] code{font-family:Monaco,Menlo,monospace;font-size:.9em}.docs-content[data-astro-cid-xt6eahls] table{width:100%;border-collapse:collapse;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] th,.docs-content[data-astro-cid-xt6eahls] td{border:1px solid #ddd;padding:.5rem;text-align:left}.docs-content[data-astro-cid-xt6eahls] th{background-color:#f5f5f5}
+</style></head> <body class="lang-cn">  <header id="header" class="header fixed-top d-flex align-items-center"> <div class="container d-flex align-items-center justify-content-between"> <div id="logo"> <a href="/cn"><img loading="lazy" src="/assets/img/logo.svg" alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework."></a> </div> <nav id="navbar" class="navbar"> <ul class="list-unstyled"> <li><a class="nav-link scrollto" href="/cn/#get-started">首页</a></li> <li><a class="nav-link scrollto" href="/cn/#casestudy">学习案例</a></li> <li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>播放器 (Player)</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/cn/reference/player">参考资料</a></li> <li><a href="/cn/#player">特性</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>动画工具</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/cn/usage">使用方法</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="/cn/#tool">特性</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>框架</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/cn/reference/framework">参考资料</a></li> <li><a href="/cn/#framework">特性</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>语言</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="/en">English</a></li> <li><a href="/ja">日本語</a></li> <li><a href="/cn">简体中文</a></li> </ul> </li> <li class="dropdown"><a class="nav-link"><span>支持我们</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li> </ul> </li> <li><a class="nav-link scrollto" href="/cn/#contact">联系我们</a></li> </ul> <i class="bi bi-list mobile-nav-toggle"></i> </nav> </div> </header> <section class="breadcrumbs"> <div class="container"> <div class="d-flex justify-content-between align-items-center"> <h2>MovieClip</h2> <ol> <li> <a href="/cn/">首页</a> </li><li> <a href="/cn/reference/player/">Player</a> </li><li> MovieClip </li> </ol> </div> </div> </section> <section id="references" class="reference-section"> <div class="container" data-aos="fade-up"> <div class="row"> <div class="col-lg-3 col-md-4"> <nav id="sub-navbar" class="list-menu sub-navbar"><ul class="list-unstyled"><li><strong>Player</strong></li><ul><li><a href="/cn/reference/player">概述</a></li><li><a href="/cn/reference/player/display-object">DisplayObject</a></li><li><a href="/cn/reference/player/sprite">Sprite</a></li><li><a href="/cn/reference/player/movie-clip">MovieClip</a></li><li><a href="/cn/reference/player/shape">Shape</a></li><li><a href="/cn/reference/player/text-field">TextField</a></li><li><a href="/cn/reference/player/video">Video</a></li><li><a href="/cn/reference/player/sound">Sound</a></li><li><a href="/cn/reference/player/events">事件</a></li><li><a href="/cn/reference/player/filters">滤镜</a></li><li><a href="/cn/reference/player/tween">Tween</a></li></ul><li><strong>Framework</strong></li><ul><li><a href="/cn/reference/framework">概述</a></li><li><a href="/cn/reference/framework/view">View/ViewModel</a></li><li><a href="/cn/reference/framework/routing">路由</a></li><li><a href="/cn/reference/framework/config">配置文件</a></li><li><a href="/cn/reference/framework/animation-tool">Animation Tool集成</a></li></ul></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav> </div> <div class="col-lg-9 col-md-8">  <div class="docs-content" data-astro-cid-xt6eahls> <h1 id="movieclip">MovieClip</h1>
+<p>MovieClip 是具有时间轴动画的 DisplayObjectContainer。使用 Open Animation Tool 创建的动画作为 MovieClip 播放。</p>
+<h2 id="继承">继承</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">classDiagram</span></span>
+<span class="line"><span style="color:#E1E4E8">    DisplayObject &#x3C;|-- InteractiveObject</span></span>
+<span class="line"><span style="color:#E1E4E8">    InteractiveObject &#x3C;|-- DisplayObjectContainer</span></span>
+<span class="line"><span style="color:#E1E4E8">    DisplayObjectContainer &#x3C;|-- Sprite</span></span>
+<span class="line"><span style="color:#E1E4E8">    Sprite &#x3C;|-- MovieClip</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    class DisplayObject {</span></span>
+<span class="line"><span style="color:#E1E4E8">        +x: Number</span></span>
+<span class="line"><span style="color:#E1E4E8">        +y: Number</span></span>
+<span class="line"><span style="color:#E1E4E8">        +visible: Boolean</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">    class MovieClip {</span></span>
+<span class="line"><span style="color:#E1E4E8">        +currentFrame: Number</span></span>
+<span class="line"><span style="color:#E1E4E8">        +totalFrames: Number</span></span>
+<span class="line"><span style="color:#E1E4E8">        +play()</span></span>
+<span class="line"><span style="color:#E1E4E8">        +stop()</span></span>
+<span class="line"><span style="color:#E1E4E8">        +gotoAndPlay()</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span></code></pre>
+<h2 id="属性">属性</h2>
+<h3 id="movieclip-特有属性">MovieClip 特有属性</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><code>currentFrame</code></td><td><code>number</code></td><td>指定播放头在时间轴中所在帧的编号（从 1 开始，只读）</td></tr><tr><td><code>totalFrames</code></td><td><code>number</code></td><td>MovieClip 实例的总帧数（只读）</td></tr><tr><td><code>currentFrameLabel</code></td><td><code>FrameLabel | null</code></td><td>MovieClip 实例时间轴中当前帧的标签（只读）</td></tr><tr><td><code>currentLabels</code></td><td><code>FrameLabel[] | null</code></td><td>返回当前场景的 FrameLabel 对象数组（只读）</td></tr><tr><td><code>isPlaying</code></td><td><code>boolean</code></td><td>表示影片剪辑当前是否正在播放的布尔值（只读）</td></tr><tr><td><code>isTimelineEnabled</code></td><td><code>boolean</code></td><td>返回显示对象是否具有 MovieClip 功能（只读）</td></tr></tbody></table>
+<h3 id="从-displayobjectcontainer-继承的属性">从 DisplayObjectContainer 继承的属性</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><code>numChildren</code></td><td><code>number</code></td><td>返回此对象的子对象数量（只读）</td></tr><tr><td><code>mouseChildren</code></td><td><code>boolean</code></td><td>确定对象的子对象是否启用鼠标或用户输入设备</td></tr><tr><td><code>mask</code></td><td><code>DisplayObject | null</code></td><td>调用的显示对象被指定的遮罩对象遮罩</td></tr><tr><td><code>isContainerEnabled</code></td><td><code>boolean</code></td><td>返回显示对象是否具有容器功能（只读）</td></tr></tbody></table>
+<h2 id="方法">方法</h2>
+<h3 id="movieclip-特有方法">MovieClip 特有方法</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>方法</th><th>返回类型</th><th>说明</th></tr></thead><tbody><tr><td><code>play()</code></td><td><code>void</code></td><td>在影片剪辑的时间轴中移动播放头</td></tr><tr><td><code>stop()</code></td><td><code>void</code></td><td>停止影片剪辑中的播放头</td></tr><tr><td><code>gotoAndPlay(frame: string | number)</code></td><td><code>void</code></td><td>从指定帧开始播放文件</td></tr><tr><td><code>gotoAndStop(frame: string | number)</code></td><td><code>void</code></td><td>将播放头移至指定帧并停止在那里</td></tr><tr><td><code>nextFrame()</code></td><td><code>void</code></td><td>将播放头发送到下一帧并停止</td></tr><tr><td><code>prevFrame()</code></td><td><code>void</code></td><td>将播放头发送到上一帧并停止</td></tr><tr><td><code>addFrameLabel(frame_label: FrameLabel)</code></td><td><code>void</code></td><td>动态向时间轴添加标签</td></tr></tbody></table>
+<h3 id="从-displayobjectcontainer-继承的方法">从 DisplayObjectContainer 继承的方法</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>方法</th><th>返回类型</th><th>说明</th></tr></thead><tbody><tr><td><code>addChild(display_object: DisplayObject)</code></td><td><code>DisplayObject</code></td><td>将子 DisplayObject 实例添加到此 DisplayObjectContainer 实例</td></tr><tr><td><code>addChildAt(display_object: DisplayObject, index: number)</code></td><td><code>DisplayObject</code></td><td>在指定索引位置添加子 DisplayObject 实例</td></tr><tr><td><code>removeChild(display_object: DisplayObject)</code></td><td><code>void</code></td><td>从子列表中移除指定的子 DisplayObject 实例</td></tr><tr><td><code>removeChildAt(index: number)</code></td><td><code>void</code></td><td>从子列表中的指定索引位置移除子 DisplayObject</td></tr><tr><td><code>removeChildren(...indexes: number[])</code></td><td><code>void</code></td><td>从容器中移除指定索引处的子对象</td></tr><tr><td><code>getChildAt(index: number)</code></td><td><code>DisplayObject | null</code></td><td>返回存在于指定索引处的子显示对象实例</td></tr><tr><td><code>getChildByName(name: string)</code></td><td><code>DisplayObject | null</code></td><td>返回具有指定名称的子显示对象</td></tr><tr><td><code>getChildIndex(display_object: DisplayObject)</code></td><td><code>number</code></td><td>返回子 DisplayObject 实例的索引位置</td></tr><tr><td><code>contains(display_object: DisplayObject)</code></td><td><code>boolean</code></td><td>确定指定的显示对象是 DisplayObjectContainer 实例的子对象还是实例本身</td></tr><tr><td><code>setChildIndex(display_object: DisplayObject, index: number)</code></td><td><code>void</code></td><td>更改显示对象容器中现有子对象的位置</td></tr><tr><td><code>swapChildren(display_object1: DisplayObject, display_object2: DisplayObject)</code></td><td><code>void</code></td><td>交换两个指定子对象的 z 顺序（从前到后的顺序）</td></tr><tr><td><code>swapChildrenAt(index1: number, index2: number)</code></td><td><code>void</code></td><td>交换两个指定索引位置的子对象的 z 顺序</td></tr></tbody></table>
+<h2 id="事件">事件</h2>
+<h3 id="enterframe">enterFrame</h3>
+<p>每帧发生的事件：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">movieClip.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"enterFrame"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"帧:"</span><span style="color:#E1E4E8">, event.target.currentFrame);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="frameconstructed">frameConstructed</h3>
+<p>帧构建完成时发生：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">movieClip.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"frameConstructed"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#6A737D">    // 帧脚本执行前</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="exitframe">exitFrame</h3>
+<p>离开帧时发生：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">movieClip.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"exitFrame"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#6A737D">    // 移动到下一帧前</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h2 id="使用示例">使用示例</h2>
+<h3 id="基本动画控制">基本动画控制</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Loader</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">URLRequest</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.net;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 从 JSON 加载 MovieClip</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> loader</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Loader</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">await</span><span style="color:#E1E4E8"> loader.</span><span style="color:#B392F0">load</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">new</span><span style="color:#B392F0"> URLRequest</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"animation.json"</span><span style="color:#E1E4E8">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> mc</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> loader.content;</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(mc);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 初始停止</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">stop</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 点击按钮播放/暂停</span></span>
+<span class="line"><span style="color:#E1E4E8">button.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (mc.isPlaying) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        mc.</span><span style="color:#B392F0">stop</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        mc.</span><span style="color:#B392F0">play</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="使用帧标签控制">使用帧标签控制</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// 移动到标签位置</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">gotoAndStop</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"idle"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 状态变更</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> changeState</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">state</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    switch</span><span style="color:#E1E4E8"> (state) {</span></span>
+<span class="line"><span style="color:#F97583">        case</span><span style="color:#9ECBFF"> "idle"</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">            mc.</span><span style="color:#B392F0">gotoAndPlay</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"idle"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">            break</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        case</span><span style="color:#9ECBFF"> "walk"</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">            mc.</span><span style="color:#B392F0">gotoAndPlay</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"walk_start"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">            break</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        case</span><span style="color:#9ECBFF"> "attack"</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">            mc.</span><span style="color:#B392F0">gotoAndPlay</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"attack"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">            break</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="控制嵌套的-movieclip">控制嵌套的 MovieClip</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// 访问子 MovieClip</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> childMc</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> mc.</span><span style="color:#B392F0">getChildByName</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"character"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">childMc.</span><span style="color:#B392F0">gotoAndPlay</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"run"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 访问孙子 MovieClip</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> grandChild</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> mc.character.arm;</span></span>
+<span class="line"><span style="color:#E1E4E8">grandChild.</span><span style="color:#B392F0">play</span><span style="color:#E1E4E8">();</span></span></code></pre>
+<h3 id="子对象操作">子对象操作</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// 添加子对象</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> sprite</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Sprite</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(sprite);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 在特定索引添加</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">addChildAt</span><span style="color:#E1E4E8">(sprite, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 移除子对象</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">removeChild</span><span style="color:#E1E4E8">(sprite);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 按索引移除</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">removeChildAt</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 移除多个子对象</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">removeChildren</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 获取子对象</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> child</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> mc.</span><span style="color:#B392F0">getChildAt</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> namedChild</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> mc.</span><span style="color:#B392F0">getChildByName</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"myChild"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 获取子对象索引</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> index</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> mc.</span><span style="color:#B392F0">getChildIndex</span><span style="color:#E1E4E8">(sprite);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 更改子对象索引</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">setChildIndex</span><span style="color:#E1E4E8">(sprite, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 交换子对象顺序</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">swapChildren</span><span style="color:#E1E4E8">(sprite1, sprite2);</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">swapChildrenAt</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="动态添加帧标签">动态添加帧标签</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">FrameLabel</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 创建并添加新标签</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> label</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> FrameLabel</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"myLabel"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">addFrameLabel</span><span style="color:#E1E4E8">(label);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 使用标签导航</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">gotoAndPlay</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"myLabel"</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="更改帧率">更改帧率</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// 更改舞台帧率</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.frameRate </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 30</span><span style="color:#E1E4E8">;</span></span></code></pre>
+<h2 id="framelabel">FrameLabel</h2>
+<p>保存帧标签信息的类：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// 获取当前场景中的所有标签</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> labels</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> mc.currentLabels;</span></span>
+<span class="line"><span style="color:#E1E4E8">labels.</span><span style="color:#B392F0">forEach</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">label</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(label.name </span><span style="color:#F97583">+</span><span style="color:#9ECBFF"> ": 帧 "</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> label.frame);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h2 id="相关">相关</h2>
+<ul>
+<li><a href="/cn/reference/player/sprite">Sprite</a></li>
+<li><a href="/cn/reference/player/events">事件系统</a></li>
+</ul> </div>  </div> </div> </div> </section> <footer class="footer" data-aos="fade-up"> <div class="container"> <div class="row"> <div class="col-md-12 col-lg-4"> <div class="footer-logo"> <a class="navbar-brand" href="/cn">Next2D</a> <p> Next2D 源于一个 JavaScript Flash 播放器项目 &quot;swf2js&quot;，旨在提供一个在任何设备上都可以运行的、最快的 2D 引擎。<br>
+Created by Toshiyuki Ienaga.
+</p> </div> <div class="list-sns-menu"> <ul class="list-unstyled"> <li><a href="https://twitter.com/ienagatoshiyuki" target="_blank"><i class="bi bi-twitter"></i></a></li> <li><a href="https://github.com/ienaga" target="_blank"><i class="bi bi-github"></i></a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>播放器 (Player)</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/cn/reference/player">参考资料</a></li> <li><a href="/cn/#player">特性</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>动画制作工具 (Animation Tool)</h4> <ul class="list-unstyled"> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/cn/usage">使用方法</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>框架 (Framework)</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/cn/reference/framework">参考资料</a></li> <li><a href="/cn/#framework">特性</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>关于我们</h4> <ul class="list-unstyled"> <li><a href="/cn/#contact">联系我们</a></li> <li><a href="/cn/privacy">隐私政策</a></li> </ul> </div> </div> </div> </div> <div class="copyrights"> <div class="container"> <p>&copy; Copyrights Next2D. All rights reserved.</p> </div> </div> </footer> <script type="module" src="/assets/DocsLayout.astro_astro_type_script_index_0_lang.yTAR6D4i.js"></script>  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> <!-- Vendor JS --> <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script> <script src="/assets/js/vendor/aos.js"></script> <!-- Main JS --> <script src="/assets/js/main.js"></script> </body> </html> 

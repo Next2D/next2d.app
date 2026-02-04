@@ -1,0 +1,59 @@
+---
+import DocsLayout from '../../../../layouts/DocsLayout.astro';
+import { getTranslations, supportedLanguages, isValidLanguage } from '../../../../i18n';
+
+export function getStaticPaths() {
+  return supportedLanguages.map((lang) => ({
+    params: { lang }
+  }));
+}
+
+const { lang } = Astro.params;
+if (!isValidLanguage(lang)) {
+  return Astro.redirect('/ja/usage/controller/filters');
+}
+
+const t = await getTranslations(lang);
+const basePath = import.meta.env.BASE_URL;
+
+const breadcrumbs = [
+  { label: t.navbar?.home || 'Home', href: `${basePath}${lang}/` },
+  { label: t.main?.['usage-title'] || 'Usage', href: `${basePath}${lang}/usage/` },
+  { label: 'Controller Area', href: `${basePath}${lang}/usage/controller/` },
+  { label: t.toolmenu?.controller?.filters || 'フィルター' }
+];
+
+const filters = ['DropShadow', 'Blur', 'Glow', 'Bevel', 'GradientGlow', 'GradientBevel'];
+---
+
+<DocsLayout
+  title={t.toolusage?.controller?.filters?.title || 'フィルター'}
+  description={t.toolusage?.controller?.filters?.description || ''}
+  lang={lang}
+  t={t}
+  breadcrumbs={breadcrumbs}
+  menuType="usage"
+>
+  <div>
+    <h3>{t.toolmenu?.controller?.filters || 'フィルター'}</h3>
+    <p><iframe loading="lazy" width="560" height="350" src="https://www.youtube.com/embed/sj6eljRxbQI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+    <p>{t.toolusage?.controller?.filters?.description || ''}</p>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Filter</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {filters.map((filter) => (
+          <tr>
+            <td>{filter}</td>
+            <td>{t.toolusage?.controller?.filters?.[filter] || ''}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</DocsLayout>

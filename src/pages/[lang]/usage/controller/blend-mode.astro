@@ -1,0 +1,59 @@
+---
+import DocsLayout from '../../../../layouts/DocsLayout.astro';
+import { getTranslations, supportedLanguages, isValidLanguage } from '../../../../i18n';
+
+export function getStaticPaths() {
+  return supportedLanguages.map((lang) => ({
+    params: { lang }
+  }));
+}
+
+const { lang } = Astro.params;
+if (!isValidLanguage(lang)) {
+  return Astro.redirect('/ja/usage/controller/blend-mode');
+}
+
+const t = await getTranslations(lang);
+const basePath = import.meta.env.BASE_URL;
+
+const breadcrumbs = [
+  { label: t.navbar?.home || 'Home', href: `${basePath}${lang}/` },
+  { label: t.main?.['usage-title'] || 'Usage', href: `${basePath}${lang}/usage/` },
+  { label: 'Controller Area', href: `${basePath}${lang}/usage/controller/` },
+  { label: t.toolmenu?.controller?.['blend-mode'] || 'ブレンドモード' }
+];
+
+const blendModes = ['normal', 'layer', 'darken', 'multiply', 'lighten', 'screen', 'overlay', 'hardlight', 'add', 'subtract', 'difference', 'invert', 'alpha', 'erase'];
+---
+
+<DocsLayout
+  title={t.toolusage?.controller?.['blend-mode']?.title || 'ブレンドモード'}
+  description={t.toolusage?.controller?.['blend-mode']?.description || ''}
+  lang={lang}
+  t={t}
+  breadcrumbs={breadcrumbs}
+  menuType="usage"
+>
+  <div>
+    <h3>{t.toolmenu?.controller?.['blend-mode'] || 'ブレンドモード'}</h3>
+    <p><iframe loading="lazy" width="560" height="350" src="https://www.youtube.com/embed/krMptdKTMAs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+    <p>{t.toolusage?.controller?.['blend-mode']?.description || ''}</p>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Mode</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {blendModes.map((mode) => (
+          <tr>
+            <td>{mode}</td>
+            <td>{t.toolusage?.controller?.['blend-mode']?.[mode] || ''}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</DocsLayout>

@@ -1,0 +1,64 @@
+---
+interface Props {
+  lang: string;
+  t: Record<string, any>;
+}
+
+const { lang, t } = Astro.props;
+const basePath = import.meta.env.BASE_URL;
+---
+
+<header id="header" class="header fixed-top d-flex align-items-center">
+  <div class="container d-flex align-items-center justify-content-between">
+
+    <div id="logo">
+      <a href={`${basePath}${lang}`}><img loading="lazy" src={`${basePath}assets/img/logo.svg`} alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework." /></a>
+    </div>
+
+    <nav id="navbar" class="navbar">
+      <ul class="list-unstyled">
+        <li><a class="nav-link scrollto" href={`${basePath}${lang}/#get-started`}>{t.navbar?.home || 'Home'}</a></li>
+        <li><a class="nav-link scrollto" href={`${basePath}${lang}/#casestudy`}>{t.navbar?.['case-studies'] || 'Case Studies'}</a></li>
+        <li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>{t.navbar?.player || 'Player'}</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li>
+            <li><a href={`${basePath}${lang}/reference/player`}>{t.main?.['reference-title'] || 'Reference'}</a></li>
+            <li><a href={`${basePath}${lang}/#player`}>{t.main?.['features-title'] || 'Features'}</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>{t.navbar?.['nocode-tool'] || 'Animation Tool'}</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li>
+            <li><a href={`${basePath}${lang}/usage`}>{t.main?.['usage-title'] || 'Usage'}</a></li>
+            <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li>
+            <li><a href={`${basePath}${lang}/#tool`}>{t.main?.['features-title'] || 'Features'}</a></li>
+            <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>{t.navbar?.framework || 'Framework'}</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li>
+            <li><a href={`${basePath}${lang}/reference/framework`}>{t.main?.['reference-title'] || 'Reference'}</a></li>
+            <li><a href={`${basePath}${lang}/#framework`}>{t.main?.['features-title'] || 'Features'}</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>{t.navbar?.language || 'Language'}</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href={`${basePath}en`}>English</a></li>
+            <li><a href={`${basePath}ja`}>日本語</a></li>
+            <li><a href={`${basePath}cn`}>简体中文</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a class="nav-link"><span>{t.navbar?.['support-us'] || 'Support US'}</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link scrollto" href={`${basePath}${lang}/#contact`}>{t.navbar?.contact || 'Contact'}</a></li>
+      </ul>
+
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+
+  </div>
+</header>

@@ -1,0 +1,31 @@
+---
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="breadcrumbs">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <h2>{items[items.length - 1]?.label}</h2>
+      <ol>
+        {items.map((item, index) => (
+          <li>
+            {item.href && index < items.length - 1 ? (
+              <a href={item.href}>{item.label}</a>
+            ) : (
+              item.label
+            )}
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>

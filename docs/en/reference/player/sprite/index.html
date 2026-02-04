@@ -1,0 +1,605 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Next2D | Sprite</title><meta content="Next2D Player function description and sample code are available" name="description"><meta content="Next2D,Next2D Player,Animation Tool,Next2D Framework" name="keywords"><!-- SEO: Canonical URL --><link rel="canonical" href="https://next2d.app/en/reference/player/sprite/"><!-- SEO: hreflang for multi-language --><link rel="alternate" hreflang="ja" href="https://next2d.app/ja/reference/player/sprite/"><link rel="alternate" hreflang="en" href="https://next2d.app/en/reference/player/sprite/"><link rel="alternate" hreflang="zh-CN" href="https://next2d.app/cn/reference/player/sprite/"><link rel="alternate" hreflang="x-default" href="https://next2d.app/ja/reference/player/sprite/"><!-- Google / Search Engine Tags --><meta itemprop="name" content="Next2D | Sprite"><meta itemprop="description" content="Next2D Player function description and sample code are available"><meta itemprop="image" content="https://next2d.app/assets/img/ogp.png"><!-- Facebook Meta Tags --><meta property="og:url" content="https://next2d.app/en/reference/player/sprite/"><meta property="og:type" content="website"><meta property="og:title" content="Next2D | Sprite"><meta property="og:description" content="Next2D Player function description and sample code are available"><meta property="og:image" content="https://next2d.app/assets/img/ogp.png"><meta property="og:locale" content="en"><meta property="og:site_name" content="Next2D"><!-- Twitter Meta Tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Next2D"><meta name="twitter:creator" content="@Next2D"><meta name="twitter:title" content="Next2D | Sprite"><meta name="twitter:description" content="Next2D Player function description and sample code are available"><meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png"><!-- Theme Color --><meta name="theme-color" content="#5777ba"><!-- Web App Manifest --><link rel="manifest" href="/manifest.json"><!-- JSON-LD Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Next2D","url":"https://next2d.app","description":"Next2D - Rendering Engine, Animation Tool, Underlying Framework","inLanguage":["en"],"potentialAction":{"@type":"SearchAction","target":"https://next2d.app/{lang}/reference/player/?q={search_term_string}","query-input":"required name=search_term_string"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Next2D","url":"https://next2d.app","logo":"https://next2d.app/assets/img/ogp.png","sameAs":["https://github.com/Next2D"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://next2d.app/en/"},{"@type":"ListItem","position":2,"name":"Player","item":"https://next2d.app/en/reference/player/"},{"@type":"ListItem","position":3,"name":"Sprite"}]}</script><!-- Favicons --><link href="/assets/img/favicon.png" rel="icon"><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"><!-- Vendor CSS --><link href="/assets/css/vendor/aos.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap-icons.min.css" rel="stylesheet"><!-- Main CSS --><link href="/assets/css/main.css" rel="stylesheet"><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-8GJWF4S3RH");
+    </script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style>.docs-content[data-astro-cid-xt6eahls] h1{font-size:2rem;margin-bottom:1.5rem}.docs-content[data-astro-cid-xt6eahls] h2{font-size:1.5rem;margin-top:2rem;margin-bottom:1rem}.docs-content[data-astro-cid-xt6eahls] h3{font-size:1.25rem;margin-top:1.5rem;margin-bottom:.75rem}.docs-content[data-astro-cid-xt6eahls] pre{background-color:#2a2c30;color:#f8f9fa;border-radius:8px;padding:1rem;overflow-x:auto;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] code{font-family:Monaco,Menlo,monospace;font-size:.9em}.docs-content[data-astro-cid-xt6eahls] table{width:100%;border-collapse:collapse;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] th,.docs-content[data-astro-cid-xt6eahls] td{border:1px solid #ddd;padding:.5rem;text-align:left}.docs-content[data-astro-cid-xt6eahls] th{background-color:#f5f5f5}
+</style></head> <body class>  <header id="header" class="header fixed-top d-flex align-items-center"> <div class="container d-flex align-items-center justify-content-between"> <div id="logo"> <a href="/en"><img loading="lazy" src="/assets/img/logo.svg" alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework."></a> </div> <nav id="navbar" class="navbar"> <ul class="list-unstyled"> <li><a class="nav-link scrollto" href="/en/#get-started">Home</a></li> <li><a class="nav-link scrollto" href="/en/#casestudy">Case Studies</a></li> <li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>Player</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/en/reference/player">Reference</a></li> <li><a href="/en/#player">Features</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>Animation Tool</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/en/usage">Usage</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="/en/#tool">Features</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>Framework</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/en/reference/framework">Reference</a></li> <li><a href="/en/#framework">Features</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>Language</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="/en">English</a></li> <li><a href="/ja">日本語</a></li> <li><a href="/cn">简体中文</a></li> </ul> </li> <li class="dropdown"><a class="nav-link"><span>Support US</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li> </ul> </li> <li><a class="nav-link scrollto" href="/en/#contact">Contact</a></li> </ul> <i class="bi bi-list mobile-nav-toggle"></i> </nav> </div> </header> <section class="breadcrumbs"> <div class="container"> <div class="d-flex justify-content-between align-items-center"> <h2>Sprite</h2> <ol> <li> <a href="/en/">Home</a> </li><li> <a href="/en/reference/player/">Player</a> </li><li> Sprite </li> </ol> </div> </div> </section> <section id="references" class="reference-section"> <div class="container" data-aos="fade-up"> <div class="row"> <div class="col-lg-3 col-md-4"> <nav id="sub-navbar" class="list-menu sub-navbar"><ul class="list-unstyled"><li><strong>Player</strong></li><ul><li><a href="/en/reference/player">Overview</a></li><li><a href="/en/reference/player/display-object">DisplayObject</a></li><li><a href="/en/reference/player/sprite">Sprite</a></li><li><a href="/en/reference/player/movie-clip">MovieClip</a></li><li><a href="/en/reference/player/shape">Shape</a></li><li><a href="/en/reference/player/text-field">TextField</a></li><li><a href="/en/reference/player/video">Video</a></li><li><a href="/en/reference/player/sound">Sound</a></li><li><a href="/en/reference/player/events">Events</a></li><li><a href="/en/reference/player/filters">Filters</a></li><li><a href="/en/reference/player/tween">Tween</a></li></ul><li><strong>Framework</strong></li><ul><li><a href="/en/reference/framework">Overview</a></li><li><a href="/en/reference/framework/view">View/ViewModel</a></li><li><a href="/en/reference/framework/routing">Routing</a></li><li><a href="/en/reference/framework/config">Configuration</a></li><li><a href="/en/reference/framework/animation-tool">Animation Tool Integration</a></li></ul></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav> </div> <div class="col-lg-9 col-md-8">  <div class="docs-content" data-astro-cid-xt6eahls> <h1 id="sprite">Sprite</h1>
+<p>Sprite is a DisplayObjectContainer. It is the base class of MovieClip and is used for dynamic object management without a timeline.</p>
+<h2 id="inheritance">Inheritance</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">classDiagram</span></span>
+<span class="line"><span style="color:#E1E4E8">    DisplayObject &#x3C;|-- InteractiveObject</span></span>
+<span class="line"><span style="color:#E1E4E8">    InteractiveObject &#x3C;|-- DisplayObjectContainer</span></span>
+<span class="line"><span style="color:#E1E4E8">    DisplayObjectContainer &#x3C;|-- Sprite</span></span>
+<span class="line"><span style="color:#E1E4E8">    Sprite &#x3C;|-- MovieClip</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    class Sprite {</span></span>
+<span class="line"><span style="color:#E1E4E8">        +buttonMode: Boolean</span></span>
+<span class="line"><span style="color:#E1E4E8">        +useHandCursor: Boolean</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span></code></pre>
+<h2 id="properties">Properties</h2>
+<h3 id="sprite-specific-properties">Sprite-specific Properties</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Type</th><th align="center">Read-only</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>isSprite</code></td><td>boolean</td><td align="center">Yes</td><td>true</td><td>Returns whether Sprite functions are possessed</td></tr><tr><td><code>buttonMode</code></td><td>boolean</td><td align="center">No</td><td>false</td><td>Specifies the button mode of this sprite</td></tr><tr><td><code>useHandCursor</code></td><td>boolean</td><td align="center">No</td><td>true</td><td>Whether to display hand cursor when buttonMode is true</td></tr><tr><td><code>hitArea</code></td><td>Sprite | null</td><td align="center">No</td><td>null</td><td>Designates another sprite to serve as the hit area for this sprite</td></tr><tr><td><code>soundTransform</code></td><td>SoundTransform | null</td><td align="center">No</td><td>null</td><td>Controls sound within this sprite</td></tr></tbody></table>
+<h3 id="properties-inherited-from-displayobjectcontainer">Properties Inherited from DisplayObjectContainer</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Type</th><th align="center">Read-only</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>isContainerEnabled</code></td><td>boolean</td><td align="center">Yes</td><td>true</td><td>Returns whether the display object has container functionality</td></tr><tr><td><code>mouseChildren</code></td><td>boolean</td><td align="center">No</td><td>true</td><td>Determines whether the object’s children are compatible with mouse or user input devices</td></tr><tr><td><code>numChildren</code></td><td>number</td><td align="center">Yes</td><td>-</td><td>Returns the number of children of this object</td></tr><tr><td><code>mask</code></td><td>DisplayObject | null</td><td align="center">No</td><td>null</td><td>Masks the display object</td></tr></tbody></table>
+<h3 id="properties-inherited-from-interactiveobject">Properties Inherited from InteractiveObject</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Type</th><th align="center">Read-only</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>isInteractive</code></td><td>boolean</td><td align="center">Yes</td><td>true</td><td>Returns whether InteractiveObject functions are possessed</td></tr><tr><td><code>mouseEnabled</code></td><td>boolean</td><td align="center">No</td><td>true</td><td>Specifies whether this object receives mouse or other user input messages</td></tr></tbody></table>
+<h3 id="properties-inherited-from-displayobject">Properties Inherited from DisplayObject</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Type</th><th align="center">Read-only</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>instanceId</code></td><td>number</td><td align="center">Yes</td><td>-</td><td>Unique instance ID of DisplayObject</td></tr><tr><td><code>name</code></td><td>string</td><td align="center">No</td><td>""</td><td>Returns the name. Used by getChildByName()</td></tr><tr><td><code>parent</code></td><td>Sprite | MovieClip | null</td><td align="center">No</td><td>null</td><td>Returns the DisplayObjectContainer of this DisplayObject’s parent</td></tr><tr><td><code>x</code></td><td>number</td><td align="center">No</td><td>0</td><td>x coordinate relative to the local coordinates of the parent DisplayObjectContainer</td></tr><tr><td><code>y</code></td><td>number</td><td align="center">No</td><td>0</td><td>y coordinate relative to the local coordinates of the parent DisplayObjectContainer</td></tr><tr><td><code>width</code></td><td>number</td><td align="center">No</td><td>-</td><td>Width of the display object in pixels</td></tr><tr><td><code>height</code></td><td>number</td><td align="center">No</td><td>-</td><td>Height of the display object in pixels</td></tr><tr><td><code>scaleX</code></td><td>number</td><td align="center">No</td><td>1</td><td>Horizontal scale value of the object applied from the reference point</td></tr><tr><td><code>scaleY</code></td><td>number</td><td align="center">No</td><td>1</td><td>Vertical scale value of the object applied from the reference point</td></tr><tr><td><code>rotation</code></td><td>number</td><td align="center">No</td><td>0</td><td>Rotation of the DisplayObject instance in degrees from its original orientation</td></tr><tr><td><code>alpha</code></td><td>number</td><td align="center">No</td><td>1</td><td>Alpha transparency value of the object (0.0 to 1.0)</td></tr><tr><td><code>visible</code></td><td>boolean</td><td align="center">No</td><td>true</td><td>Whether the display object is visible</td></tr><tr><td><code>blendMode</code></td><td>string</td><td align="center">No</td><td>”normal”</td><td>A value from the BlendMode class that specifies which blend mode to use</td></tr><tr><td><code>filters</code></td><td>array | null</td><td align="center">No</td><td>null</td><td>An array of filter objects currently associated with the display object</td></tr><tr><td><code>matrix</code></td><td>Matrix</td><td align="center">No</td><td>-</td><td>Returns the Matrix of the display object</td></tr><tr><td><code>colorTransform</code></td><td>ColorTransform</td><td align="center">No</td><td>-</td><td>Returns the ColorTransform of the display object</td></tr><tr><td><code>concatenatedMatrix</code></td><td>Matrix</td><td align="center">Yes</td><td>-</td><td>Combined Matrix of this display object and all parent objects</td></tr><tr><td><code>scale9Grid</code></td><td>Rectangle | null</td><td align="center">No</td><td>null</td><td>The current scaling grid that is in effect</td></tr><tr><td><code>loaderInfo</code></td><td>LoaderInfo | null</td><td align="center">Yes</td><td>null</td><td>Loading information for the file to which this display object belongs</td></tr><tr><td><code>root</code></td><td>MovieClip | Sprite | null</td><td align="center">Yes</td><td>null</td><td>The DisplayObjectContainer that is the root of the DisplayObject</td></tr><tr><td><code>mouseX</code></td><td>number</td><td align="center">Yes</td><td>-</td><td>x-axis position in pixels relative to the reference point of the DisplayObject</td></tr><tr><td><code>mouseY</code></td><td>number</td><td align="center">Yes</td><td>-</td><td>y-axis position in pixels relative to the reference point of the DisplayObject</td></tr><tr><td><code>dropTarget</code></td><td>Sprite | null</td><td align="center">Yes</td><td>null</td><td>The display object over which the sprite is being dragged or dropped</td></tr><tr><td><code>isMask</code></td><td>boolean</td><td align="center">No</td><td>false</td><td>Indicates whether the DisplayObject is set as a mask</td></tr></tbody></table>
+<h2 id="methods">Methods</h2>
+<h3 id="sprite-specific-methods">Sprite-specific Methods</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Return Type</th><th>Description</th></tr></thead><tbody><tr><td><code>startDrag(lockCenter?: boolean, bounds?: Rectangle)</code></td><td>void</td><td>Lets the user drag the specified sprite</td></tr><tr><td><code>stopDrag()</code></td><td>void</td><td>Ends the startDrag() method</td></tr></tbody></table>
+<h3 id="methods-inherited-from-displayobjectcontainer">Methods Inherited from DisplayObjectContainer</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Return Type</th><th>Description</th></tr></thead><tbody><tr><td><code>addChild(child: DisplayObject)</code></td><td>DisplayObject</td><td>Adds a child DisplayObject instance</td></tr><tr><td><code>addChildAt(child: DisplayObject, index: number)</code></td><td>DisplayObject</td><td>Adds a child DisplayObject instance at the specified index position</td></tr><tr><td><code>removeChild(child: DisplayObject)</code></td><td>void</td><td>Removes the specified child DisplayObject instance</td></tr><tr><td><code>removeChildAt(index: number)</code></td><td>void</td><td>Removes a child DisplayObject from the specified index position</td></tr><tr><td><code>removeChildren(...indexes: number[])</code></td><td>void</td><td>Removes children at the indexes specified in the array from the container</td></tr><tr><td><code>getChildAt(index: number)</code></td><td>DisplayObject | null</td><td>Returns the child display object instance at the specified index position</td></tr><tr><td><code>getChildByName(name: string)</code></td><td>DisplayObject | null</td><td>Returns the child display object that exists with the specified name</td></tr><tr><td><code>getChildIndex(child: DisplayObject)</code></td><td>number</td><td>Returns the index position of a child DisplayObject instance</td></tr><tr><td><code>setChildIndex(child: DisplayObject, index: number)</code></td><td>void</td><td>Changes the position of an existing child in the display object container</td></tr><tr><td><code>contains(child: DisplayObject)</code></td><td>boolean</td><td>Whether the specified DisplayObject is a descendant of the instance</td></tr><tr><td><code>swapChildren(child1: DisplayObject, child2: DisplayObject)</code></td><td>void</td><td>Swaps the z-order of the two specified child objects</td></tr><tr><td><code>swapChildrenAt(index1: number, index2: number)</code></td><td>void</td><td>Swaps the z-order of the child objects at the two specified index positions</td></tr></tbody></table>
+<h3 id="methods-inherited-from-displayobject">Methods Inherited from DisplayObject</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Return Type</th><th>Description</th></tr></thead><tbody><tr><td><code>getBounds(targetDisplayObject?: DisplayObject)</code></td><td>Rectangle</td><td>Returns a rectangle that defines the area of the display object relative to the coordinate system of the targetDisplayObject</td></tr><tr><td><code>globalToLocal(point: Point)</code></td><td>Point</td><td>Converts the point object from Stage (global) coordinates to the display object’s (local) coordinates</td></tr><tr><td><code>localToGlobal(point: Point)</code></td><td>Point</td><td>Converts the point object from the display object’s (local) coordinates to Stage (global) coordinates</td></tr><tr><td><code>hitTestObject(target: DisplayObject)</code></td><td>boolean</td><td>Evaluates the DisplayObject’s drawing range to see if it overlaps or intersects</td></tr><tr><td><code>hitTestPoint(x: number, y: number, shapeFlag?: boolean)</code></td><td>boolean</td><td>Evaluates the display object to see if it overlaps or intersects with the point specified by x and y parameters</td></tr><tr><td><code>remove()</code></td><td>void</td><td>Removes the parent-child relationship</td></tr><tr><td><code>getLocalVariable(key: any)</code></td><td>any</td><td>Gets a value from the local variable space of the class</td></tr><tr><td><code>setLocalVariable(key: any, value: any)</code></td><td>void</td><td>Stores a value in the local variable space of the class</td></tr><tr><td><code>hasLocalVariable(key: any)</code></td><td>boolean</td><td>Determines if there is a value in the local variable space of the class</td></tr><tr><td><code>deleteLocalVariable(key: any)</code></td><td>void</td><td>Removes a value from the local variable space of the class</td></tr><tr><td><code>getGlobalVariable(key: any)</code></td><td>any</td><td>Gets a value from the global variable space</td></tr><tr><td><code>setGlobalVariable(key: any, value: any)</code></td><td>void</td><td>Stores a value in the global variable space</td></tr><tr><td><code>hasGlobalVariable(key: any)</code></td><td>boolean</td><td>Determines if there is a value in the global variable space</td></tr><tr><td><code>deleteGlobalVariable(key: any)</code></td><td>void</td><td>Removes a value from the global variable space</td></tr><tr><td><code>clearGlobalVariable()</code></td><td>void</td><td>Clears all values in the global variable space</td></tr></tbody></table>
+<h2 id="usage-examples">Usage Examples</h2>
+<h3 id="use-as-button">Use as Button</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Sprite</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> button</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Sprite</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Enable button mode</span></span>
+<span class="line"><span style="color:#E1E4E8">button.buttonMode </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">button.useHandCursor </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Create background Shape</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> bg</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">bg.graphics.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0x3498db</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">bg.graphics.</span><span style="color:#B392F0">drawRoundRect</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">120</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">40</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">8</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">8</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">bg.graphics.</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">button.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(bg);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Click event</span></span>
+<span class="line"><span style="color:#E1E4E8">button.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Button clicked"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(button);</span></span></code></pre>
+<h3 id="use-as-mask">Use as Mask</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Sprite</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> container</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Sprite</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Content Shape</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> content</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">content.graphics.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0xFF0000</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">content.graphics.</span><span style="color:#B392F0">drawRect</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">content.graphics.</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">container.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(content);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Mask Shape</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> maskShape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">maskShape.graphics.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0xFFFFFF</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">maskShape.graphics.</span><span style="color:#B392F0">drawCircle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">maskShape.graphics.</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Apply mask</span></span>
+<span class="line"><span style="color:#E1E4E8">container.mask </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> maskShape;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(container);</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(maskShape);</span></span></code></pre>
+<h3 id="drag-and-drop">Drag and Drop</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Sprite</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Rectangle</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.geom;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> draggable</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Sprite</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Create background Shape</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> bg</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">bg.graphics.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0x3498db</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">bg.graphics.</span><span style="color:#B392F0">drawRect</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">bg.graphics.</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">draggable.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(bg);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Start drag</span></span>
+<span class="line"><span style="color:#E1E4E8">draggable.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"mouseDown"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#6A737D">    // Start dragging (lock center, specify bounds)</span></span>
+<span class="line"><span style="color:#E1E4E8">    draggable.</span><span style="color:#B392F0">startDrag</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">new</span><span style="color:#B392F0"> Rectangle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">));</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Stop drag</span></span>
+<span class="line"><span style="color:#E1E4E8">draggable.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"mouseUp"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">    draggable.</span><span style="color:#B392F0">stopDrag</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(draggable);</span></span></code></pre>
+<h3 id="managing-child-objects">Managing Child Objects</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Sprite</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> container</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Sprite</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Add multiple Shapes as children</span></span>
+<span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">let</span><span style="color:#E1E4E8"> i </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">; i </span><span style="color:#F97583">&#x3C;</span><span style="color:#79B8FF"> 5</span><span style="color:#E1E4E8">; i</span><span style="color:#F97583">++</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> shape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    shape.graphics.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0xFF0000</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> i </span><span style="color:#F97583">*</span><span style="color:#79B8FF"> 0x003300</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    shape.graphics.</span><span style="color:#B392F0">drawCircle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    shape.graphics.</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    shape.x </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> i </span><span style="color:#F97583">*</span><span style="color:#79B8FF"> 50</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    shape.name </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "circle"</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> i;</span></span>
+<span class="line"><span style="color:#E1E4E8">    container.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(shape);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Get child object by name</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> circle2</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> container.</span><span style="color:#B392F0">getChildByName</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"circle2"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Get number of children</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(container.numChildren); </span><span style="color:#6A737D">// 5</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(container);</span></span></code></pre>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="/en/reference/player/display-object">DisplayObject</a></li>
+<li><a href="/en/reference/player/movie-clip">MovieClip</a></li>
+<li><a href="/en/reference/player/shape">Shape</a></li>
+</ul> </div>  </div> </div> </div> </section> <footer class="footer" data-aos="fade-up"> <div class="container"> <div class="row"> <div class="col-md-12 col-lg-4"> <div class="footer-logo"> <a class="navbar-brand" href="/en">Next2D</a> <p> Next2D, a project derived from the JavaScript FlashPlayer &quot;swf2js&quot;, aims to provide the fastest 2D engine that works on any device.<br>
+Created by Toshiyuki Ienaga.
+</p> </div> <div class="list-sns-menu"> <ul class="list-unstyled"> <li><a href="https://twitter.com/ienagatoshiyuki" target="_blank"><i class="bi bi-twitter"></i></a></li> <li><a href="https://github.com/ienaga" target="_blank"><i class="bi bi-github"></i></a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Player</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/en/reference/player">Reference</a></li> <li><a href="/en/#player">Features</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Animation Tool</h4> <ul class="list-unstyled"> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/en/usage">Usage</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Framework</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/en/reference/framework">Reference</a></li> <li><a href="/en/#framework">Features</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>About Us</h4> <ul class="list-unstyled"> <li><a href="/en/#contact">Contact</a></li> <li><a href="/en/privacy">Privacy Policy</a></li> </ul> </div> </div> </div> </div> <div class="copyrights"> <div class="container"> <p>&copy; Copyrights Next2D. All rights reserved.</p> </div> </div> </footer> <script type="module" src="/assets/DocsLayout.astro_astro_type_script_index_0_lang.yTAR6D4i.js"></script>  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> <!-- Vendor JS --> <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script> <script src="/assets/js/vendor/aos.js"></script> <!-- Main JS --> <script src="/assets/js/main.js"></script> </body> </html> 

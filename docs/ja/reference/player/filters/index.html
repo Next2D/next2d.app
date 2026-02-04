@@ -1,0 +1,811 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Next2D | フィルター</title><meta content="Next2D Playerの機能解説とサンプルコードを掲載しています" name="description"><meta content="Next2D,Next2D Player,Animation Tool,Next2D Framework" name="keywords"><!-- SEO: Canonical URL --><link rel="canonical" href="https://next2d.app/ja/reference/player/filters/"><!-- SEO: hreflang for multi-language --><link rel="alternate" hreflang="ja" href="https://next2d.app/ja/reference/player/filters/"><link rel="alternate" hreflang="en" href="https://next2d.app/en/reference/player/filters/"><link rel="alternate" hreflang="zh-CN" href="https://next2d.app/cn/reference/player/filters/"><link rel="alternate" hreflang="x-default" href="https://next2d.app/ja/reference/player/filters/"><!-- Google / Search Engine Tags --><meta itemprop="name" content="Next2D | フィルター"><meta itemprop="description" content="Next2D Playerの機能解説とサンプルコードを掲載しています"><meta itemprop="image" content="https://next2d.app/assets/img/ogp.png"><!-- Facebook Meta Tags --><meta property="og:url" content="https://next2d.app/ja/reference/player/filters/"><meta property="og:type" content="website"><meta property="og:title" content="Next2D | フィルター"><meta property="og:description" content="Next2D Playerの機能解説とサンプルコードを掲載しています"><meta property="og:image" content="https://next2d.app/assets/img/ogp.png"><meta property="og:locale" content="ja"><meta property="og:site_name" content="Next2D"><!-- Twitter Meta Tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Next2D"><meta name="twitter:creator" content="@Next2D"><meta name="twitter:title" content="Next2D | フィルター"><meta name="twitter:description" content="Next2D Playerの機能解説とサンプルコードを掲載しています"><meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png"><!-- Theme Color --><meta name="theme-color" content="#5777ba"><!-- Web App Manifest --><link rel="manifest" href="/manifest.json"><!-- JSON-LD Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Next2D","url":"https://next2d.app","description":"Next2D - Rendering Engine, Animation Tool, Underlying Framework","inLanguage":["ja"],"potentialAction":{"@type":"SearchAction","target":"https://next2d.app/{lang}/reference/player/?q={search_term_string}","query-input":"required name=search_term_string"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Next2D","url":"https://next2d.app","logo":"https://next2d.app/assets/img/ogp.png","sameAs":["https://github.com/Next2D"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://next2d.app/ja/"},{"@type":"ListItem","position":2,"name":"Player","item":"https://next2d.app/ja/reference/player/"},{"@type":"ListItem","position":3,"name":"フィルター"}]}</script><!-- Favicons --><link href="/assets/img/favicon.png" rel="icon"><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"><!-- Vendor CSS --><link href="/assets/css/vendor/aos.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap-icons.min.css" rel="stylesheet"><!-- Main CSS --><link href="/assets/css/main.css" rel="stylesheet"><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-8GJWF4S3RH");
+    </script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style>.docs-content[data-astro-cid-xt6eahls] h1{font-size:2rem;margin-bottom:1.5rem}.docs-content[data-astro-cid-xt6eahls] h2{font-size:1.5rem;margin-top:2rem;margin-bottom:1rem}.docs-content[data-astro-cid-xt6eahls] h3{font-size:1.25rem;margin-top:1.5rem;margin-bottom:.75rem}.docs-content[data-astro-cid-xt6eahls] pre{background-color:#2a2c30;color:#f8f9fa;border-radius:8px;padding:1rem;overflow-x:auto;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] code{font-family:Monaco,Menlo,monospace;font-size:.9em}.docs-content[data-astro-cid-xt6eahls] table{width:100%;border-collapse:collapse;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] th,.docs-content[data-astro-cid-xt6eahls] td{border:1px solid #ddd;padding:.5rem;text-align:left}.docs-content[data-astro-cid-xt6eahls] th{background-color:#f5f5f5}
+</style></head> <body class>  <header id="header" class="header fixed-top d-flex align-items-center"> <div class="container d-flex align-items-center justify-content-between"> <div id="logo"> <a href="/ja"><img loading="lazy" src="/assets/img/logo.svg" alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework."></a> </div> <nav id="navbar" class="navbar"> <ul class="list-unstyled"> <li><a class="nav-link scrollto" href="/ja/#get-started">Home</a></li> <li><a class="nav-link scrollto" href="/ja/#casestudy">Case Studies</a></li> <li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>Player</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/ja/reference/player">リファレンス</a></li> <li><a href="/ja/#player">特徴</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>Animation Tool</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/ja/usage">使い方</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="/ja/#tool">特徴</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>Framework</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/ja/reference/framework">リファレンス</a></li> <li><a href="/ja/#framework">特徴</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>Language</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="/en">English</a></li> <li><a href="/ja">日本語</a></li> <li><a href="/cn">简体中文</a></li> </ul> </li> <li class="dropdown"><a class="nav-link"><span>Support US</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li> </ul> </li> <li><a class="nav-link scrollto" href="/ja/#contact">Contact</a></li> </ul> <i class="bi bi-list mobile-nav-toggle"></i> </nav> </div> </header> <section class="breadcrumbs"> <div class="container"> <div class="d-flex justify-content-between align-items-center"> <h2>フィルター</h2> <ol> <li> <a href="/ja/">Home</a> </li><li> <a href="/ja/reference/player/">Player</a> </li><li> フィルター </li> </ol> </div> </div> </section> <section id="references" class="reference-section"> <div class="container" data-aos="fade-up"> <div class="row"> <div class="col-lg-3 col-md-4"> <nav id="sub-navbar" class="list-menu sub-navbar"><ul class="list-unstyled"><li><strong>Player</strong></li><ul><li><a href="/ja/reference/player">概要</a></li><li><a href="/ja/reference/player/display-object">DisplayObject</a></li><li><a href="/ja/reference/player/sprite">Sprite</a></li><li><a href="/ja/reference/player/movie-clip">MovieClip</a></li><li><a href="/ja/reference/player/shape">Shape</a></li><li><a href="/ja/reference/player/text-field">TextField</a></li><li><a href="/ja/reference/player/video">Video</a></li><li><a href="/ja/reference/player/sound">Sound</a></li><li><a href="/ja/reference/player/events">イベント</a></li><li><a href="/ja/reference/player/filters">フィルター</a></li><li><a href="/ja/reference/player/tween">Tween</a></li></ul><li><strong>Framework</strong></li><ul><li><a href="/ja/reference/framework">概要</a></li><li><a href="/ja/reference/framework/view">View/ViewModel</a></li><li><a href="/ja/reference/framework/routing">ルーティング</a></li><li><a href="/ja/reference/framework/config">設定ファイル</a></li><li><a href="/ja/reference/framework/animation-tool">Animation Tool連携</a></li></ul></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav> </div> <div class="col-lg-9 col-md-8">  <div class="docs-content" data-astro-cid-xt6eahls> <h1 id="フィルター">フィルター</h1>
+<p>Next2D Playerは、DisplayObjectに適用できる様々なビジュアルフィルターを提供しています。</p>
+<h2 id="フィルターの適用方法">フィルターの適用方法</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Sprite</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">BlurFilter</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">DropShadowFilter</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">GlowFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> sprite</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Sprite</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 単一のフィルター</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.filters </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span><span style="color:#F97583">new</span><span style="color:#B392F0"> BlurFilter</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">)];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 複数のフィルター</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.filters </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> DropShadowFilter</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">45</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0x000000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.5</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> GlowFilter</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0xff0000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">8</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">8</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// フィルターの削除</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.filters </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">;</span></span></code></pre>
+<h2 id="利用可能なフィルター">利用可能なフィルター</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>フィルター</th><th>説明</th></tr></thead><tbody><tr><td>BlurFilter</td><td>ぼかし効果</td></tr><tr><td>DropShadowFilter</td><td>ドロップシャドウ効果</td></tr><tr><td>GlowFilter</td><td>グロー効果</td></tr><tr><td>BevelFilter</td><td>ベベル効果</td></tr><tr><td>ColorMatrixFilter</td><td>カラーマトリックス変換</td></tr><tr><td>ConvolutionFilter</td><td>畳み込み効果</td></tr><tr><td>DisplacementMapFilter</td><td>変位マップ効果</td></tr><tr><td>GradientBevelFilter</td><td>グラデーションベベル効果</td></tr><tr><td>GradientGlowFilter</td><td>グラデーショングロー効果</td></tr></tbody></table>
+<hr>
+<h2 id="blurfilter">BlurFilter</h2>
+<p>ぼかし効果を適用します。ソフトフォーカスからガウスぼかしまで作成できます。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">BlurFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> BlurFilter</span><span style="color:#E1E4E8">(blurX, blurY, quality);</span></span></code></pre>
+<h3 id="プロパティ">プロパティ</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>プロパティ</th><th>型</th><th>デフォルト</th><th>説明</th></tr></thead><tbody><tr><td>blurX</td><td>number</td><td>4</td><td>水平方向のぼかし量（0〜255）</td></tr><tr><td>blurY</td><td>number</td><td>4</td><td>垂直方向のぼかし量（0〜255）</td></tr><tr><td>quality</td><td>number</td><td>1</td><td>ぼかしの実行回数（0〜15）</td></tr></tbody></table>
+<hr>
+<h2 id="dropshadowfilter">DropShadowFilter</h2>
+<p>ドロップシャドウ効果を適用します。内側シャドウ、外側シャドウ、ノックアウトモードなどのスタイルオプションがあります。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">DropShadowFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> DropShadowFilter</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    distance, angle, color, alpha,</span></span>
+<span class="line"><span style="color:#E1E4E8">    blurX, blurY, strength, quality,</span></span>
+<span class="line"><span style="color:#E1E4E8">    inner, knockout, hideObject</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="プロパティ-1">プロパティ</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>プロパティ</th><th>型</th><th>デフォルト</th><th>説明</th></tr></thead><tbody><tr><td>alpha</td><td>number</td><td>1</td><td>シャドウのアルファ透明度（0〜1）</td></tr><tr><td>angle</td><td>number</td><td>45</td><td>シャドウの角度（-360〜360度）</td></tr><tr><td>blurX</td><td>number</td><td>4</td><td>水平方向のぼかし量（0〜255）</td></tr><tr><td>blurY</td><td>number</td><td>4</td><td>垂直方向のぼかし量（0〜255）</td></tr><tr><td>color</td><td>number</td><td>0</td><td>シャドウの色（0x000000〜0xFFFFFF）</td></tr><tr><td>distance</td><td>number</td><td>4</td><td>シャドウのオフセット距離（-255〜255ピクセル）</td></tr><tr><td>hideObject</td><td>boolean</td><td>false</td><td>オブジェクトを非表示にするかどうか</td></tr><tr><td>inner</td><td>boolean</td><td>false</td><td>内側シャドウにするかどうか</td></tr><tr><td>knockout</td><td>boolean</td><td>false</td><td>ノックアウト効果を適用するかどうか</td></tr><tr><td>quality</td><td>number</td><td>1</td><td>ぼかしの実行回数（0〜15）</td></tr><tr><td>strength</td><td>number</td><td>1</td><td>インプリントの強さ（0〜255）</td></tr></tbody></table>
+<hr>
+<h2 id="glowfilter">GlowFilter</h2>
+<p>グロー効果を適用します。内側グロー、外側グロー、ノックアウトモードなどのスタイルオプションがあります。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">GlowFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> GlowFilter</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    color, alpha, blurX, blurY,</span></span>
+<span class="line"><span style="color:#E1E4E8">    strength, quality, inner, knockout</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="プロパティ-2">プロパティ</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>プロパティ</th><th>型</th><th>デフォルト</th><th>説明</th></tr></thead><tbody><tr><td>alpha</td><td>number</td><td>1</td><td>グローのアルファ透明度（0〜1）</td></tr><tr><td>blurX</td><td>number</td><td>4</td><td>水平方向のぼかし量（0〜255）</td></tr><tr><td>blurY</td><td>number</td><td>4</td><td>垂直方向のぼかし量（0〜255）</td></tr><tr><td>color</td><td>number</td><td>0</td><td>グローの色（0x000000〜0xFFFFFF）</td></tr><tr><td>inner</td><td>boolean</td><td>false</td><td>内側グローにするかどうか</td></tr><tr><td>knockout</td><td>boolean</td><td>false</td><td>ノックアウト効果を適用するかどうか</td></tr><tr><td>quality</td><td>number</td><td>1</td><td>ぼかしの実行回数（0〜15）</td></tr><tr><td>strength</td><td>number</td><td>1</td><td>インプリントの強さ（0〜255）</td></tr></tbody></table>
+<hr>
+<h2 id="bevelfilter">BevelFilter</h2>
+<p>ベベル効果を適用します。オブジェクトを3次元的に表現できます。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">BevelFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> BevelFilter</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    distance, angle, highlightColor, highlightAlpha,</span></span>
+<span class="line"><span style="color:#E1E4E8">    shadowColor, shadowAlpha, blurX, blurY,</span></span>
+<span class="line"><span style="color:#E1E4E8">    strength, quality, type, knockout</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="プロパティ-3">プロパティ</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>プロパティ</th><th>型</th><th>デフォルト</th><th>説明</th></tr></thead><tbody><tr><td>angle</td><td>number</td><td>45</td><td>ベベルの角度（-360〜360度）</td></tr><tr><td>blurX</td><td>number</td><td>4</td><td>水平方向のぼかし量（0〜255）</td></tr><tr><td>blurY</td><td>number</td><td>4</td><td>垂直方向のぼかし量（0〜255）</td></tr><tr><td>distance</td><td>number</td><td>4</td><td>ベベルのオフセット距離（-255〜255ピクセル）</td></tr><tr><td>highlightAlpha</td><td>number</td><td>1</td><td>ハイライトのアルファ透明度（0〜1）</td></tr><tr><td>highlightColor</td><td>number</td><td>0xFFFFFF</td><td>ハイライトの色（0x000000〜0xFFFFFF）</td></tr><tr><td>knockout</td><td>boolean</td><td>false</td><td>ノックアウト効果を適用するかどうか</td></tr><tr><td>quality</td><td>number</td><td>1</td><td>ぼかしの実行回数（0〜15）</td></tr><tr><td>shadowAlpha</td><td>number</td><td>1</td><td>シャドウのアルファ透明度（0〜1）</td></tr><tr><td>shadowColor</td><td>number</td><td>0</td><td>シャドウの色（0x000000〜0xFFFFFF）</td></tr><tr><td>strength</td><td>number</td><td>1</td><td>インプリントの強さ（0〜255）</td></tr><tr><td>type</td><td>string</td><td>”inner”</td><td>ベベルの配置（“inner”、“outer”、“full”）</td></tr></tbody></table>
+<hr>
+<h2 id="colormatrixfilter">ColorMatrixFilter</h2>
+<p>4x5カラーマトリックス変換を適用します。明度、コントラスト、彩度、色相などを調整できます。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">ColorMatrixFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> ColorMatrixFilter</span><span style="color:#E1E4E8">(matrix);</span></span></code></pre>
+<h3 id="プロパティ-4">プロパティ</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>プロパティ</th><th>型</th><th>デフォルト</th><th>説明</th></tr></thead><tbody><tr><td>matrix</td><td>number[]</td><td>単位行列</td><td>4x5カラー変換用の20個の要素を持つ配列</td></tr></tbody></table>
+<h3 id="マトリックスのデフォルト値単位行列">マトリックスのデフォルト値（単位行列）</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#E1E4E8">[</span></span>
+<span class="line"><span style="color:#79B8FF">    1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span></span>
+<span class="line"><span style="color:#E1E4E8">]</span></span></code></pre>
+<hr>
+<h2 id="convolutionfilter">ConvolutionFilter</h2>
+<p>マトリックス畳み込みフィルター効果を適用します。ぼかし、エッジ検出、シャープ、エンボス、ベベルなどの効果を実現できます。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">ConvolutionFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> ConvolutionFilter</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    matrixX, matrixY, matrix, divisor, bias,</span></span>
+<span class="line"><span style="color:#E1E4E8">    preserveAlpha, clamp, color, alpha</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="プロパティ-5">プロパティ</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>プロパティ</th><th>型</th><th>デフォルト</th><th>説明</th></tr></thead><tbody><tr><td>alpha</td><td>number</td><td>0</td><td>範囲外ピクセルのアルファ透明度（0〜1）</td></tr><tr><td>bias</td><td>number</td><td>0</td><td>マトリックス変換結果に加算するバイアス量</td></tr><tr><td>clamp</td><td>boolean</td><td>true</td><td>イメージをクランプするかどうか</td></tr><tr><td>color</td><td>number</td><td>0</td><td>範囲外ピクセルの置換色（0x000000〜0xFFFFFF）</td></tr><tr><td>divisor</td><td>number</td><td>1</td><td>マトリックス変換中の除数</td></tr><tr><td>matrix</td><td>number[] | null</td><td>null</td><td>マトリックス変換に使用する値の配列</td></tr><tr><td>matrixX</td><td>number</td><td>0</td><td>マトリックスのX次元（列数、0〜15）</td></tr><tr><td>matrixY</td><td>number</td><td>0</td><td>マトリックスのY次元（行数、0〜15）</td></tr><tr><td>preserveAlpha</td><td>boolean</td><td>true</td><td>アルファチャンネルを維持するかどうか</td></tr></tbody></table>
+<hr>
+<h2 id="displacementmapfilter">DisplacementMapFilter</h2>
+<p>BitmapDataオブジェクトのピクセル値を使用して、オブジェクトの変位を実行します。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">DisplacementMapFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> DisplacementMapFilter</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    bitmapBuffer, bitmapWidth, bitmapHeight,</span></span>
+<span class="line"><span style="color:#E1E4E8">    mapPointX, mapPointY, componentX, componentY,</span></span>
+<span class="line"><span style="color:#E1E4E8">    scaleX, scaleY, mode, color, alpha</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="プロパティ-6">プロパティ</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>プロパティ</th><th>型</th><th>デフォルト</th><th>説明</th></tr></thead><tbody><tr><td>alpha</td><td>number</td><td>0</td><td>範囲外変位のアルファ透明度（0〜1）</td></tr><tr><td>bitmapBuffer</td><td>Uint8Array | null</td><td>null</td><td>変位マップデータを含むバッファ</td></tr><tr><td>bitmapHeight</td><td>number</td><td>0</td><td>変位マップデータの高さ</td></tr><tr><td>bitmapWidth</td><td>number</td><td>0</td><td>変位マップデータの幅</td></tr><tr><td>color</td><td>number</td><td>0</td><td>範囲外変位に使用する色（0x000000〜0xFFFFFF）</td></tr><tr><td>componentX</td><td>number</td><td>0</td><td>X変位に使用するカラーチャンネル</td></tr><tr><td>componentY</td><td>number</td><td>0</td><td>Y変位に使用するカラーチャンネル</td></tr><tr><td>mapPointX</td><td>number</td><td>0</td><td>マップポイントのXオフセット</td></tr><tr><td>mapPointY</td><td>number</td><td>0</td><td>マップポイントのYオフセット</td></tr><tr><td>mode</td><td>string</td><td>”wrap”</td><td>フィルターモード（“wrap”、“clamp”、“ignore”、“color”）</td></tr><tr><td>scaleX</td><td>number</td><td>0</td><td>X変位結果の乗数（-65535〜65535）</td></tr><tr><td>scaleY</td><td>number</td><td>0</td><td>Y変位結果の乗数（-65535〜65535）</td></tr></tbody></table>
+<hr>
+<h2 id="gradientbevelfilter">GradientBevelFilter</h2>
+<p>グラデーションベベル効果を適用します。グラデーションカラーで強調された斜めのエッジでオブジェクトを3次元的に見せます。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">GradientBevelFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> GradientBevelFilter</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    distance, angle, colors, alphas, ratios,</span></span>
+<span class="line"><span style="color:#E1E4E8">    blurX, blurY, strength, quality, type, knockout</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="プロパティ-7">プロパティ</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>プロパティ</th><th>型</th><th>デフォルト</th><th>説明</th></tr></thead><tbody><tr><td>alphas</td><td>number[] | null</td><td>null</td><td>カラー配列の各色に対応するアルファ値の配列（各値0〜1）</td></tr><tr><td>angle</td><td>number</td><td>45</td><td>ベベルの角度（-360〜360度）</td></tr><tr><td>blurX</td><td>number</td><td>4</td><td>水平方向のぼかし量（0〜255）</td></tr><tr><td>blurY</td><td>number</td><td>4</td><td>垂直方向のぼかし量（0〜255）</td></tr><tr><td>colors</td><td>number[] | null</td><td>null</td><td>グラデーションで使用するRGB 16進数カラー値の配列</td></tr><tr><td>distance</td><td>number</td><td>4</td><td>ベベルのオフセット距離（-255〜255ピクセル）</td></tr><tr><td>knockout</td><td>boolean</td><td>false</td><td>ノックアウト効果を適用するかどうか</td></tr><tr><td>quality</td><td>number</td><td>1</td><td>ぼかしの実行回数（0〜15）</td></tr><tr><td>ratios</td><td>number[] | null</td><td>null</td><td>カラー配列の各色に対応する色分布比率の配列（各値0〜255）</td></tr><tr><td>strength</td><td>number</td><td>1</td><td>インプリントの強さ（0〜255）</td></tr><tr><td>type</td><td>string</td><td>”inner”</td><td>ベベルの配置（“inner”、“outer”、“full”）</td></tr></tbody></table>
+<hr>
+<h2 id="gradientglowfilter">GradientGlowFilter</h2>
+<p>グラデーショングロー効果を適用します。制御可能なカラーグラデーションによるリアルな輝きを表現できます。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">GradientGlowFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> GradientGlowFilter</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    distance, angle, colors, alphas, ratios,</span></span>
+<span class="line"><span style="color:#E1E4E8">    blurX, blurY, strength, quality, type, knockout</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="プロパティ-8">プロパティ</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>プロパティ</th><th>型</th><th>デフォルト</th><th>説明</th></tr></thead><tbody><tr><td>alphas</td><td>number[] | null</td><td>null</td><td>カラー配列の各色に対応するアルファ値の配列（各値0〜1）</td></tr><tr><td>angle</td><td>number</td><td>45</td><td>グローの角度（-360〜360度）</td></tr><tr><td>blurX</td><td>number</td><td>4</td><td>水平方向のぼかし量（0〜255）</td></tr><tr><td>blurY</td><td>number</td><td>4</td><td>垂直方向のぼかし量（0〜255）</td></tr><tr><td>colors</td><td>number[] | null</td><td>null</td><td>グラデーションで使用するRGB 16進数カラー値の配列</td></tr><tr><td>distance</td><td>number</td><td>4</td><td>グローのオフセット距離（-255〜255ピクセル）</td></tr><tr><td>knockout</td><td>boolean</td><td>false</td><td>ノックアウト効果を適用するかどうか</td></tr><tr><td>quality</td><td>number</td><td>1</td><td>ぼかしの実行回数（0〜15）</td></tr><tr><td>ratios</td><td>number[] | null</td><td>null</td><td>カラー配列の各色に対応する色分布比率の配列（各値0〜255）</td></tr><tr><td>strength</td><td>number</td><td>1</td><td>インプリントの強さ（0〜255）</td></tr><tr><td>type</td><td>string</td><td>”outer”</td><td>グローの配置（“inner”、“outer”、“full”）</td></tr></tbody></table>
+<hr>
+<h2 id="使用例">使用例</h2>
+<h3 id="ボタンのホバー効果">ボタンのホバー効果</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Sprite</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">GlowFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> button</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Sprite</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">button.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"rollOver"</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    button.filters </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#F97583">        new</span><span style="color:#B392F0"> GlowFilter</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0x00ff00</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.8</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    ];</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">button.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"rollOut"</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    button.filters </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="影付きテキスト">影付きテキスト</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">TextField</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.text;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">DropShadowFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> textField</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextField</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.text </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "Hello World"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.filters </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> DropShadowFilter</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">45</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0x000000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.5</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span></code></pre>
+<h3 id="複合フィルター">複合フィルター</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">GlowFilter</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">DropShadowFilter</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">BlurFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">sprite.filters </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#6A737D">    // 外側のグロー</span></span>
+<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> GlowFilter</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0x0088ff</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.8</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">15</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">15</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#6A737D">    // ドロップシャドウ</span></span>
+<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> DropShadowFilter</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">45</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0x000000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.6</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#6A737D">    // 軽いぼかし</span></span>
+<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> BlurFilter</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span></code></pre>
+<h3 id="カラーマトリックスによるグレースケール">カラーマトリックスによるグレースケール</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">ColorMatrixFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// グレースケール変換マトリックス</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> grayscaleMatrix</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#79B8FF">    0.299</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.587</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.114</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    0.299</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.587</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.114</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    0.299</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.587</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.114</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    0</span><span style="color:#E1E4E8">,     </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,     </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,     </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">sprite.filters </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span><span style="color:#F97583">new</span><span style="color:#B392F0"> ColorMatrixFilter</span><span style="color:#E1E4E8">(grayscaleMatrix)];</span></span></code></pre>
+<h3 id="グラデーショングロー効果">グラデーショングロー効果</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">GradientGlowFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">sprite.filters </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> GradientGlowFilter</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#79B8FF">        4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">45</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        [</span><span style="color:#79B8FF">0xff0000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0x00ff00</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0x0000ff</span><span style="color:#E1E4E8">], </span><span style="color:#6A737D">// colors</span></span>
+<span class="line"><span style="color:#E1E4E8">        [</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">],                       </span><span style="color:#6A737D">// alphas</span></span>
+<span class="line"><span style="color:#E1E4E8">        [</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">128</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">],                   </span><span style="color:#6A737D">// ratios</span></span>
+<span class="line"><span style="color:#79B8FF">        10</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"outer"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">false</span></span>
+<span class="line"><span style="color:#E1E4E8">    )</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span></code></pre>
+<hr>
+<h2 id="関連項目">関連項目</h2>
+<ul>
+<li><a href="/ja/reference/player/display-object">DisplayObject</a></li>
+<li><a href="/ja/reference/player/movie-clip">MovieClip</a></li>
+</ul> </div>  </div> </div> </div> </section> <footer class="footer" data-aos="fade-up"> <div class="container"> <div class="row"> <div class="col-md-12 col-lg-4"> <div class="footer-logo"> <a class="navbar-brand" href="/ja">Next2D</a> <p> Next2Dは、JavaScript製FlashPlayer「swf2js」から派生したプロジェクトで、あらゆるデバイスで動作する最速の2Dエンジンを提供することを目的としています。<br>
+Created by Toshiyuki Ienaga.
+</p> </div> <div class="list-sns-menu"> <ul class="list-unstyled"> <li><a href="https://twitter.com/ienagatoshiyuki" target="_blank"><i class="bi bi-twitter"></i></a></li> <li><a href="https://github.com/ienaga" target="_blank"><i class="bi bi-github"></i></a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Player</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/ja/reference/player">リファレンス</a></li> <li><a href="/ja/#player">特徴</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Animation Tool</h4> <ul class="list-unstyled"> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/ja/usage">使い方</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Framework</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/ja/reference/framework">リファレンス</a></li> <li><a href="/ja/#framework">特徴</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>About Us</h4> <ul class="list-unstyled"> <li><a href="/ja/#contact">Contact</a></li> <li><a href="/ja/privacy">Privacy Policy</a></li> </ul> </div> </div> </div> </div> <div class="copyrights"> <div class="container"> <p>&copy; Copyrights Next2D. All rights reserved.</p> </div> </div> </footer> <script type="module" src="/assets/DocsLayout.astro_astro_type_script_index_0_lang.yTAR6D4i.js"></script>  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> <!-- Vendor JS --> <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script> <script src="/assets/js/vendor/aos.js"></script> <!-- Main JS --> <script src="/assets/js/main.js"></script> </body> </html> 

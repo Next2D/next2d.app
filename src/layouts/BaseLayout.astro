@@ -1,0 +1,148 @@
+---
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  lang: string;
+  breadcrumbs?: BreadcrumbItem[];
+}
+
+const { title, description, lang, breadcrumbs } = Astro.props;
+const basePath = import.meta.env.BASE_URL;
+
+// SEO: Canonical URL and hreflang
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const currentPath = Astro.url.pathname;
+
+// Generate alternate language URLs
+const langMap: Record<string, string> = { ja: 'ja', en: 'en', cn: 'zh-CN' };
+const getAlternatePath = (targetLang: string) => {
+  // Replace current lang prefix with target lang
+  const pathWithoutLang = currentPath.replace(/^\/(ja|en|cn)/, '');
+  return `/${targetLang}${pathWithoutLang}`;
+};
+---
+<!DOCTYPE html>
+<html lang={langMap[lang] || lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Next2D | {title}</title>
+    <meta content={description} name="description" />
+    <meta content="Next2D,Next2D Player,Animation Tool,Next2D Framework" name="keywords" />
+
+    <!-- SEO: Canonical URL -->
+    <link rel="canonical" href={canonicalURL.href} />
+
+    <!-- SEO: hreflang for multi-language -->
+    <link rel="alternate" hreflang="ja" href={new URL(getAlternatePath('ja'), Astro.site).href} />
+    <link rel="alternate" hreflang="en" href={new URL(getAlternatePath('en'), Astro.site).href} />
+    <link rel="alternate" hreflang="zh-CN" href={new URL(getAlternatePath('cn'), Astro.site).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL(getAlternatePath('ja'), Astro.site).href} />
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content={`Next2D | ${title}`} />
+    <meta itemprop="description" content={description} />
+    <meta itemprop="image" content="https://next2d.app/assets/img/ogp.png" />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`Next2D | ${title}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://next2d.app/assets/img/ogp.png" />
+    <meta property="og:locale" content={langMap[lang] || lang} />
+    <meta property="og:site_name" content="Next2D" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Next2D" />
+    <meta name="twitter:creator" content="@Next2D" />
+    <meta name="twitter:title" content={`Next2D | ${title}`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#5777ba" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Next2D",
+      "url": "https://next2d.app",
+      "description": "Next2D - Rendering Engine, Animation Tool, Underlying Framework",
+      "inLanguage": [langMap[lang] || lang],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://next2d.app/{lang}/reference/player/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Next2D",
+      "url": "https://next2d.app",
+      "logo": "https://next2d.app/assets/img/ogp.png",
+      "sameAs": [
+        "https://github.com/Next2D"
+      ]
+    })} />
+    {breadcrumbs && breadcrumbs.length > 0 && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumbs.map((item, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": item.label,
+          ...(item.href ? { "item": new URL(item.href, Astro.site).href } : {})
+        }))
+      })} />
+    )}
+
+    <!-- Favicons -->
+    <link href={`${basePath}assets/img/favicon.png`} rel="icon" />
+    <link href={`${basePath}assets/img/apple-touch-icon.png`} rel="apple-touch-icon" />
+
+    <!-- Vendor CSS -->
+    <link href={`${basePath}assets/css/vendor/aos.css`} rel="stylesheet" />
+    <link href={`${basePath}assets/css/vendor/bootstrap.min.css`} rel="stylesheet" />
+    <link href={`${basePath}assets/css/vendor/bootstrap-icons.min.css`} rel="stylesheet" />
+
+    <!-- Main CSS -->
+    <link href={`${basePath}assets/css/main.css`} rel="stylesheet" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-8GJWF4S3RH");
+    </script>
+    <script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  </head>
+
+  <body class={lang === 'cn' ? 'lang-cn' : ''}>
+    <slot />
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS -->
+    <script is:inline src="/assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script is:inline src="/assets/js/vendor/aos.js"></script>
+
+    <!-- Main JS -->
+    <script is:inline src="/assets/js/main.js"></script>
+  </body>
+</html>

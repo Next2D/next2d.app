@@ -1,24 +1,27 @@
 {
   "name": "next2d-web-site",
+  "type": "module",
   "description": "Next2D Web Site",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "Toshiyuki Ienaga<ienaga@next2d.app>",
   "license": "Next2D",
   "scripts": {
-    "start": "gulp",
-    "build": "gulp build"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.0",
+    "aos": "^2.3.4",
+    "astro": "^5.17.1",
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
+    "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.29.3",
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-ejs": "^5.1.0",
-    "gulp-eslint": "^6.0.0",
-    "gulp-html-i18n": "^0.16.0",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-preprocess": "^4.0.2",
-    "gulp-rename": "^2.0.0",
-    "gulp-uglify-es": "^3.0.0"
+    "@astrojs/check": "^0.9.6",
+    "typescript": "^5.9.3"
   }
 }

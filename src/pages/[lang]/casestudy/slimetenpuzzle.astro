@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/common/Header.astro';
+import Footer from '../../../components/common/Footer.astro';
+import Breadcrumbs from '../../../components/common/Breadcrumbs.astro';
+import { getTranslations, supportedLanguages, isValidLanguage } from '../../../i18n';
+
+export function getStaticPaths() {
+  return supportedLanguages.map((lang) => ({
+    params: { lang }
+  }));
+}
+
+const { lang } = Astro.params;
+if (!isValidLanguage(lang)) {
+  return Astro.redirect('/ja/casestudy/slimetenpuzzle');
+}
+
+const t = await getTranslations(lang);
+const basePath = import.meta.env.BASE_URL;
+
+const breadcrumbs = [
+  { label: t.navbar?.home || 'Home', href: `${basePath}${lang}/` },
+  { label: t.slimetenpuzzle?.['case-study'] || 'Case Study' },
+  { label: t.slimetenpuzzle?.title || 'Slime Ten Puzzle' }
+];
+---
+
+<BaseLayout
+  title={t.slimetenpuzzle?.title || 'Slime Ten Puzzle'}
+  description={t.slimetenpuzzle?.description || ''}
+  lang={lang}
+  breadcrumbs={breadcrumbs}
+>
+  <Header lang={lang} t={t} />
+
+  <Breadcrumbs items={breadcrumbs} />
+
+  <section id="case-example">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title text-center">
+        <h2>{t.slimetenpuzzle?.['case-study'] || 'Case Study'}</h2>
+      </div>
+
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="text-center">
+          <img src={`${basePath}assets/img/casestudy/slimetenpuzzle/game_image.png`}>
+        </div>
+
+        <div class="col-md-10 col-lg-10" data-aos="fade-up" data-aos-delay="200">
+          <h3>{t.slimetenpuzzle?.animation || 'Animation'}</h3>
+          <div class="text-center">
+            <video controls src={`${basePath}assets/img/casestudy/slimetenpuzzle/movie.mp4`}></video>
+            <p>{t.slimetenpuzzle?.development || ''}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <Footer lang={lang} t={t} />
+</BaseLayout>

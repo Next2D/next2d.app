@@ -1,0 +1,98 @@
+---
+interface Props {
+  lang: string;
+  t: Record<string, any>;
+}
+
+const { lang, t } = Astro.props;
+const basePath = import.meta.env.BASE_URL;
+---
+
+<section id="tool" class="padd-section text-center">
+
+<div class="container" data-aos="fade-up">
+  <div class="section-title text-center">
+    <h2>{t.tool?.title || 'Animation Tool Features'}</h2>
+    <img src={`${basePath}assets/img/tool/logo.svg`} width="100px" height="100px" alt="Next2D Animation Tool">
+    <p class="separator">{t.tool?.description || ''}</p>
+  </div>
+
+  <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src={`${basePath}assets/img/tool/feature-00.svg`} width="60px" height="60px" alt="Open Source">
+        <h4>{t.tool?.['feature0-title'] || 'Open Source'}</h4>
+        <p>{t.tool?.['feature0-description'] || ''}</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src={`${basePath}assets/img/tool/feature-01.svg`} width="60px" height="60px" alt="No Code">
+        <h4>{t.tool?.['feature1-title'] || 'No Code'}</h4>
+        <p>{t.tool?.['feature1-description'] || ''}</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src={`${basePath}assets/img/tool/feature-02.svg`} width="60px" height="60px" alt="No installation required">
+        <h4>{t.tool?.['feature2-title'] || 'No Installation'}</h4>
+        <p>{t.tool?.['feature2-description'] || ''}</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src={`${basePath}assets/img/tool/feature-03.svg`} width="60px" height="60px" alt="Transform">
+        <h4>{t.tool?.['feature3-title'] || 'Transform'}</h4>
+        <p>{t.tool?.['feature3-description'] || ''}</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src={`${basePath}assets/img/tool/feature-04.svg`} width="60px" height="60px" alt="Blend Mode">
+        <h4>{t.tool?.['feature4-title'] || 'Blend Mode'}</h4>
+        <p>{t.tool?.['feature4-description'] || ''}</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src={`${basePath}assets/img/tool/feature-05.svg`} width="60px" height="60px" alt="Filter">
+        <h4>{t.tool?.['feature5-title'] || 'Filter'}</h4>
+        <p>{t.tool?.['feature5-description'] || ''}</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src={`${basePath}assets/img/tool/feature-06.svg`} width="60px" height="60px" alt="Easing">
+        <h4>{t.tool?.['feature6-title'] || 'Easing'}</h4>
+        <p>{t.tool?.['feature6-description'] || ''}</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src={`${basePath}assets/img/tool/feature-07.svg`} width="60px" height="60px" alt="JSON">
+        <h4>{t.tool?.['feature7-title'] || 'Import/Export'}</h4>
+        <p>{t.tool?.['feature7-description'] || ''}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <nav class="feature-nav">
+    <ul class="list-unstyled">
+      <li><a href="https://tool.next2d.app" class="btn"><i class="bi bi-cloud"></i> Web Site</a></li>
+      <li><a href={`${basePath}${lang}/usage`} class="btn"><i class="bi bi-lightbulb"></i> {t.main?.['usage-title'] || 'Usage'}</a></li>
+      <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" class="btn"><i class="bi bi-youtube"></i> YouTube</a></li>
+      <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" class="btn"><i class="bi bi-github"></i> GitHub</a></li>
+    </ul>
+  </nav>
+
+</div>
+</section>

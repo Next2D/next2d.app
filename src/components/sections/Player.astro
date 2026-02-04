@@ -1,0 +1,99 @@
+---
+interface Props {
+  lang: string;
+  t: Record<string, any>;
+}
+
+const { lang, t } = Astro.props;
+const basePath = import.meta.env.BASE_URL;
+---
+
+<section id="player" class="padd-section text-center">
+
+<div class="container" data-aos="fade-up">
+  <div class="section-title text-center">
+    <h2>{t.player?.title || 'Player Features'}</h2>
+    <img src={`${basePath}assets/img/player/logo.svg`} width="120px" height="120px" alt="Next2D Player">
+    <p class="separator">{t.player?.description || ''}</p>
+  </div>
+
+  <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src={`${basePath}assets/img/player/feature-01.svg`} width="60px" height="60px" alt="Open Source">
+        <h4>{t.player?.['feature1-title'] || 'Open Source'}</h4>
+        <p>{t.player?.['feature1-description'] || ''}</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src={`${basePath}assets/img/player/feature-02.svg`} width="60px" height="60px" alt="Fast">
+        <h4>{t.player?.['feature2-title'] || 'Fast Rendering'}</h4>
+        <p>{t.player?.['feature2-description'] || ''}</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src={`${basePath}assets/img/player/feature-03.svg`} width="60px" height="60px" alt="Full WebGL/WebGPU support">
+        <h4>{t.player?.['feature3-title'] || 'WebGL Support'}</h4>
+        <p>{t.player?.['feature3-description'] || ''}</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src={`${basePath}assets/img/player/feature-04.svg`} width="60px" height="60px" alt="Various Text Functions">
+        <h4>{t.player?.['feature4-title'] || 'Text Functions'}</h4>
+        <p>{t.player?.['feature4-description'] || ''}</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src={`${basePath}assets/img/player/feature-05.svg`} width="60px" height="60px" alt="Multi-Platform Support">
+        <h4>{t.player?.['feature5-title'] || 'Multi-Platform'}</h4>
+        <p>{t.player?.['feature5-description'] || ''}</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src={`${basePath}assets/img/player/chrome.svg`} width="60px" height="60px" alt="chrome">
+        <img loading="lazy" src={`${basePath}assets/img/player/firefox.svg`} width="60px" height="60px" alt="firefox">
+        <img loading="lazy" src={`${basePath}assets/img/player/safari.svg`} width="60px" height="60px" alt="safari">
+        <img loading="lazy" src={`${basePath}assets/img/player/edge.svg`} width="60px" height="60px" alt="edge">
+        <h4>{t.player?.['feature6-title'] || 'Browser Support'}</h4>
+        <p>{t.player?.['feature6-description'] || ''}</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src={`${basePath}assets/img/player/feature-06.svg`} width="60px" height="60px" alt="API">
+        <h4>{t.player?.['feature7-title'] || 'API'}</h4>
+        <p>{t.player?.['feature7-description'] || ''}</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="feature-block">
+        <img loading="lazy" src={`${basePath}assets/img/player/feature-07.svg`} width="60px" height="60px" alt="MP3">
+        <h4>{t.player?.['feature8-title'] || 'MP3/MP4/Images'}</h4>
+        <p>{t.player?.['feature8-description'] || ''}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <nav class="feature-nav">
+    <ul class="list-unstyled">
+      <li><a href="https://github.com/Next2D/Player/releases" class="btn"><i class="bi bi-github"></i> Download</a></li>
+      <li><a href={`${basePath}${lang}/reference/player`} class="btn"><i class="bi bi-lightbulb"></i> {t.main?.['reference-title'] || 'Reference'}</a></li>
+    </ul>
+  </nav>
+
+</div>
+</section>

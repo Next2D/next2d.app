@@ -1,0 +1,409 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Next2D | DisplayObject</title><meta content="Next2D Playerの機能解説とサンプルコードを掲載しています" name="description"><meta content="Next2D,Next2D Player,Animation Tool,Next2D Framework" name="keywords"><!-- SEO: Canonical URL --><link rel="canonical" href="https://next2d.app/ja/reference/player/display-object/"><!-- SEO: hreflang for multi-language --><link rel="alternate" hreflang="ja" href="https://next2d.app/ja/reference/player/display-object/"><link rel="alternate" hreflang="en" href="https://next2d.app/en/reference/player/display-object/"><link rel="alternate" hreflang="zh-CN" href="https://next2d.app/cn/reference/player/display-object/"><link rel="alternate" hreflang="x-default" href="https://next2d.app/ja/reference/player/display-object/"><!-- Google / Search Engine Tags --><meta itemprop="name" content="Next2D | DisplayObject"><meta itemprop="description" content="Next2D Playerの機能解説とサンプルコードを掲載しています"><meta itemprop="image" content="https://next2d.app/assets/img/ogp.png"><!-- Facebook Meta Tags --><meta property="og:url" content="https://next2d.app/ja/reference/player/display-object/"><meta property="og:type" content="website"><meta property="og:title" content="Next2D | DisplayObject"><meta property="og:description" content="Next2D Playerの機能解説とサンプルコードを掲載しています"><meta property="og:image" content="https://next2d.app/assets/img/ogp.png"><meta property="og:locale" content="ja"><meta property="og:site_name" content="Next2D"><!-- Twitter Meta Tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Next2D"><meta name="twitter:creator" content="@Next2D"><meta name="twitter:title" content="Next2D | DisplayObject"><meta name="twitter:description" content="Next2D Playerの機能解説とサンプルコードを掲載しています"><meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png"><!-- Theme Color --><meta name="theme-color" content="#5777ba"><!-- Web App Manifest --><link rel="manifest" href="/manifest.json"><!-- JSON-LD Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Next2D","url":"https://next2d.app","description":"Next2D - Rendering Engine, Animation Tool, Underlying Framework","inLanguage":["ja"],"potentialAction":{"@type":"SearchAction","target":"https://next2d.app/{lang}/reference/player/?q={search_term_string}","query-input":"required name=search_term_string"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Next2D","url":"https://next2d.app","logo":"https://next2d.app/assets/img/ogp.png","sameAs":["https://github.com/Next2D"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://next2d.app/ja/"},{"@type":"ListItem","position":2,"name":"Player","item":"https://next2d.app/ja/reference/player/"},{"@type":"ListItem","position":3,"name":"DisplayObject"}]}</script><!-- Favicons --><link href="/assets/img/favicon.png" rel="icon"><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"><!-- Vendor CSS --><link href="/assets/css/vendor/aos.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap-icons.min.css" rel="stylesheet"><!-- Main CSS --><link href="/assets/css/main.css" rel="stylesheet"><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-8GJWF4S3RH");
+    </script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style>.docs-content[data-astro-cid-xt6eahls] h1{font-size:2rem;margin-bottom:1.5rem}.docs-content[data-astro-cid-xt6eahls] h2{font-size:1.5rem;margin-top:2rem;margin-bottom:1rem}.docs-content[data-astro-cid-xt6eahls] h3{font-size:1.25rem;margin-top:1.5rem;margin-bottom:.75rem}.docs-content[data-astro-cid-xt6eahls] pre{background-color:#2a2c30;color:#f8f9fa;border-radius:8px;padding:1rem;overflow-x:auto;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] code{font-family:Monaco,Menlo,monospace;font-size:.9em}.docs-content[data-astro-cid-xt6eahls] table{width:100%;border-collapse:collapse;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] th,.docs-content[data-astro-cid-xt6eahls] td{border:1px solid #ddd;padding:.5rem;text-align:left}.docs-content[data-astro-cid-xt6eahls] th{background-color:#f5f5f5}
+</style></head> <body class>  <header id="header" class="header fixed-top d-flex align-items-center"> <div class="container d-flex align-items-center justify-content-between"> <div id="logo"> <a href="/ja"><img loading="lazy" src="/assets/img/logo.svg" alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework."></a> </div> <nav id="navbar" class="navbar"> <ul class="list-unstyled"> <li><a class="nav-link scrollto" href="/ja/#get-started">Home</a></li> <li><a class="nav-link scrollto" href="/ja/#casestudy">Case Studies</a></li> <li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>Player</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/ja/reference/player">リファレンス</a></li> <li><a href="/ja/#player">特徴</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>Animation Tool</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/ja/usage">使い方</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="/ja/#tool">特徴</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>Framework</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/ja/reference/framework">リファレンス</a></li> <li><a href="/ja/#framework">特徴</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>Language</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="/en">English</a></li> <li><a href="/ja">日本語</a></li> <li><a href="/cn">简体中文</a></li> </ul> </li> <li class="dropdown"><a class="nav-link"><span>Support US</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li> </ul> </li> <li><a class="nav-link scrollto" href="/ja/#contact">Contact</a></li> </ul> <i class="bi bi-list mobile-nav-toggle"></i> </nav> </div> </header> <section class="breadcrumbs"> <div class="container"> <div class="d-flex justify-content-between align-items-center"> <h2>DisplayObject</h2> <ol> <li> <a href="/ja/">Home</a> </li><li> <a href="/ja/reference/player/">Player</a> </li><li> DisplayObject </li> </ol> </div> </div> </section> <section id="references" class="reference-section"> <div class="container" data-aos="fade-up"> <div class="row"> <div class="col-lg-3 col-md-4"> <nav id="sub-navbar" class="list-menu sub-navbar"><ul class="list-unstyled"><li><strong>Player</strong></li><ul><li><a href="/ja/reference/player">概要</a></li><li><a href="/ja/reference/player/display-object">DisplayObject</a></li><li><a href="/ja/reference/player/sprite">Sprite</a></li><li><a href="/ja/reference/player/movie-clip">MovieClip</a></li><li><a href="/ja/reference/player/shape">Shape</a></li><li><a href="/ja/reference/player/text-field">TextField</a></li><li><a href="/ja/reference/player/video">Video</a></li><li><a href="/ja/reference/player/sound">Sound</a></li><li><a href="/ja/reference/player/events">イベント</a></li><li><a href="/ja/reference/player/filters">フィルター</a></li><li><a href="/ja/reference/player/tween">Tween</a></li></ul><li><strong>Framework</strong></li><ul><li><a href="/ja/reference/framework">概要</a></li><li><a href="/ja/reference/framework/view">View/ViewModel</a></li><li><a href="/ja/reference/framework/routing">ルーティング</a></li><li><a href="/ja/reference/framework/config">設定ファイル</a></li><li><a href="/ja/reference/framework/animation-tool">Animation Tool連携</a></li></ul></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav> </div> <div class="col-lg-9 col-md-8">  <div class="docs-content" data-astro-cid-xt6eahls> <h1 id="displayobject">DisplayObject</h1>
+<p>DisplayObjectは、Next2D Playerにおける全ての表示オブジェクトの基底クラスです。</p>
+<h2 id="プロパティ-properties">プロパティ (Properties)</h2>
+<h3 id="読み取り専用プロパティ">読み取り専用プロパティ</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>プロパティ</th><th>型</th><th>説明</th></tr></thead><tbody><tr><td><code>instanceId</code></td><td>number</td><td>DisplayObjectのユニークなインスタンスID</td></tr><tr><td><code>isSprite</code></td><td>boolean</td><td>Spriteの機能を所持しているかを返却</td></tr><tr><td><code>isInteractive</code></td><td>boolean</td><td>InteractiveObjectの機能を所持しているかを返却</td></tr><tr><td><code>isContainerEnabled</code></td><td>boolean</td><td>コンテナの機能を所持しているかを返却</td></tr><tr><td><code>isTimelineEnabled</code></td><td>boolean</td><td>MovieClipの機能を所持しているかを返却</td></tr><tr><td><code>isShape</code></td><td>boolean</td><td>Shapeの機能を所持しているかを返却</td></tr><tr><td><code>isVideo</code></td><td>boolean</td><td>Videoの機能を所持しているかを返却</td></tr><tr><td><code>isText</code></td><td>boolean</td><td>Textの機能を所持しているかを返却</td></tr><tr><td><code>concatenatedMatrix</code></td><td>Matrix</td><td>ルートレベルまでの結合された変換行列</td></tr><tr><td><code>dropTarget</code></td><td>DisplayObject | null</td><td>スプライトのドラッグ先またはドロップされた先の表示オブジェクト</td></tr><tr><td><code>loaderInfo</code></td><td>LoaderInfo | null</td><td>この表示オブジェクトが属するファイルの読み込み情報</td></tr><tr><td><code>mouseX</code></td><td>number</td><td>対象のDisplayObjectの基準点からのマウスのX座標（ピクセル）</td></tr><tr><td><code>mouseY</code></td><td>number</td><td>対象のDisplayObjectの基準点からのマウスのY座標（ピクセル）</td></tr><tr><td><code>root</code></td><td>MovieClip | Sprite | null</td><td>DisplayObjectのルートであるDisplayObjectContainer</td></tr></tbody></table>
+<h3 id="読み書きプロパティ">読み書きプロパティ</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>プロパティ</th><th>型</th><th>説明</th></tr></thead><tbody><tr><td><code>name</code></td><td>string</td><td>名前。getChildByName()で使用される（デフォルト: ""）</td></tr><tr><td><code>startFrame</code></td><td>number</td><td>開始フレーム（デフォルト: 1）</td></tr><tr><td><code>endFrame</code></td><td>number</td><td>終了フレーム（デフォルト: 0）</td></tr><tr><td><code>isMask</code></td><td>boolean</td><td>マスクとしてDisplayObjectにセットされているかを示す（デフォルト: false）</td></tr><tr><td><code>parent</code></td><td>Sprite | MovieClip | null</td><td>このDisplayObjectの親のDisplayObjectContainer</td></tr><tr><td><code>alpha</code></td><td>number</td><td>アルファ透明度値（0.0～1.0、デフォルト: 1.0）</td></tr><tr><td><code>blendMode</code></td><td>string</td><td>使用するブレンドモード（デフォルト: BlendMode.NORMAL）</td></tr><tr><td><code>filters</code></td><td>Array | null</td><td>表示オブジェクトに関連付けられている各フィルターオブジェクトの配列</td></tr><tr><td><code>height</code></td><td>number</td><td>表示オブジェクトの高さ（ピクセル単位）</td></tr><tr><td><code>width</code></td><td>number</td><td>表示オブジェクトの幅（ピクセル単位）</td></tr><tr><td><code>colorTransform</code></td><td>ColorTransform</td><td>表示オブジェクトのColorTransform</td></tr><tr><td><code>matrix</code></td><td>Matrix</td><td>表示オブジェクトのMatrix</td></tr><tr><td><code>rotation</code></td><td>number</td><td>DisplayObjectインスタンスの回転角度（度単位）</td></tr><tr><td><code>scale9Grid</code></td><td>Rectangle | null</td><td>現在有効な拡大/縮小グリッド</td></tr><tr><td><code>scaleX</code></td><td>number</td><td>基準点から適用されるオブジェクトの水平スケール値</td></tr><tr><td><code>scaleY</code></td><td>number</td><td>基準点から適用されるオブジェクトの垂直スケール値</td></tr><tr><td><code>visible</code></td><td>boolean</td><td>表示オブジェクトが可視かどうか（デフォルト: true）</td></tr><tr><td><code>x</code></td><td>number</td><td>親DisplayObjectContainerのローカル座標を基準にしたX座標</td></tr><tr><td><code>y</code></td><td>number</td><td>親DisplayObjectContainerのローカル座標を基準にしたY座標</td></tr></tbody></table>
+<h2 id="メソッド-methods">メソッド (Methods)</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>メソッド</th><th>戻り値</th><th>説明</th></tr></thead><tbody><tr><td><code>getBounds(targetDisplayObject)</code></td><td>Rectangle</td><td>指定したDisplayObjectの座標系を基準にして、表示オブジェクトの領域を定義する矩形を返す</td></tr><tr><td><code>globalToLocal(point)</code></td><td>Point</td><td>pointオブジェクトをステージ（グローバル）座標から表示オブジェクトの（ローカル）座標に変換</td></tr><tr><td><code>localToGlobal(point)</code></td><td>Point</td><td>pointオブジェクトを表示オブジェクトの（ローカル）座標からステージ（グローバル）座標に変換</td></tr><tr><td><code>hitTestObject(targetDisplayObject)</code></td><td>boolean</td><td>DisplayObjectの描画範囲を評価して、重複または交差するかどうかを調べる</td></tr><tr><td><code>hitTestPoint(x, y, shapeFlag)</code></td><td>boolean</td><td>表示オブジェクトを評価して、x および y パラメーターで指定されたポイントと重複または交差するかどうかを調べる</td></tr><tr><td><code>getLocalVariable(key)</code></td><td>any</td><td>クラスのローカル変数空間から値を取得</td></tr><tr><td><code>setLocalVariable(key, value)</code></td><td>void</td><td>クラスのローカル変数空間へ値を保存</td></tr><tr><td><code>hasLocalVariable(key)</code></td><td>boolean</td><td>クラスのローカル変数空間に値があるかどうかを判断</td></tr><tr><td><code>deleteLocalVariable(key)</code></td><td>void</td><td>クラスのローカル変数空間の値を削除</td></tr><tr><td><code>getGlobalVariable(key)</code></td><td>any</td><td>グローバル変数空間から値を取得</td></tr><tr><td><code>setGlobalVariable(key, value)</code></td><td>void</td><td>グローバル変数空間へ値を保存</td></tr><tr><td><code>hasGlobalVariable(key)</code></td><td>boolean</td><td>グローバル変数空間に値があるかどうかを判断</td></tr><tr><td><code>deleteGlobalVariable(key)</code></td><td>void</td><td>グローバル変数空間の値を削除</td></tr><tr><td><code>clearGlobalVariable()</code></td><td>void</td><td>グローバル変数空間の値を全てクリア</td></tr><tr><td><code>remove()</code></td><td>void</td><td>親子関係を解除</td></tr></tbody></table>
+<h2 id="ブレンドモード">ブレンドモード</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>定数</th><th>説明</th></tr></thead><tbody><tr><td><code>BlendMode.NORMAL</code></td><td>通常表示</td></tr><tr><td><code>BlendMode.ADD</code></td><td>加算</td></tr><tr><td><code>BlendMode.MULTIPLY</code></td><td>乗算</td></tr><tr><td><code>BlendMode.SCREEN</code></td><td>スクリーン</td></tr><tr><td><code>BlendMode.DARKEN</code></td><td>暗くする</td></tr><tr><td><code>BlendMode.LIGHTEN</code></td><td>明るくする</td></tr><tr><td><code>BlendMode.DIFFERENCE</code></td><td>差分</td></tr><tr><td><code>BlendMode.OVERLAY</code></td><td>オーバーレイ</td></tr><tr><td><code>BlendMode.HARDLIGHT</code></td><td>ハードライト</td></tr><tr><td><code>BlendMode.INVERT</code></td><td>反転</td></tr><tr><td><code>BlendMode.ALPHA</code></td><td>アルファ</td></tr><tr><td><code>BlendMode.ERASE</code></td><td>消去</td></tr></tbody></table>
+<h2 id="使用例">使用例</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Sprite</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">BlurFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> sprite</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Sprite</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 位置とサイズ</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.x </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 100</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.y </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 200</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.scaleX </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1.5</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.scaleY </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1.5</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.rotation </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 30</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 表示制御</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.alpha </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0.8</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.visible </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.blendMode </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "add"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// フィルター</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.filters </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> BlurFilter</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// ステージに追加</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(sprite);</span></span></code></pre>
+<h3 id="座標変換の例">座標変換の例</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Point</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.geom;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// グローバル座標をローカル座標に変換</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> globalPoint</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Point</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> localPoint</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> displayObject.</span><span style="color:#B392F0">globalToLocal</span><span style="color:#E1E4E8">(globalPoint);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// ローカル座標をグローバル座標に変換</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> localPos</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Point</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> globalPos</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> displayObject.</span><span style="color:#B392F0">localToGlobal</span><span style="color:#E1E4E8">(localPos);</span></span></code></pre>
+<h3 id="衝突判定の例">衝突判定の例</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#6A737D">// バウンディングボックスで判定</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> hit1</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> displayObject.</span><span style="color:#B392F0">hitTestPoint</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 実際の形状で判定</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> hit2</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> displayObject.</span><span style="color:#B392F0">hitTestPoint</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 他のDisplayObjectとの衝突判定</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (obj1.</span><span style="color:#B392F0">hitTestObject</span><span style="color:#E1E4E8">(obj2)) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"衝突しました"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="変数操作の例">変数操作の例</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#6A737D">// ローカル変数の操作</span></span>
+<span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">setLocalVariable</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"score"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> score</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> displayObject.</span><span style="color:#B392F0">getLocalVariable</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"score"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (displayObject.</span><span style="color:#B392F0">hasLocalVariable</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"score"</span><span style="color:#E1E4E8">)) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    displayObject.</span><span style="color:#B392F0">deleteLocalVariable</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"score"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// グローバル変数の操作</span></span>
+<span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">setGlobalVariable</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"gameState"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"playing"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> state</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> displayObject.</span><span style="color:#B392F0">getGlobalVariable</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"gameState"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">clearGlobalVariable</span><span style="color:#E1E4E8">(); </span><span style="color:#6A737D">// 全てクリア</span></span></code></pre>
+<h2 id="関連項目">関連項目</h2>
+<ul>
+<li><a href="/ja/reference/player/movie-clip">MovieClip</a></li>
+<li><a href="/ja/reference/player/sprite">Sprite</a></li>
+</ul> </div>  </div> </div> </div> </section> <footer class="footer" data-aos="fade-up"> <div class="container"> <div class="row"> <div class="col-md-12 col-lg-4"> <div class="footer-logo"> <a class="navbar-brand" href="/ja">Next2D</a> <p> Next2Dは、JavaScript製FlashPlayer「swf2js」から派生したプロジェクトで、あらゆるデバイスで動作する最速の2Dエンジンを提供することを目的としています。<br>
+Created by Toshiyuki Ienaga.
+</p> </div> <div class="list-sns-menu"> <ul class="list-unstyled"> <li><a href="https://twitter.com/ienagatoshiyuki" target="_blank"><i class="bi bi-twitter"></i></a></li> <li><a href="https://github.com/ienaga" target="_blank"><i class="bi bi-github"></i></a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Player</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/ja/reference/player">リファレンス</a></li> <li><a href="/ja/#player">特徴</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Animation Tool</h4> <ul class="list-unstyled"> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/ja/usage">使い方</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Framework</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/ja/reference/framework">リファレンス</a></li> <li><a href="/ja/#framework">特徴</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>About Us</h4> <ul class="list-unstyled"> <li><a href="/ja/#contact">Contact</a></li> <li><a href="/ja/privacy">Privacy Policy</a></li> </ul> </div> </div> </div> </div> <div class="copyrights"> <div class="container"> <p>&copy; Copyrights Next2D. All rights reserved.</p> </div> </div> </footer> <script type="module" src="/assets/DocsLayout.astro_astro_type_script_index_0_lang.yTAR6D4i.js"></script>  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> <!-- Vendor JS --> <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script> <script src="/assets/js/vendor/aos.js"></script> <!-- Main JS --> <script src="/assets/js/main.js"></script> </body> </html> 

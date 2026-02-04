@@ -1,0 +1,61 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
+import Breadcrumbs from '../components/common/Breadcrumbs.astro';
+import SideMenu from '../components/docs/SideMenu.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: string;
+  t: Record<string, any>;
+  breadcrumbs: Array<{ label: string; href?: string }>;
+  menuType: 'usage' | 'reference';
+}
+
+const { title, description, lang, t, breadcrumbs, menuType } = Astro.props;
+---
+<BaseLayout title={title} description={description} lang={lang} breadcrumbs={breadcrumbs}>
+  <Header lang={lang} t={t} />
+
+  <Breadcrumbs items={breadcrumbs} />
+
+  <section id={menuType === 'usage' ? 'usage' : 'references'} class="reference-section">
+    <div class="container" data-aos="fade-up">
+      <div class="row">
+        <div class="col-lg-3 col-md-4">
+          <SideMenu lang={lang} t={t} menuType={menuType} />
+        </div>
+        <div class="col-lg-9 col-md-8">
+          <slot />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer lang={lang} t={t} />
+
+  <script>
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: 'default',
+      securityLevel: 'loose',
+    });
+
+    // Astro形式のコードブロックをmermaidに変換
+    document.querySelectorAll('pre[data-language="mermaid"]').forEach((pre) => {
+      const code = pre.querySelector('code');
+      if (code) {
+        const div = document.createElement('div');
+        div.className = 'mermaid';
+        div.textContent = code.textContent;
+        pre.parentNode.replaceChild(div, pre);
+      }
+    });
+
+    mermaid.run();
+  </script>
+</BaseLayout>

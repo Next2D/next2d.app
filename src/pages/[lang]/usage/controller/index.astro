@@ -1,0 +1,74 @@
+---
+import DocsLayout from '../../../../layouts/DocsLayout.astro';
+import { getTranslations, supportedLanguages, isValidLanguage } from '../../../../i18n';
+
+export function getStaticPaths() {
+  return supportedLanguages.map((lang) => ({
+    params: { lang }
+  }));
+}
+
+const { lang } = Astro.params;
+if (!isValidLanguage(lang)) {
+  return Astro.redirect('/ja/usage/controller/');
+}
+
+const t = await getTranslations(lang);
+const basePath = import.meta.env.BASE_URL;
+
+const breadcrumbs = [
+  { label: t.navbar?.home || 'Home', href: `${basePath}${lang}/` },
+  { label: t.main?.['usage-title'] || 'Usage', href: `${basePath}${lang}/usage/` },
+  { label: 'Controller Area' }
+];
+---
+
+<DocsLayout
+  title={t.toolusage?.controller?.title || 'Controller Area'}
+  description={t.toolusage?.controller?.description || ''}
+  lang={lang}
+  t={t}
+  breadcrumbs={breadcrumbs}
+  menuType="usage"
+>
+  <div>
+    <h3>Controller Area</h3>
+    <p>{t.toolusage?.controller?.description || ''}</p>
+
+    <h4>{t.toolmenu?.controller?.stage || 'ステージ設定'}</h4>
+    <p>{t.toolusage?.controller?.['stage-setting']?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/controller/stage-setting`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+
+    <h4>{t.toolmenu?.controller?.object || 'オブジェクト設定'}</h4>
+    <p>{t.toolusage?.controller?.['object-setting']?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/controller/object-setting`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+
+    <h4>{t.toolmenu?.controller?.['frame-picker'] || 'フレームピッカー'}</h4>
+    <p>{t.toolusage?.controller?.['frame-picker']?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/controller/frame-picker`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+
+    <h4>{t.toolmenu?.controller?.transform || '変形'}</h4>
+    <p>{t.toolusage?.controller?.transform?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/controller/transform`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+
+    <h4>{t.toolmenu?.controller?.['color-transform'] || 'カラートランスフォーム'}</h4>
+    <p>{t.toolusage?.controller?.['color-transform']?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/controller/color-transform`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+
+    <h4>{t.toolmenu?.controller?.['blend-mode'] || 'ブレンドモード'}</h4>
+    <p>{t.toolusage?.controller?.['blend-mode']?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/controller/blend-mode`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+
+    <h4>{t.toolmenu?.controller?.filters || 'フィルター'}</h4>
+    <p>{t.toolusage?.controller?.filters?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/controller/filters`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+
+    <h4>{t.toolmenu?.controller?.sound || 'サウンド'}</h4>
+    <p>{t.toolusage?.controller?.sound?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/controller/sound`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+
+    <h4>{t.toolmenu?.controller?.library || 'ライブラリ'}</h4>
+    <p>{t.toolusage?.controller?.library?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/controller/library`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+  </div>
+</DocsLayout>

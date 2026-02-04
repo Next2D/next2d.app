@@ -1,0 +1,94 @@
+---
+interface Props {
+  lang: string;
+  t: Record<string, any>;
+}
+
+const { lang, t } = Astro.props;
+const basePath = import.meta.env.BASE_URL;
+---
+
+<section id="framework" class="padd-section text-center">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title text-center">
+      <h2>{t.framework?.title || 'Framework Features'}</h2>
+      <img src={`${basePath}assets/img/framework/logo.svg`} width="120px" height="120px" alt="Next2D Framework">
+      <p class="separator">{t.framework?.description || ''}</p>
+    </div>
+
+    <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-block">
+          <img loading="lazy" src={`${basePath}assets/img/framework/feature-01.svg`} width="60px" height="60px" alt="Open Source">
+          <h4>{t.framework?.['feature1-title'] || 'Open Source'}</h4>
+          <p>{t.framework?.['feature1-description'] || ''}</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-block">
+          <img loading="lazy" src={`${basePath}assets/img/framework/feature-02.svg`} width="60px" height="60px" alt="Quick Start">
+          <h4>{t.framework?.['feature2-title'] || 'Quick Start'}</h4>
+          <p>{t.framework?.['feature2-description'] || ''}<br><pre>npx create-next2d-app &lt;app-name&gt;</pre></p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-block">
+          <img loading="lazy" src={`${basePath}assets/img/framework/feature-03.svg`} width="60px" height="60px" alt="MVVM pattern.">
+          <h4>{t.framework?.['feature3-title'] || 'MVVM Pattern'}</h4>
+          <p>{t.framework?.['feature3-description'] || ''}</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-block">
+          <img loading="lazy" src={`${basePath}assets/img/framework/feature-04.svg`} width="60px" height="60px" alt="team development">
+          <h4>{t.framework?.['feature4-title'] || 'Team Development'}</h4>
+          <p>{t.framework?.['feature4-description'] || ''}</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-block">
+          <img loading="lazy" src={`${basePath}assets/img/framework/feature-05.svg`} width="60px" height="60px" alt="Work with Animation Tool">
+          <h4>{t.framework?.['feature5-title'] || 'Animation Tool Integration'}</h4>
+          <p>{t.framework?.['feature5-description'] || ''}</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-block">
+          <img loading="lazy" src={`${basePath}assets/img/framework/feature-06.svg`} width="60px" height="60px" alt="Single Page Application">
+          <h4>{t.framework?.['feature6-title'] || 'SPA'}</h4>
+          <p>{t.framework?.['feature6-description'] || ''}</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-block">
+          <img loading="lazy" src={`${basePath}assets/img/framework/feature-07.svg`} width="60px" height="60px" alt="OUTPUT">
+          <h4>{t.framework?.['feature7-title'] || 'Export'}</h4>
+          <p>{t.framework?.['feature7-description'] || ''}</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-block">
+          <img loading="lazy" src={`${basePath}assets/img/framework/feature-08.svg`} width="60px" height="60px" alt="Documentation and Tutorials">
+          <h4>{t.framework?.['feature8-title'] || 'Documentation'}</h4>
+          <p>{t.framework?.['feature8-description'] || ''}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <nav class="feature-nav">
+      <ul class="list-unstyled">
+        <li><a href="https://github.com/Next2D/Framework" class="btn"><i class="bi bi-github"></i> GitHub</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</section>

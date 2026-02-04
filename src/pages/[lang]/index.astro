@@ -1,0 +1,84 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getTranslations, supportedLanguages, isValidLanguage } from '../../i18n';
+import Player from '../../components/sections/Player.astro';
+import Tool from '../../components/sections/Tool.astro';
+import Framework from '../../components/sections/Framework.astro';
+import CaseStudy from '../../components/sections/CaseStudy.astro';
+import Contributor from '../../components/sections/Contributor.astro';
+import Contact from '../../components/sections/Contact.astro';
+
+export function getStaticPaths() {
+  return supportedLanguages.map((lang) => ({
+    params: { lang }
+  }));
+}
+
+const { lang } = Astro.params;
+if (!isValidLanguage(lang)) {
+  return Astro.redirect('/ja/');
+}
+
+const t = await getTranslations(lang);
+const basePath = import.meta.env.BASE_URL;
+---
+
+<MainLayout
+  title={t.header?.title || 'Rendering Engine, Animation Tool, Underlying Framework.'}
+  description={t.header?.description || ''}
+  lang={lang}
+  t={t}
+>
+  <section id="get-started" class="padd-section text-center">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title text-center">
+        <h2>{t.main?.title || 'Next2D Libraries and Tools'}</h2>
+        <p class="separator">{t.main?.description || ''}</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row text-center top-image">
+        <div class="col-md-12" data-aos="zoom-in" data-aos-delay="0">
+          <img loading="lazy" class="img-fluid" src={`${basePath}assets/img/image.png`} width="600" alt="Next2D Project - Rendering Engine, Animation Tool and Framework" title="Next2D Project Image">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="feature-block">
+            <img loading="lazy" src={`${basePath}assets/img/player/logo.svg`} width="60px" height="60px" alt="Player">
+            <h4>{t.main?.player || 'Player'}</h4>
+            <p>{t.main?.['player-description'] || ''}</p>
+            <a class="scrollto" href="#player">{t.main?.['read-more'] || 'Read More'}</a>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="feature-block">
+            <img loading="lazy" src={`${basePath}assets/img/tool/logo.svg`} width="60px" height="60px" alt="Animation Tool">
+            <h4>{t.main?.tool || 'Animation Tool'}</h4>
+            <p>{t.main?.['tool-description'] || ''}</p>
+            <a class="scrollto" href="#tool">{t.main?.['read-more'] || 'Read More'}</a>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="feature-block">
+            <img loading="lazy" src={`${basePath}assets/img/framework/logo.svg`} width="60px" height="60px" alt="Framework">
+            <h4>{t.main?.framework || 'Framework'}</h4>
+            <p>{t.main?.['framework-description'] || ''}</p>
+            <a class="scrollto" href="#framework">{t.main?.['read-more'] || 'Read More'}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CaseStudy lang={lang} t={t} />
+  <Player lang={lang} t={t} />
+  <Tool lang={lang} t={t} />
+  <Framework lang={lang} t={t} />
+  <Contributor lang={lang} t={t} />
+  <Contact lang={lang} t={t} />
+</MainLayout>

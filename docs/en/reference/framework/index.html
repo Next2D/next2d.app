@@ -1,0 +1,367 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Next2D | Framework</title><meta content="Next2D Framework Reference. Learn about MVVM pattern, routing, and configuration." name="description"><meta content="Next2D,Next2D Player,Animation Tool,Next2D Framework" name="keywords"><!-- SEO: Canonical URL --><link rel="canonical" href="https://next2d.app/en/reference/framework/"><!-- SEO: hreflang for multi-language --><link rel="alternate" hreflang="ja" href="https://next2d.app/ja/reference/framework/"><link rel="alternate" hreflang="en" href="https://next2d.app/en/reference/framework/"><link rel="alternate" hreflang="zh-CN" href="https://next2d.app/cn/reference/framework/"><link rel="alternate" hreflang="x-default" href="https://next2d.app/ja/reference/framework/"><!-- Google / Search Engine Tags --><meta itemprop="name" content="Next2D | Framework"><meta itemprop="description" content="Next2D Framework Reference. Learn about MVVM pattern, routing, and configuration."><meta itemprop="image" content="https://next2d.app/assets/img/ogp.png"><!-- Facebook Meta Tags --><meta property="og:url" content="https://next2d.app/en/reference/framework/"><meta property="og:type" content="website"><meta property="og:title" content="Next2D | Framework"><meta property="og:description" content="Next2D Framework Reference. Learn about MVVM pattern, routing, and configuration."><meta property="og:image" content="https://next2d.app/assets/img/ogp.png"><meta property="og:locale" content="en"><meta property="og:site_name" content="Next2D"><!-- Twitter Meta Tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Next2D"><meta name="twitter:creator" content="@Next2D"><meta name="twitter:title" content="Next2D | Framework"><meta name="twitter:description" content="Next2D Framework Reference. Learn about MVVM pattern, routing, and configuration."><meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png"><!-- Theme Color --><meta name="theme-color" content="#5777ba"><!-- Web App Manifest --><link rel="manifest" href="/manifest.json"><!-- JSON-LD Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Next2D","url":"https://next2d.app","description":"Next2D - Rendering Engine, Animation Tool, Underlying Framework","inLanguage":["en"],"potentialAction":{"@type":"SearchAction","target":"https://next2d.app/{lang}/reference/player/?q={search_term_string}","query-input":"required name=search_term_string"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Next2D","url":"https://next2d.app","logo":"https://next2d.app/assets/img/ogp.png","sameAs":["https://github.com/Next2D"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://next2d.app/en/"},{"@type":"ListItem","position":2,"name":"Framework","item":"https://next2d.app/en/reference/framework/"}]}</script><!-- Favicons --><link href="/assets/img/favicon.png" rel="icon"><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"><!-- Vendor CSS --><link href="/assets/css/vendor/aos.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap-icons.min.css" rel="stylesheet"><!-- Main CSS --><link href="/assets/css/main.css" rel="stylesheet"><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-8GJWF4S3RH");
+    </script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style>.docs-content[data-astro-cid-shibjrt4] h1{font-size:2rem;margin-bottom:1.5rem}.docs-content[data-astro-cid-shibjrt4] h2{font-size:1.5rem;margin-top:2rem;margin-bottom:1rem}.docs-content[data-astro-cid-shibjrt4] h3{font-size:1.25rem;margin-top:1.5rem;margin-bottom:.75rem}.docs-content[data-astro-cid-shibjrt4] pre{background-color:#2a2c30;color:#f8f9fa;border-radius:8px;padding:1rem;overflow-x:auto;margin:1rem 0}.docs-content[data-astro-cid-shibjrt4] code{font-family:Monaco,Menlo,monospace;font-size:.9em}.docs-content[data-astro-cid-shibjrt4] table{width:100%;border-collapse:collapse;margin:1rem 0}.docs-content[data-astro-cid-shibjrt4] th,.docs-content[data-astro-cid-shibjrt4] td{border:1px solid #ddd;padding:.5rem;text-align:left}.docs-content[data-astro-cid-shibjrt4] th{background-color:#f5f5f5}
+</style></head> <body class>  <header id="header" class="header fixed-top d-flex align-items-center"> <div class="container d-flex align-items-center justify-content-between"> <div id="logo"> <a href="/en"><img loading="lazy" src="/assets/img/logo.svg" alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework."></a> </div> <nav id="navbar" class="navbar"> <ul class="list-unstyled"> <li><a class="nav-link scrollto" href="/en/#get-started">Home</a></li> <li><a class="nav-link scrollto" href="/en/#casestudy">Case Studies</a></li> <li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>Player</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/en/reference/player">Reference</a></li> <li><a href="/en/#player">Features</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>Animation Tool</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/en/usage">Usage</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="/en/#tool">Features</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>Framework</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/en/reference/framework">Reference</a></li> <li><a href="/en/#framework">Features</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>Language</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="/en">English</a></li> <li><a href="/ja">日本語</a></li> <li><a href="/cn">简体中文</a></li> </ul> </li> <li class="dropdown"><a class="nav-link"><span>Support US</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li> </ul> </li> <li><a class="nav-link scrollto" href="/en/#contact">Contact</a></li> </ul> <i class="bi bi-list mobile-nav-toggle"></i> </nav> </div> </header> <section class="breadcrumbs"> <div class="container"> <div class="d-flex justify-content-between align-items-center"> <h2>Framework</h2> <ol> <li> <a href="/en/">Home</a> </li><li> Framework </li> </ol> </div> </div> </section> <section id="references" class="reference-section"> <div class="container" data-aos="fade-up"> <div class="row"> <div class="col-lg-3 col-md-4"> <nav id="sub-navbar" class="list-menu sub-navbar"><ul class="list-unstyled"><li><strong>Player</strong></li><ul><li><a href="/en/reference/player">Overview</a></li><li><a href="/en/reference/player/display-object">DisplayObject</a></li><li><a href="/en/reference/player/sprite">Sprite</a></li><li><a href="/en/reference/player/movie-clip">MovieClip</a></li><li><a href="/en/reference/player/shape">Shape</a></li><li><a href="/en/reference/player/text-field">TextField</a></li><li><a href="/en/reference/player/video">Video</a></li><li><a href="/en/reference/player/sound">Sound</a></li><li><a href="/en/reference/player/events">Events</a></li><li><a href="/en/reference/player/filters">Filters</a></li><li><a href="/en/reference/player/tween">Tween</a></li></ul><li><strong>Framework</strong></li><ul><li><a href="/en/reference/framework">Overview</a></li><li><a href="/en/reference/framework/view">View/ViewModel</a></li><li><a href="/en/reference/framework/routing">Routing</a></li><li><a href="/en/reference/framework/config">Configuration</a></li><li><a href="/en/reference/framework/animation-tool">Animation Tool Integration</a></li></ul></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav> </div> <div class="col-lg-9 col-md-8">  <div class="docs-content" data-astro-cid-shibjrt4> <h1 id="next2d-framework">Next2D Framework</h1>
+<p>Next2D Framework is an MVVM framework for building applications with Next2D Player. It provides routing for single-page applications (SPA), View/ViewModel management, and configuration management.</p>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>MVVM Pattern</strong>: Separation of concerns with Model-View-ViewModel</li>
+<li><strong>Clean Architecture</strong>: Dependency inversion and loosely coupled design</li>
+<li><strong>Single Page Application</strong>: URL-based scene management</li>
+<li><strong>Animation Tool Integration</strong>: Seamless integration with Animation Tool assets</li>
+<li><strong>TypeScript Support</strong>: Type-safe development</li>
+<li><strong>Atomic Design</strong>: Recommended component design for reusability</li>
+</ul>
+<h2 id="architecture-overview">Architecture Overview</h2>
+<p>This project implements a combination of Clean Architecture and MVVM pattern.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">graph TB</span></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph ViewLayer["View Layer"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        View["View"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        ViewModel["ViewModel"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        UI["UI Components"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph InterfaceLayer["Interface Layer"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        IDraggable["IDraggable"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        ITextField["ITextField"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        IResponse["IResponse"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph ApplicationLayer["Application Layer"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        UseCase["UseCase"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph DomainLayer["Domain Layer"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        DomainLogic["Domain Logic"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        DomainService["Service"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph InfraLayer["Infrastructure Layer"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        Repository["Repository"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        ExternalAPI["External API"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    ViewLayer -.->|via interface| InterfaceLayer</span></span>
+<span class="line"><span style="color:#E1E4E8">    ViewLayer -.->|calls| ApplicationLayer</span></span>
+<span class="line"><span style="color:#E1E4E8">    ApplicationLayer -.->|via interface| InterfaceLayer</span></span>
+<span class="line"><span style="color:#E1E4E8">    ApplicationLayer -.->|uses| DomainLayer</span></span>
+<span class="line"><span style="color:#E1E4E8">    ApplicationLayer -.->|calls| InfraLayer</span></span>
+<span class="line"><span style="color:#E1E4E8">    InfraLayer -.->|accesses| ExternalAPI</span></span></code></pre>
+<h3 id="layer-responsibilities">Layer Responsibilities</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Layer</th><th>Path</th><th>Role</th></tr></thead><tbody><tr><td><strong>View</strong></td><td><code>view/*</code>, <code>ui/*</code></td><td>Handles screen structure and display</td></tr><tr><td><strong>ViewModel</strong></td><td><code>view/*</code></td><td>Bridge between View and Model, event handling</td></tr><tr><td><strong>Interface</strong></td><td><code>interface/*</code></td><td>Abstraction layer, type definitions</td></tr><tr><td><strong>Application</strong></td><td><code>model/application/*/usecase/*</code></td><td>Business logic implementation (UseCase)</td></tr><tr><td><strong>Domain</strong></td><td><code>model/domain/*</code></td><td>Core business rules</td></tr><tr><td><strong>Infrastructure</strong></td><td><code>model/infrastructure/repository/*</code></td><td>Data access, external API integration</td></tr></tbody></table>
+<h3 id="dependency-direction">Dependency Direction</h3>
+<p>Following Clean Architecture principles, dependencies always point inward (toward the Domain layer).</p>
+<ul>
+<li><strong>View Layer</strong>: Uses Application layer through interfaces</li>
+<li><strong>Application Layer</strong>: Uses Domain and Infrastructure layers through interfaces</li>
+<li><strong>Domain Layer</strong>: Depends on nothing (pure business logic)</li>
+<li><strong>Infrastructure Layer</strong>: Implements Domain layer interfaces</li>
+</ul>
+<h2 id="directory-structure">Directory Structure</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>my-app/</span></span>
+<span class="line"><span>├── src/</span></span>
+<span class="line"><span>│   ├── config/                    # Configuration files</span></span>
+<span class="line"><span>│   │   ├── stage.json             # Stage settings</span></span>
+<span class="line"><span>│   │   ├── config.json            # Environment settings</span></span>
+<span class="line"><span>│   │   ├── routing.json           # Routing settings</span></span>
+<span class="line"><span>│   │   └── Config.ts              # Config type definitions and exports</span></span>
+<span class="line"><span>│   │</span></span>
+<span class="line"><span>│   ├── interface/                 # Interface definitions</span></span>
+<span class="line"><span>│   │   ├── IDraggable.ts          # Draggable object</span></span>
+<span class="line"><span>│   │   ├── ITextField.ts          # Text field</span></span>
+<span class="line"><span>│   │   ├── IHomeTextResponse.ts   # API response type</span></span>
+<span class="line"><span>│   │   └── IViewName.ts           # View name type definition</span></span>
+<span class="line"><span>│   │</span></span>
+<span class="line"><span>│   ├── view/                      # View &#x26; ViewModel</span></span>
+<span class="line"><span>│   │   ├── top/</span></span>
+<span class="line"><span>│   │   │   ├── TopView.ts         # Screen structure definition</span></span>
+<span class="line"><span>│   │   │   └── TopViewModel.ts    # Bridge to business logic</span></span>
+<span class="line"><span>│   │   └── home/</span></span>
+<span class="line"><span>│   │       ├── HomeView.ts</span></span>
+<span class="line"><span>│   │       └── HomeViewModel.ts</span></span>
+<span class="line"><span>│   │</span></span>
+<span class="line"><span>│   ├── model/</span></span>
+<span class="line"><span>│   │   ├── application/           # Application layer</span></span>
+<span class="line"><span>│   │   │   ├── top/</span></span>
+<span class="line"><span>│   │   │   │   └── usecase/</span></span>
+<span class="line"><span>│   │   │   │       └── NavigateToViewUseCase.ts</span></span>
+<span class="line"><span>│   │   │   └── home/</span></span>
+<span class="line"><span>│   │   │       └── usecase/</span></span>
+<span class="line"><span>│   │   │           ├── StartDragUseCase.ts</span></span>
+<span class="line"><span>│   │   │           ├── StopDragUseCase.ts</span></span>
+<span class="line"><span>│   │   │           └── CenterTextFieldUseCase.ts</span></span>
+<span class="line"><span>│   │   │</span></span>
+<span class="line"><span>│   │   ├── domain/                # Domain layer</span></span>
+<span class="line"><span>│   │   │   └── callback/</span></span>
+<span class="line"><span>│   │   │       ├── Background.ts</span></span>
+<span class="line"><span>│   │   │       └── Background/</span></span>
+<span class="line"><span>│   │   │           └── service/</span></span>
+<span class="line"><span>│   │   │               ├── BackgroundDrawService.ts</span></span>
+<span class="line"><span>│   │   │               └── BackgroundChangeScaleService.ts</span></span>
+<span class="line"><span>│   │   │</span></span>
+<span class="line"><span>│   │   └── infrastructure/        # Infrastructure layer</span></span>
+<span class="line"><span>│   │       └── repository/</span></span>
+<span class="line"><span>│   │           └── HomeTextRepository.ts</span></span>
+<span class="line"><span>│   │</span></span>
+<span class="line"><span>│   ├── ui/                        # UI Components</span></span>
+<span class="line"><span>│   │   ├── animation/             # Animation definitions</span></span>
+<span class="line"><span>│   │   │   └── top/</span></span>
+<span class="line"><span>│   │   │       └── TopBtnShowAnimation.ts</span></span>
+<span class="line"><span>│   │   │</span></span>
+<span class="line"><span>│   │   ├── component/             # Atomic Design</span></span>
+<span class="line"><span>│   │   │   ├── atom/              # Smallest unit components</span></span>
+<span class="line"><span>│   │   │   │   ├── ButtonAtom.ts</span></span>
+<span class="line"><span>│   │   │   │   └── TextAtom.ts</span></span>
+<span class="line"><span>│   │   │   ├── molecule/          # Combined Atom components</span></span>
+<span class="line"><span>│   │   │   │   ├── HomeBtnMolecule.ts</span></span>
+<span class="line"><span>│   │   │   │   └── TopBtnMolecule.ts</span></span>
+<span class="line"><span>│   │   │   ├── organism/          # Multiple Molecule combinations</span></span>
+<span class="line"><span>│   │   │   ├── template/          # Page templates</span></span>
+<span class="line"><span>│   │   │   └── page/              # Page components</span></span>
+<span class="line"><span>│   │   │       ├── top/</span></span>
+<span class="line"><span>│   │   │       │   └── TopPage.ts</span></span>
+<span class="line"><span>│   │   │       └── home/</span></span>
+<span class="line"><span>│   │   │           └── HomePage.ts</span></span>
+<span class="line"><span>│   │   │</span></span>
+<span class="line"><span>│   │   └── content/               # Animation Tool generated content</span></span>
+<span class="line"><span>│   │       ├── TopContent.ts</span></span>
+<span class="line"><span>│   │       └── HomeContent.ts</span></span>
+<span class="line"><span>│   │</span></span>
+<span class="line"><span>│   ├── assets/                    # Static assets</span></span>
+<span class="line"><span>│   │</span></span>
+<span class="line"><span>│   ├── Packages.ts                # Package exports</span></span>
+<span class="line"><span>│   └── index.ts                   # Entry point</span></span>
+<span class="line"><span>│</span></span>
+<span class="line"><span>├── file/                          # Animation Tool output files</span></span>
+<span class="line"><span>│   └── sample.n2d</span></span>
+<span class="line"><span>│</span></span>
+<span class="line"><span>├── mock/                          # Mock data</span></span>
+<span class="line"><span>│   ├── api/                       # API mocks</span></span>
+<span class="line"><span>│   ├── content/                   # Content mocks</span></span>
+<span class="line"><span>│   └── img/                       # Image mocks</span></span>
+<span class="line"><span>│</span></span>
+<span class="line"><span>└── package.json</span></span></code></pre>
+<h2 id="framework-flowchart">Framework Flowchart</h2>
+<p>Detailed flow of screen transitions using the gotoView function.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">graph TD</span></span>
+<span class="line"><span style="color:#E1E4E8">    User([User]) -->|Request| GotoView[gotoView Path]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    GotoView --> LoadingCheck{use loading?&#x3C;br/>Default: true}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    LoadingCheck -->|YES| ScreenOverlay[Screen Overlay]</span></span>
+<span class="line"><span style="color:#E1E4E8">    LoadingCheck -->|NO| RemoveResponse</span></span>
+<span class="line"><span style="color:#E1E4E8">    ScreenOverlay --> LoadingStart[Start Loading]</span></span>
+<span class="line"><span style="color:#E1E4E8">    LoadingStart --> RemoveResponse</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    RemoveResponse[Remove Previous Response Data] --> ParseQuery[Parse Query String]</span></span>
+<span class="line"><span style="color:#E1E4E8">    ParseQuery --> UpdateHistory{SPA mode?}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    UpdateHistory -->|YES| PushState[Push History State]</span></span>
+<span class="line"><span style="color:#E1E4E8">    UpdateHistory -->|NO| RequestType</span></span>
+<span class="line"><span style="color:#E1E4E8">    PushState --> RequestType</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    RequestType[Request Type]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    RequestType --> JSON[JSON: Get external JSON data]</span></span>
+<span class="line"><span style="color:#E1E4E8">    RequestType --> CONTENT[CONTENT: Get Animation Tool JSON]</span></span>
+<span class="line"><span style="color:#E1E4E8">    RequestType --> CUSTOM[CUSTOM: Request to external API]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    JSON --> CacheCheck{use cache?&#x3C;br/>Default: false}</span></span>
+<span class="line"><span style="color:#E1E4E8">    CONTENT --> CacheCheck</span></span>
+<span class="line"><span style="color:#E1E4E8">    CUSTOM --> CacheCheck</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    CacheCheck -->|YES| CacheData[(Cache)]</span></span>
+<span class="line"><span style="color:#E1E4E8">    CacheCheck -->|NO| GlobalData{{Global Network}}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    CacheData --> Cached{Cached?}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    Cached -->|NO| GlobalData</span></span>
+<span class="line"><span style="color:#E1E4E8">    Cached -->|YES| RegisterResponse</span></span>
+<span class="line"><span style="color:#E1E4E8">    GlobalData --> RegisterResponse</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    RegisterResponse[Register Response Data] --> RequestCallback{request callback?}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    RequestCallback -->|YES| ExecRequestCallback[Execute Request Callback]</span></span>
+<span class="line"><span style="color:#E1E4E8">    RequestCallback -->|NO| UnbindView</span></span>
+<span class="line"><span style="color:#E1E4E8">    ExecRequestCallback --> UnbindView</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    UnbindView[Previous View: onExit &#x26; Unbind] --> BindView[New View/ViewModel: Bind]</span></span>
+<span class="line"><span style="color:#E1E4E8">    BindView --> ViewModelInit[ViewModel: initialize]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    ViewModelInit --> ViewInit[View: initialize]</span></span>
+<span class="line"><span style="color:#E1E4E8">    ViewInit --> AddToStage[Add View to Stage]</span></span>
+<span class="line"><span style="color:#E1E4E8">    AddToStage --> GotoViewCallback{gotoView callback?}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    GotoViewCallback -->|YES| ExecGotoViewCallback[Execute gotoView Callback]</span></span>
+<span class="line"><span style="color:#E1E4E8">    GotoViewCallback -->|NO| LoadingEndCheck</span></span>
+<span class="line"><span style="color:#E1E4E8">    ExecGotoViewCallback --> LoadingEndCheck</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    LoadingEndCheck{use loading?&#x3C;br/>Default: true}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    LoadingEndCheck -->|YES| LoadingEnd[End Loading]</span></span>
+<span class="line"><span style="color:#E1E4E8">    LoadingEndCheck -->|NO| OnEnter</span></span>
+<span class="line"><span style="color:#E1E4E8">    LoadingEnd --> DisposeOverlay[Dispose Screen Overlay]</span></span>
+<span class="line"><span style="color:#E1E4E8">    DisposeOverlay --> OnEnter</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    OnEnter[View: onEnter] --> StartDrawing</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    StartDrawing[Start Drawing] -->|Response| User</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    style User fill:#d5e8d4,stroke:#82b366</span></span>
+<span class="line"><span style="color:#E1E4E8">    style StartDrawing fill:#dae8fc,stroke:#6c8ebf</span></span>
+<span class="line"><span style="color:#E1E4E8">    style CacheData fill:#fff2cc,stroke:#d6b656</span></span>
+<span class="line"><span style="color:#E1E4E8">    style GlobalData fill:#f5f5f5,stroke:#666666</span></span></code></pre>
+<h3 id="key-flow-steps">Key Flow Steps</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Step</th><th>Description</th></tr></thead><tbody><tr><td><strong>gotoView</strong></td><td>Entry point for screen transitions</td></tr><tr><td><strong>Loading</strong></td><td>Loading screen show/hide control</td></tr><tr><td><strong>Request Type</strong></td><td>Three types of requests: JSON, CONTENT, CUSTOM</td></tr><tr><td><strong>Cache</strong></td><td>Response data cache control</td></tr><tr><td><strong>View/ViewModel Bind</strong></td><td>Binding process for new View/ViewModel</td></tr><tr><td><strong>onEnter</strong></td><td>Callback after screen display is complete</td></tr></tbody></table>
+<h2 id="key-design-patterns">Key Design Patterns</h2>
+<h3 id="1-mvvm-model-view-viewmodel">1. MVVM (Model-View-ViewModel)</h3>
+<ul>
+<li><strong>View</strong>: Handles screen structure and display. No business logic</li>
+<li><strong>ViewModel</strong>: Bridge between View and Model. Holds UseCases and processes events</li>
+<li><strong>Model</strong>: Handles business logic and data access</li>
+</ul>
+<h3 id="2-usecase-pattern">2. UseCase Pattern</h3>
+<p>Create a dedicated UseCase class for each user action:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> StartDragUseCase</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">    execute</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">target</span><span style="color:#F97583">:</span><span style="color:#B392F0"> IDraggable</span><span style="color:#E1E4E8">)</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> void</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#E1E4E8">        target.</span><span style="color:#B392F0">startDrag</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="3-dependency-inversion">3. Dependency Inversion</h3>
+<p>Depend on interfaces, not concrete classes:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#6A737D">// Good: Depend on interfaces</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#F97583"> type</span><span style="color:#E1E4E8"> { IDraggable } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@/interface/IDraggable"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> startDrag</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">target</span><span style="color:#F97583">:</span><span style="color:#B392F0"> IDraggable</span><span style="color:#E1E4E8">)</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> void</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#E1E4E8">    target.</span><span style="color:#B392F0">startDrag</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="4-repository-pattern">4. Repository Pattern</h3>
+<p>Abstract data access and implement error handling:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> HomeTextRepository</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    static</span><span style="color:#F97583"> async</span><span style="color:#B392F0"> get</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">IHomeTextResponse</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">            const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`${</span><span style="color:#E1E4E8">config</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">api</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">endPoint</span><span style="color:#9ECBFF">}api/home.json`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">response.ok) {</span></span>
+<span class="line"><span style="color:#F97583">                throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`HTTP error! status: ${</span><span style="color:#E1E4E8">response</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">status</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#F97583">            return</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">            console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Failed to fetch:"</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#F97583">            throw</span><span style="color:#E1E4E8"> error;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-project">Create Project</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">npx</span><span style="color:#9ECBFF"> create-next2d-app</span><span style="color:#9ECBFF"> my-app</span></span>
+<span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> my-app</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> install</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> start</span></span></code></pre>
+<h3 id="auto-generate-viewviewmodel">Auto-generate View/ViewModel</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> generate</span></span></code></pre>
+<p>This command parses top properties in <code>routing.json</code> and generates corresponding View and ViewModel classes.</p>
+<h2 id="best-practices">Best Practices</h2>
+<ol>
+<li><strong>Interface First</strong>: Always depend on interfaces, not concrete types</li>
+<li><strong>Single Responsibility Principle</strong>: Each class has only one responsibility</li>
+<li><strong>Dependency Injection</strong>: Inject dependencies via constructor</li>
+<li><strong>Error Handling</strong>: Handle errors appropriately in Repository layer</li>
+<li><strong>Type Safety</strong>: Avoid <code>any</code> type, use explicit type definitions</li>
+</ol>
+<h2 id="related-documentation">Related Documentation</h2>
+<h3 id="basics">Basics</h3>
+<ul>
+<li><a href="/en/reference/framework/view">View/ViewModel</a> - Screen display and data binding</li>
+<li><a href="/en/reference/framework/routing">Routing</a> - URL-based screen transitions</li>
+<li><a href="/en/reference/framework/config">Configuration</a> - Environment and stage settings</li>
+<li><a href="/en/reference/framework/animation-tool">Animation Tool Integration</a> - Using Animation Tool assets</li>
+</ul>
+<h3 id="next2d-player-integration">Next2D Player Integration</h3>
+<ul>
+<li><a href="/en/reference/player">Next2D Player</a> - Rendering engine</li>
+<li><a href="/en/reference/player/movie-clip">MovieClip</a> - Timeline animation</li>
+<li><a href="/en/reference/player/events">Event System</a> - User interaction</li>
+</ul> </div>  </div> </div> </div> </section> <footer class="footer" data-aos="fade-up"> <div class="container"> <div class="row"> <div class="col-md-12 col-lg-4"> <div class="footer-logo"> <a class="navbar-brand" href="/en">Next2D</a> <p> Next2D, a project derived from the JavaScript FlashPlayer &quot;swf2js&quot;, aims to provide the fastest 2D engine that works on any device.<br>
+Created by Toshiyuki Ienaga.
+</p> </div> <div class="list-sns-menu"> <ul class="list-unstyled"> <li><a href="https://twitter.com/ienagatoshiyuki" target="_blank"><i class="bi bi-twitter"></i></a></li> <li><a href="https://github.com/ienaga" target="_blank"><i class="bi bi-github"></i></a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Player</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/en/reference/player">Reference</a></li> <li><a href="/en/#player">Features</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Animation Tool</h4> <ul class="list-unstyled"> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/en/usage">Usage</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Framework</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/en/reference/framework">Reference</a></li> <li><a href="/en/#framework">Features</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>About Us</h4> <ul class="list-unstyled"> <li><a href="/en/#contact">Contact</a></li> <li><a href="/en/privacy">Privacy Policy</a></li> </ul> </div> </div> </div> </div> <div class="copyrights"> <div class="container"> <p>&copy; Copyrights Next2D. All rights reserved.</p> </div> </div> </footer> <script type="module" src="/assets/DocsLayout.astro_astro_type_script_index_0_lang.yTAR6D4i.js"></script>  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> <!-- Vendor JS --> <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script> <script src="/assets/js/vendor/aos.js"></script> <!-- Main JS --> <script src="/assets/js/main.js"></script> </body> </html> 

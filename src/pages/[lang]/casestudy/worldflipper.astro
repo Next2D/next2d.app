@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/common/Header.astro';
+import Footer from '../../../components/common/Footer.astro';
+import Breadcrumbs from '../../../components/common/Breadcrumbs.astro';
+import { getTranslations, supportedLanguages, isValidLanguage } from '../../../i18n';
+
+export function getStaticPaths() {
+  return supportedLanguages.map((lang) => ({
+    params: { lang }
+  }));
+}
+
+const { lang } = Astro.params;
+if (!isValidLanguage(lang)) {
+  return Astro.redirect('/ja/casestudy/worldflipper');
+}
+
+const t = await getTranslations(lang);
+const basePath = import.meta.env.BASE_URL;
+
+const breadcrumbs = [
+  { label: t.navbar?.home || 'Home', href: `${basePath}${lang}/` },
+  { label: t.worldflipper?.['case-study'] || 'Case Study' },
+  { label: t.worldflipper?.title || 'WORLD FLIPPER' }
+];
+---
+
+<BaseLayout
+  title={t.worldflipper?.title || 'WORLD FLIPPER'}
+  description={t.worldflipper?.description || ''}
+  lang={lang}
+  breadcrumbs={breadcrumbs}
+>
+  <Header lang={lang} t={t} />
+
+  <Breadcrumbs items={breadcrumbs} />
+
+  <section id="case-example">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title text-center">
+        <h2>{t.worldflipper?.['case-study'] || 'Case Study'}</h2>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-10" data-aos="fade-up" data-aos-delay="150">
+          <div class="case-example-text">
+            {t.worldflipper?.introductionTitle || "『WORLD FLIPPER』"}<br>
+            {t.worldflipper?.introductionText || ''}<br>
+            <br>
+            {t.worldflipper?.detail || ''}
+          </div>
+          <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+            <img loading="lazy" src={`${basePath}assets/img/casestudy/worldflipper/tool_use_image2.png`}>
+          </div>
+        </div>
+
+        <div class="col-md-10 col-lg-10" data-aos="fade-up" data-aos-delay="250">
+          <h3>{t.worldflipper?.animation || 'Animation'}</h3>
+          <div class="text-center">
+            <video controls src={`${basePath}assets/img/casestudy/worldflipper/movie.mp4`}></video>
+          </div>
+        </div>
+
+        <div class="col-md-10 col-lg-10 text-center">
+          <p>&copy; Cygames, Inc. / Citail Inc.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer lang={lang} t={t} />
+</BaseLayout>

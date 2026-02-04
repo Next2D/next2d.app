@@ -1,0 +1,315 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Next2D | 事件系统</title><meta content="Next2D播放器的功能描述和示例代码" name="description"><meta content="Next2D,Next2D Player,Animation Tool,Next2D Framework" name="keywords"><!-- SEO: Canonical URL --><link rel="canonical" href="https://next2d.app/cn/reference/player/events/"><!-- SEO: hreflang for multi-language --><link rel="alternate" hreflang="ja" href="https://next2d.app/ja/reference/player/events/"><link rel="alternate" hreflang="en" href="https://next2d.app/en/reference/player/events/"><link rel="alternate" hreflang="zh-CN" href="https://next2d.app/cn/reference/player/events/"><link rel="alternate" hreflang="x-default" href="https://next2d.app/ja/reference/player/events/"><!-- Google / Search Engine Tags --><meta itemprop="name" content="Next2D | 事件系统"><meta itemprop="description" content="Next2D播放器的功能描述和示例代码"><meta itemprop="image" content="https://next2d.app/assets/img/ogp.png"><!-- Facebook Meta Tags --><meta property="og:url" content="https://next2d.app/cn/reference/player/events/"><meta property="og:type" content="website"><meta property="og:title" content="Next2D | 事件系统"><meta property="og:description" content="Next2D播放器的功能描述和示例代码"><meta property="og:image" content="https://next2d.app/assets/img/ogp.png"><meta property="og:locale" content="zh-CN"><meta property="og:site_name" content="Next2D"><!-- Twitter Meta Tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Next2D"><meta name="twitter:creator" content="@Next2D"><meta name="twitter:title" content="Next2D | 事件系统"><meta name="twitter:description" content="Next2D播放器的功能描述和示例代码"><meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png"><!-- Theme Color --><meta name="theme-color" content="#5777ba"><!-- Web App Manifest --><link rel="manifest" href="/manifest.json"><!-- JSON-LD Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Next2D","url":"https://next2d.app","description":"Next2D - Rendering Engine, Animation Tool, Underlying Framework","inLanguage":["zh-CN"],"potentialAction":{"@type":"SearchAction","target":"https://next2d.app/{lang}/reference/player/?q={search_term_string}","query-input":"required name=search_term_string"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Next2D","url":"https://next2d.app","logo":"https://next2d.app/assets/img/ogp.png","sameAs":["https://github.com/Next2D"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://next2d.app/cn/"},{"@type":"ListItem","position":2,"name":"Player","item":"https://next2d.app/cn/reference/player/"},{"@type":"ListItem","position":3,"name":"事件系统"}]}</script><!-- Favicons --><link href="/assets/img/favicon.png" rel="icon"><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"><!-- Vendor CSS --><link href="/assets/css/vendor/aos.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap-icons.min.css" rel="stylesheet"><!-- Main CSS --><link href="/assets/css/main.css" rel="stylesheet"><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-8GJWF4S3RH");
+    </script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style>.docs-content[data-astro-cid-xt6eahls] h1{font-size:2rem;margin-bottom:1.5rem}.docs-content[data-astro-cid-xt6eahls] h2{font-size:1.5rem;margin-top:2rem;margin-bottom:1rem}.docs-content[data-astro-cid-xt6eahls] h3{font-size:1.25rem;margin-top:1.5rem;margin-bottom:.75rem}.docs-content[data-astro-cid-xt6eahls] pre{background-color:#2a2c30;color:#f8f9fa;border-radius:8px;padding:1rem;overflow-x:auto;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] code{font-family:Monaco,Menlo,monospace;font-size:.9em}.docs-content[data-astro-cid-xt6eahls] table{width:100%;border-collapse:collapse;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] th,.docs-content[data-astro-cid-xt6eahls] td{border:1px solid #ddd;padding:.5rem;text-align:left}.docs-content[data-astro-cid-xt6eahls] th{background-color:#f5f5f5}
+</style></head> <body class="lang-cn">  <header id="header" class="header fixed-top d-flex align-items-center"> <div class="container d-flex align-items-center justify-content-between"> <div id="logo"> <a href="/cn"><img loading="lazy" src="/assets/img/logo.svg" alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework."></a> </div> <nav id="navbar" class="navbar"> <ul class="list-unstyled"> <li><a class="nav-link scrollto" href="/cn/#get-started">首页</a></li> <li><a class="nav-link scrollto" href="/cn/#casestudy">学习案例</a></li> <li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>播放器 (Player)</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/cn/reference/player">参考资料</a></li> <li><a href="/cn/#player">特性</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>动画工具</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/cn/usage">使用方法</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="/cn/#tool">特性</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>框架</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/cn/reference/framework">参考资料</a></li> <li><a href="/cn/#framework">特性</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>语言</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="/en">English</a></li> <li><a href="/ja">日本語</a></li> <li><a href="/cn">简体中文</a></li> </ul> </li> <li class="dropdown"><a class="nav-link"><span>支持我们</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li> </ul> </li> <li><a class="nav-link scrollto" href="/cn/#contact">联系我们</a></li> </ul> <i class="bi bi-list mobile-nav-toggle"></i> </nav> </div> </header> <section class="breadcrumbs"> <div class="container"> <div class="d-flex justify-content-between align-items-center"> <h2>事件系统</h2> <ol> <li> <a href="/cn/">首页</a> </li><li> <a href="/cn/reference/player/">Player</a> </li><li> 事件系统 </li> </ol> </div> </div> </section> <section id="references" class="reference-section"> <div class="container" data-aos="fade-up"> <div class="row"> <div class="col-lg-3 col-md-4"> <nav id="sub-navbar" class="list-menu sub-navbar"><ul class="list-unstyled"><li><strong>Player</strong></li><ul><li><a href="/cn/reference/player">概述</a></li><li><a href="/cn/reference/player/display-object">DisplayObject</a></li><li><a href="/cn/reference/player/sprite">Sprite</a></li><li><a href="/cn/reference/player/movie-clip">MovieClip</a></li><li><a href="/cn/reference/player/shape">Shape</a></li><li><a href="/cn/reference/player/text-field">TextField</a></li><li><a href="/cn/reference/player/video">Video</a></li><li><a href="/cn/reference/player/sound">Sound</a></li><li><a href="/cn/reference/player/events">事件</a></li><li><a href="/cn/reference/player/filters">滤镜</a></li><li><a href="/cn/reference/player/tween">Tween</a></li></ul><li><strong>Framework</strong></li><ul><li><a href="/cn/reference/framework">概述</a></li><li><a href="/cn/reference/framework/view">View/ViewModel</a></li><li><a href="/cn/reference/framework/routing">路由</a></li><li><a href="/cn/reference/framework/config">配置文件</a></li><li><a href="/cn/reference/framework/animation-tool">Animation Tool集成</a></li></ul></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav> </div> <div class="col-lg-9 col-md-8">  <div class="docs-content" data-astro-cid-xt6eahls> <h1 id="事件系统">事件系统</h1>
+<p>Next2D Player 使用与 Flash Player 类似的事件模型。</p>
+<h2 id="eventdispatcher">EventDispatcher</h2>
+<p>所有具有事件功能的对象的基类。</p>
+<h3 id="addeventlistenertype-listener-usecapture-priority">addEventListener(type, listener, useCapture, priority)</h3>
+<p>注册事件侦听器。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"被点击"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 在捕获阶段接收</span></span>
+<span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, handler, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 指定优先级</span></span>
+<span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, handler, </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="removeeventlistenertype-listener-usecapture">removeEventListener(type, listener, useCapture)</h3>
+<p>移除事件侦听器。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">removeEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, handler);</span></span></code></pre>
+<h3 id="haseventlistenertype">hasEventListener(type)</h3>
+<p>检查是否注册了指定类型的侦听器。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (displayObject.</span><span style="color:#B392F0">hasEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">)) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"已注册点击侦听器"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="dispatcheventevent">dispatchEvent(event)</h3>
+<p>派发事件。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Event</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> event</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Event</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"customEvent"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">dispatchEvent</span><span style="color:#E1E4E8">(event);</span></span></code></pre>
+<h2 id="event-类">Event 类</h2>
+<h3 id="属性">属性</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><code>type</code></td><td>String</td><td>事件类型</td></tr><tr><td><code>target</code></td><td>Object</td><td>事件源</td></tr><tr><td><code>currentTarget</code></td><td>Object</td><td>当前侦听器目标</td></tr><tr><td><code>eventPhase</code></td><td>Number</td><td>事件阶段</td></tr><tr><td><code>bubbles</code></td><td>Boolean</td><td>是否冒泡</td></tr><tr><td><code>cancelable</code></td><td>Boolean</td><td>是否可取消</td></tr></tbody></table>
+<h3 id="方法">方法</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td><code>stopPropagation()</code></td><td>停止传播</td></tr><tr><td><code>stopImmediatePropagation()</code></td><td>立即停止传播</td></tr><tr><td><code>preventDefault()</code></td><td>取消默认行为</td></tr></tbody></table>
+<h2 id="标准事件类型">标准事件类型</h2>
+<h3 id="显示列表相关">显示列表相关</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>事件</th><th>说明</th></tr></thead><tbody><tr><td><code>added</code></td><td>添加到 DisplayObjectContainer</td></tr><tr><td><code>addedToStage</code></td><td>添加到舞台</td></tr><tr><td><code>removed</code></td><td>从 DisplayObjectContainer 移除</td></tr><tr><td><code>removedFromStage</code></td><td>从舞台移除</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">sprite.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"addedToStage"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"添加到舞台"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="时间轴相关">时间轴相关</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>事件</th><th>说明</th></tr></thead><tbody><tr><td><code>enterFrame</code></td><td>每帧发生</td></tr><tr><td><code>frameConstructed</code></td><td>帧构建完成</td></tr><tr><td><code>exitFrame</code></td><td>离开帧时</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">movieClip.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"enterFrame"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#6A737D">    // 每帧执行的处理</span></span>
+<span class="line"><span style="color:#B392F0">    updatePosition</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="加载相关">加载相关</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>事件</th><th>说明</th></tr></thead><tbody><tr><td><code>complete</code></td><td>加载完成</td></tr><tr><td><code>progress</code></td><td>加载进度</td></tr><tr><td><code>ioError</code></td><td>IO 错误</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Loader</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">URLRequest</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.net;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> loader</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Loader</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">loader.contentLoaderInfo.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"complete"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> content</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> event.currentTarget.content;</span></span>
+<span class="line"><span style="color:#E1E4E8">    stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(content);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">loader.contentLoaderInfo.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"progress"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> percent</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (event.bytesLoaded </span><span style="color:#F97583">/</span><span style="color:#E1E4E8"> event.bytesTotal) </span><span style="color:#F97583">*</span><span style="color:#79B8FF"> 100</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(percent </span><span style="color:#F97583">+</span><span style="color:#9ECBFF"> "% 已加载"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">loader.</span><span style="color:#B392F0">load</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">new</span><span style="color:#B392F0"> URLRequest</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"animation.json"</span><span style="color:#E1E4E8">));</span></span></code></pre>
+<h2 id="鼠标事件">鼠标事件</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>事件</th><th>说明</th></tr></thead><tbody><tr><td><code>click</code></td><td>点击</td></tr><tr><td><code>doubleClick</code></td><td>双击</td></tr><tr><td><code>mouseDown</code></td><td>鼠标按下</td></tr><tr><td><code>mouseUp</code></td><td>鼠标释放</td></tr><tr><td><code>mouseMove</code></td><td>鼠标移动</td></tr><tr><td><code>mouseOver</code></td><td>鼠标移入</td></tr><tr><td><code>mouseOut</code></td><td>鼠标移出</td></tr><tr><td><code>rollOver</code></td><td>滚动移入</td></tr><tr><td><code>rollOut</code></td><td>滚动移出</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">sprite.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"点击位置:"</span><span style="color:#E1E4E8">, event.localX, event.localY);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">sprite.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"mouseMove"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"鼠标位置:"</span><span style="color:#E1E4E8">, event.stageX, event.stageY);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h2 id="键盘事件">键盘事件</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>事件</th><th>说明</th></tr></thead><tbody><tr><td><code>keyDown</code></td><td>按键按下</td></tr><tr><td><code>keyUp</code></td><td>按键释放</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"keyDown"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"键码:"</span><span style="color:#E1E4E8">, event.keyCode);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    switch</span><span style="color:#E1E4E8"> (event.keyCode) {</span></span>
+<span class="line"><span style="color:#F97583">        case</span><span style="color:#79B8FF"> 37</span><span style="color:#E1E4E8">: </span><span style="color:#6A737D">// 左箭头</span></span>
+<span class="line"><span style="color:#E1E4E8">            player.x </span><span style="color:#F97583">-=</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">            break</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        case</span><span style="color:#79B8FF"> 39</span><span style="color:#E1E4E8">: </span><span style="color:#6A737D">// 右箭头</span></span>
+<span class="line"><span style="color:#E1E4E8">            player.x </span><span style="color:#F97583">+=</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">            break</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h2 id="自定义事件">自定义事件</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Event</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 定义自定义事件</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> customEvent</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Event</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"gameOver"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 派发事件</span></span>
+<span class="line"><span style="color:#E1E4E8">gameManager.</span><span style="color:#B392F0">dispatchEvent</span><span style="color:#E1E4E8">(customEvent);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 监听事件</span></span>
+<span class="line"><span style="color:#E1E4E8">gameManager.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"gameOver"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">    showGameOverScreen</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h2 id="事件传播">事件传播</h2>
+<p>事件分三个阶段传播：</p>
+<ol>
+<li><strong>捕获阶段</strong>：从根到目标</li>
+<li><strong>目标阶段</strong>：在目标处处理</li>
+<li><strong>冒泡阶段</strong>：从目标到根</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// 在捕获阶段处理</span></span>
+<span class="line"><span style="color:#E1E4E8">parent.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, handler, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 在冒泡阶段处理（默认）</span></span>
+<span class="line"><span style="color:#E1E4E8">child.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, handler, </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<h2 id="相关">相关</h2>
+<ul>
+<li><a href="/cn/reference/player/display-object">DisplayObject</a></li>
+<li><a href="/cn/reference/player/movie-clip">MovieClip</a></li>
+</ul> </div>  </div> </div> </div> </section> <footer class="footer" data-aos="fade-up"> <div class="container"> <div class="row"> <div class="col-md-12 col-lg-4"> <div class="footer-logo"> <a class="navbar-brand" href="/cn">Next2D</a> <p> Next2D 源于一个 JavaScript Flash 播放器项目 &quot;swf2js&quot;，旨在提供一个在任何设备上都可以运行的、最快的 2D 引擎。<br>
+Created by Toshiyuki Ienaga.
+</p> </div> <div class="list-sns-menu"> <ul class="list-unstyled"> <li><a href="https://twitter.com/ienagatoshiyuki" target="_blank"><i class="bi bi-twitter"></i></a></li> <li><a href="https://github.com/ienaga" target="_blank"><i class="bi bi-github"></i></a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>播放器 (Player)</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/cn/reference/player">参考资料</a></li> <li><a href="/cn/#player">特性</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>动画制作工具 (Animation Tool)</h4> <ul class="list-unstyled"> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/cn/usage">使用方法</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>框架 (Framework)</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/cn/reference/framework">参考资料</a></li> <li><a href="/cn/#framework">特性</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>关于我们</h4> <ul class="list-unstyled"> <li><a href="/cn/#contact">联系我们</a></li> <li><a href="/cn/privacy">隐私政策</a></li> </ul> </div> </div> </div> </div> <div class="copyrights"> <div class="container"> <p>&copy; Copyrights Next2D. All rights reserved.</p> </div> </div> </footer> <script type="module" src="/assets/DocsLayout.astro_astro_type_script_index_0_lang.yTAR6D4i.js"></script>  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> <!-- Vendor JS --> <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script> <script src="/assets/js/vendor/aos.js"></script> <!-- Main JS --> <script src="/assets/js/main.js"></script> </body> </html> 

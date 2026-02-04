@@ -1,0 +1,115 @@
+---
+interface Props {
+  lang: string;
+  t: Record<string, any>;
+  menuType: 'usage' | 'reference' | 'player' | 'framework';
+}
+
+const { lang, t, menuType } = Astro.props;
+const basePath = import.meta.env.BASE_URL;
+---
+
+{menuType === 'usage' ? (
+  <nav id="sub-navbar" class="list-menu sub-navbar">
+    <ul class="list-unstyled">
+      <li><a href={`${basePath}${lang}/usage`}>WorkSpace</a></li>
+      <li><a href={`${basePath}${lang}/usage/tool`}>Tool Area</a></li>
+      <ul>
+        <li><a href={`${basePath}${lang}/usage/tool/transform`}>{t.toolmenu?.tool?.selection || '選択ツール'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/tool/shape-transform`}>{t.toolmenu?.tool?.['shape-transform'] || 'Shape変形ツール'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/tool/pen`}>{t.toolmenu?.tool?.pen || 'ペンツール'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/tool/text`}>{t.toolmenu?.tool?.text || 'テキストツール'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/tool/rectangle`}>{t.toolmenu?.tool?.rectangle || '短形ツール'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/tool/ellipse`}>{t.toolmenu?.tool?.ellipse || '楕円ツール'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/tool/rounded-rectangle`}>{t.toolmenu?.tool?.['rounded-rectangle'] || '角丸矩形ツール'}</a></li>
+      </ul>
+      <li><a href={`${basePath}${lang}/usage/screen`}>Screen Area</a></li>
+      <ul>
+        <li><a href={`${basePath}${lang}/usage/screen/tabs`}>{t.toolmenu?.screen?.tabs || 'タブ'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/screen/layer`}>{t.toolmenu?.screen?.layer || 'レイヤー'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/screen/align`}>{t.toolmenu?.screen?.align || '整列'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/screen/distribute`}>{t.toolmenu?.screen?.distribute || 'キーフレーム/レイヤーに配分'}</a></li>
+      </ul>
+      <li><a href={`${basePath}${lang}/usage/timeline`}>Timeline Area</a></li>
+      <ul>
+        <li><a href={`${basePath}${lang}/usage/timeline/frame-keyframe`}>{t.toolmenu?.timeline?.['frame-keyframe'] || 'フレームとキーフレーム'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/timeline/normal-layer`}>{t.toolmenu?.timeline?.['normal-layer'] || '通常レイヤー'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/timeline/mask-layer`}>{t.toolmenu?.timeline?.['mask-layer'] || 'マスクレイヤー'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/timeline/motion-tweening`}>{t.toolmenu?.timeline?.['motion-tweening'] || 'モーショントゥイーン'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/timeline/custom-tweening`}>{t.toolmenu?.timeline?.['custom-tweening'] || 'カスタムモーショントゥイーン'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/timeline/onion-skin`}>{t.toolmenu?.timeline?.['onion-skin'] || 'オニオンスキン'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/timeline/preview`}>{t.toolmenu?.timeline?.preview || 'プレビュー'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/timeline/javascript`}>JavaScript</a></li>
+      </ul>
+      <li><a href={`${basePath}${lang}/usage/controller`}>Controller Area</a></li>
+      <ul>
+        <li><a href={`${basePath}${lang}/usage/controller/stage-setting`}>{t.toolmenu?.controller?.stage || 'ステージ設定'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/controller/object-setting`}>{t.toolmenu?.controller?.object || 'オブジェクト設定'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/controller/frame-picker`}>{t.toolmenu?.controller?.['frame-picker'] || 'フレームピッカー'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/controller/transform`}>{t.toolmenu?.controller?.transform || '変形'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/controller/color-transform`}>{t.toolmenu?.controller?.['color-transform'] || 'カラートランスフォーム'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/controller/blend-mode`}>{t.toolmenu?.controller?.['blend-mode'] || 'ブレンドモード'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/controller/filters`}>{t.toolmenu?.controller?.filters || 'フィルター'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/controller/sound`}>{t.toolmenu?.controller?.sound || 'サウンド'}</a></li>
+        <li><a href={`${basePath}${lang}/usage/controller/library`}>{t.toolmenu?.controller?.library || 'ライブラリ'}</a></li>
+      </ul>
+    </ul>
+    <i class="bi bi-list mobile-sub-nav-toggle"></i>
+  </nav>
+) : (menuType === 'reference' || menuType === 'player') ? (
+  <nav id="sub-navbar" class="list-menu sub-navbar">
+    <ul class="list-unstyled">
+      <li><strong>Player</strong></li>
+      <ul>
+        <li><a href={`${basePath}${lang}/reference/player`}>{lang === 'ja' ? '概要' : lang === 'cn' ? '概述' : 'Overview'}</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/display-object`}>DisplayObject</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/sprite`}>Sprite</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/movie-clip`}>MovieClip</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/shape`}>Shape</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/text-field`}>TextField</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/video`}>Video</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/sound`}>Sound</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/events`}>{lang === 'ja' ? 'イベント' : lang === 'cn' ? '事件' : 'Events'}</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/filters`}>{lang === 'ja' ? 'フィルター' : lang === 'cn' ? '滤镜' : 'Filters'}</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/tween`}>Tween</a></li>
+      </ul>
+      <li><strong>Framework</strong></li>
+      <ul>
+        <li><a href={`${basePath}${lang}/reference/framework`}>{lang === 'ja' ? '概要' : lang === 'cn' ? '概述' : 'Overview'}</a></li>
+        <li><a href={`${basePath}${lang}/reference/framework/view`}>View/ViewModel</a></li>
+        <li><a href={`${basePath}${lang}/reference/framework/routing`}>{lang === 'ja' ? 'ルーティング' : lang === 'cn' ? '路由' : 'Routing'}</a></li>
+        <li><a href={`${basePath}${lang}/reference/framework/config`}>{lang === 'ja' ? '設定ファイル' : lang === 'cn' ? '配置文件' : 'Configuration'}</a></li>
+        <li><a href={`${basePath}${lang}/reference/framework/animation-tool`}>{lang === 'ja' ? 'Animation Tool連携' : lang === 'cn' ? 'Animation Tool集成' : 'Animation Tool Integration'}</a></li>
+      </ul>
+    </ul>
+    <i class="bi bi-list mobile-sub-nav-toggle"></i>
+  </nav>
+) : (
+  <nav id="sub-navbar" class="list-menu sub-navbar">
+    <ul class="list-unstyled">
+      <li><strong>Player</strong></li>
+      <ul>
+        <li><a href={`${basePath}${lang}/reference/player`}>{lang === 'ja' ? '概要' : lang === 'cn' ? '概述' : 'Overview'}</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/display-object`}>DisplayObject</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/sprite`}>Sprite</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/movie-clip`}>MovieClip</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/shape`}>Shape</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/text-field`}>TextField</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/video`}>Video</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/sound`}>Sound</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/events`}>{lang === 'ja' ? 'イベント' : lang === 'cn' ? '事件' : 'Events'}</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/filters`}>{lang === 'ja' ? 'フィルター' : lang === 'cn' ? '滤镜' : 'Filters'}</a></li>
+        <li><a href={`${basePath}${lang}/reference/player/tween`}>Tween</a></li>
+      </ul>
+      <li><strong>Framework</strong></li>
+      <ul>
+        <li><a href={`${basePath}${lang}/reference/framework`}>{lang === 'ja' ? '概要' : lang === 'cn' ? '概述' : 'Overview'}</a></li>
+        <li><a href={`${basePath}${lang}/reference/framework/view`}>View/ViewModel</a></li>
+        <li><a href={`${basePath}${lang}/reference/framework/routing`}>{lang === 'ja' ? 'ルーティング' : lang === 'cn' ? '路由' : 'Routing'}</a></li>
+        <li><a href={`${basePath}${lang}/reference/framework/config`}>{lang === 'ja' ? '設定ファイル' : lang === 'cn' ? '配置文件' : 'Configuration'}</a></li>
+        <li><a href={`${basePath}${lang}/reference/framework/animation-tool`}>{lang === 'ja' ? 'Animation Tool連携' : lang === 'cn' ? 'Animation Tool集成' : 'Animation Tool Integration'}</a></li>
+      </ul>
+    </ul>
+    <i class="bi bi-list mobile-sub-nav-toggle"></i>
+  </nav>
+)}

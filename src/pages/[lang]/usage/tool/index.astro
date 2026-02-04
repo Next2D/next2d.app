@@ -1,0 +1,105 @@
+---
+import DocsLayout from '../../../../layouts/DocsLayout.astro';
+import { getTranslations, supportedLanguages, isValidLanguage } from '../../../../i18n';
+
+export function getStaticPaths() {
+  return supportedLanguages.map((lang) => ({
+    params: { lang }
+  }));
+}
+
+const { lang } = Astro.params;
+if (!isValidLanguage(lang)) {
+  return Astro.redirect('/ja/usage/tool/');
+}
+
+const t = await getTranslations(lang);
+const basePath = import.meta.env.BASE_URL;
+
+const breadcrumbs = [
+  { label: t.navbar?.home || 'Home', href: `${basePath}${lang}/` },
+  { label: t.main?.['usage-title'] || 'Usage', href: `${basePath}${lang}/usage/` },
+  { label: 'Tool Area' }
+];
+---
+
+<DocsLayout
+  title={t.toolusage?.tool?.title || 'Tool Area'}
+  description={t.toolusage?.tool?.description || ''}
+  lang={lang}
+  t={t}
+  breadcrumbs={breadcrumbs}
+  menuType="usage"
+>
+  <div>
+    <h3>Tool Area</h3>
+    <p>{t.toolusage?.tool?.description || ''}</p>
+
+    <h4 id="transform-tool">{t.toolmenu?.tool?.selection || '選択ツール'}</h4>
+    <p>{t.toolusage?.tool?.transform?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/tool/transform`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+
+    <h4 id="shape-transform-tool">{t.toolmenu?.tool?.['shape-transform'] || 'Shape変形ツール'}</h4>
+    <p>{t.toolusage?.tool?.['shape-transform']?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/tool/shape-transform`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+
+    <h4 id="pen-tool">{t.toolmenu?.tool?.pen || 'ペンツール'}</h4>
+    <p>{t.toolusage?.tool?.pen?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/tool/pen`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+
+    <h4 id="text-tool">{t.toolmenu?.tool?.text || 'テキストツール'}</h4>
+    <p>{t.toolusage?.tool?.text?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/tool/text`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+
+    <h4 id="rectangle-tool">{t.toolmenu?.tool?.rectangle || '短形ツール'}</h4>
+    <p>{t.toolusage?.tool?.rectangle?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/tool/rectangle`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+
+    <h4 id="ellipse-tool">{t.toolmenu?.tool?.ellipse || '楕円ツール'}</h4>
+    <p>{t.toolusage?.tool?.ellipse?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/tool/ellipse`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+
+    <h4 id="rounded-rectangle-tool">{t.toolmenu?.tool?.['rounded-rectangle'] || '角丸矩形ツール'}</h4>
+    <p>{t.toolusage?.tool?.['rounded-rectangle']?.description || ''}</p>
+    <p><a href={`${basePath}${lang}/usage/tool/rounded-rectangle`}>{t.main?.['read-more'] || 'Read more'}</a></p>
+
+    <h4 id="loading-project-data">{t.toolusage?.tool?.loading?.title || 'プロジェクトデータの読込'}</h4>
+    <p>{t.toolusage?.tool?.loading?.description || ''}</p>
+
+    <h4 id="save-project-data">{t.toolusage?.tool?.save?.title || 'プロジェクトデータの保存'}</h4>
+    <p>{t.toolusage?.tool?.save?.description || ''}</p>
+
+    <h4 id="export-tool">{t.toolusage?.tool?.export?.title || '書き出し'}</h4>
+    <p>{t.toolusage?.tool?.export?.description || ''}</p>
+
+    <h4 id="setting-tool">{t.toolusage?.tool?.setting?.title || '設定'}</h4>
+    <p>{t.toolusage?.tool?.setting?.description || ''}</p>
+
+    <h4>- Layers</h4>
+    <div>
+      <h5>{t.toolusage?.tool?.setting?.title1 || ''}</h5>
+      <p>{t.toolusage?.tool?.setting?.description1 || ''}</p>
+
+      <h5>{t.toolusage?.tool?.setting?.title2 || ''}</h5>
+      <p>{t.toolusage?.tool?.setting?.description2 || ''}</p>
+    </div>
+
+    <h4>- Output</h4>
+    <div>
+      <h5>{t.toolusage?.tool?.setting?.title3 || ''}</h5>
+      <p>{t.toolusage?.tool?.setting?.description3 || ''}</p>
+
+      <h5>{t.toolusage?.tool?.setting?.title4 || ''}</h5>
+      <p>{t.toolusage?.tool?.setting?.description4 || ''}</p>
+
+      <h5>{t.toolusage?.tool?.setting?.title5 || ''}</h5>
+      <p>{t.toolusage?.tool?.setting?.description5 || ''}</p>
+
+      <h5>{t.toolusage?.tool?.setting?.title6 || ''}</h5>
+      <p>{t.toolusage?.tool?.setting?.description6 || ''}</p>
+    </div>
+
+    <h4>- Language</h4>
+    <p>{t.toolusage?.tool?.setting?.language || ''}</p>
+  </div>
+</DocsLayout>

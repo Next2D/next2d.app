@@ -1,0 +1,599 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Next2D | TextField</title><meta content="Next2D播放器的功能描述和示例代码" name="description"><meta content="Next2D,Next2D Player,Animation Tool,Next2D Framework" name="keywords"><!-- SEO: Canonical URL --><link rel="canonical" href="https://next2d.app/cn/reference/player/text-field/"><!-- SEO: hreflang for multi-language --><link rel="alternate" hreflang="ja" href="https://next2d.app/ja/reference/player/text-field/"><link rel="alternate" hreflang="en" href="https://next2d.app/en/reference/player/text-field/"><link rel="alternate" hreflang="zh-CN" href="https://next2d.app/cn/reference/player/text-field/"><link rel="alternate" hreflang="x-default" href="https://next2d.app/ja/reference/player/text-field/"><!-- Google / Search Engine Tags --><meta itemprop="name" content="Next2D | TextField"><meta itemprop="description" content="Next2D播放器的功能描述和示例代码"><meta itemprop="image" content="https://next2d.app/assets/img/ogp.png"><!-- Facebook Meta Tags --><meta property="og:url" content="https://next2d.app/cn/reference/player/text-field/"><meta property="og:type" content="website"><meta property="og:title" content="Next2D | TextField"><meta property="og:description" content="Next2D播放器的功能描述和示例代码"><meta property="og:image" content="https://next2d.app/assets/img/ogp.png"><meta property="og:locale" content="zh-CN"><meta property="og:site_name" content="Next2D"><!-- Twitter Meta Tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Next2D"><meta name="twitter:creator" content="@Next2D"><meta name="twitter:title" content="Next2D | TextField"><meta name="twitter:description" content="Next2D播放器的功能描述和示例代码"><meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png"><!-- Theme Color --><meta name="theme-color" content="#5777ba"><!-- Web App Manifest --><link rel="manifest" href="/manifest.json"><!-- JSON-LD Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Next2D","url":"https://next2d.app","description":"Next2D - Rendering Engine, Animation Tool, Underlying Framework","inLanguage":["zh-CN"],"potentialAction":{"@type":"SearchAction","target":"https://next2d.app/{lang}/reference/player/?q={search_term_string}","query-input":"required name=search_term_string"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Next2D","url":"https://next2d.app","logo":"https://next2d.app/assets/img/ogp.png","sameAs":["https://github.com/Next2D"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://next2d.app/cn/"},{"@type":"ListItem","position":2,"name":"Player","item":"https://next2d.app/cn/reference/player/"},{"@type":"ListItem","position":3,"name":"TextField"}]}</script><!-- Favicons --><link href="/assets/img/favicon.png" rel="icon"><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"><!-- Vendor CSS --><link href="/assets/css/vendor/aos.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap-icons.min.css" rel="stylesheet"><!-- Main CSS --><link href="/assets/css/main.css" rel="stylesheet"><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-8GJWF4S3RH");
+    </script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style>.docs-content[data-astro-cid-xt6eahls] h1{font-size:2rem;margin-bottom:1.5rem}.docs-content[data-astro-cid-xt6eahls] h2{font-size:1.5rem;margin-top:2rem;margin-bottom:1rem}.docs-content[data-astro-cid-xt6eahls] h3{font-size:1.25rem;margin-top:1.5rem;margin-bottom:.75rem}.docs-content[data-astro-cid-xt6eahls] pre{background-color:#2a2c30;color:#f8f9fa;border-radius:8px;padding:1rem;overflow-x:auto;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] code{font-family:Monaco,Menlo,monospace;font-size:.9em}.docs-content[data-astro-cid-xt6eahls] table{width:100%;border-collapse:collapse;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] th,.docs-content[data-astro-cid-xt6eahls] td{border:1px solid #ddd;padding:.5rem;text-align:left}.docs-content[data-astro-cid-xt6eahls] th{background-color:#f5f5f5}
+</style></head> <body class="lang-cn">  <header id="header" class="header fixed-top d-flex align-items-center"> <div class="container d-flex align-items-center justify-content-between"> <div id="logo"> <a href="/cn"><img loading="lazy" src="/assets/img/logo.svg" alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework."></a> </div> <nav id="navbar" class="navbar"> <ul class="list-unstyled"> <li><a class="nav-link scrollto" href="/cn/#get-started">首页</a></li> <li><a class="nav-link scrollto" href="/cn/#casestudy">学习案例</a></li> <li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>播放器 (Player)</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/cn/reference/player">参考资料</a></li> <li><a href="/cn/#player">特性</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>动画工具</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/cn/usage">使用方法</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="/cn/#tool">特性</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>框架</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/cn/reference/framework">参考资料</a></li> <li><a href="/cn/#framework">特性</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>语言</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="/en">English</a></li> <li><a href="/ja">日本語</a></li> <li><a href="/cn">简体中文</a></li> </ul> </li> <li class="dropdown"><a class="nav-link"><span>支持我们</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li> </ul> </li> <li><a class="nav-link scrollto" href="/cn/#contact">联系我们</a></li> </ul> <i class="bi bi-list mobile-nav-toggle"></i> </nav> </div> </header> <section class="breadcrumbs"> <div class="container"> <div class="d-flex justify-content-between align-items-center"> <h2>TextField</h2> <ol> <li> <a href="/cn/">首页</a> </li><li> <a href="/cn/reference/player/">Player</a> </li><li> TextField </li> </ol> </div> </div> </section> <section id="references" class="reference-section"> <div class="container" data-aos="fade-up"> <div class="row"> <div class="col-lg-3 col-md-4"> <nav id="sub-navbar" class="list-menu sub-navbar"><ul class="list-unstyled"><li><strong>Player</strong></li><ul><li><a href="/cn/reference/player">概述</a></li><li><a href="/cn/reference/player/display-object">DisplayObject</a></li><li><a href="/cn/reference/player/sprite">Sprite</a></li><li><a href="/cn/reference/player/movie-clip">MovieClip</a></li><li><a href="/cn/reference/player/shape">Shape</a></li><li><a href="/cn/reference/player/text-field">TextField</a></li><li><a href="/cn/reference/player/video">Video</a></li><li><a href="/cn/reference/player/sound">Sound</a></li><li><a href="/cn/reference/player/events">事件</a></li><li><a href="/cn/reference/player/filters">滤镜</a></li><li><a href="/cn/reference/player/tween">Tween</a></li></ul><li><strong>Framework</strong></li><ul><li><a href="/cn/reference/framework">概述</a></li><li><a href="/cn/reference/framework/view">View/ViewModel</a></li><li><a href="/cn/reference/framework/routing">路由</a></li><li><a href="/cn/reference/framework/config">配置文件</a></li><li><a href="/cn/reference/framework/animation-tool">Animation Tool集成</a></li></ul></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav> </div> <div class="col-lg-9 col-md-8">  <div class="docs-content" data-astro-cid-xt6eahls> <h1 id="textfield">TextField</h1>
+<p>TextField 是用于显示和编辑文本的 DisplayObject。它提供从标签显示到输入表单的文本相关功能。</p>
+<h2 id="继承">继承</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">classDiagram</span></span>
+<span class="line"><span style="color:#E1E4E8">    DisplayObject &#x3C;|-- InteractiveObject</span></span>
+<span class="line"><span style="color:#E1E4E8">    InteractiveObject &#x3C;|-- TextField</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    class TextField {</span></span>
+<span class="line"><span style="color:#E1E4E8">        +text: String</span></span>
+<span class="line"><span style="color:#E1E4E8">        +textColor: Number</span></span>
+<span class="line"><span style="color:#E1E4E8">        +type: String</span></span>
+<span class="line"><span style="color:#E1E4E8">        +setTextFormat()</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span></code></pre>
+<h2 id="属性">属性</h2>
+<h3 id="文本相关">文本相关</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><code>text</code></td><td>string</td><td>文本字段中的当前文本字符串</td></tr><tr><td><code>htmlText</code></td><td>string</td><td>包含文本字段内容的 HTML 表示</td></tr><tr><td><code>length</code></td><td>number</td><td>文本字段中的字符数（只读）</td></tr><tr><td><code>maxChars</code></td><td>number</td><td>文本字段可以包含的最大字符数（0 表示无限制）</td></tr><tr><td><code>restrict</code></td><td>string</td><td>指示用户可以输入到文本字段中的字符集</td></tr><tr><td><code>defaultTextFormat</code></td><td>TextFormat</td><td>指定应用于文本的格式</td></tr><tr><td><code>stopIndex</code></td><td>number</td><td>设置文本的任意显示结束位置（默认：-1）</td></tr></tbody></table>
+<h3 id="显示相关">显示相关</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><code>width</code></td><td>number</td><td>显示对象的宽度（像素）</td></tr><tr><td><code>height</code></td><td>number</td><td>显示对象的高度（像素）</td></tr><tr><td><code>textWidth</code></td><td>number</td><td>文本的宽度（像素）（只读）</td></tr><tr><td><code>textHeight</code></td><td>number</td><td>文本的高度（像素）（只读）</td></tr><tr><td><code>autoSize</code></td><td>string</td><td>控制文本字段的自动调整大小和对齐（“none”、“left”、“center”、“right”）</td></tr><tr><td><code>autoFontSize</code></td><td>boolean</td><td>控制文本大小的自动调整大小和对齐（默认：false）</td></tr><tr><td><code>wordWrap</code></td><td>boolean</td><td>表示文本字段是否自动换行的布尔值（默认：false）</td></tr><tr><td><code>multiline</code></td><td>boolean</td><td>指示字段是否为多行文本字段（默认：false）</td></tr><tr><td><code>numLines</code></td><td>number</td><td>文本行数（只读）</td></tr></tbody></table>
+<h3 id="边框和背景相关">边框和背景相关</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><code>background</code></td><td>boolean</td><td>指定文本字段是否具有背景填充（默认：false）</td></tr><tr><td><code>backgroundColor</code></td><td>number</td><td>文本字段背景的颜色（默认：0xffffff）</td></tr><tr><td><code>border</code></td><td>boolean</td><td>指定文本字段是否具有边框（默认：false）</td></tr><tr><td><code>borderColor</code></td><td>number</td><td>文本字段边框的颜色（默认：0x000000）</td></tr></tbody></table>
+<h3 id="轮廓相关">轮廓相关</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><code>thickness</code></td><td>number</td><td>轮廓的文本宽度，可以用 0 禁用（默认：0）</td></tr><tr><td><code>thicknessColor</code></td><td>number</td><td>轮廓文本的十六进制格式颜色（默认：0）</td></tr></tbody></table>
+<h3 id="输入相关">输入相关</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>文本字段的类型（“static”、“dynamic”、“input”）（默认：“static”）</td></tr><tr><td><code>focus</code></td><td>boolean</td><td>文本字段是否具有焦点（默认：false）</td></tr><tr><td><code>focusVisible</code></td><td>boolean</td><td>控制文本字段闪烁线的可见性（默认：false）</td></tr><tr><td><code>focusIndex</code></td><td>number</td><td>文本字段焦点位置的索引（默认：-1）</td></tr><tr><td><code>selectIndex</code></td><td>number</td><td>文本字段选择位置的索引（默认：-1）</td></tr><tr><td><code>compositionStartIndex</code></td><td>number</td><td>文本字段的组合开始索引（默认：-1）</td></tr><tr><td><code>compositionEndIndex</code></td><td>number</td><td>文本字段的组合结束索引（默认：-1）</td></tr></tbody></table>
+<h3 id="滚动相关">滚动相关</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><code>scrollX</code></td><td>number</td><td>x 轴上的滚动位置（默认：0）</td></tr><tr><td><code>scrollY</code></td><td>number</td><td>y 轴上的滚动位置（默认：0）</td></tr><tr><td><code>scrollEnabled</code></td><td>boolean</td><td>控制滚动功能的开/关（默认：true）</td></tr><tr><td><code>xScrollShape</code></td><td>Shape</td><td>用于 x 滚动条显示的 Shape 对象（只读）</td></tr><tr><td><code>yScrollShape</code></td><td>Shape</td><td>用于 y 滚动条显示的 Shape 对象（只读）</td></tr></tbody></table>
+<h2 id="方法">方法</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>方法</th><th>返回值</th><th>说明</th></tr></thead><tbody><tr><td><code>appendText(newText: string)</code></td><td>void</td><td>将 newText 参数指定的字符串附加到文本字段文本的末尾</td></tr><tr><td><code>insertText(newText: string)</code></td><td>void</td><td>将文本添加到文本字段的焦点位置</td></tr><tr><td><code>deleteText()</code></td><td>void</td><td>删除文本字段的选择范围</td></tr><tr><td><code>getLineText(lineIndex: number)</code></td><td>string</td><td>返回 lineIndex 参数指定的行的文本</td></tr><tr><td><code>replaceText(newText: string, beginIndex: number, endIndex: number)</code></td><td>void</td><td>将 beginIndex 和 endIndex 参数指定的字符范围替换为 newText 参数的内容</td></tr><tr><td><code>selectAll()</code></td><td>void</td><td>选择文本字段中的所有文本</td></tr><tr><td><code>copy()</code></td><td>void</td><td>复制文本字段的选择</td></tr><tr><td><code>paste()</code></td><td>void</td><td>将复制的文本粘贴到选择范围</td></tr><tr><td><code>setFocusIndex(stageX: number, stageY: number, selected?: boolean)</code></td><td>void</td><td>设置文本字段的焦点位置</td></tr><tr><td><code>keyDown(event: KeyboardEvent)</code></td><td>void</td><td>处理按键按下事件</td></tr></tbody></table>
+<h2 id="textformat">TextFormat</h2>
+<p>用于设置文本样式的类。</p>
+<h3 id="属性-1">属性</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><code>font</code></td><td>String</td><td>字体名称</td></tr><tr><td><code>size</code></td><td>Number</td><td>字体大小</td></tr><tr><td><code>color</code></td><td>Number</td><td>文本颜色</td></tr><tr><td><code>bold</code></td><td>Boolean</td><td>粗体</td></tr><tr><td><code>italic</code></td><td>Boolean</td><td>斜体</td></tr><tr><td><code>align</code></td><td>String</td><td>对齐（“left”、“center”、“right”）</td></tr><tr><td><code>leading</code></td><td>Number</td><td>行间距（像素）</td></tr><tr><td><code>letterSpacing</code></td><td>Number</td><td>字母间距（像素）</td></tr></tbody></table>
+<h2 id="使用示例">使用示例</h2>
+<h3 id="基本文本显示">基本文本显示</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">TextField</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.text;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> textField</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextField</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.text </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "Hello, Next2D!"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.x </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 100</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.y </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 100</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(textField);</span></span></code></pre>
+<h3 id="应用-textformat">应用 TextFormat</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">TextField</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">TextFormat</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.text;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> textField</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextField</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.text </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "样式文本"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 创建 TextFormat</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> format</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextFormat</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">format.font </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "Arial"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">format.size </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 24</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">format.color </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0x3498db</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">format.bold </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 应用格式</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.</span><span style="color:#B392F0">setTextFormat</span><span style="color:#E1E4E8">(format);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 设置为默认格式</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.defaultTextFormat </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> format;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(textField);</span></span></code></pre>
+<h3 id="自动大小">自动大小</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">TextField</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.text;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> textField</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextField</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.autoSize </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "left"</span><span style="color:#E1E4E8">;  </span><span style="color:#6A737D">// 自动扩展以适应文本</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.text </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "此文本将自动调整字段大小"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(textField);</span></span></code></pre>
+<h3 id="多行文本">多行文本</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">TextField</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.text;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> textField</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextField</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.width </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 200</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.multiline </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.wordWrap </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.text </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "这是多行文本。它将自动换行。"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(textField);</span></span></code></pre>
+<h3 id="输入字段">输入字段</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">TextField</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.text;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> inputField</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextField</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">inputField.type </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "input"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">inputField.width </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 200</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">inputField.height </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 30</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">inputField.border </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">inputField.borderColor </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0xcccccc</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">inputField.background </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">inputField.backgroundColor </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0xffffff</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 占位符替代</span></span>
+<span class="line"><span style="color:#E1E4E8">inputField.text </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> ""</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 输入限制（仅数字）</span></span>
+<span class="line"><span style="color:#E1E4E8">inputField.restrict </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "0-9"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 输入事件</span></span>
+<span class="line"><span style="color:#E1E4E8">inputField.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"change"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"输入值:"</span><span style="color:#E1E4E8">, event.target.text);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(inputField);</span></span></code></pre>
+<h3 id="密码字段">密码字段</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">TextField</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.text;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> passwordField</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextField</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">passwordField.type </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "input"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">passwordField.displayAsPassword </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">passwordField.width </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 200</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">passwordField.height </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 30</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">passwordField.border </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">passwordField.borderColor </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0xcccccc</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(passwordField);</span></span></code></pre>
+<h3 id="html-文本">HTML 文本</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">TextField</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.text;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> textField</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextField</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.width </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 300</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.multiline </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.htmlText </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> '&#x3C;font face="Arial" size="20" color="#3498db">'</span><span style="color:#F97583"> +</span></span>
+<span class="line"><span style="color:#9ECBFF">    '&#x3C;b>粗体文本&#x3C;/b>&#x3C;br/>'</span><span style="color:#F97583"> +</span></span>
+<span class="line"><span style="color:#9ECBFF">    '&#x3C;i>斜体文本&#x3C;/i>&#x3C;br/>'</span><span style="color:#F97583"> +</span></span>
+<span class="line"><span style="color:#9ECBFF">    '&#x3C;font color="#e74c3c">红色文本&#x3C;/font>'</span><span style="color:#F97583"> +</span></span>
+<span class="line"><span style="color:#9ECBFF">    '&#x3C;/font>'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(textField);</span></span></code></pre>
+<h3 id="可滚动文本">可滚动文本</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">TextField</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.text;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> textField</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextField</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.width </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 200</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.height </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 100</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.multiline </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.wordWrap </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.border </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.text </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "长文本...</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">repeat</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 滚动操作</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> scrollUp</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (textField.scrollY </span><span style="color:#F97583">></span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        textField.scrollY </span><span style="color:#F97583">-=</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> scrollDown</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">    textField.scrollY </span><span style="color:#F97583">+=</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(textField);</span></span></code></pre>
+<h3 id="动态文本更新">动态文本更新</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">TextField</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">TextFormat</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.text;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> scoreField</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextField</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">scoreField.autoSize </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "left"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> format</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextFormat</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">format.font </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "Arial"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">format.size </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 32</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">format.color </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0xffffff</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">scoreField.defaultTextFormat </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> format;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> score </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> updateScore</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">points</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    score </span><span style="color:#F97583">+=</span><span style="color:#E1E4E8"> points;</span></span>
+<span class="line"><span style="color:#E1E4E8">    scoreField.text </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "分数: "</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> score;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">updateScore</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(scoreField);</span></span></code></pre>
+<h3 id="文本轮廓效果">文本轮廓效果</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">TextField</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">TextFormat</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.text;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> textField</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextField</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.autoSize </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "left"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> format</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextFormat</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">format.font </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "Arial"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">format.size </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 48</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">format.color </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0xffffff</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.defaultTextFormat </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> format;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">textField.text </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "轮廓文本"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.thickness </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.thicknessColor </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0x000000</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(textField);</span></span></code></pre>
+<h3 id="替换部分文本">替换部分文本</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">TextField</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.text;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> textField</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextField</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.autoSize </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "left"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.text </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "Hello World!"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 将 "World" 替换为 "Next2D"</span></span>
+<span class="line"><span style="color:#E1E4E8">textField.</span><span style="color:#B392F0">replaceText</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Next2D"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">11</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#6A737D">// 结果: "Hello Next2D!"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(textField);</span></span></code></pre>
+<h2 id="事件">事件</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>事件</th><th>说明</th></tr></thead><tbody><tr><td><code>change</code></td><td>文本更改时</td></tr><tr><td><code>focus</code></td><td>获得焦点时</td></tr><tr><td><code>blur</code></td><td>失去焦点时</td></tr><tr><td><code>keyDown</code></td><td>按键按下时</td></tr><tr><td><code>keyUp</code></td><td>按键释放时</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">TextField</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.text;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> inputField</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextField</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">inputField.type </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "input"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 按下 Enter 键时提交表单</span></span>
+<span class="line"><span style="color:#E1E4E8">inputField.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"keyDown"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (event.keyCode </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 13</span><span style="color:#E1E4E8">) {  </span><span style="color:#6A737D">// Enter</span></span>
+<span class="line"><span style="color:#B392F0">        submitForm</span><span style="color:#E1E4E8">(inputField.text);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(inputField);</span></span></code></pre>
+<h2 id="相关">相关</h2>
+<ul>
+<li><a href="/cn/reference/player/display-object">DisplayObject</a></li>
+<li><a href="/cn/reference/player/events">事件系统</a></li>
+</ul> </div>  </div> </div> </div> </section> <footer class="footer" data-aos="fade-up"> <div class="container"> <div class="row"> <div class="col-md-12 col-lg-4"> <div class="footer-logo"> <a class="navbar-brand" href="/cn">Next2D</a> <p> Next2D 源于一个 JavaScript Flash 播放器项目 &quot;swf2js&quot;，旨在提供一个在任何设备上都可以运行的、最快的 2D 引擎。<br>
+Created by Toshiyuki Ienaga.
+</p> </div> <div class="list-sns-menu"> <ul class="list-unstyled"> <li><a href="https://twitter.com/ienagatoshiyuki" target="_blank"><i class="bi bi-twitter"></i></a></li> <li><a href="https://github.com/ienaga" target="_blank"><i class="bi bi-github"></i></a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>播放器 (Player)</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/cn/reference/player">参考资料</a></li> <li><a href="/cn/#player">特性</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>动画制作工具 (Animation Tool)</h4> <ul class="list-unstyled"> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/cn/usage">使用方法</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>框架 (Framework)</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/cn/reference/framework">参考资料</a></li> <li><a href="/cn/#framework">特性</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>关于我们</h4> <ul class="list-unstyled"> <li><a href="/cn/#contact">联系我们</a></li> <li><a href="/cn/privacy">隐私政策</a></li> </ul> </div> </div> </div> </div> <div class="copyrights"> <div class="container"> <p>&copy; Copyrights Next2D. All rights reserved.</p> </div> </div> </footer> <script type="module" src="/assets/DocsLayout.astro_astro_type_script_index_0_lang.yTAR6D4i.js"></script>  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> <!-- Vendor JS --> <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script> <script src="/assets/js/vendor/aos.js"></script> <!-- Main JS --> <script src="/assets/js/main.js"></script> </body> </html> 

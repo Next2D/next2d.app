@@ -1,0 +1,26 @@
+---
+interface Props {
+  lang: string;
+  t: Record<string, any>;
+}
+
+const { lang, t } = Astro.props;
+---
+
+<section id="contributor" class="padd-section">
+
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title text-center">
+      <h2>{t.main?.contributors || 'Contributors'}</h2>
+      <p class="separator">{t.contributor?.description || ''}</p>
+    </div>
+
+    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+      <div id="contributors" class="col-md-12 col-lg-12"></div>
+    </div>
+
+  </div>
+</section>
+
+<script is:inline src="/assets/js/contributors.min.js"></script>

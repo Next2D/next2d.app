@@ -22,7 +22,7 @@ export function rehypeRewriteLinks() {
 
     // Determine the base URL based on file location
     let basePath = '';
-    let lang = 'ja';
+    let lang;
 
     // Extract language and context from file path
     // e.g., /path/to/player/specs/ja/display-object.md

@@ -1,4 +1,57 @@
 {
   "title": "隐私政策",
-  "description": "Next2D隐私政策。了解我们如何收集、使用和披露您的个人信息。"
+  "description": "Next2D隐私政策。了解我们作为开源项目的政策和免责声明。",
+  "lastUpdated": "最后更新：2025年2月5日",
+  "overview": {
+    "title": "概述",
+    "text1": "Next2D（以下简称「本项目」）是一个提供2D渲染引擎、动画工具和框架的开源项目。",
+    "text2": "本网站（https://next2d.app）是一个静态网站，不会直接从用户处收集、存储或处理任何个人信息。"
+  },
+  "openSource": {
+    "title": "开源许可证",
+    "text1": "Next2D软件是根据MIT许可证提供的开源软件。",
+    "text2": "源代码在GitHub（https://github.com/Next2D）上公开，任何人都可以自由使用、复制、修改和分发。"
+  },
+  "noCollection": {
+    "title": "不收集个人信息",
+    "text1": "本网站由静态HTML页面组成，不收集以下信息：",
+    "list1": "姓名、电子邮件地址、实际地址等个人身份信息",
+    "list2": "用户账户信息",
+    "list3": "表单提交数据",
+    "list4": "任何其他个人信息",
+    "text2": "本网站没有用户注册、登录功能或联系表单。"
+  },
+  "thirdParty": {
+    "title": "第三方服务",
+    "text1": "本网站使用以下第三方服务：",
+    "analytics": {
+      "name": "Google Analytics",
+      "text": "用于网站分析。Google Analytics收集匿名数据，并根据Google的隐私政策进行处理。"
+    },
+    "adsense": {
+      "name": "Google AdSense",
+      "text": "用于广告投放。Google AdSense可能会使用Cookie根据用户兴趣显示广告。"
+    },
+    "text2": "有关这些服务的数据收集信息，请参阅其各自的隐私政策。"
+  },
+  "cookies": {
+    "title": "Cookie",
+    "text1": "本网站本身不使用Cookie。但是，上述第三方服务（Google Analytics、Google AdSense）可能会使用Cookie。",
+    "text2": "您可以在浏览器设置中禁用Cookie，但某些功能可能会受到限制。"
+  },
+  "disclaimer": {
+    "title": "免责声明",
+    "text1": "Next2D软件和本网站按「现状」（AS IS）提供。",
+    "text2": "本项目的开发者对因使用或无法使用软件而产生的任何损害不承担责任。这包括但不限于直接、间接、偶然、特殊、惩罚性或后果性损害。",
+    "text3": "软件的使用完全由用户自行承担风险。"
+  },
+  "changes": {
+    "title": "本政策的变更",
+    "text1": "本隐私政策可能会根据需要进行更新。如有重大变更，我们将在本页面上通知您。"
+  },
+  "contact": {
+    "title": "联系我们",
+    "text1": "如果您对本隐私政策有任何疑问，请通过以下方式联系我们：",
+    "email": "developer@next2d.app"
+  }
 }

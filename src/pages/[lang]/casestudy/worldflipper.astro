@@ -32,6 +32,20 @@ const breadcrumbs = [
   lang={lang}
   breadcrumbs={breadcrumbs}
 >
+  <!-- VideoObject Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": t.worldflipper?.title || "WORLD FLIPPER Animation",
+    "description": t.worldflipper?.description || "Animation created with Next2D for WORLD FLIPPER",
+    "thumbnailUrl": `https://next2d.app/assets/img/casestudy/worldflipper/tool_use_image2.png`,
+    "contentUrl": `https://next2d.app/assets/img/casestudy/worldflipper/movie.mp4`,
+    "uploadDate": "2023-01-01",
+    "author": {
+      "@type": "Organization",
+      "name": "Cygames, Inc. / Citail Inc."
+    }
+  })} />
   <Header lang={lang} t={t} />
 
   <Breadcrumbs items={breadcrumbs} />

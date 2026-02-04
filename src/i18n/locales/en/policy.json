@@ -1,4 +1,57 @@
 {
   "title": "Privacy Policy",
-  "description": "Next2D Privacy Policy. Learn about how we collect, use, and disclose your personal information."
+  "description": "Next2D Privacy Policy. Learn about our policies and disclaimers as an open source project.",
+  "lastUpdated": "Last updated: February 5, 2025",
+  "overview": {
+    "title": "Overview",
+    "text1": "Next2D (\"the Project\") is an open source project that provides a 2D rendering engine, animation tool, and framework.",
+    "text2": "This website (https://next2d.app) is a static website and does not collect, store, or process any personal information directly from users."
+  },
+  "openSource": {
+    "title": "Open Source License",
+    "text1": "Next2D software is open source software provided under the MIT License.",
+    "text2": "The source code is available on GitHub (https://github.com/Next2D) and can be freely used, copied, modified, and distributed by anyone."
+  },
+  "noCollection": {
+    "title": "No Personal Information Collection",
+    "text1": "This website consists of static HTML pages and does not collect:",
+    "list1": "Personal identification information such as name, email address, or physical address",
+    "list2": "User account information",
+    "list3": "Form submission data",
+    "list4": "Any other personal information",
+    "text2": "This website does not have user registration, login functionality, or contact forms."
+  },
+  "thirdParty": {
+    "title": "Third-Party Services",
+    "text1": "This website uses the following third-party services:",
+    "analytics": {
+      "name": "Google Analytics",
+      "text": "Used for website analytics. Google Analytics collects anonymized data and processes it in accordance with Google's Privacy Policy."
+    },
+    "adsense": {
+      "name": "Google AdSense",
+      "text": "Used for advertising. Google AdSense may use cookies to display ads based on user interests."
+    },
+    "text2": "For information about data collection by these services, please refer to their respective privacy policies."
+  },
+  "cookies": {
+    "title": "Cookies",
+    "text1": "This website itself does not use cookies. However, the third-party services mentioned above (Google Analytics, Google AdSense) may use cookies.",
+    "text2": "You can disable cookies in your browser settings, but some features may be limited."
+  },
+  "disclaimer": {
+    "title": "Disclaimer",
+    "text1": "Next2D software and this website are provided \"AS IS\".",
+    "text2": "The developers of this project shall not be liable for any damages arising from the use or inability to use the software. This includes, but is not limited to, direct, indirect, incidental, special, punitive, or consequential damages.",
+    "text3": "Use of the software is entirely at the user's own risk."
+  },
+  "changes": {
+    "title": "Changes to This Policy",
+    "text1": "This Privacy Policy may be updated as necessary. If there are significant changes, we will notify you on this page."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "text1": "If you have any questions about this Privacy Policy, please contact us at:",
+    "email": "developer@next2d.app"
+  }
 }

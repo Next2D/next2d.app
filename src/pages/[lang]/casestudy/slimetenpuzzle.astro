@@ -32,6 +32,20 @@ const breadcrumbs = [
   lang={lang}
   breadcrumbs={breadcrumbs}
 >
+  <!-- VideoObject Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": t.slimetenpuzzle?.title || "Slime Ten Puzzle Animation",
+    "description": t.slimetenpuzzle?.description || "Animation created with Next2D for Slime Ten Puzzle",
+    "thumbnailUrl": `https://next2d.app/assets/img/casestudy/slimetenpuzzle/game_image.png`,
+    "contentUrl": `https://next2d.app/assets/img/casestudy/slimetenpuzzle/movie.mp4`,
+    "uploadDate": "2023-01-01",
+    "author": {
+      "@type": "Organization",
+      "name": "Next2D"
+    }
+  })} />
   <Header lang={lang} t={t} />
 
   <Breadcrumbs items={breadcrumbs} />

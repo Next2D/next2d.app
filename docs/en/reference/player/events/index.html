@@ -5,31 +5,41 @@
       gtag("config", "G-8GJWF4S3RH");
     </script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style>.docs-content[data-astro-cid-xt6eahls] h1{font-size:2rem;margin-bottom:1.5rem}.docs-content[data-astro-cid-xt6eahls] h2{font-size:1.5rem;margin-top:2rem;margin-bottom:1rem}.docs-content[data-astro-cid-xt6eahls] h3{font-size:1.25rem;margin-top:1.5rem;margin-bottom:.75rem}.docs-content[data-astro-cid-xt6eahls] pre{background-color:#2a2c30;color:#f8f9fa;border-radius:8px;padding:1rem;overflow-x:auto;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] code{font-family:Monaco,Menlo,monospace;font-size:.9em}.docs-content[data-astro-cid-xt6eahls] table{width:100%;border-collapse:collapse;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] th,.docs-content[data-astro-cid-xt6eahls] td{border:1px solid #ddd;padding:.5rem;text-align:left}.docs-content[data-astro-cid-xt6eahls] th{background-color:#f5f5f5}
 </style></head> <body class>  <header id="header" class="header fixed-top d-flex align-items-center"> <div class="container d-flex align-items-center justify-content-between"> <div id="logo"> <a href="/en"><img loading="lazy" src="/assets/img/logo.svg" alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework."></a> </div> <nav id="navbar" class="navbar"> <ul class="list-unstyled"> <li><a class="nav-link scrollto" href="/en/#get-started">Home</a></li> <li><a class="nav-link scrollto" href="/en/#casestudy">Case Studies</a></li> <li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>Player</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/en/reference/player">Reference</a></li> <li><a href="/en/#player">Features</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>Animation Tool</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/en/usage">Usage</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="/en/#tool">Features</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>Framework</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/en/reference/framework">Reference</a></li> <li><a href="/en/#framework">Features</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>Language</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="/en">English</a></li> <li><a href="/ja">日本語</a></li> <li><a href="/cn">简体中文</a></li> </ul> </li> <li class="dropdown"><a class="nav-link"><span>Support US</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li> </ul> </li> <li><a class="nav-link scrollto" href="/en/#contact">Contact</a></li> </ul> <i class="bi bi-list mobile-nav-toggle"></i> </nav> </div> </header> <section class="breadcrumbs"> <div class="container"> <div class="d-flex justify-content-between align-items-center"> <h2>Event System</h2> <ol> <li> <a href="/en/">Home</a> </li><li> <a href="/en/reference/player/">Player</a> </li><li> Event System </li> </ol> </div> </div> </section> <section id="references" class="reference-section"> <div class="container" data-aos="fade-up"> <div class="row"> <div class="col-lg-3 col-md-4"> <nav id="sub-navbar" class="list-menu sub-navbar"><ul class="list-unstyled"><li><strong>Player</strong></li><ul><li><a href="/en/reference/player">Overview</a></li><li><a href="/en/reference/player/display-object">DisplayObject</a></li><li><a href="/en/reference/player/sprite">Sprite</a></li><li><a href="/en/reference/player/movie-clip">MovieClip</a></li><li><a href="/en/reference/player/shape">Shape</a></li><li><a href="/en/reference/player/text-field">TextField</a></li><li><a href="/en/reference/player/video">Video</a></li><li><a href="/en/reference/player/sound">Sound</a></li><li><a href="/en/reference/player/events">Events</a></li><li><a href="/en/reference/player/filters">Filters</a></li><li><a href="/en/reference/player/tween">Tween</a></li></ul><li><strong>Framework</strong></li><ul><li><a href="/en/reference/framework">Overview</a></li><li><a href="/en/reference/framework/view">View/ViewModel</a></li><li><a href="/en/reference/framework/routing">Routing</a></li><li><a href="/en/reference/framework/config">Configuration</a></li><li><a href="/en/reference/framework/animation-tool">Animation Tool Integration</a></li></ul></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav> </div> <div class="col-lg-9 col-md-8">  <div class="docs-content" data-astro-cid-xt6eahls> <h1 id="event-system">Event System</h1>
-<p>Next2D Player uses an event model similar to Flash Player.</p>
+<p>Next2D Player uses a three-phase event flow mechanism similar to the W3C DOM event model.</p>
 <h2 id="eventdispatcher">EventDispatcher</h2>
 <p>The base class for all event-capable objects.</p>
 <h3 id="addeventlistenertype-listener-usecapture-priority">addEventListener(type, listener, useCapture, priority)</h3>
 <p>Registers an event listener.</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Clicked"</span><span style="color:#E1E4E8">);</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">PointerEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Pointer pressed"</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// Receive in capture phase</span></span>
-<span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, handler, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, handler, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// Specify priority</span></span>
-<span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, handler, </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, handler, </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">);</span></span></code></pre>
 <h3 id="removeeventlistenertype-listener-usecapture">removeEventListener(type, listener, useCapture)</h3>
 <p>Removes an event listener.</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">removeEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, handler);</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">removeEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, handler);</span></span></code></pre>
+<h3 id="removealleventlistenertype-usecapture">removeAllEventListener(type, useCapture)</h3>
+<p>Removes all event listeners of a specific type.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">removeAllEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">);</span></span></code></pre>
 <h3 id="haseventlistenertype">hasEventListener(type)</h3>
 <p>Checks if a listener of the specified type is registered.</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (displayObject.</span><span style="color:#B392F0">hasEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">)) {</span></span>
-<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Click listener is registered"</span><span style="color:#E1E4E8">);</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (displayObject.</span><span style="color:#B392F0">hasEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">)) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Pointer down listener is registered"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="willtriggertype">willTrigger(type)</h3>
+<p>Checks if this object or any ancestor has a listener for the event type.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (displayObject.</span><span style="color:#B392F0">willTrigger</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">)) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"This object or an ancestor has a listener"</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h3 id="dispatcheventevent">dispatchEvent(event)</h3>
 <p>Dispatches an event.</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Event</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Event</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> event</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Event</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"customEvent"</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">dispatchEvent</span><span style="color:#E1E4E8">(event);</span></span></code></pre>
@@ -70,12 +80,7 @@
 
 
 
-
-
-
-
-
-<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>String</td><td>Event type</td></tr><tr><td><code>target</code></td><td>Object</td><td>Event source</td></tr><tr><td><code>currentTarget</code></td><td>Object</td><td>Current listener target</td></tr><tr><td><code>eventPhase</code></td><td>Number</td><td>Event phase</td></tr><tr><td><code>bubbles</code></td><td>Boolean</td><td>Whether bubbles</td></tr><tr><td><code>cancelable</code></td><td>Boolean</td><td>Whether cancelable</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>String</td><td>Event type</td></tr><tr><td><code>target</code></td><td>Object</td><td>Event source</td></tr><tr><td><code>currentTarget</code></td><td>Object</td><td>Current listener target</td></tr><tr><td><code>eventPhase</code></td><td>Number</td><td>Event phase</td></tr><tr><td><code>bubbles</code></td><td>Boolean</td><td>Whether bubbles</td></tr></tbody></table>
 <h3 id="methods">Methods</h3>
 
 
@@ -94,11 +99,7 @@
 
 
 
-
-
-
-
-<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><code>stopPropagation()</code></td><td>Stop propagation</td></tr><tr><td><code>stopImmediatePropagation()</code></td><td>Stop propagation immediately</td></tr><tr><td><code>preventDefault()</code></td><td>Cancel default behavior</td></tr></tbody></table>
+<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><code>stopPropagation()</code></td><td>Stop propagation</td></tr><tr><td><code>stopImmediatePropagation()</code></td><td>Stop propagation immediately</td></tr></tbody></table>
 <h2 id="standard-event-types">Standard Event Types</h2>
 <h3 id="display-list-related">Display List Related</h3>
 
@@ -127,7 +128,7 @@
 
 
 <table><thead><tr><th>Event</th><th>Description</th></tr></thead><tbody><tr><td><code>added</code></td><td>Added to DisplayObjectContainer</td></tr><tr><td><code>addedToStage</code></td><td>Added to Stage</td></tr><tr><td><code>removed</code></td><td>Removed from DisplayObjectContainer</td></tr><tr><td><code>removedFromStage</code></td><td>Removed from Stage</td></tr></tbody></table>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">sprite.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"addedToStage"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#E1E4E8">sprite.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"addedToStage"</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Added to stage"</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
 <h3 id="timeline-related">Timeline Related</h3>
@@ -153,7 +154,7 @@
 
 
 <table><thead><tr><th>Event</th><th>Description</th></tr></thead><tbody><tr><td><code>enterFrame</code></td><td>Occurs each frame</td></tr><tr><td><code>frameConstructed</code></td><td>Frame construction complete</td></tr><tr><td><code>exitFrame</code></td><td>When leaving frame</td></tr></tbody></table>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">movieClip.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"enterFrame"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#E1E4E8">movieClip.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"enterFrame"</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#6A737D">    // Processing executed every frame</span></span>
 <span class="line"><span style="color:#B392F0">    updatePosition</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
@@ -179,76 +180,91 @@
 
 
 
-<table><thead><tr><th>Event</th><th>Description</th></tr></thead><tbody><tr><td><code>complete</code></td><td>Load complete</td></tr><tr><td><code>progress</code></td><td>Load progress</td></tr><tr><td><code>ioError</code></td><td>IO error</td></tr></tbody></table>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Loader</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+
+
+
+
+<table><thead><tr><th>Event</th><th>Description</th></tr></thead><tbody><tr><td><code>complete</code></td><td>Load complete</td></tr><tr><td><code>progress</code></td><td>Load progress</td></tr><tr><td><code>ioError</code></td><td>IO error</td></tr><tr><td><code>httpStatus</code></td><td>HTTP status received</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Loader</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">URLRequest</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.net;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> loader</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Loader</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">loader.contentLoaderInfo.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"complete"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> content</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> event.currentTarget.content;</span></span>
-<span class="line"><span style="color:#E1E4E8">    stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(content);</span></span>
-<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"><span style="color:#6A737D">// Loading with async/await</span></span>
+<span class="line"><span style="color:#F97583">await</span><span style="color:#E1E4E8"> loader.</span><span style="color:#B392F0">load</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">new</span><span style="color:#B392F0"> URLRequest</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"animation.json"</span><span style="color:#E1E4E8">));</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> content</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> loader.content;</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(content);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">loader.contentLoaderInfo.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"progress"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#6A737D">// Using progress events</span></span>
+<span class="line"><span style="color:#E1E4E8">loader.contentLoaderInfo.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"progress"</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> percent</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (event.bytesLoaded </span><span style="color:#F97583">/</span><span style="color:#E1E4E8"> event.bytesTotal) </span><span style="color:#F97583">*</span><span style="color:#79B8FF"> 100</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(percent </span><span style="color:#F97583">+</span><span style="color:#9ECBFF"> "% loaded"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`${</span><span style="color:#E1E4E8">percent</span><span style="color:#9ECBFF">}% loaded`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h2 id="pointer-events">Pointer Events</h2>
+<p>PointerEvent handles pointer device interactions (mouse, pen, touch) in a unified way.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Event</th><th>Constant</th><th>Description</th></tr></thead><tbody><tr><td><code>pointerDown</code></td><td><code>PointerEvent.POINTER_DOWN</code></td><td>Button press started</td></tr><tr><td><code>pointerUp</code></td><td><code>PointerEvent.POINTER_UP</code></td><td>Button released</td></tr><tr><td><code>pointerMove</code></td><td><code>PointerEvent.POINTER_MOVE</code></td><td>Pointer coordinates changed</td></tr><tr><td><code>pointerOver</code></td><td><code>PointerEvent.POINTER_OVER</code></td><td>Pointer entered hit test boundary</td></tr><tr><td><code>pointerOut</code></td><td><code>PointerEvent.POINTER_OUT</code></td><td>Pointer left hit test boundary</td></tr><tr><td><code>pointerLeave</code></td><td><code>PointerEvent.POINTER_LEAVE</code></td><td>Pointer left element area</td></tr><tr><td><code>pointerCancel</code></td><td><code>PointerEvent.POINTER_CANCEL</code></td><td>Pointer interaction canceled</td></tr><tr><td><code>doubleClick</code></td><td><code>PointerEvent.DOUBLE_CLICK</code></td><td>Double-click/tap occurred</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">PointerEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">sprite.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Pointer down:"</span><span style="color:#E1E4E8">, event.localX, event.localY);</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">loader.</span><span style="color:#B392F0">load</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">new</span><span style="color:#B392F0"> URLRequest</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"animation.json"</span><span style="color:#E1E4E8">));</span></span></code></pre>
-<h2 id="mouse-events">Mouse Events</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>Event</th><th>Description</th></tr></thead><tbody><tr><td><code>click</code></td><td>Click</td></tr><tr><td><code>doubleClick</code></td><td>Double click</td></tr><tr><td><code>mouseDown</code></td><td>Mouse button pressed</td></tr><tr><td><code>mouseUp</code></td><td>Mouse button released</td></tr><tr><td><code>mouseMove</code></td><td>Mouse move</td></tr><tr><td><code>mouseOver</code></td><td>Mouse over</td></tr><tr><td><code>mouseOut</code></td><td>Mouse out</td></tr><tr><td><code>rollOver</code></td><td>Roll over</td></tr><tr><td><code>rollOut</code></td><td>Roll out</td></tr></tbody></table>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">sprite.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Click position:"</span><span style="color:#E1E4E8">, event.localX, event.localY);</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_MOVE</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Pointer move:"</span><span style="color:#E1E4E8">, event.stageX, event.stageY);</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">sprite.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"mouseMove"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Mouse position:"</span><span style="color:#E1E4E8">, event.stageX, event.stageY);</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">DOUBLE_CLICK</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Double click"</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
 <h2 id="keyboard-events">Keyboard Events</h2>
 
@@ -268,8 +284,13 @@
 
 
 
-<table><thead><tr><th>Event</th><th>Description</th></tr></thead><tbody><tr><td><code>keyDown</code></td><td>Key pressed</td></tr><tr><td><code>keyUp</code></td><td>Key released</td></tr></tbody></table>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"keyDown"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+
+
+
+<table><thead><tr><th>Event</th><th>Constant</th><th>Description</th></tr></thead><tbody><tr><td><code>keyDown</code></td><td><code>KeyboardEvent.KEY_DOWN</code></td><td>Key pressed</td></tr><tr><td><code>keyUp</code></td><td><code>KeyboardEvent.KEY_UP</code></td><td>Key released</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">KeyboardEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(KeyboardEvent.</span><span style="color:#79B8FF">KEY_DOWN</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Key code:"</span><span style="color:#E1E4E8">, event.keyCode);</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">    switch</span><span style="color:#E1E4E8"> (event.keyCode) {</span></span>
@@ -281,8 +302,112 @@
 <span class="line"><span style="color:#F97583">            break</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h2 id="focus-events">Focus Events</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Event</th><th>Constant</th><th>Description</th></tr></thead><tbody><tr><td><code>focusIn</code></td><td><code>FocusEvent.FOCUS_IN</code></td><td>Element received focus</td></tr><tr><td><code>focusOut</code></td><td><code>FocusEvent.FOCUS_OUT</code></td><td>Element lost focus</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">FocusEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">textField.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(FocusEvent.</span><span style="color:#79B8FF">FOCUS_IN</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Received focus"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h2 id="wheel-events">Wheel Events</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Event</th><th>Constant</th><th>Description</th></tr></thead><tbody><tr><td><code>wheel</code></td><td><code>WheelEvent.WHEEL</code></td><td>Mouse wheel rotated</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">WheelEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(WheelEvent.</span><span style="color:#79B8FF">WHEEL</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Wheel rotated"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h2 id="video-events">Video Events</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Event</th><th>Constant</th><th>Description</th></tr></thead><tbody><tr><td><code>play</code></td><td><code>VideoEvent.PLAY</code></td><td>Play requested</td></tr><tr><td><code>playing</code></td><td><code>VideoEvent.PLAYING</code></td><td>Playback started</td></tr><tr><td><code>pause</code></td><td><code>VideoEvent.PAUSE</code></td><td>Paused</td></tr><tr><td><code>seek</code></td><td><code>VideoEvent.SEEK</code></td><td>Seek operation</td></tr></tbody></table>
+<h2 id="job-events">Job Events</h2>
+<p>Events for Tween animations.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Event</th><th>Constant</th><th>Description</th></tr></thead><tbody><tr><td><code>update</code></td><td><code>JobEvent.UPDATE</code></td><td>Property updated</td></tr><tr><td><code>stop</code></td><td><code>JobEvent.STOP</code></td><td>Job stopped</td></tr></tbody></table>
 <h2 id="custom-events">Custom Events</h2>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Event</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Event</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// Define custom event</span></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> customEvent</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Event</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"gameOver"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
@@ -291,21 +416,23 @@
 <span class="line"><span style="color:#E1E4E8">gameManager.</span><span style="color:#B392F0">dispatchEvent</span><span style="color:#E1E4E8">(customEvent);</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// Listen to event</span></span>
-<span class="line"><span style="color:#E1E4E8">gameManager.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"gameOver"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">gameManager.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"gameOver"</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#B392F0">    showGameOverScreen</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
 <h2 id="event-propagation">Event Propagation</h2>
 <p>Events propagate in three phases:</p>
 <ol>
-<li><strong>Capture phase</strong>: From root to target</li>
-<li><strong>Target phase</strong>: Processed at target</li>
-<li><strong>Bubbling phase</strong>: From target to root</li>
+<li><strong>Capture phase</strong>: From root to target (eventPhase = 1)</li>
+<li><strong>Target phase</strong>: Processed at target (eventPhase = 2)</li>
+<li><strong>Bubbling phase</strong>: From target to root (eventPhase = 3)</li>
 </ol>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Process in capture phase</span></span>
-<span class="line"><span style="color:#E1E4E8">parent.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, handler, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">PointerEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Process in capture phase</span></span>
+<span class="line"><span style="color:#E1E4E8">parent.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, handler, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// Process in bubbling phase (default)</span></span>
-<span class="line"><span style="color:#E1E4E8">child.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, handler, </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<span class="line"><span style="color:#E1E4E8">child.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, handler, </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span></code></pre>
 <h2 id="related">Related</h2>
 <ul>
 <li><a href="/en/reference/player/display-object">DisplayObject</a></li>

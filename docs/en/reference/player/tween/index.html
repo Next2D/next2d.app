@@ -5,323 +5,436 @@
       gtag("config", "G-8GJWF4S3RH");
     </script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style>.docs-content[data-astro-cid-xt6eahls] h1{font-size:2rem;margin-bottom:1.5rem}.docs-content[data-astro-cid-xt6eahls] h2{font-size:1.5rem;margin-top:2rem;margin-bottom:1rem}.docs-content[data-astro-cid-xt6eahls] h3{font-size:1.25rem;margin-top:1.5rem;margin-bottom:.75rem}.docs-content[data-astro-cid-xt6eahls] pre{background-color:#2a2c30;color:#f8f9fa;border-radius:8px;padding:1rem;overflow-x:auto;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] code{font-family:Monaco,Menlo,monospace;font-size:.9em}.docs-content[data-astro-cid-xt6eahls] table{width:100%;border-collapse:collapse;margin:1rem 0}.docs-content[data-astro-cid-xt6eahls] th,.docs-content[data-astro-cid-xt6eahls] td{border:1px solid #ddd;padding:.5rem;text-align:left}.docs-content[data-astro-cid-xt6eahls] th{background-color:#f5f5f5}
 </style></head> <body class>  <header id="header" class="header fixed-top d-flex align-items-center"> <div class="container d-flex align-items-center justify-content-between"> <div id="logo"> <a href="/en"><img loading="lazy" src="/assets/img/logo.svg" alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework."></a> </div> <nav id="navbar" class="navbar"> <ul class="list-unstyled"> <li><a class="nav-link scrollto" href="/en/#get-started">Home</a></li> <li><a class="nav-link scrollto" href="/en/#casestudy">Case Studies</a></li> <li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>Player</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/en/reference/player">Reference</a></li> <li><a href="/en/#player">Features</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>Animation Tool</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/en/usage">Usage</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="/en/#tool">Features</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>Framework</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/en/reference/framework">Reference</a></li> <li><a href="/en/#framework">Features</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>Language</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="/en">English</a></li> <li><a href="/ja">日本語</a></li> <li><a href="/cn">简体中文</a></li> </ul> </li> <li class="dropdown"><a class="nav-link"><span>Support US</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li> </ul> </li> <li><a class="nav-link scrollto" href="/en/#contact">Contact</a></li> </ul> <i class="bi bi-list mobile-nav-toggle"></i> </nav> </div> </header> <section class="breadcrumbs"> <div class="container"> <div class="d-flex justify-content-between align-items-center"> <h2>Tween Animation</h2> <ol> <li> <a href="/en/">Home</a> </li><li> <a href="/en/reference/player/">Player</a> </li><li> Tween Animation </li> </ol> </div> </div> </section> <section id="references" class="reference-section"> <div class="container" data-aos="fade-up"> <div class="row"> <div class="col-lg-3 col-md-4"> <nav id="sub-navbar" class="list-menu sub-navbar"><ul class="list-unstyled"><li><strong>Player</strong></li><ul><li><a href="/en/reference/player">Overview</a></li><li><a href="/en/reference/player/display-object">DisplayObject</a></li><li><a href="/en/reference/player/sprite">Sprite</a></li><li><a href="/en/reference/player/movie-clip">MovieClip</a></li><li><a href="/en/reference/player/shape">Shape</a></li><li><a href="/en/reference/player/text-field">TextField</a></li><li><a href="/en/reference/player/video">Video</a></li><li><a href="/en/reference/player/sound">Sound</a></li><li><a href="/en/reference/player/events">Events</a></li><li><a href="/en/reference/player/filters">Filters</a></li><li><a href="/en/reference/player/tween">Tween</a></li></ul><li><strong>Framework</strong></li><ul><li><a href="/en/reference/framework">Overview</a></li><li><a href="/en/reference/framework/view">View/ViewModel</a></li><li><a href="/en/reference/framework/routing">Routing</a></li><li><a href="/en/reference/framework/config">Configuration</a></li><li><a href="/en/reference/framework/animation-tool">Animation Tool Integration</a></li></ul></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav> </div> <div class="col-lg-9 col-md-8">  <div class="docs-content" data-astro-cid-xt6eahls> <h1 id="tween-animation">Tween Animation</h1>
-<p>Next2D Player allows you to implement programmatic animations (Tweens). You can smoothly animate properties like position, size, and transparency.</p>
+<p>Next2D Player allows you to implement programmatic animations using the Tween system from the <code>@next2d/ui</code> package. You can smoothly animate properties like position, size, and transparency.</p>
 <h2 id="basic-tween-concepts">Basic Tween Concepts</h2>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">flowchart LR</span></span>
 <span class="line"><span style="color:#E1E4E8">    Start["Start Value"] -->|Easing Function| Progress["Progress 0→1"]</span></span>
 <span class="line"><span style="color:#E1E4E8">    Progress --> End["End Value"]</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#E1E4E8">    subgraph Easing["Easing"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        Linear["Linear"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        EaseIn["EaseIn"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        EaseOut["EaseOut"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        EaseInOut["EaseInOut"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        Linear["linear"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        InQuad["inQuad"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        OutQuad["outQuad"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        InOutQuad["inOutQuad"]</span></span>
 <span class="line"><span style="color:#E1E4E8">    end</span></span></code></pre>
-<h2 id="basic-tween-class">Basic Tween Class</h2>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Tween</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#F97583">    constructor</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">target</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">options</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._target </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> target;</span></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._properties </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {};</span></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._duration </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> options.duration;</span></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._easing </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> options.easing </span><span style="color:#F97583">||</span><span style="color:#E1E4E8"> Easing.linear;</span></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._startTime </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._isPlaying </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._onUpdate </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> options.onUpdate;</span></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._onComplete </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> options.onComplete;</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<h2 id="tweenadd">Tween.add()</h2>
+<p>Use the <code>Tween.add()</code> method to create a <code>Job</code> instance for animation.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Tween</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Easing</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.ui;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#B392F0">    to</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">properties</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#F97583">        for</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">const</span><span style="color:#79B8FF"> key</span><span style="color:#F97583"> in</span><span style="color:#E1E4E8"> properties) {</span></span>
-<span class="line"><span style="color:#79B8FF">            this</span><span style="color:#E1E4E8">._properties[key] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#E1E4E8">                start: </span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">._target[key],</span></span>
-<span class="line"><span style="color:#E1E4E8">                end: properties[key]</span></span>
-<span class="line"><span style="color:#E1E4E8">            };</span></span>
-<span class="line"><span style="color:#E1E4E8">        }</span></span>
-<span class="line"><span style="color:#F97583">        return</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> job</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Tween.</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    target,    </span><span style="color:#6A737D">// Target object to animate</span></span>
+<span class="line"><span style="color:#E1E4E8">    from,      </span><span style="color:#6A737D">// Starting property values</span></span>
+<span class="line"><span style="color:#E1E4E8">    to,        </span><span style="color:#6A737D">// Ending property values</span></span>
+<span class="line"><span style="color:#E1E4E8">    delay,     </span><span style="color:#6A737D">// Delay in seconds (default: 0)</span></span>
+<span class="line"><span style="color:#E1E4E8">    duration,  </span><span style="color:#6A737D">// Animation duration in seconds (default: 1)</span></span>
+<span class="line"><span style="color:#E1E4E8">    ease       </span><span style="color:#6A737D">// Easing function (default: linear)</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#B392F0">    play</span><span style="color:#E1E4E8">() {</span></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._startTime </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Date.</span><span style="color:#B392F0">now</span><span style="color:#E1E4E8">();</span></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._isPlaying </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">_update</span><span style="color:#E1E4E8">();</span></span>
-<span class="line"><span style="color:#F97583">        return</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#B392F0">    _update</span><span style="color:#E1E4E8">() {</span></span>
-<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> self</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">._isPlaying) </span><span style="color:#F97583">return</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> elapsed</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Date.</span><span style="color:#B392F0">now</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">._startTime;</span></span>
-<span class="line"><span style="color:#F97583">        let</span><span style="color:#E1E4E8"> progress </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Math.</span><span style="color:#B392F0">min</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, elapsed </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">._duration);</span></span>
-<span class="line"><span style="color:#E1E4E8">        progress </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">_easing</span><span style="color:#E1E4E8">(progress);</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D">        // Update properties</span></span>
-<span class="line"><span style="color:#F97583">        for</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">const</span><span style="color:#79B8FF"> key</span><span style="color:#F97583"> in</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">._properties) {</span></span>
-<span class="line"><span style="color:#F97583">            const</span><span style="color:#79B8FF"> prop</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">._properties[key];</span></span>
-<span class="line"><span style="color:#79B8FF">            this</span><span style="color:#E1E4E8">._target[key] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> prop.start </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> (prop.end </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> prop.start) </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> progress;</span></span>
-<span class="line"><span style="color:#E1E4E8">        }</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">._onUpdate) {</span></span>
-<span class="line"><span style="color:#79B8FF">            this</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">_onUpdate</span><span style="color:#E1E4E8">();</span></span>
-<span class="line"><span style="color:#E1E4E8">        }</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (elapsed </span><span style="color:#F97583">&#x3C;</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">._duration) {</span></span>
-<span class="line"><span style="color:#B392F0">            requestAnimationFrame</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() { self.</span><span style="color:#B392F0">_update</span><span style="color:#E1E4E8">(); });</span></span>
-<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#79B8FF">            this</span><span style="color:#E1E4E8">._isPlaying </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">._onComplete) {</span></span>
-<span class="line"><span style="color:#79B8FF">                this</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">_onComplete</span><span style="color:#E1E4E8">();</span></span>
-<span class="line"><span style="color:#E1E4E8">            }</span></span>
-<span class="line"><span style="color:#E1E4E8">        }</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#B392F0">    stop</span><span style="color:#E1E4E8">() {</span></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._isPlaying </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<span class="line"><span style="color:#6A737D">// Start the animation</span></span>
+<span class="line"><span style="color:#E1E4E8">job.</span><span style="color:#B392F0">start</span><span style="color:#E1E4E8">();</span></span></code></pre>
+<h3 id="parameters">Parameters</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>target</code></td><td>any</td><td>-</td><td>Target object to animate</td></tr><tr><td><code>from</code></td><td>object</td><td>-</td><td>Starting property values</td></tr><tr><td><code>to</code></td><td>object</td><td>-</td><td>Ending property values</td></tr><tr><td><code>delay</code></td><td>number</td><td>0</td><td>Delay before animation starts (seconds)</td></tr><tr><td><code>duration</code></td><td>number</td><td>1</td><td>Animation duration (seconds)</td></tr><tr><td><code>ease</code></td><td>Function | null</td><td>null</td><td>Easing function (defaults to linear)</td></tr></tbody></table>
+<h3 id="return-value">Return Value</h3>
+<p><code>Job</code> - Animation job instance</p>
+<h2 id="job-class">Job Class</h2>
+<p>The Job class manages individual animation jobs. It extends EventDispatcher.</p>
+<h3 id="methods">Methods</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Return</th><th>Description</th></tr></thead><tbody><tr><td><code>start()</code></td><td>void</td><td>Starts the animation</td></tr><tr><td><code>stop()</code></td><td>void</td><td>Stops the animation</td></tr><tr><td><code>chain(nextJob: Job | null)</code></td><td>Job | null</td><td>Chains another job to start after this one completes</td></tr></tbody></table>
+<h3 id="properties">Properties</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>target</code></td><td>any</td><td>Target object</td></tr><tr><td><code>from</code></td><td>object</td><td>Start values</td></tr><tr><td><code>to</code></td><td>object</td><td>End values</td></tr><tr><td><code>delay</code></td><td>number</td><td>Delay time</td></tr><tr><td><code>duration</code></td><td>number</td><td>Duration time</td></tr><tr><td><code>ease</code></td><td>Function</td><td>Easing function</td></tr><tr><td><code>currentTime</code></td><td>number</td><td>Current animation time</td></tr><tr><td><code>nextJob</code></td><td>Job | null</td><td>Next chained job</td></tr></tbody></table>
+<h3 id="events">Events</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Event</th><th>Description</th></tr></thead><tbody><tr><td><code>enterFrame</code></td><td>Dispatched on each animation frame</td></tr><tr><td><code>complete</code></td><td>Dispatched when animation completes</td></tr></tbody></table>
 <h2 id="easing-functions">Easing Functions</h2>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> Easing</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#6A737D">    // Linear</span></span>
-<span class="line"><span style="color:#B392F0">    linear</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">t</span><span style="color:#E1E4E8">) { </span><span style="color:#F97583">return</span><span style="color:#E1E4E8"> t; },</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D">    // Acceleration</span></span>
-<span class="line"><span style="color:#B392F0">    easeInQuad</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">t</span><span style="color:#E1E4E8">) { </span><span style="color:#F97583">return</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t; },</span></span>
-<span class="line"><span style="color:#B392F0">    easeInCubic</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">t</span><span style="color:#E1E4E8">) { </span><span style="color:#F97583">return</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t; },</span></span>
-<span class="line"><span style="color:#B392F0">    easeInQuart</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">t</span><span style="color:#E1E4E8">) { </span><span style="color:#F97583">return</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t; },</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D">    // Deceleration</span></span>
-<span class="line"><span style="color:#B392F0">    easeOutQuad</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">t</span><span style="color:#E1E4E8">) { </span><span style="color:#F97583">return</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF">2</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8"> t); },</span></span>
-<span class="line"><span style="color:#B392F0">    easeOutCubic</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">t</span><span style="color:#E1E4E8">) { </span><span style="color:#F97583">return</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">--</span><span style="color:#E1E4E8">t) </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">; },</span></span>
-<span class="line"><span style="color:#B392F0">    easeOutQuart</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">t</span><span style="color:#E1E4E8">) { </span><span style="color:#F97583">return</span><span style="color:#79B8FF"> 1</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">--</span><span style="color:#E1E4E8">t) </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t; },</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D">    // Acceleration → Deceleration</span></span>
-<span class="line"><span style="color:#B392F0">    easeInOutQuad</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">t</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">&#x3C;</span><span style="color:#79B8FF"> 0.5</span><span style="color:#F97583"> ?</span><span style="color:#79B8FF"> 2</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">:</span><span style="color:#F97583"> -</span><span style="color:#79B8FF">1</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF">4</span><span style="color:#F97583"> -</span><span style="color:#79B8FF"> 2</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> t) </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t;</span></span>
-<span class="line"><span style="color:#E1E4E8">    },</span></span>
-<span class="line"><span style="color:#B392F0">    easeInOutCubic</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">t</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">&#x3C;</span><span style="color:#79B8FF"> 0.5</span><span style="color:#F97583"> ?</span><span style="color:#79B8FF"> 4</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> (t </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF">2</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF">2</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">    },</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D">    // Bounce</span></span>
-<span class="line"><span style="color:#B392F0">    easeOutBounce</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">t</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (t </span><span style="color:#F97583">&#x3C;</span><span style="color:#79B8FF"> 1</span><span style="color:#F97583"> /</span><span style="color:#79B8FF"> 2.75</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#F97583">            return</span><span style="color:#79B8FF"> 7.5625</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t;</span></span>
-<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">else</span><span style="color:#F97583"> if</span><span style="color:#E1E4E8"> (t </span><span style="color:#F97583">&#x3C;</span><span style="color:#79B8FF"> 2</span><span style="color:#F97583"> /</span><span style="color:#79B8FF"> 2.75</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#F97583">            return</span><span style="color:#79B8FF"> 7.5625</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> (t </span><span style="color:#F97583">-=</span><span style="color:#79B8FF"> 1.5</span><span style="color:#F97583"> /</span><span style="color:#79B8FF"> 2.75</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 0.75</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">else</span><span style="color:#F97583"> if</span><span style="color:#E1E4E8"> (t </span><span style="color:#F97583">&#x3C;</span><span style="color:#79B8FF"> 2.5</span><span style="color:#F97583"> /</span><span style="color:#79B8FF"> 2.75</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#F97583">            return</span><span style="color:#79B8FF"> 7.5625</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> (t </span><span style="color:#F97583">-=</span><span style="color:#79B8FF"> 2.25</span><span style="color:#F97583"> /</span><span style="color:#79B8FF"> 2.75</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 0.9375</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#F97583">            return</span><span style="color:#79B8FF"> 7.5625</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> (t </span><span style="color:#F97583">-=</span><span style="color:#79B8FF"> 2.625</span><span style="color:#F97583"> /</span><span style="color:#79B8FF"> 2.75</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 0.984375</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">        }</span></span>
-<span class="line"><span style="color:#E1E4E8">    },</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D">    // Back (overshoots then returns)</span></span>
-<span class="line"><span style="color:#B392F0">    easeOutBack</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">t</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> c1</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 1.70158</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> c3</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> c1 </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#F97583">        return</span><span style="color:#79B8FF"> 1</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> c3 </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> Math.</span><span style="color:#B392F0">pow</span><span style="color:#E1E4E8">(t </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> c1 </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> Math.</span><span style="color:#B392F0">pow</span><span style="color:#E1E4E8">(t </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">);</span></span>
-<span class="line"><span style="color:#E1E4E8">    },</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D">    // Elastic (rubber-like motion)</span></span>
-<span class="line"><span style="color:#B392F0">    easeOutElastic</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">t</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (t </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 0</span><span style="color:#F97583"> ||</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">return</span><span style="color:#E1E4E8"> t;</span></span>
-<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> Math.</span><span style="color:#B392F0">pow</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">-</span><span style="color:#79B8FF">10</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> t) </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> Math.</span><span style="color:#B392F0">sin</span><span style="color:#E1E4E8">((t </span><span style="color:#F97583">*</span><span style="color:#79B8FF"> 10</span><span style="color:#F97583"> -</span><span style="color:#79B8FF"> 0.75</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF">2</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> Math.</span><span style="color:#79B8FF">PI</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 3</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
-<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<p>The <code>Easing</code> class provides 32 easing functions across 11 easing types with In, Out, and InOut variants.</p>
+<h3 id="linear">Linear</h3>
+<ul>
+<li><code>Easing.linear</code> - Constant speed</li>
+</ul>
+<h3 id="quadratic-quad">Quadratic (Quad)</h3>
+<ul>
+<li><code>Easing.inQuad</code> - Accelerating from zero velocity</li>
+<li><code>Easing.outQuad</code> - Decelerating to zero velocity</li>
+<li><code>Easing.inOutQuad</code> - Acceleration until halfway, then deceleration</li>
+</ul>
+<h3 id="cubic">Cubic</h3>
+<ul>
+<li><code>Easing.inCubic</code> / <code>Easing.outCubic</code> / <code>Easing.inOutCubic</code></li>
+</ul>
+<h3 id="quartic-quart">Quartic (Quart)</h3>
+<ul>
+<li><code>Easing.inQuart</code> / <code>Easing.outQuart</code> / <code>Easing.inOutQuart</code></li>
+</ul>
+<h3 id="quintic-quint">Quintic (Quint)</h3>
+<ul>
+<li><code>Easing.inQuint</code> / <code>Easing.outQuint</code> / <code>Easing.inOutQuint</code></li>
+</ul>
+<h3 id="sinusoidal-sine">Sinusoidal (Sine)</h3>
+<ul>
+<li><code>Easing.inSine</code> / <code>Easing.outSine</code> / <code>Easing.inOutSine</code></li>
+</ul>
+<h3 id="exponential-expo">Exponential (Expo)</h3>
+<ul>
+<li><code>Easing.inExpo</code> / <code>Easing.outExpo</code> / <code>Easing.inOutExpo</code></li>
+</ul>
+<h3 id="circular-circ">Circular (Circ)</h3>
+<ul>
+<li><code>Easing.inCirc</code> / <code>Easing.outCirc</code> / <code>Easing.inOutCirc</code></li>
+</ul>
+<h3 id="elastic">Elastic</h3>
+<ul>
+<li><code>Easing.inElastic</code> / <code>Easing.outElastic</code> / <code>Easing.inOutElastic</code></li>
+</ul>
+<h3 id="back">Back</h3>
+<ul>
+<li><code>Easing.inBack</code> / <code>Easing.outBack</code> / <code>Easing.inOutBack</code></li>
+</ul>
+<h3 id="bounce">Bounce</h3>
+<ul>
+<li><code>Easing.inBounce</code> / <code>Easing.outBounce</code> / <code>Easing.inOutBounce</code></li>
+</ul>
+<h3 id="easing-function-parameters">Easing Function Parameters</h3>
+<p>All easing functions accept four parameters:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#B392F0">ease</span><span style="color:#E1E4E8">(t: number, b: number, c: number, d: number): number</span></span></code></pre>
+<ul>
+<li><code>t</code> - Current time (0 to d)</li>
+<li><code>b</code> - Beginning value</li>
+<li><code>c</code> - Change in value (end value - beginning value)</li>
+<li><code>d</code> - Duration</li>
+</ul>
 <h2 id="usage-examples">Usage Examples</h2>
 <h3 id="basic-movement-animation">Basic Movement Animation</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Sprite</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Tween</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Easing</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.ui;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> sprite</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Sprite</span><span style="color:#E1E4E8">();</span></span>
-<span class="line"><span style="color:#E1E4E8">sprite.x </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">sprite.y </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 100</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(sprite);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A737D">// Move right</span></span>
-<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> Tween</span><span style="color:#E1E4E8">(sprite, { duration: </span><span style="color:#79B8FF">1000</span><span style="color:#E1E4E8">, easing: Easing.easeOutQuad })</span></span>
-<span class="line"><span style="color:#E1E4E8">    .</span><span style="color:#B392F0">to</span><span style="color:#E1E4E8">({ x: </span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8"> })</span></span>
-<span class="line"><span style="color:#E1E4E8">    .</span><span style="color:#B392F0">play</span><span style="color:#E1E4E8">();</span></span></code></pre>
+<span class="line"><span style="color:#6A737D">// Move x from 0 to 400 over 1 second</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> job</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Tween.</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    sprite,</span></span>
+<span class="line"><span style="color:#E1E4E8">    { x: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, y: </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">    { x: </span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">, y: </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#79B8FF">    0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    Easing.outQuad</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">job.</span><span style="color:#B392F0">start</span><span style="color:#E1E4E8">();</span></span></code></pre>
 <h3 id="simultaneous-multi-property-animation">Simultaneous Multi-Property Animation</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Move + Scale + Fade in</span></span>
-<span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> Tween</span><span style="color:#E1E4E8">(sprite, {</span></span>
-<span class="line"><span style="color:#E1E4E8">    duration: </span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">,</span></span>
-<span class="line"><span style="color:#E1E4E8">    easing: Easing.easeOutCubic</span></span>
-<span class="line"><span style="color:#E1E4E8">})</span></span>
-<span class="line"><span style="color:#E1E4E8">    .</span><span style="color:#B392F0">to</span><span style="color:#E1E4E8">({</span></span>
-<span class="line"><span style="color:#E1E4E8">        x: </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">,</span></span>
-<span class="line"><span style="color:#E1E4E8">        y: </span><span style="color:#79B8FF">150</span><span style="color:#E1E4E8">,</span></span>
-<span class="line"><span style="color:#E1E4E8">        scaleX: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">,</span></span>
-<span class="line"><span style="color:#E1E4E8">        scaleY: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">,</span></span>
-<span class="line"><span style="color:#E1E4E8">        alpha: </span><span style="color:#79B8FF">1</span></span>
-<span class="line"><span style="color:#E1E4E8">    })</span></span>
-<span class="line"><span style="color:#E1E4E8">    .</span><span style="color:#B392F0">play</span><span style="color:#E1E4E8">();</span></span></code></pre>
-<h3 id="sequential-animation">Sequential Animation</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Consecutive animations</span></span>
-<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> sequentialAnimation</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">sprite</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> Tween</span><span style="color:#E1E4E8">(sprite, {</span></span>
-<span class="line"><span style="color:#E1E4E8">        duration: </span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">,</span></span>
-<span class="line"><span style="color:#B392F0">        onComplete</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
-<span class="line"><span style="color:#F97583">            new</span><span style="color:#B392F0"> Tween</span><span style="color:#E1E4E8">(sprite, {</span></span>
-<span class="line"><span style="color:#E1E4E8">                duration: </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">,</span></span>
-<span class="line"><span style="color:#B392F0">                onComplete</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
-<span class="line"><span style="color:#F97583">                    new</span><span style="color:#B392F0"> Tween</span><span style="color:#E1E4E8">(sprite, { duration: </span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8"> })</span></span>
-<span class="line"><span style="color:#E1E4E8">                        .</span><span style="color:#B392F0">to</span><span style="color:#E1E4E8">({ alpha: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8"> })</span></span>
-<span class="line"><span style="color:#E1E4E8">                        .</span><span style="color:#B392F0">play</span><span style="color:#E1E4E8">();</span></span>
-<span class="line"><span style="color:#E1E4E8">                }</span></span>
-<span class="line"><span style="color:#E1E4E8">            })</span></span>
-<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">to</span><span style="color:#E1E4E8">({ scaleX: </span><span style="color:#79B8FF">1.5</span><span style="color:#E1E4E8">, scaleY: </span><span style="color:#79B8FF">1.5</span><span style="color:#E1E4E8"> })</span></span>
-<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">play</span><span style="color:#E1E4E8">();</span></span>
-<span class="line"><span style="color:#E1E4E8">        }</span></span>
-<span class="line"><span style="color:#E1E4E8">    })</span></span>
-<span class="line"><span style="color:#E1E4E8">        .</span><span style="color:#B392F0">to</span><span style="color:#E1E4E8">({ y: </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8"> })</span></span>
-<span class="line"><span style="color:#E1E4E8">        .</span><span style="color:#B392F0">play</span><span style="color:#E1E4E8">();</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Tween</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Easing</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.ui;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Move + Scale + Fade in</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> job</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Tween.</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    sprite,</span></span>
+<span class="line"><span style="color:#E1E4E8">    { x: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, y: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, scaleX: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, scaleY: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, alpha: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">    { x: </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, y: </span><span style="color:#79B8FF">150</span><span style="color:#E1E4E8">, scaleX: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, scaleY: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, alpha: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#79B8FF">    0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    0.5</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    Easing.outCubic</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">job.</span><span style="color:#B392F0">start</span><span style="color:#E1E4E8">();</span></span></code></pre>
+<h3 id="chaining-animations">Chaining Animations</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Tween</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Easing</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.ui;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// First animation</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> job1</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Tween.</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    sprite,</span></span>
+<span class="line"><span style="color:#E1E4E8">    { x: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">    { x: </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#79B8FF">    0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    Easing.outQuad</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Second animation</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> job2</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Tween.</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    sprite,</span></span>
+<span class="line"><span style="color:#E1E4E8">    { x: </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">    { x: </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#79B8FF">    0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    Easing.inQuad</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Chain and start</span></span>
+<span class="line"><span style="color:#E1E4E8">job1.</span><span style="color:#B392F0">chain</span><span style="color:#E1E4E8">(job2);</span></span>
+<span class="line"><span style="color:#E1E4E8">job1.</span><span style="color:#B392F0">start</span><span style="color:#E1E4E8">();</span></span></code></pre>
+<h3 id="delayed-animation">Delayed Animation</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Tween</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Easing</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.ui;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Fade out over 1 second after 0.5 second delay</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> job</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Tween.</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    sprite,</span></span>
+<span class="line"><span style="color:#E1E4E8">    { alpha: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">    { alpha: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#79B8FF">    0.5</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    Easing.inQuad</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">job.</span><span style="color:#B392F0">start</span><span style="color:#E1E4E8">();</span></span></code></pre>
+<h3 id="using-events">Using Events</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Tween</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Easing</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.ui;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> job</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Tween.</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    sprite,</span></span>
+<span class="line"><span style="color:#E1E4E8">    { x: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">    { x: </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#79B8FF">    0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    Easing.inOutQuad</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Per-frame processing</span></span>
+<span class="line"><span style="color:#E1E4E8">job.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"enterFrame"</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Progress:"</span><span style="color:#E1E4E8">, job.currentTime);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// On completion</span></span>
+<span class="line"><span style="color:#E1E4E8">job.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"complete"</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Animation complete!"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">job.</span><span style="color:#B392F0">start</span><span style="color:#E1E4E8">();</span></span></code></pre>
 <h3 id="game-examples">Game Examples</h3>
 <h4 id="character-jump">Character Jump</h4>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> jump</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">character</span><span style="color:#E1E4E8">) {</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Tween</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Easing</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.ui;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> jump</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">character</span><span style="color:#E1E4E8">) {</span></span>
 <span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> startY</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> character.y;</span></span>
 <span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> jumpHeight</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 100</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">    // Ascend</span></span>
-<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> Tween</span><span style="color:#E1E4E8">(character, {</span></span>
-<span class="line"><span style="color:#E1E4E8">        duration: </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">,</span></span>
-<span class="line"><span style="color:#E1E4E8">        easing: Easing.easeOutQuad,</span></span>
-<span class="line"><span style="color:#B392F0">        onComplete</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
-<span class="line"><span style="color:#6A737D">            // Descend</span></span>
-<span class="line"><span style="color:#F97583">            new</span><span style="color:#B392F0"> Tween</span><span style="color:#E1E4E8">(character, {</span></span>
-<span class="line"><span style="color:#E1E4E8">                duration: </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">,</span></span>
-<span class="line"><span style="color:#E1E4E8">                easing: Easing.easeInQuad</span></span>
-<span class="line"><span style="color:#E1E4E8">            })</span></span>
-<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">to</span><span style="color:#E1E4E8">({ y: startY })</span></span>
-<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">play</span><span style="color:#E1E4E8">();</span></span>
-<span class="line"><span style="color:#E1E4E8">        }</span></span>
-<span class="line"><span style="color:#E1E4E8">    })</span></span>
-<span class="line"><span style="color:#E1E4E8">        .</span><span style="color:#B392F0">to</span><span style="color:#E1E4E8">({ y: startY </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> jumpHeight })</span></span>
-<span class="line"><span style="color:#E1E4E8">        .</span><span style="color:#B392F0">play</span><span style="color:#E1E4E8">();</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
-<h4 id="damage-effect">Damage Effect</h4>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> damageEffect</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">target</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> originalX</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> target.x;</span></span>
-<span class="line"><span style="color:#F97583">    let</span><span style="color:#E1E4E8"> shakeCount </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> upJob</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Tween.</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">        character,</span></span>
+<span class="line"><span style="color:#E1E4E8">        { y: startY },</span></span>
+<span class="line"><span style="color:#E1E4E8">        { y: startY </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> jumpHeight },</span></span>
+<span class="line"><span style="color:#79B8FF">        0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.3</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        Easing.outQuad</span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A737D">    // Flash + Shake</span></span>
-<span class="line"><span style="color:#F97583">    function</span><span style="color:#B392F0"> shake</span><span style="color:#E1E4E8">() {</span></span>
-<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (shakeCount </span><span style="color:#F97583">>=</span><span style="color:#79B8FF"> 6</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#E1E4E8">            target.x </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> originalX;</span></span>
-<span class="line"><span style="color:#E1E4E8">            target.alpha </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#F97583">            return</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#6A737D">    // Descend</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> downJob</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Tween.</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">        character,</span></span>
+<span class="line"><span style="color:#E1E4E8">        { y: startY </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> jumpHeight },</span></span>
+<span class="line"><span style="color:#E1E4E8">        { y: startY },</span></span>
+<span class="line"><span style="color:#79B8FF">        0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.3</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        Easing.inQuad</span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> offset</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> shakeCount </span><span style="color:#F97583">%</span><span style="color:#79B8FF"> 2</span><span style="color:#F97583"> ===</span><span style="color:#79B8FF"> 0</span><span style="color:#F97583"> ?</span><span style="color:#79B8FF"> 5</span><span style="color:#F97583"> :</span><span style="color:#F97583"> -</span><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">        target.x </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> originalX </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> offset;</span></span>
-<span class="line"><span style="color:#E1E4E8">        target.alpha </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> shakeCount </span><span style="color:#F97583">%</span><span style="color:#79B8FF"> 2</span><span style="color:#F97583"> ===</span><span style="color:#79B8FF"> 0</span><span style="color:#F97583"> ?</span><span style="color:#79B8FF"> 0.5</span><span style="color:#F97583"> :</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">        shakeCount</span><span style="color:#F97583">++</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#B392F0">        setTimeout</span><span style="color:#E1E4E8">(shake, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">);</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#B392F0">    shake</span><span style="color:#E1E4E8">();</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
-<h4 id="coin-collect-effect">Coin Collect Effect</h4>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> coinCollectEffect</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">coin</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">targetY</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#6A737D">    // Float up and fade out</span></span>
-<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> Tween</span><span style="color:#E1E4E8">(coin, {</span></span>
-<span class="line"><span style="color:#E1E4E8">        duration: </span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">,</span></span>
-<span class="line"><span style="color:#E1E4E8">        easing: Easing.easeOutQuad,</span></span>
-<span class="line"><span style="color:#B392F0">        onUpdate</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
-<span class="line"><span style="color:#6A737D">            // Rotate</span></span>
-<span class="line"><span style="color:#E1E4E8">            coin.rotation </span><span style="color:#F97583">+=</span><span style="color:#79B8FF"> 15</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">        },</span></span>
-<span class="line"><span style="color:#B392F0">        onComplete</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
-<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (coin.parent) {</span></span>
-<span class="line"><span style="color:#E1E4E8">                coin.parent.</span><span style="color:#B392F0">removeChild</span><span style="color:#E1E4E8">(coin);</span></span>
-<span class="line"><span style="color:#E1E4E8">            }</span></span>
-<span class="line"><span style="color:#E1E4E8">        }</span></span>
-<span class="line"><span style="color:#E1E4E8">    })</span></span>
-<span class="line"><span style="color:#E1E4E8">        .</span><span style="color:#B392F0">to</span><span style="color:#E1E4E8">({</span></span>
-<span class="line"><span style="color:#E1E4E8">            y: targetY,</span></span>
-<span class="line"><span style="color:#E1E4E8">            alpha: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
-<span class="line"><span style="color:#E1E4E8">            scaleX: </span><span style="color:#79B8FF">0.5</span><span style="color:#E1E4E8">,</span></span>
-<span class="line"><span style="color:#E1E4E8">            scaleY: </span><span style="color:#79B8FF">0.5</span></span>
-<span class="line"><span style="color:#E1E4E8">        })</span></span>
-<span class="line"><span style="color:#E1E4E8">        .</span><span style="color:#B392F0">play</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#6A737D">    // Chain ascend -> descend</span></span>
+<span class="line"><span style="color:#E1E4E8">    upJob.</span><span style="color:#B392F0">chain</span><span style="color:#E1E4E8">(downJob);</span></span>
+<span class="line"><span style="color:#E1E4E8">    upJob.</span><span style="color:#B392F0">start</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h4 id="ui-animation">UI Animation</h4>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> showPopup</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">popup</span><span style="color:#E1E4E8">) {</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Tween</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Easing</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.ui;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> showPopup</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">popup</span><span style="color:#E1E4E8">) {</span></span>
 <span class="line"><span style="color:#E1E4E8">    popup.scaleX </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#E1E4E8">    popup.scaleY </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#E1E4E8">    popup.alpha </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> Tween</span><span style="color:#E1E4E8">(popup, {</span></span>
-<span class="line"><span style="color:#E1E4E8">        duration: </span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">,</span></span>
-<span class="line"><span style="color:#E1E4E8">        easing: Easing.easeOutBack</span></span>
-<span class="line"><span style="color:#E1E4E8">    })</span></span>
-<span class="line"><span style="color:#E1E4E8">        .</span><span style="color:#B392F0">to</span><span style="color:#E1E4E8">({ scaleX: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, scaleY: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, alpha: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8"> })</span></span>
-<span class="line"><span style="color:#E1E4E8">        .</span><span style="color:#B392F0">play</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> job</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Tween.</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">        popup,</span></span>
+<span class="line"><span style="color:#E1E4E8">        { scaleX: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, scaleY: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, alpha: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">        { scaleX: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, scaleY: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, alpha: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#79B8FF">        0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.4</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        Easing.outBack</span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    job.</span><span style="color:#B392F0">start</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> hidePopup</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">popup</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">onComplete</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> Tween</span><span style="color:#E1E4E8">(popup, {</span></span>
-<span class="line"><span style="color:#E1E4E8">        duration: </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">,</span></span>
-<span class="line"><span style="color:#E1E4E8">        easing: Easing.easeInQuad,</span></span>
-<span class="line"><span style="color:#E1E4E8">        onComplete: onComplete</span></span>
-<span class="line"><span style="color:#E1E4E8">    })</span></span>
-<span class="line"><span style="color:#E1E4E8">        .</span><span style="color:#B392F0">to</span><span style="color:#E1E4E8">({ scaleX: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, scaleY: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, alpha: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8"> })</span></span>
-<span class="line"><span style="color:#E1E4E8">        .</span><span style="color:#B392F0">play</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> hidePopup</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">popup</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> job</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Tween.</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">        popup,</span></span>
+<span class="line"><span style="color:#E1E4E8">        { scaleX: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, scaleY: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, alpha: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">        { scaleX: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, scaleY: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, alpha: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#79B8FF">        0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.2</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        Easing.inQuad</span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    job.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"complete"</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        popup.visible </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    job.</span><span style="color:#B392F0">start</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
-<h2 id="lightweight-enterframe-based-tween">Lightweight enterFrame-based Tween</h2>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Simple enterFrame-based tween</span></span>
-<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> tweenTo</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">target</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">property</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">endValue</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">speed</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#E1E4E8">    speed </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> speed </span><span style="color:#F97583">||</span><span style="color:#79B8FF"> 0.1</span><span style="color:#E1E4E8">;</span></span>
+<h4 id="coin-collect-effect">Coin Collect Effect</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Tween</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Easing</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.ui;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#F97583">    function</span><span style="color:#B392F0"> handler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> current</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> target[property];</span></span>
-<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> diff</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> endValue </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> current;</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> coinCollectEffect</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">coin</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> job</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Tween.</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">        coin,</span></span>
+<span class="line"><span style="color:#E1E4E8">        { y: coin.y, alpha: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, scaleX: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, scaleY: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">        { y: coin.y </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 50</span><span style="color:#E1E4E8">, alpha: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, scaleX: </span><span style="color:#79B8FF">0.5</span><span style="color:#E1E4E8">, scaleY: </span><span style="color:#79B8FF">0.5</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#79B8FF">        0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.5</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        Easing.outQuad</span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (Math.</span><span style="color:#B392F0">abs</span><span style="color:#E1E4E8">(diff) </span><span style="color:#F97583">&#x3C;</span><span style="color:#79B8FF"> 0.1</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#E1E4E8">            target[property] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> endValue;</span></span>
-<span class="line"><span style="color:#E1E4E8">            stage.</span><span style="color:#B392F0">removeEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"enterFrame"</span><span style="color:#E1E4E8">, handler);</span></span>
-<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#E1E4E8">            target[property] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> current </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> diff </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> speed;</span></span>
-<span class="line"><span style="color:#E1E4E8">        }</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">    job.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"enterFrame"</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        coin.rotation </span><span style="color:#F97583">+=</span><span style="color:#79B8FF"> 15</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    stage.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"enterFrame"</span><span style="color:#E1E4E8">, handler);</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">    job.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"complete"</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        coin.parent?.</span><span style="color:#B392F0">removeChild</span><span style="color:#E1E4E8">(coin);</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A737D">// Usage</span></span>
-<span class="line"><span style="color:#B392F0">tweenTo</span><span style="color:#E1E4E8">(sprite, </span><span style="color:#9ECBFF">"x"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.15</span><span style="color:#E1E4E8">);  </span><span style="color:#6A737D">// Move x toward 300</span></span>
-<span class="line"><span style="color:#B392F0">tweenTo</span><span style="color:#E1E4E8">(sprite, </span><span style="color:#9ECBFF">"alpha"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.05</span><span style="color:#E1E4E8">);  </span><span style="color:#6A737D">// Fade out</span></span></code></pre>
-<h2 id="custom-easing">Custom Easing</h2>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Bezier curve based easing</span></span>
-<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> bezierEasing</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">x1</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">y1</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">x2</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">y2</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#F97583">    return</span><span style="color:#F97583"> function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">t</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#6A737D">        // Simple cubic bezier interpolation</span></span>
-<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> cx</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 3</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> x1;</span></span>
-<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> bx</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 3</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> (x2 </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> x1) </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> cx;</span></span>
-<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> ax</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 1</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8"> cx </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> bx;</span></span>
+<span class="line"><span style="color:#E1E4E8">    job.</span><span style="color:#B392F0">start</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="stopping-and-control">Stopping and Control</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Tween</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Easing</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.ui;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> cy</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 3</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> y1;</span></span>
-<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> by</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 3</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> (y2 </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> y1) </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> cy;</span></span>
-<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> ay</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 1</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8"> cy </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> by;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> job</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Tween.</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    sprite,</span></span>
+<span class="line"><span style="color:#E1E4E8">    { x: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">    { x: </span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#79B8FF">    0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    Easing.linear</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#F97583">        function</span><span style="color:#B392F0"> sampleCurveY</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">t</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#F97583">            return</span><span style="color:#E1E4E8"> ((ay </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> by) </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> cy) </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> t;</span></span>
-<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">job.</span><span style="color:#B392F0">start</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#F97583">        return</span><span style="color:#B392F0"> sampleCurveY</span><span style="color:#E1E4E8">(t);</span></span>
-<span class="line"><span style="color:#E1E4E8">    };</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D">// CSS cubic-bezier equivalent</span></span>
-<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> customEase</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> bezierEasing</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0.25</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.25</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1.0</span><span style="color:#E1E4E8">);</span></span></code></pre>
-<h2 id="performance-tips">Performance Tips</h2>
-<ol>
-<li><strong>Use requestAnimationFrame</strong>: Smoother than setTimeout</li>
-<li><strong>Minimize Property Changes</strong>: Only update necessary properties</li>
-<li><strong>Object Pooling</strong>: Pool and reuse tweens for many animations</li>
-<li><strong>Cleanup After Completion</strong>: Remove unnecessary listeners</li>
-</ol>
+<span class="line"><span style="color:#6A737D">// Stop midway</span></span>
+<span class="line"><span style="color:#E1E4E8">stopButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    job.</span><span style="color:#B392F0">stop</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
 <h2 id="related">Related</h2>
 <ul>
 <li><a href="/en/reference/player/display-object">DisplayObject</a></li>

@@ -171,7 +171,8 @@
 <span class="line"><span style="color:#6A737D">// ステージに追加</span></span>
 <span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(video);</span></span></code></pre>
 <h3 id="再生コントロール">再生コントロール</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Video</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">VideoEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.media;</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Video</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.media;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">PointerEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> video</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Video</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">360</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">video.autoPlay </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;  </span><span style="color:#6A737D">// 自動再生を無効化</span></span>
@@ -180,43 +181,43 @@
 <span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(video);</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// 再生ボタン</span></span>
-<span class="line"><span style="color:#E1E4E8">playButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">playButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#F97583">    await</span><span style="color:#E1E4E8"> video.</span><span style="color:#B392F0">play</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// 一時停止ボタン</span></span>
-<span class="line"><span style="color:#E1E4E8">pauseButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">pauseButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#E1E4E8">    video.</span><span style="color:#B392F0">pause</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// 停止ボタン（先頭に戻って停止）</span></span>
-<span class="line"><span style="color:#E1E4E8">stopButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">stopButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#E1E4E8">    video.</span><span style="color:#B392F0">pause</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"><span style="color:#E1E4E8">    video.</span><span style="color:#B392F0">seek</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// 10秒進む</span></span>
-<span class="line"><span style="color:#E1E4E8">forwardButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">forwardButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#E1E4E8">    video.</span><span style="color:#B392F0">seek</span><span style="color:#E1E4E8">(video.currentTime </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// 10秒戻る</span></span>
-<span class="line"><span style="color:#E1E4E8">backButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">backButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#E1E4E8">    video.</span><span style="color:#B392F0">seek</span><span style="color:#E1E4E8">(Math.</span><span style="color:#B392F0">max</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, video.currentTime </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">));</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
 <h3 id="イベントリスニング">イベントリスニング</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Video</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">VideoEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.media;</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Video</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.media;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">VideoEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> video</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Video</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">360</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A737D">// メタデータ受信イベント</span></span>
-<span class="line"><span style="color:#E1E4E8">video.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(VideoEvent.</span><span style="color:#79B8FF">METADATA_RECEIVED</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Duration:"</span><span style="color:#E1E4E8">, video.duration);</span></span>
-<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Size:"</span><span style="color:#E1E4E8">, video.videoWidth, </span><span style="color:#9ECBFF">"x"</span><span style="color:#E1E4E8">, video.videoHeight);</span></span>
-<span class="line"><span style="color:#E1E4E8">});</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#6A737D">// 再生イベント</span></span>
 <span class="line"><span style="color:#E1E4E8">video.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(VideoEvent.</span><span style="color:#79B8FF">PLAY</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"再生リクエスト"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 再生開始イベント</span></span>
+<span class="line"><span style="color:#E1E4E8">video.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(VideoEvent.</span><span style="color:#79B8FF">PLAYING</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"再生開始"</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span>
 <span class="line"></span>
@@ -230,15 +231,10 @@
 <span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"シーク:"</span><span style="color:#E1E4E8">, video.currentTime);</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A737D">// 終了イベント</span></span>
-<span class="line"><span style="color:#E1E4E8">video.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(VideoEvent.</span><span style="color:#79B8FF">ENDED</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"再生終了"</span><span style="color:#E1E4E8">);</span></span>
-<span class="line"><span style="color:#E1E4E8">});</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#E1E4E8">video.src </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "video.mp4"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(video);</span></span></code></pre>
 <h3 id="再生進捗の表示">再生進捗の表示</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Video</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">VideoEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.media;</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Video</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.media;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> video</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Video</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">360</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">video.src </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "video.mp4"</span><span style="color:#E1E4E8">;</span></span>
@@ -267,13 +263,8 @@
 <span class="line"></span>
 <span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(video);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A737D">// 音量スライダー</span></span>
-<span class="line"><span style="color:#E1E4E8">volumeSlider.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"change"</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#E1E4E8">    video.volume </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> event.target.value;  </span><span style="color:#6A737D">// 0.0 ~ 1.0</span></span>
-<span class="line"><span style="color:#E1E4E8">});</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#6A737D">// ミュートトグル</span></span>
-<span class="line"><span style="color:#E1E4E8">muteButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">muteButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#E1E4E8">    video.muted </span><span style="color:#F97583">=</span><span style="color:#F97583"> !</span><span style="color:#E1E4E8">video.muted;</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
 <h3 id="ループ再生">ループ再生</h3>
@@ -310,11 +301,7 @@
 
 
 
-
-
-
-
-<table><thead><tr><th>イベント</th><th>説明</th></tr></thead><tbody><tr><td><code>VideoEvent.METADATA_RECEIVED</code></td><td>メタデータ受信時</td></tr><tr><td><code>VideoEvent.PLAY</code></td><td>再生開始時</td></tr><tr><td><code>VideoEvent.PAUSE</code></td><td>一時停止時</td></tr><tr><td><code>VideoEvent.SEEK</code></td><td>シーク時</td></tr><tr><td><code>VideoEvent.ENDED</code></td><td>再生終了時</td></tr></tbody></table>
+<table><thead><tr><th>イベント</th><th>説明</th></tr></thead><tbody><tr><td><code>VideoEvent.PLAY</code></td><td>再生がリクエストされた時</td></tr><tr><td><code>VideoEvent.PLAYING</code></td><td>再生が開始された時</td></tr><tr><td><code>VideoEvent.PAUSE</code></td><td>一時停止時</td></tr><tr><td><code>VideoEvent.SEEK</code></td><td>シーク時</td></tr></tbody></table>
 <h2 id="サポートフォーマット">サポートフォーマット</h2>
 
 

@@ -125,7 +125,7 @@
 
 
 
-<table><thead><tr><th>Property</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>src</code></td><td>string</td><td>""</td><td>Specifies the URL of the video content</td></tr><tr><td><code>videoWidth</code></td><td>number</td><td>0</td><td>An integer specifying the width of the video, in pixels</td></tr><tr><td><code>videoHeight</code></td><td>number</td><td>0</td><td>An integer specifying the height of the video, in pixels</td></tr><tr><td><code>duration</code></td><td>number</td><td>0</td><td>Total number of keyframes (video duration)</td></tr><tr><td><code>currentTime</code></td><td>number</td><td>0</td><td>Current keyframe (playback position)</td></tr><tr><td><code>volume</code></td><td>number</td><td>1</td><td>The volume, ranging from 0 (silent) to 1 (full volume)</td></tr><tr><td><code>loop</code></td><td>boolean</td><td>false</td><td>Specifies whether to generate a video loop</td></tr><tr><td><code>autoPlay</code></td><td>boolean</td><td>true</td><td>Setting up automatic video playback</td></tr><tr><td><code>smoothing</code></td><td>boolean</td><td>true</td><td>Specifies whether the video should be smoothed (interpolated) when it is scaled</td></tr><tr><td><code>paused</code></td><td>boolean</td><td>true</td><td>Returns whether the video is paused</td></tr><tr><td><code>muted</code></td><td>boolean</td><td>false</td><td>Returns whether the video is muted</td></tr><tr><td><code>loaded</code></td><td>boolean</td><td>false</td><td>Returns whether the video has been loaded</td></tr><tr><td><code>ended</code></td><td>boolean</td><td>false</td><td>Returns whether the video has ended</td></tr><tr><td><code>isVideo</code></td><td>boolean</td><td>true</td><td>Returns whether the display object has Video functionality (read-only)</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>src</code></td><td>string</td><td>""</td><td>Specifies the URL of the video content</td></tr><tr><td><code>videoWidth</code></td><td>number</td><td>0</td><td>An integer specifying the width of the video, in pixels</td></tr><tr><td><code>videoHeight</code></td><td>number</td><td>0</td><td>An integer specifying the height of the video, in pixels</td></tr><tr><td><code>duration</code></td><td>number</td><td>0</td><td>Total number of keyframes (video duration)</td></tr><tr><td><code>currentTime</code></td><td>number</td><td>0</td><td>Current keyframe (playback position)</td></tr><tr><td><code>volume</code></td><td>number</td><td>1</td><td>The volume, ranging from 0 (silent) to 1 (full volume)</td></tr><tr><td><code>loop</code></td><td>boolean</td><td>false</td><td>Specifies whether to loop the video</td></tr><tr><td><code>autoPlay</code></td><td>boolean</td><td>true</td><td>Setting up automatic video playback</td></tr><tr><td><code>smoothing</code></td><td>boolean</td><td>true</td><td>Specifies whether the video should be smoothed (interpolated) when it is scaled</td></tr><tr><td><code>paused</code></td><td>boolean</td><td>true</td><td>Returns whether the video is paused</td></tr><tr><td><code>muted</code></td><td>boolean</td><td>false</td><td>Returns whether the video is muted</td></tr><tr><td><code>loaded</code></td><td>boolean</td><td>false</td><td>Returns whether the video has been loaded</td></tr><tr><td><code>ended</code></td><td>boolean</td><td>false</td><td>Returns whether the video has ended</td></tr><tr><td><code>isVideo</code></td><td>boolean</td><td>true</td><td>Returns whether the display object has Video functionality (read-only)</td></tr></tbody></table>
 <h2 id="methods">Methods</h2>
 
 
@@ -155,60 +155,93 @@
 <table><thead><tr><th>Method</th><th>Return</th><th>Description</th></tr></thead><tbody><tr><td><code>play()</code></td><td>Promise&#x3C;void></td><td>Plays the video file</td></tr><tr><td><code>pause()</code></td><td>void</td><td>Pauses the video playback</td></tr><tr><td><code>seek(offset: number)</code></td><td>void</td><td>Seeks the keyframe closest to the specified location</td></tr></tbody></table>
 <h2 id="usage-examples">Usage Examples</h2>
 <h3 id="basic-video-playback">Basic Video Playback</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Video</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.media;</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Video</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.media;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A737D">// Create Video object</span></span>
+<span class="line"><span style="color:#6A737D">// Create Video object (specify width, height)</span></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> video</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Video</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">360</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A737D">// Set video source</span></span>
+<span class="line"><span style="color:#6A737D">// Set video source (loading starts automatically)</span></span>
 <span class="line"><span style="color:#E1E4E8">video.src </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "video.mp4"</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">video.autoPlay </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">video.loop </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">video.volume </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0.8</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Property settings</span></span>
+<span class="line"><span style="color:#E1E4E8">video.autoPlay </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;   </span><span style="color:#6A737D">// Auto play</span></span>
+<span class="line"><span style="color:#E1E4E8">video.loop </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;      </span><span style="color:#6A737D">// No loop</span></span>
+<span class="line"><span style="color:#E1E4E8">video.smoothing </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;  </span><span style="color:#6A737D">// Enable smoothing</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// Add to stage</span></span>
 <span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(video);</span></span></code></pre>
 <h3 id="playback-control">Playback Control</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Video</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.media;</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Video</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.media;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">PointerEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> video</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Video</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">360</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">video.autoPlay </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;  </span><span style="color:#6A737D">// Disable auto play</span></span>
 <span class="line"><span style="color:#E1E4E8">video.src </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "video.mp4"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(video);</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// Play button</span></span>
-<span class="line"><span style="color:#E1E4E8">playButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">async</span><span style="color:#F97583"> function</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">playButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#F97583">    await</span><span style="color:#E1E4E8"> video.</span><span style="color:#B392F0">play</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// Pause button</span></span>
-<span class="line"><span style="color:#E1E4E8">pauseButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">pauseButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#E1E4E8">    video.</span><span style="color:#B392F0">pause</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// Stop button (pause and return to start)</span></span>
-<span class="line"><span style="color:#E1E4E8">stopButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">stopButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#E1E4E8">    video.</span><span style="color:#B392F0">pause</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"><span style="color:#E1E4E8">    video.</span><span style="color:#B392F0">seek</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// Forward 10 seconds</span></span>
-<span class="line"><span style="color:#E1E4E8">forwardButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">forwardButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#E1E4E8">    video.</span><span style="color:#B392F0">seek</span><span style="color:#E1E4E8">(video.currentTime </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// Back 10 seconds</span></span>
-<span class="line"><span style="color:#E1E4E8">backButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">backButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#E1E4E8">    video.</span><span style="color:#B392F0">seek</span><span style="color:#E1E4E8">(Math.</span><span style="color:#B392F0">max</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, video.currentTime </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">));</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="event-listening">Event Listening</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Video</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.media;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">VideoEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> video</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Video</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">360</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Play event</span></span>
+<span class="line"><span style="color:#E1E4E8">video.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(VideoEvent.</span><span style="color:#79B8FF">PLAY</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Play requested"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Playing event</span></span>
+<span class="line"><span style="color:#E1E4E8">video.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(VideoEvent.</span><span style="color:#79B8FF">PLAYING</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Playback started"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Pause event</span></span>
+<span class="line"><span style="color:#E1E4E8">video.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(VideoEvent.</span><span style="color:#79B8FF">PAUSE</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Paused"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Seek event</span></span>
+<span class="line"><span style="color:#E1E4E8">video.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(VideoEvent.</span><span style="color:#79B8FF">SEEK</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Seek:"</span><span style="color:#E1E4E8">, video.currentTime);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">video.src </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "video.mp4"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(video);</span></span></code></pre>
 <h3 id="displaying-playback-progress">Displaying Playback Progress</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Video</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.media;</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Video</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.media;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> video</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Video</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">360</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">video.src </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "video.mp4"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(video);</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// Update progress each frame</span></span>
-<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"enterFrame"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"enterFrame"</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (video.duration </span><span style="color:#F97583">></span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">) {</span></span>
 <span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> progress</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> video.currentTime </span><span style="color:#F97583">/</span><span style="color:#E1E4E8"> video.duration;</span></span>
 <span class="line"><span style="color:#E1E4E8">        progressBar.scaleX </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> progress;</span></span>
@@ -222,115 +255,53 @@
 <span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> min </span><span style="color:#F97583">+</span><span style="color:#9ECBFF"> ":"</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> sec.</span><span style="color:#B392F0">toString</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">padStart</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'0'</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h3 id="volume-control">Volume Control</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Video</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.media;</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Video</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.media;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> video</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Video</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">360</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">video.src </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "video.mp4"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#E1E4E8">video.volume </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0.5</span><span style="color:#E1E4E8">;  </span><span style="color:#6A737D">// 50%</span></span>
-<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(video);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A737D">// Volume slider</span></span>
-<span class="line"><span style="color:#E1E4E8">volumeSlider.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"change"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#E1E4E8">    video.volume </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> event.target.value;  </span><span style="color:#6A737D">// 0.0 ~ 1.0</span></span>
-<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(video);</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// Mute toggle</span></span>
-<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> isMuted </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> previousVolume </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0.5</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">muteButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
-<span class="line"><span style="color:#E1E4E8">    isMuted </span><span style="color:#F97583">=</span><span style="color:#F97583"> !</span><span style="color:#E1E4E8">isMuted;</span></span>
-<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (isMuted) {</span></span>
-<span class="line"><span style="color:#E1E4E8">        previousVolume </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> video.volume;</span></span>
-<span class="line"><span style="color:#E1E4E8">        video.volume </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#E1E4E8">        video.volume </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> previousVolume;</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">muteButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    video.muted </span><span style="color:#F97583">=</span><span style="color:#F97583"> !</span><span style="color:#E1E4E8">video.muted;</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
-<h3 id="fullscreen-support">Fullscreen Support</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Video</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.media;</span></span>
+<h3 id="loop-playback">Loop Playback</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Video</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.media;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> video</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Video</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">360</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">video.loop </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;  </span><span style="color:#6A737D">// Enable loop</span></span>
 <span class="line"><span style="color:#E1E4E8">video.src </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "video.mp4"</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(video);</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D">// Fullscreen toggle</span></span>
-<span class="line"><span style="color:#E1E4E8">fullscreenButton.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
-<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (stage.displayState </span><span style="color:#F97583">===</span><span style="color:#9ECBFF"> "normal"</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#6A737D">        // Switch to fullscreen</span></span>
-<span class="line"><span style="color:#E1E4E8">        stage.displayState </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "fullScreen"</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">        video.width </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> stage.stageWidth;</span></span>
-<span class="line"><span style="color:#E1E4E8">        video.height </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> stage.stageHeight;</span></span>
-<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#6A737D">        // Return to normal display</span></span>
-<span class="line"><span style="color:#E1E4E8">        stage.displayState </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "normal"</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">        video.width </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 640</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">        video.height </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 360</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
-<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
-<h3 id="video-player-component">Video Player Component</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Sprite</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
-<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Video</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.media;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> VideoPlayer</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> Sprite</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#F97583">    constructor</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">width</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">height</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#79B8FF">        super</span><span style="color:#E1E4E8">();</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._width </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> width;</span></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._height </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> height;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._video </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Video</span><span style="color:#E1E4E8">(width, height);</span></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">._video);</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#B392F0">    load</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">url</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._video.src </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> url;</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">    async</span><span style="color:#B392F0"> play</span><span style="color:#E1E4E8">() {</span></span>
-<span class="line"><span style="color:#F97583">        await</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">._video.</span><span style="color:#B392F0">play</span><span style="color:#E1E4E8">();</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#B392F0">    pause</span><span style="color:#E1E4E8">() {</span></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._video.</span><span style="color:#B392F0">pause</span><span style="color:#E1E4E8">();</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#B392F0">    seek</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">time</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._video.</span><span style="color:#B392F0">seek</span><span style="color:#E1E4E8">(time);</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">    get</span><span style="color:#B392F0"> currentTime</span><span style="color:#E1E4E8">() {</span></span>
-<span class="line"><span style="color:#F97583">        return</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">._video.currentTime;</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">    get</span><span style="color:#B392F0"> duration</span><span style="color:#E1E4E8">() {</span></span>
-<span class="line"><span style="color:#F97583">        return</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">._video.duration </span><span style="color:#F97583">||</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">    set</span><span style="color:#B392F0"> volume</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">value</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">._video.volume </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> value;</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">    get</span><span style="color:#B392F0"> volume</span><span style="color:#E1E4E8">() {</span></span>
-<span class="line"><span style="color:#F97583">        return</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">._video.volume;</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D">// Usage</span></span>
-<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> player</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> VideoPlayer</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">360</span><span style="color:#E1E4E8">);</span></span>
-<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(player);</span></span>
-<span class="line"><span style="color:#E1E4E8">player.</span><span style="color:#B392F0">load</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"video.mp4"</span><span style="color:#E1E4E8">);</span></span>
-<span class="line"><span style="color:#E1E4E8">player.</span><span style="color:#B392F0">play</span><span style="color:#E1E4E8">();</span></span></code></pre>
-<h3 id="loop-playback-and-auto-play">Loop Playback and Auto Play</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Video</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.media;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> video</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Video</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">360</span><span style="color:#E1E4E8">);</span></span>
-<span class="line"><span style="color:#E1E4E8">video.src </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "background-video.mp4"</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">video.autoPlay </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">video.loop </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">video.volume </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;  </span><span style="color:#6A737D">// Muted background video</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(video);</span></span></code></pre>
+<h2 id="videoevent">VideoEvent</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Event</th><th>Description</th></tr></thead><tbody><tr><td><code>VideoEvent.PLAY</code></td><td>When play is requested</td></tr><tr><td><code>VideoEvent.PLAYING</code></td><td>When playback starts</td></tr><tr><td><code>VideoEvent.PAUSE</code></td><td>When paused</td></tr><tr><td><code>VideoEvent.SEEK</code></td><td>When seeking</td></tr></tbody></table>
 <h2 id="supported-formats">Supported Formats</h2>
 
 

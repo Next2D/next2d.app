@@ -238,7 +238,8 @@
 <span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
 <h2 id="usage-examples">Usage Examples</h2>
 <h3 id="basic-animation-control">Basic Animation Control</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Loader</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Loader</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">PointerEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">URLRequest</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.net;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// Load MovieClip from JSON</span></span>
@@ -252,7 +253,7 @@
 <span class="line"><span style="color:#E1E4E8">mc.</span><span style="color:#B392F0">stop</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// Play/pause on button click</span></span>
-<span class="line"><span style="color:#E1E4E8">button.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">button.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (mc.isPlaying) {</span></span>
 <span class="line"><span style="color:#E1E4E8">        mc.</span><span style="color:#B392F0">stop</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>

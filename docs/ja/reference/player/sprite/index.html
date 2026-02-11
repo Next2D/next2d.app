@@ -504,6 +504,7 @@
 <h2 id="使用例">使用例</h2>
 <h3 id="ボタンとして使用">ボタンとして使用</h3>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Sprite</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">PointerEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> button</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Sprite</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"></span>
@@ -519,7 +520,7 @@
 <span class="line"><span style="color:#E1E4E8">button.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(bg);</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// クリックイベント</span></span>
-<span class="line"><span style="color:#E1E4E8">button.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">button.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"ボタンがクリックされました"</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span>
 <span class="line"></span>
@@ -549,6 +550,7 @@
 <span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(maskShape);</span></span></code></pre>
 <h3 id="ドラッグドロップ">ドラッグ＆ドロップ</h3>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Sprite</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">PointerEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Rectangle</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.geom;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> draggable</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Sprite</span><span style="color:#E1E4E8">();</span></span>
@@ -561,13 +563,13 @@
 <span class="line"><span style="color:#E1E4E8">draggable.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(bg);</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// ドラッグ開始</span></span>
-<span class="line"><span style="color:#E1E4E8">draggable.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"mouseDown"</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">draggable.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_DOWN</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#6A737D">    // ドラッグを開始（中心をロック、境界を指定）</span></span>
 <span class="line"><span style="color:#E1E4E8">    draggable.</span><span style="color:#B392F0">startDrag</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">new</span><span style="color:#B392F0"> Rectangle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">));</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// ドラッグ終了</span></span>
-<span class="line"><span style="color:#E1E4E8">draggable.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"mouseUp"</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">draggable.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(PointerEvent.</span><span style="color:#79B8FF">POINTER_UP</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#E1E4E8">    draggable.</span><span style="color:#B392F0">stopDrag</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span>
 <span class="line"></span>

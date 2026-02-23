@@ -259,7 +259,15 @@
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h2 id="screen-transition">Screen Transition</h2>
-<p>Use <code>app.gotoView()</code> for screen transitions.</p>
+<p>Use <code>app.gotoView(name?: string)</code> for screen transitions. It returns <code>Promise&#x3C;void></code>, so you can await the full transition flow (request execution, View/ViewModel rebind, and <code>onEnter()</code>).</p>
+<p>Key points for <code>gotoView</code>:</p>
+<ul>
+<li>The <code>name</code> parameter type is <code>string</code> (optional, default is <code>""</code>).</li>
+<li>Pass a <code>routing.json</code> key such as <code>home</code> or <code>quest/list</code>. Query strings like <code>?id=123</code> are also supported.</li>
+<li>If <code>name</code> is omitted, the destination is resolved from the current URL (used in SPA <code>popstate</code> flows).</li>
+<li>At transition start, the previous <code>response</code> map is cleared, then new request results are stored by their <code>name</code> keys.</li>
+<li>When <code>all.spa: true</code> in <code>config.json</code>, normal transitions update browser history via <code>pushState</code>.</li>
+</ul>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// Navigate to specified View</span></span>
@@ -277,8 +285,29 @@
 <span class="line"><span style="color:#F97583">        await</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">gotoView</span><span style="color:#E1E4E8">(viewName);</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="getting-context">Getting Context</h2>
+<p><code>app.getContext()</code> returns the current runtime <code>Context</code>. It includes:</p>
+<ul>
+<li><code>root</code>: Root <code>Sprite</code> under Stage</li>
+<li><code>view</code>: Currently bound View (can be <code>null</code> during transition or right after startup)</li>
+<li><code>viewModel</code>: Currently bound ViewModel (can be <code>null</code> during transition or right after startup)</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> context</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">getContext</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> root</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> context.root;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (context.view </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> context.viewModel) {</span></span>
+<span class="line"><span style="color:#6A737D">    // Access current View / ViewModel</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h2 id="getting-response-data">Getting Response Data</h2>
-<p>Data from <code>requests</code> in <code>routing.json</code> can be retrieved with <code>app.getResponse()</code>.</p>
+<p><code>app.getResponse()</code> returns <code>Map&#x3C;string, unknown></code>. Response values whose <code>name</code> is defined in <code>routing.json</code> <code>requests</code> are stored for the current transition.</p>
+<p>Key points for <code>getResponse</code>:</p>
+<ul>
+<li>It is a per-transition temporary store for data fetched in one <code>gotoView</code>.</li>
+<li>The map is cleared when the next <code>gotoView</code> starts.</li>
+<li>Values are <code>unknown</code>, so consumers should apply type guards or type assertions.</li>
+</ul>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#E1E4E8">async </span><span style="color:#B392F0">initialize</span><span style="color:#E1E4E8">(): </span><span style="color:#79B8FF">Promise</span><span style="color:#F97583">&#x3C;void></span></span>
@@ -291,7 +320,13 @@
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h2 id="getting-cache-data">Getting Cache Data</h2>
-<p>Data with <code>cache: true</code> can be retrieved with <code>app.getCache()</code>.</p>
+<p><code>app.getCache()</code> returns <code>Map&#x3C;string, unknown></code>. Data from <code>requests</code> with <code>cache: true</code> is kept across transitions, which is useful for reusable data such as master data.</p>
+<p>Key points for <code>getCache</code>:</p>
+<ul>
+<li>Requests with both <code>cache: true</code> and <code>name</code> are eligible for cache storage.</li>
+<li>If the same key already exists, request processing can reuse cached data.</li>
+<li>Cache is not auto-cleared; manage it explicitly with <code>delete</code> or <code>clear</code> when needed.</li>
+</ul>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> cache</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">getCache</span><span style="color:#E1E4E8">();</span></span>

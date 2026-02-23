@@ -178,7 +178,13 @@
 <span class="line"><span style="color:#79B8FF">    "path"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"{{api.endPoint}}path/to/api"</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h3 id="using-cache">Using Cache</h3>
-<p>Setting <code>cache: true</code> caches the data. Cached data persists through screen transitions.</p>
+<p>Setting <code>cache: true</code> caches the data. Cached data persists through screen transitions.
+<code>app.getCache()</code> returns <code>Map&#x3C;string, unknown></code>, and values are accessed by each request <code>name</code>.</p>
+<p>Key points for cache usage:</p>
+<ul>
+<li>If the same key already exists, request processing can reuse cached values.</li>
+<li>Cache is not auto-cleared, so remove unused entries explicitly with <code>delete</code> or <code>clear</code>.</li>
+</ul>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
 <span class="line"><span style="color:#79B8FF">    "top"</span><span style="color:#E1E4E8">: {</span></span>
 <span class="line"><span style="color:#79B8FF">        "requests"</span><span style="color:#E1E4E8">: [</span></span>
@@ -227,7 +233,15 @@
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h2 id="screen-transition">Screen Transition</h2>
 <h3 id="appgotoview">app.gotoView()</h3>
-<p>Use <code>app.gotoView()</code> for screen transitions:</p>
+<p>Use <code>app.gotoView(name?: string)</code> for screen transitions. It returns <code>Promise&#x3C;void></code> so you can await request completion, View/ViewModel rebind, and <code>onEnter()</code>.</p>
+<p>Key points for <code>gotoView</code>:</p>
+<ul>
+<li>The <code>name</code> parameter type is <code>string</code> (optional, default is <code>""</code>).</li>
+<li><code>name</code> is a <code>routing.json</code> key such as <code>home</code> or <code>quest/list</code>.</li>
+<li>You can include query strings such as <code>?id=123</code>.</li>
+<li>If <code>name</code> is omitted, the destination is resolved from the current URL (SPA <code>popstate</code> flow).</li>
+<li>Previous transition <code>response</code> data is cleared when a new transition starts.</li>
+</ul>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// Basic transition</span></span>
@@ -265,8 +279,20 @@
 <span class="line"><span style="color:#F97583">        await</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">.navigateToViewUseCase.</span><span style="color:#B392F0">execute</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"home"</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="appgetcontext">app.getContext()</h3>
+<p>Use <code>app.getContext()</code> to get the active <code>Context</code>. It provides references to <code>root</code> (root <code>Sprite</code>), <code>view</code>, and <code>viewModel</code>. During transitions, <code>view</code> and <code>viewModel</code> can temporarily be <code>null</code>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> context</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">getContext</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> root</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> context.root;</span></span></code></pre>
 <h2 id="getting-response-data">Getting Response Data</h2>
-<p>Data from <code>requests</code> can be retrieved with <code>app.getResponse()</code>:</p>
+<p><code>app.getResponse()</code> returns <code>Map&#x3C;string, unknown></code>. It stores response values whose <code>name</code> is defined in <code>requests</code> for the current transition.</p>
+<p>Key points for <code>getResponse</code>:</p>
+<ul>
+<li>It is a temporary store for one <code>gotoView</code> cycle.</li>
+<li>The map is reset when the next <code>gotoView</code> starts.</li>
+<li>Values are <code>unknown</code>; use type guards or type assertions before use.</li>
+</ul>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#E1E4E8">async </span><span style="color:#B392F0">initialize</span><span style="color:#E1E4E8">(): </span><span style="color:#79B8FF">Promise</span><span style="color:#F97583">&#x3C;void></span></span>

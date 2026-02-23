@@ -259,7 +259,15 @@
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h2 id="画面遷移">画面遷移</h2>
-<p>画面遷移には<code>app.gotoView()</code>を使用します。</p>
+<p>画面遷移には<code>app.gotoView(name?: string)</code>を使用します。戻り値は<code>Promise&#x3C;void></code>で、遷移先の<code>requests</code>実行、View/ViewModelの再バインド、<code>onEnter()</code>実行までの非同期処理を待機できます。</p>
+<p><code>gotoView</code>のポイント:</p>
+<ul>
+<li><code>name</code>の型は<code>string</code>です（省略可能、デフォルト値は<code>""</code>）。</li>
+<li><code>name</code>には<code>routing.json</code>のキー（例: <code>home</code>、<code>quest/list</code>）を渡します。<code>?id=123</code>のようなクエリ文字列も付与できます。</li>
+<li>引数を省略した場合は現在のURLから遷移先を解決します（SPAの<code>popstate</code>時など）。</li>
+<li>遷移開始時に前画面の<code>response</code>マップは初期化され、遷移先の<code>requests</code>結果が<code>name</code>キーで再格納されます。</li>
+<li><code>config.json</code>で<code>all.spa: true</code>の場合、通常遷移ではHistory API（<code>pushState</code>）でURL履歴が更新されます。</li>
+</ul>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// 指定のViewに遷移</span></span>
@@ -277,8 +285,29 @@
 <span class="line"><span style="color:#F97583">        await</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">gotoView</span><span style="color:#E1E4E8">(viewName);</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="コンテキストの取得">コンテキストの取得</h2>
+<p><code>app.getContext()</code>は現在の実行コンテキスト（<code>Context</code>）を返します。<code>Context</code>には次の参照が含まれます。</p>
+<ul>
+<li><code>root</code>: Stage配下のルート<code>Sprite</code></li>
+<li><code>view</code>: 現在バインドされているView（遷移中や起動直後は<code>null</code>の場合あり）</li>
+<li><code>viewModel</code>: 現在バインドされているViewModel（遷移中や起動直後は<code>null</code>の場合あり）</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> context</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">getContext</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> root</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> context.root;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (context.view </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> context.viewModel) {</span></span>
+<span class="line"><span style="color:#6A737D">    // 現在表示中のView / ViewModelにアクセス</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h2 id="レスポンスデータの取得">レスポンスデータの取得</h2>
-<p><code>routing.json</code>で設定した<code>requests</code>のデータは<code>app.getResponse()</code>で取得できます。</p>
+<p><code>app.getResponse()</code>は<code>Map&#x3C;string, unknown></code>を返します。<code>routing.json</code>の<code>requests</code>で<code>name</code>を設定したレスポンスが、現在の画面遷移単位で格納されます。</p>
+<p><code>getResponse</code>のポイント:</p>
+<ul>
+<li>1回の<code>gotoView</code>で取得したデータの一時ストアです。</li>
+<li>次の<code>gotoView</code>開始時に前回の内容はクリアされます。</li>
+<li>値の型は<code>unknown</code>なので、利用側で型ガードまたは型アサーションを行います。</li>
+</ul>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#E1E4E8">async </span><span style="color:#B392F0">initialize</span><span style="color:#E1E4E8">(): </span><span style="color:#79B8FF">Promise</span><span style="color:#F97583">&#x3C;void></span></span>
@@ -291,7 +320,13 @@
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h2 id="キャッシュデータの取得">キャッシュデータの取得</h2>
-<p><code>cache: true</code>を設定したデータは<code>app.getCache()</code>で取得できます。</p>
+<p><code>app.getCache()</code>は<code>Map&#x3C;string, unknown></code>を返します。<code>requests</code>で<code>cache: true</code>を設定したデータが遷移を跨いで保持されるため、マスターデータなどの再利用に向いています。</p>
+<p><code>getCache</code>のポイント:</p>
+<ul>
+<li><code>requests</code>の<code>cache: true</code>かつ<code>name</code>キーを持つデータが保存対象です。</li>
+<li>同じキーが存在する場合、リクエスト処理側はキャッシュ値を優先利用できます。</li>
+<li>キャッシュは自動クリアされないため、不要になったら<code>delete</code>や<code>clear</code>で明示的に管理します。</li>
+</ul>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> cache</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">getCache</span><span style="color:#E1E4E8">();</span></span>

@@ -259,7 +259,15 @@
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h2 id="画面转换">画面转换</h2>
-<p>使用 <code>app.gotoView()</code> 进行画面转换。</p>
+<p>使用 <code>app.gotoView(name?: string)</code> 进行画面转换。返回值是 <code>Promise&#x3C;void></code>，可用于等待完整的转换流程（请求执行、View/ViewModel 重新绑定、<code>onEnter()</code> 调用）。</p>
+<p><code>gotoView</code> 要点：</p>
+<ul>
+<li><code>name</code> 参数类型是 <code>string</code>（可省略，默认值为 <code>""</code>）。</li>
+<li><code>name</code> 传入 <code>routing.json</code> 的键（如 <code>home</code>、<code>quest/list</code>），也支持 <code>?id=123</code> 这类查询字符串。</li>
+<li>省略 <code>name</code> 时，会从当前 URL 解析目标路由（常用于 SPA 的 <code>popstate</code> 流程）。</li>
+<li>转换开始时会先清空上一画面的 <code>response</code>，然后将新请求结果按 <code>name</code> 键重新写入。</li>
+<li>当 <code>config.json</code> 中设置 <code>all.spa: true</code> 时，普通转换会通过 <code>pushState</code> 更新浏览器历史。</li>
+</ul>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// 导航到指定的 View</span></span>
@@ -277,8 +285,29 @@
 <span class="line"><span style="color:#F97583">        await</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">gotoView</span><span style="color:#E1E4E8">(viewName);</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="获取上下文">获取上下文</h2>
+<p><code>app.getContext()</code> 返回当前运行时的 <code>Context</code>，包含：</p>
+<ul>
+<li><code>root</code>：Stage 下的根 <code>Sprite</code></li>
+<li><code>view</code>：当前绑定的 View（转换中或启动初期可能为 <code>null</code>）</li>
+<li><code>viewModel</code>：当前绑定的 ViewModel（转换中或启动初期可能为 <code>null</code>）</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> context</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">getContext</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> root</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> context.root;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (context.view </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> context.viewModel) {</span></span>
+<span class="line"><span style="color:#6A737D">    // 访问当前 View / ViewModel</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h2 id="获取响应数据">获取响应数据</h2>
-<p><code>routing.json</code> 中 <code>requests</code> 的数据可以通过 <code>app.getResponse()</code> 获取。</p>
+<p><code>app.getResponse()</code> 返回 <code>Map&#x3C;string, unknown></code>。<code>routing.json</code> 的 <code>requests</code> 中设置了 <code>name</code> 的响应，会按当前一次画面转换写入该 Map。</p>
+<p><code>getResponse</code> 要点：</p>
+<ul>
+<li>它是单次 <code>gotoView</code> 的临时数据容器。</li>
+<li>开始下一次 <code>gotoView</code> 时，上一轮内容会被清空。</li>
+<li>值类型为 <code>unknown</code>，业务侧应使用类型守卫或类型断言后再读取。</li>
+</ul>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#E1E4E8">async </span><span style="color:#B392F0">initialize</span><span style="color:#E1E4E8">(): </span><span style="color:#79B8FF">Promise</span><span style="color:#F97583">&#x3C;void></span></span>
@@ -291,7 +320,13 @@
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h2 id="获取缓存数据">获取缓存数据</h2>
-<p><code>cache: true</code> 的数据可以通过 <code>app.getCache()</code> 获取。</p>
+<p><code>app.getCache()</code> 返回 <code>Map&#x3C;string, unknown></code>。在 <code>requests</code> 中设置 <code>cache: true</code> 的数据会跨画面保留，适合主数据等可复用数据。</p>
+<p><code>getCache</code> 要点：</p>
+<ul>
+<li>同时具备 <code>cache: true</code> 和 <code>name</code> 的请求会进入缓存。</li>
+<li>当相同键已存在时，请求处理可优先复用缓存值。</li>
+<li>缓存不会自动清理；不再需要时请显式 <code>delete</code> 或 <code>clear</code>。</li>
+</ul>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> cache</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">getCache</span><span style="color:#E1E4E8">();</span></span>

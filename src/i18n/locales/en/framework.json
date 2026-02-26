@@ -13,7 +13,7 @@
   "feature5-title": "Cooperation with Animation Tool",
   "feature5-description": "As in the Flash era, symbol management is possible, allowing animators and programmers to create applications without conflicts.",
   "feature6-title": "Single Page Application",
-  "feature6-description": "It is now possible to manage scenes by URL, which has been difficult with previous Canvas/WebGL applications.",
+  "feature6-description": "It is now possible to manage scenes by URL, which has been difficult with previous Canvas/WebGL/WebGPU applications.",
   "feature7-title": "Output",
   "feature7-description": "Multiple environment variables can be easily exported and combined into a single file.",
   "feature8-title": "Documentation/Tutorials",

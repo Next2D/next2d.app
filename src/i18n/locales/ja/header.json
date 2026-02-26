@@ -1,4 +1,4 @@
 {
   "title": "Rendering Engine, Animation Tool, Underlying Framework.",
-  "description": "Next2Dプロジェクトは、WebGLを用いた高速2Dレンダリングエンジン、アニメーション制作のためのオーサリングツール、共同開発・効率化のためのフレームワークの提供を目指しています。"
+  "description": "Next2Dプロジェクトは、WebGL/WebGPUを用いた高速2Dレンダリングエンジン、アニメーション制作のためのオーサリングツール、共同開発・効率化のためのフレームワークの提供を目指しています。"
 }

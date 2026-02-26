@@ -12,11 +12,12 @@ interface Props {
   t: Record<string, any>;
   breadcrumbs: Array<{ label: string; href?: string }>;
   menuType: 'usage' | 'reference';
+  ogImage?: string;
 }
 
-const { title, description, lang, t, breadcrumbs, menuType } = Astro.props;
+const { title, description, lang, t, breadcrumbs, menuType, ogImage } = Astro.props;
 ---
-<BaseLayout title={title} description={description} lang={lang} breadcrumbs={breadcrumbs}>
+<BaseLayout title={title} description={description} lang={lang} breadcrumbs={breadcrumbs} ogImage={ogImage}>
   <Header lang={lang} t={t} />
 
   <Breadcrumbs items={breadcrumbs} />

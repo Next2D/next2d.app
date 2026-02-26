@@ -13,7 +13,7 @@
   "feature5-title": "与动画工具合作",
   "feature5-description": "与Flash时代一样，符号管理是可能的，允许动画师和程序员创建没有冲突的应用程序。",
   "feature6-title": "单页应用",
-  "feature6-description": "现在可以通过URL来管理场景，这在以前的 Canvas/WebGL 应用程序中是很困难的。",
+  "feature6-description": "现在可以通过URL来管理场景，这在以前的 Canvas/WebGL/WebGPU 应用程序中是很困难的。",
   "feature7-title": "导出",
   "feature7-description": "多个环境变量可以很容易地被导出并合并到一个文件中。",
   "feature8-title": "文档/教程",

@@ -178,7 +178,13 @@
 <span class="line"><span style="color:#79B8FF">    "path"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"{{api.endPoint}}path/to/api"</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h3 id="キャッシュの利用">キャッシュの利用</h3>
-<p><code>cache: true</code>を設定すると、データがキャッシュされます。キャッシュしたデータは画面遷移しても初期化されません。</p>
+<p><code>cache: true</code>を設定すると、データがキャッシュされます。キャッシュしたデータは画面遷移しても初期化されません。
+<code>app.getCache()</code>は<code>Map&#x3C;string, unknown></code>を返し、<code>requests</code>の<code>name</code>をキーにアクセスできます。</p>
+<p>キャッシュ利用時のポイント:</p>
+<ul>
+<li>同じキーのデータが既にある場合は、リクエスト処理側がキャッシュ値を優先利用できます。</li>
+<li>キャッシュは自動クリアされないため、不要なデータは<code>delete</code>/<code>clear</code>で明示的に管理します。</li>
+</ul>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
 <span class="line"><span style="color:#79B8FF">    "top"</span><span style="color:#E1E4E8">: {</span></span>
 <span class="line"><span style="color:#79B8FF">        "requests"</span><span style="color:#E1E4E8">: [</span></span>
@@ -227,7 +233,15 @@
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h2 id="画面遷移">画面遷移</h2>
 <h3 id="appgotoview">app.gotoView()</h3>
-<p><code>app.gotoView()</code>で画面遷移を行います:</p>
+<p><code>app.gotoView(name?: string)</code>で画面遷移を行います。戻り値は<code>Promise&#x3C;void></code>で、遷移先<code>requests</code>の完了、View/ViewModelの再バインド、<code>onEnter()</code>まで待機できます。</p>
+<p><code>gotoView</code>のポイント:</p>
+<ul>
+<li><code>name</code>の型は<code>string</code>です（省略可能、デフォルト値は<code>""</code>）。</li>
+<li><code>name</code>には<code>routing.json</code>のキー（例: <code>home</code>、<code>quest/list</code>）を指定します。</li>
+<li><code>?id=123</code>のようなクエリ文字列を含めて渡せます。</li>
+<li>引数を省略した場合は、現在のURLから遷移先が解決されます（SPAの<code>popstate</code>時）。</li>
+<li>遷移開始時に前回の<code>response</code>マップはクリアされます。</li>
+</ul>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// 基本的な遷移</span></span>
@@ -265,8 +279,20 @@
 <span class="line"><span style="color:#F97583">        await</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">.navigateToViewUseCase.</span><span style="color:#B392F0">execute</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"home"</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="appgetcontext">app.getContext()</h3>
+<p><code>app.getContext()</code>で実行中の<code>Context</code>を取得できます。<code>root</code>（ルート<code>Sprite</code>）、<code>view</code>、<code>viewModel</code>への参照を持ち、遷移中は<code>view</code>/<code>viewModel</code>が<code>null</code>の場合があります。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> context</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">getContext</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> root</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> context.root;</span></span></code></pre>
 <h2 id="レスポンスデータの取得">レスポンスデータの取得</h2>
-<p><code>requests</code>で取得したデータは<code>app.getResponse()</code>で取得できます:</p>
+<p><code>app.getResponse()</code>は<code>Map&#x3C;string, unknown></code>を返します。<code>requests</code>で<code>name</code>を設定したレスポンスを、現在の画面遷移単位で取得できます。</p>
+<p><code>getResponse</code>のポイント:</p>
+<ul>
+<li>1回の<code>gotoView</code>で取得したデータの一時ストアです。</li>
+<li>次の<code>gotoView</code>開始時に内容は初期化されます。</li>
+<li>値の型は<code>unknown</code>なので、型ガードまたは型アサーションを行って利用します。</li>
+</ul>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#E1E4E8">async </span><span style="color:#B392F0">initialize</span><span style="color:#E1E4E8">(): </span><span style="color:#79B8FF">Promise</span><span style="color:#F97583">&#x3C;void></span></span>

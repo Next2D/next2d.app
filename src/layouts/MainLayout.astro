@@ -8,11 +8,12 @@ interface Props {
   description: string;
   lang: string;
   t: Record<string, any>;
+  ogImage?: string;
 }
 
-const { title, description, lang, t } = Astro.props;
+const { title, description, lang, t, ogImage } = Astro.props;
 ---
-<BaseLayout title={title} description={description} lang={lang}>
+<BaseLayout title={title} description={description} lang={lang} ogImage={ogImage}>
   <Header lang={lang} t={t} />
 
   <main id="main">

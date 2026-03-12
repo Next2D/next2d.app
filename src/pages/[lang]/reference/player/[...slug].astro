@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import DocsLayout from '../../../../layouts/DocsLayout.astro';
 import { getTranslations, supportedLanguages, isValidLanguage } from '../../../../i18n';
 
@@ -42,7 +42,7 @@ if (!isValidLanguage(lang)) {
 const t = await getTranslations(lang);
 const basePath = import.meta.env.BASE_URL;
 
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
 // Markdownの最初の# からタイトルを抽出
 const titleMatch = entry.body.match(/^#\s+(.+)$/m);

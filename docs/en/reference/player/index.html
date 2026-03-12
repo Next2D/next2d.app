@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Next2D | Player</title><meta content="Next2D Player function description and sample code are available" name="description"><meta content="Next2D,Next2D Player,Animation Tool,Next2D Framework" name="keywords"><!-- DNS Prefetch / Preconnect for external resources --><link rel="dns-prefetch" href="//www.googletagmanager.com"><link rel="dns-prefetch" href="//pagead2.googlesyndication.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin><!-- SEO: Canonical URL --><link rel="canonical" href="https://next2d.app/en/reference/player/"><!-- SEO: hreflang for multi-language --><link rel="alternate" hreflang="ja" href="https://next2d.app/ja/reference/player/"><link rel="alternate" hreflang="en" href="https://next2d.app/en/reference/player/"><link rel="alternate" hreflang="zh-CN" href="https://next2d.app/cn/reference/player/"><link rel="alternate" hreflang="x-default" href="https://next2d.app/ja/reference/player/"><!-- Google / Search Engine Tags --><meta itemprop="name" content="Next2D | Player"><meta itemprop="description" content="Next2D Player function description and sample code are available"><meta itemprop="image" content="https://next2d.app/assets/img/ogp.png"><!-- Facebook Meta Tags --><meta property="og:url" content="https://next2d.app/en/reference/player/"><meta property="og:type" content="website"><meta property="og:title" content="Next2D | Player"><meta property="og:description" content="Next2D Player function description and sample code are available"><meta property="og:image" content="https://next2d.app/assets/img/ogp.png"><meta property="og:locale" content="en"><meta property="og:site_name" content="Next2D"><!-- Twitter Meta Tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Next2D"><meta name="twitter:creator" content="@Next2D"><meta name="twitter:title" content="Next2D | Player"><meta name="twitter:description" content="Next2D Player function description and sample code are available"><meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png"><!-- Theme Color --><meta name="theme-color" content="#5777ba"><!-- Web App Manifest --><link rel="manifest" href="/manifest.json"><!-- JSON-LD Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Next2D","url":"https://next2d.app","description":"Next2D - Rendering Engine, Animation Tool, Underlying Framework","inLanguage":["en"],"potentialAction":{"@type":"SearchAction","target":"https://next2d.app/{lang}/reference/player/?q={search_term_string}","query-input":"required name=search_term_string"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Next2D","url":"https://next2d.app","logo":"https://next2d.app/assets/img/ogp.png","sameAs":["https://github.com/Next2D"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Next2D Player","description":"WebGL/WebGPU-based 2D rendering engine for web browsers","applicationCategory":"DeveloperApplication","operatingSystem":"Web Browser","url":"https://next2d.app","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"Next2D"}},{"@type":"SoftwareApplication","name":"Next2D Animation Tool","description":"Browser-based animation creation tool for 2D content","applicationCategory":"MultimediaApplication","operatingSystem":"Web Browser","url":"https://tool.next2d.app","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"Next2D"}},{"@type":"SoftwareApplication","name":"Next2D Framework","description":"Underlying framework for building 2D web applications","applicationCategory":"DeveloperApplication","operatingSystem":"Web Browser","url":"https://next2d.app","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"Next2D"}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://next2d.app/en/"},{"@type":"ListItem","position":2,"name":"Player","item":"https://next2d.app/en/reference/player/"}]}</script><!-- Favicons --><link href="/assets/img/favicon.png" rel="icon"><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"><!-- Vendor CSS --><link href="/assets/css/vendor/aos.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap-icons.min.css" rel="stylesheet"><!-- Main CSS --><link href="/assets/css/main.css" rel="stylesheet"><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-8GJWF4S3RH");
+    </script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style>.docs-content[data-astro-cid-zmb4p77r] h1{font-size:2rem;margin-bottom:1.5rem}.docs-content[data-astro-cid-zmb4p77r] h2{font-size:1.5rem;margin-top:2rem;margin-bottom:1rem}.docs-content[data-astro-cid-zmb4p77r] h3{font-size:1.25rem;margin-top:1.5rem;margin-bottom:.75rem}.docs-content[data-astro-cid-zmb4p77r] pre{background-color:#2a2c30;color:#f8f9fa;border-radius:8px;padding:1rem;overflow-x:auto;margin:1rem 0}.docs-content[data-astro-cid-zmb4p77r] code{font-family:Monaco,Menlo,monospace;font-size:.9em}.docs-content[data-astro-cid-zmb4p77r] table{width:100%;border-collapse:collapse;margin:1rem 0}.docs-content[data-astro-cid-zmb4p77r] th,.docs-content[data-astro-cid-zmb4p77r] td{border:1px solid #ddd;padding:.5rem;text-align:left}.docs-content[data-astro-cid-zmb4p77r] th{background-color:#f5f5f5}
+</style></head> <body class>  <header id="header" class="header fixed-top d-flex align-items-center"> <div class="container d-flex align-items-center justify-content-between"> <div id="logo"> <a href="/en"><img loading="lazy" src="/assets/img/logo.svg" alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework."></a> </div> <nav id="navbar" class="navbar"> <ul class="list-unstyled"> <li><a class="nav-link scrollto" href="/en/#get-started">Home</a></li> <li><a class="nav-link scrollto" href="/en/#casestudy">Case Studies</a></li> <li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>Player</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/en/reference/player">Reference</a></li> <li><a href="/en/#player">Features</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>Animation Tool</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/en/usage">Usage</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="/en/#tool">Features</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>Framework</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/en/reference/framework">Reference</a></li> <li><a href="/en/#framework">Features</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>Language</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="/en">English</a></li> <li><a href="/ja">日本語</a></li> <li><a href="/cn">简体中文</a></li> </ul> </li> <li class="dropdown"><a class="nav-link"><span>Support US</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li> </ul> </li> <li><a class="nav-link scrollto" href="/en/#contact">Contact</a></li> </ul> <i class="bi bi-list mobile-nav-toggle"></i> </nav> </div> </header> <section class="breadcrumbs"> <div class="container"> <div class="d-flex justify-content-between align-items-center"> <h2>Player</h2> <ol> <li> <a href="/en/">Home</a> </li><li> Player </li> </ol> </div> </div> </section> <section id="references" class="reference-section"> <div class="container" data-aos="fade-up"> <div class="row"> <div class="col-lg-3 col-md-4"> <nav id="sub-navbar" class="list-menu sub-navbar"><ul class="list-unstyled"><li><strong>Player</strong></li><ul><li><a href="/en/reference/player">Overview</a></li><li><a href="/en/reference/player/display-object">DisplayObject</a></li><li><a href="/en/reference/player/sprite">Sprite</a></li><li><a href="/en/reference/player/movie-clip">MovieClip</a></li><li><a href="/en/reference/player/shape">Shape</a></li><li><a href="/en/reference/player/text-field">TextField</a></li><li><a href="/en/reference/player/video">Video</a></li><li><a href="/en/reference/player/sound">Sound</a></li><li><a href="/en/reference/player/events">Events</a></li><li><a href="/en/reference/player/filters">Filters</a></li><li><a href="/en/reference/player/tween">Tween</a></li></ul><li><strong>Framework</strong></li><ul><li><a href="/en/reference/framework">Overview</a></li><li><a href="/en/reference/framework/view">View/ViewModel</a></li><li><a href="/en/reference/framework/routing">Routing</a></li><li><a href="/en/reference/framework/config">Configuration</a></li><li><a href="/en/reference/framework/animation-tool">Animation Tool Integration</a></li></ul></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav> </div> <div class="col-lg-9 col-md-8">  <div class="docs-content" data-astro-cid-zmb4p77r> <h1 id="next2d-player">Next2D Player</h1>
+<p>Next2D Player is a high-performance 2D rendering engine using WebGL/WebGPU. It provides Flash Player-like functionality on the web, supporting vector graphics, Tween animations, text, audio, video, and more.</p>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>High-Speed Rendering</strong>: Fast 2D rendering using WebGL/WebGPU</li>
+<li><strong>Multi-Platform</strong>: Supports desktop to mobile devices</li>
+<li><strong>Rich Filters</strong>: Supports Blur, DropShadow, Glow, Bevel, and more</li>
+</ul>
+<h2 id="rendering-pipeline">Rendering Pipeline</h2>
+<p>An overview of the pipeline that enables Next2D Player’s high-speed rendering.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">flowchart TB</span></span>
+<span class="line"><span style="color:#E1E4E8">    %% Main Drawing Flow Chart</span></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph MainFlow["Drawing Flow Chart - Main Rendering Pipeline"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        direction TB</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        subgraph Inputs["Display Objects"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            Shape["Shape&#x3C;br/>(Bitmap/Vector)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            TextField["TextField&#x3C;br/>(canvas2d)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            Video["Video Element"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        Shape --> MaskCheck</span></span>
+<span class="line"><span style="color:#E1E4E8">        TextField --> MaskCheck</span></span>
+<span class="line"><span style="color:#E1E4E8">        Video --> MaskCheck</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        MaskCheck{"mask&#x3C;br/>rendering?"}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        MaskCheck -->|YES| DirectRender["Direct Rendering"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        DirectRender -->|drawArrays| FinalRender</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        MaskCheck -->|NO| CacheCheck1{"cache&#x3C;br/>exists?"}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        CacheCheck1 -->|NO| TextureAtlas["Texture Atlas&#x3C;br/>(Binary Tree Packing)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        TextureAtlas --> Coordinates</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        CacheCheck1 -->|YES| Coordinates["Coordinates DB&#x3C;br/>(x, y, w, h)"]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        Coordinates --> FilterBlendCheck{"filter or&#x3C;br/>blend?"}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        FilterBlendCheck -->|NO| MainArrays</span></span>
+<span class="line"><span style="color:#E1E4E8">        FilterBlendCheck -->|YES| NeedCache{"cache&#x3C;br/>exists?"}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        NeedCache -->|NO| CacheRender["Render to Cache"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        CacheRender --> TextureCache</span></span>
+<span class="line"><span style="color:#E1E4E8">        NeedCache -->|YES| TextureCache["Texture Cache"]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        TextureCache -->|drawArrays| FinalRender</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        MainArrays["Instanced Arrays&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>matrix&#x3C;br/>colorTransform&#x3C;br/>Coordinates&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>&#x3C;b>Batch Rendering&#x3C;/b>"]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        MainArrays -->|drawArraysInstanced&#x3C;br/>&#x3C;b>Multiple objects in one call&#x3C;/b>| FinalRender["Final Rendering"]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        FinalRender -->|60fps| MainFramebuffer["Main Framebuffer&#x3C;br/>(Display)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    %% Branch Flow for Filter/Blend/Mask</span></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph BranchFlow["Filter/Blend/Mask - Branch Processing"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        direction TB</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        subgraph FilterInputs["Display Objects"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            Shape2["Shape&#x3C;br/>(Bitmap/Vector)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            TextField2["TextField&#x3C;br/>(canvas2d)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            Video2["Video Element"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        Shape2 --> CacheCheck2</span></span>
+<span class="line"><span style="color:#E1E4E8">        TextField2 --> CacheCheck2</span></span>
+<span class="line"><span style="color:#E1E4E8">        Video2 --> CacheCheck2</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        CacheCheck2{"cache&#x3C;br/>exists?"}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        CacheCheck2 -->|NO| EffectRender["Effect Rendering"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        CacheCheck2 -->|YES| BranchArrays</span></span>
+<span class="line"><span style="color:#E1E4E8">        EffectRender --> BranchArrays</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        BranchArrays["Instanced Arrays&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>matrix&#x3C;br/>colorTransform&#x3C;br/>Coordinates&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>&#x3C;b>Batch Rendering&#x3C;/b>"]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        BranchArrays -->|drawArraysInstanced&#x3C;br/>&#x3C;b>Multiple objects in one call&#x3C;/b>| BranchRender["Effect Result"]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        BranchRender -->|filter/blend| TextureCache</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    %% Connections between flows</span></span>
+<span class="line"><span style="color:#E1E4E8">    FilterBlendCheck -.->|"trigger&#x3C;br/>branch flow"| BranchFlow</span></span>
+<span class="line"><span style="color:#E1E4E8">    BranchArrays -.->|"rendering info&#x3C;br/>(coordinates)"| MainArrays</span></span></code></pre>
+<h3 id="pipeline-features">Pipeline Features</h3>
+<ul>
+<li><strong>Batch Rendering</strong>: Render multiple objects in a single GPU call</li>
+<li><strong>Texture Cache</strong>: Efficiently process filters and blend effects</li>
+<li><strong>Binary Tree Packing</strong>: Optimal memory usage with texture atlas</li>
+<li><strong>60fps Rendering</strong>: Smooth animations at high frame rates</li>
+</ul>
+<h2 id="displaylist-architecture">DisplayList Architecture</h2>
+<p>Next2D Player uses a DisplayList architecture similar to Flash Player.</p>
+<h3 id="main-class-hierarchy">Main Class Hierarchy</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>DisplayObject (Base class)</span></span>
+<span class="line"><span>├── InteractiveObject</span></span>
+<span class="line"><span>│   ├── DisplayObjectContainer</span></span>
+<span class="line"><span>│   │   ├── Sprite</span></span>
+<span class="line"><span>│   │   ├── MovieClip</span></span>
+<span class="line"><span>│   │   └── Stage</span></span>
+<span class="line"><span>│   └── TextField</span></span>
+<span class="line"><span>├── Shape</span></span>
+<span class="line"><span>├── Video</span></span>
+<span class="line"><span>└── Bitmap</span></span></code></pre>
+<h3 id="displayobjectcontainer">DisplayObjectContainer</h3>
+<p>Container class that can hold child objects:</p>
+<ul>
+<li><code>addChild(child)</code>: Add child to the front</li>
+<li><code>addChildAt(child, index)</code>: Add child at specified index</li>
+<li><code>removeChild(child)</code>: Remove child</li>
+<li><code>getChildAt(index)</code>: Get child by index</li>
+<li><code>getChildByName(name)</code>: Get child by name</li>
+</ul>
+<h3 id="movieclip">MovieClip</h3>
+<p>DisplayObject with timeline animation:</p>
+<ul>
+<li><code>play()</code>: Start timeline playback</li>
+<li><code>stop()</code>: Stop timeline</li>
+<li><code>gotoAndPlay(frame)</code>: Go to frame and play</li>
+<li><code>gotoAndStop(frame)</code>: Go to frame and stop</li>
+<li><code>currentFrame</code>: Current frame number</li>
+<li><code>totalFrames</code>: Total number of frames</li>
+</ul>
+<h2 id="basic-usage">Basic Usage</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">MovieClip</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">DropShadowFilter</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.filters;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Initialize stage</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> root</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> next2d.</span><span style="color:#B392F0">createRootMovieClip</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">800</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">600</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">60</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">    tagId: </span><span style="color:#9ECBFF">"container"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    bgColor: </span><span style="color:#9ECBFF">"#ffffff"</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Create MovieClip</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> mc</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> MovieClip</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">root.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(mc);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Set position and size</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.x </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 100</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.y </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 100</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.scaleX </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.scaleY </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.rotation </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 45</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Apply filters</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.filters </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> DropShadowFilter</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">45</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0x000000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.5</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span></code></pre>
+<h2 id="loading-json-data">Loading JSON Data</h2>
+<p>Load and render JSON files created with Open Animation Tool:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Loader</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">URLRequest</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.net;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> loader</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Loader</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">await</span><span style="color:#E1E4E8"> loader.</span><span style="color:#B392F0">load</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">new</span><span style="color:#B392F0"> URLRequest</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"animation.json"</span><span style="color:#E1E4E8">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> mc</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> loader.content;</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(mc);</span></span></code></pre>
+<h2 id="related-documentation">Related Documentation</h2>
+<h3 id="display-objects">Display Objects</h3>
+<ul>
+<li><a href="/en/reference/player/display-object">DisplayObject</a> - Base class for all display objects</li>
+<li><a href="/en/reference/player/movie-clip">MovieClip</a> - Timeline animation</li>
+<li><a href="/en/reference/player/sprite">Sprite</a> - Graphics drawing and interaction</li>
+<li><a href="/en/reference/player/shape">Shape</a> - Lightweight vector drawing</li>
+<li><a href="/en/reference/player/text-field">TextField</a> - Text display and input</li>
+<li><a href="/en/reference/player/video">Video</a> - Video playback</li>
+</ul>
+<h3 id="systems">Systems</h3>
+<ul>
+<li><a href="/en/reference/player/events">Event System</a> - Mouse, keyboard, touch events</li>
+<li><a href="/en/reference/player/filters">Filters</a> - Blur, DropShadow, Glow, etc.</li>
+<li><a href="/en/reference/player/sound">Sound</a> - Audio playback and sound effects</li>
+<li><a href="/en/reference/player/tween">Tween Animation</a> - Programmatic animation</li>
+</ul> </div>  </div> </div> </div> </section> <footer class="footer" data-aos="fade-up"> <div class="container"> <div class="row"> <div class="col-md-12 col-lg-4"> <div class="footer-logo"> <a class="navbar-brand" href="/en">Next2D</a> <p> Next2D, a project derived from the JavaScript FlashPlayer &quot;swf2js&quot;, aims to provide the fastest 2D engine that works on any device.<br>
+Created by Toshiyuki Ienaga.
+</p> </div> <div class="list-sns-menu"> <ul class="list-unstyled"> <li><a href="https://twitter.com/ienagatoshiyuki" target="_blank"><i class="bi bi-twitter"></i></a></li> <li><a href="https://github.com/ienaga" target="_blank"><i class="bi bi-github"></i></a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Player</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/en/reference/player">Reference</a></li> <li><a href="/en/#player">Features</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Animation Tool</h4> <ul class="list-unstyled"> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/en/usage">Usage</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>Framework</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/en/reference/framework">Reference</a></li> <li><a href="/en/#framework">Features</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>About Us</h4> <ul class="list-unstyled"> <li><a href="/en/#contact">Contact</a></li> <li><a href="/en/privacy">Privacy Policy</a></li> </ul> </div> </div> </div> </div> <div class="copyrights"> <div class="container"> <p>&copy; Copyrights Next2D. All rights reserved.</p> </div> </div> </footer> <script type="module" src="/assets/DocsLayout.astro_astro_type_script_index_0_lang.yTAR6D4i.js"></script>  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> <!-- Vendor JS --> <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script> <script src="/assets/js/vendor/aos.js"></script> <!-- Main JS --> <script src="/assets/js/main.js"></script> </body> </html>

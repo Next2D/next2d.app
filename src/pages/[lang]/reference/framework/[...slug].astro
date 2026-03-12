@@ -12,11 +12,11 @@ export async function getStaticPaths() {
     const langEntries = entries.filter(entry => entry.id.startsWith(`${lang}/`));
 
     for (const entry of langEntries) {
-      // ja/index.md → slug: undefined (index page)
+      // ja/index.md は index.astro で処理するためスキップ
       // ja/view.md → slug: view
       let slug = entry.id.replace(`${lang}/`, '').replace('.md', '');
       if (slug === 'index') {
-        slug = undefined;
+        continue;
       } else if (slug.endsWith('/index')) {
         slug = slug.replace('/index', '');
       }

@@ -1,0 +1,367 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Next2D | Framework</title><meta content="Next2D Framework参考文档。了解MVVM模式、路由和配置方法。" name="description"><meta content="Next2D,Next2D Player,Animation Tool,Next2D Framework" name="keywords"><!-- DNS Prefetch / Preconnect for external resources --><link rel="dns-prefetch" href="//www.googletagmanager.com"><link rel="dns-prefetch" href="//pagead2.googlesyndication.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin><!-- SEO: Canonical URL --><link rel="canonical" href="https://next2d.app/cn/reference/framework/"><!-- SEO: hreflang for multi-language --><link rel="alternate" hreflang="ja" href="https://next2d.app/ja/reference/framework/"><link rel="alternate" hreflang="en" href="https://next2d.app/en/reference/framework/"><link rel="alternate" hreflang="zh-CN" href="https://next2d.app/cn/reference/framework/"><link rel="alternate" hreflang="x-default" href="https://next2d.app/ja/reference/framework/"><!-- Google / Search Engine Tags --><meta itemprop="name" content="Next2D | Framework"><meta itemprop="description" content="Next2D Framework参考文档。了解MVVM模式、路由和配置方法。"><meta itemprop="image" content="https://next2d.app/assets/img/ogp.png"><!-- Facebook Meta Tags --><meta property="og:url" content="https://next2d.app/cn/reference/framework/"><meta property="og:type" content="website"><meta property="og:title" content="Next2D | Framework"><meta property="og:description" content="Next2D Framework参考文档。了解MVVM模式、路由和配置方法。"><meta property="og:image" content="https://next2d.app/assets/img/ogp.png"><meta property="og:locale" content="zh-CN"><meta property="og:site_name" content="Next2D"><!-- Twitter Meta Tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Next2D"><meta name="twitter:creator" content="@Next2D"><meta name="twitter:title" content="Next2D | Framework"><meta name="twitter:description" content="Next2D Framework参考文档。了解MVVM模式、路由和配置方法。"><meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png"><!-- Theme Color --><meta name="theme-color" content="#5777ba"><!-- Web App Manifest --><link rel="manifest" href="/manifest.json"><!-- JSON-LD Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Next2D","url":"https://next2d.app","description":"Next2D - Rendering Engine, Animation Tool, Underlying Framework","inLanguage":["zh-CN"],"potentialAction":{"@type":"SearchAction","target":"https://next2d.app/{lang}/reference/player/?q={search_term_string}","query-input":"required name=search_term_string"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Next2D","url":"https://next2d.app","logo":"https://next2d.app/assets/img/ogp.png","sameAs":["https://github.com/Next2D"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Next2D Player","description":"WebGL/WebGPU-based 2D rendering engine for web browsers","applicationCategory":"DeveloperApplication","operatingSystem":"Web Browser","url":"https://next2d.app","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"Next2D"}},{"@type":"SoftwareApplication","name":"Next2D Animation Tool","description":"Browser-based animation creation tool for 2D content","applicationCategory":"MultimediaApplication","operatingSystem":"Web Browser","url":"https://tool.next2d.app","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"Next2D"}},{"@type":"SoftwareApplication","name":"Next2D Framework","description":"Underlying framework for building 2D web applications","applicationCategory":"DeveloperApplication","operatingSystem":"Web Browser","url":"https://next2d.app","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"Next2D"}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://next2d.app/cn/"},{"@type":"ListItem","position":2,"name":"Framework","item":"https://next2d.app/cn/reference/framework/"}]}</script><!-- Favicons --><link href="/assets/img/favicon.png" rel="icon"><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"><!-- Vendor CSS --><link href="/assets/css/vendor/aos.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/vendor/bootstrap-icons.min.css" rel="stylesheet"><!-- Main CSS --><link href="/assets/css/main.css" rel="stylesheet"><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-8GJWF4S3RH"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-8GJWF4S3RH");
+    </script><script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style>.docs-content[data-astro-cid-zhlk2b74] h1{font-size:2rem;margin-bottom:1.5rem}.docs-content[data-astro-cid-zhlk2b74] h2{font-size:1.5rem;margin-top:2rem;margin-bottom:1rem}.docs-content[data-astro-cid-zhlk2b74] h3{font-size:1.25rem;margin-top:1.5rem;margin-bottom:.75rem}.docs-content[data-astro-cid-zhlk2b74] pre{background-color:#2a2c30;color:#f8f9fa;border-radius:8px;padding:1rem;overflow-x:auto;margin:1rem 0}.docs-content[data-astro-cid-zhlk2b74] code{font-family:Monaco,Menlo,monospace;font-size:.9em}.docs-content[data-astro-cid-zhlk2b74] table{width:100%;border-collapse:collapse;margin:1rem 0}.docs-content[data-astro-cid-zhlk2b74] th,.docs-content[data-astro-cid-zhlk2b74] td{border:1px solid #ddd;padding:.5rem;text-align:left}.docs-content[data-astro-cid-zhlk2b74] th{background-color:#f5f5f5}
+</style></head> <body class="lang-cn">  <header id="header" class="header fixed-top d-flex align-items-center"> <div class="container d-flex align-items-center justify-content-between"> <div id="logo"> <a href="/cn"><img loading="lazy" src="/assets/img/logo.svg" alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework."></a> </div> <nav id="navbar" class="navbar"> <ul class="list-unstyled"> <li><a class="nav-link scrollto" href="/cn/#get-started">首页</a></li> <li><a class="nav-link scrollto" href="/cn/#casestudy">学习案例</a></li> <li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>播放器 (Player)</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/cn/reference/player">参考资料</a></li> <li><a href="/cn/#player">特性</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>动画工具</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/cn/usage">使用方法</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="/cn/#tool">特性</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>框架</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/cn/reference/framework">参考资料</a></li> <li><a href="/cn/#framework">特性</a></li> </ul> </li> <li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>语言</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="/en">English</a></li> <li><a href="/ja">日本語</a></li> <li><a href="/cn">简体中文</a></li> </ul> </li> <li class="dropdown"><a class="nav-link"><span>支持我们</span> <i class="bi bi-chevron-down"></i></a> <ul> <li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li> </ul> </li> <li><a class="nav-link scrollto" href="/cn/#contact">联系我们</a></li> </ul> <i class="bi bi-list mobile-nav-toggle"></i> </nav> </div> </header> <section class="breadcrumbs"> <div class="container"> <div class="d-flex justify-content-between align-items-center"> <h2>Framework</h2> <ol> <li> <a href="/cn/">首页</a> </li><li> Framework </li> </ol> </div> </div> </section> <section id="references" class="reference-section"> <div class="container" data-aos="fade-up"> <div class="row"> <div class="col-lg-3 col-md-4"> <nav id="sub-navbar" class="list-menu sub-navbar"><ul class="list-unstyled"><li><strong>Player</strong></li><ul><li><a href="/cn/reference/player">概述</a></li><li><a href="/cn/reference/player/display-object">DisplayObject</a></li><li><a href="/cn/reference/player/sprite">Sprite</a></li><li><a href="/cn/reference/player/movie-clip">MovieClip</a></li><li><a href="/cn/reference/player/shape">Shape</a></li><li><a href="/cn/reference/player/text-field">TextField</a></li><li><a href="/cn/reference/player/video">Video</a></li><li><a href="/cn/reference/player/sound">Sound</a></li><li><a href="/cn/reference/player/events">事件</a></li><li><a href="/cn/reference/player/filters">滤镜</a></li><li><a href="/cn/reference/player/tween">Tween</a></li></ul><li><strong>Framework</strong></li><ul><li><a href="/cn/reference/framework">概述</a></li><li><a href="/cn/reference/framework/view">View/ViewModel</a></li><li><a href="/cn/reference/framework/routing">路由</a></li><li><a href="/cn/reference/framework/config">配置文件</a></li><li><a href="/cn/reference/framework/animation-tool">Animation Tool集成</a></li></ul></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav> </div> <div class="col-lg-9 col-md-8">  <div class="docs-content" data-astro-cid-zhlk2b74> <h1 id="next2d-framework">Next2D Framework</h1>
+<p>Next2D Framework 是一个用于构建 Next2D Player 应用程序的 MVVM 框架。它提供单页应用程序（SPA）的路由、View/ViewModel 管理和配置管理。</p>
+<h2 id="主要特性">主要特性</h2>
+<ul>
+<li><strong>MVVM 模式</strong>：通过 Model-View-ViewModel 分离关注点</li>
+<li><strong>Clean Architecture</strong>：依赖倒置和松耦合设计</li>
+<li><strong>单页应用程序</strong>：基于 URL 的场景管理</li>
+<li><strong>Animation Tool 集成</strong>：与 Animation Tool 资源无缝集成</li>
+<li><strong>TypeScript 支持</strong>：类型安全的开发</li>
+<li><strong>原子设计</strong>：推荐的可重用组件设计</li>
+</ul>
+<h2 id="架构概述">架构概述</h2>
+<p>本项目实现了 Clean Architecture 和 MVVM 模式的组合。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">graph TB</span></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph ViewLayer["视图层"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        View["View"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        ViewModel["ViewModel"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        UI["UI 组件"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph InterfaceLayer["接口层"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        IDraggable["IDraggable"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        ITextField["ITextField"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        IResponse["IResponse"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph ApplicationLayer["应用层"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        UseCase["UseCase"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph DomainLayer["领域层"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        DomainLogic["领域逻辑"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        DomainService["Service"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph InfraLayer["基础设施层"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        Repository["Repository"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        ExternalAPI["外部 API"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    ViewLayer -.->|通过接口| InterfaceLayer</span></span>
+<span class="line"><span style="color:#E1E4E8">    ViewLayer -.->|调用| ApplicationLayer</span></span>
+<span class="line"><span style="color:#E1E4E8">    ApplicationLayer -.->|通过接口| InterfaceLayer</span></span>
+<span class="line"><span style="color:#E1E4E8">    ApplicationLayer -.->|使用| DomainLayer</span></span>
+<span class="line"><span style="color:#E1E4E8">    ApplicationLayer -.->|调用| InfraLayer</span></span>
+<span class="line"><span style="color:#E1E4E8">    InfraLayer -.->|访问| ExternalAPI</span></span></code></pre>
+<h3 id="层职责">层职责</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>层</th><th>路径</th><th>角色</th></tr></thead><tbody><tr><td><strong>View</strong></td><td><code>view/*</code>, <code>ui/*</code></td><td>处理画面结构和显示</td></tr><tr><td><strong>ViewModel</strong></td><td><code>view/*</code></td><td>View 和 Model 之间的桥梁，事件处理</td></tr><tr><td><strong>Interface</strong></td><td><code>interface/*</code></td><td>抽象层，类型定义</td></tr><tr><td><strong>Application</strong></td><td><code>model/application/*/usecase/*</code></td><td>业务逻辑实现（UseCase）</td></tr><tr><td><strong>Domain</strong></td><td><code>model/domain/*</code></td><td>核心业务规则</td></tr><tr><td><strong>Infrastructure</strong></td><td><code>model/infrastructure/repository/*</code></td><td>数据访问，外部 API 集成</td></tr></tbody></table>
+<h3 id="依赖方向">依赖方向</h3>
+<p>遵循 Clean Architecture 原则，依赖始终指向内部（领域层）。</p>
+<ul>
+<li><strong>视图层</strong>：通过接口使用应用层</li>
+<li><strong>应用层</strong>：通过接口使用领域层和基础设施层</li>
+<li><strong>领域层</strong>：不依赖任何东西（纯业务逻辑）</li>
+<li><strong>基础设施层</strong>：实现领域层接口</li>
+</ul>
+<h2 id="目录结构">目录结构</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>my-app/</span></span>
+<span class="line"><span>├── src/</span></span>
+<span class="line"><span>│   ├── config/                    # 配置文件</span></span>
+<span class="line"><span>│   │   ├── stage.json             # 舞台设置</span></span>
+<span class="line"><span>│   │   ├── config.json            # 环境设置</span></span>
+<span class="line"><span>│   │   ├── routing.json           # 路由设置</span></span>
+<span class="line"><span>│   │   └── Config.ts              # 配置类型定义和导出</span></span>
+<span class="line"><span>│   │</span></span>
+<span class="line"><span>│   ├── interface/                 # 接口定义</span></span>
+<span class="line"><span>│   │   ├── IDraggable.ts          # 可拖动对象</span></span>
+<span class="line"><span>│   │   ├── ITextField.ts          # 文本字段</span></span>
+<span class="line"><span>│   │   ├── IHomeTextResponse.ts   # API 响应类型</span></span>
+<span class="line"><span>│   │   └── IViewName.ts           # 视图名称类型定义</span></span>
+<span class="line"><span>│   │</span></span>
+<span class="line"><span>│   ├── view/                      # View 和 ViewModel</span></span>
+<span class="line"><span>│   │   ├── top/</span></span>
+<span class="line"><span>│   │   │   ├── TopView.ts         # 画面结构定义</span></span>
+<span class="line"><span>│   │   │   └── TopViewModel.ts    # 业务逻辑桥梁</span></span>
+<span class="line"><span>│   │   └── home/</span></span>
+<span class="line"><span>│   │       ├── HomeView.ts</span></span>
+<span class="line"><span>│   │       └── HomeViewModel.ts</span></span>
+<span class="line"><span>│   │</span></span>
+<span class="line"><span>│   ├── model/</span></span>
+<span class="line"><span>│   │   ├── application/           # 应用层</span></span>
+<span class="line"><span>│   │   │   ├── top/</span></span>
+<span class="line"><span>│   │   │   │   └── usecase/</span></span>
+<span class="line"><span>│   │   │   │       └── NavigateToViewUseCase.ts</span></span>
+<span class="line"><span>│   │   │   └── home/</span></span>
+<span class="line"><span>│   │   │       └── usecase/</span></span>
+<span class="line"><span>│   │   │           ├── StartDragUseCase.ts</span></span>
+<span class="line"><span>│   │   │           ├── StopDragUseCase.ts</span></span>
+<span class="line"><span>│   │   │           └── CenterTextFieldUseCase.ts</span></span>
+<span class="line"><span>│   │   │</span></span>
+<span class="line"><span>│   │   ├── domain/                # 领域层</span></span>
+<span class="line"><span>│   │   │   └── callback/</span></span>
+<span class="line"><span>│   │   │       ├── Background.ts</span></span>
+<span class="line"><span>│   │   │       └── Background/</span></span>
+<span class="line"><span>│   │   │           └── service/</span></span>
+<span class="line"><span>│   │   │               ├── BackgroundDrawService.ts</span></span>
+<span class="line"><span>│   │   │               └── BackgroundChangeScaleService.ts</span></span>
+<span class="line"><span>│   │   │</span></span>
+<span class="line"><span>│   │   └── infrastructure/        # 基础设施层</span></span>
+<span class="line"><span>│   │       └── repository/</span></span>
+<span class="line"><span>│   │           └── HomeTextRepository.ts</span></span>
+<span class="line"><span>│   │</span></span>
+<span class="line"><span>│   ├── ui/                        # UI 组件</span></span>
+<span class="line"><span>│   │   ├── animation/             # 动画定义</span></span>
+<span class="line"><span>│   │   │   └── top/</span></span>
+<span class="line"><span>│   │   │       └── TopBtnShowAnimation.ts</span></span>
+<span class="line"><span>│   │   │</span></span>
+<span class="line"><span>│   │   ├── component/             # 原子设计</span></span>
+<span class="line"><span>│   │   │   ├── atom/              # 最小单元组件</span></span>
+<span class="line"><span>│   │   │   │   ├── ButtonAtom.ts</span></span>
+<span class="line"><span>│   │   │   │   └── TextAtom.ts</span></span>
+<span class="line"><span>│   │   │   ├── molecule/          # 组合的 Atom 组件</span></span>
+<span class="line"><span>│   │   │   │   ├── HomeBtnMolecule.ts</span></span>
+<span class="line"><span>│   │   │   │   └── TopBtnMolecule.ts</span></span>
+<span class="line"><span>│   │   │   ├── organism/          # 多个 Molecule 组合</span></span>
+<span class="line"><span>│   │   │   ├── template/          # 页面模板</span></span>
+<span class="line"><span>│   │   │   └── page/              # 页面组件</span></span>
+<span class="line"><span>│   │   │       ├── top/</span></span>
+<span class="line"><span>│   │   │       │   └── TopPage.ts</span></span>
+<span class="line"><span>│   │   │       └── home/</span></span>
+<span class="line"><span>│   │   │           └── HomePage.ts</span></span>
+<span class="line"><span>│   │   │</span></span>
+<span class="line"><span>│   │   └── content/               # Animation Tool 生成的内容</span></span>
+<span class="line"><span>│   │       ├── TopContent.ts</span></span>
+<span class="line"><span>│   │       └── HomeContent.ts</span></span>
+<span class="line"><span>│   │</span></span>
+<span class="line"><span>│   ├── assets/                    # 静态资源</span></span>
+<span class="line"><span>│   │</span></span>
+<span class="line"><span>│   ├── Packages.ts                # 包导出</span></span>
+<span class="line"><span>│   └── index.ts                   # 入口点</span></span>
+<span class="line"><span>│</span></span>
+<span class="line"><span>├── file/                          # Animation Tool 输出文件</span></span>
+<span class="line"><span>│   └── sample.n2d</span></span>
+<span class="line"><span>│</span></span>
+<span class="line"><span>├── mock/                          # 模拟数据</span></span>
+<span class="line"><span>│   ├── api/                       # API 模拟</span></span>
+<span class="line"><span>│   ├── content/                   # 内容模拟</span></span>
+<span class="line"><span>│   └── img/                       # 图像模拟</span></span>
+<span class="line"><span>│</span></span>
+<span class="line"><span>└── package.json</span></span></code></pre>
+<h2 id="框架流程图">框架流程图</h2>
+<p>使用 gotoView 函数的画面转换详细流程。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">graph TD</span></span>
+<span class="line"><span style="color:#E1E4E8">    User([用户]) -->|请求| GotoView[gotoView Path]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    GotoView --> LoadingCheck{使用加载?&#x3C;br/>默认: true}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    LoadingCheck -->|是| ScreenOverlay[画面遮罩]</span></span>
+<span class="line"><span style="color:#E1E4E8">    LoadingCheck -->|否| RemoveResponse</span></span>
+<span class="line"><span style="color:#E1E4E8">    ScreenOverlay --> LoadingStart[开始加载]</span></span>
+<span class="line"><span style="color:#E1E4E8">    LoadingStart --> RemoveResponse</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    RemoveResponse[移除前一个响应数据] --> ParseQuery[解析查询字符串]</span></span>
+<span class="line"><span style="color:#E1E4E8">    ParseQuery --> UpdateHistory{SPA 模式?}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    UpdateHistory -->|是| PushState[推送历史状态]</span></span>
+<span class="line"><span style="color:#E1E4E8">    UpdateHistory -->|否| RequestType</span></span>
+<span class="line"><span style="color:#E1E4E8">    PushState --> RequestType</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    RequestType[请求类型]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    RequestType --> JSON[JSON: 获取外部 JSON 数据]</span></span>
+<span class="line"><span style="color:#E1E4E8">    RequestType --> CONTENT[CONTENT: 获取 Animation Tool JSON]</span></span>
+<span class="line"><span style="color:#E1E4E8">    RequestType --> CUSTOM[CUSTOM: 请求外部 API]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    JSON --> CacheCheck{使用缓存?&#x3C;br/>默认: false}</span></span>
+<span class="line"><span style="color:#E1E4E8">    CONTENT --> CacheCheck</span></span>
+<span class="line"><span style="color:#E1E4E8">    CUSTOM --> CacheCheck</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    CacheCheck -->|是| CacheData[(缓存)]</span></span>
+<span class="line"><span style="color:#E1E4E8">    CacheCheck -->|否| GlobalData{{全球网络}}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    CacheData --> Cached{已缓存?}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    Cached -->|否| GlobalData</span></span>
+<span class="line"><span style="color:#E1E4E8">    Cached -->|是| RegisterResponse</span></span>
+<span class="line"><span style="color:#E1E4E8">    GlobalData --> RegisterResponse</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    RegisterResponse[注册响应数据] --> RequestCallback{请求回调?}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    RequestCallback -->|是| ExecRequestCallback[执行请求回调]</span></span>
+<span class="line"><span style="color:#E1E4E8">    RequestCallback -->|否| UnbindView</span></span>
+<span class="line"><span style="color:#E1E4E8">    ExecRequestCallback --> UnbindView</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    UnbindView[前一个 View: onExit 和解绑] --> BindView[新 View/ViewModel: 绑定]</span></span>
+<span class="line"><span style="color:#E1E4E8">    BindView --> ViewModelInit[ViewModel: initialize]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    ViewModelInit --> ViewInit[View: initialize]</span></span>
+<span class="line"><span style="color:#E1E4E8">    ViewInit --> AddToStage[将 View 添加到舞台]</span></span>
+<span class="line"><span style="color:#E1E4E8">    AddToStage --> GotoViewCallback{gotoView 回调?}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    GotoViewCallback -->|是| ExecGotoViewCallback[执行 gotoView 回调]</span></span>
+<span class="line"><span style="color:#E1E4E8">    GotoViewCallback -->|否| LoadingEndCheck</span></span>
+<span class="line"><span style="color:#E1E4E8">    ExecGotoViewCallback --> LoadingEndCheck</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    LoadingEndCheck{使用加载?&#x3C;br/>默认: true}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    LoadingEndCheck -->|是| LoadingEnd[结束加载]</span></span>
+<span class="line"><span style="color:#E1E4E8">    LoadingEndCheck -->|否| OnEnter</span></span>
+<span class="line"><span style="color:#E1E4E8">    LoadingEnd --> DisposeOverlay[释放画面遮罩]</span></span>
+<span class="line"><span style="color:#E1E4E8">    DisposeOverlay --> OnEnter</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    OnEnter[View: onEnter] --> StartDrawing</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    StartDrawing[开始绘制] -->|响应| User</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    style User fill:#d5e8d4,stroke:#82b366</span></span>
+<span class="line"><span style="color:#E1E4E8">    style StartDrawing fill:#dae8fc,stroke:#6c8ebf</span></span>
+<span class="line"><span style="color:#E1E4E8">    style CacheData fill:#fff2cc,stroke:#d6b656</span></span>
+<span class="line"><span style="color:#E1E4E8">    style GlobalData fill:#f5f5f5,stroke:#666666</span></span></code></pre>
+<h3 id="关键流程步骤">关键流程步骤</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>步骤</th><th>说明</th></tr></thead><tbody><tr><td><strong>gotoView</strong></td><td>画面转换的入口点</td></tr><tr><td><strong>Loading</strong></td><td>加载画面显示/隐藏控制</td></tr><tr><td><strong>Request Type</strong></td><td>三种请求类型：JSON、CONTENT、CUSTOM</td></tr><tr><td><strong>Cache</strong></td><td>响应数据缓存控制</td></tr><tr><td><strong>View/ViewModel Bind</strong></td><td>新 View/ViewModel 的绑定过程</td></tr><tr><td><strong>onEnter</strong></td><td>画面显示完成后的回调</td></tr></tbody></table>
+<h2 id="关键设计模式">关键设计模式</h2>
+<h3 id="1-mvvmmodel-view-viewmodel">1. MVVM（Model-View-ViewModel）</h3>
+<ul>
+<li><strong>View</strong>：处理画面结构和显示。没有业务逻辑</li>
+<li><strong>ViewModel</strong>：View 和 Model 之间的桥梁。持有 UseCase 并处理事件</li>
+<li><strong>Model</strong>：处理业务逻辑和数据访问</li>
+</ul>
+<h3 id="2-usecase-模式">2. UseCase 模式</h3>
+<p>为每个用户操作创建专用的 UseCase 类：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> StartDragUseCase</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">    execute</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">target</span><span style="color:#F97583">:</span><span style="color:#B392F0"> IDraggable</span><span style="color:#E1E4E8">)</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> void</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#E1E4E8">        target.</span><span style="color:#B392F0">startDrag</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="3-依赖倒置">3. 依赖倒置</h3>
+<p>依赖接口，而不是具体类：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#6A737D">// 好：依赖接口</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#F97583"> type</span><span style="color:#E1E4E8"> { IDraggable } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@/interface/IDraggable"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> startDrag</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">target</span><span style="color:#F97583">:</span><span style="color:#B392F0"> IDraggable</span><span style="color:#E1E4E8">)</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> void</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#E1E4E8">    target.</span><span style="color:#B392F0">startDrag</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="4-repository-模式">4. Repository 模式</h3>
+<p>抽象数据访问并实现错误处理：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> HomeTextRepository</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    static</span><span style="color:#F97583"> async</span><span style="color:#B392F0"> get</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">IHomeTextResponse</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">            const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`${</span><span style="color:#E1E4E8">config</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">api</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">endPoint</span><span style="color:#9ECBFF">}api/home.json`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">response.ok) {</span></span>
+<span class="line"><span style="color:#F97583">                throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`HTTP error! status: ${</span><span style="color:#E1E4E8">response</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">status</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#F97583">            return</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">            console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Failed to fetch:"</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#F97583">            throw</span><span style="color:#E1E4E8"> error;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="快速开始">快速开始</h2>
+<h3 id="创建项目">创建项目</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">npx</span><span style="color:#9ECBFF"> create-next2d-app</span><span style="color:#9ECBFF"> my-app</span></span>
+<span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> my-app</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> install</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> start</span></span></code></pre>
+<h3 id="自动生成-viewviewmodel">自动生成 View/ViewModel</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> generate</span></span></code></pre>
+<p>此命令解析 <code>routing.json</code> 中的顶级属性并生成相应的 View 和 ViewModel 类。</p>
+<h2 id="最佳实践">最佳实践</h2>
+<ol>
+<li><strong>接口优先</strong>：始终依赖接口，而不是具体类型</li>
+<li><strong>单一职责原则</strong>：每个类只有一个职责</li>
+<li><strong>依赖注入</strong>：通过构造函数注入依赖</li>
+<li><strong>错误处理</strong>：在 Repository 层适当处理错误</li>
+<li><strong>类型安全</strong>：避免 <code>any</code> 类型，使用显式类型定义</li>
+</ol>
+<h2 id="相关文档">相关文档</h2>
+<h3 id="基础">基础</h3>
+<ul>
+<li><a href="/cn/reference/framework/view">View/ViewModel</a> - 画面显示和数据绑定</li>
+<li><a href="/cn/reference/framework/routing">路由</a> - 基于 URL 的画面转换</li>
+<li><a href="/cn/reference/framework/config">配置</a> - 环境和舞台设置</li>
+<li><a href="/cn/reference/framework/animation-tool">Animation Tool 集成</a> - 使用 Animation Tool 资源</li>
+</ul>
+<h3 id="next2d-player-集成">Next2D Player 集成</h3>
+<ul>
+<li><a href="/cn/reference/player">Next2D Player</a> - 渲染引擎</li>
+<li><a href="/cn/reference/player/movie-clip">MovieClip</a> - 时间轴动画</li>
+<li><a href="/cn/reference/player/events">事件系统</a> - 用户交互</li>
+</ul> </div>  </div> </div> </div> </section> <footer class="footer" data-aos="fade-up"> <div class="container"> <div class="row"> <div class="col-md-12 col-lg-4"> <div class="footer-logo"> <a class="navbar-brand" href="/cn">Next2D</a> <p> Next2D 源于一个 JavaScript Flash 播放器项目 &quot;swf2js&quot;，旨在提供一个在任何设备上都可以运行的、最快的 2D 引擎。<br>
+Created by Toshiyuki Ienaga.
+</p> </div> <div class="list-sns-menu"> <ul class="list-unstyled"> <li><a href="https://twitter.com/ienagatoshiyuki" target="_blank"><i class="bi bi-twitter"></i></a></li> <li><a href="https://github.com/ienaga" target="_blank"><i class="bi bi-github"></i></a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>播放器 (Player)</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li> <li><a href="/cn/reference/player">参考资料</a></li> <li><a href="/cn/#player">特性</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>动画制作工具 (Animation Tool)</h4> <ul class="list-unstyled"> <li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li> <li><a href="/cn/usage">使用方法</a></li> <li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li> <li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>框架 (Framework)</h4> <ul class="list-unstyled"> <li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li> <li><a href="/cn/reference/framework">参考资料</a></li> <li><a href="/cn/#framework">特性</a></li> </ul> </div> </div> <div class="col-sm-6 col-md-3 col-lg-2"> <div class="list-menu"> <h4>关于我们</h4> <ul class="list-unstyled"> <li><a href="/cn/#contact">联系我们</a></li> <li><a href="/cn/privacy">隐私政策</a></li> </ul> </div> </div> </div> </div> <div class="copyrights"> <div class="container"> <p>&copy; Copyrights Next2D. All rights reserved.</p> </div> </div> </footer> <script type="module" src="/assets/DocsLayout.astro_astro_type_script_index_0_lang.yTAR6D4i.js"></script>  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> <!-- Vendor JS --> <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script> <script src="/assets/js/vendor/aos.js"></script> <!-- Main JS --> <script src="/assets/js/main.js"></script> </body> </html>

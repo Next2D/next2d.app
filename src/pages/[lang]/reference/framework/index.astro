@@ -4,62 +4,51 @@ import DocsLayout from '../../../../layouts/DocsLayout.astro';
 import { getTranslations, supportedLanguages, isValidLanguage } from '../../../../i18n';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('player-specs');
   const paths: any[] = [];
 
   for (const lang of supportedLanguages) {
-    // 言語ごとのエントリーをフィルタ
-    const langEntries = entries.filter(entry => entry.id.startsWith(`${lang}/`));
-
-    for (const entry of langEntries) {
-      // ja/index.md は index.astro で処理するためスキップ
-      // ja/display-object.md → slug: display-object
-      // ja/filters/index.md → slug: filters
-      let slug = entry.id.replace(`${lang}/`, '').replace('.md', '');
-      if (slug === 'index') {
-        continue;
-      } else if (slug.endsWith('/index')) {
-        slug = slug.replace('/index', '');
-      }
-
-      paths.push({
-        params: { lang, slug },
-        props: { entry }
-      });
-    }
+    paths.push({
+      params: { lang }
+    });
   }
 
   return paths;
 }
 
-const { lang, slug } = Astro.params;
-const { entry } = Astro.props;
+const { lang } = Astro.params;
 
 if (!isValidLanguage(lang)) {
-  return Astro.redirect('/ja/reference/player/');
+  return Astro.redirect('/ja/reference/framework/');
 }
 
 const t = await getTranslations(lang);
 const basePath = import.meta.env.BASE_URL;
 
-const { Content } = await render(entry);
+// 言語の index.md を取得
+const entries = await getCollection('framework-specs');
+const indexEntry = entries.find(e => e.id === lang || e.id === `${lang}/index`);
 
-// Markdownの最初の# からタイトルを抽出
-const titleMatch = entry.body.match(/^#\s+(.+)$/m);
-let title = titleMatch ? titleMatch[1] : 'Player Documentation';
-// "Next2D "の重複を避ける（BaseLayoutで"Next2D | "が付くため）
+if (!indexEntry) {
+  return Astro.redirect(`${basePath}${lang}/`);
+}
+
+const { Content } = await render(indexEntry);
+
+// Markdown の最初の# からタイトルを抽出
+const titleMatch = indexEntry.body?.match(/^#\s+(.+)$/m);
+let title = titleMatch ? titleMatch[1] : 'Framework Documentation';
+// "Next2D "の重複を避ける（BaseLayout で"Next2D | "が付くため）
 title = title.replace(/^Next2D\s+/, '');
 
 const breadcrumbs = [
   { label: t.navbar?.home || 'Home', href: `${basePath}${lang}/` },
-  { label: 'Player', href: `${basePath}${lang}/reference/player/` },
-  ...(slug ? [{ label: title }] : [])
+  { label: 'Framework', href: `${basePath}${lang}/reference/framework/` }
 ];
 ---
 
 <DocsLayout
   title={title}
-  description={t.playerreference?.description || 'Next2D Player Documentation'}
+  description={t.framework?.['reference-description'] || 'Next2D Framework Reference'}
   lang={lang}
   t={t}
   breadcrumbs={breadcrumbs}

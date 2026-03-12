@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import DocsLayout from '../../../../layouts/DocsLayout.astro';
 import { getTranslations, supportedLanguages, isValidLanguage } from '../../../../i18n';
 
@@ -12,11 +12,11 @@ export async function getStaticPaths() {
     const langEntries = entries.filter(entry => entry.id.startsWith(`${lang}/`));
 
     for (const entry of langEntries) {
-      // ja/index.md → slug: undefined (index page)
+      // ja/index.md は index.astro で処理するためスキップ
       // ja/view.md → slug: view
       let slug = entry.id.replace(`${lang}/`, '').replace('.md', '');
       if (slug === 'index') {
-        slug = undefined;
+        continue;
       } else if (slug.endsWith('/index')) {
         slug = slug.replace('/index', '');
       }
@@ -41,7 +41,7 @@ if (!isValidLanguage(lang)) {
 const t = await getTranslations(lang);
 const basePath = import.meta.env.BASE_URL;
 
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
 // Markdownの最初の# からタイトルを抽出
 const titleMatch = entry.body.match(/^#\s+(.+)$/m);

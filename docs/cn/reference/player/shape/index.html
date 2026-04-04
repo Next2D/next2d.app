@@ -282,7 +282,8 @@
 <li><strong>缓存复杂形状</strong>：使用 cacheAsBitmap 属性缓存绘制</li>
 </ol>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// 将复杂形状缓存为位图</span></span>
-<span class="line"><span style="color:#E1E4E8">shape.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span></code></pre>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Matrix</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.geom;</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Matrix</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span></code></pre>
 <h2 id="graphics-类">Graphics 类</h2>
 <p>Graphics 类提供用于渲染矢量图形的绘图 API。通过 Shape.graphics 属性访问。</p>
 <h3 id="填充方法">填充方法</h3>

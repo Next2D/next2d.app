@@ -195,7 +195,12 @@
 
 
 
-<table><thead><tr><th>プロパティ</th><th>型</th><th>説明</th></tr></thead><tbody><tr><td><code>name</code></td><td>string</td><td>名前。getChildByName()で使用される（デフォルト: ""）</td></tr><tr><td><code>startFrame</code></td><td>number</td><td>開始フレーム（デフォルト: 1）</td></tr><tr><td><code>endFrame</code></td><td>number</td><td>終了フレーム（デフォルト: 0）</td></tr><tr><td><code>isMask</code></td><td>boolean</td><td>マスクとしてDisplayObjectにセットされているかを示す（デフォルト: false）</td></tr><tr><td><code>parent</code></td><td>Sprite | MovieClip | null</td><td>このDisplayObjectの親のDisplayObjectContainer</td></tr><tr><td><code>alpha</code></td><td>number</td><td>アルファ透明度値（0.0～1.0、デフォルト: 1.0）</td></tr><tr><td><code>blendMode</code></td><td>string</td><td>使用するブレンドモード（デフォルト: BlendMode.NORMAL）</td></tr><tr><td><code>filters</code></td><td>Array | null</td><td>表示オブジェクトに関連付けられている各フィルターオブジェクトの配列</td></tr><tr><td><code>height</code></td><td>number</td><td>表示オブジェクトの高さ（ピクセル単位）</td></tr><tr><td><code>width</code></td><td>number</td><td>表示オブジェクトの幅（ピクセル単位）</td></tr><tr><td><code>colorTransform</code></td><td>ColorTransform</td><td>表示オブジェクトのColorTransform</td></tr><tr><td><code>matrix</code></td><td>Matrix</td><td>表示オブジェクトのMatrix</td></tr><tr><td><code>rotation</code></td><td>number</td><td>DisplayObjectインスタンスの回転角度（度単位）</td></tr><tr><td><code>scale9Grid</code></td><td>Rectangle | null</td><td>現在有効な拡大/縮小グリッド</td></tr><tr><td><code>scaleX</code></td><td>number</td><td>基準点から適用されるオブジェクトの水平スケール値</td></tr><tr><td><code>scaleY</code></td><td>number</td><td>基準点から適用されるオブジェクトの垂直スケール値</td></tr><tr><td><code>visible</code></td><td>boolean</td><td>表示オブジェクトが可視かどうか（デフォルト: true）</td></tr><tr><td><code>x</code></td><td>number</td><td>親DisplayObjectContainerのローカル座標を基準にしたX座標</td></tr><tr><td><code>y</code></td><td>number</td><td>親DisplayObjectContainerのローカル座標を基準にしたY座標</td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>プロパティ</th><th>型</th><th>説明</th></tr></thead><tbody><tr><td><code>name</code></td><td>string</td><td>名前。getChildByName()で使用される（デフォルト: ""）</td></tr><tr><td><code>startFrame</code></td><td>number</td><td>開始フレーム（デフォルト: 1）</td></tr><tr><td><code>endFrame</code></td><td>number</td><td>終了フレーム（デフォルト: 0）</td></tr><tr><td><code>isMask</code></td><td>boolean</td><td>マスクとしてDisplayObjectにセットされているかを示す（デフォルト: false）</td></tr><tr><td><code>parent</code></td><td>Sprite | MovieClip | null</td><td>このDisplayObjectの親のDisplayObjectContainer</td></tr><tr><td><code>alpha</code></td><td>number</td><td>アルファ透明度値（0.0～1.0、デフォルト: 1.0）</td></tr><tr><td><code>blendMode</code></td><td>string</td><td>使用するブレンドモード（デフォルト: BlendMode.NORMAL）</td></tr><tr><td><code>filters</code></td><td>Array | null</td><td>表示オブジェクトに関連付けられている各フィルターオブジェクトの配列</td></tr><tr><td><code>height</code></td><td>number</td><td>表示オブジェクトの高さ（ピクセル単位）</td></tr><tr><td><code>width</code></td><td>number</td><td>表示オブジェクトの幅（ピクセル単位）</td></tr><tr><td><code>colorTransform</code></td><td>ColorTransform</td><td>表示オブジェクトのColorTransform</td></tr><tr><td><code>matrix</code></td><td>Matrix</td><td>表示オブジェクトのMatrix</td></tr><tr><td><code>rotation</code></td><td>number</td><td>DisplayObjectインスタンスの回転角度（度単位）</td></tr><tr><td><code>scale9Grid</code></td><td>Rectangle | null</td><td>現在有効な拡大/縮小グリッド</td></tr><tr><td><code>scaleX</code></td><td>number</td><td>基準点から適用されるオブジェクトの水平スケール値</td></tr><tr><td><code>scaleY</code></td><td>number</td><td>基準点から適用されるオブジェクトの垂直スケール値</td></tr><tr><td><code>visible</code></td><td>boolean</td><td>表示オブジェクトが可視かどうか（デフォルト: true）</td></tr><tr><td><code>cacheAsBitmap</code></td><td>Matrix | null</td><td>ビットマップキャッシュ用のMatrix。<strong>スケール値（a, d）のみ設定可能</strong>（b, c, tx, tyは無視されます）。1.0基準でdisplayObjectのscaleX/scaleYに適用される。キャッシュ品質 = 指定Matrix × 自身のスケール × stageスケール。先祖のMatrixの影響は受けないが、描画時には先祖のMatrixが適用される。ヒットテスト・幅・高さはベクター基準。<strong>適用対象: Shape, TextField, Sprite, MovieClip</strong>（Videoは固定サイズのため適用不可）（デフォルト: null）</td></tr><tr><td><code>x</code></td><td>number</td><td>親DisplayObjectContainerのローカル座標を基準にしたX座標</td></tr><tr><td><code>y</code></td><td>number</td><td>親DisplayObjectContainerのローカル座標を基準にしたY座標</td></tr></tbody></table>
 <h2 id="メソッド-methods">メソッド (Methods)</h2>
 
 
@@ -400,6 +405,98 @@
 <span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">setGlobalVariable</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"gameState"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"playing"</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> state</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> displayObject.</span><span style="color:#B392F0">getGlobalVariable</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"gameState"</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">clearGlobalVariable</span><span style="color:#E1E4E8">(); </span><span style="color:#6A737D">// 全てクリア</span></span></code></pre>
+<h3 id="cacheasbitmapの例">cacheAsBitmapの例</h3>
+<p><code>cacheAsBitmap</code>はベクター描画やコンテナをビットマップとしてキャッシュし、2回目以降の描画でキャッシュを再利用することでパフォーマンスを向上させるプロパティです。</p>
+<p><strong>適用対象クラス:</strong></p>
+<ul>
+<li><code>Shape</code> — ベクター描画のキャッシュ</li>
+<li><code>TextField</code> — テキスト描画のキャッシュ</li>
+<li><code>Sprite</code> — コンテナとその子要素をまとめてキャッシュ</li>
+<li><code>MovieClip</code> — コンテナとその子要素をまとめてキャッシュ</li>
+</ul>
+<blockquote>
+<p>⚠️ <code>Video</code>には適用できません。Videoは画像サイズが固定されているため、キャッシュの効果がありません。</p>
+</blockquote>
+<p><strong>Matrixの制限:</strong>
+Matrixにはスケール値（a, d）のみ設定できます。回転（b, c）や移動（tx, ty）は無視されます。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#6A737D">// ✅ 正しい使い方（スケールのみ設定）</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Matrix</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);  </span><span style="color:#6A737D">// 等倍</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Matrix</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);  </span><span style="color:#6A737D">// 2倍品質</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// ❌ 回転・移動の値は無視される</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Matrix</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.5</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.5</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">);  </span><span style="color:#6A737D">// b, c, tx, tyは無視</span></span></code></pre>
+<p><strong>利用用途の例:</strong></p>
+<ol>
+<li><strong>速度の速いアニメーション</strong> — 高速で動くオブジェクトは視認性が低いため、キャッシュによる画質低下が目立たず、パフォーマンス向上が期待できます</li>
+<li><strong>静的な背景やUI部品</strong> — 変化しないUI要素（パネル、装飾、アイコンなど）をキャッシュすることで毎フレームの再描画コストを削減できます</li>
+<li><strong>複雑なベクター描画</strong> — パスが多い複雑なShapeをキャッシュすることで描画負荷を大幅に軽減できます</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Sprite</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Matrix</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.geom;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 等倍でキャッシュ（1.0基準 = displayObjectのscaleX/scaleYに対する等倍）</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> shape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.graphics.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0xFF0000</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">drawCircle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">40</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Matrix</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 2倍の解像度でキャッシュ（自身のスケールの2倍品質）</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> hqShape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">hqShape.graphics.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0x00FF00</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">drawRect</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">80</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">hqShape.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Matrix</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// scaleX/scaleYが反映される（キャッシュ品質 = Matrix × 自身のスケール × stageスケール）</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.scaleX </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">; </span><span style="color:#6A737D">// キャッシュ品質: 1 × 2 × stageScale</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.scaleY </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 親のスケールはキャッシュ品質に影響しない（描画位置には反映される）</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> container</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Sprite</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">container.scaleX </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 3</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">container.scaleY </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 3</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">container.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(shape);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// ヒットテスト・幅・高さはベクター基準</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> bounds</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> shape.</span><span style="color:#B392F0">getBounds</span><span style="color:#E1E4E8">(shape); </span><span style="color:#6A737D">// ベクターの境界を返す</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// キャッシュを解除</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">;</span></span></code></pre>
+<h3 id="displayobjectcontainerでのcacheasbitmap">DisplayObjectContainerでのcacheAsBitmap</h3>
+<p><code>Sprite</code>や<code>MovieClip</code>などの<code>DisplayObjectContainer</code>に対しても<code>cacheAsBitmap</code>を設定できます。
+コンテナの全子要素をまとめてテクスチャにキャッシュし、以降のフレームではキャッシュされたテクスチャを再利用します。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Sprite</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">MovieClip</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Matrix</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.geom;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 複数の子要素を持つSprite</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> sprite</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Sprite</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> rect</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">rect.graphics.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0xFF0000</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">drawRect</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">80</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(rect);</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> circle</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">circle.graphics.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0x00FF00</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">drawCircle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">40</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(circle);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// コンテナ全体をビットマップキャッシュ</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Matrix</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// MovieClipにも同様に適用可能</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> mc</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> MovieClip</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Matrix</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// キャッシュを解除（次フレームから通常描画に戻る）</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">;</span></span></code></pre>
+<p><strong>キャッシュの動作:</strong></p>
+<ul>
+<li>先祖や自身のスケールが変更されるとキャッシュが無効化され、次フレームで再生成されます</li>
+<li>位置（x, y）の変更ではキャッシュは維持され、描画位置のみ更新されます</li>
+<li>スケールが頻繁に変化するアニメーション中はキャッシュが毎フレーム再生成されるため、アニメーション完了後の静的な状態で最も効果を発揮します</li>
+</ul>
+<p><strong>注意事項:</strong></p>
+<ul>
+<li><strong>Matrixにはスケール値のみ設定可能</strong>です（回転・移動は無視されます）</li>
+<li><strong>Videoには適用できません</strong>（固定サイズの画像データのため）</li>
+<li>キャッシュ中は子要素の変更（追加・削除・プロパティ変更）が画面に反映されません</li>
+<li><code>stage.rendererScale</code>が変更されるとキャッシュが自動的に無効化されます</li>
+<li><code>filter</code>と<code>cacheAsBitmap</code>を同時に設定した場合、<code>cacheAsBitmap</code>が優先されます</li>
+</ul>
 <h2 id="関連項目">関連項目</h2>
 <ul>
 <li><a href="/ja/reference/player/movie-clip">MovieClip</a></li>

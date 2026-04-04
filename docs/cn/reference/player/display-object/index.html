@@ -195,7 +195,12 @@
 
 
 
-<table><thead><tr><th>属性</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><code>name</code></td><td>string</td><td>名称。用于 getChildByName()（默认：""）</td></tr><tr><td><code>startFrame</code></td><td>number</td><td>起始帧（默认：1）</td></tr><tr><td><code>endFrame</code></td><td>number</td><td>结束帧（默认：0）</td></tr><tr><td><code>isMask</code></td><td>boolean</td><td>表示 DisplayObject 是否被设置为遮罩（默认：false）</td></tr><tr><td><code>parent</code></td><td>Sprite | MovieClip | null</td><td>此 DisplayObject 的父 DisplayObjectContainer</td></tr><tr><td><code>alpha</code></td><td>number</td><td>Alpha 透明度值（0.0-1.0，默认：1.0）</td></tr><tr><td><code>blendMode</code></td><td>string</td><td>要使用的混合模式（默认：BlendMode.NORMAL）</td></tr><tr><td><code>filters</code></td><td>Array | null</td><td>与显示对象关联的滤镜对象数组</td></tr><tr><td><code>height</code></td><td>number</td><td>显示对象的高度（像素）</td></tr><tr><td><code>width</code></td><td>number</td><td>显示对象的宽度（像素）</td></tr><tr><td><code>colorTransform</code></td><td>ColorTransform</td><td>显示对象的 ColorTransform</td></tr><tr><td><code>matrix</code></td><td>Matrix</td><td>显示对象的 Matrix</td></tr><tr><td><code>rotation</code></td><td>number</td><td>DisplayObject 实例的旋转角度（度）</td></tr><tr><td><code>scale9Grid</code></td><td>Rectangle | null</td><td>当前活动的缩放网格</td></tr><tr><td><code>scaleX</code></td><td>number</td><td>从参考点应用的对象水平缩放值</td></tr><tr><td><code>scaleY</code></td><td>number</td><td>从参考点应用的对象垂直缩放值</td></tr><tr><td><code>visible</code></td><td>boolean</td><td>显示对象是否可见（默认：true）</td></tr><tr><td><code>x</code></td><td>number</td><td>相对于父 DisplayObjectContainer 本地坐标的 X 坐标</td></tr><tr><td><code>y</code></td><td>number</td><td>相对于父 DisplayObjectContainer 本地坐标的 Y 坐标</td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><code>name</code></td><td>string</td><td>名称。用于 getChildByName()（默认：""）</td></tr><tr><td><code>startFrame</code></td><td>number</td><td>起始帧（默认：1）</td></tr><tr><td><code>endFrame</code></td><td>number</td><td>结束帧（默认：0）</td></tr><tr><td><code>isMask</code></td><td>boolean</td><td>表示 DisplayObject 是否被设置为遮罩（默认：false）</td></tr><tr><td><code>parent</code></td><td>Sprite | MovieClip | null</td><td>此 DisplayObject 的父 DisplayObjectContainer</td></tr><tr><td><code>alpha</code></td><td>number</td><td>Alpha 透明度值（0.0-1.0，默认：1.0）</td></tr><tr><td><code>blendMode</code></td><td>string</td><td>要使用的混合模式（默认：BlendMode.NORMAL）</td></tr><tr><td><code>filters</code></td><td>Array | null</td><td>与显示对象关联的滤镜对象数组</td></tr><tr><td><code>height</code></td><td>number</td><td>显示对象的高度（像素）</td></tr><tr><td><code>width</code></td><td>number</td><td>显示对象的宽度（像素）</td></tr><tr><td><code>colorTransform</code></td><td>ColorTransform</td><td>显示对象的 ColorTransform</td></tr><tr><td><code>matrix</code></td><td>Matrix</td><td>显示对象的 Matrix</td></tr><tr><td><code>rotation</code></td><td>number</td><td>DisplayObject 实例的旋转角度（度）</td></tr><tr><td><code>scale9Grid</code></td><td>Rectangle | null</td><td>当前活动的缩放网格</td></tr><tr><td><code>scaleX</code></td><td>number</td><td>从参考点应用的对象水平缩放值</td></tr><tr><td><code>scaleY</code></td><td>number</td><td>从参考点应用的对象垂直缩放值</td></tr><tr><td><code>visible</code></td><td>boolean</td><td>显示对象是否可见（默认：true）</td></tr><tr><td><code>cacheAsBitmap</code></td><td>Matrix | null</td><td>位图缓存用的 Matrix。<strong>仅可设置缩放值（a, d）</strong>（b, c, tx, ty 将被忽略）。以 1.0 为基准，应用于 displayObject 自身的 scaleX/scaleY。缓存质量 = 指定 Matrix × 自身缩放 × 舞台缩放。缓存时不受祖先 Matrix 影响，但绘制时应用祖先 Matrix。命中测试、宽度和高度基于矢量。<strong>适用对象：Shape、TextField、Sprite、MovieClip</strong>（Video 因图像尺寸固定而不适用）（默认：null）</td></tr><tr><td><code>x</code></td><td>number</td><td>相对于父 DisplayObjectContainer 本地坐标的 X 坐标</td></tr><tr><td><code>y</code></td><td>number</td><td>相对于父 DisplayObjectContainer 本地坐标的 Y 坐标</td></tr></tbody></table>
 <h2 id="方法">方法</h2>
 
 
@@ -400,6 +405,98 @@
 <span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">setGlobalVariable</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"gameState"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"playing"</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> state</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> displayObject.</span><span style="color:#B392F0">getGlobalVariable</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"gameState"</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">displayObject.</span><span style="color:#B392F0">clearGlobalVariable</span><span style="color:#E1E4E8">(); </span><span style="color:#6A737D">// 清除全部</span></span></code></pre>
+<h3 id="cacheasbitmap-示例">cacheAsBitmap 示例</h3>
+<p><code>cacheAsBitmap</code> 将矢量绘制或容器缓存为位图，从第二帧开始重复使用缓存纹理，从而提高性能。</p>
+<p><strong>适用类：</strong></p>
+<ul>
+<li><code>Shape</code> — 缓存矢量绘制</li>
+<li><code>TextField</code> — 缓存文本渲染</li>
+<li><code>Sprite</code> — 将容器及其所有子元素一起缓存</li>
+<li><code>MovieClip</code> — 将容器及其所有子元素一起缓存</li>
+</ul>
+<blockquote>
+<p>⚠️ 不适用于 <code>Video</code>。由于 Video 具有固定的图像尺寸，缓存没有效果。</p>
+</blockquote>
+<p><strong>Matrix 限制：</strong>
+Matrix 中仅可设置缩放值（a, d）。旋转（b, c）和平移（tx, ty）将被忽略。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#6A737D">// ✅ 正确用法（仅设置缩放）</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Matrix</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);  </span><span style="color:#6A737D">// 1 倍</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Matrix</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);  </span><span style="color:#6A737D">// 2 倍质量</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// ❌ 旋转/平移值将被忽略</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Matrix</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.5</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0.5</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">);  </span><span style="color:#6A737D">// b, c, tx, ty 被忽略</span></span></code></pre>
+<p><strong>使用场景：</strong></p>
+<ol>
+<li><strong>高速动画</strong> — 高速移动的对象视觉清晰度低，缓存导致的画质降低几乎不可察觉，同时能显著提高性能</li>
+<li><strong>静态背景和 UI 元素</strong> — 缓存不变的 UI 元素（面板、装饰、图标等）可消除每帧重绘成本</li>
+<li><strong>复杂矢量绘制</strong> — 缓存路径较多的复杂 Shape 可大幅降低绘制开销</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Sprite</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Matrix</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.geom;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 以 1 倍比例缓存（1.0 基准 = 相对于 displayObject 自身的 scaleX/scaleY）</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> shape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.graphics.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0xFF0000</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">drawCircle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">40</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Matrix</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 以 2 倍分辨率缓存（自身缩放的 2 倍质量）</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> hqShape</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">hqShape.graphics.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0x00FF00</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">drawRect</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">80</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">hqShape.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Matrix</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// scaleX/scaleY 会被反映（缓存质量 = Matrix × 自身缩放 × 舞台缩放）</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.scaleX </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">; </span><span style="color:#6A737D">// 缓存质量: 1 × 2 × stageScale</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.scaleY </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 父级缩放不影响缓存质量（但绘制时会应用）</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> container</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Sprite</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">container.scaleX </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 3</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">container.scaleY </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 3</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">container.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(shape);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 命中测试、宽度和高度基于矢量</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> bounds</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> shape.</span><span style="color:#B392F0">getBounds</span><span style="color:#E1E4E8">(shape); </span><span style="color:#6A737D">// 返回矢量边界</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 禁用缓存</span></span>
+<span class="line"><span style="color:#E1E4E8">shape.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">;</span></span></code></pre>
+<h3 id="在-displayobjectcontainer-上使用-cacheasbitmap">在 DisplayObjectContainer 上使用 cacheAsBitmap</h3>
+<p>您也可以在 <code>Sprite</code> 和 <code>MovieClip</code> 等 <code>DisplayObjectContainer</code> 子类上设置 <code>cacheAsBitmap</code>。
+容器的所有子元素将被渲染到单个纹理中并缓存，在后续帧中重复使用。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Shape</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">Sprite</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">MovieClip</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.display;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">Matrix</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.geom;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 包含多个子元素的 Sprite</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> sprite</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Sprite</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> rect</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">rect.graphics.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0xFF0000</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">drawRect</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">80</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(rect);</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> circle</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">circle.graphics.</span><span style="color:#B392F0">beginFill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0x00FF00</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">drawCircle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">40</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">endFill</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.</span><span style="color:#B392F0">addChild</span><span style="color:#E1E4E8">(circle);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 将整个容器缓存为位图</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Matrix</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 同样适用于 MovieClip</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> mc</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> MovieClip</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">mc.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Matrix</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 禁用缓存（下一帧恢复正常渲染）</span></span>
+<span class="line"><span style="color:#E1E4E8">sprite.cacheAsBitmap </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">;</span></span></code></pre>
+<p><strong>缓存行为：</strong></p>
+<ul>
+<li>当对象或其祖先的缩放发生变化时，缓存将失效并在下一帧重新生成</li>
+<li>位置更改（x, y）会保留缓存 — 仅更新绘制位置</li>
+<li>在缩放频繁变化的动画期间，缓存每帧都会重新生成，因此缓存在动画完成后的静态状态下最为有效</li>
+</ul>
+<p><strong>注意事项：</strong></p>
+<ul>
+<li><strong>Matrix 中仅可设置缩放值</strong>（旋转和平移将被忽略）</li>
+<li><strong>不适用于 Video</strong>（固定尺寸的图像数据）</li>
+<li>缓存期间，子元素的更改（添加/删除/属性更改）不会反映在屏幕上</li>
+<li>当 <code>stage.rendererScale</code> 更改时，缓存会自动失效</li>
+<li>同时设置 <code>filter</code> 和 <code>cacheAsBitmap</code> 时，<code>cacheAsBitmap</code> 优先</li>
+</ul>
 <h2 id="相关">相关</h2>
 <ul>
 <li><a href="/cn/reference/player/movie-clip">MovieClip</a></li>

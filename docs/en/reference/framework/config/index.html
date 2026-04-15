@@ -11,8 +11,9 @@
 <span class="line"><span>├── stage.json     # Display area settings</span></span>
 <span class="line"><span>├── config.json    # Environment settings</span></span>
 <span class="line"><span>└── routing.json   # Routing settings</span></span></code></pre>
+<hr>
 <h2 id="stagejson">stage.json</h2>
-<p>JSON file for setting the display area (Stage).</p>
+<p>JSON file for configuring the display area (Stage). It is read once at application startup and used as the initial parameters for the Stage.</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
 <span class="line"><span style="color:#79B8FF">    "width"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1920</span><span style="color:#E1E4E8">,</span></span>
 <span class="line"><span style="color:#79B8FF">    "height"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1080</span><span style="color:#E1E4E8">,</span></span>
@@ -59,7 +60,7 @@
 
 
 
-<table><thead><tr><th>Property</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>width</code></td><td>number</td><td>240</td><td>Display area width</td></tr><tr><td><code>height</code></td><td>number</td><td>240</td><td>Display area height</td></tr><tr><td><code>fps</code></td><td>number</td><td>60</td><td>Drawings per second (1-60)</td></tr><tr><td><code>options</code></td><td>object</td><td>null</td><td>Option settings</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>width</code></td><td>number</td><td>240</td><td>Display area width in pixels. Used as the base width of the rendering canvas</td></tr><tr><td><code>height</code></td><td>number</td><td>240</td><td>Display area height in pixels. Used as the base height of the rendering canvas</td></tr><tr><td><code>fps</code></td><td>number</td><td>60</td><td>Number of renders per second. Valid range is 1–60</td></tr><tr><td><code>options</code></td><td>object</td><td>null</td><td>Additional option settings. Can be omitted</td></tr></tbody></table>
 <h3 id="options-settings">options Settings</h3>
 
 
@@ -90,9 +91,17 @@
 
 
 
-<table><thead><tr><th>Property</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>fullScreen</code></td><td>boolean</td><td>false</td><td>Draw on entire screen beyond Stage width/height</td></tr><tr><td><code>tagId</code></td><td>string</td><td>null</td><td>When specified, drawing occurs within the element with that ID</td></tr><tr><td><code>bgColor</code></td><td>string</td><td>”transparent”</td><td>Background color in hexadecimal. Default is transparent</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>fullScreen</code></td><td>boolean</td><td>false</td><td>When <code>true</code>, the Stage expands to fill the entire window. When <code>false</code>, rendering is fixed to the size specified by <code>width</code> and <code>height</code></td></tr><tr><td><code>tagId</code></td><td>string | null</td><td>null</td><td>ID of the HTML element to use as the rendering target. The canvas is created inside the element with the specified ID. When <code>null</code>, the canvas is created directly under <code>&#x3C;body></code></td></tr><tr><td><code>bgColor</code></td><td>string</td><td>”transparent”</td><td>Background color as a hexadecimal color code (e.g. <code>"#1461A0"</code>). Use <code>"transparent"</code> for a transparent background</td></tr></tbody></table>
+<blockquote>
+<p>[!WARNING]
+The only valid properties in <code>stage.json</code> are <code>width</code>, <code>height</code>, <code>fps</code>, and <code>options</code>.
+Properties such as <code>align</code> and <code>scaleMode</code> — even though they relate to Stage display — do not exist in <code>stage.json</code>.
+If you need these settings, define them in <code>config.json</code>.
+Any properties not listed above are completely ignored by the framework.</p>
+</blockquote>
+<hr>
 <h2 id="configjson">config.json</h2>
-<p>File for managing environment-specific settings. Divided into <code>local</code>, <code>dev</code>, <code>stg</code>, <code>prd</code>, and <code>all</code>, where any environment name except <code>all</code> is arbitrary.</p>
+<p>File for managing environment-specific settings. At build time, the object matching the environment name specified with <code>--env</code> is merged with the <code>all</code> object and made available throughout the application.</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
 <span class="line"><span style="color:#79B8FF">    "local"</span><span style="color:#E1E4E8">: {</span></span>
 <span class="line"><span style="color:#79B8FF">        "api"</span><span style="color:#E1E4E8">: {</span></span>
@@ -123,8 +132,28 @@
 <span class="line"><span style="color:#E1E4E8">        }</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
-<h3 id="all-settings">all Settings</h3>
-<p><code>all</code> is a common variable exported in any environment.</p>
+<h3 id="environment-key-specification">Environment Key Specification</h3>
+<p>Key names such as <code>local</code>, <code>dev</code>, <code>stg</code>, and <code>prd</code> are arbitrary (except <code>all</code>). The object whose key matches <code>--env=&#x3C;environment></code> at build time is loaded.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td><code>all</code></td><td>Settings loaded in all environments</td></tr><tr><td>Others</td><td>Settings loaded only when the key matches the <code>--env</code> value at build time</td></tr></tbody></table>
+<h3 id="all-settings-framework-reserved-properties">all Settings (Framework Reserved Properties)</h3>
+<p>The following properties are automatically processed by the framework.</p>
 
 
 
@@ -160,15 +189,47 @@
 
 
 
-<table><thead><tr><th>Property</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>spa</code></td><td>boolean</td><td>true</td><td>Control scenes via URL as Single Page Application</td></tr><tr><td><code>defaultTop</code></td><td>string</td><td>”top”</td><td>View for page top. TopView class launches if not set</td></tr><tr><td><code>loading.callback</code></td><td>string</td><td>Loading</td><td>Loading screen class name. Calls start and end functions</td></tr><tr><td><code>gotoView.callback</code></td><td>string | array</td><td>[“callback.Background”]</td><td>Callback class after gotoView completion</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>spa</code></td><td>boolean</td><td>true</td><td>When <code>true</code>, the application behaves as a Single Page Application and manages View transitions in sync with the browser URL</td></tr><tr><td><code>defaultTop</code></td><td>string</td><td>”top”</td><td>Name of the View to display first when the application starts. If not specified, the <code>TopView</code> class is launched</td></tr><tr><td><code>loading.callback</code></td><td>string</td><td>”Loading”</td><td>Class name to use as the loading screen. The class’s <code>start()</code> and <code>end()</code> methods are called automatically</td></tr><tr><td><code>gotoView.callback</code></td><td>string | string[]</td><td>—</td><td>Callback class name(s) to call after a View transition completes. Multiple classes can be specified as an array and are executed sequentially with async/await</td></tr></tbody></table>
+<h3 id="user-defined-properties">User-Defined Properties</h3>
+<p>In addition to the framework reserved properties, you can add any properties to any environment key. Added properties are accessible from the <code>config</code> object after the build.</p>
+<p>Use this to manage values that need to differ per environment, such as endpoint URLs, feature flags, and display settings.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">    "local"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "api"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">            "endPoint"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"http://localhost:3000/"</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#79B8FF">    "prd"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "api"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">            "endPoint"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"https://api.example.com/"</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#79B8FF">    "all"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "spa"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "defaultTop"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"top"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "align"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"TL"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "scaleMode"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"noScale"</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { config } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@/config/Config"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Accessing user-defined properties</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> align</span><span style="color:#F97583">     =</span><span style="color:#E1E4E8"> config.align;     </span><span style="color:#6A737D">// "TL"</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> scaleMode</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> config.scaleMode; </span><span style="color:#6A737D">// "noScale"</span></span></code></pre>
+<blockquote>
+<p>[!WARNING]
+The only properties automatically processed by the framework in <code>config.json</code> are <code>spa</code>, <code>defaultTop</code>, <code>loading</code>, and <code>gotoView</code>.
+All other properties are not processed directly by the framework, but can be freely accessed from application code via the <code>config</code> object.</p>
+</blockquote>
 <h3 id="platform-settings">platform Settings</h3>
-<p>The value specified with <code>--platform</code> at build time is set.</p>
+<p>The value specified with <code>--platform</code> at build time is automatically set. It does not need to be written in the configuration file and is read-only.</p>
 <p>Supported values: <code>macos</code>, <code>windows</code>, <code>linux</code>, <code>ios</code>, <code>android</code>, <code>web</code></p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { config } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@/config/Config"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (config.platform </span><span style="color:#F97583">===</span><span style="color:#9ECBFF"> "ios"</span><span style="color:#E1E4E8">) {</span></span>
 <span class="line"><span style="color:#6A737D">    // iOS-specific processing</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
 <h2 id="routingjson">routing.json</h2>
 <p>Routing configuration file. See <a href="/en/reference/framework/routing">Routing</a> for details.</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
@@ -185,45 +246,15 @@
 <span class="line"><span style="color:#79B8FF">        "requests"</span><span style="color:#E1E4E8">: []</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
 <h2 id="getting-configuration-values">Getting Configuration Values</h2>
-<p>Use the <code>config</code> object to get configuration values in code.</p>
-<h3 id="configts-example">Config.ts Example</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> stageJson </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./stage.json"</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> configJson </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./config.json"</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> IStageConfig</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#FFAB70">    width</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">    height</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">    fps</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">    options</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#FFAB70">        fullScreen</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> boolean</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">        tagId</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#F97583"> |</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">        bgColor</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">    };</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> IConfig</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#FFAB70">    stage</span><span style="color:#F97583">:</span><span style="color:#B392F0"> IStageConfig</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">    api</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#FFAB70">        endPoint</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">    };</span></span>
-<span class="line"><span style="color:#FFAB70">    content</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#FFAB70">        endPoint</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">    };</span></span>
-<span class="line"><span style="color:#FFAB70">    spa</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> boolean</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">    defaultTop</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">    platform</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#79B8FF"> config</span><span style="color:#F97583">:</span><span style="color:#B392F0"> IConfig</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#E1E4E8">    stage: stageJson,</span></span>
-<span class="line"><span style="color:#F97583">    ...</span><span style="color:#E1E4E8">configJson</span></span>
-<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<p><code>Config.ts</code> is auto-generated when running <code>npm start</code>. You do not need to create or edit it manually.</p>
+<p>To get configuration values in code, import and use the auto-generated <code>config</code> object.</p>
 <h3 id="usage-example">Usage Example</h3>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { config } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@/config/Config"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// Stage settings</span></span>
-<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> stageWidth</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> config.stage.width;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> stageWidth</span><span style="color:#F97583">  =</span><span style="color:#E1E4E8"> config.stage.width;</span></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> stageHeight</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> config.stage.height;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// API settings</span></span>
@@ -231,8 +262,9 @@
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// SPA setting</span></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> isSpa</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> config.spa;</span></span></code></pre>
+<hr>
 <h2 id="loading-screen">Loading Screen</h2>
-<p>The <code>start</code> and <code>end</code> functions of the class set in <code>loading.callback</code> are called.</p>
+<p>The <code>start()</code> and <code>end()</code> methods of the class set in <code>loading.callback</code> are called automatically.</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> Loading</span></span>
 <span class="line"><span style="color:#E1E4E8">{</span></span>
 <span class="line"><span style="color:#F97583">    private</span><span style="color:#FFAB70"> shape</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">;</span></span>
@@ -255,8 +287,9 @@
 <span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.shape.</span><span style="color:#B392F0">remove</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
 <h2 id="gotoview-callback">gotoView Callback</h2>
-<p>The <code>execute</code> function of classes set in <code>gotoView.callback</code> is called. Multiple classes can be set as an array and executed sequentially with async/await.</p>
+<p>The <code>execute()</code> method of classes set in <code>gotoView.callback</code> is called. Multiple classes can be specified as an array and are executed sequentially with async/await.</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { Shape, stage } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/display"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
@@ -279,6 +312,7 @@
 <span class="line"><span style="color:#E1E4E8">        view.</span><span style="color:#B392F0">addChildAt</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">.shape, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
 <h2 id="build-commands">Build Commands</h2>
 <p>Build with environment specification:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Local environment</span></span>
@@ -293,6 +327,7 @@
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> build</span><span style="color:#79B8FF"> --</span><span style="color:#79B8FF"> --platform=web</span></span>
 <span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> build</span><span style="color:#79B8FF"> --</span><span style="color:#79B8FF"> --platform=ios</span></span>
 <span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> build</span><span style="color:#79B8FF"> --</span><span style="color:#79B8FF"> --platform=android</span></span></code></pre>
+<hr>
 <h2 id="configuration-examples">Configuration Examples</h2>
 <h3 id="complete-configuration-file-examples">Complete Configuration File Examples</h3>
 <h4 id="stagejson-1">stage.json</h4>
@@ -340,9 +375,12 @@
 <span class="line"><span style="color:#E1E4E8">        },</span></span>
 <span class="line"><span style="color:#79B8FF">        "gotoView"</span><span style="color:#E1E4E8">: {</span></span>
 <span class="line"><span style="color:#79B8FF">            "callback"</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"callback.Background"</span><span style="color:#E1E4E8">]</span></span>
-<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#79B8FF">        "align"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"TL"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "scaleMode"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"noScale"</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
 <h2 id="related">Related</h2>
 <ul>
 <li><a href="/en/reference/framework/routing">Routing</a></li>

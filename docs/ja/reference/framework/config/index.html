@@ -11,8 +11,9 @@
 <span class="line"><span>├── stage.json     # 表示領域の設定</span></span>
 <span class="line"><span>├── config.json    # 環境設定</span></span>
 <span class="line"><span>└── routing.json   # ルーティング設定</span></span></code></pre>
+<hr>
 <h2 id="stagejson">stage.json</h2>
-<p>表示領域（Stage）の設定を行うJSONファイルです。</p>
+<p>表示領域（Stage）の設定を行うJSONファイルです。アプリ起動時に一度だけ読み込まれ、Stageの初期パラメータとして使用されます。</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
 <span class="line"><span style="color:#79B8FF">    "width"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1920</span><span style="color:#E1E4E8">,</span></span>
 <span class="line"><span style="color:#79B8FF">    "height"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1080</span><span style="color:#E1E4E8">,</span></span>
@@ -59,8 +60,8 @@
 
 
 
-<table><thead><tr><th>プロパティ</th><th>型</th><th>デフォルト</th><th>説明</th></tr></thead><tbody><tr><td><code>width</code></td><td>number</td><td>240</td><td>表示領域の幅</td></tr><tr><td><code>height</code></td><td>number</td><td>240</td><td>表示領域の高さ</td></tr><tr><td><code>fps</code></td><td>number</td><td>60</td><td>1秒間に何回描画するか（1〜60）</td></tr><tr><td><code>options</code></td><td>object</td><td>null</td><td>オプション設定</td></tr></tbody></table>
-<h3 id="options設定">options設定</h3>
+<table><thead><tr><th>プロパティ</th><th>型</th><th>デフォルト</th><th>説明</th></tr></thead><tbody><tr><td><code>width</code></td><td>number</td><td>240</td><td>表示領域の幅（ピクセル単位）。実際の描画キャンバスの基準幅として使用される</td></tr><tr><td><code>height</code></td><td>number</td><td>240</td><td>表示領域の高さ（ピクセル単位）。実際の描画キャンバスの基準高さとして使用される</td></tr><tr><td><code>fps</code></td><td>number</td><td>60</td><td>1秒間の描画回数。指定可能な範囲は 1〜60</td></tr><tr><td><code>options</code></td><td>object</td><td>null</td><td>追加オプション設定。省略可能</td></tr></tbody></table>
+<h3 id="options-設定">options 設定</h3>
 
 
 
@@ -90,9 +91,17 @@
 
 
 
-<table><thead><tr><th>プロパティ</th><th>型</th><th>デフォルト</th><th>説明</th></tr></thead><tbody><tr><td><code>fullScreen</code></td><td>boolean</td><td>false</td><td>Stageで設定した幅と高さを超えて画面全体に描画</td></tr><tr><td><code>tagId</code></td><td>string</td><td>null</td><td>IDを指定すると、指定したIDのエレメント内で描画を行う</td></tr><tr><td><code>bgColor</code></td><td>string</td><td>”transparent”</td><td>背景色を16進数で指定。デフォルトは無色透明</td></tr></tbody></table>
+<table><thead><tr><th>プロパティ</th><th>型</th><th>デフォルト</th><th>説明</th></tr></thead><tbody><tr><td><code>fullScreen</code></td><td>boolean</td><td>false</td><td><code>true</code> にするとウィンドウ全体にStageを拡張して描画する。<code>false</code> の場合は <code>width</code>・<code>height</code> で指定したサイズで固定描画</td></tr><tr><td><code>tagId</code></td><td>string | null</td><td>null</td><td>描画先とするHTML要素のID。指定したIDのエレメント内部にキャンバスが生成される。<code>null</code> の場合は <code>&#x3C;body></code> 直下に生成される</td></tr><tr><td><code>bgColor</code></td><td>string</td><td>”transparent”</td><td>背景色を16進数カラーコードで指定（例: <code>"#1461A0"</code>）。<code>"transparent"</code> を指定すると透明になる</td></tr></tbody></table>
+<blockquote>
+<p>[!WARNING]
+<code>stage.json</code> で有効なプロパティは上記の <code>width</code>・<code>height</code>・<code>fps</code>・<code>options</code> のみです。
+<code>align</code>・<code>scaleMode</code> などステージ表示に関わる設定であっても、<code>stage.json</code> には存在しないプロパティです。
+これらの設定が必要な場合は <code>config.json</code> に記述してください。
+上記以外のプロパティを記述しても、フレームワークは一切処理しません。</p>
+</blockquote>
+<hr>
 <h2 id="configjson">config.json</h2>
-<p>環境ごとの設定を管理するファイルです。<code>local</code>、<code>dev</code>、<code>stg</code>、<code>prd</code>、<code>all</code>と区切られており、<code>all</code>以外は任意の環境名です。</p>
+<p>環境ごとの設定を管理するファイルです。ビルド時に <code>--env</code> オプションで指定した環境名のオブジェクトと <code>all</code> オブジェクトがマージされ、アプリケーション全体で参照可能な設定として展開されます。</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
 <span class="line"><span style="color:#79B8FF">    "local"</span><span style="color:#E1E4E8">: {</span></span>
 <span class="line"><span style="color:#79B8FF">        "api"</span><span style="color:#E1E4E8">: {</span></span>
@@ -123,8 +132,28 @@
 <span class="line"><span style="color:#E1E4E8">        }</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
-<h3 id="all設定">all設定</h3>
-<p><code>all</code>はどの環境でも書き出される共通変数です。</p>
+<h3 id="環境キーの仕様">環境キーの仕様</h3>
+<p><code>local</code>・<code>dev</code>・<code>stg</code>・<code>prd</code> などのキー名は任意です（<code>all</code> を除く）。ビルド時に <code>--env=&#x3C;環境名></code> で一致したキーのオブジェクトが読み込まれます。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>キー</th><th>説明</th></tr></thead><tbody><tr><td><code>all</code></td><td>すべての環境で共通して読み込まれる設定</td></tr><tr><td>それ以外</td><td><code>--env</code> で指定した環境名と一致したときのみ読み込まれる設定</td></tr></tbody></table>
+<h3 id="all-設定フレームワーク予約済みプロパティ">all 設定（フレームワーク予約済みプロパティ）</h3>
+<p>以下のプロパティはフレームワークが自動的に処理します。</p>
 
 
 
@@ -160,15 +189,47 @@
 
 
 
-<table><thead><tr><th>プロパティ</th><th>型</th><th>デフォルト</th><th>説明</th></tr></thead><tbody><tr><td><code>spa</code></td><td>boolean</td><td>true</td><td>Single Page ApplicationとしてURLでシーンを制御</td></tr><tr><td><code>defaultTop</code></td><td>string</td><td>”top”</td><td>ページトップのView。設定がない場合はTopViewクラスが起動</td></tr><tr><td><code>loading.callback</code></td><td>string</td><td>Loading</td><td>ローディング画面のクラス名。start関数とend関数を呼び出す</td></tr><tr><td><code>gotoView.callback</code></td><td>string | array</td><td>[“callback.Background”]</td><td>gotoView完了後のコールバッククラス</td></tr></tbody></table>
-<h3 id="platform設定">platform設定</h3>
-<p>ビルド時の<code>--platform</code>で指定した値がセットされます。</p>
+<table><thead><tr><th>プロパティ</th><th>型</th><th>デフォルト</th><th>説明</th></tr></thead><tbody><tr><td><code>spa</code></td><td>boolean</td><td>true</td><td><code>true</code> にするとSingle Page Applicationとして動作し、ブラウザのURLと連動してView遷移を管理する</td></tr><tr><td><code>defaultTop</code></td><td>string</td><td>”top”</td><td>アプリ起動時に最初に表示するViewの名前。指定しない場合は <code>TopView</code> クラスが起動する</td></tr><tr><td><code>loading.callback</code></td><td>string</td><td>”Loading”</td><td>ローディング画面として使用するクラス名。そのクラスの <code>start()</code> と <code>end()</code> が自動的に呼び出される</td></tr><tr><td><code>gotoView.callback</code></td><td>string | string[]</td><td>—</td><td>View遷移完了後に呼び出すコールバッククラス名。配列で複数指定でき、async/awaitで順次実行される</td></tr></tbody></table>
+<h3 id="ユーザー定義プロパティ">ユーザー定義プロパティ</h3>
+<p>フレームワークの予約済みプロパティ以外に、任意のプロパティをどの環境キーにも追加できます。追加したプロパティはビルド後に <code>config</code> オブジェクトから参照できます。</p>
+<p>エンドポイントURLや機能フラグ、表示設定など、環境ごとに変える必要がある値をここで管理します。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">    "local"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "api"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">            "endPoint"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"http://localhost:3000/"</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#79B8FF">    "prd"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "api"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">            "endPoint"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"https://api.example.com/"</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#79B8FF">    "all"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "spa"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "defaultTop"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"top"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "align"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"TL"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "scaleMode"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"noScale"</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { config } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@/config/Config"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// ユーザー定義プロパティへのアクセス</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> align</span><span style="color:#F97583">     =</span><span style="color:#E1E4E8"> config.align;     </span><span style="color:#6A737D">// "TL"</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> scaleMode</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> config.scaleMode; </span><span style="color:#6A737D">// "noScale"</span></span></code></pre>
+<blockquote>
+<p>[!WARNING]
+<code>config.json</code> でフレームワークが自動処理するプロパティは <code>spa</code>・<code>defaultTop</code>・<code>loading</code>・<code>gotoView</code> のみです。
+それ以外のプロパティはフレームワークが直接処理することはありませんが、<code>config</code> オブジェクト経由でアプリケーションコードから自由に参照できます。</p>
+</blockquote>
+<h3 id="platform-設定">platform 設定</h3>
+<p>ビルド時の <code>--platform</code> で指定した値が自動的にセットされます。設定ファイルに記述する必要はなく、読み取り専用です。</p>
 <p>対応値: <code>macos</code>, <code>windows</code>, <code>linux</code>, <code>ios</code>, <code>android</code>, <code>web</code></p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { config } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@/config/Config"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (config.platform </span><span style="color:#F97583">===</span><span style="color:#9ECBFF"> "ios"</span><span style="color:#E1E4E8">) {</span></span>
 <span class="line"><span style="color:#6A737D">    // iOS固有の処理</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
 <h2 id="routingjson">routing.json</h2>
 <p>ルーティングの設定ファイルです。詳細は<a href="/ja/reference/framework/routing">ルーティング</a>を参照してください。</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
@@ -185,45 +246,15 @@
 <span class="line"><span style="color:#79B8FF">        "requests"</span><span style="color:#E1E4E8">: []</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
 <h2 id="設定値の取得">設定値の取得</h2>
-<p>コード内で設定値を取得するには<code>config</code>オブジェクトを使用します。</p>
-<h3 id="configtsの例">Config.tsの例</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> stageJson </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./stage.json"</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> configJson </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./config.json"</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> IStageConfig</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#FFAB70">    width</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">    height</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">    fps</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">    options</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#FFAB70">        fullScreen</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> boolean</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">        tagId</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#F97583"> |</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">        bgColor</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">    };</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> IConfig</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#FFAB70">    stage</span><span style="color:#F97583">:</span><span style="color:#B392F0"> IStageConfig</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">    api</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#FFAB70">        endPoint</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">    };</span></span>
-<span class="line"><span style="color:#FFAB70">    content</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#FFAB70">        endPoint</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">    };</span></span>
-<span class="line"><span style="color:#FFAB70">    spa</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> boolean</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">    defaultTop</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">    platform</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#79B8FF"> config</span><span style="color:#F97583">:</span><span style="color:#B392F0"> IConfig</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#E1E4E8">    stage: stageJson,</span></span>
-<span class="line"><span style="color:#F97583">    ...</span><span style="color:#E1E4E8">configJson</span></span>
-<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<p><code>Config.ts</code> は <code>npm start</code> 実行時に自動生成されるファイルです。手動で作成・編集する必要はありません。</p>
+<p>コード内で設定値を取得するには、自動生成された <code>config</code> オブジェクトをインポートして使用します。</p>
 <h3 id="使用例">使用例</h3>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { config } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@/config/Config"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// ステージ設定</span></span>
-<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> stageWidth</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> config.stage.width;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> stageWidth</span><span style="color:#F97583">  =</span><span style="color:#E1E4E8"> config.stage.width;</span></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> stageHeight</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> config.stage.height;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// API設定</span></span>
@@ -231,8 +262,9 @@
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// SPA設定</span></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> isSpa</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> config.spa;</span></span></code></pre>
+<hr>
 <h2 id="ローディング画面">ローディング画面</h2>
-<p><code>loading.callback</code>で設定したクラスの<code>start</code>関数と<code>end</code>関数が呼び出されます。</p>
+<p><code>loading.callback</code> で設定したクラスの <code>start()</code> と <code>end()</code> が自動的に呼び出されます。</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> Loading</span></span>
 <span class="line"><span style="color:#E1E4E8">{</span></span>
 <span class="line"><span style="color:#F97583">    private</span><span style="color:#FFAB70"> shape</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">;</span></span>
@@ -255,8 +287,9 @@
 <span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.shape.</span><span style="color:#B392F0">remove</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
-<h2 id="gotoviewコールバック">gotoViewコールバック</h2>
-<p><code>gotoView.callback</code>で設定したクラスの<code>execute</code>関数が呼び出されます。複数のクラスを配列で設定でき、async/awaitで順次実行されます。</p>
+<hr>
+<h2 id="gotoview-コールバック">gotoView コールバック</h2>
+<p><code>gotoView.callback</code> で設定したクラスの <code>execute()</code> が呼び出されます。配列で複数のクラスを指定でき、async/await で順次実行されます。</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { Shape, stage } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/display"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
@@ -279,6 +312,7 @@
 <span class="line"><span style="color:#E1E4E8">        view.</span><span style="color:#B392F0">addChildAt</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">.shape, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
 <h2 id="ビルドコマンド">ビルドコマンド</h2>
 <p>環境を指定してビルド:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># ローカル環境</span></span>
@@ -293,6 +327,7 @@
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> build</span><span style="color:#79B8FF"> --</span><span style="color:#79B8FF"> --platform=web</span></span>
 <span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> build</span><span style="color:#79B8FF"> --</span><span style="color:#79B8FF"> --platform=ios</span></span>
 <span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> build</span><span style="color:#79B8FF"> --</span><span style="color:#79B8FF"> --platform=android</span></span></code></pre>
+<hr>
 <h2 id="設定例">設定例</h2>
 <h3 id="完全な設定ファイルの例">完全な設定ファイルの例</h3>
 <h4 id="stagejson-1">stage.json</h4>
@@ -340,9 +375,12 @@
 <span class="line"><span style="color:#E1E4E8">        },</span></span>
 <span class="line"><span style="color:#79B8FF">        "gotoView"</span><span style="color:#E1E4E8">: {</span></span>
 <span class="line"><span style="color:#79B8FF">            "callback"</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"callback.Background"</span><span style="color:#E1E4E8">]</span></span>
-<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#79B8FF">        "align"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"TL"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "scaleMode"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"noScale"</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
 <h2 id="関連項目">関連項目</h2>
 <ul>
 <li><a href="/ja/reference/framework/routing">ルーティング</a></li>

@@ -11,8 +11,9 @@
 <span class="line"><span>├── stage.json     # 显示区域设置</span></span>
 <span class="line"><span>├── config.json    # 环境设置</span></span>
 <span class="line"><span>└── routing.json   # 路由设置</span></span></code></pre>
+<hr>
 <h2 id="stagejson">stage.json</h2>
-<p>用于设置显示区域（Stage）的 JSON 文件。</p>
+<p>用于配置显示区域（Stage）的 JSON 文件。应用启动时读取一次，作为 Stage 的初始参数使用。</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
 <span class="line"><span style="color:#79B8FF">    "width"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1920</span><span style="color:#E1E4E8">,</span></span>
 <span class="line"><span style="color:#79B8FF">    "height"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1080</span><span style="color:#E1E4E8">,</span></span>
@@ -59,7 +60,7 @@
 
 
 
-<table><thead><tr><th>属性</th><th>类型</th><th>默认值</th><th>说明</th></tr></thead><tbody><tr><td><code>width</code></td><td>number</td><td>240</td><td>显示区域宽度</td></tr><tr><td><code>height</code></td><td>number</td><td>240</td><td>显示区域高度</td></tr><tr><td><code>fps</code></td><td>number</td><td>60</td><td>每秒绘制次数（1-60）</td></tr><tr><td><code>options</code></td><td>object</td><td>null</td><td>选项设置</td></tr></tbody></table>
+<table><thead><tr><th>属性</th><th>类型</th><th>默认值</th><th>说明</th></tr></thead><tbody><tr><td><code>width</code></td><td>number</td><td>240</td><td>显示区域宽度（像素）。作为渲染画布的基准宽度使用</td></tr><tr><td><code>height</code></td><td>number</td><td>240</td><td>显示区域高度（像素）。作为渲染画布的基准高度使用</td></tr><tr><td><code>fps</code></td><td>number</td><td>60</td><td>每秒渲染次数。有效范围为 1〜60</td></tr><tr><td><code>options</code></td><td>object</td><td>null</td><td>附加选项设置。可省略</td></tr></tbody></table>
 <h3 id="options-设置">options 设置</h3>
 
 
@@ -90,9 +91,17 @@
 
 
 
-<table><thead><tr><th>属性</th><th>类型</th><th>默认值</th><th>说明</th></tr></thead><tbody><tr><td><code>fullScreen</code></td><td>boolean</td><td>false</td><td>超出舞台宽高在整个屏幕上绘制</td></tr><tr><td><code>tagId</code></td><td>string</td><td>null</td><td>指定后，绘制发生在具有该 ID 的元素内</td></tr><tr><td><code>bgColor</code></td><td>string</td><td>”transparent”</td><td>十六进制背景颜色。默认为透明</td></tr></tbody></table>
+<table><thead><tr><th>属性</th><th>类型</th><th>默认值</th><th>说明</th></tr></thead><tbody><tr><td><code>fullScreen</code></td><td>boolean</td><td>false</td><td>设为 <code>true</code> 时，Stage 扩展为填充整个窗口。设为 <code>false</code> 时，以 <code>width</code>・<code>height</code> 指定的尺寸固定渲染</td></tr><tr><td><code>tagId</code></td><td>string | null</td><td>null</td><td>用作渲染目标的 HTML 元素 ID。画布在指定 ID 的元素内部创建。为 <code>null</code> 时直接在 <code>&#x3C;body></code> 下创建</td></tr><tr><td><code>bgColor</code></td><td>string</td><td>”transparent”</td><td>以十六进制颜色代码指定背景色（例：<code>"#1461A0"</code>）。指定 <code>"transparent"</code> 则为透明</td></tr></tbody></table>
+<blockquote>
+<p>[!WARNING]
+<code>stage.json</code> 中有效的属性仅有 <code>width</code>・<code>height</code>・<code>fps</code>・<code>options</code>。
+<code>align</code>・<code>scaleMode</code> 等与 Stage 显示相关的设置，在 <code>stage.json</code> 中并不存在。
+如需这些设置，请在 <code>config.json</code> 中定义。
+上述以外的属性将被框架完全忽略，不做任何处理。</p>
+</blockquote>
+<hr>
 <h2 id="configjson">config.json</h2>
-<p>用于管理特定环境设置的文件。分为 <code>local</code>、<code>dev</code>、<code>stg</code>、<code>prd</code> 和 <code>all</code>，其中除 <code>all</code> 以外的任何环境名称都是任意的。</p>
+<p>用于管理各环境设置的文件。构建时，与 <code>--env</code> 选项指定的环境名匹配的对象和 <code>all</code> 对象合并后，作为整个应用可引用的设置展开。</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
 <span class="line"><span style="color:#79B8FF">    "local"</span><span style="color:#E1E4E8">: {</span></span>
 <span class="line"><span style="color:#79B8FF">        "api"</span><span style="color:#E1E4E8">: {</span></span>
@@ -123,8 +132,28 @@
 <span class="line"><span style="color:#E1E4E8">        }</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
-<h3 id="all-设置">all 设置</h3>
-<p><code>all</code> 是在任何环境中导出的公共变量。</p>
+<h3 id="环境键规格">环境键规格</h3>
+<p><code>local</code>・<code>dev</code>・<code>stg</code>・<code>prd</code> 等键名可任意指定（<code>all</code> 除外）。构建时，与 <code>--env=&#x3C;环境名></code> 匹配的键的对象将被读取。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>键</th><th>说明</th></tr></thead><tbody><tr><td><code>all</code></td><td>在所有环境下均会读取的公共设置</td></tr><tr><td>其他</td><td>仅在键名与构建时 <code>--env</code> 指定值匹配时读取的设置</td></tr></tbody></table>
+<h3 id="all-设置框架保留属性">all 设置（框架保留属性）</h3>
+<p>以下属性由框架自动处理。</p>
 
 
 
@@ -160,15 +189,47 @@
 
 
 
-<table><thead><tr><th>属性</th><th>类型</th><th>默认值</th><th>说明</th></tr></thead><tbody><tr><td><code>spa</code></td><td>boolean</td><td>true</td><td>作为单页应用程序通过 URL 控制场景</td></tr><tr><td><code>defaultTop</code></td><td>string</td><td>”top”</td><td>页面顶部的 View。如果未设置，将启动 TopView 类</td></tr><tr><td><code>loading.callback</code></td><td>string</td><td>Loading</td><td>加载画面类名。调用 start 和 end 函数</td></tr><tr><td><code>gotoView.callback</code></td><td>string | array</td><td>[“callback.Background”]</td><td>gotoView 完成后的回调类</td></tr></tbody></table>
+<table><thead><tr><th>属性</th><th>类型</th><th>默认值</th><th>说明</th></tr></thead><tbody><tr><td><code>spa</code></td><td>boolean</td><td>true</td><td>设为 <code>true</code> 时，作为单页应用程序运行，与浏览器 URL 联动管理 View 切换</td></tr><tr><td><code>defaultTop</code></td><td>string</td><td>”top”</td><td>应用启动时最先显示的 View 名称。未指定时启动 <code>TopView</code> 类</td></tr><tr><td><code>loading.callback</code></td><td>string</td><td>”Loading”</td><td>用作加载画面的类名。该类的 <code>start()</code> 和 <code>end()</code> 会被自动调用</td></tr><tr><td><code>gotoView.callback</code></td><td>string | string[]</td><td>—</td><td>View 切换完成后调用的回调类名。可以数组形式指定多个，按 async/await 顺序执行</td></tr></tbody></table>
+<h3 id="用户自定义属性">用户自定义属性</h3>
+<p>除框架保留属性外，可在任意环境键中添加任意属性。添加的属性在构建后可通过 <code>config</code> 对象引用。</p>
+<p>端点 URL、功能开关、显示设置等需要按环境区分的值，可在此处统一管理。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">    "local"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "api"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">            "endPoint"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"http://localhost:3000/"</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#79B8FF">    "prd"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "api"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">            "endPoint"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"https://api.example.com/"</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#79B8FF">    "all"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "spa"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "defaultTop"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"top"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "align"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"TL"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "scaleMode"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"noScale"</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { config } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@/config/Config"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 访问用户自定义属性</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> align</span><span style="color:#F97583">     =</span><span style="color:#E1E4E8"> config.align;     </span><span style="color:#6A737D">// "TL"</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> scaleMode</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> config.scaleMode; </span><span style="color:#6A737D">// "noScale"</span></span></code></pre>
+<blockquote>
+<p>[!WARNING]
+<code>config.json</code> 中框架自动处理的属性仅有 <code>spa</code>・<code>defaultTop</code>・<code>loading</code>・<code>gotoView</code>。
+其他属性不会被框架直接处理，但可通过 <code>config</code> 对象在应用代码中自由引用。</p>
+</blockquote>
 <h3 id="platform-设置">platform 设置</h3>
-<p>构建时使用 <code>--platform</code> 指定的值会被设置。</p>
+<p>构建时通过 <code>--platform</code> 指定的值会被自动设置。无需在配置文件中填写，为只读项。</p>
 <p>支持的值：<code>macos</code>、<code>windows</code>、<code>linux</code>、<code>ios</code>、<code>android</code>、<code>web</code></p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { config } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@/config/Config"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (config.platform </span><span style="color:#F97583">===</span><span style="color:#9ECBFF"> "ios"</span><span style="color:#E1E4E8">) {</span></span>
-<span class="line"><span style="color:#6A737D">    // iOS 特定处理</span></span>
+<span class="line"><span style="color:#6A737D">    // iOS 专用处理</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
 <h2 id="routingjson">routing.json</h2>
 <p>路由配置文件。详情请参阅<a href="/cn/reference/framework/routing">路由</a>。</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
@@ -185,45 +246,15 @@
 <span class="line"><span style="color:#79B8FF">        "requests"</span><span style="color:#E1E4E8">: []</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
 <h2 id="获取配置值">获取配置值</h2>
-<p>在代码中使用 <code>config</code> 对象获取配置值。</p>
-<h3 id="configts-示例">Config.ts 示例</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> stageJson </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./stage.json"</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> configJson </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./config.json"</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> IStageConfig</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#FFAB70">    width</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">    height</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">    fps</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">    options</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#FFAB70">        fullScreen</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> boolean</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">        tagId</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#F97583"> |</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">        bgColor</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">    };</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> IConfig</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#FFAB70">    stage</span><span style="color:#F97583">:</span><span style="color:#B392F0"> IStageConfig</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">    api</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#FFAB70">        endPoint</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">    };</span></span>
-<span class="line"><span style="color:#FFAB70">    content</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#FFAB70">        endPoint</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">    };</span></span>
-<span class="line"><span style="color:#FFAB70">    spa</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> boolean</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">    defaultTop</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#FFAB70">    platform</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#79B8FF"> config</span><span style="color:#F97583">:</span><span style="color:#B392F0"> IConfig</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
-<span class="line"><span style="color:#E1E4E8">    stage: stageJson,</span></span>
-<span class="line"><span style="color:#F97583">    ...</span><span style="color:#E1E4E8">configJson</span></span>
-<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<p><code>Config.ts</code> 是执行 <code>npm start</code> 时自动生成的文件，无需手动创建或编辑。</p>
+<p>在代码中通过导入自动生成的 <code>config</code> 对象来获取配置值。</p>
 <h3 id="使用示例">使用示例</h3>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { config } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@/config/Config"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A737D">// 舞台设置</span></span>
-<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> stageWidth</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> config.stage.width;</span></span>
+<span class="line"><span style="color:#6A737D">// Stage 设置</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> stageWidth</span><span style="color:#F97583">  =</span><span style="color:#E1E4E8"> config.stage.width;</span></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> stageHeight</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> config.stage.height;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// API 设置</span></span>
@@ -231,8 +262,9 @@
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// SPA 设置</span></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> isSpa</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> config.spa;</span></span></code></pre>
+<hr>
 <h2 id="加载画面">加载画面</h2>
-<p>调用 <code>loading.callback</code> 中设置的类的 <code>start</code> 和 <code>end</code> 函数。</p>
+<p><code>loading.callback</code> 中设置的类的 <code>start()</code> 和 <code>end()</code> 方法会被自动调用。</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> Loading</span></span>
 <span class="line"><span style="color:#E1E4E8">{</span></span>
 <span class="line"><span style="color:#F97583">    private</span><span style="color:#FFAB70"> shape</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Shape</span><span style="color:#E1E4E8">;</span></span>
@@ -255,8 +287,9 @@
 <span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.shape.</span><span style="color:#B392F0">remove</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
 <h2 id="gotoview-回调">gotoView 回调</h2>
-<p>调用 <code>gotoView.callback</code> 中设置的类的 <code>execute</code> 函数。可以设置多个类作为数组，并使用 async/await 顺序执行。</p>
+<p><code>gotoView.callback</code> 中设置的类的 <code>execute()</code> 方法会被调用。可以数组形式指定多个类，按 async/await 顺序执行。</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { app } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/framework"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { Shape, stage } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@next2d/display"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
@@ -275,10 +308,11 @@
 <span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> view</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> context.view;</span></span>
 <span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">view) </span><span style="color:#F97583">return</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A737D">        // 将背景放在后面</span></span>
+<span class="line"><span style="color:#6A737D">        // 将背景放置在最底层</span></span>
 <span class="line"><span style="color:#E1E4E8">        view.</span><span style="color:#B392F0">addChildAt</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">.shape, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
 <h2 id="构建命令">构建命令</h2>
 <p>带环境指定的构建：</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 本地环境</span></span>
@@ -293,6 +327,7 @@
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> build</span><span style="color:#79B8FF"> --</span><span style="color:#79B8FF"> --platform=web</span></span>
 <span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> build</span><span style="color:#79B8FF"> --</span><span style="color:#79B8FF"> --platform=ios</span></span>
 <span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> build</span><span style="color:#79B8FF"> --</span><span style="color:#79B8FF"> --platform=android</span></span></code></pre>
+<hr>
 <h2 id="配置示例">配置示例</h2>
 <h3 id="完整配置文件示例">完整配置文件示例</h3>
 <h4 id="stagejson-1">stage.json</h4>
@@ -340,9 +375,12 @@
 <span class="line"><span style="color:#E1E4E8">        },</span></span>
 <span class="line"><span style="color:#79B8FF">        "gotoView"</span><span style="color:#E1E4E8">: {</span></span>
 <span class="line"><span style="color:#79B8FF">            "callback"</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"callback.Background"</span><span style="color:#E1E4E8">]</span></span>
-<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#79B8FF">        "align"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"TL"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "scaleMode"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"noScale"</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
 <h2 id="相关">相关</h2>
 <ul>
 <li><a href="/cn/reference/framework/routing">路由</a></li>

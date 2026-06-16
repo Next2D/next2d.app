@@ -302,6 +302,108 @@
 <span class="line"><span style="color:#F97583">            break</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h2 id="ゲームパッドイベント">ゲームパッドイベント</h2>
+<p>Web Gamepad APIを通じてゲームコントローラーの入力を処理します。すべてのゲームパッドイベントは <code>stage</code> に対して発行されます。</p>
+<blockquote>
+<p><strong>ブラウザ要件</strong>: ゲームパッドはページにフォーカスがある状態でコントローラーのボタンを押すことで認識されます（ブラウザのセキュリティ仕様）。</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>イベント</th><th>定数</th><th>説明</th></tr></thead><tbody><tr><td><code>gamepadconnected</code></td><td><code>GamepadEvent.GAMEPAD_CONNECTED</code></td><td>ゲームパッドが接続・認識された</td></tr><tr><td><code>gamepaddisconnected</code></td><td><code>GamepadEvent.GAMEPAD_DISCONNECTED</code></td><td>ゲームパッドが切断された</td></tr><tr><td><code>gamepadbuttondown</code></td><td><code>GamepadEvent.BUTTON_DOWN</code></td><td>ボタンが押された</td></tr><tr><td><code>gamepadbuttonup</code></td><td><code>GamepadEvent.BUTTON_UP</code></td><td>ボタンが離された</td></tr><tr><td><code>gamepadaxesmotion</code></td><td><code>GamepadEvent.AXES_MOTION</code></td><td>スティック（軸）が変化した（閾値 0.1）</td></tr></tbody></table>
+<h3 id="gamepadevent-プロパティ">GamepadEvent プロパティ</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>プロパティ</th><th>型</th><th>説明</th></tr></thead><tbody><tr><td><code>gamepadIndex</code></td><td>number</td><td>ゲームパッドのインデックス番号</td></tr><tr><td><code>buttonIndex</code></td><td>number | undefined</td><td>ボタン番号（BUTTON_DOWN/UP 時）</td></tr><tr><td><code>buttonValue</code></td><td>number | undefined</td><td>ボタンの押し具合 0.0〜1.0（BUTTON_DOWN/UP 時）</td></tr><tr><td><code>axisIndex</code></td><td>number | undefined</td><td>軸の番号（AXES_MOTION 時）</td></tr><tr><td><code>axisValue</code></td><td>number | undefined</td><td>軸の値 -1.0〜1.0（AXES_MOTION 時）</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">GamepadEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 接続・切断</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(GamepadEvent.</span><span style="color:#79B8FF">GAMEPAD_CONNECTED</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`ゲームパッド ${</span><span style="color:#E1E4E8">event</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">gamepadIndex</span><span style="color:#9ECBFF">} が接続されました`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(GamepadEvent.</span><span style="color:#79B8FF">GAMEPAD_DISCONNECTED</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`ゲームパッド ${</span><span style="color:#E1E4E8">event</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">gamepadIndex</span><span style="color:#9ECBFF">} が切断されました`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// ボタン操作</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(GamepadEvent.</span><span style="color:#79B8FF">BUTTON_DOWN</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`ボタン ${</span><span style="color:#E1E4E8">event</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">buttonIndex</span><span style="color:#9ECBFF">} 押下 (value: ${</span><span style="color:#E1E4E8">event</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">buttonValue</span><span style="color:#9ECBFF">})`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(GamepadEvent.</span><span style="color:#79B8FF">BUTTON_UP</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`ボタン ${</span><span style="color:#E1E4E8">event</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">buttonIndex</span><span style="color:#9ECBFF">} 解放`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// スティック操作</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(GamepadEvent.</span><span style="color:#79B8FF">AXES_MOTION</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`軸 ${</span><span style="color:#E1E4E8">event</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">axisIndex</span><span style="color:#9ECBFF">}: ${</span><span style="color:#E1E4E8">event</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">axisValue</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
 <h2 id="フォーカスイベント">フォーカスイベント</h2>
 
 

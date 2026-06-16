@@ -302,6 +302,108 @@
 <span class="line"><span style="color:#F97583">            break</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h2 id="gamepad-events">Gamepad Events</h2>
+<p>Handles game controller input through the Web Gamepad API. All gamepad events are dispatched to <code>stage</code>.</p>
+<blockquote>
+<p><strong>Browser requirement</strong>: A gamepad is recognized when the user presses a button on the controller while the page has focus (browser security requirement).</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Event</th><th>Constant</th><th>Description</th></tr></thead><tbody><tr><td><code>gamepadconnected</code></td><td><code>GamepadEvent.GAMEPAD_CONNECTED</code></td><td>Gamepad connected and recognized</td></tr><tr><td><code>gamepaddisconnected</code></td><td><code>GamepadEvent.GAMEPAD_DISCONNECTED</code></td><td>Gamepad disconnected</td></tr><tr><td><code>gamepadbuttondown</code></td><td><code>GamepadEvent.BUTTON_DOWN</code></td><td>Button pressed</td></tr><tr><td><code>gamepadbuttonup</code></td><td><code>GamepadEvent.BUTTON_UP</code></td><td>Button released</td></tr><tr><td><code>gamepadaxesmotion</code></td><td><code>GamepadEvent.AXES_MOTION</code></td><td>Stick (axis) changed (threshold 0.1)</td></tr></tbody></table>
+<h3 id="gamepadevent-properties">GamepadEvent Properties</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>gamepadIndex</code></td><td>number</td><td>Gamepad index number</td></tr><tr><td><code>buttonIndex</code></td><td>number | undefined</td><td>Button number (on BUTTON_DOWN/UP)</td></tr><tr><td><code>buttonValue</code></td><td>number | undefined</td><td>Degree of button press 0.0–1.0 (on BUTTON_DOWN/UP)</td></tr><tr><td><code>axisIndex</code></td><td>number | undefined</td><td>Axis number (on AXES_MOTION)</td></tr><tr><td><code>axisValue</code></td><td>number | undefined</td><td>Axis value -1.0–1.0 (on AXES_MOTION)</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">GamepadEvent</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> next2d.events;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Connect / disconnect</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(GamepadEvent.</span><span style="color:#79B8FF">GAMEPAD_CONNECTED</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`Gamepad ${</span><span style="color:#E1E4E8">event</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">gamepadIndex</span><span style="color:#9ECBFF">} connected`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(GamepadEvent.</span><span style="color:#79B8FF">GAMEPAD_DISCONNECTED</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`Gamepad ${</span><span style="color:#E1E4E8">event</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">gamepadIndex</span><span style="color:#9ECBFF">} disconnected`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Button input</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(GamepadEvent.</span><span style="color:#79B8FF">BUTTON_DOWN</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`Button ${</span><span style="color:#E1E4E8">event</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">buttonIndex</span><span style="color:#9ECBFF">} pressed (value: ${</span><span style="color:#E1E4E8">event</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">buttonValue</span><span style="color:#9ECBFF">})`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(GamepadEvent.</span><span style="color:#79B8FF">BUTTON_UP</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`Button ${</span><span style="color:#E1E4E8">event</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">buttonIndex</span><span style="color:#9ECBFF">} released`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Stick input</span></span>
+<span class="line"><span style="color:#E1E4E8">stage.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(GamepadEvent.</span><span style="color:#79B8FF">AXES_MOTION</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`Axis ${</span><span style="color:#E1E4E8">event</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">axisIndex</span><span style="color:#9ECBFF">}: ${</span><span style="color:#E1E4E8">event</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">axisValue</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
 <h2 id="focus-events">Focus Events</h2>
 
 

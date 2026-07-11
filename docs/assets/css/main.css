@@ -591,7 +591,9 @@ section {
   }
 }
 
+.section-title h1,
 .section-title h2 {
+  color: #000;
   font-size: 45px;
   font-weight: 100;
   letter-spacing: 2px;
@@ -821,11 +823,18 @@ section {
   transition: all 0.5s ease-in-out 0s;
 }
 
+#get-started .feature-block h3,
+#casestudy .feature-block h3,
 #get-started .feature-block h4,
 #docs .feature-block h4,
 #usage .feature-block h4,
 #casestudy .feature-block h4
 {
+  color: #000;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 2;
   margin-bottom: 20px;
 }
 
@@ -948,10 +957,18 @@ section {
   transition: all 0.5s ease-in-out 0s;
 }
 
+#player .feature-block h3,
+#tool .feature-block h3,
+#framework .feature-block h3,
 #player .feature-block h4,
 #tool .feature-block h4,
 #framework .feature-block h4
 {
+  color: #000;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 2;
   margin-bottom: 20px;
 }
 

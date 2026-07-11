@@ -27,6 +27,12 @@ const getAlternatePath = (targetLang: string) => {
   const pathWithoutLang = currentPath.replace(/^\/(ja|en|cn)/, '');
   return `/${targetLang}${pathWithoutLang}`;
 };
+
+// 言語トップページのx-defaultはルートの言語選択ページへ、下層ページは日本語版へ
+const isLangTopPage = /^\/(ja|en|cn)\/?$/.test(currentPath);
+const xDefaultHref = isLangTopPage
+  ? new URL('/', Astro.site).href
+  : new URL(getAlternatePath('ja'), Astro.site).href;
 ---
 <!DOCTYPE html>
 <html lang={langMap[lang] || lang}>
@@ -50,7 +56,7 @@ const getAlternatePath = (targetLang: string) => {
     <link rel="alternate" hreflang="ja" href={new URL(getAlternatePath('ja'), Astro.site).href} />
     <link rel="alternate" hreflang="en" href={new URL(getAlternatePath('en'), Astro.site).href} />
     <link rel="alternate" hreflang="zh-CN" href={new URL(getAlternatePath('cn'), Astro.site).href} />
-    <link rel="alternate" hreflang="x-default" href={new URL(getAlternatePath('ja'), Astro.site).href} />
+    <link rel="alternate" hreflang="x-default" href={xDefaultHref} />
 
     <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content={`Next2D | ${title}`} />

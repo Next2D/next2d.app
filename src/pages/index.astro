@@ -11,6 +11,15 @@ const basePath = import.meta.env.BASE_URL;
   <meta content="Next2D libraries and tool. Rendering Engine, Animation Tool, Underlying Framework. 2D entertainment development made easy! Fast! Comfortable!" name="description">
   <meta content="Next2D,Next2D Player,Animation Tool,Next2D Framework" name="keywords">
 
+  <!-- SEO: Canonical URL -->
+  <link rel="canonical" href="https://next2d.app/">
+
+  <!-- SEO: hreflang（言語選択ページのためx-defaultはルート） -->
+  <link rel="alternate" hreflang="ja" href="https://next2d.app/ja/">
+  <link rel="alternate" hreflang="en" href="https://next2d.app/en/">
+  <link rel="alternate" hreflang="zh-CN" href="https://next2d.app/cn/">
+  <link rel="alternate" hreflang="x-default" href="https://next2d.app/">
+
   <!-- Google / Search Engine Tags -->
   <meta itemprop="name" content="Next2D | Rendering Engine, Animation Tool, Underlying Framework.">
   <meta itemprop="description" content="Next2D Libraries and Tool. Rendering Engine, Animation Tool, Underlying Framework. 2D entertainment development made easy! Fast! Comfortable!">
@@ -50,7 +59,7 @@ const basePath = import.meta.env.BASE_URL;
     gtag("config", "G-8GJWF4S3RH");
   </script>
   <script data-ad-client="ca-pub-5673019255498912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script is:inline src="/assets/js/next2d.js"></script>
+  <script is:inline defer src="/assets/js/next2d.js"></script>
 </head>
 <body>
   <!-- ======= Hero Section ======= -->
@@ -60,7 +69,10 @@ const basePath = import.meta.env.BASE_URL;
       <h2>2D entertainment development made easy! Fast! Comfortable!</h2>
       <div id="next2d"></div>
       <script is:inline>
-        next2d.load("assets/js/sample.json", { "tagId": "next2d", "bgColor": false });
+        // next2d.jsはdefer読み込みのため、DOMContentLoaded（defer実行後）を待つ
+        window.addEventListener("DOMContentLoaded", function () {
+          next2d.load("assets/js/sample.json", { "tagId": "next2d", "bgColor": false });
+        });
       </script>
       <div class="hero-link">
         <a class="btn" href={`${basePath}en`}>English</a>

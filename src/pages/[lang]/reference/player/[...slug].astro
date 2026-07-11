@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import DocsLayout from '../../../../layouts/DocsLayout.astro';
 import { getTranslations, supportedLanguages, isValidLanguage } from '../../../../i18n';
+import { getEntryDescription } from '../../../../utils/content';
 
 export async function getStaticPaths() {
   const entries = await getCollection('player-specs');
@@ -59,7 +60,7 @@ const breadcrumbs = [
 
 <DocsLayout
   title={title}
-  description={t.playerreference?.description || 'Next2D Player Documentation'}
+  description={getEntryDescription(entry, t.playerreference?.description || 'Next2D Player Documentation')}
   lang={lang}
   t={t}
   breadcrumbs={breadcrumbs}

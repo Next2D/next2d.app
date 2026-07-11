@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import DocsLayout from '../../../../layouts/DocsLayout.astro';
 import { getTranslations, supportedLanguages, isValidLanguage } from '../../../../i18n';
+import { getEntryDescription } from '../../../../utils/content';
 
 export async function getStaticPaths() {
   const entries = await getCollection('framework-specs');
@@ -58,7 +59,7 @@ const breadcrumbs = [
 
 <DocsLayout
   title={title}
-  description={t.framework?.['reference-description'] || 'Next2D Framework Reference'}
+  description={getEntryDescription(entry, t.framework?.['reference-description'] || 'Next2D Framework Reference')}
   lang={lang}
   t={t}
   breadcrumbs={breadcrumbs}

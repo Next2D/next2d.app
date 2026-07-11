@@ -22,6 +22,7 @@ const currentPath = Astro.url.pathname;
 
 // Generate alternate language URLs
 const langMap: Record<string, string> = { ja: 'ja', en: 'en', cn: 'zh-CN' };
+const ogLocaleMap: Record<string, string> = { ja: 'ja_JP', en: 'en_US', cn: 'zh_CN' };
 const getAlternatePath = (targetLang: string) => {
   // Replace current lang prefix with target lang
   const pathWithoutLang = currentPath.replace(/^\/(ja|en|cn)/, '');
@@ -40,7 +41,7 @@ const xDefaultHref = isLangTopPage
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Next2D | {title}</title>
+    <title>{title} | Next2D</title>
     <meta content={description} name="description" />
     <meta content="Next2D,Next2D Player,Animation Tool,Next2D Framework" name="keywords" />
 
@@ -59,24 +60,24 @@ const xDefaultHref = isLangTopPage
     <link rel="alternate" hreflang="x-default" href={xDefaultHref} />
 
     <!-- Google / Search Engine Tags -->
-    <meta itemprop="name" content={`Next2D | ${title}`} />
+    <meta itemprop="name" content={`${title} | Next2D`} />
     <meta itemprop="description" content={description} />
     <meta itemprop="image" content={ogImageUrl} />
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content={canonicalURL.href} />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={`Next2D | ${title}`} />
+    <meta property="og:title" content={`${title} | Next2D`} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageUrl} />
-    <meta property="og:locale" content={langMap[lang] || lang} />
+    <meta property="og:locale" content={ogLocaleMap[lang] || 'ja_JP'} />
     <meta property="og:site_name" content="Next2D" />
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Next2D" />
     <meta name="twitter:creator" content="@Next2D" />
-    <meta name="twitter:title" content={`Next2D | ${title}`} />
+    <meta name="twitter:title" content={`${title} | Next2D`} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
 
@@ -93,12 +94,7 @@ const xDefaultHref = isLangTopPage
       "name": "Next2D",
       "url": "https://next2d.app",
       "description": "Next2D - Rendering Engine, Animation Tool, Underlying Framework",
-      "inLanguage": [langMap[lang] || lang],
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://next2d.app/{lang}/reference/player/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "inLanguage": [langMap[lang] || lang]
     })} />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",

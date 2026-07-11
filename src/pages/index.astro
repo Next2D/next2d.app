@@ -67,11 +67,16 @@ const basePath = import.meta.env.BASE_URL;
     <div class="hero-container">
       <h1>Next2D</h1>
       <h2>2D entertainment development made easy! Fast! Comfortable!</h2>
-      <div id="next2d"></div>
+      <!--
+        idを"next2d"にするとwindow.next2dが要素を指してしまい、
+        defer実行時にライブラリのグローバル登録ガード（'next2d' in window）が
+        スキップされるため、別のidにしている
+      -->
+      <div id="next2d-player"></div>
       <script is:inline>
         // next2d.jsはdefer読み込みのため、DOMContentLoaded（defer実行後）を待つ
         window.addEventListener("DOMContentLoaded", function () {
-          next2d.load("assets/js/sample.json", { "tagId": "next2d", "bgColor": false });
+          next2d.load("assets/js/sample.json", { "tagId": "next2d-player", "bgColor": false });
         });
       </script>
       <div class="hero-link">

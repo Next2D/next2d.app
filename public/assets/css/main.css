@@ -545,7 +545,8 @@ span {
   margin-bottom: 10px;
 }
 
-#next2d {
+/* リファレンスページの見出しID（例: h1 id="next2d-player"）と衝突しないよう#heroにスコープ */
+#hero #next2d-player {
   width: 768px;
   height: 398px;
   margin-bottom: 10px;

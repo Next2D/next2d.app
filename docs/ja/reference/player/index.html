@@ -14,81 +14,81 @@
 </ul>
 <h2 id="レンダリングパイプライン">レンダリングパイプライン</h2>
 <p>Next2D Playerの高速レンダリングを実現するパイプラインの全体像です。</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">flowchart TB</span></span>
-<span class="line"><span style="color:#E1E4E8">    %% Main Drawing Flow Chart</span></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph MainFlow["描画フローチャート - メインレンダリングパイプライン"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        direction TB</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#F97583">flowchart</span><span style="color:#B392F0"> TB</span></span>
+<span class="line"><span style="color:#6A737D">    %% Main Drawing Flow Chart</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> MainFlow</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"描画フローチャート - メインレンダリングパイプライン"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        direction TB</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        subgraph Inputs["表示オブジェクト"]</span></span>
-<span class="line"><span style="color:#E1E4E8">            Shape["Shape&#x3C;br/>(Bitmap/Vector)"]</span></span>
-<span class="line"><span style="color:#E1E4E8">            TextField["TextField&#x3C;br/>(canvas2d)"]</span></span>
-<span class="line"><span style="color:#E1E4E8">            Video["Video Element"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        end</span></span>
+<span class="line"><span style="color:#F97583">        subgraph</span><span style="color:#FFAB70"> Inputs</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"表示オブジェクト"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">            Shape</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"Shape&#x3C;br/>(Bitmap/Vector)"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">            TextField</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"TextField&#x3C;br/>(canvas2d)"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">            Video</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"Video Element"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">        end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        Shape --> MaskCheck</span></span>
-<span class="line"><span style="color:#E1E4E8">        TextField --> MaskCheck</span></span>
-<span class="line"><span style="color:#E1E4E8">        Video --> MaskCheck</span></span>
+<span class="line"><span style="color:#FFAB70">        Shape </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> MaskCheck</span></span>
+<span class="line"><span style="color:#FFAB70">        TextField </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> MaskCheck</span></span>
+<span class="line"><span style="color:#FFAB70">        Video </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> MaskCheck</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        MaskCheck{"マスク&#x3C;br/>レンダリング?"}</span></span>
+<span class="line"><span style="color:#FFAB70">        MaskCheck</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">"マスク&#x3C;br/>レンダリング?"</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        MaskCheck -->|YES| DirectRender["直接レンダリング"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        DirectRender -->|drawArrays| FinalRender</span></span>
+<span class="line"><span style="color:#FFAB70">        MaskCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">YES</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> DirectRender</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"直接レンダリング"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        DirectRender </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">drawArrays</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> FinalRender</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        MaskCheck -->|NO| CacheCheck1{"キャッシュ&#x3C;br/>あり?"}</span></span>
+<span class="line"><span style="color:#FFAB70">        MaskCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">NO</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> CacheCheck1</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">"キャッシュ&#x3C;br/>あり?"</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        CacheCheck1 -->|NO| TextureAtlas["テクスチャアトラス&#x3C;br/>(二分木パッキング)"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        TextureAtlas --> Coordinates</span></span>
+<span class="line"><span style="color:#FFAB70">        CacheCheck1 </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">NO</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> TextureAtlas</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"テクスチャアトラス&#x3C;br/>(二分木パッキング)"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        TextureAtlas </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> Coordinates</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        CacheCheck1 -->|YES| Coordinates["座標データベース&#x3C;br/>(x, y, w, h)"]</span></span>
+<span class="line"><span style="color:#FFAB70">        CacheCheck1 </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">YES</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> Coordinates</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"座標データベース&#x3C;br/>(x, y, w, h)"</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        Coordinates --> FilterBlendCheck{"フィルター or&#x3C;br/>ブレンド?"}</span></span>
+<span class="line"><span style="color:#FFAB70">        Coordinates </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> FilterBlendCheck</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">"フィルター or&#x3C;br/>ブレンド?"</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        FilterBlendCheck -->|NO| MainArrays</span></span>
-<span class="line"><span style="color:#E1E4E8">        FilterBlendCheck -->|YES| NeedCache{"キャッシュ&#x3C;br/>あり?"}</span></span>
+<span class="line"><span style="color:#FFAB70">        FilterBlendCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">NO</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> MainArrays</span></span>
+<span class="line"><span style="color:#FFAB70">        FilterBlendCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">YES</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> NeedCache</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">"キャッシュ&#x3C;br/>あり?"</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        NeedCache -->|NO| CacheRender["キャッシュにレンダリング"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        CacheRender --> TextureCache</span></span>
-<span class="line"><span style="color:#E1E4E8">        NeedCache -->|YES| TextureCache["テクスチャキャッシュ"]</span></span>
+<span class="line"><span style="color:#FFAB70">        NeedCache </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">NO</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> CacheRender</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"キャッシュにレンダリング"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        CacheRender </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> TextureCache</span></span>
+<span class="line"><span style="color:#FFAB70">        NeedCache </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">YES</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> TextureCache</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"テクスチャキャッシュ"</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        TextureCache -->|drawArrays| FinalRender</span></span>
+<span class="line"><span style="color:#FFAB70">        TextureCache </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">drawArrays</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> FinalRender</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        MainArrays["インスタンス配列&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>matrix&#x3C;br/>colorTransform&#x3C;br/>Coordinates&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>&#x3C;b>バッチレンダリング&#x3C;/b>"]</span></span>
+<span class="line"><span style="color:#FFAB70">        MainArrays</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"インスタンス配列&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>matrix&#x3C;br/>colorTransform&#x3C;br/>Coordinates&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>&#x3C;b>バッチレンダリング&#x3C;/b>"</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        MainArrays -->|drawArraysInstanced&#x3C;br/>&#x3C;b>複数オブジェクトを1回で描画&#x3C;/b>| FinalRender["最終レンダリング"]</span></span>
+<span class="line"><span style="color:#FFAB70">        MainArrays </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">drawArraysInstanced&#x3C;br/>&#x3C;b>複数オブジェクトを1回で描画&#x3C;/b></span><span style="color:#F97583">|</span><span style="color:#FFAB70"> FinalRender</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"最終レンダリング"</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        FinalRender -->|60fps| MainFramebuffer["メインフレームバッファ&#x3C;br/>(ディスプレイ)"]</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"><span style="color:#FFAB70">        FinalRender </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">60fps</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> MainFramebuffer</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"メインフレームバッファ&#x3C;br/>(ディスプレイ)"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    %% Branch Flow for Filter/Blend/Mask</span></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph BranchFlow["フィルター/ブレンド/マスク - 分岐処理"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        direction TB</span></span>
+<span class="line"><span style="color:#6A737D">    %% Branch Flow for Filter/Blend/Mask</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> BranchFlow</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"フィルター/ブレンド/マスク - 分岐処理"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        direction TB</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        subgraph FilterInputs["表示オブジェクト"]</span></span>
-<span class="line"><span style="color:#E1E4E8">            Shape2["Shape&#x3C;br/>(Bitmap/Vector)"]</span></span>
-<span class="line"><span style="color:#E1E4E8">            TextField2["TextField&#x3C;br/>(canvas2d)"]</span></span>
-<span class="line"><span style="color:#E1E4E8">            Video2["Video Element"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        end</span></span>
+<span class="line"><span style="color:#F97583">        subgraph</span><span style="color:#FFAB70"> FilterInputs</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"表示オブジェクト"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">            Shape2</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"Shape&#x3C;br/>(Bitmap/Vector)"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">            TextField2</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"TextField&#x3C;br/>(canvas2d)"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">            Video2</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"Video Element"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">        end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        Shape2 --> CacheCheck2</span></span>
-<span class="line"><span style="color:#E1E4E8">        TextField2 --> CacheCheck2</span></span>
-<span class="line"><span style="color:#E1E4E8">        Video2 --> CacheCheck2</span></span>
+<span class="line"><span style="color:#FFAB70">        Shape2 </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> CacheCheck2</span></span>
+<span class="line"><span style="color:#FFAB70">        TextField2 </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> CacheCheck2</span></span>
+<span class="line"><span style="color:#FFAB70">        Video2 </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> CacheCheck2</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        CacheCheck2{"キャッシュ&#x3C;br/>あり?"}</span></span>
+<span class="line"><span style="color:#FFAB70">        CacheCheck2</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">"キャッシュ&#x3C;br/>あり?"</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        CacheCheck2 -->|NO| EffectRender["エフェクトレンダリング"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        CacheCheck2 -->|YES| BranchArrays</span></span>
-<span class="line"><span style="color:#E1E4E8">        EffectRender --> BranchArrays</span></span>
+<span class="line"><span style="color:#FFAB70">        CacheCheck2 </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">NO</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> EffectRender</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"エフェクトレンダリング"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        CacheCheck2 </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">YES</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> BranchArrays</span></span>
+<span class="line"><span style="color:#FFAB70">        EffectRender </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> BranchArrays</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        BranchArrays["インスタンス配列&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>matrix&#x3C;br/>colorTransform&#x3C;br/>Coordinates&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>&#x3C;b>バッチレンダリング&#x3C;/b>"]</span></span>
+<span class="line"><span style="color:#FFAB70">        BranchArrays</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"インスタンス配列&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>matrix&#x3C;br/>colorTransform&#x3C;br/>Coordinates&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>&#x3C;b>バッチレンダリング&#x3C;/b>"</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        BranchArrays -->|drawArraysInstanced&#x3C;br/>&#x3C;b>複数オブジェクトを1回で描画&#x3C;/b>| BranchRender["エフェクト結果"]</span></span>
+<span class="line"><span style="color:#FFAB70">        BranchArrays </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">drawArraysInstanced&#x3C;br/>&#x3C;b>複数オブジェクトを1回で描画&#x3C;/b></span><span style="color:#F97583">|</span><span style="color:#FFAB70"> BranchRender</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"エフェクト結果"</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        BranchRender -->|filter/blend| TextureCache</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"><span style="color:#FFAB70">        BranchRender </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">filter/blend</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> TextureCache</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    %% Connections between flows</span></span>
-<span class="line"><span style="color:#E1E4E8">    FilterBlendCheck -.->|"分岐フローを&#x3C;br/>トリガー"| BranchFlow</span></span>
-<span class="line"><span style="color:#E1E4E8">    BranchArrays -.->|"レンダリング情報&#x3C;br/>(座標)"| MainArrays</span></span></code></pre>
+<span class="line"><span style="color:#6A737D">    %% Connections between flows</span></span>
+<span class="line"><span style="color:#FFAB70">    FilterBlendCheck </span><span style="color:#F97583">-.->|</span><span style="color:#9ECBFF">"分岐フローを&#x3C;br/>トリガー"</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> BranchFlow</span></span>
+<span class="line"><span style="color:#FFAB70">    BranchArrays </span><span style="color:#F97583">-.->|</span><span style="color:#9ECBFF">"レンダリング情報&#x3C;br/>(座標)"</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> MainArrays</span></span></code></pre>
 <h3 id="パイプラインの特徴">パイプラインの特徴</h3>
 <ul>
 <li><strong>バッチレンダリング</strong>: 複数のオブジェクトを1回のGPUコールで描画</li>

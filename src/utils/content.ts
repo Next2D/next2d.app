@@ -6,23 +6,35 @@
 const MAX_DESCRIPTION_LENGTH = 155;
 
 /**
+ * HTMLタグを除去する。入れ子になった断片（例: `<scr<b>ipt>`）から
+ * タグが再構成されないよう、置換結果が変化しなくなるまで繰り返す。
+ */
+const stripHtmlTags = (text: string): string => {
+  let previous: string;
+  do {
+    previous = text;
+    text = text.replace(/<[^>]+>/g, '');
+  } while (text !== previous);
+  return text;
+};
+
+/**
  * Markdownの装飾記法をプレーンテキストに変換
  */
 const stripMarkdown = (text: string): string => {
-  return text
-    // インラインコード
-    .replace(/`([^`]+)`/g, '$1')
-    // 画像
-    .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
-    // リンク（テキスト部分のみ残す）
-    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
-    // 強調
-    .replace(/\*\*([^*]+)\*\*/g, '$1')
-    .replace(/\*([^*]+)\*/g, '$1')
-    .replace(/__([^_]+)__/g, '$1')
-    // HTMLタグ
-    .replace(/<[^>]+>/g, '')
-    .trim();
+  return stripHtmlTags(
+    text
+      // インラインコード
+      .replace(/`([^`]+)`/g, '$1')
+      // 画像
+      .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+      // リンク（テキスト部分のみ残す）
+      .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+      // 強調
+      .replace(/\*\*([^*]+)\*\*/g, '$1')
+      .replace(/\*([^*]+)\*/g, '$1')
+      .replace(/__([^_]+)__/g, '$1')
+  ).trim();
 };
 
 /**

@@ -14,81 +14,81 @@
 </ul>
 <h2 id="渲染管线">渲染管线</h2>
 <p>Next2D Player 实现高速渲染的管线概述。</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">flowchart TB</span></span>
-<span class="line"><span style="color:#E1E4E8">    %% Main Drawing Flow Chart</span></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph MainFlow["绘制流程图 - 主渲染管线"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        direction TB</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#F97583">flowchart</span><span style="color:#B392F0"> TB</span></span>
+<span class="line"><span style="color:#6A737D">    %% Main Drawing Flow Chart</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> MainFlow</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"绘制流程图 - 主渲染管线"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        direction TB</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        subgraph Inputs["显示对象"]</span></span>
-<span class="line"><span style="color:#E1E4E8">            Shape["Shape&#x3C;br/>(位图/矢量)"]</span></span>
-<span class="line"><span style="color:#E1E4E8">            TextField["TextField&#x3C;br/>(canvas2d)"]</span></span>
-<span class="line"><span style="color:#E1E4E8">            Video["Video 元素"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        end</span></span>
+<span class="line"><span style="color:#F97583">        subgraph</span><span style="color:#FFAB70"> Inputs</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"显示对象"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">            Shape</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"Shape&#x3C;br/>(位图/矢量)"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">            TextField</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"TextField&#x3C;br/>(canvas2d)"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">            Video</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"Video 元素"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">        end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        Shape --> MaskCheck</span></span>
-<span class="line"><span style="color:#E1E4E8">        TextField --> MaskCheck</span></span>
-<span class="line"><span style="color:#E1E4E8">        Video --> MaskCheck</span></span>
+<span class="line"><span style="color:#FFAB70">        Shape </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> MaskCheck</span></span>
+<span class="line"><span style="color:#FFAB70">        TextField </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> MaskCheck</span></span>
+<span class="line"><span style="color:#FFAB70">        Video </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> MaskCheck</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        MaskCheck{"遮罩&#x3C;br/>渲染?"}</span></span>
+<span class="line"><span style="color:#FFAB70">        MaskCheck</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">"遮罩&#x3C;br/>渲染?"</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        MaskCheck -->|是| DirectRender["直接渲染"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        DirectRender -->|drawArrays| FinalRender</span></span>
+<span class="line"><span style="color:#FFAB70">        MaskCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">是</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> DirectRender</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"直接渲染"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        DirectRender </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">drawArrays</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> FinalRender</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        MaskCheck -->|否| CacheCheck1{"缓存&#x3C;br/>存在?"}</span></span>
+<span class="line"><span style="color:#FFAB70">        MaskCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">否</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> CacheCheck1</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">"缓存&#x3C;br/>存在?"</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        CacheCheck1 -->|否| TextureAtlas["纹理图集&#x3C;br/>(二叉树打包)"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        TextureAtlas --> Coordinates</span></span>
+<span class="line"><span style="color:#FFAB70">        CacheCheck1 </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">否</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> TextureAtlas</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"纹理图集&#x3C;br/>(二叉树打包)"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        TextureAtlas </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> Coordinates</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        CacheCheck1 -->|是| Coordinates["坐标数据库&#x3C;br/>(x, y, w, h)"]</span></span>
+<span class="line"><span style="color:#FFAB70">        CacheCheck1 </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">是</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> Coordinates</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"坐标数据库&#x3C;br/>(x, y, w, h)"</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        Coordinates --> FilterBlendCheck{"滤镜或&#x3C;br/>混合?"}</span></span>
+<span class="line"><span style="color:#FFAB70">        Coordinates </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> FilterBlendCheck</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">"滤镜或&#x3C;br/>混合?"</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        FilterBlendCheck -->|否| MainArrays</span></span>
-<span class="line"><span style="color:#E1E4E8">        FilterBlendCheck -->|是| NeedCache{"缓存&#x3C;br/>存在?"}</span></span>
+<span class="line"><span style="color:#FFAB70">        FilterBlendCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">否</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> MainArrays</span></span>
+<span class="line"><span style="color:#FFAB70">        FilterBlendCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">是</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> NeedCache</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">"缓存&#x3C;br/>存在?"</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        NeedCache -->|否| CacheRender["渲染到缓存"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        CacheRender --> TextureCache</span></span>
-<span class="line"><span style="color:#E1E4E8">        NeedCache -->|是| TextureCache["纹理缓存"]</span></span>
+<span class="line"><span style="color:#FFAB70">        NeedCache </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">否</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> CacheRender</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"渲染到缓存"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        CacheRender </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> TextureCache</span></span>
+<span class="line"><span style="color:#FFAB70">        NeedCache </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">是</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> TextureCache</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"纹理缓存"</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        TextureCache -->|drawArrays| FinalRender</span></span>
+<span class="line"><span style="color:#FFAB70">        TextureCache </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">drawArrays</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> FinalRender</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        MainArrays["实例化数组&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>matrix&#x3C;br/>colorTransform&#x3C;br/>Coordinates&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>&#x3C;b>批量渲染&#x3C;/b>"]</span></span>
+<span class="line"><span style="color:#FFAB70">        MainArrays</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"实例化数组&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>matrix&#x3C;br/>colorTransform&#x3C;br/>Coordinates&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>&#x3C;b>批量渲染&#x3C;/b>"</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        MainArrays -->|drawArraysInstanced&#x3C;br/>&#x3C;b>一次调用渲染多个对象&#x3C;/b>| FinalRender["最终渲染"]</span></span>
+<span class="line"><span style="color:#FFAB70">        MainArrays </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">drawArraysInstanced&#x3C;br/>&#x3C;b>一次调用渲染多个对象&#x3C;/b></span><span style="color:#F97583">|</span><span style="color:#FFAB70"> FinalRender</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"最终渲染"</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        FinalRender -->|60fps| MainFramebuffer["主帧缓冲&#x3C;br/>(显示)"]</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"><span style="color:#FFAB70">        FinalRender </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">60fps</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> MainFramebuffer</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"主帧缓冲&#x3C;br/>(显示)"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    %% Branch Flow for Filter/Blend/Mask</span></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph BranchFlow["滤镜/混合/遮罩 - 分支处理"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        direction TB</span></span>
+<span class="line"><span style="color:#6A737D">    %% Branch Flow for Filter/Blend/Mask</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> BranchFlow</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"滤镜/混合/遮罩 - 分支处理"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        direction TB</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        subgraph FilterInputs["显示对象"]</span></span>
-<span class="line"><span style="color:#E1E4E8">            Shape2["Shape&#x3C;br/>(位图/矢量)"]</span></span>
-<span class="line"><span style="color:#E1E4E8">            TextField2["TextField&#x3C;br/>(canvas2d)"]</span></span>
-<span class="line"><span style="color:#E1E4E8">            Video2["Video 元素"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        end</span></span>
+<span class="line"><span style="color:#F97583">        subgraph</span><span style="color:#FFAB70"> FilterInputs</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"显示对象"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">            Shape2</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"Shape&#x3C;br/>(位图/矢量)"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">            TextField2</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"TextField&#x3C;br/>(canvas2d)"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">            Video2</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"Video 元素"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">        end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        Shape2 --> CacheCheck2</span></span>
-<span class="line"><span style="color:#E1E4E8">        TextField2 --> CacheCheck2</span></span>
-<span class="line"><span style="color:#E1E4E8">        Video2 --> CacheCheck2</span></span>
+<span class="line"><span style="color:#FFAB70">        Shape2 </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> CacheCheck2</span></span>
+<span class="line"><span style="color:#FFAB70">        TextField2 </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> CacheCheck2</span></span>
+<span class="line"><span style="color:#FFAB70">        Video2 </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> CacheCheck2</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        CacheCheck2{"缓存&#x3C;br/>存在?"}</span></span>
+<span class="line"><span style="color:#FFAB70">        CacheCheck2</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">"缓存&#x3C;br/>存在?"</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        CacheCheck2 -->|否| EffectRender["效果渲染"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        CacheCheck2 -->|是| BranchArrays</span></span>
-<span class="line"><span style="color:#E1E4E8">        EffectRender --> BranchArrays</span></span>
+<span class="line"><span style="color:#FFAB70">        CacheCheck2 </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">否</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> EffectRender</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"效果渲染"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        CacheCheck2 </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">是</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> BranchArrays</span></span>
+<span class="line"><span style="color:#FFAB70">        EffectRender </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> BranchArrays</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        BranchArrays["实例化数组&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>matrix&#x3C;br/>colorTransform&#x3C;br/>Coordinates&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>&#x3C;b>批量渲染&#x3C;/b>"]</span></span>
+<span class="line"><span style="color:#FFAB70">        BranchArrays</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"实例化数组&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>matrix&#x3C;br/>colorTransform&#x3C;br/>Coordinates&#x3C;br/>━━━━━━━━━━━━━━━&#x3C;br/>&#x3C;b>批量渲染&#x3C;/b>"</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        BranchArrays -->|drawArraysInstanced&#x3C;br/>&#x3C;b>一次调用渲染多个对象&#x3C;/b>| BranchRender["效果结果"]</span></span>
+<span class="line"><span style="color:#FFAB70">        BranchArrays </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">drawArraysInstanced&#x3C;br/>&#x3C;b>一次调用渲染多个对象&#x3C;/b></span><span style="color:#F97583">|</span><span style="color:#FFAB70"> BranchRender</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"效果结果"</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">        BranchRender -->|滤镜/混合| TextureCache</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"><span style="color:#FFAB70">        BranchRender </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">滤镜/混合</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> TextureCache</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    %% Connections between flows</span></span>
-<span class="line"><span style="color:#E1E4E8">    FilterBlendCheck -.->|"触发&#x3C;br/>分支流程"| BranchFlow</span></span>
-<span class="line"><span style="color:#E1E4E8">    BranchArrays -.->|"渲染信息&#x3C;br/>(坐标)"| MainArrays</span></span></code></pre>
+<span class="line"><span style="color:#6A737D">    %% Connections between flows</span></span>
+<span class="line"><span style="color:#FFAB70">    FilterBlendCheck </span><span style="color:#F97583">-.->|</span><span style="color:#9ECBFF">"触发&#x3C;br/>分支流程"</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> BranchFlow</span></span>
+<span class="line"><span style="color:#FFAB70">    BranchArrays </span><span style="color:#F97583">-.->|</span><span style="color:#9ECBFF">"渲染信息&#x3C;br/>(坐标)"</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> MainArrays</span></span></code></pre>
 <h3 id="管线特性">管线特性</h3>
 <ul>
 <li><strong>批量渲染</strong>：一次 GPU 调用渲染多个对象</li>

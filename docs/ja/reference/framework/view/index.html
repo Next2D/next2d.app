@@ -7,25 +7,25 @@
 </style></head><body class><header id="header" class="header fixed-top d-flex align-items-center"><div class="container d-flex align-items-center justify-content-between"><div id="logo"><a href="/ja"><img loading="lazy" src="/assets/img/logo.svg" alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework."></a></div><nav id="navbar" class="navbar"><ul class="list-unstyled"><li><a class="nav-link scrollto" href="/ja/#get-started">Home</a></li><li><a class="nav-link scrollto" href="/ja/#casestudy">Case Studies</a></li><li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>Player</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li><li><a href="/ja/reference/player">リファレンス</a></li><li><a href="/ja/#player">特徴</a></li></ul></li><li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>Animation Tool</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li><li><a href="/ja/usage">使い方</a></li><li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li><li><a href="/ja/#tool">特徴</a></li><li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li></ul></li><li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>Framework</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li><li><a href="/ja/reference/framework">リファレンス</a></li><li><a href="/ja/#framework">特徴</a></li></ul></li><li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>Language</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="/en">English</a></li><li><a href="/ja">日本語</a></li><li><a href="/cn">简体中文</a></li></ul></li><li class="dropdown"><a class="nav-link"><span>Support US</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li></ul></li><li><a class="nav-link scrollto" href="/ja/#contact">Contact</a></li></ul><i class="bi bi-list mobile-nav-toggle"></i></nav></div></header><section class="breadcrumbs"><div class="container"><div class="d-flex justify-content-between align-items-center"><h2>View と ViewModel</h2><ol><li><a href="/ja/">Home</a></li><li><a href="/ja/reference/framework/">Framework</a></li><li>View と ViewModel</li></ol></div></div></section><section id="references" class="reference-section"><div class="container" data-aos="fade-up"><div class="row"><div class="col-lg-3 col-md-4"><nav id="sub-navbar" class="list-menu sub-navbar"><ul class="list-unstyled"><li><strong>Player</strong></li><ul><li><a href="/ja/reference/player">概要</a></li><li><a href="/ja/reference/player/display-object">DisplayObject</a></li><li><a href="/ja/reference/player/sprite">Sprite</a></li><li><a href="/ja/reference/player/movie-clip">MovieClip</a></li><li><a href="/ja/reference/player/shape">Shape</a></li><li><a href="/ja/reference/player/text-field">TextField</a></li><li><a href="/ja/reference/player/video">Video</a></li><li><a href="/ja/reference/player/sound">Sound</a></li><li><a href="/ja/reference/player/events">イベント</a></li><li><a href="/ja/reference/player/filters">フィルター</a></li><li><a href="/ja/reference/player/tween">Tween</a></li></ul><li><strong>Framework</strong></li><ul><li><a href="/ja/reference/framework">概要</a></li><li><a href="/ja/reference/framework/view">View/ViewModel</a></li><li><a href="/ja/reference/framework/routing">ルーティング</a></li><li><a href="/ja/reference/framework/config">設定ファイル</a></li><li><a href="/ja/reference/framework/animation-tool">Animation Tool連携</a></li></ul></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav></div><div class="col-lg-9 col-md-8"><div class="docs-content" data-astro-cid-llxzxegs><h1 id="view-と-viewmodel">View と ViewModel</h1>
 <p>Next2D FrameworkはMVVM（Model-View-ViewModel）パターンを採用しています。1画面にViewとViewModelをワンセット作成するのが基本スタイルです。</p>
 <h2 id="アーキテクチャ">アーキテクチャ</h2>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">graph TB</span></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph ViewLayer["View Layer"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        ViewRole["画面の構造と表示を担当"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        ViewRule["ビジネスロジックは持たない"]</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#F97583">graph</span><span style="color:#B392F0"> TB</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> ViewLayer</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"View Layer"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        ViewRole</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"画面の構造と表示を担当"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        ViewRule</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"ビジネスロジックは持たない"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph ViewModelLayer["ViewModel Layer"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        VMRole1["ViewとModelの橋渡し"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        VMRole2["UseCaseを保持"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        VMRole3["イベントハンドリング"]</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> ViewModelLayer</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"ViewModel Layer"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        VMRole1</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"ViewとModelの橋渡し"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        VMRole2</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"UseCaseを保持"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        VMRole3</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"イベントハンドリング"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph ModelLayer["Model Layer"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        ModelRole1["ビジネスロジック（UseCase）"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        ModelRole2["データアクセス（Repository）"]</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> ModelLayer</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"Model Layer"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        ModelRole1</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"ビジネスロジック（UseCase）"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        ModelRole2</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"データアクセス（Repository）"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    ViewLayer &#x3C;-->|双方向| ViewModelLayer</span></span>
-<span class="line"><span style="color:#E1E4E8">    ViewModelLayer &#x3C;--> ModelLayer</span></span></code></pre>
+<span class="line"><span style="color:#FFAB70">    ViewLayer </span><span style="color:#F97583">&#x3C;--></span><span style="color:#E1E4E8">|</span><span style="color:#FFAB70">双方向</span><span style="color:#E1E4E8">| </span><span style="color:#FFAB70">ViewModelLayer</span></span>
+<span class="line"><span style="color:#FFAB70">    ViewModelLayer </span><span style="color:#F97583">&#x3C;--></span><span style="color:#FFAB70"> ModelLayer</span></span></code></pre>
 <h2 id="ディレクトリ構造">ディレクトリ構造</h2>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>src/</span></span>
 <span class="line"><span>└── view/</span></span>
@@ -75,30 +75,30 @@
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h3 id="ライフサイクル">ライフサイクル</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">sequenceDiagram</span></span>
-<span class="line"><span style="color:#E1E4E8">    participant Framework as Framework</span></span>
-<span class="line"><span style="color:#E1E4E8">    participant VM as ViewModel</span></span>
-<span class="line"><span style="color:#E1E4E8">    participant View as View</span></span>
-<span class="line"><span style="color:#E1E4E8">    participant UI as UI Components</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#F97583">sequenceDiagram</span></span>
+<span class="line"><span style="color:#F97583">    participant</span><span style="color:#FFAB70"> Framework</span><span style="color:#F97583"> as</span><span style="color:#9ECBFF"> Framework</span></span>
+<span class="line"><span style="color:#F97583">    participant</span><span style="color:#FFAB70"> VM</span><span style="color:#F97583"> as</span><span style="color:#9ECBFF"> ViewModel</span></span>
+<span class="line"><span style="color:#F97583">    participant</span><span style="color:#FFAB70"> View</span><span style="color:#F97583"> as</span><span style="color:#9ECBFF"> View</span></span>
+<span class="line"><span style="color:#F97583">    participant</span><span style="color:#FFAB70"> UI</span><span style="color:#F97583"> as</span><span style="color:#9ECBFF"> UI Components</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    Note over Framework,UI: 画面遷移開始</span></span>
+<span class="line"><span style="color:#F97583">    Note</span><span style="color:#B392F0"> over</span><span style="color:#FFAB70"> Framework</span><span style="color:#F97583">,</span><span style="color:#FFAB70">UI</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 画面遷移開始</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    Framework->>VM: new ViewModel()</span></span>
-<span class="line"><span style="color:#E1E4E8">    Framework->>VM: initialize()</span></span>
-<span class="line"><span style="color:#E1E4E8">    Note over VM: ViewModelが先に初期化される</span></span>
+<span class="line"><span style="color:#FFAB70">    Framework</span><span style="color:#F97583">->></span><span style="color:#FFAB70">VM</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> new ViewModel()</span></span>
+<span class="line"><span style="color:#FFAB70">    Framework</span><span style="color:#F97583">->></span><span style="color:#FFAB70">VM</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> initialize()</span></span>
+<span class="line"><span style="color:#F97583">    Note</span><span style="color:#B392F0"> over</span><span style="color:#FFAB70"> VM</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> ViewModelが先に初期化される</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    Framework->>View: new View(vm)</span></span>
-<span class="line"><span style="color:#E1E4E8">    Framework->>View: initialize()</span></span>
-<span class="line"><span style="color:#E1E4E8">    View->>UI: コンポーネント作成</span></span>
-<span class="line"><span style="color:#E1E4E8">    View->>VM: イベントリスナー登録</span></span>
+<span class="line"><span style="color:#FFAB70">    Framework</span><span style="color:#F97583">->></span><span style="color:#FFAB70">View</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> new View(vm)</span></span>
+<span class="line"><span style="color:#FFAB70">    Framework</span><span style="color:#F97583">->></span><span style="color:#FFAB70">View</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> initialize()</span></span>
+<span class="line"><span style="color:#FFAB70">    View</span><span style="color:#F97583">->></span><span style="color:#FFAB70">UI</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> コンポーネント作成</span></span>
+<span class="line"><span style="color:#FFAB70">    View</span><span style="color:#F97583">->></span><span style="color:#FFAB70">VM</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> イベントリスナー登録</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    Framework->>View: onEnter()</span></span>
-<span class="line"><span style="color:#E1E4E8">    View->>UI: アニメーション開始</span></span>
+<span class="line"><span style="color:#FFAB70">    Framework</span><span style="color:#F97583">->></span><span style="color:#FFAB70">View</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> onEnter()</span></span>
+<span class="line"><span style="color:#FFAB70">    View</span><span style="color:#F97583">->></span><span style="color:#FFAB70">UI</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> アニメーション開始</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    Note over Framework,UI: ユーザーが画面を操作</span></span>
+<span class="line"><span style="color:#F97583">    Note</span><span style="color:#B392F0"> over</span><span style="color:#FFAB70"> Framework</span><span style="color:#F97583">,</span><span style="color:#FFAB70">UI</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> ユーザーが画面を操作</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    Framework->>View: onExit()</span></span>
-<span class="line"><span style="color:#E1E4E8">    View->>UI: クリーンアップ</span></span></code></pre>
+<span class="line"><span style="color:#FFAB70">    Framework</span><span style="color:#F97583">->></span><span style="color:#FFAB70">View</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> onExit()</span></span>
+<span class="line"><span style="color:#FFAB70">    View</span><span style="color:#F97583">->></span><span style="color:#FFAB70">UI</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> クリーンアップ</span></span></code></pre>
 <h4 id="initialize---初期化">initialize() - 初期化</h4>
 <p><strong>呼び出しタイミング:</strong></p>
 <ul>

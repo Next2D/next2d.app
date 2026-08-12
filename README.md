@@ -45,3 +45,29 @@ URL-based scene management (SPA) is now possible, which was difficult with tradi
 ### [Framework Features](https://next2d.app/en/#framework)
 
 If you find the Next2D tools and libraries useful, we would be happy to have you support the Next2D project.
+## Development
+
+```sh
+npm install
+npm start            # 開発サーバー起動
+npm run build        # docs/ へビルド（GitHub Pagesで配信）
+```
+
+### ビジュアルリグレッションテスト
+
+全ページ（161ページ）のスクリーンショットをベースラインと比較するe2eテストです。
+スナップショットはフォント描画がマシン依存のためコミットしていません。初回はベースラインを生成してください。
+
+```sh
+npx playwright install chromium   # 初回のみ
+npm run test:visual:update        # ベースライン生成（初回・意図した見た目変更後）
+npm run test:visual               # ベースラインと比較
+```
+
+### Bootstrap CSSのpurge
+
+`public/assets/css/vendor/` のBootstrap/bootstrap-icons CSSは、実際に使用しているクラスのみに削減した状態でコミットしています。Bootstrapをアップデートした際は再生成してください。
+
+```sh
+npm run purge:css
+```

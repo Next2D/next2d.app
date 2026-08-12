@@ -1,0 +1,390 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1" name="viewport"><title>スライムテンパズル(Slime Ten Puzzle) | Next2D Games</title><meta name="description" content="10をそろえて、サクッと快感。あそんで学べる計算パズルゲーム「スライムテンパズル」。数字を持ったスライムを2体えらんで計算し、最後の1体を10に。理不尽な詰みのない出題と、自分で選べる難易度が特徴。Next2D Framework製。"><meta name="robots" content="index,follow"><!-- SEO: Canonical URL --><link rel="canonical" href="https://next2d.app/games/slime-ten-puzzle/"><!-- Facebook / OGP --><meta property="og:title" content="スライムテンパズル(Slime Ten Puzzle) | Next2D Games"><meta property="og:description" content="10をそろえて、サクッと快感。あそんで学べる計算パズルゲーム「スライムテンパズル」。数字を持ったスライムを2体えらんで計算し、最後の1体を10に。理不尽な詰みのない出題と、自分で選べる難易度が特徴。Next2D Framework製。"><meta property="og:type" content="website"><meta property="og:url" content="https://next2d.app/games/slime-ten-puzzle/"><!-- TODO: ゲーム用OGP画像に差し替え予定。現在は暫定でサイト共通OGP画像を使用 --><meta property="og:image" content="https://next2d.app/assets/img/ogp.png"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="スライムテンパズル(Slime Ten Puzzle) | Next2D Games"><meta name="twitter:description" content="10をそろえて、サクッと快感。あそんで学べる計算パズルゲーム「スライムテンパズル」。数字を持ったスライムを2体えらんで計算し、最後の1体を10に。理不尽な詰みのない出題と、自分で選べる難易度が特徴。Next2D Framework製。"><meta name="twitter:image" content="https://next2d.app/assets/img/ogp.png"><!-- Favicons --><link href="/assets/img/favicon.png" rel="icon"><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"><!-- Google Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/index.o1hkfnUb.css"></head><body><header class="site-mini-header"><div class="container"><a class="brand-mark" href="https://next2d.app/ja/"><span aria-hidden="true">&larr;</span> Next2D</a></div></header><!-- ============ HERO ============ --><section class="hero"><div class="cloud cloud-1"><svg viewBox="0 0 120 60" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="30" cy="40" rx="26" ry="18" fill="#FFFFFF" />
+    <ellipse cx="60" cy="30" rx="32" ry="24" fill="#FFFFFF" />
+    <ellipse cx="90" cy="40" rx="24" ry="16" fill="#FFFFFF" />
+    <rect x="10" y="40" width="100" height="16" rx="8" fill="#FFFFFF" />
+  </svg></div><div class="cloud cloud-2"><svg viewBox="0 0 120 60" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="30" cy="40" rx="26" ry="18" fill="#FFFFFF" />
+    <ellipse cx="60" cy="30" rx="32" ry="24" fill="#FFFFFF" />
+    <ellipse cx="90" cy="40" rx="24" ry="16" fill="#FFFFFF" />
+    <rect x="10" y="40" width="100" height="16" rx="8" fill="#FFFFFF" />
+  </svg></div><div class="cloud cloud-3"><svg viewBox="0 0 120 60" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="30" cy="40" rx="26" ry="18" fill="#FFFFFF" />
+    <ellipse cx="60" cy="30" rx="32" ry="24" fill="#FFFFFF" />
+    <ellipse cx="90" cy="40" rx="24" ry="16" fill="#FFFFFF" />
+    <rect x="10" y="40" width="100" height="16" rx="8" fill="#FFFFFF" />
+  </svg></div><div class="container hero-inner"><span class="eyebrow">Next2D Games</span><h1>スライムテンパズル<span class="en-sub">Slime Ten Puzzle</span></h1><p class="catchcopy">10をそろえて、サクッと快感。あそんで学べるパズルゲーム。</p><div class="equation" aria-hidden="false"><div class="equation-slime">
+<svg class="slime-svg slime-anim" viewBox="0 0 200 200" width="108" height="108" role="img" aria-label="数字6を持つ青いスライム" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sg-blue-6-107024" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8FD3FF" />
+      <stop offset="1" stop-color="#4FA9F0" />
+    </linearGradient>
+  </defs>
+  <path d="M24,108 C 10,72 32,28 100,26 C 168,28 190,72 176,108 L176,150 Q160.8,170 145.6,150 Q130.4,170 115.2,150 Q100,170 84.80000000000001,150 Q69.60000000000001,170 54.400000000000006,150 Q39.2,170 24,150 Z" fill="url(#sg-blue-6-107024)" stroke="#2E7FC4" stroke-width="3" stroke-linejoin="round" />
+  <path d="M108,4 L119,32 L96,32 Z" fill="#4FA9F0" stroke="#2E7FC4" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="76" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <ellipse cx="124" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <circle cx="80" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="128" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="77" cy="84" r="2.4" fill="#FFFFFF" />
+  <circle cx="125" cy="84" r="2.4" fill="#FFFFFF" />
+  <path d="M82,114 Q100,127 118,114" fill="none" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round" />
+  <text x="100" y="144" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="32" fill="#1E3A5F" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" stroke-linejoin="round">6</text>
+</svg></div><span class="equation-sign" aria-hidden="true">+</span><div class="equation-slime">
+<svg class="slime-svg slime-anim" viewBox="0 0 200 200" width="108" height="108" style="animation-delay:0.15s" role="img" aria-label="数字4を持つ緑のスライム" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sg-green-4-833886" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A8F0A0" />
+      <stop offset="1" stop-color="#6FD96B" />
+    </linearGradient>
+  </defs>
+  <path d="M24,108 C 10,72 32,28 100,26 C 168,28 190,72 176,108 L176,150 Q160.8,170 145.6,150 Q130.4,170 115.2,150 Q100,170 84.80000000000001,150 Q69.60000000000001,170 54.400000000000006,150 Q39.2,170 24,150 Z" fill="url(#sg-green-4-833886)" stroke="#3FAE3B" stroke-width="3" stroke-linejoin="round" />
+  <path d="M108,4 L119,32 L96,32 Z" fill="#6FD96B" stroke="#3FAE3B" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="76" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <ellipse cx="124" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <circle cx="80" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="128" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="77" cy="84" r="2.4" fill="#FFFFFF" />
+  <circle cx="125" cy="84" r="2.4" fill="#FFFFFF" />
+  <path d="M82,114 Q100,127 118,114" fill="none" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round" />
+  <text x="100" y="144" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="32" fill="#1E3A5F" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" stroke-linejoin="round">4</text>
+</svg></div><span class="equation-sign" aria-hidden="true">=</span><div class="equation-slime is-result">
+<svg class="slime-svg slime-anim" viewBox="0 0 200 200" width="148" height="148" style="animation-delay:0.3s" role="img" aria-label="合体してできた、数字10を持つ大きな黄色いスライム" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sg-yellow-10-223797" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE79A" />
+      <stop offset="1" stop-color="#FFD34D" />
+    </linearGradient>
+  </defs>
+  <path d="M24,108 C 10,72 32,28 100,26 C 168,28 190,72 176,108 L176,150 Q160.8,170 145.6,150 Q130.4,170 115.2,150 Q100,170 84.80000000000001,150 Q69.60000000000001,170 54.400000000000006,150 Q39.2,170 24,150 Z" fill="url(#sg-yellow-10-223797)" stroke="#E0A80F" stroke-width="3" stroke-linejoin="round" />
+  <path d="M108,4 L119,32 L96,32 Z" fill="#FFD34D" stroke="#E0A80F" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="76" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <ellipse cx="124" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <circle cx="80" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="128" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="77" cy="84" r="2.4" fill="#FFFFFF" />
+  <circle cx="125" cy="84" r="2.4" fill="#FFFFFF" />
+  <path d="M82,114 Q100,127 118,114" fill="none" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round" />
+  <text x="100" y="144" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="32" fill="#1E3A5F" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" stroke-linejoin="round">10</text>
+</svg></div></div><div class="hero-cta"><div><button class="btn btn-primary" type="button" aria-disabled="true" disabled>体験版であそぶ</button><span class="btn-note">Coming Soon</span></div><div><a class="btn btn-outline" href="#spec">対応プラットフォームを見る</a></div></div></div><div class="wave-divider-wrap">
+<svg class="wave-divider" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0,40 C120,78 240,2 360,40 C480,78 600,2 720,40 C840,78 960,2 1080,40 C1200,78 1320,2 1440,40 L1440,80 L0,80 Z" fill="#FFFFFF" />
+</svg></div></section><!-- ============ ABOUT ============ --><section class="bg-paper section-pad" id="about"><div class="container about-grid"><div class="about-copy"><span class="section-kicker">ABOUT THE GAME</span><h2>どんなゲーム?</h2><p>画面には数字を持ったスライムが4体並んでいます。スライムを2体タップすると、 「a+b」「a−b」「a×b」など6つの計算候補が現れるので、好きな式を選びましょう。 選んだ2体は式の答えを持つ1体に合体します。</p><p>これを繰り返して、最後に残った1体が「10」ならクリア。10以外の数字で終わるとゲームオーバーです。</p><div class="callout"><span class="callout-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12.5l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>出題は必ず10が作れる組み合わせだけを検証して生成しています。理不尽な詰みはありません。</span></div></div><div class="board-panel"><div class="board-row"><div class="board-slime">
+<svg class="slime-svg" viewBox="0 0 200 200" width="130" height="130" role="img" aria-label="数字1を持つスライム" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sg-blue-1-861369" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8FD3FF" />
+      <stop offset="1" stop-color="#4FA9F0" />
+    </linearGradient>
+  </defs>
+  <path d="M24,108 C 10,72 32,28 100,26 C 168,28 190,72 176,108 L176,150 Q160.8,170 145.6,150 Q130.4,170 115.2,150 Q100,170 84.80000000000001,150 Q69.60000000000001,170 54.400000000000006,150 Q39.2,170 24,150 Z" fill="url(#sg-blue-1-861369)" stroke="#2E7FC4" stroke-width="3" stroke-linejoin="round" />
+  <path d="M108,4 L119,32 L96,32 Z" fill="#4FA9F0" stroke="#2E7FC4" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="76" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <ellipse cx="124" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <circle cx="80" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="128" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="77" cy="84" r="2.4" fill="#FFFFFF" />
+  <circle cx="125" cy="84" r="2.4" fill="#FFFFFF" />
+  <path d="M82,114 Q100,127 118,114" fill="none" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round" />
+  <text x="100" y="144" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="32" fill="#1E3A5F" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" stroke-linejoin="round">1</text>
+</svg></div><div class="board-slime">
+<svg class="slime-svg" viewBox="0 0 200 200" width="130" height="130" role="img" aria-label="数字3を持つスライム" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sg-yellow-3-392335" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE79A" />
+      <stop offset="1" stop-color="#FFD34D" />
+    </linearGradient>
+  </defs>
+  <path d="M24,108 C 10,72 32,28 100,26 C 168,28 190,72 176,108 L176,150 Q160.8,170 145.6,150 Q130.4,170 115.2,150 Q100,170 84.80000000000001,150 Q69.60000000000001,170 54.400000000000006,150 Q39.2,170 24,150 Z" fill="url(#sg-yellow-3-392335)" stroke="#E0A80F" stroke-width="3" stroke-linejoin="round" />
+  <path d="M108,4 L119,32 L96,32 Z" fill="#FFD34D" stroke="#E0A80F" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="76" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <ellipse cx="124" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <circle cx="80" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="128" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="77" cy="84" r="2.4" fill="#FFFFFF" />
+  <circle cx="125" cy="84" r="2.4" fill="#FFFFFF" />
+  <path d="M82,114 Q100,127 118,114" fill="none" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round" />
+  <text x="100" y="144" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="32" fill="#1E3A5F" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" stroke-linejoin="round">3</text>
+</svg></div><div class="board-slime">
+<svg class="slime-svg" viewBox="0 0 200 200" width="130" height="130" role="img" aria-label="数字5を持つスライム" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sg-green-5-429325" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A8F0A0" />
+      <stop offset="1" stop-color="#6FD96B" />
+    </linearGradient>
+  </defs>
+  <path d="M24,108 C 10,72 32,28 100,26 C 168,28 190,72 176,108 L176,150 Q160.8,170 145.6,150 Q130.4,170 115.2,150 Q100,170 84.80000000000001,150 Q69.60000000000001,170 54.400000000000006,150 Q39.2,170 24,150 Z" fill="url(#sg-green-5-429325)" stroke="#3FAE3B" stroke-width="3" stroke-linejoin="round" />
+  <path d="M108,4 L119,32 L96,32 Z" fill="#6FD96B" stroke="#3FAE3B" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="76" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <ellipse cx="124" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <circle cx="80" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="128" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="77" cy="84" r="2.4" fill="#FFFFFF" />
+  <circle cx="125" cy="84" r="2.4" fill="#FFFFFF" />
+  <path d="M82,114 Q100,127 118,114" fill="none" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round" />
+  <text x="100" y="144" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="32" fill="#1E3A5F" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" stroke-linejoin="round">5</text>
+</svg></div><div class="board-slime">
+<svg class="slime-svg" viewBox="0 0 200 200" width="130" height="130" role="img" aria-label="数字2を持つスライム" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sg-purple-2-158024" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DCC2F7" />
+      <stop offset="1" stop-color="#B48BE8" />
+    </linearGradient>
+  </defs>
+  <path d="M24,108 C 10,72 32,28 100,26 C 168,28 190,72 176,108 L176,150 Q160.8,170 145.6,150 Q130.4,170 115.2,150 Q100,170 84.80000000000001,150 Q69.60000000000001,170 54.400000000000006,150 Q39.2,170 24,150 Z" fill="url(#sg-purple-2-158024)" stroke="#8A5CC7" stroke-width="3" stroke-linejoin="round" />
+  <path d="M108,4 L119,32 L96,32 Z" fill="#B48BE8" stroke="#8A5CC7" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="76" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <ellipse cx="124" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <circle cx="80" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="128" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="77" cy="84" r="2.4" fill="#FFFFFF" />
+  <circle cx="125" cy="84" r="2.4" fill="#FFFFFF" />
+  <path d="M82,114 Q100,127 118,114" fill="none" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round" />
+  <text x="100" y="144" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="32" fill="#1E3A5F" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" stroke-linejoin="round">2</text>
+</svg></div></div><p class="board-caption">この4体から、10が作れる組み合わせを見つけよう</p></div></div></section><!-- ============ HOW TO PLAY ============ --><section class="bg-mist section-pad" id="how-to-play"><div class="container"><div class="section-head"><span class="section-kicker">3 STEPS</span><h2>あそびかた</h2><p>操作はとってもシンプル。スライムを選んで、式を選ぶだけです。</p></div><div class="step-grid"><div class="step-card"><span class="step-number">1</span><div class="step-illust-wrap"><div class="step-pick-row"><div class="step-pick-item is-picked"><div class="tap-icon-wrap"><svg class="tap-icon" viewBox="0 0 60 60" width="100%" height="100%" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="30" cy="30" r="26" fill="none" stroke="#1E3A5F" stroke-width="3" opacity="0.22" />
+    <circle cx="30" cy="30" r="18" fill="none" stroke="#1E3A5F" stroke-width="3" opacity="0.45" />
+    <circle cx="30" cy="30" r="10" fill="#1E3A5F" opacity="0.85" />
+  </svg></div><div>
+<svg class="slime-svg" viewBox="0 0 200 200" width="100" height="100" role="img" aria-label="数字6を持つスライム" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sg-blue-6-237868" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8FD3FF" />
+      <stop offset="1" stop-color="#4FA9F0" />
+    </linearGradient>
+  </defs>
+  <path d="M24,108 C 10,72 32,28 100,26 C 168,28 190,72 176,108 L176,150 Q160.8,170 145.6,150 Q130.4,170 115.2,150 Q100,170 84.80000000000001,150 Q69.60000000000001,170 54.400000000000006,150 Q39.2,170 24,150 Z" fill="url(#sg-blue-6-237868)" stroke="#2E7FC4" stroke-width="3" stroke-linejoin="round" />
+  <path d="M108,4 L119,32 L96,32 Z" fill="#4FA9F0" stroke="#2E7FC4" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="76" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <ellipse cx="124" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <circle cx="80" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="128" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="77" cy="84" r="2.4" fill="#FFFFFF" />
+  <circle cx="125" cy="84" r="2.4" fill="#FFFFFF" />
+  <path d="M82,114 Q100,127 118,114" fill="none" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round" />
+  <text x="100" y="144" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="32" fill="#1E3A5F" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" stroke-linejoin="round">6</text>
+</svg></div></div><div class="step-pick-item is-picked"><div class="tap-icon-wrap"><svg class="tap-icon" viewBox="0 0 60 60" width="100%" height="100%" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="30" cy="30" r="26" fill="none" stroke="#1E3A5F" stroke-width="3" opacity="0.22" />
+    <circle cx="30" cy="30" r="18" fill="none" stroke="#1E3A5F" stroke-width="3" opacity="0.45" />
+    <circle cx="30" cy="30" r="10" fill="#1E3A5F" opacity="0.85" />
+  </svg></div><div>
+<svg class="slime-svg" viewBox="0 0 200 200" width="100" height="100" role="img" aria-label="数字4を持つスライム" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sg-green-4-223850" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A8F0A0" />
+      <stop offset="1" stop-color="#6FD96B" />
+    </linearGradient>
+  </defs>
+  <path d="M24,108 C 10,72 32,28 100,26 C 168,28 190,72 176,108 L176,150 Q160.8,170 145.6,150 Q130.4,170 115.2,150 Q100,170 84.80000000000001,150 Q69.60000000000001,170 54.400000000000006,150 Q39.2,170 24,150 Z" fill="url(#sg-green-4-223850)" stroke="#3FAE3B" stroke-width="3" stroke-linejoin="round" />
+  <path d="M108,4 L119,32 L96,32 Z" fill="#6FD96B" stroke="#3FAE3B" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="76" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <ellipse cx="124" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <circle cx="80" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="128" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="77" cy="84" r="2.4" fill="#FFFFFF" />
+  <circle cx="125" cy="84" r="2.4" fill="#FFFFFF" />
+  <path d="M82,114 Q100,127 118,114" fill="none" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round" />
+  <text x="100" y="144" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="32" fill="#1E3A5F" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" stroke-linejoin="round">4</text>
+</svg></div></div><div class="step-pick-item "><div>
+<svg class="slime-svg" viewBox="0 0 200 200" width="100" height="100" role="img" aria-label="数字9を持つスライム" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sg-purple-9-913535" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DCC2F7" />
+      <stop offset="1" stop-color="#B48BE8" />
+    </linearGradient>
+  </defs>
+  <path d="M24,108 C 10,72 32,28 100,26 C 168,28 190,72 176,108 L176,150 Q160.8,170 145.6,150 Q130.4,170 115.2,150 Q100,170 84.80000000000001,150 Q69.60000000000001,170 54.400000000000006,150 Q39.2,170 24,150 Z" fill="url(#sg-purple-9-913535)" stroke="#8A5CC7" stroke-width="3" stroke-linejoin="round" />
+  <path d="M108,4 L119,32 L96,32 Z" fill="#B48BE8" stroke="#8A5CC7" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="76" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <ellipse cx="124" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <circle cx="80" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="128" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="77" cy="84" r="2.4" fill="#FFFFFF" />
+  <circle cx="125" cy="84" r="2.4" fill="#FFFFFF" />
+  <path d="M82,114 Q100,127 118,114" fill="none" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round" />
+  <text x="100" y="144" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="32" fill="#1E3A5F" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" stroke-linejoin="round">9</text>
+</svg></div></div><div class="step-pick-item "><div>
+<svg class="slime-svg" viewBox="0 0 200 200" width="100" height="100" role="img" aria-label="数字2を持つスライム" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sg-yellow-2-273677" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE79A" />
+      <stop offset="1" stop-color="#FFD34D" />
+    </linearGradient>
+  </defs>
+  <path d="M24,108 C 10,72 32,28 100,26 C 168,28 190,72 176,108 L176,150 Q160.8,170 145.6,150 Q130.4,170 115.2,150 Q100,170 84.80000000000001,150 Q69.60000000000001,170 54.400000000000006,150 Q39.2,170 24,150 Z" fill="url(#sg-yellow-2-273677)" stroke="#E0A80F" stroke-width="3" stroke-linejoin="round" />
+  <path d="M108,4 L119,32 L96,32 Z" fill="#FFD34D" stroke="#E0A80F" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="76" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <ellipse cx="124" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <circle cx="80" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="128" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="77" cy="84" r="2.4" fill="#FFFFFF" />
+  <circle cx="125" cy="84" r="2.4" fill="#FFFFFF" />
+  <path d="M82,114 Q100,127 118,114" fill="none" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round" />
+  <text x="100" y="144" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="32" fill="#1E3A5F" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" stroke-linejoin="round">2</text>
+</svg></div></div></div></div><h3>スライムを2体えらぶ</h3><p>計算したい2体をタップ(コントローラーでも選択可)。</p></div><div class="step-card"><span class="step-number">2</span><div class="step-illust-wrap">
+<svg class="step-illust" viewBox="0 0 252 131" role="img" aria-label="a+b、a-b、b-a、a×b、a÷b、b÷aの6つの計算候補から式を選ぶ操作パネルのイメージ図" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="252" height="131" rx="20" fill="#EAF7FF" />
+  <rect x="9" y="9" width="72" height="52" rx="14" fill="#FFD34D" stroke="#1E3A5F" stroke-width="3" /><text x="45" y="43" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="22" fill="#1E3A5F">a+b</text><rect x="90" y="9" width="72" height="52" rx="14" fill="#FFFFFF" stroke="#1E3A5F" stroke-width="3" /><text x="126" y="43" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="22" fill="#1E3A5F">a−b</text><rect x="171" y="9" width="72" height="52" rx="14" fill="#FFFFFF" stroke="#1E3A5F" stroke-width="3" /><text x="207" y="43" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="22" fill="#1E3A5F">b−a</text><rect x="9" y="70" width="72" height="52" rx="14" fill="#FFFFFF" stroke="#1E3A5F" stroke-width="3" /><text x="45" y="104" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="22" fill="#1E3A5F">a×b</text><rect x="90" y="70" width="72" height="52" rx="14" fill="#FFFFFF" stroke="#1E3A5F" stroke-width="3" /><text x="126" y="104" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="22" fill="#1E3A5F">a÷b</text><rect x="171" y="70" width="72" height="52" rx="14" fill="#FFFFFF" stroke="#1E3A5F" stroke-width="3" /><text x="207" y="104" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="22" fill="#1E3A5F">b÷a</text>
+</svg></div><h3>けいさんをえらぶ</h3><p>a+b / a−b / b−a / a×b / a÷b / b÷a から式をえらぶ。</p></div><div class="step-card"><span class="step-number">3</span><div class="step-illust-wrap"><div class="step-result-wrap"><div>
+<svg class="slime-svg" viewBox="0 0 200 200" width="110" height="110" role="img" aria-label="数字10を持つ黄色いスライム" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sg-yellow-10-384358" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE79A" />
+      <stop offset="1" stop-color="#FFD34D" />
+    </linearGradient>
+  </defs>
+  <path d="M24,108 C 10,72 32,28 100,26 C 168,28 190,72 176,108 L176,150 Q160.8,170 145.6,150 Q130.4,170 115.2,150 Q100,170 84.80000000000001,150 Q69.60000000000001,170 54.400000000000006,150 Q39.2,170 24,150 Z" fill="url(#sg-yellow-10-384358)" stroke="#E0A80F" stroke-width="3" stroke-linejoin="round" />
+  <path d="M108,4 L119,32 L96,32 Z" fill="#FFD34D" stroke="#E0A80F" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="76" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <ellipse cx="124" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+  <circle cx="80" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="128" cy="88" r="7" fill="#1E3A5F" />
+  <circle cx="77" cy="84" r="2.4" fill="#FFFFFF" />
+  <circle cx="125" cy="84" r="2.4" fill="#FFFFFF" />
+  <path d="M82,114 Q100,127 118,114" fill="none" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round" />
+  <text x="100" y="144" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="32" fill="#1E3A5F" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" stroke-linejoin="round">10</text>
+</svg></div><div class="sparkle-wrap"><svg class="sparkle-svg" viewBox="0 0 120 120" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><polygon points="14.0,9.0 16.4,15.6 23.0,18.0 16.4,20.4 14.0,27.0 11.6,20.4 5.0,18.0 11.6,15.6" fill="#FFFFFF" /><polygon points="106.0,7.0 107.9,12.1 113.0,14.0 107.9,15.9 106.0,21.0 104.1,15.9 99.0,14.0 104.1,12.1" fill="#FFFFFF" /><polygon points="112.0,86.0 114.7,93.3 122.0,96.0 114.7,98.7 112.0,106.0 109.3,98.7 102.0,96.0 109.3,93.3" fill="#FFFFFF" /><polygon points="10.0,94.0 11.6,98.4 16.0,100.0 11.6,101.6 10.0,106.0 8.4,101.6 4.0,100.0 8.4,98.4" fill="#FFFFFF" /></svg></div></div></div><h3>くりかえして、さいごの1体を10に!</h3><p>最後の1体が10ならクリア。10以外だとゲームオーバー。</p></div></div></div></section><!-- ============ FEATURES ============ --><section class="bg-paper section-pad" id="features"><div class="container"><div class="section-head"><span class="section-kicker">FEATURES</span><h2>とくちょう</h2></div><div class="feature-grid"><div class="feature-card"><span class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12.5l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>理不尽ゼロの出題</h3><p>すべての問題は「必ず10が作れる」ことを検証してから出題。運ゲーではありません。</p></div><div class="feature-card"><h3>難しさは自分でえらべる</h3><p>掛け算・割り算・マイナスの数・分数をON/OFFで調整。初期状態は全OFFなので、小さな子どもから遊べます。</p><div class="toggle-chips"><div><span class="toggle-chip">
+    <span class="toggle-chip-icon" aria-hidden="true">×</span>
+    <span class="toggle-chip-label">掛け算</span>
+    <span class="toggle-chip-state">OFF</span>
+  </span></div><div><span class="toggle-chip">
+    <span class="toggle-chip-icon" aria-hidden="true">÷</span>
+    <span class="toggle-chip-label">割り算</span>
+    <span class="toggle-chip-state">OFF</span>
+  </span></div><div><span class="toggle-chip">
+    <span class="toggle-chip-icon" aria-hidden="true">−</span>
+    <span class="toggle-chip-label">マイナスの数</span>
+    <span class="toggle-chip-state">OFF</span>
+  </span></div><div><span class="toggle-chip">
+    <span class="toggle-chip-icon" aria-hidden="true">½</span>
+    <span class="toggle-chip-label">分数</span>
+    <span class="toggle-chip-state">OFF</span>
+  </span></div></div></div><div class="feature-card"><span class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L2 9.2l7.1-.7L12 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><h3>難しい設定ほど高スコア</h3><p>マイナスの数+5点、分数+10点、掛け算ON+5点など、難易度に応じたボーナス点で高得点を狙えます。</p></div><div class="feature-card"><div class="feature-icon feature-icon-pair"><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="18.4" r="1.2" fill="currentColor"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9h12a3 3 0 0 1 3 3.4l-.6 4A3 3 0 0 1 17.4 19a3 3 0 0 1-2.6-1.5L14 16h-4l-.8 1.5A3 3 0 0 1 6.6 19a3 3 0 0 1-3-2.6l-.6-4A3 3 0 0 1 6 9z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><line x1="7" y1="12.5" x2="7" y2="14.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="6" y1="13.5" x2="8" y2="13.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="16.5" cy="12.5" r="0.9" fill="currentColor"/><circle cx="14.7" cy="14.3" r="0.9" fill="currentColor"/></svg></span></div><h3>タップでもコントローラーでも</h3><p>スマホのタップ操作はもちろん、ゲームパッド(コントローラー)にも完全対応。</p></div></div></div></section><!-- ============ MODES ============ --><section class="bg-mist section-pad" id="modes"><div class="container"><div class="section-head"><span class="section-kicker">GAME MODES</span><h2>ゲームモード</h2></div><div class="mode-grid"><div class="mode-card mode-normal"><span class="mode-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15c-2.2 0-4-1.3-4-3s1.8-3 4-3c2.5 0 3.6 1.6 5 3 1 1.1 2.1 3 4.5 3 2.2 0 4-1.3 4-3s-1.8-3-4-3c-2.5 0-3.6 1.6-5 3-1 1.1-2.1 3-4.5 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg></span><h3>ノーマル</h3><p>時間無制限。クリアするたびに次の問題が出るエンドレスモード。</p></div><div class="mode-card mode-timeattack"><span class="mode-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>タイムアタック</h3><p>1分・5分・10分から時間を選択。モードごとにハイスコアを記録できます。</p><div class="time-chip-row"><span class="time-chip">1分</span><span class="time-chip">5分</span><span class="time-chip">10分</span></div></div><div class="mode-card mode-tutorial"><span class="mode-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3l3 15 2.5-5.5L17 15 6 3z" fill="currentColor"/></svg></span><h3>チュートリアル</h3><p>手のカーソルが次に押すスライムとおすすめの計算をナビゲートしてくれます。</p></div></div></div></section><!-- ============ SCREENSHOTS ============ --><section class="bg-paper section-pad" id="screenshots"><div class="container"><div class="section-head"><span class="section-kicker">SCREENSHOTS</span><h2>スクリーンショット</h2></div><div class="shot-grid"><div class="shot-card"><div>
+<svg viewBox="0 0 320 180" role="img" aria-label="ホーム画面のイメージ。タイトルロゴと「あそぶ」ボタン、モード選択チップが並ぶ" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shot-home-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8FE0FF" />
+      <stop offset="1" stop-color="#3FA8E8" />
+    </linearGradient>
+  </defs>
+  <rect width="320" height="180" fill="url(#shot-home-bg)" />
+  <ellipse cx="40" cy="26" rx="22" ry="10" fill="#FFFFFF" opacity="0.85" />
+  <ellipse cx="280" cy="18" rx="18" ry="8" fill="#FFFFFF" opacity="0.7" />
+  <text x="160" y="46" text-anchor="middle" font-family="'Zen Maru Gothic', sans-serif" font-weight="900" font-size="20" fill="#FFFFFF">スライムテンパズル</text>
+  <text x="160" y="62" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="11" fill="#FFFFFF" opacity="0.9">SLIME TEN PUZZLE</text>
+  <g transform="translate(160,112) scale(0.5)">
+    <g transform="translate(-100,-100)">
+      <path d="M24,108 C 10,72 32,28 100,26 C 168,28 190,72 176,108 L176,150 Q160.8,170 145.6,150 Q130.4,170 115.2,150 Q100,170 84.80000000000001,150 Q69.60000000000001,170 54.400000000000006,150 Q39.2,170 24,150 Z" fill="#FFD34D" stroke="#1E3A5F" stroke-width="4" stroke-linejoin="round" />
+      <path d="M108,4 L119,32 L96,32 Z" fill="#FFD34D" stroke="#1E3A5F" stroke-width="4" stroke-linejoin="round" />
+      <ellipse cx="76" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+      <ellipse cx="124" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+      <circle cx="80" cy="88" r="7" fill="#1E3A5F" />
+      <circle cx="128" cy="88" r="7" fill="#1E3A5F" />
+      <circle cx="77" cy="84" r="2.4" fill="#FFFFFF" />
+      <circle cx="125" cy="84" r="2.4" fill="#FFFFFF" />
+      <path d="M82,114 Q100,127 118,114" fill="none" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round" />
+      <text x="100" y="144" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="32" fill="#1E3A5F" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" stroke-linejoin="round">10</text>
+    </g>
+  </g>
+  <rect x="112" y="146" width="96" height="24" rx="12" fill="#FFD34D" stroke="#1E3A5F" stroke-width="2.5" />
+  <text x="160" y="162" text-anchor="middle" font-family="'Zen Maru Gothic', sans-serif" font-weight="700" font-size="12" fill="#1E3A5F">あそぶ</text>
+  <rect x="16" y="16" width="58" height="18" rx="9" fill="#FFFFFF" opacity="0.9" />
+  <text x="45" y="28.5" text-anchor="middle" font-family="'Zen Maru Gothic', sans-serif" font-weight="700" font-size="9.5" fill="#1E3A5F">ノーマル</text>
+</svg></div><p class="shot-caption">ホーム画面</p></div><div class="shot-card"><div>
+<svg viewBox="0 0 320 180" role="img" aria-label="プレイ画面のイメージ。4体のスライムが数字を持って並び、上部にスコアとタイマーが表示される" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shot-play-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6DD4FF" />
+      <stop offset="1" stop-color="#3FA8E8" />
+    </linearGradient>
+  </defs>
+  <rect width="320" height="180" fill="url(#shot-play-bg)" />
+  <rect x="12" y="12" width="66" height="22" rx="11" fill="#FFFFFF" opacity="0.9" />
+  <text x="45" y="27" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="12" fill="#1E3A5F">SCORE 120</text>
+  <rect x="242" y="12" width="66" height="22" rx="11" fill="#FFFFFF" opacity="0.9" />
+  <text x="275" y="27" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="12" fill="#1E3A5F">04:12</text>
+  <g transform="translate(70,105) scale(0.34)">
+    <g transform="translate(-100,-100)">
+      <path d="M24,108 C 10,72 32,28 100,26 C 168,28 190,72 176,108 L176,150 Q160.8,170 145.6,150 Q130.4,170 115.2,150 Q100,170 84.80000000000001,150 Q69.60000000000001,170 54.400000000000006,150 Q39.2,170 24,150 Z" fill="#4FA9F0" stroke="#1E3A5F" stroke-width="4" stroke-linejoin="round" />
+      <path d="M108,4 L119,32 L96,32 Z" fill="#4FA9F0" stroke="#1E3A5F" stroke-width="4" stroke-linejoin="round" />
+      <ellipse cx="76" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+      <ellipse cx="124" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+      <circle cx="80" cy="88" r="7" fill="#1E3A5F" />
+      <circle cx="128" cy="88" r="7" fill="#1E3A5F" />
+      <circle cx="77" cy="84" r="2.4" fill="#FFFFFF" />
+      <circle cx="125" cy="84" r="2.4" fill="#FFFFFF" />
+      <path d="M82,114 Q100,127 118,114" fill="none" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round" />
+      <text x="100" y="144" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="32" fill="#1E3A5F" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" stroke-linejoin="round">6</text>
+    </g>
+  </g>
+  <g transform="translate(130,105) scale(0.34)">
+    <g transform="translate(-100,-100)">
+      <path d="M24,108 C 10,72 32,28 100,26 C 168,28 190,72 176,108 L176,150 Q160.8,170 145.6,150 Q130.4,170 115.2,150 Q100,170 84.80000000000001,150 Q69.60000000000001,170 54.400000000000006,150 Q39.2,170 24,150 Z" fill="#6FD96B" stroke="#1E3A5F" stroke-width="4" stroke-linejoin="round" />
+      <path d="M108,4 L119,32 L96,32 Z" fill="#6FD96B" stroke="#1E3A5F" stroke-width="4" stroke-linejoin="round" />
+      <ellipse cx="76" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+      <ellipse cx="124" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+      <circle cx="80" cy="88" r="7" fill="#1E3A5F" />
+      <circle cx="128" cy="88" r="7" fill="#1E3A5F" />
+      <circle cx="77" cy="84" r="2.4" fill="#FFFFFF" />
+      <circle cx="125" cy="84" r="2.4" fill="#FFFFFF" />
+      <path d="M82,114 Q100,127 118,114" fill="none" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round" />
+      <text x="100" y="144" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="32" fill="#1E3A5F" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" stroke-linejoin="round">4</text>
+    </g>
+  </g>
+  <g transform="translate(190,105) scale(0.34)">
+    <g transform="translate(-100,-100)">
+      <path d="M24,108 C 10,72 32,28 100,26 C 168,28 190,72 176,108 L176,150 Q160.8,170 145.6,150 Q130.4,170 115.2,150 Q100,170 84.80000000000001,150 Q69.60000000000001,170 54.400000000000006,150 Q39.2,170 24,150 Z" fill="#FFD34D" stroke="#1E3A5F" stroke-width="4" stroke-linejoin="round" />
+      <path d="M108,4 L119,32 L96,32 Z" fill="#FFD34D" stroke="#1E3A5F" stroke-width="4" stroke-linejoin="round" />
+      <ellipse cx="76" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+      <ellipse cx="124" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+      <circle cx="80" cy="88" r="7" fill="#1E3A5F" />
+      <circle cx="128" cy="88" r="7" fill="#1E3A5F" />
+      <circle cx="77" cy="84" r="2.4" fill="#FFFFFF" />
+      <circle cx="125" cy="84" r="2.4" fill="#FFFFFF" />
+      <path d="M82,114 Q100,127 118,114" fill="none" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round" />
+      <text x="100" y="144" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="32" fill="#1E3A5F" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" stroke-linejoin="round">9</text>
+    </g>
+  </g>
+  <g transform="translate(250,105) scale(0.34)">
+    <g transform="translate(-100,-100)">
+      <path d="M24,108 C 10,72 32,28 100,26 C 168,28 190,72 176,108 L176,150 Q160.8,170 145.6,150 Q130.4,170 115.2,150 Q100,170 84.80000000000001,150 Q69.60000000000001,170 54.400000000000006,150 Q39.2,170 24,150 Z" fill="#B48BE8" stroke="#1E3A5F" stroke-width="4" stroke-linejoin="round" />
+      <path d="M108,4 L119,32 L96,32 Z" fill="#B48BE8" stroke="#1E3A5F" stroke-width="4" stroke-linejoin="round" />
+      <ellipse cx="76" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+      <ellipse cx="124" cy="84" rx="16" ry="19" fill="#FFFFFF" />
+      <circle cx="80" cy="88" r="7" fill="#1E3A5F" />
+      <circle cx="128" cy="88" r="7" fill="#1E3A5F" />
+      <circle cx="77" cy="84" r="2.4" fill="#FFFFFF" />
+      <circle cx="125" cy="84" r="2.4" fill="#FFFFFF" />
+      <path d="M82,114 Q100,127 118,114" fill="none" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round" />
+      <text x="100" y="144" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="32" fill="#1E3A5F" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" stroke-linejoin="round">2</text>
+    </g>
+  </g>
+  <rect x="60" y="150" width="200" height="20" rx="10" fill="#FFFFFF" opacity="0.55" />
+  <text x="160" y="164" text-anchor="middle" font-family="'Zen Maru Gothic', sans-serif" font-weight="700" font-size="10" fill="#1E3A5F">2体えらんで けいさん!</text>
+</svg></div><p class="shot-caption">プレイ画面</p></div><div class="shot-card"><div>
+<svg viewBox="0 0 320 180" role="img" aria-label="計算選択モーダルのイメージ。選んだ2体の数字と、6つの計算候補ボタンが表示される" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shot-modal-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6DD4FF" />
+      <stop offset="1" stop-color="#3FA8E8" />
+    </linearGradient>
+  </defs>
+  <rect width="320" height="180" fill="url(#shot-modal-bg)" />
+  <rect width="320" height="180" fill="#1E3A5F" opacity="0.45" />
+  <rect x="46" y="18" width="228" height="146" rx="18" fill="#FFFFFF" />
+  <text x="160" y="42" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="800" font-size="18" fill="#1E3A5F">6 ? 4</text>
+  <rect x="62" y="56" width="62" height="34" rx="10" fill="#FFD34D" stroke="#1E3A5F" stroke-width="2" /><text x="93" y="78" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="14" fill="#1E3A5F">a+b</text><rect x="132" y="56" width="62" height="34" rx="10" fill="#EAF7FF" stroke="#1E3A5F" stroke-width="2" /><text x="163" y="78" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="14" fill="#1E3A5F">a−b</text><rect x="202" y="56" width="62" height="34" rx="10" fill="#EAF7FF" stroke="#1E3A5F" stroke-width="2" /><text x="233" y="78" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="14" fill="#1E3A5F">b−a</text><rect x="62" y="98" width="62" height="34" rx="10" fill="#EAF7FF" stroke="#1E3A5F" stroke-width="2" /><text x="93" y="120" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="14" fill="#1E3A5F">a×b</text><rect x="132" y="98" width="62" height="34" rx="10" fill="#EAF7FF" stroke="#1E3A5F" stroke-width="2" /><text x="163" y="120" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="14" fill="#1E3A5F">a÷b</text><rect x="202" y="98" width="62" height="34" rx="10" fill="#EAF7FF" stroke="#1E3A5F" stroke-width="2" /><text x="233" y="120" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="14" fill="#1E3A5F">b÷a</text>
+</svg></div><p class="shot-caption">計算選択モーダル</p></div></div><p class="shot-note">※開発中の画面イメージです。実際の製品版とは異なる場合があります。</p></div></section><!-- ============ TRIAL / STORE ============ --><section class="bg-mist section-pad" id="trial"><div class="container"><div class="trial-panel"><h2>体験版・ストア</h2><p>体験版では「タイムアタック」と「チュートリアル」があそべます(ノーマルモードは製品版のみ)。</p><div class="trial-cta"><button class="btn btn-primary" type="button" aria-disabled="true" disabled>Web体験版であそぶ</button><span class="btn-note">Coming Soon</span></div><div class="store-chip-row"><div><span class="store-chip" aria-disabled="true">
+    <span class="store-chip-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="18.4" r="1.2" fill="currentColor"/></svg></span>
+    <span class="store-chip-text"><strong>App Store</strong><small>Coming Soon</small></span>
+  </span></div><div><span class="store-chip" aria-disabled="true">
+    <span class="store-chip-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="18.4" r="1.2" fill="currentColor"/></svg></span>
+    <span class="store-chip-text"><strong>Google Play</strong><small>Coming Soon</small></span>
+  </span></div><div><span class="store-chip" aria-disabled="true">
+    <span class="store-chip-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/></svg></span>
+    <span class="store-chip-text"><strong>Steam</strong><small>Coming Soon</small></span>
+  </span></div><div><span class="store-chip" aria-disabled="true">
+    <span class="store-chip-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9h12a3 3 0 0 1 3 3.4l-.6 4A3 3 0 0 1 17.4 19a3 3 0 0 1-2.6-1.5L14 16h-4l-.8 1.5A3 3 0 0 1 6.6 19a3 3 0 0 1-3-2.6l-.6-4A3 3 0 0 1 6 9z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><line x1="7" y1="12.5" x2="7" y2="14.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="6" y1="13.5" x2="8" y2="13.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="16.5" cy="12.5" r="0.9" fill="currentColor"/><circle cx="14.7" cy="14.3" r="0.9" fill="currentColor"/></svg></span>
+    <span class="store-chip-text"><strong>Xbox</strong><small>Coming Soon</small></span>
+  </span></div></div></div></div></section><!-- ============ SPEC ============ --><section class="bg-paper section-pad" id="spec"><div class="container"><div class="section-head"><span class="section-kicker">SPEC</span><h2>スペック</h2></div><table class="spec-table"><tbody><tr><th scope="row">対応プラットフォーム</th><td>Web / iOS / Android / Windows / macOS / Linux(Steam)/ Xbox ※すべて準備中・近日公開</td></tr><tr><th scope="row">画面・フレームレート</th><td>1280 × 720 ・ 60fps</td></tr><tr><th scope="row">操作方法</th><td>タップ操作 / ゲームパッド(コントローラー)操作に対応</td></tr><tr><th scope="row">料金</th><td>未定</td></tr><tr><th scope="row">開発</th><td>Next2D</td></tr><tr><th scope="row">エンジン</th><td>Next2D Framework v4</td></tr></tbody></table></div></section><!-- ============ FOOTER ============ --><footer class="site-footer"><div class="container"><p>Powered by <a href="https://next2d.app/ja/">Next2D</a></p><p class="copyright">&copy; 2026 Next2D</p></div></footer></body></html>

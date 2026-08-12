@@ -1,0 +1,43 @@
+# Next2D
+
+> Next2D is an open-source project providing a WebGL/WebGPU-based 2D rendering engine (Next2D Player), a browser-based no-code animation authoring tool (Animation Tool), and an MVVM framework for building 2D web applications (Next2D Framework). 2D entertainment development made easy, fast and comfortable.
+
+The official site is available in Japanese (/ja/), English (/en/) and Simplified Chinese (/cn/). Documentation URLs below use the English version; replace `/en/` with `/ja/` or `/cn/` for other languages.
+
+## Player Reference
+
+- [Player Overview](https://next2d.app/en/reference/player/): WebGL/WebGPU 2D rendering engine overview
+- [DisplayObject](https://next2d.app/en/reference/player/display-object/): Base class for all display objects
+- [Sprite](https://next2d.app/en/reference/player/sprite/): Display object container without a timeline
+- [MovieClip](https://next2d.app/en/reference/player/movie-clip/): Display object container with timeline animation
+- [Shape](https://next2d.app/en/reference/player/shape/): Vector graphics drawing class
+- [TextField](https://next2d.app/en/reference/player/text-field/): Text display and input
+- [Video](https://next2d.app/en/reference/player/video/): Video playback
+- [Sound](https://next2d.app/en/reference/player/sound/): Audio playback (BGM, sound effects, voice)
+- [Events](https://next2d.app/en/reference/player/events/): W3C DOM-like three-phase event flow
+- [Filters](https://next2d.app/en/reference/player/filters/): Visual filters for display objects
+- [Tween](https://next2d.app/en/reference/player/tween/): Programmatic animation via @next2d/ui
+
+## Framework Reference
+
+- [Framework Overview](https://next2d.app/en/reference/framework/): MVVM framework for Next2D applications
+- [View / ViewModel](https://next2d.app/en/reference/framework/view/): MVVM pattern basics
+- [Routing](https://next2d.app/en/reference/framework/routing/): SPA scene control via routing.json
+- [Config](https://next2d.app/en/reference/framework/config/): Configuration with JSON files
+- [Animation Tool Integration](https://next2d.app/en/reference/framework/animation-tool/): Using Animation Tool assets
+
+## Animation Tool
+
+- [Usage Guide](https://next2d.app/en/usage/): How to use the browser-based Animation Tool
+- [Animation Tool (app)](https://tool.next2d.app/): The tool itself, no installation required
+
+## Source Code
+
+- [GitHub Organization](https://github.com/Next2D): All Next2D repositories
+- [Player (npm: @next2d/player)](https://github.com/Next2D/player)
+- [Framework (npm: @next2d/framework)](https://github.com/Next2D/framework)
+
+## Optional
+
+- [Case Study: WORLD FLIPPER](https://next2d.app/en/casestudy/worldflipper/)
+- [Case Study: Slime Ten Puzzle](https://next2d.app/en/casestudy/slimetenpuzzle/)

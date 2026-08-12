@@ -3,3 +3,6 @@
 Thumbs.db
 node_modules
 .astro
+test-results/
+playwright-report/
+tests/visual.spec.ts-snapshots/

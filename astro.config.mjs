@@ -18,6 +18,17 @@ export default defineConfig({
           en: 'en',
           cn: 'zh-CN'
         }
+      },
+      serialize(item) {
+        // ルート `/` は言語選択ページであり ja 版ではないため、
+        // ja が `/` と `/ja/` の2つ付与される重複を除去し、`/` は x-default として扱う
+        if (item.links?.some((link) => new URL(link.url).pathname === '/')) {
+          item.links = [
+            ...item.links.filter((link) => new URL(link.url).pathname !== '/'),
+            { url: 'https://next2d.app/', lang: 'x-default' }
+          ];
+        }
+        return item;
       }
     })
   ],

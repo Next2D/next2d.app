@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import DocsLayout from '../../../../layouts/DocsLayout.astro';
 import { getTranslations, supportedLanguages, isValidLanguage } from '../../../../i18n';
+import { getEntryDescription } from '../../../../utils/content';
 
 export async function getStaticPaths() {
   const paths: any[] = [];
@@ -37,7 +38,7 @@ const { Content } = await render(indexEntry);
 // Markdown の最初の# からタイトルを抽出
 const titleMatch = indexEntry.body?.match(/^#\s+(.+)$/m);
 let title = titleMatch ? titleMatch[1] : 'Player Documentation';
-// "Next2D "の重複を避ける（BaseLayout で"Next2D | "が付くため）
+// "Next2D "の重複を避ける（BaseLayoutで" | Next2D"が付くため）
 title = title.replace(/^Next2D\s+/, '');
 
 const breadcrumbs = [
@@ -48,7 +49,7 @@ const breadcrumbs = [
 
 <DocsLayout
   title={title}
-  description={t.playerreference?.description || 'Next2D Player Documentation'}
+  description={getEntryDescription(indexEntry, t.playerreference?.description || 'Next2D Player Documentation')}
   lang={lang}
   t={t}
   breadcrumbs={breadcrumbs}

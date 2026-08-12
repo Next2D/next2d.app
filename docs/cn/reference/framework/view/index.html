@@ -7,25 +7,25 @@
 </style></head><body class="lang-cn"><header id="header" class="header fixed-top d-flex align-items-center"><div class="container d-flex align-items-center justify-content-between"><div id="logo"><a href="/cn"><img loading="lazy" src="/assets/img/logo.svg" alt="Next2D Rendering Engine, Animation Tool, Underlying Framework." title="Next2D Rendering Engine, Animation Tool, Underlying Framework."></a></div><nav id="navbar" class="navbar"><ul class="list-unstyled"><li><a class="nav-link scrollto" href="/cn/#get-started">首页</a></li><li><a class="nav-link scrollto" href="/cn/#casestudy">学习案例</a></li><li class="dropdown"><a class="nav-link scrollto" href="#player-list"><span>播放器 (Player)</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="https://github.com/Next2D/Player" target="_blank">GitHub</a></li><li><a href="/cn/reference/player">参考资料</a></li><li><a href="/cn/#player">特性</a></li></ul></li><li class="dropdown"><a class="nav-link scrollto" href="#nocode-tool-list"><span>动画工具</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="https://tool.next2d.app" target="_blank">Web Site</a></li><li><a href="/cn/usage">使用方法</a></li><li><a href="https://www.youtube.com/channel/UCKWvYSKSa8huzkr9T6GAPUw/videos" target="_blank">YouTube</a></li><li><a href="/cn/#tool">特性</a></li><li><a href="https://github.com/Next2D/tool.next2d.app/tree/develop" target="_blank">GitHub</a></li></ul></li><li class="dropdown"><a class="nav-link scrollto" href="#framework-list"><span>框架</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="https://github.com/Next2D/Framework" target="_blank">GitHub</a></li><li><a href="/cn/reference/framework">参考资料</a></li><li><a href="/cn/#framework">特性</a></li></ul></li><li class="dropdown"><a class="nav-link scrollto" href="#language-list"><span>语言</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="/en">English</a></li><li><a href="/ja">日本語</a></li><li><a href="/cn">简体中文</a></li></ul></li><li class="dropdown"><a class="nav-link"><span>支持我们</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="https://github.com/sponsors/Next2D" target="_blank">GitHub</a></li></ul></li><li><a class="nav-link scrollto" href="/cn/#contact">联系我们</a></li></ul><i class="bi bi-list mobile-nav-toggle"></i></nav></div></header><section class="breadcrumbs"><div class="container"><div class="d-flex justify-content-between align-items-center"><h2>View 和 ViewModel</h2><ol><li><a href="/cn/">首页</a></li><li><a href="/cn/reference/framework/">Framework</a></li><li>View 和 ViewModel</li></ol></div></div></section><section id="references" class="reference-section"><div class="container" data-aos="fade-up"><div class="row"><div class="col-lg-3 col-md-4"><nav id="sub-navbar" class="list-menu sub-navbar"><ul class="list-unstyled"><li><strong>Player</strong></li><ul><li><a href="/cn/reference/player">概述</a></li><li><a href="/cn/reference/player/display-object">DisplayObject</a></li><li><a href="/cn/reference/player/sprite">Sprite</a></li><li><a href="/cn/reference/player/movie-clip">MovieClip</a></li><li><a href="/cn/reference/player/shape">Shape</a></li><li><a href="/cn/reference/player/text-field">TextField</a></li><li><a href="/cn/reference/player/video">Video</a></li><li><a href="/cn/reference/player/sound">Sound</a></li><li><a href="/cn/reference/player/events">事件</a></li><li><a href="/cn/reference/player/filters">滤镜</a></li><li><a href="/cn/reference/player/tween">Tween</a></li></ul><li><strong>Framework</strong></li><ul><li><a href="/cn/reference/framework">概述</a></li><li><a href="/cn/reference/framework/view">View/ViewModel</a></li><li><a href="/cn/reference/framework/routing">路由</a></li><li><a href="/cn/reference/framework/config">配置文件</a></li><li><a href="/cn/reference/framework/animation-tool">Animation Tool集成</a></li></ul></ul><i class="bi bi-list mobile-sub-nav-toggle"></i></nav></div><div class="col-lg-9 col-md-8"><div class="docs-content" data-astro-cid-llxzxegs><h1 id="view-和-viewmodel">View 和 ViewModel</h1>
 <p>Next2D Framework 采用 MVVM（Model-View-ViewModel）模式。基本风格是每个画面创建一组 View 和 ViewModel。</p>
 <h2 id="架构">架构</h2>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">graph TB</span></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph ViewLayer["视图层"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        ViewRole["处理画面结构和显示"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        ViewRule["没有业务逻辑"]</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#F97583">graph</span><span style="color:#B392F0"> TB</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> ViewLayer</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"视图层"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        ViewRole</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"处理画面结构和显示"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        ViewRule</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"没有业务逻辑"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph ViewModelLayer["ViewModel 层"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        VMRole1["View 和 Model 之间的桥梁"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        VMRole2["持有 UseCase"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        VMRole3["事件处理"]</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> ViewModelLayer</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"ViewModel 层"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        VMRole1</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"View 和 Model 之间的桥梁"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        VMRole2</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"持有 UseCase"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        VMRole3</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"事件处理"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph ModelLayer["Model 层"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        ModelRole1["业务逻辑（UseCase）"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        ModelRole2["数据访问（Repository）"]</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> ModelLayer</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"Model 层"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        ModelRole1</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"业务逻辑（UseCase）"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        ModelRole2</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"数据访问（Repository）"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    ViewLayer &#x3C;-->|双向| ViewModelLayer</span></span>
-<span class="line"><span style="color:#E1E4E8">    ViewModelLayer &#x3C;--> ModelLayer</span></span></code></pre>
+<span class="line"><span style="color:#FFAB70">    ViewLayer </span><span style="color:#F97583">&#x3C;--></span><span style="color:#E1E4E8">|</span><span style="color:#FFAB70">双向</span><span style="color:#E1E4E8">| </span><span style="color:#FFAB70">ViewModelLayer</span></span>
+<span class="line"><span style="color:#FFAB70">    ViewModelLayer </span><span style="color:#F97583">&#x3C;--></span><span style="color:#FFAB70"> ModelLayer</span></span></code></pre>
 <h2 id="目录结构">目录结构</h2>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>src/</span></span>
 <span class="line"><span>└── view/</span></span>
@@ -75,30 +75,30 @@
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h3 id="生命周期">生命周期</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">sequenceDiagram</span></span>
-<span class="line"><span style="color:#E1E4E8">    participant Framework as Framework</span></span>
-<span class="line"><span style="color:#E1E4E8">    participant VM as ViewModel</span></span>
-<span class="line"><span style="color:#E1E4E8">    participant View as View</span></span>
-<span class="line"><span style="color:#E1E4E8">    participant UI as UI 组件</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#F97583">sequenceDiagram</span></span>
+<span class="line"><span style="color:#F97583">    participant</span><span style="color:#FFAB70"> Framework</span><span style="color:#F97583"> as</span><span style="color:#9ECBFF"> Framework</span></span>
+<span class="line"><span style="color:#F97583">    participant</span><span style="color:#FFAB70"> VM</span><span style="color:#F97583"> as</span><span style="color:#9ECBFF"> ViewModel</span></span>
+<span class="line"><span style="color:#F97583">    participant</span><span style="color:#FFAB70"> View</span><span style="color:#F97583"> as</span><span style="color:#9ECBFF"> View</span></span>
+<span class="line"><span style="color:#F97583">    participant</span><span style="color:#FFAB70"> UI</span><span style="color:#F97583"> as</span><span style="color:#9ECBFF"> UI 组件</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    Note over Framework,UI: 画面转换开始</span></span>
+<span class="line"><span style="color:#F97583">    Note</span><span style="color:#B392F0"> over</span><span style="color:#FFAB70"> Framework</span><span style="color:#F97583">,</span><span style="color:#FFAB70">UI</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 画面转换开始</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    Framework->>VM: new ViewModel()</span></span>
-<span class="line"><span style="color:#E1E4E8">    Framework->>VM: initialize()</span></span>
-<span class="line"><span style="color:#E1E4E8">    Note over VM: ViewModel 首先初始化</span></span>
+<span class="line"><span style="color:#FFAB70">    Framework</span><span style="color:#F97583">->></span><span style="color:#FFAB70">VM</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> new ViewModel()</span></span>
+<span class="line"><span style="color:#FFAB70">    Framework</span><span style="color:#F97583">->></span><span style="color:#FFAB70">VM</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> initialize()</span></span>
+<span class="line"><span style="color:#F97583">    Note</span><span style="color:#B392F0"> over</span><span style="color:#FFAB70"> VM</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> ViewModel 首先初始化</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    Framework->>View: new View(vm)</span></span>
-<span class="line"><span style="color:#E1E4E8">    Framework->>View: initialize()</span></span>
-<span class="line"><span style="color:#E1E4E8">    View->>UI: 创建组件</span></span>
-<span class="line"><span style="color:#E1E4E8">    View->>VM: 注册事件侦听器</span></span>
+<span class="line"><span style="color:#FFAB70">    Framework</span><span style="color:#F97583">->></span><span style="color:#FFAB70">View</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> new View(vm)</span></span>
+<span class="line"><span style="color:#FFAB70">    Framework</span><span style="color:#F97583">->></span><span style="color:#FFAB70">View</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> initialize()</span></span>
+<span class="line"><span style="color:#FFAB70">    View</span><span style="color:#F97583">->></span><span style="color:#FFAB70">UI</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 创建组件</span></span>
+<span class="line"><span style="color:#FFAB70">    View</span><span style="color:#F97583">->></span><span style="color:#FFAB70">VM</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 注册事件侦听器</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    Framework->>View: onEnter()</span></span>
-<span class="line"><span style="color:#E1E4E8">    View->>UI: 开始动画</span></span>
+<span class="line"><span style="color:#FFAB70">    Framework</span><span style="color:#F97583">->></span><span style="color:#FFAB70">View</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> onEnter()</span></span>
+<span class="line"><span style="color:#FFAB70">    View</span><span style="color:#F97583">->></span><span style="color:#FFAB70">UI</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 开始动画</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    Note over Framework,UI: 用户与画面交互</span></span>
+<span class="line"><span style="color:#F97583">    Note</span><span style="color:#B392F0"> over</span><span style="color:#FFAB70"> Framework</span><span style="color:#F97583">,</span><span style="color:#FFAB70">UI</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 用户与画面交互</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    Framework->>View: onExit()</span></span>
-<span class="line"><span style="color:#E1E4E8">    View->>UI: 清理</span></span></code></pre>
+<span class="line"><span style="color:#FFAB70">    Framework</span><span style="color:#F97583">->></span><span style="color:#FFAB70">View</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> onExit()</span></span>
+<span class="line"><span style="color:#FFAB70">    View</span><span style="color:#F97583">->></span><span style="color:#FFAB70">UI</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 清理</span></span></code></pre>
 <h4 id="initialize---初始化">initialize() - 初始化</h4>
 <p><strong>何时调用：</strong></p>
 <ul>

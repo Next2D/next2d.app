@@ -17,39 +17,39 @@
 </ul>
 <h2 id="architecture-overview">Architecture Overview</h2>
 <p>This project implements a combination of Clean Architecture and MVVM pattern.</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">graph TB</span></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph ViewLayer["View Layer"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        View["View"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        ViewModel["ViewModel"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        UI["UI Components"]</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#F97583">graph</span><span style="color:#B392F0"> TB</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> ViewLayer</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"View Layer"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        View</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"View"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        ViewModel</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"ViewModel"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        UI</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"UI Components"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph InterfaceLayer["Interface Layer"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        IDraggable["IDraggable"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        ITextField["ITextField"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        IResponse["IResponse"]</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> InterfaceLayer</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"Interface Layer"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        IDraggable</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"IDraggable"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        ITextField</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"ITextField"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        IResponse</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"IResponse"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph ApplicationLayer["Application Layer"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        UseCase["UseCase"]</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> ApplicationLayer</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"Application Layer"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        UseCase</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"UseCase"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph DomainLayer["Domain Layer"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        DomainLogic["Domain Logic"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        DomainService["Service"]</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> DomainLayer</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"Domain Layer"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        DomainLogic</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"Domain Logic"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        DomainService</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"Service"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph InfraLayer["Infrastructure Layer"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        Repository["Repository"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        ExternalAPI["External API"]</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> InfraLayer</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"Infrastructure Layer"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        Repository</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"Repository"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        ExternalAPI</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"External API"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    ViewLayer -.->|via interface| InterfaceLayer</span></span>
-<span class="line"><span style="color:#E1E4E8">    ViewLayer -.->|calls| ApplicationLayer</span></span>
-<span class="line"><span style="color:#E1E4E8">    ApplicationLayer -.->|via interface| InterfaceLayer</span></span>
-<span class="line"><span style="color:#E1E4E8">    ApplicationLayer -.->|uses| DomainLayer</span></span>
-<span class="line"><span style="color:#E1E4E8">    ApplicationLayer -.->|calls| InfraLayer</span></span>
-<span class="line"><span style="color:#E1E4E8">    InfraLayer -.->|accesses| ExternalAPI</span></span></code></pre>
+<span class="line"><span style="color:#FFAB70">    ViewLayer </span><span style="color:#F97583">-.->|</span><span style="color:#9ECBFF">via interface</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> InterfaceLayer</span></span>
+<span class="line"><span style="color:#FFAB70">    ViewLayer </span><span style="color:#F97583">-.->|</span><span style="color:#9ECBFF">calls</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> ApplicationLayer</span></span>
+<span class="line"><span style="color:#FFAB70">    ApplicationLayer </span><span style="color:#F97583">-.->|</span><span style="color:#9ECBFF">via interface</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> InterfaceLayer</span></span>
+<span class="line"><span style="color:#FFAB70">    ApplicationLayer </span><span style="color:#F97583">-.->|</span><span style="color:#9ECBFF">uses</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> DomainLayer</span></span>
+<span class="line"><span style="color:#FFAB70">    ApplicationLayer </span><span style="color:#F97583">-.->|</span><span style="color:#9ECBFF">calls</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> InfraLayer</span></span>
+<span class="line"><span style="color:#FFAB70">    InfraLayer </span><span style="color:#F97583">-.->|</span><span style="color:#9ECBFF">accesses</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> ExternalAPI</span></span></code></pre>
 <h3 id="layer-responsibilities">Layer Responsibilities</h3>
 
 
@@ -186,74 +186,74 @@
 <span class="line"><span>└── package.json</span></span></code></pre>
 <h2 id="framework-flowchart">Framework Flowchart</h2>
 <p>Detailed flow of screen transitions using the gotoView function.</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">graph TD</span></span>
-<span class="line"><span style="color:#E1E4E8">    User([User]) -->|Request| GotoView[gotoView Path]</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#F97583">graph</span><span style="color:#B392F0"> TD</span></span>
+<span class="line"><span style="color:#FFAB70">    User</span><span style="color:#F97583">([</span><span style="color:#9ECBFF">User</span><span style="color:#F97583">])</span><span style="color:#F97583"> -->|</span><span style="color:#9ECBFF">Request</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> GotoView</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">gotoView Path</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    GotoView --> LoadingCheck{use loading?&#x3C;br/>Default: true}</span></span>
+<span class="line"><span style="color:#FFAB70">    GotoView </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> LoadingCheck</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">use loading?&#x3C;br/>Default: true</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    LoadingCheck -->|YES| ScreenOverlay[Screen Overlay]</span></span>
-<span class="line"><span style="color:#E1E4E8">    LoadingCheck -->|NO| RemoveResponse</span></span>
-<span class="line"><span style="color:#E1E4E8">    ScreenOverlay --> LoadingStart[Start Loading]</span></span>
-<span class="line"><span style="color:#E1E4E8">    LoadingStart --> RemoveResponse</span></span>
+<span class="line"><span style="color:#FFAB70">    LoadingCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">YES</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> ScreenOverlay</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">Screen Overlay</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    LoadingCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">NO</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> RemoveResponse</span></span>
+<span class="line"><span style="color:#FFAB70">    ScreenOverlay </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> LoadingStart</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">Start Loading</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    LoadingStart </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> RemoveResponse</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    RemoveResponse[Remove Previous Response Data] --> ParseQuery[Parse Query String]</span></span>
-<span class="line"><span style="color:#E1E4E8">    ParseQuery --> UpdateHistory{SPA mode?}</span></span>
+<span class="line"><span style="color:#FFAB70">    RemoveResponse</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">Remove Previous Response Data</span><span style="color:#F97583">]</span><span style="color:#F97583"> --></span><span style="color:#FFAB70"> ParseQuery</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">Parse Query String</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    ParseQuery </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> UpdateHistory</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">SPA mode?</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    UpdateHistory -->|YES| PushState[Push History State]</span></span>
-<span class="line"><span style="color:#E1E4E8">    UpdateHistory -->|NO| RequestType</span></span>
-<span class="line"><span style="color:#E1E4E8">    PushState --> RequestType</span></span>
+<span class="line"><span style="color:#FFAB70">    UpdateHistory </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">YES</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> PushState</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">Push History State</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    UpdateHistory </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">NO</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> RequestType</span></span>
+<span class="line"><span style="color:#FFAB70">    PushState </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> RequestType</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    RequestType[Request Type]</span></span>
+<span class="line"><span style="color:#FFAB70">    RequestType</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">Request Type</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    RequestType --> JSON[JSON: Get external JSON data]</span></span>
-<span class="line"><span style="color:#E1E4E8">    RequestType --> CONTENT[CONTENT: Get Animation Tool JSON]</span></span>
-<span class="line"><span style="color:#E1E4E8">    RequestType --> CUSTOM[CUSTOM: Request to external API]</span></span>
+<span class="line"><span style="color:#FFAB70">    RequestType </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> JSON</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">JSON: Get external JSON data</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    RequestType </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> CONTENT</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">CONTENT: Get Animation Tool JSON</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    RequestType </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> CUSTOM</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">CUSTOM: Request to external API</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    JSON --> CacheCheck{use cache?&#x3C;br/>Default: false}</span></span>
-<span class="line"><span style="color:#E1E4E8">    CONTENT --> CacheCheck</span></span>
-<span class="line"><span style="color:#E1E4E8">    CUSTOM --> CacheCheck</span></span>
+<span class="line"><span style="color:#FFAB70">    JSON </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> CacheCheck</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">use cache?&#x3C;br/>Default: false</span><span style="color:#F97583">}</span></span>
+<span class="line"><span style="color:#FFAB70">    CONTENT </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> CacheCheck</span></span>
+<span class="line"><span style="color:#FFAB70">    CUSTOM </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> CacheCheck</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    CacheCheck -->|YES| CacheData[(Cache)]</span></span>
-<span class="line"><span style="color:#E1E4E8">    CacheCheck -->|NO| GlobalData{{Global Network}}</span></span>
+<span class="line"><span style="color:#FFAB70">    CacheCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">YES</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> CacheData</span><span style="color:#F97583">[(</span><span style="color:#9ECBFF">Cache</span><span style="color:#F97583">)]</span></span>
+<span class="line"><span style="color:#FFAB70">    CacheCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">NO</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> GlobalData</span><span style="color:#F97583">{</span><span style="color:#E1E4E8">{</span><span style="color:#9ECBFF">Global Network</span><span style="color:#F97583">}</span><span style="color:#E1E4E8">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    CacheData --> Cached{Cached?}</span></span>
+<span class="line"><span style="color:#FFAB70">    CacheData </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> Cached</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">Cached?</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    Cached -->|NO| GlobalData</span></span>
-<span class="line"><span style="color:#E1E4E8">    Cached -->|YES| RegisterResponse</span></span>
-<span class="line"><span style="color:#E1E4E8">    GlobalData --> RegisterResponse</span></span>
+<span class="line"><span style="color:#FFAB70">    Cached </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">NO</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> GlobalData</span></span>
+<span class="line"><span style="color:#FFAB70">    Cached </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">YES</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> RegisterResponse</span></span>
+<span class="line"><span style="color:#FFAB70">    GlobalData </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> RegisterResponse</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    RegisterResponse[Register Response Data] --> RequestCallback{request callback?}</span></span>
+<span class="line"><span style="color:#FFAB70">    RegisterResponse</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">Register Response Data</span><span style="color:#F97583">]</span><span style="color:#F97583"> --></span><span style="color:#FFAB70"> RequestCallback</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">request callback?</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    RequestCallback -->|YES| ExecRequestCallback[Execute Request Callback]</span></span>
-<span class="line"><span style="color:#E1E4E8">    RequestCallback -->|NO| UnbindView</span></span>
-<span class="line"><span style="color:#E1E4E8">    ExecRequestCallback --> UnbindView</span></span>
+<span class="line"><span style="color:#FFAB70">    RequestCallback </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">YES</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> ExecRequestCallback</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">Execute Request Callback</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    RequestCallback </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">NO</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> UnbindView</span></span>
+<span class="line"><span style="color:#FFAB70">    ExecRequestCallback </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> UnbindView</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    UnbindView[Previous View: onExit &#x26; Unbind] --> BindView[New View/ViewModel: Bind]</span></span>
-<span class="line"><span style="color:#E1E4E8">    BindView --> ViewModelInit[ViewModel: initialize]</span></span>
+<span class="line"><span style="color:#FFAB70">    UnbindView</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">Previous View: onExit &#x26; Unbind</span><span style="color:#F97583">]</span><span style="color:#F97583"> --></span><span style="color:#FFAB70"> BindView</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">New View/ViewModel: Bind</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    BindView </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> ViewModelInit</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">ViewModel: initialize</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    ViewModelInit --> ViewInit[View: initialize]</span></span>
-<span class="line"><span style="color:#E1E4E8">    ViewInit --> AddToStage[Add View to Stage]</span></span>
-<span class="line"><span style="color:#E1E4E8">    AddToStage --> GotoViewCallback{gotoView callback?}</span></span>
+<span class="line"><span style="color:#FFAB70">    ViewModelInit </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> ViewInit</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">View: initialize</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    ViewInit </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> AddToStage</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">Add View to Stage</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    AddToStage </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> GotoViewCallback</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">gotoView callback?</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    GotoViewCallback -->|YES| ExecGotoViewCallback[Execute gotoView Callback]</span></span>
-<span class="line"><span style="color:#E1E4E8">    GotoViewCallback -->|NO| LoadingEndCheck</span></span>
-<span class="line"><span style="color:#E1E4E8">    ExecGotoViewCallback --> LoadingEndCheck</span></span>
+<span class="line"><span style="color:#FFAB70">    GotoViewCallback </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">YES</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> ExecGotoViewCallback</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">Execute gotoView Callback</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    GotoViewCallback </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">NO</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> LoadingEndCheck</span></span>
+<span class="line"><span style="color:#FFAB70">    ExecGotoViewCallback </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> LoadingEndCheck</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    LoadingEndCheck{use loading?&#x3C;br/>Default: true}</span></span>
+<span class="line"><span style="color:#FFAB70">    LoadingEndCheck</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">use loading?&#x3C;br/>Default: true</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    LoadingEndCheck -->|YES| LoadingEnd[End Loading]</span></span>
-<span class="line"><span style="color:#E1E4E8">    LoadingEndCheck -->|NO| OnEnter</span></span>
-<span class="line"><span style="color:#E1E4E8">    LoadingEnd --> DisposeOverlay[Dispose Screen Overlay]</span></span>
-<span class="line"><span style="color:#E1E4E8">    DisposeOverlay --> OnEnter</span></span>
+<span class="line"><span style="color:#FFAB70">    LoadingEndCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">YES</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> LoadingEnd</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">End Loading</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    LoadingEndCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">NO</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> OnEnter</span></span>
+<span class="line"><span style="color:#FFAB70">    LoadingEnd </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> DisposeOverlay</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">Dispose Screen Overlay</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    DisposeOverlay </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> OnEnter</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    OnEnter[View: onEnter] --> StartDrawing</span></span>
+<span class="line"><span style="color:#FFAB70">    OnEnter</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">View: onEnter</span><span style="color:#F97583">]</span><span style="color:#F97583"> --></span><span style="color:#FFAB70"> StartDrawing</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    StartDrawing[Start Drawing] -->|Response| User</span></span>
+<span class="line"><span style="color:#FFAB70">    StartDrawing</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">Start Drawing</span><span style="color:#F97583">]</span><span style="color:#F97583"> -->|</span><span style="color:#9ECBFF">Response</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> User</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    style User fill:#d5e8d4,stroke:#82b366</span></span>
-<span class="line"><span style="color:#E1E4E8">    style StartDrawing fill:#dae8fc,stroke:#6c8ebf</span></span>
-<span class="line"><span style="color:#E1E4E8">    style CacheData fill:#fff2cc,stroke:#d6b656</span></span>
-<span class="line"><span style="color:#E1E4E8">    style GlobalData fill:#f5f5f5,stroke:#666666</span></span></code></pre>
+<span class="line"><span style="color:#FFAB70">    style User fill</span><span style="color:#E1E4E8">:#</span><span style="color:#FFAB70">d5e8d4</span><span style="color:#E1E4E8">,</span><span style="color:#FFAB70">stroke</span><span style="color:#E1E4E8">:#</span><span style="color:#FFAB70">82b366</span></span>
+<span class="line"><span style="color:#FFAB70">    style StartDrawing fill</span><span style="color:#E1E4E8">:#</span><span style="color:#FFAB70">dae8fc</span><span style="color:#E1E4E8">,</span><span style="color:#FFAB70">stroke</span><span style="color:#E1E4E8">:#</span><span style="color:#FFAB70">6c8ebf</span></span>
+<span class="line"><span style="color:#FFAB70">    style CacheData fill</span><span style="color:#E1E4E8">:#</span><span style="color:#FFAB70">fff2cc</span><span style="color:#E1E4E8">,</span><span style="color:#FFAB70">stroke</span><span style="color:#E1E4E8">:#</span><span style="color:#FFAB70">d6b656</span></span>
+<span class="line"><span style="color:#FFAB70">    style GlobalData fill</span><span style="color:#E1E4E8">:#</span><span style="color:#FFAB70">f5f5f5</span><span style="color:#E1E4E8">,</span><span style="color:#FFAB70">stroke</span><span style="color:#E1E4E8">:#</span><span style="color:#FFAB70">666666</span></span></code></pre>
 <h3 id="key-flow-steps">Key Flow Steps</h3>
 
 

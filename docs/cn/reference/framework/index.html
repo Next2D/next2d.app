@@ -17,39 +17,39 @@
 </ul>
 <h2 id="架构概述">架构概述</h2>
 <p>本项目实现了 Clean Architecture 和 MVVM 模式的组合。</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">graph TB</span></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph ViewLayer["视图层"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        View["View"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        ViewModel["ViewModel"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        UI["UI 组件"]</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#F97583">graph</span><span style="color:#B392F0"> TB</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> ViewLayer</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"视图层"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        View</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"View"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        ViewModel</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"ViewModel"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        UI</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"UI 组件"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph InterfaceLayer["接口层"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        IDraggable["IDraggable"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        ITextField["ITextField"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        IResponse["IResponse"]</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> InterfaceLayer</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"接口层"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        IDraggable</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"IDraggable"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        ITextField</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"ITextField"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        IResponse</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"IResponse"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph ApplicationLayer["应用层"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        UseCase["UseCase"]</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> ApplicationLayer</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"应用层"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        UseCase</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"UseCase"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph DomainLayer["领域层"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        DomainLogic["领域逻辑"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        DomainService["Service"]</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> DomainLayer</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"领域层"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        DomainLogic</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"领域逻辑"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        DomainService</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"Service"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    subgraph InfraLayer["基础设施层"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        Repository["Repository"]</span></span>
-<span class="line"><span style="color:#E1E4E8">        ExternalAPI["外部 API"]</span></span>
-<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"><span style="color:#F97583">    subgraph</span><span style="color:#FFAB70"> InfraLayer</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"基础设施层"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        Repository</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"Repository"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">        ExternalAPI</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">"外部 API"</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#F97583">    end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    ViewLayer -.->|通过接口| InterfaceLayer</span></span>
-<span class="line"><span style="color:#E1E4E8">    ViewLayer -.->|调用| ApplicationLayer</span></span>
-<span class="line"><span style="color:#E1E4E8">    ApplicationLayer -.->|通过接口| InterfaceLayer</span></span>
-<span class="line"><span style="color:#E1E4E8">    ApplicationLayer -.->|使用| DomainLayer</span></span>
-<span class="line"><span style="color:#E1E4E8">    ApplicationLayer -.->|调用| InfraLayer</span></span>
-<span class="line"><span style="color:#E1E4E8">    InfraLayer -.->|访问| ExternalAPI</span></span></code></pre>
+<span class="line"><span style="color:#FFAB70">    ViewLayer </span><span style="color:#F97583">-.->|</span><span style="color:#9ECBFF">通过接口</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> InterfaceLayer</span></span>
+<span class="line"><span style="color:#FFAB70">    ViewLayer </span><span style="color:#F97583">-.->|</span><span style="color:#9ECBFF">调用</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> ApplicationLayer</span></span>
+<span class="line"><span style="color:#FFAB70">    ApplicationLayer </span><span style="color:#F97583">-.->|</span><span style="color:#9ECBFF">通过接口</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> InterfaceLayer</span></span>
+<span class="line"><span style="color:#FFAB70">    ApplicationLayer </span><span style="color:#F97583">-.->|</span><span style="color:#9ECBFF">使用</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> DomainLayer</span></span>
+<span class="line"><span style="color:#FFAB70">    ApplicationLayer </span><span style="color:#F97583">-.->|</span><span style="color:#9ECBFF">调用</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> InfraLayer</span></span>
+<span class="line"><span style="color:#FFAB70">    InfraLayer </span><span style="color:#F97583">-.->|</span><span style="color:#9ECBFF">访问</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> ExternalAPI</span></span></code></pre>
 <h3 id="层职责">层职责</h3>
 
 
@@ -186,74 +186,74 @@
 <span class="line"><span>└── package.json</span></span></code></pre>
 <h2 id="框架流程图">框架流程图</h2>
 <p>使用 gotoView 函数的画面转换详细流程。</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">graph TD</span></span>
-<span class="line"><span style="color:#E1E4E8">    User([用户]) -->|请求| GotoView[gotoView Path]</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#F97583">graph</span><span style="color:#B392F0"> TD</span></span>
+<span class="line"><span style="color:#FFAB70">    User</span><span style="color:#F97583">([</span><span style="color:#9ECBFF">用户</span><span style="color:#F97583">])</span><span style="color:#F97583"> -->|</span><span style="color:#9ECBFF">请求</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> GotoView</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">gotoView Path</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    GotoView --> LoadingCheck{使用加载?&#x3C;br/>默认: true}</span></span>
+<span class="line"><span style="color:#FFAB70">    GotoView </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> LoadingCheck</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">使用加载?&#x3C;br/>默认: true</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    LoadingCheck -->|是| ScreenOverlay[画面遮罩]</span></span>
-<span class="line"><span style="color:#E1E4E8">    LoadingCheck -->|否| RemoveResponse</span></span>
-<span class="line"><span style="color:#E1E4E8">    ScreenOverlay --> LoadingStart[开始加载]</span></span>
-<span class="line"><span style="color:#E1E4E8">    LoadingStart --> RemoveResponse</span></span>
+<span class="line"><span style="color:#FFAB70">    LoadingCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">是</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> ScreenOverlay</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">画面遮罩</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    LoadingCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">否</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> RemoveResponse</span></span>
+<span class="line"><span style="color:#FFAB70">    ScreenOverlay </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> LoadingStart</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">开始加载</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    LoadingStart </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> RemoveResponse</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    RemoveResponse[移除前一个响应数据] --> ParseQuery[解析查询字符串]</span></span>
-<span class="line"><span style="color:#E1E4E8">    ParseQuery --> UpdateHistory{SPA 模式?}</span></span>
+<span class="line"><span style="color:#FFAB70">    RemoveResponse</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">移除前一个响应数据</span><span style="color:#F97583">]</span><span style="color:#F97583"> --></span><span style="color:#FFAB70"> ParseQuery</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">解析查询字符串</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    ParseQuery </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> UpdateHistory</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">SPA 模式?</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    UpdateHistory -->|是| PushState[推送历史状态]</span></span>
-<span class="line"><span style="color:#E1E4E8">    UpdateHistory -->|否| RequestType</span></span>
-<span class="line"><span style="color:#E1E4E8">    PushState --> RequestType</span></span>
+<span class="line"><span style="color:#FFAB70">    UpdateHistory </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">是</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> PushState</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">推送历史状态</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    UpdateHistory </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">否</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> RequestType</span></span>
+<span class="line"><span style="color:#FFAB70">    PushState </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> RequestType</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    RequestType[请求类型]</span></span>
+<span class="line"><span style="color:#FFAB70">    RequestType</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">请求类型</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    RequestType --> JSON[JSON: 获取外部 JSON 数据]</span></span>
-<span class="line"><span style="color:#E1E4E8">    RequestType --> CONTENT[CONTENT: 获取 Animation Tool JSON]</span></span>
-<span class="line"><span style="color:#E1E4E8">    RequestType --> CUSTOM[CUSTOM: 请求外部 API]</span></span>
+<span class="line"><span style="color:#FFAB70">    RequestType </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> JSON</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">JSON: 获取外部 JSON 数据</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    RequestType </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> CONTENT</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">CONTENT: 获取 Animation Tool JSON</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    RequestType </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> CUSTOM</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">CUSTOM: 请求外部 API</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    JSON --> CacheCheck{使用缓存?&#x3C;br/>默认: false}</span></span>
-<span class="line"><span style="color:#E1E4E8">    CONTENT --> CacheCheck</span></span>
-<span class="line"><span style="color:#E1E4E8">    CUSTOM --> CacheCheck</span></span>
+<span class="line"><span style="color:#FFAB70">    JSON </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> CacheCheck</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">使用缓存?&#x3C;br/>默认: false</span><span style="color:#F97583">}</span></span>
+<span class="line"><span style="color:#FFAB70">    CONTENT </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> CacheCheck</span></span>
+<span class="line"><span style="color:#FFAB70">    CUSTOM </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> CacheCheck</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    CacheCheck -->|是| CacheData[(缓存)]</span></span>
-<span class="line"><span style="color:#E1E4E8">    CacheCheck -->|否| GlobalData{{全球网络}}</span></span>
+<span class="line"><span style="color:#FFAB70">    CacheCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">是</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> CacheData</span><span style="color:#F97583">[(</span><span style="color:#9ECBFF">缓存</span><span style="color:#F97583">)]</span></span>
+<span class="line"><span style="color:#FFAB70">    CacheCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">否</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> GlobalData</span><span style="color:#F97583">{</span><span style="color:#E1E4E8">{</span><span style="color:#9ECBFF">全球网络</span><span style="color:#F97583">}</span><span style="color:#E1E4E8">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    CacheData --> Cached{已缓存?}</span></span>
+<span class="line"><span style="color:#FFAB70">    CacheData </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> Cached</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">已缓存?</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    Cached -->|否| GlobalData</span></span>
-<span class="line"><span style="color:#E1E4E8">    Cached -->|是| RegisterResponse</span></span>
-<span class="line"><span style="color:#E1E4E8">    GlobalData --> RegisterResponse</span></span>
+<span class="line"><span style="color:#FFAB70">    Cached </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">否</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> GlobalData</span></span>
+<span class="line"><span style="color:#FFAB70">    Cached </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">是</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> RegisterResponse</span></span>
+<span class="line"><span style="color:#FFAB70">    GlobalData </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> RegisterResponse</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    RegisterResponse[注册响应数据] --> RequestCallback{请求回调?}</span></span>
+<span class="line"><span style="color:#FFAB70">    RegisterResponse</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">注册响应数据</span><span style="color:#F97583">]</span><span style="color:#F97583"> --></span><span style="color:#FFAB70"> RequestCallback</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">请求回调?</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    RequestCallback -->|是| ExecRequestCallback[执行请求回调]</span></span>
-<span class="line"><span style="color:#E1E4E8">    RequestCallback -->|否| UnbindView</span></span>
-<span class="line"><span style="color:#E1E4E8">    ExecRequestCallback --> UnbindView</span></span>
+<span class="line"><span style="color:#FFAB70">    RequestCallback </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">是</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> ExecRequestCallback</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">执行请求回调</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    RequestCallback </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">否</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> UnbindView</span></span>
+<span class="line"><span style="color:#FFAB70">    ExecRequestCallback </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> UnbindView</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    UnbindView[前一个 View: onExit 和解绑] --> BindView[新 View/ViewModel: 绑定]</span></span>
-<span class="line"><span style="color:#E1E4E8">    BindView --> ViewModelInit[ViewModel: initialize]</span></span>
+<span class="line"><span style="color:#FFAB70">    UnbindView</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">前一个 View: onExit 和解绑</span><span style="color:#F97583">]</span><span style="color:#F97583"> --></span><span style="color:#FFAB70"> BindView</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">新 View/ViewModel: 绑定</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    BindView </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> ViewModelInit</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">ViewModel: initialize</span><span style="color:#F97583">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    ViewModelInit --> ViewInit[View: initialize]</span></span>
-<span class="line"><span style="color:#E1E4E8">    ViewInit --> AddToStage[将 View 添加到舞台]</span></span>
-<span class="line"><span style="color:#E1E4E8">    AddToStage --> GotoViewCallback{gotoView 回调?}</span></span>
+<span class="line"><span style="color:#FFAB70">    ViewModelInit </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> ViewInit</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">View: initialize</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    ViewInit </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> AddToStage</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">将 View 添加到舞台</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    AddToStage </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> GotoViewCallback</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">gotoView 回调?</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    GotoViewCallback -->|是| ExecGotoViewCallback[执行 gotoView 回调]</span></span>
-<span class="line"><span style="color:#E1E4E8">    GotoViewCallback -->|否| LoadingEndCheck</span></span>
-<span class="line"><span style="color:#E1E4E8">    ExecGotoViewCallback --> LoadingEndCheck</span></span>
+<span class="line"><span style="color:#FFAB70">    GotoViewCallback </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">是</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> ExecGotoViewCallback</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">执行 gotoView 回调</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    GotoViewCallback </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">否</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> LoadingEndCheck</span></span>
+<span class="line"><span style="color:#FFAB70">    ExecGotoViewCallback </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> LoadingEndCheck</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    LoadingEndCheck{使用加载?&#x3C;br/>默认: true}</span></span>
+<span class="line"><span style="color:#FFAB70">    LoadingEndCheck</span><span style="color:#F97583">{</span><span style="color:#9ECBFF">使用加载?&#x3C;br/>默认: true</span><span style="color:#F97583">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    LoadingEndCheck -->|是| LoadingEnd[结束加载]</span></span>
-<span class="line"><span style="color:#E1E4E8">    LoadingEndCheck -->|否| OnEnter</span></span>
-<span class="line"><span style="color:#E1E4E8">    LoadingEnd --> DisposeOverlay[释放画面遮罩]</span></span>
-<span class="line"><span style="color:#E1E4E8">    DisposeOverlay --> OnEnter</span></span>
+<span class="line"><span style="color:#FFAB70">    LoadingEndCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">是</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> LoadingEnd</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">结束加载</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    LoadingEndCheck </span><span style="color:#F97583">-->|</span><span style="color:#9ECBFF">否</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> OnEnter</span></span>
+<span class="line"><span style="color:#FFAB70">    LoadingEnd </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> DisposeOverlay</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">释放画面遮罩</span><span style="color:#F97583">]</span></span>
+<span class="line"><span style="color:#FFAB70">    DisposeOverlay </span><span style="color:#F97583">--></span><span style="color:#FFAB70"> OnEnter</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    OnEnter[View: onEnter] --> StartDrawing</span></span>
+<span class="line"><span style="color:#FFAB70">    OnEnter</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">View: onEnter</span><span style="color:#F97583">]</span><span style="color:#F97583"> --></span><span style="color:#FFAB70"> StartDrawing</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    StartDrawing[开始绘制] -->|响应| User</span></span>
+<span class="line"><span style="color:#FFAB70">    StartDrawing</span><span style="color:#F97583">[</span><span style="color:#9ECBFF">开始绘制</span><span style="color:#F97583">]</span><span style="color:#F97583"> -->|</span><span style="color:#9ECBFF">响应</span><span style="color:#F97583">|</span><span style="color:#FFAB70"> User</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    style User fill:#d5e8d4,stroke:#82b366</span></span>
-<span class="line"><span style="color:#E1E4E8">    style StartDrawing fill:#dae8fc,stroke:#6c8ebf</span></span>
-<span class="line"><span style="color:#E1E4E8">    style CacheData fill:#fff2cc,stroke:#d6b656</span></span>
-<span class="line"><span style="color:#E1E4E8">    style GlobalData fill:#f5f5f5,stroke:#666666</span></span></code></pre>
+<span class="line"><span style="color:#FFAB70">    style User fill</span><span style="color:#E1E4E8">:#</span><span style="color:#FFAB70">d5e8d4</span><span style="color:#E1E4E8">,</span><span style="color:#FFAB70">stroke</span><span style="color:#E1E4E8">:#</span><span style="color:#FFAB70">82b366</span></span>
+<span class="line"><span style="color:#FFAB70">    style StartDrawing fill</span><span style="color:#E1E4E8">:#</span><span style="color:#FFAB70">dae8fc</span><span style="color:#E1E4E8">,</span><span style="color:#FFAB70">stroke</span><span style="color:#E1E4E8">:#</span><span style="color:#FFAB70">6c8ebf</span></span>
+<span class="line"><span style="color:#FFAB70">    style CacheData fill</span><span style="color:#E1E4E8">:#</span><span style="color:#FFAB70">fff2cc</span><span style="color:#E1E4E8">,</span><span style="color:#FFAB70">stroke</span><span style="color:#E1E4E8">:#</span><span style="color:#FFAB70">d6b656</span></span>
+<span class="line"><span style="color:#FFAB70">    style GlobalData fill</span><span style="color:#E1E4E8">:#</span><span style="color:#FFAB70">f5f5f5</span><span style="color:#E1E4E8">,</span><span style="color:#FFAB70">stroke</span><span style="color:#E1E4E8">:#</span><span style="color:#FFAB70">666666</span></span></code></pre>
 <h3 id="关键流程步骤">关键流程步骤</h3>
 
 

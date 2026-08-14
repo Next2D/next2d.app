@@ -3,122 +3,14 @@
  * Slime Ten Puzzle (スライムテンパズル) ランディングページ
  *
  * 公式サイトの共有レイアウト/CSS/JS(main.css, main.js, Bootstrap, AOS)からは
- * 完全に独立した単一ファイル。装飾に使う画像素材はすべてインラインSVGで自作する。
+ * 完全に独立した単一ファイル。キャラクター類はpublic配下の実素材画像を使用し、
+ * 装飾アイコンや演出パーツの一部はインラインSVGで生成する。
  */
 
 const PAGE_URL = 'https://next2d.app/games/slime-ten-puzzle/';
-const OGP_IMAGE = 'https://next2d.app/assets/img/ogp.png'; // TODO: ゲーム専用のOGP画像に差し替え予定
+const OGP_IMAGE = 'https://next2d.app/assets/img/games/slime-ten-puzzle/ogp.png';
 const TITLE = 'スライムテンパズル(Slime Ten Puzzle) | Next2D Games';
 const DESCRIPTION = '10をそろえて、サクッと快感。あそんで学べる計算パズルゲーム「スライムテンパズル」。数字を持ったスライムを2体えらんで計算し、最後の1体を10に。理不尽な詰みのない出題と、自分で選べる難易度が特徴。Next2D Framework製。';
-
-/* ------------------------------------------------------------------
- * スライムSVGビルダー
- * ---------------------------------------------------------------- */
-const SLIME_COLORS = {
-  blue:   { light: '#8FD3FF', base: '#4FA9F0', dark: '#2E7FC4' },
-  yellow: { light: '#FFE79A', base: '#FFD34D', dark: '#E0A80F' },
-  green:  { light: '#A8F0A0', base: '#6FD96B', dark: '#3FAE3B' },
-  purple: { light: '#DCC2F7', base: '#B48BE8', dark: '#8A5CC7' }
-};
-
-/** ぷるぷるスライムの本体パス(ドーム型+波打つ下縁)を数式で生成する */
-function buildSlimeBodyPath() {
-  const left = 24;
-  const right = 176;
-  const bottomHigh = 150;
-  const bottomLow = 170;
-  const topY = 26;
-  const bumps = 5;
-  const width = right - left;
-  const step = width / bumps;
-
-  let d = `M${left},108 `;
-  d += `C ${left - 14},72 ${left + 8},28 100,${topY} `;
-  d += `C ${right - 8},28 ${right + 14},72 ${right},108 `;
-  d += `L${right},${bottomHigh} `;
-  for (let i = 0; i < bumps; i++) {
-    const xStart = right - i * step;
-    const xEnd = right - (i + 1) * step;
-    const xMid = (xStart + xEnd) / 2;
-    d += `Q${xMid},${bottomLow} ${xEnd},${bottomHigh} `;
-  }
-  d += 'Z';
-  return d;
-}
-const SLIME_BODY_PATH = buildSlimeBodyPath();
-
-/** 独立した <svg> 要素としてスライムを1体描画する */
-function slimeSvg({ colorKey = 'blue', number = '', size = 200, animated = false, delay = 0, ariaLabel = null, extraClass = '' }) {
-  const c = SLIME_COLORS[colorKey] || SLIME_COLORS.blue;
-  const gradId = `sg-${colorKey}-${number}-${Math.round(Math.random() * 1e6)}`;
-  const cls = ['slime-svg', animated ? 'slime-anim' : '', extraClass].filter(Boolean).join(' ');
-  const style = animated && delay ? ` style="animation-delay:${delay}s"` : '';
-  const a11y = ariaLabel ? `role="img" aria-label="${ariaLabel}"` : 'aria-hidden="true"';
-  return `
-<svg class="${cls}" viewBox="0 0 200 200" width="${size}" height="${size}"${style} ${a11y} xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="${gradId}" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="${c.light}" />
-      <stop offset="1" stop-color="${c.base}" />
-    </linearGradient>
-  </defs>
-  <path d="${SLIME_BODY_PATH}" fill="url(#${gradId})" stroke="${c.dark}" stroke-width="3" stroke-linejoin="round" />
-  <path d="M108,4 L119,32 L96,32 Z" fill="${c.base}" stroke="${c.dark}" stroke-width="3" stroke-linejoin="round" />
-  <ellipse cx="76" cy="84" rx="16" ry="19" fill="#FFFFFF" />
-  <ellipse cx="124" cy="84" rx="16" ry="19" fill="#FFFFFF" />
-  <circle cx="80" cy="88" r="7" fill="#1E3A5F" />
-  <circle cx="128" cy="88" r="7" fill="#1E3A5F" />
-  <circle cx="77" cy="84" r="2.4" fill="#FFFFFF" />
-  <circle cx="125" cy="84" r="2.4" fill="#FFFFFF" />
-  <path d="M82,114 Q100,127 118,114" fill="none" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round" />
-  <text x="100" y="144" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="32" fill="#1E3A5F" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" stroke-linejoin="round">${number}</text>
-</svg>`;
-}
-
-/** 縮小したスライムを <g> として他のSVG内に埋め込む(モック画面などに使用。主SVGと同じ顔パーツを持つ) */
-function miniSlimeGroup(x, y, scale, color, number) {
-  return `<g transform="translate(${x},${y}) scale(${scale})">
-    <g transform="translate(-100,-100)">
-      <path d="${SLIME_BODY_PATH}" fill="${color}" stroke="#1E3A5F" stroke-width="4" stroke-linejoin="round" />
-      <path d="M108,4 L119,32 L96,32 Z" fill="${color}" stroke="#1E3A5F" stroke-width="4" stroke-linejoin="round" />
-      <ellipse cx="76" cy="84" rx="16" ry="19" fill="#FFFFFF" />
-      <ellipse cx="124" cy="84" rx="16" ry="19" fill="#FFFFFF" />
-      <circle cx="80" cy="88" r="7" fill="#1E3A5F" />
-      <circle cx="128" cy="88" r="7" fill="#1E3A5F" />
-      <circle cx="77" cy="84" r="2.4" fill="#FFFFFF" />
-      <circle cx="125" cy="84" r="2.4" fill="#FFFFFF" />
-      <path d="M82,114 Q100,127 118,114" fill="none" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round" />
-      <text x="100" y="144" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="32" fill="#1E3A5F" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" stroke-linejoin="round">${number}</text>
-    </g>
-  </g>`;
-}
-
-/** 4方向の先端を持つキラキラ(スパークル)ポリゴンを数式で生成する */
-function sparklePolygon(cx, cy, r, color) {
-  const spikes = 4;
-  const outer = r;
-  const inner = r * 0.38;
-  const points = [];
-  for (let i = 0; i < spikes * 2; i++) {
-    const radius = i % 2 === 0 ? outer : inner;
-    const angle = (Math.PI / spikes) * i - Math.PI / 2;
-    const x = cx + Math.cos(angle) * radius;
-    const y = cy + Math.sin(angle) * radius;
-    points.push(`${x.toFixed(1)},${y.toFixed(1)}`);
-  }
-  return `<polygon points="${points.join(' ')}" fill="${color}" />`;
-}
-
-/** クリア演出のキラキラ(スパークル)を複数配置したSVGを生成する */
-function sparklesSvg() {
-  const marks = [
-    sparklePolygon(14, 18, 9, '#FFFFFF'),
-    sparklePolygon(106, 14, 7, '#FFFFFF'),
-    sparklePolygon(112, 96, 10, '#FFFFFF'),
-    sparklePolygon(10, 100, 6, '#FFFFFF')
-  ].join('');
-  return `<svg class="sparkle-svg" viewBox="0 0 120 120" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">${marks}</svg>`;
-}
 
 /** セクション間をつなぐゼリー波形ディバイダー(fillは次のセクション背景色) */
 function waveDivider(fill) {
@@ -170,14 +62,6 @@ function tapIconSvg() {
 
 /** 汎用ラインアイコン(24x24、currentColorでCSS側から着色) */
 const ICONS = {
-  phone: `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="18.4" r="1.2" fill="currentColor"/></svg>`,
-  monitor: `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/></svg>`,
-  pad: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9h12a3 3 0 0 1 3 3.4l-.6 4A3 3 0 0 1 17.4 19a3 3 0 0 1-2.6-1.5L14 16h-4l-.8 1.5A3 3 0 0 1 6.6 19a3 3 0 0 1-3-2.6l-.6-4A3 3 0 0 1 6 9z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><line x1="7" y1="12.5" x2="7" y2="14.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="6" y1="13.5" x2="8" y2="13.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="16.5" cy="12.5" r="0.9" fill="currentColor"/><circle cx="14.7" cy="14.3" r="0.9" fill="currentColor"/></svg>`,
-  web: `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><ellipse cx="12" cy="12" rx="4" ry="9" fill="none" stroke="currentColor" stroke-width="2"/><line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2"/></svg>`,
-  shieldCheck: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12.5l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-  star: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L2 9.2l7.1-.7L12 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>`,
-  infinity: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15c-2.2 0-4-1.3-4-3s1.8-3 4-3c2.5 0 3.6 1.6 5 3 1 1.1 2.1 3 4.5 3 2.2 0 4-1.3 4-3s-1.8-3-4-3c-2.5 0-3.6 1.6-5 3-1 1.1-2.1 3-4.5 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>`,
-  clock: `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
   cursor: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3l3 15 2.5-5.5L17 15 6 3z" fill="currentColor"/></svg>`
 };
 
@@ -189,131 +73,53 @@ function toggleChip(icon, label) {
   </span>`;
 }
 
-function storeChip(icon, name) {
-  return `<span class="store-chip" aria-disabled="true">
-    <span class="store-chip-icon">${icon}</span>
-    <span class="store-chip-text"><strong>${name}</strong><small>Coming Soon</small></span>
+/** 記号のみのチップ(演算子アイコン図解用。toggle-chipからON/OFF表記を外した軽量版) */
+function operatorChip(symbol) {
+  return `<span class="toggle-chip is-symbol-only">
+    <span class="toggle-chip-icon" aria-hidden="true">${symbol}</span>
   </span>`;
 }
 
-/** 雲(SVG) */
-function cloudSvg() {
-  return `<svg viewBox="0 0 120 60" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="30" cy="40" rx="26" ry="18" fill="#FFFFFF" />
-    <ellipse cx="60" cy="30" rx="32" ry="24" fill="#FFFFFF" />
-    <ellipse cx="90" cy="40" rx="24" ry="16" fill="#FFFFFF" />
-    <rect x="10" y="40" width="100" height="16" rx="8" fill="#FFFFFF" />
-  </svg>`;
-}
-
 /* ------------------------------------------------------------------
- * スクリーンショット風モックSVG(16:9)
+ * Steam版 動作環境
  * ---------------------------------------------------------------- */
-function screenshotHome() {
-  return `
-<svg viewBox="0 0 320 180" role="img" aria-label="ホーム画面のイメージ。タイトルロゴと「あそぶ」ボタン、モード選択チップが並ぶ" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="shot-home-bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#8FE0FF" />
-      <stop offset="1" stop-color="#3FA8E8" />
-    </linearGradient>
-  </defs>
-  <rect width="320" height="180" fill="url(#shot-home-bg)" />
-  <ellipse cx="40" cy="26" rx="22" ry="10" fill="#FFFFFF" opacity="0.85" />
-  <ellipse cx="280" cy="18" rx="18" ry="8" fill="#FFFFFF" opacity="0.7" />
-  <text x="160" y="46" text-anchor="middle" font-family="'Zen Maru Gothic', sans-serif" font-weight="900" font-size="20" fill="#FFFFFF">スライムテンパズル</text>
-  <text x="160" y="62" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="11" fill="#FFFFFF" opacity="0.9">SLIME TEN PUZZLE</text>
-  ${miniSlimeGroup(160, 112, 0.5, '#FFD34D', '10')}
-  <rect x="112" y="146" width="96" height="24" rx="12" fill="#FFD34D" stroke="#1E3A5F" stroke-width="2.5" />
-  <text x="160" y="162" text-anchor="middle" font-family="'Zen Maru Gothic', sans-serif" font-weight="700" font-size="12" fill="#1E3A5F">あそぶ</text>
-  <rect x="16" y="16" width="58" height="18" rx="9" fill="#FFFFFF" opacity="0.9" />
-  <text x="45" y="28.5" text-anchor="middle" font-family="'Zen Maru Gothic', sans-serif" font-weight="700" font-size="9.5" fill="#1E3A5F">ノーマル</text>
-</svg>`;
-}
-
-function screenshotPlay() {
-  return `
-<svg viewBox="0 0 320 180" role="img" aria-label="プレイ画面のイメージ。4体のスライムが数字を持って並び、上部にスコアとタイマーが表示される" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="shot-play-bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#6DD4FF" />
-      <stop offset="1" stop-color="#3FA8E8" />
-    </linearGradient>
-  </defs>
-  <rect width="320" height="180" fill="url(#shot-play-bg)" />
-  <rect x="12" y="12" width="66" height="22" rx="11" fill="#FFFFFF" opacity="0.9" />
-  <text x="45" y="27" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="12" fill="#1E3A5F">SCORE 120</text>
-  <rect x="242" y="12" width="66" height="22" rx="11" fill="#FFFFFF" opacity="0.9" />
-  <text x="275" y="27" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="12" fill="#1E3A5F">04:12</text>
-  ${miniSlimeGroup(70, 105, 0.34, '#4FA9F0', '6')}
-  ${miniSlimeGroup(130, 105, 0.34, '#6FD96B', '4')}
-  ${miniSlimeGroup(190, 105, 0.34, '#FFD34D', '9')}
-  ${miniSlimeGroup(250, 105, 0.34, '#B48BE8', '2')}
-  <rect x="60" y="150" width="200" height="20" rx="10" fill="#FFFFFF" opacity="0.55" />
-  <text x="160" y="164" text-anchor="middle" font-family="'Zen Maru Gothic', sans-serif" font-weight="700" font-size="10" fill="#1E3A5F">2体えらんで けいさん!</text>
-</svg>`;
-}
-
-function screenshotModal() {
-  const panel = calcPanelSvgInline();
-  return `
-<svg viewBox="0 0 320 180" role="img" aria-label="計算選択モーダルのイメージ。選んだ2体の数字と、6つの計算候補ボタンが表示される" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="shot-modal-bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#6DD4FF" />
-      <stop offset="1" stop-color="#3FA8E8" />
-    </linearGradient>
-  </defs>
-  <rect width="320" height="180" fill="url(#shot-modal-bg)" />
-  <rect width="320" height="180" fill="#1E3A5F" opacity="0.45" />
-  <rect x="46" y="18" width="228" height="146" rx="18" fill="#FFFFFF" />
-  <text x="160" y="42" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="800" font-size="18" fill="#1E3A5F">6 ? 4</text>
-  ${panel}
-</svg>`;
-}
-
-/** 計算候補パネルをモーダルモック用に座標指定して描く(位置調整版) */
-function calcPanelSvgInline() {
-  const labels = ['a+b', 'a−b', 'b−a', 'a×b', 'a÷b', 'b÷a'];
-  const cols = 3;
-  const cellW = 62;
-  const cellH = 34;
-  const gap = 8;
-  const originX = 62;
-  const originY = 56;
-  let out = '';
-  labels.forEach((label, i) => {
-    const col = i % cols;
-    const row = Math.floor(i / cols);
-    const x = originX + col * (cellW + gap);
-    const y = originY + row * (cellH + gap);
-    const selected = i === 0;
-    out += `<rect x="${x}" y="${y}" width="${cellW}" height="${cellH}" rx="10" fill="${selected ? '#FFD34D' : '#EAF7FF'}" stroke="#1E3A5F" stroke-width="2" />`;
-    out += `<text x="${x + cellW / 2}" y="${y + cellH / 2 + 5}" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="14" fill="#1E3A5F">${label}</text>`;
-  });
-  return out;
-}
-
-/* ------------------------------------------------------------------
- * ページ本文で使うSVGインスタンス
- * ---------------------------------------------------------------- */
-const heroSlimeA = slimeSvg({ colorKey: 'blue', number: '6', size: 108, animated: true, delay: 0, ariaLabel: '数字6を持つ青いスライム' });
-const heroSlimeB = slimeSvg({ colorKey: 'green', number: '4', size: 108, animated: true, delay: 0.15, ariaLabel: '数字4を持つ緑のスライム' });
-const heroSlimeResult = slimeSvg({ colorKey: 'yellow', number: '10', size: 148, animated: true, delay: 0.3, ariaLabel: '合体してできた、数字10を持つ大きな黄色いスライム' });
-
-const boardSlimes = [
-  { colorKey: 'blue', number: '1' },
-  { colorKey: 'yellow', number: '3' },
-  { colorKey: 'green', number: '5' },
-  { colorKey: 'purple', number: '2' }
+const SYS_REQUIREMENTS = [
+  {
+    os: 'Windows',
+    min: [
+      { label: 'OS', value: 'Windows 10 以降' },
+      { label: 'プロセッサー', value: 'Intel Core i3-6100 / AMD Ryzen 3 1200 相当' },
+      { label: 'メモリー', value: '4 GB RAM' },
+      { label: 'グラフィック', value: 'Intel HD Graphics 530 相当の統合GPU(専用グラフィックボード不要)' },
+      { label: 'ストレージ', value: '1 GB の空き容量' }
+    ],
+    rec: [
+      { label: 'OS', value: 'Windows 11 以降' },
+      { label: 'プロセッサー', value: 'Intel Core i3-10100 / AMD Ryzen 3 3200G 相当' },
+      { label: 'メモリー', value: '8 GB RAM' },
+      { label: 'グラフィック', value: 'Intel UHD Graphics 630 相当以上の統合GPU(専用グラフィックボード不要)' },
+      { label: 'ストレージ', value: '1 GB の空き容量' }
+    ]
+  },
+  {
+    os: 'macOS',
+    min: [
+      { label: 'OS', value: 'macOS 11 (Big Sur) 以降' },
+      { label: 'プロセッサー', value: 'Intel Core i5(2014年以降のMac)/ Apple M1' },
+      { label: 'メモリー', value: '8 GB RAM' },
+      { label: 'グラフィック', value: '統合GPUで動作(Intel Iris Plus / Apple Mシリーズ GPU)。専用GPU不要' },
+      { label: 'ストレージ', value: '1 GB の空き容量' }
+    ],
+    rec: [
+      { label: 'OS', value: 'macOS 12 (Monterey) 以降' },
+      { label: 'プロセッサー', value: 'Apple M1 以降(Apple Mシリーズ)' },
+      { label: 'メモリー', value: '8 GB RAM' },
+      { label: 'グラフィック', value: 'Apple Mシリーズ GPU(統合)' },
+      { label: 'ストレージ', value: '1 GB の空き容量' }
+    ]
+  }
 ];
 
-const stepPickSlimes = [
-  { colorKey: 'blue', number: '6', picked: true },
-  { colorKey: 'green', number: '4', picked: true },
-  { colorKey: 'purple', number: '9', picked: false },
-  { colorKey: 'yellow', number: '2', picked: false }
-];
 ---
 
 <!DOCTYPE html>
@@ -333,8 +139,9 @@ const stepPickSlimes = [
   <meta property="og:description" content={DESCRIPTION}>
   <meta property="og:type" content="website">
   <meta property="og:url" content={PAGE_URL}>
-  <!-- TODO: ゲーム用OGP画像に差し替え予定。現在は暫定でサイト共通OGP画像を使用 -->
   <meta property="og:image" content={OGP_IMAGE}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -426,21 +233,6 @@ const stepPickSlimes = [
       padding: 0 24px;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-accent);
-      font-weight: 700;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      color: var(--ink);
-      background: rgba(255, 255, 255, 0.75);
-      padding: 6px 16px;
-      border-radius: 999px;
-      box-shadow: var(--shadow-soft);
-    }
-
     .section-head {
       text-align: center;
       max-width: 640px;
@@ -458,158 +250,61 @@ const stepPickSlimes = [
       opacity: 0.82;
     }
 
-    .section-kicker {
-      display: block;
-      font-family: var(--font-accent);
-      font-weight: 700;
-      font-size: 0.8rem;
-      letter-spacing: 0.14em;
-      color: var(--sky-deep);
-      margin-bottom: 8px;
-    }
-
-    /* ---------------- Buttons ---------------- */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 14px 30px;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .btn-primary {
-      background: var(--slime-yellow);
-      color: var(--ink);
-      box-shadow: 0 10px 22px rgba(224, 168, 15, 0.35);
-    }
-
-    .btn-primary:hover { transform: translateY(-2px); }
-
-    .btn-outline {
-      background: rgba(255, 255, 255, 0.9);
-      color: var(--ink);
-      border: 2px solid var(--ink);
-    }
-
-    .btn-outline:hover { transform: translateY(-2px); }
-
-    .btn[aria-disabled="true"] {
-      opacity: 0.62;
-      cursor: not-allowed;
-      pointer-events: none;
-      box-shadow: none;
-    }
-
-    .btn-note {
-      display: block;
-      margin-top: 6px;
-      font-size: 0.75rem;
-      font-family: var(--font-accent);
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      color: var(--ink);
-      opacity: 0.7;
-      text-align: center;
-    }
-
-    /* ---------------- Header (minimal) ---------------- */
-    .site-mini-header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 5;
-      padding: 20px 0 0;
-    }
-
-    .site-mini-header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand-mark {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-family: var(--font-accent);
-      font-weight: 800;
-      font-size: 0.95rem;
-      color: var(--ink);
-      background: rgba(255, 255, 255, 0.85);
-      padding: 8px 16px;
-      border-radius: 999px;
-      text-decoration: none;
-      transition: transform 0.18s ease;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .brand-mark:hover {
-      transform: translateY(-1px);
-    }
-
     /* ---------------- Hero ---------------- */
     .hero {
       position: relative;
-      padding: 108px 0 0;
-      background: linear-gradient(180deg, var(--sky) 0%, var(--sky-deep) 100%);
+      padding: 92px 0 0;
+      background: var(--sky); /* 画像読み込み前のちらつき防止フォールバック */
       overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: url('/assets/img/games/slime-ten-puzzle/hero-loop.webp') repeat-x 0 0 / 1024px 100%;
+      animation: hero-pan 48s linear infinite;
+    }
+
+    @keyframes hero-pan {
+      to { background-position-x: -1024px; }
     }
 
     .hero-inner {
       position: relative;
       z-index: 2;
       text-align: center;
-      padding-bottom: 64px;
+      padding-bottom: 28px;
     }
 
     .hero h1 {
-      margin-top: 18px;
-      font-size: clamp(2.2rem, 1.7rem + 2.4vw, 3.4rem);
-      color: var(--paper);
-      text-shadow: 0 6px 18px rgba(30, 58, 95, 0.25);
+      margin-top: 2px;
     }
 
-    .hero .en-sub {
+    .hero h1 img {
       display: block;
-      margin-top: 6px;
-      font-family: var(--font-accent);
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      font-size: clamp(0.95rem, 0.85rem + 0.5vw, 1.3rem);
-      color: rgba(255, 255, 255, 0.92);
+      width: clamp(330px, 30vw + 180px, 620px);
+      height: auto;
+      margin: 0 auto;
+      filter: drop-shadow(0 6px 18px rgba(30, 58, 95, 0.3));
     }
 
     .hero .catchcopy {
       max-width: 560px;
-      margin: 22px auto 0;
-      font-size: clamp(1rem, 0.95rem + 0.3vw, 1.2rem);
+      margin: 10px auto 0;
+      font-size: clamp(1.1rem, 1.045rem + 0.33vw, 1.32rem);
       font-weight: 700;
       color: var(--paper);
+      text-shadow: 0 2px 6px rgba(30, 58, 95, 0.55), 0 4px 14px rgba(30, 58, 95, 0.4);
     }
 
-    .cloud {
-      position: absolute;
-      opacity: 0.85;
-      z-index: 1;
-      animation: cloud-drift 24s ease-in-out infinite;
+    .hero .catchcopy .catchcopy-line {
+      display: block;
     }
 
-    .cloud-1 { top: 12%; left: -4%; width: 140px; animation-duration: 26s; }
-    .cloud-2 { top: 6%; right: -2%; width: 110px; animation-duration: 22s; animation-delay: -6s; }
-    .cloud-3 { top: 42%; left: 4%; width: 90px; opacity: 0.6; animation-duration: 30s; animation-delay: -12s; }
-
-    @keyframes cloud-drift {
-      0%, 100% { transform: translateX(0); }
-      50% { transform: translateX(18px); }
+    .hero .catchcopy .catchcopy-line + .catchcopy-line {
+      margin-top: 4px;
     }
 
     /* ---- Signature visual: 6 + 4 = 10 ---- */
@@ -617,22 +312,26 @@ const stepPickSlimes = [
       position: relative;
       z-index: 2;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
       gap: clamp(10px, 2vw, 22px);
       flex-wrap: wrap;
-      margin: 44px auto 0;
+      margin: 20px auto 0;
       max-width: 720px;
     }
 
     .equation-slime { display: flex; flex-direction: column; align-items: center; }
 
     .equation-sign {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 108px;
       font-family: var(--font-accent);
       font-weight: 800;
       font-size: clamp(1.8rem, 1.4rem + 1.6vw, 3rem);
       color: var(--paper);
-      text-shadow: 0 4px 10px rgba(30, 58, 95, 0.25);
+      text-shadow: 0 2px 6px rgba(30, 58, 95, 0.55), 0 4px 12px rgba(30, 58, 95, 0.4);
     }
 
     .slime-svg { overflow: visible; }
@@ -648,15 +347,53 @@ const stepPickSlimes = [
       50% { transform: scaleX(1.07) scaleY(0.92); }
     }
 
-    .hero-cta {
+    .equation-slime img {
+      display: block;
+      width: 108px;
+      height: auto;
+      transform-origin: bottom center;
+      animation: slime-squish 2.6s ease-in-out infinite;
+    }
+
+    .hero-store-badges {
       position: relative;
       z-index: 2;
       display: flex;
       flex-wrap: wrap;
-      align-items: flex-start;
+      align-items: center;
       justify-content: center;
-      gap: 20px;
-      margin-top: 46px;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .store-badge-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 147px;
+      height: 54px;
+      border-radius: 10px;
+      transition: transform 0.18s ease;
+    }
+
+    .store-badge-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .store-badge-link.is-app-store img {
+      display: block;
+      height: 54px;
+      width: auto;
+    }
+
+    .store-badge-link.is-steam {
+      background: #211F1F;
+    }
+
+    .store-badge-link.is-steam img {
+      display: block;
+      height: 33px;
+      width: auto;
     }
 
     .wave-divider-wrap {
@@ -671,60 +408,10 @@ const stepPickSlimes = [
     /* ---------------- Generic Section ---------------- */
     section { position: relative; }
 
-    .section-pad { padding: 76px 0; }
+    .section-pad { padding: 60px 0 76px; }
 
     .bg-mist { background: var(--mist); }
     .bg-paper { background: var(--paper); }
-
-    /* ---------------- About / board diagram ---------------- */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .about-copy p { margin-bottom: 16px; color: var(--ink); }
-
-    .callout {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      background: var(--paper);
-      border: 2px dashed var(--slime-blue);
-      border-radius: 16px;
-      padding: 16px 18px;
-      font-weight: 700;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .callout-icon { display: flex; flex: none; width: 26px; height: 26px; color: var(--sky-deep); }
-    .callout-icon svg { width: 100%; height: 100%; }
-
-    .board-panel {
-      background: linear-gradient(180deg, var(--sky) 0%, var(--sky-deep) 100%);
-      border-radius: 24px;
-      padding: 28px 20px 20px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .board-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-    }
-
-    .board-row .slime-svg { width: 100%; height: auto; }
-
-    .board-caption {
-      margin-top: 14px;
-      text-align: center;
-      color: var(--paper);
-      font-weight: 700;
-      font-size: 0.85rem;
-      font-family: var(--font-accent);
-      letter-spacing: 0.04em;
-    }
 
     /* ---------------- Steps ---------------- */
     .step-grid {
@@ -770,36 +457,41 @@ const stepPickSlimes = [
     .step-pick-row {
       display: flex;
       align-items: flex-end;
-      gap: 10px;
+      gap: 16px;
     }
 
-    .step-pick-item { position: relative; width: 56px; }
+    .step-pick-item { position: relative; width: 88px; }
 
-    .step-pick-item .slime-svg { width: 56px; height: 56px; opacity: 0.55; }
-
-    .step-pick-item.is-picked .slime-svg { opacity: 1; }
+    .step-pick-item img { display: block; width: 88px; height: auto; }
 
     .step-pick-item .tap-icon-wrap {
       position: absolute;
-      top: -4px;
+      top: -8px;
       left: 50%;
       transform: translateX(-50%);
-      width: 38px;
-      height: 38px;
+      width: 44px;
+      height: 44px;
       opacity: 0.8;
       pointer-events: none;
     }
 
     .step-result-wrap {
-      position: relative;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      gap: 4px;
     }
 
-    .step-result-wrap .slime-svg { width: 96px; height: 96px; }
+    .step-result-slime { display: block; width: 68px; height: auto; }
 
-    .sparkle-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+    .step-clear-badge {
+      display: block;
+      width: 114px;
+      max-width: none;
+      height: auto;
+      pointer-events: none;
+    }
 
     .step-card h3 {
       font-size: 1.05rem;
@@ -811,8 +503,8 @@ const stepPickSlimes = [
     /* ---------------- Feature cards ---------------- */
     .feature-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
     }
 
     .feature-card {
@@ -822,25 +514,12 @@ const stepPickSlimes = [
       box-shadow: var(--shadow-soft);
     }
 
-    .feature-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
-      background: var(--mist);
-      color: var(--sky-deep);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-
-    .feature-icon svg { width: 24px; height: 24px; }
-
     .feature-card h3 { font-size: 1rem; margin-bottom: 8px; }
 
     .feature-card p { font-size: 0.88rem; color: var(--ink); opacity: 0.78; }
 
-    .toggle-chips {
+    .toggle-chips,
+    .feature-card .time-chip-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
@@ -857,6 +536,17 @@ const stepPickSlimes = [
       padding: 5px 10px 5px 8px;
       font-size: 0.72rem;
       font-weight: 700;
+    }
+
+    .toggle-chip.is-symbol-only {
+      padding: 4px;
+    }
+
+    .toggle-chip.is-symbol-only .toggle-chip-icon {
+      width: 30px;
+      height: 30px;
+      font-size: 1.15rem;
+      line-height: 1;
     }
 
     .toggle-chip-icon {
@@ -879,9 +569,6 @@ const stepPickSlimes = [
       letter-spacing: 0.04em;
     }
 
-    .feature-icon-pair { display: flex; gap: 6px; }
-    .feature-icon-pair svg { width: 22px; height: 22px; }
-
     /* ---------------- Modes ---------------- */
     .mode-grid {
       display: grid;
@@ -897,20 +584,21 @@ const stepPickSlimes = [
       border-top: 6px solid var(--slime-blue);
     }
 
-    .mode-card.mode-timeattack { border-top-color: var(--slime-yellow); }
+    .mode-card.mode-normal { border-top-color: #9934ED; }
+    .mode-card.mode-timeattack { border-top-color: #0AA192; }
     .mode-card.mode-tutorial { border-top-color: var(--slime-green); }
 
     .mode-icon {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 84px;
-      height: 84px;
+      height: 60px;
       color: var(--sky-deep);
       margin-bottom: 14px;
     }
 
-    .mode-icon svg { width: 100%; height: 100%; }
+    .mode-icon img { display: block; width: 180px; height: auto; max-width: none; }
+    .mode-icon svg { width: 72px; height: 72px; }
 
     .mode-card h3 { font-size: 1.05rem; margin-bottom: 10px; }
     .mode-card p { font-size: 0.9rem; color: var(--ink); opacity: 0.8; margin-bottom: 14px; }
@@ -927,112 +615,72 @@ const stepPickSlimes = [
       border-radius: 999px;
     }
 
-    /* ---------------- Screenshots ---------------- */
-    .shot-grid {
+    /* ---------------- Spec meta ---------------- */
+    /* ---------------- System requirements (Steam) ---------------- */
+    .sysreq-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
     }
 
-    .shot-card {
+    .sysreq-card {
       background: var(--paper);
       border-radius: var(--radius-card);
-      overflow: hidden;
+      padding: 24px 22px;
       box-shadow: var(--shadow-soft);
     }
 
-    .shot-card svg { width: 100%; aspect-ratio: 16 / 9; display: block; }
-
-    .shot-caption {
-      padding: 14px 16px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      text-align: center;
-    }
-
-    .shot-note {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 0.78rem;
-      color: var(--ink);
-      opacity: 0.6;
-    }
-
-    /* ---------------- Trial / store ---------------- */
-    .trial-panel {
-      background: linear-gradient(180deg, var(--sky) 0%, var(--sky-deep) 100%);
-      border-radius: 28px;
-      padding: 48px 32px;
-      text-align: center;
-      color: var(--paper);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .trial-panel h2 { color: var(--paper); }
-
-    .trial-panel p {
-      max-width: 520px;
-      margin: 14px auto 0;
-      opacity: 0.95;
-      font-weight: 700;
-    }
-
-    .trial-cta { margin-top: 30px; }
-
-    .store-chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-      margin-top: 34px;
-    }
-
-    .store-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255, 255, 255, 0.92);
-      color: var(--ink);
-      border-radius: 16px;
-      padding: 10px 16px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .store-chip-icon { width: 26px; height: 26px; color: var(--ink); }
-    .store-chip-icon svg { width: 100%; height: 100%; }
-
-    .store-chip-text { text-align: left; line-height: 1.3; }
-    .store-chip-text strong { display: block; font-size: 0.86rem; }
-    .store-chip-text small { display: block; font-size: 0.68rem; opacity: 0.65; font-family: var(--font-accent); letter-spacing: 0.04em; }
-
-    /* ---------------- Spec table ---------------- */
-    .spec-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--paper);
-      border-radius: var(--radius-card);
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .spec-table tr:not(:last-child) th,
-    .spec-table tr:not(:last-child) td {
-      border-bottom: 1px solid rgba(30, 58, 95, 0.1);
-    }
-
-    .spec-table th, .spec-table td {
-      text-align: left;
-      padding: 16px 20px;
-      font-size: 0.92rem;
-      vertical-align: top;
-    }
-
-    .spec-table th {
-      width: 34%;
+    .sysreq-os {
       font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .sysreq-block {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(30, 58, 95, 0.1);
+    }
+
+    .sysreq-block:first-of-type {
+      margin-top: 14px;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .sysreq-block-label {
+      display: inline-block;
+      font-family: var(--font-accent);
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      color: var(--paper);
+      background: var(--sky-deep);
+      padding: 3px 12px;
+      border-radius: 999px;
+    }
+
+    .sysreq-list {
+      margin: 10px 0 0;
+    }
+
+    .sysreq-list dt {
+      font-size: 0.72rem;
       font-weight: 700;
       color: var(--sky-deep);
-      background: var(--mist);
+      letter-spacing: 0.02em;
+      margin-top: 8px;
+    }
+
+    .sysreq-list dt:first-child { margin-top: 0; }
+
+    .sysreq-list dd {
+      margin: 2px 0 0;
+      font-size: 0.86rem;
+      color: var(--ink);
+      opacity: 0.9;
     }
 
     /* ---------------- Footer ---------------- */
@@ -1059,26 +707,23 @@ const stepPickSlimes = [
 
     /* ---------------- Responsive ---------------- */
     @media (max-width: 900px) {
-      .about-grid { grid-template-columns: 1fr; }
-      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .feature-grid { grid-template-columns: 1fr; }
       .step-grid { grid-template-columns: 1fr; }
       .mode-grid { grid-template-columns: 1fr; }
-      .shot-grid { grid-template-columns: 1fr; }
+      .sysreq-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 560px) {
-      .feature-grid { grid-template-columns: 1fr; }
-      .section-pad { padding: 56px 0; }
+      .section-pad { padding: 44px 0 56px; }
       .equation { gap: 8px; }
-      .equation-slime svg { width: 78px; height: 78px; }
-      .equation-slime.is-result svg { width: 108px; height: 108px; }
-      .hero { padding-top: 92px; }
-      .trial-panel { padding: 36px 20px; }
+      .equation-slime img { width: 78px; }
+      .equation-sign { height: 78px; }
+      .hero { padding-top: 104px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .slime-anim, .cloud {
+      .slime-anim, .equation-slime img, .hero::before {
         animation: none !important;
       }
     }
@@ -1086,81 +731,48 @@ const stepPickSlimes = [
 </head>
 <body>
 
-  <header class="site-mini-header">
-    <div class="container">
-      <a class="brand-mark" href="https://next2d.app/ja/"><span aria-hidden="true">&larr;</span> Next2D</a>
-    </div>
-  </header>
-
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="cloud cloud-1" set:html={cloudSvg()} />
-    <div class="cloud cloud-2" set:html={cloudSvg()} />
-    <div class="cloud cloud-3" set:html={cloudSvg()} />
-
     <div class="container hero-inner">
-      <span class="eyebrow">Next2D Games</span>
-      <h1>スライムテンパズル<span class="en-sub">Slime Ten Puzzle</span></h1>
-      <p class="catchcopy">10をそろえて、サクッと快感。あそんで学べるパズルゲーム。</p>
+      <h1><img src="/assets/img/games/slime-ten-puzzle/logo.svg" alt="スライムテンパズル(Slime Ten Puzzle)" width="658" height="354"></h1>
+      <p class="catchcopy">
+        <span class="catchcopy-line">「10」をつくって、サクッと快感!</span>
+        <span class="catchcopy-line">癒やし × 脳トレゲーム</span>
+      </p>
 
       <div class="equation" aria-hidden="false">
-        <div class="equation-slime" set:html={heroSlimeA} />
+        <div class="equation-slime">
+          <img src="/assets/img/games/slime-ten-puzzle/blue_slime.svg" width="120" height="120" alt="数字4を持つ青いスライム" style="animation-delay:0s">
+        </div>
         <span class="equation-sign" aria-hidden="true">+</span>
-        <div class="equation-slime" set:html={heroSlimeB} />
+        <div class="equation-slime">
+          <img src="/assets/img/games/slime-ten-puzzle/green_slime.svg" width="120" height="120" alt="数字6を持つ緑のスライム" style="animation-delay:0.15s">
+        </div>
         <span class="equation-sign" aria-hidden="true">=</span>
-        <div class="equation-slime is-result" set:html={heroSlimeResult} />
+        <div class="equation-slime is-result">
+          <img src="/assets/img/games/slime-ten-puzzle/yellow_slime.svg" width="120" height="144.44" alt="合体してできた、数字10を持つ黄色いスライム" style="animation-delay:0.3s">
+        </div>
       </div>
 
-      <div class="hero-cta">
-        <div>
-          <button class="btn btn-primary" type="button" aria-disabled="true" disabled>体験版であそぶ</button>
-          <span class="btn-note">Coming Soon</span>
-        </div>
-        <div>
-          <a class="btn btn-outline" href="#spec">対応プラットフォームを見る</a>
-        </div>
+      <div class="hero-store-badges">
+        {/* ストアは未申請のため、公開まではリンク先が404になります */}
+        <a class="store-badge-link is-app-store" href="https://apps.apple.com/jp/app/id6800338320" target="_blank" rel="noopener">
+          <img src="/assets/img/games/slime-ten-puzzle/app-store-badge-ja.svg" width="108.85" height="40" alt="App Storeでダウンロード">
+        </a>
+        {/* ストアは未申請のため、公開まではリンク先が404になります */}
+        <a class="store-badge-link is-steam" href="https://store.steampowered.com/app/2409460/" target="_blank" rel="noopener">
+          <img src="/assets/img/games/slime-ten-puzzle/steam-lockup.png" width="1120" height="400" alt="Steamで入手">
+        </a>
       </div>
     </div>
 
     <div class="wave-divider-wrap" set:html={waveDivider('#FFFFFF')} />
   </section>
 
-  <!-- ============ ABOUT ============ -->
-  <section class="bg-paper section-pad" id="about">
-    <div class="container about-grid">
-      <div class="about-copy">
-        <span class="section-kicker">ABOUT THE GAME</span>
-        <h2>どんなゲーム?</h2>
-        <p>
-          画面には数字を持ったスライムが4体並んでいます。スライムを2体タップすると、
-          「a+b」「a−b」「a×b」など6つの計算候補が現れるので、好きな式を選びましょう。
-          選んだ2体は式の答えを持つ1体に合体します。
-        </p>
-        <p>
-          これを繰り返して、最後に残った1体が「10」ならクリア。10以外の数字で終わるとゲームオーバーです。
-        </p>
-        <div class="callout">
-          <span class="callout-icon" set:html={ICONS.shieldCheck} />
-          <span>出題は必ず10が作れる組み合わせだけを検証して生成しています。理不尽な詰みはありません。</span>
-        </div>
-      </div>
-
-      <div class="board-panel">
-        <div class="board-row">
-          {boardSlimes.map((s) => (
-            <div class="board-slime" set:html={slimeSvg({ colorKey: s.colorKey, number: s.number, size: 130, ariaLabel: `数字${s.number}を持つスライム` })} />
-          ))}
-        </div>
-        <p class="board-caption">この4体から、10が作れる組み合わせを見つけよう</p>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ HOW TO PLAY ============ -->
-  <section class="bg-mist section-pad" id="how-to-play">
+  <section class="bg-paper section-pad" id="how-to-play">
     <div class="container">
       <div class="section-head">
-        <span class="section-kicker">3 STEPS</span>
         <h2>あそびかた</h2>
         <p>操作はとってもシンプル。スライムを選んで、式を選ぶだけです。</p>
       </div>
@@ -1170,12 +782,14 @@ const stepPickSlimes = [
           <span class="step-number">1</span>
           <div class="step-illust-wrap">
             <div class="step-pick-row">
-              {stepPickSlimes.map((s) => (
-                <div class={`step-pick-item ${s.picked ? 'is-picked' : ''}`}>
-                  {s.picked && <div class="tap-icon-wrap" set:html={tapIconSvg()} />}
-                  <div set:html={slimeSvg({ colorKey: s.colorKey, number: s.number, size: 100, ariaLabel: `数字${s.number}を持つスライム` })} />
-                </div>
-              ))}
+              <div class="step-pick-item">
+                <div class="tap-icon-wrap" set:html={tapIconSvg()} />
+                <img src="/assets/img/games/slime-ten-puzzle/blue_slime.svg" width="120" height="120" alt="数字4を持つ青いスライム">
+              </div>
+              <div class="step-pick-item">
+                <div class="tap-icon-wrap" set:html={tapIconSvg()} />
+                <img src="/assets/img/games/slime-ten-puzzle/green_slime.svg" width="120" height="120" alt="数字6を持つ緑のスライム">
+              </div>
             </div>
           </div>
           <h3>スライムを2体えらぶ</h3>
@@ -1193,8 +807,8 @@ const stepPickSlimes = [
           <span class="step-number">3</span>
           <div class="step-illust-wrap">
             <div class="step-result-wrap">
-              <div set:html={slimeSvg({ colorKey: 'yellow', number: '10', size: 110, ariaLabel: '数字10を持つ黄色いスライム' })} />
-              <div class="sparkle-wrap" set:html={sparklesSvg()} />
+              <img class="step-result-slime" src="/assets/img/games/slime-ten-puzzle/yellow_slime.svg" width="120" height="144.44" alt="合体してできた、数字10を持つ黄色いスライム">
+              <img class="step-clear-badge" src="/assets/img/games/slime-ten-puzzle/clear.svg" width="270" height="77" alt="Clear!">
             </div>
           </div>
           <h3>くりかえして、さいごの1体を10に!</h3>
@@ -1204,24 +818,28 @@ const stepPickSlimes = [
     </div>
   </section>
 
-  <!-- ============ FEATURES ============ -->
-  <section class="bg-paper section-pad" id="features">
+  <!-- ============ POINTS ============ -->
+  <section class="bg-mist section-pad" id="features">
     <div class="container">
       <div class="section-head">
-        <span class="section-kicker">FEATURES</span>
-        <h2>とくちょう</h2>
+        <h2>おすすめポイント</h2>
       </div>
 
       <div class="feature-grid">
         <div class="feature-card">
-          <span class="feature-icon" set:html={ICONS.shieldCheck} />
-          <h3>理不尽ゼロの出題</h3>
-          <p>すべての問題は「必ず10が作れる」ことを検証してから出題。運ゲーではありません。</p>
+          <h3>計算に強くなる!</h3>
+          <p>遊ぶだけで四則演算の暗算トレーニング。「どの2つで10に近づける?」を考えるうちに、数の組み合わせ感覚が自然と身につきます。</p>
+          <div class="toggle-chips">
+            <div set:html={operatorChip('+')} />
+            <div set:html={operatorChip('−')} />
+            <div set:html={operatorChip('×')} />
+            <div set:html={operatorChip('÷')} />
+          </div>
         </div>
 
         <div class="feature-card">
-          <h3>難しさは自分でえらべる</h3>
-          <p>掛け算・割り算・マイナスの数・分数をON/OFFで調整。初期状態は全OFFなので、小さな子どもから遊べます。</p>
+          <h3>子どもから大人まで</h3>
+          <p>最初はたし算・ひき算だけ。設定で掛け算・割り算・マイナス・分数まで広げられるので、学びの段階に合わせて親子で一緒に楽しめます。</p>
           <div class="toggle-chips">
             <div set:html={toggleChip('×', '掛け算')} />
             <div set:html={toggleChip('÷', '割り算')} />
@@ -1231,47 +849,40 @@ const stepPickSlimes = [
         </div>
 
         <div class="feature-card">
-          <span class="feature-icon" set:html={ICONS.star} />
-          <h3>難しい設定ほど高スコア</h3>
-          <p>マイナスの数+5点、分数+10点、掛け算ON+5点など、難易度に応じたボーナス点で高得点を狙えます。</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon feature-icon-pair">
-            <span set:html={ICONS.phone} />
-            <span set:html={ICONS.pad} />
+          <h3>スキマ時間の脳トレ習慣に</h3>
+          <p>1問サクッと解ける気持ちよさ。かわいいスライムに癒やされながら、1分タイムアタックで毎日の脳トレが続きます。</p>
+          <div class="time-chip-row">
+            <span class="time-chip">1分</span>
+            <span class="time-chip">5分</span>
+            <span class="time-chip">10分</span>
           </div>
-          <h3>タップでもコントローラーでも</h3>
-          <p>スマホのタップ操作はもちろん、ゲームパッド(コントローラー)にも完全対応。</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ MODES ============ -->
-  <section class="bg-mist section-pad" id="modes">
+  <section class="bg-paper section-pad" id="modes">
     <div class="container">
       <div class="section-head">
-        <span class="section-kicker">GAME MODES</span>
         <h2>ゲームモード</h2>
       </div>
 
       <div class="mode-grid">
         <div class="mode-card mode-normal">
-          <span class="mode-icon" set:html={ICONS.infinity} />
+          <span class="mode-icon">
+            <img src="/assets/img/games/slime-ten-puzzle/normal_play_btn.svg" width="224" height="60" alt="Normal play">
+          </span>
           <h3>ノーマル</h3>
           <p>時間無制限。クリアするたびに次の問題が出るエンドレスモード。</p>
         </div>
 
         <div class="mode-card mode-timeattack">
-          <span class="mode-icon" set:html={ICONS.clock} />
+          <span class="mode-icon">
+            <img src="/assets/img/games/slime-ten-puzzle/time_attack_btn.svg" width="224" height="60" alt="Time attack">
+          </span>
           <h3>タイムアタック</h3>
           <p>1分・5分・10分から時間を選択。モードごとにハイスコアを記録できます。</p>
-          <div class="time-chip-row">
-            <span class="time-chip">1分</span>
-            <span class="time-chip">5分</span>
-            <span class="time-chip">10分</span>
-          </div>
         </div>
 
         <div class="mode-card mode-tutorial">
@@ -1283,90 +894,44 @@ const stepPickSlimes = [
     </div>
   </section>
 
-  <!-- ============ SCREENSHOTS ============ -->
-  <section class="bg-paper section-pad" id="screenshots">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-kicker">SCREENSHOTS</span>
-        <h2>スクリーンショット</h2>
-      </div>
-
-      <div class="shot-grid">
-        <div class="shot-card">
-          <div set:html={screenshotHome()} />
-          <p class="shot-caption">ホーム画面</p>
-        </div>
-        <div class="shot-card">
-          <div set:html={screenshotPlay()} />
-          <p class="shot-caption">プレイ画面</p>
-        </div>
-        <div class="shot-card">
-          <div set:html={screenshotModal()} />
-          <p class="shot-caption">計算選択モーダル</p>
-        </div>
-      </div>
-      <p class="shot-note">※開発中の画面イメージです。実際の製品版とは異なる場合があります。</p>
-    </div>
-  </section>
-
-  <!-- ============ TRIAL / STORE ============ -->
-  <section class="bg-mist section-pad" id="trial">
-    <div class="container">
-      <div class="trial-panel">
-        <h2>体験版・ストア</h2>
-        <p>体験版では「タイムアタック」と「チュートリアル」があそべます(ノーマルモードは製品版のみ)。</p>
-
-        <div class="trial-cta">
-          <button class="btn btn-primary" type="button" aria-disabled="true" disabled>Web体験版であそぶ</button>
-          <span class="btn-note">Coming Soon</span>
-        </div>
-
-        <div class="store-chip-row">
-          <div set:html={storeChip(ICONS.phone, 'App Store')} />
-          <div set:html={storeChip(ICONS.phone, 'Google Play')} />
-          <div set:html={storeChip(ICONS.monitor, 'Steam')} />
-          <div set:html={storeChip(ICONS.pad, 'Xbox')} />
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ SPEC ============ -->
-  <section class="bg-paper section-pad" id="spec">
+  <section class="bg-mist section-pad" id="spec">
     <div class="container">
       <div class="section-head">
-        <span class="section-kicker">SPEC</span>
         <h2>スペック</h2>
       </div>
 
-      <table class="spec-table">
-        <tbody>
-          <tr>
-            <th scope="row">対応プラットフォーム</th>
-            <td>Web / iOS / Android / Windows / macOS / Linux(Steam)/ Xbox ※すべて準備中・近日公開</td>
-          </tr>
-          <tr>
-            <th scope="row">画面・フレームレート</th>
-            <td>1280 × 720 ・ 60fps</td>
-          </tr>
-          <tr>
-            <th scope="row">操作方法</th>
-            <td>タップ操作 / ゲームパッド(コントローラー)操作に対応</td>
-          </tr>
-          <tr>
-            <th scope="row">料金</th>
-            <td>未定</td>
-          </tr>
-          <tr>
-            <th scope="row">開発</th>
-            <td>Next2D</td>
-          </tr>
-          <tr>
-            <th scope="row">エンジン</th>
-            <td>Next2D Framework v4</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="sysreq-grid">
+        {SYS_REQUIREMENTS.map((req) => (
+          <div class="sysreq-card">
+            <p class="sysreq-os">{req.os}</p>
+
+            <div class="sysreq-block">
+              <span class="sysreq-block-label">最低</span>
+              <dl class="sysreq-list">
+                {req.min.map((item) => (
+                  <>
+                    <dt>{item.label}</dt>
+                    <dd>{item.value}</dd>
+                  </>
+                ))}
+              </dl>
+            </div>
+
+            <div class="sysreq-block">
+              <span class="sysreq-block-label">推奨</span>
+              <dl class="sysreq-list">
+                {req.rec.map((item) => (
+                  <>
+                    <dt>{item.label}</dt>
+                    <dd>{item.value}</dd>
+                  </>
+                ))}
+              </dl>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 

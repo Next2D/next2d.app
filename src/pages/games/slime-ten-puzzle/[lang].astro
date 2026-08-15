@@ -725,6 +725,13 @@ function waveDivider(fill) {
     /* ---------------- Generic Section ---------------- */
     section { position: relative; }
 
+    /* ヒーロー下端は高さがサブピクセル値になりやすく、境界に1pxの色にじみが出ることがある。
+       あそびかたセクション(白背景)をわずかに前面へ重ねて隠す。波形の意匠には影響しない量。 */
+    #how-to-play {
+      margin-top: -2px;
+      z-index: 4;
+    }
+
     .section-pad { padding: 60px 0 76px; }
 
     .bg-mist { background: var(--mist); }

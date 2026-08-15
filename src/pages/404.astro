@@ -17,18 +17,104 @@ const basePath = import.meta.env.BASE_URL;
 
   <!-- Main CSS -->
   <link href={`${basePath}assets/css/main.css`} rel="stylesheet">
+
+  <style>
+    #hero .notfound-logo {
+      margin-bottom: 24px;
+    }
+
+    #hero .notfound-logo img {
+      width: 56px;
+      height: 56px;
+    }
+
+    #hero .notfound-desc {
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
 </head>
 <body>
   <section id="hero">
     <div class="hero-container">
-      <h1>404</h1>
-      <h2>Page Not Found / ページが見つかりません / 页面未找到</h2>
-      <div class="hero-link">
-        <a class="btn" href={`${basePath}en/`}>English</a>
-        <a class="btn" href={`${basePath}ja/`}>日本語</a>
-        <a class="btn" href={`${basePath}cn/`}>简体中文</a>
+      <div class="notfound-logo">
+        <a href={basePath}>
+          <img src={`${basePath}assets/img/logo.svg`} alt="Next2D" width="56" height="56">
+        </a>
       </div>
+
+      <h1>404</h1>
+      <h2 id="notfound-heading">Page Not Found</h2>
+      <p class="notfound-desc" id="notfound-desc">The page you&apos;re looking for may have been moved or deleted.</p>
+
+      <div class="hero-link">
+        <a class="btn" id="notfound-back" href={`${basePath}en/`}>Back to Home</a>
+      </div>
+
+      <noscript>
+        <div class="hero-link">
+          <a class="btn" href={`${basePath}en/`}>English</a>
+          <a class="btn" href={`${basePath}ja/`}>日本語</a>
+          <a class="btn" href={`${basePath}cn/`}>简体中文</a>
+        </div>
+      </noscript>
     </div>
   </section>
+
+  <script is:inline define:vars={{ basePath }}>
+    (function () {
+      var TEXT = {
+        ja: {
+          htmlLang: 'ja',
+          heading: 'ページが見つかりませんでした',
+          desc: 'お探しのページは移動または削除された可能性があります。',
+          back: 'トップページへ戻る',
+          href: basePath + 'ja/'
+        },
+        en: {
+          htmlLang: 'en',
+          heading: 'Page Not Found',
+          desc: "The page you're looking for may have been moved or deleted.",
+          back: 'Back to Home',
+          href: basePath + 'en/'
+        },
+        cn: {
+          htmlLang: 'zh-CN',
+          heading: '页面未找到',
+          desc: '您访问的页面可能已被移动或删除。',
+          back: '返回首页',
+          href: basePath + 'cn/'
+        }
+      };
+
+      function detectLang() {
+        // ①パス中の言語セグメント(/ja/・/cn/・/en/、または /games/.../ja/ 等)を優先
+        var match = location.pathname.match(/(?:^|\/)(ja|en|cn)(?:\/|$)/);
+        if (match) {
+          return match[1];
+        }
+        // ②なければブラウザの言語設定
+        var navLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+        if (navLang.indexOf('ja') === 0) {
+          return 'ja';
+        }
+        if (navLang.indexOf('zh') === 0) {
+          return 'cn';
+        }
+        return 'en';
+      }
+
+      var t = TEXT[detectLang()] || TEXT.en;
+
+      document.documentElement.setAttribute('lang', t.htmlLang);
+      document.getElementById('notfound-heading').textContent = t.heading;
+      document.getElementById('notfound-desc').textContent = t.desc;
+
+      var backLink = document.getElementById('notfound-back');
+      backLink.textContent = t.back;
+      backLink.setAttribute('href', t.href);
+    })();
+  </script>
 </body>
 </html>

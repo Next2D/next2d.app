@@ -60,11 +60,6 @@ function tapIconSvg() {
   </svg>`;
 }
 
-/** 汎用ラインアイコン(24x24、currentColorでCSS側から着色) */
-const ICONS = {
-  cursor: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3l3 15 2.5-5.5L17 15 6 3z" fill="currentColor"/></svg>`
-};
-
 function toggleChip(icon, label) {
   return `<span class="toggle-chip">
     <span class="toggle-chip-icon" aria-hidden="true">${icon}</span>
@@ -90,32 +85,57 @@ const SYS_REQUIREMENTS = [
       { label: 'OS', value: 'Windows 10 以降' },
       { label: 'プロセッサー', value: 'Intel Core i3-6100 / AMD Ryzen 3 1200 相当' },
       { label: 'メモリー', value: '4 GB RAM' },
-      { label: 'グラフィック', value: 'Intel HD Graphics 530 相当の統合GPU(専用グラフィックボード不要)' },
-      { label: 'ストレージ', value: '1 GB の空き容量' }
+      { label: 'グラフィック', value: 'Intel HD Graphics 530 相当の統合GPU' },
+      { label: 'DirectX', value: 'Version 11' },
+      { label: 'ストレージ', value: '1 GB の空き容量' },
+      { label: 'サウンド', value: 'Windows対応サウンドカード' }
     ],
     rec: [
       { label: 'OS', value: 'Windows 11 以降' },
       { label: 'プロセッサー', value: 'Intel Core i3-10100 / AMD Ryzen 3 3200G 相当' },
       { label: 'メモリー', value: '8 GB RAM' },
-      { label: 'グラフィック', value: 'Intel UHD Graphics 630 相当以上の統合GPU(専用グラフィックボード不要)' },
-      { label: 'ストレージ', value: '1 GB の空き容量' }
+      { label: 'グラフィック', value: 'Intel UHD Graphics 630 相当以上の統合GPU' },
+      { label: 'DirectX', value: 'Version 11' },
+      { label: 'ストレージ', value: '1 GB の空き容量' },
+      { label: 'サウンド', value: 'Windows対応サウンドカード' }
     ]
   },
   {
     os: 'macOS',
     min: [
       { label: 'OS', value: 'macOS 11 (Big Sur) 以降' },
-      { label: 'プロセッサー', value: 'Intel Core i5(2014年以降のMac)/ Apple M1' },
+      { label: 'プロセッサー', value: 'Intel Core i5 / Apple M1 以降' },
       { label: 'メモリー', value: '8 GB RAM' },
-      { label: 'グラフィック', value: '統合GPUで動作(Intel Iris Plus / Apple Mシリーズ GPU)。専用GPU不要' },
-      { label: 'ストレージ', value: '1 GB の空き容量' }
+      { label: 'グラフィック', value: '統合GPUで動作(Intel Iris Plus / Apple Mシリーズ GPU)' },
+      { label: 'ストレージ', value: '1 GB の空き容量' },
+      { label: 'サウンド', value: '標準オーディオ出力(内蔵スピーカー可)' }
     ],
     rec: [
       { label: 'OS', value: 'macOS 12 (Monterey) 以降' },
-      { label: 'プロセッサー', value: 'Apple M1 以降(Apple Mシリーズ)' },
+      { label: 'プロセッサー', value: 'Apple M1 以降' },
       { label: 'メモリー', value: '8 GB RAM' },
       { label: 'グラフィック', value: 'Apple Mシリーズ GPU(統合)' },
-      { label: 'ストレージ', value: '1 GB の空き容量' }
+      { label: 'ストレージ', value: '1 GB の空き容量' },
+      { label: 'サウンド', value: '標準オーディオ出力(内蔵スピーカー可)' }
+    ]
+  },
+  {
+    os: 'Linux',
+    min: [
+      { label: 'OS', value: 'Ubuntu 20.04 LTS 以降(64bit)/ SteamOS 3.0 以降' },
+      { label: 'プロセッサー', value: 'Intel Core i3-6100 / AMD Ryzen 3 1200 相当' },
+      { label: 'メモリー', value: '4 GB RAM' },
+      { label: 'グラフィック', value: 'Intel HD Graphics 530 相当の統合GPU' },
+      { label: 'ストレージ', value: '1 GB の空き容量' },
+      { label: 'サウンド', value: 'PulseAudio / PipeWire 対応サウンドデバイス' }
+    ],
+    rec: [
+      { label: 'OS', value: 'Ubuntu 22.04 LTS 以降 / SteamOS 3.0 以降' },
+      { label: 'プロセッサー', value: 'Intel Core i3-10100 / AMD Ryzen 3 3200G 相当' },
+      { label: 'メモリー', value: '8 GB RAM' },
+      { label: 'グラフィック', value: 'Intel UHD Graphics 630 相当以上の統合GPU' },
+      { label: 'ストレージ', value: '1 GB の空き容量' },
+      { label: 'サウンド', value: 'PulseAudio / PipeWire 対応サウンドデバイス' }
     ]
   }
 ];
@@ -577,9 +597,11 @@ const SYS_REQUIREMENTS = [
     }
 
     .mode-card {
+      display: flex;
+      flex-direction: column;
       background: var(--paper);
       border-radius: var(--radius-card);
-      padding: 28px 22px;
+      overflow: hidden;
       box-shadow: var(--shadow-soft);
       border-top: 6px solid var(--slime-blue);
     }
@@ -588,17 +610,28 @@ const SYS_REQUIREMENTS = [
     .mode-card.mode-timeattack { border-top-color: #0AA192; }
     .mode-card.mode-tutorial { border-top-color: var(--slime-green); }
 
+    .mode-screenshot { line-height: 0; }
+
+    .mode-screenshot img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .mode-body {
+      padding: 22px 22px 28px;
+    }
+
     .mode-icon {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 60px;
+      height: 50px;
       color: var(--sky-deep);
       margin-bottom: 14px;
     }
 
-    .mode-icon img { display: block; width: 180px; height: auto; max-width: none; }
-    .mode-icon svg { width: 72px; height: 72px; }
+    .mode-icon img { display: block; width: 150px; height: auto; max-width: none; }
 
     .mode-card h3 { font-size: 1.05rem; margin-bottom: 10px; }
     .mode-card p { font-size: 0.9rem; color: var(--ink); opacity: 0.8; margin-bottom: 14px; }
@@ -619,14 +652,14 @@ const SYS_REQUIREMENTS = [
     /* ---------------- System requirements (Steam) ---------------- */
     .sysreq-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
     .sysreq-card {
       background: var(--paper);
       border-radius: var(--radius-card);
-      padding: 24px 22px;
+      padding: 22px 18px;
       box-shadow: var(--shadow-soft);
     }
 
@@ -648,6 +681,10 @@ const SYS_REQUIREMENTS = [
       margin-top: 14px;
       padding-top: 0;
       border-top: none;
+    }
+
+    .sysreq-block-min {
+      min-height: 422px;
     }
 
     .sysreq-block-label {
@@ -711,6 +748,7 @@ const SYS_REQUIREMENTS = [
       .step-grid { grid-template-columns: 1fr; }
       .mode-grid { grid-template-columns: 1fr; }
       .sysreq-grid { grid-template-columns: 1fr; }
+      .sysreq-block-min { min-height: 0; }
     }
 
     @media (max-width: 560px) {
@@ -870,25 +908,39 @@ const SYS_REQUIREMENTS = [
 
       <div class="mode-grid">
         <div class="mode-card mode-normal">
-          <span class="mode-icon">
-            <img src="/assets/img/games/slime-ten-puzzle/normal_play_btn.svg" width="224" height="60" alt="Normal play">
-          </span>
-          <h3>ノーマル</h3>
-          <p>時間無制限。クリアするたびに次の問題が出るエンドレスモード。</p>
+          <div class="mode-screenshot">
+            <img src="/assets/img/games/slime-ten-puzzle/normal_mode.webp" width="1280" height="720" alt="ノーマルモードのプレイ画面" loading="lazy">
+          </div>
+          <div class="mode-body">
+            <span class="mode-icon">
+              <img src="/assets/img/games/slime-ten-puzzle/normal_play_btn.svg" width="224" height="60" alt="Normal play">
+            </span>
+            <h3>ノーマル</h3>
+            <p>時間無制限。クリアするたびに次の問題が出るエンドレスモード。</p>
+          </div>
         </div>
 
         <div class="mode-card mode-timeattack">
-          <span class="mode-icon">
-            <img src="/assets/img/games/slime-ten-puzzle/time_attack_btn.svg" width="224" height="60" alt="Time attack">
-          </span>
-          <h3>タイムアタック</h3>
-          <p>1分・5分・10分から時間を選択。モードごとにハイスコアを記録できます。</p>
+          <div class="mode-screenshot">
+            <img src="/assets/img/games/slime-ten-puzzle/time_attack_mode.webp" width="1280" height="720" alt="タイムアタックの時間選択画面" loading="lazy">
+          </div>
+          <div class="mode-body">
+            <span class="mode-icon">
+              <img src="/assets/img/games/slime-ten-puzzle/time_attack_btn.svg" width="224" height="60" alt="Time attack">
+            </span>
+            <h3>タイムアタック</h3>
+            <p>1分・5分・10分から時間を選択。モードごとにハイスコアを記録できます。</p>
+          </div>
         </div>
 
         <div class="mode-card mode-tutorial">
-          <span class="mode-icon" set:html={ICONS.cursor} />
-          <h3>チュートリアル</h3>
-          <p>手のカーソルが次に押すスライムとおすすめの計算をナビゲートしてくれます。</p>
+          <div class="mode-screenshot">
+            <img src="/assets/img/games/slime-ten-puzzle/tutorial_mode.webp" width="1280" height="720" alt="チュートリアルのプレイ画面" loading="lazy">
+          </div>
+          <div class="mode-body">
+            <h3>チュートリアル</h3>
+            <p>手のカーソルが次に押すスライムとおすすめの計算をナビゲートしてくれます。</p>
+          </div>
         </div>
       </div>
     </div>
@@ -906,7 +958,7 @@ const SYS_REQUIREMENTS = [
           <div class="sysreq-card">
             <p class="sysreq-os">{req.os}</p>
 
-            <div class="sysreq-block">
+            <div class="sysreq-block sysreq-block-min">
               <span class="sysreq-block-label">最低</span>
               <dl class="sysreq-list">
                 {req.min.map((item) => (

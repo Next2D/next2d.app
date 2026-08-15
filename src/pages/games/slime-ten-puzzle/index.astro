@@ -1,145 +1,20 @@
 ---
 /**
- * Slime Ten Puzzle (スライムテンパズル) ランディングページ
+ * SlimeTenPuzzle(スライム・テンパズル) 言語振り分けページ
  *
- * 公式サイトの共有レイアウト/CSS/JS(main.css, main.js, Bootstrap, AOS)からは
- * 完全に独立した単一ファイル。キャラクター類はpublic配下の実素材画像を使用し、
- * 装飾アイコンや演出パーツの一部はインラインSVGで生成する。
+ * 本番はAmplifyの国別リダイレクトが先に効くため、このページはフォールバック用途。
+ * navigator.language を見てクライアントサイドで ja / en / cn の各言語版へ振り分ける。
+ * JS無効環境向けに meta refresh(1秒後にen版へ)と noscript の3言語リンクを用意する。
+ * hreflang の x-default はこのページを指す(各 [lang].astro 側で設定)。
  */
 
-const PAGE_URL = 'https://next2d.app/games/slime-ten-puzzle/';
+const HUB_URL = 'https://next2d.app/games/slime-ten-puzzle/';
+/** リダイレクト先(meta refresh / location.replace)はローカルプレビューやAmplifyのブランチプレビューでも
+ *  同一ホスト内で完結するよう相対パスを使う。hreflang/canonical/og:urlはSEO用途のため絶対URL(HUB_URL)のまま。 */
+const REL_BASE = '/games/slime-ten-puzzle/';
 const OGP_IMAGE = 'https://next2d.app/assets/img/games/slime-ten-puzzle/ogp.png';
-const TITLE = 'スライムテンパズル(Slime Ten Puzzle) | Next2D Games';
-const DESCRIPTION = '10をそろえて、サクッと快感。あそんで学べる計算パズルゲーム「スライムテンパズル」。数字を持ったスライムを2体えらんで計算し、最後の1体を10に。理不尽な詰みのない出題と、自分で選べる難易度が特徴。Next2D Framework製。';
-
-/** セクション間をつなぐゼリー波形ディバイダー(fillは次のセクション背景色) */
-function waveDivider(fill) {
-  return `
-<svg class="wave-divider" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-  <path d="M0,40 C120,78 240,2 360,40 C480,78 600,2 720,40 C840,78 960,2 1080,40 C1200,78 1320,2 1440,40 L1440,80 L0,80 Z" fill="${fill}" />
-</svg>`;
-}
-
-/** 6つの計算候補ボタン(a+b / a-b / b-a / a×b / a÷b / b÷a)のモックパネル */
-function calcPanelSvg() {
-  const labels = ['a+b', 'a−b', 'b−a', 'a×b', 'a÷b', 'b÷a'];
-  const cols = 3;
-  const cellW = 72;
-  const cellH = 52;
-  const gap = 9;
-  const startX = 9;
-  const startY = 9;
-  const rows = Math.ceil(labels.length / cols);
-  const totalW = startX * 2 + cols * cellW + (cols - 1) * gap;
-  const totalH = startY * 2 + rows * cellH + (rows - 1) * gap;
-
-  let buttons = '';
-  labels.forEach((label, i) => {
-    const col = i % cols;
-    const row = Math.floor(i / cols);
-    const x = startX + col * (cellW + gap);
-    const y = startY + row * (cellH + gap);
-    const selected = i === 0;
-    buttons += `<rect x="${x}" y="${y}" width="${cellW}" height="${cellH}" rx="14" fill="${selected ? '#FFD34D' : '#FFFFFF'}" stroke="#1E3A5F" stroke-width="3" />`;
-    buttons += `<text x="${x + cellW / 2}" y="${y + cellH / 2 + 8}" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="700" font-size="22" fill="#1E3A5F">${label}</text>`;
-  });
-
-  return `
-<svg class="step-illust" viewBox="0 0 ${totalW} ${totalH}" role="img" aria-label="a+b、a-b、b-a、a×b、a÷b、b÷aの6つの計算候補から式を選ぶ操作パネルのイメージ図" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0" y="0" width="${totalW}" height="${totalH}" rx="20" fill="#EAF7FF" />
-  ${buttons}
-</svg>`;
-}
-
-/** タップ操作を示すリップル(波紋)アイコン */
-function tapIconSvg() {
-  return `<svg class="tap-icon" viewBox="0 0 60 60" width="100%" height="100%" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="30" cy="30" r="26" fill="none" stroke="#1E3A5F" stroke-width="3" opacity="0.22" />
-    <circle cx="30" cy="30" r="18" fill="none" stroke="#1E3A5F" stroke-width="3" opacity="0.45" />
-    <circle cx="30" cy="30" r="10" fill="#1E3A5F" opacity="0.85" />
-  </svg>`;
-}
-
-function toggleChip(icon, label) {
-  return `<span class="toggle-chip">
-    <span class="toggle-chip-icon" aria-hidden="true">${icon}</span>
-    <span class="toggle-chip-label">${label}</span>
-    <span class="toggle-chip-state">OFF</span>
-  </span>`;
-}
-
-/** 記号のみのチップ(演算子アイコン図解用。toggle-chipからON/OFF表記を外した軽量版) */
-function operatorChip(symbol) {
-  return `<span class="toggle-chip is-symbol-only">
-    <span class="toggle-chip-icon" aria-hidden="true">${symbol}</span>
-  </span>`;
-}
-
-/* ------------------------------------------------------------------
- * Steam版 動作環境
- * ---------------------------------------------------------------- */
-const SYS_REQUIREMENTS = [
-  {
-    os: 'Windows',
-    min: [
-      { label: 'OS', value: 'Windows 10 以降' },
-      { label: 'プロセッサー', value: 'Intel Core i3-6100 / AMD Ryzen 3 1200 相当' },
-      { label: 'メモリー', value: '4 GB RAM' },
-      { label: 'グラフィック', value: 'Intel HD Graphics 530 相当の統合GPU' },
-      { label: 'DirectX', value: 'Version 11' },
-      { label: 'ストレージ', value: '1 GB の空き容量' },
-      { label: 'サウンド', value: 'Windows対応サウンドカード' }
-    ],
-    rec: [
-      { label: 'OS', value: 'Windows 11 以降' },
-      { label: 'プロセッサー', value: 'Intel Core i3-10100 / AMD Ryzen 3 3200G 相当' },
-      { label: 'メモリー', value: '8 GB RAM' },
-      { label: 'グラフィック', value: 'Intel UHD Graphics 630 相当以上の統合GPU' },
-      { label: 'DirectX', value: 'Version 11' },
-      { label: 'ストレージ', value: '1 GB の空き容量' },
-      { label: 'サウンド', value: 'Windows対応サウンドカード' }
-    ]
-  },
-  {
-    os: 'macOS',
-    min: [
-      { label: 'OS', value: 'macOS 11 (Big Sur) 以降' },
-      { label: 'プロセッサー', value: 'Intel Core i5 / Apple M1 以降' },
-      { label: 'メモリー', value: '8 GB RAM' },
-      { label: 'グラフィック', value: '統合GPUで動作(Intel Iris Plus / Apple Mシリーズ GPU)' },
-      { label: 'ストレージ', value: '1 GB の空き容量' },
-      { label: 'サウンド', value: '標準オーディオ出力(内蔵スピーカー可)' }
-    ],
-    rec: [
-      { label: 'OS', value: 'macOS 12 (Monterey) 以降' },
-      { label: 'プロセッサー', value: 'Apple M1 以降' },
-      { label: 'メモリー', value: '8 GB RAM' },
-      { label: 'グラフィック', value: 'Apple Mシリーズ GPU(統合)' },
-      { label: 'ストレージ', value: '1 GB の空き容量' },
-      { label: 'サウンド', value: '標準オーディオ出力(内蔵スピーカー可)' }
-    ]
-  },
-  {
-    os: 'Linux',
-    min: [
-      { label: 'OS', value: 'Ubuntu 20.04 LTS 以降(64bit)/ SteamOS 3.0 以降' },
-      { label: 'プロセッサー', value: 'Intel Core i3-6100 / AMD Ryzen 3 1200 相当' },
-      { label: 'メモリー', value: '4 GB RAM' },
-      { label: 'グラフィック', value: 'Intel HD Graphics 530 相当の統合GPU' },
-      { label: 'ストレージ', value: '1 GB の空き容量' },
-      { label: 'サウンド', value: 'PulseAudio / PipeWire 対応サウンドデバイス' }
-    ],
-    rec: [
-      { label: 'OS', value: 'Ubuntu 22.04 LTS 以降 / SteamOS 3.0 以降' },
-      { label: 'プロセッサー', value: 'Intel Core i3-10100 / AMD Ryzen 3 3200G 相当' },
-      { label: 'メモリー', value: '8 GB RAM' },
-      { label: 'グラフィック', value: 'Intel UHD Graphics 630 相当以上の統合GPU' },
-      { label: 'ストレージ', value: '1 GB の空き容量' },
-      { label: 'サウンド', value: 'PulseAudio / PipeWire 対応サウンドデバイス' }
-    ]
-  }
-];
-
+const TITLE = 'SlimeTenPuzzle | Next2D Games';
+const DESCRIPTION = 'SlimeTenPuzzle(スライム・テンパズル) / Make "10" and feel great! / 凑出「10」,爽快解谜!';
 ---
 
 <!DOCTYPE html>
@@ -150,18 +25,26 @@ const SYS_REQUIREMENTS = [
   <title>{TITLE}</title>
   <meta name="description" content={DESCRIPTION}>
   <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#6DD4FF">
 
-  <!-- SEO: Canonical URL -->
-  <link rel="canonical" href={PAGE_URL}>
+  <!-- SEO: Canonical URL(このページ自体がx-defaultの受け皿) -->
+  <link rel="canonical" href={HUB_URL}>
+
+  <!-- SEO: hreflang(3言語 + x-default) -->
+  <link rel="alternate" hreflang="ja" href={`${HUB_URL}ja/`}>
+  <link rel="alternate" hreflang="en" href={`${HUB_URL}en/`}>
+  <link rel="alternate" hreflang="zh-CN" href={`${HUB_URL}cn/`}>
+  <link rel="alternate" hreflang="x-default" href={HUB_URL}>
 
   <!-- Facebook / OGP -->
   <meta property="og:title" content={TITLE}>
   <meta property="og:description" content={DESCRIPTION}>
   <meta property="og:type" content="website">
-  <meta property="og:url" content={PAGE_URL}>
+  <meta property="og:url" content={HUB_URL}>
   <meta property="og:image" content={OGP_IMAGE}>
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Next2D">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -173,827 +56,64 @@ const SYS_REQUIREMENTS = [
   <link href="/assets/img/favicon.png" rel="icon">
   <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <!-- フォールバック: JS無効環境は1秒後にen版へ -->
+  <meta http-equiv="refresh" content={`1;url=${REL_BASE}en/`}>
 
-  <style is:global>
-    :root {
-      --sky: #6DD4FF;
-      --sky-deep: #3FA8E8;
-      --ink: #1E3A5F;
-      --paper: #FFFFFF;
-      --mist: #EAF7FF;
-      --slime-blue: #4FA9F0;
-      --slime-yellow: #FFD34D;
-      --slime-green: #6FD96B;
-      --slime-purple: #B48BE8;
-      --font-heading: 'Zen Maru Gothic', sans-serif;
-      --font-body: 'Zen Maru Gothic', sans-serif;
-      --font-accent: 'Baloo 2', sans-serif;
-      --shadow-soft: 0 12px 28px rgba(30, 58, 95, 0.12);
-      --radius-card: 20px;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
-    }
-
+  <style>
     body {
       margin: 0;
-      font-family: var(--font-body);
-      font-weight: 500;
-      color: var(--ink);
-      background: var(--paper);
-      line-height: 1.8;
-      overflow-x: hidden;
-    }
-
-    img, svg { max-width: 100%; display: block; }
-
-    a { color: inherit; }
-
-    h1, h2, h3 {
-      font-family: var(--font-heading);
-      font-weight: 900;
-      line-height: 1.4;
-      margin: 0;
-    }
-
-    p { margin: 0; }
-
-    ul { margin: 0; padding: 0; list-style: none; }
-
-    :focus-visible {
-      outline: 3px solid var(--ink);
-      outline-offset: 3px;
-      border-radius: 6px;
-    }
-
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .section-head {
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto 40px;
-    }
-
-    .section-head h2 {
-      font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem);
-      color: var(--ink);
-    }
-
-    .section-head p {
-      margin-top: 12px;
-      color: var(--ink);
-      opacity: 0.82;
-    }
-
-    /* ---------------- Hero ---------------- */
-    .hero {
-      position: relative;
-      padding: 92px 0 0;
-      background: var(--sky); /* 画像読み込み前のちらつき防止フォールバック */
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      background: url('/assets/img/games/slime-ten-puzzle/hero-loop.webp') repeat-x 0 0 / 1024px 100%;
-      animation: hero-pan 48s linear infinite;
-    }
-
-    @keyframes hero-pan {
-      to { background-position-x: -1024px; }
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding-bottom: 28px;
-    }
-
-    .hero h1 {
-      margin-top: 2px;
-    }
-
-    .hero h1 img {
-      display: block;
-      width: clamp(330px, 30vw + 180px, 620px);
-      height: auto;
-      margin: 0 auto;
-      filter: drop-shadow(0 6px 18px rgba(30, 58, 95, 0.3));
-    }
-
-    .hero .catchcopy {
-      max-width: 560px;
-      margin: 10px auto 0;
-      font-size: clamp(1.1rem, 1.045rem + 0.33vw, 1.32rem);
-      font-weight: 700;
-      color: var(--paper);
-      text-shadow: 0 2px 6px rgba(30, 58, 95, 0.55), 0 4px 14px rgba(30, 58, 95, 0.4);
-    }
-
-    .hero .catchcopy .catchcopy-line {
-      display: block;
-    }
-
-    .hero .catchcopy .catchcopy-line + .catchcopy-line {
-      margin-top: 4px;
-    }
-
-    /* ---- Signature visual: 6 + 4 = 10 ---- */
-    .equation {
-      position: relative;
-      z-index: 2;
+      min-height: 100vh;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: center;
-      gap: clamp(10px, 2vw, 22px);
+      font-family: system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      background: #6DD4FF;
+      color: #1E3A5F;
+    }
+
+    .redirect-box {
+      text-align: center;
+      padding: 32px;
+    }
+
+    .redirect-links {
+      margin-top: 16px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
       flex-wrap: wrap;
-      margin: 20px auto 0;
-      max-width: 720px;
     }
 
-    .equation-slime { display: flex; flex-direction: column; align-items: center; }
-
-    .equation-sign {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 108px;
-      font-family: var(--font-accent);
-      font-weight: 800;
-      font-size: clamp(1.8rem, 1.4rem + 1.6vw, 3rem);
-      color: var(--paper);
-      text-shadow: 0 2px 6px rgba(30, 58, 95, 0.55), 0 4px 12px rgba(30, 58, 95, 0.4);
-    }
-
-    .slime-svg { overflow: visible; }
-
-    .slime-anim {
-      transform-box: fill-box;
-      transform-origin: 50% 100%;
-      animation: slime-squish 2.6s ease-in-out infinite;
-    }
-
-    @keyframes slime-squish {
-      0%, 100% { transform: scaleX(1) scaleY(1); }
-      50% { transform: scaleX(1.07) scaleY(0.92); }
-    }
-
-    .equation-slime img {
-      display: block;
-      width: 108px;
-      height: auto;
-      transform-origin: bottom center;
-      animation: slime-squish 2.6s ease-in-out infinite;
-    }
-
-    .hero-store-badges {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      margin-top: 22px;
-    }
-
-    .store-badge-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 147px;
-      height: 54px;
-      border-radius: 10px;
-      transition: transform 0.18s ease;
-    }
-
-    .store-badge-link:hover {
-      transform: translateY(-2px);
-    }
-
-    .store-badge-link.is-app-store img {
-      display: block;
-      height: 54px;
-      width: auto;
-    }
-
-    .store-badge-link.is-steam {
-      background: #211F1F;
-    }
-
-    .store-badge-link.is-steam img {
-      display: block;
-      height: 33px;
-      width: auto;
-    }
-
-    .wave-divider-wrap {
-      position: relative;
-      z-index: 3;
-      line-height: 0;
-      margin-top: -2px;
-    }
-
-    .wave-divider { width: 100%; height: 44px; display: block; }
-
-    /* ---------------- Generic Section ---------------- */
-    section { position: relative; }
-
-    .section-pad { padding: 60px 0 76px; }
-
-    .bg-mist { background: var(--mist); }
-    .bg-paper { background: var(--paper); }
-
-    /* ---------------- Steps ---------------- */
-    .step-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-
-    .step-card {
-      position: relative;
-      background: var(--paper);
-      border-radius: var(--radius-card);
-      padding: 30px 22px 26px;
-      box-shadow: var(--shadow-soft);
-      text-align: center;
-    }
-
-    .step-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: var(--ink);
-      color: var(--paper);
-      font-family: var(--font-accent);
-      font-weight: 800;
-      font-size: 1rem;
-      margin-bottom: 14px;
-    }
-
-    .step-illust-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 132px;
-      margin-bottom: 18px;
-    }
-
-    .step-illust { max-height: 100%; }
-
-    .step-pick-row {
-      display: flex;
-      align-items: flex-end;
-      gap: 16px;
-    }
-
-    .step-pick-item { position: relative; width: 88px; }
-
-    .step-pick-item img { display: block; width: 88px; height: auto; }
-
-    .step-pick-item .tap-icon-wrap {
-      position: absolute;
-      top: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 44px;
-      height: 44px;
-      opacity: 0.8;
-      pointer-events: none;
-    }
-
-    .step-result-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-    }
-
-    .step-result-slime { display: block; width: 68px; height: auto; }
-
-    .step-clear-badge {
-      display: block;
-      width: 114px;
-      max-width: none;
-      height: auto;
-      pointer-events: none;
-    }
-
-    .step-card h3 {
-      font-size: 1.05rem;
-      margin-bottom: 8px;
-    }
-
-    .step-card p { color: var(--ink); opacity: 0.78; font-size: 0.92rem; }
-
-    /* ---------------- Feature cards ---------------- */
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .feature-card {
-      background: var(--paper);
-      border-radius: var(--radius-card);
-      padding: 26px 20px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .feature-card h3 { font-size: 1rem; margin-bottom: 8px; }
-
-    .feature-card p { font-size: 0.88rem; color: var(--ink); opacity: 0.78; }
-
-    .toggle-chips,
-    .feature-card .time-chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 14px;
-    }
-
-    .toggle-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--mist);
-      border: 1.5px solid rgba(30, 58, 95, 0.14);
-      border-radius: 999px;
-      padding: 5px 10px 5px 8px;
-      font-size: 0.72rem;
-      font-weight: 700;
-    }
-
-    .toggle-chip.is-symbol-only {
-      padding: 4px;
-    }
-
-    .toggle-chip.is-symbol-only .toggle-chip-icon {
-      width: 30px;
-      height: 30px;
-      font-size: 1.15rem;
-      line-height: 1;
-    }
-
-    .toggle-chip-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: var(--paper);
-      font-family: var(--font-accent);
-      font-size: 0.7rem;
-      color: var(--sky-deep);
-    }
-
-    .toggle-chip-state {
-      font-family: var(--font-accent);
-      color: var(--ink);
-      opacity: 0.5;
-      letter-spacing: 0.04em;
-    }
-
-    /* ---------------- Modes ---------------- */
-    .mode-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .mode-card {
-      display: flex;
-      flex-direction: column;
-      background: var(--paper);
-      border-radius: var(--radius-card);
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      border-top: 6px solid var(--slime-blue);
-    }
-
-    .mode-card.mode-normal { border-top-color: #9934ED; }
-    .mode-card.mode-timeattack { border-top-color: #0AA192; }
-    .mode-card.mode-tutorial { border-top-color: var(--slime-green); }
-
-    .mode-screenshot { line-height: 0; }
-
-    .mode-screenshot img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .mode-body {
-      padding: 22px 22px 28px;
-    }
-
-    .mode-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 50px;
-      color: var(--sky-deep);
-      margin-bottom: 14px;
-    }
-
-    .mode-icon img { display: block; width: 150px; height: auto; max-width: none; }
-
-    .mode-card h3 { font-size: 1.05rem; margin-bottom: 10px; }
-    .mode-card p { font-size: 0.9rem; color: var(--ink); opacity: 0.8; margin-bottom: 14px; }
-
-    .time-chip-row { display: flex; gap: 8px; flex-wrap: wrap; }
-
-    .time-chip {
-      font-family: var(--font-accent);
-      font-weight: 700;
-      font-size: 0.78rem;
-      background: var(--mist);
-      color: var(--ink);
-      padding: 6px 12px;
-      border-radius: 999px;
-    }
-
-    /* ---------------- Spec meta ---------------- */
-    /* ---------------- System requirements (Steam) ---------------- */
-    .sysreq-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .sysreq-card {
-      background: var(--paper);
-      border-radius: var(--radius-card);
-      padding: 22px 18px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .sysreq-os {
-      font-family: var(--font-heading);
-      font-weight: 800;
-      font-size: 1.05rem;
-      color: var(--ink);
-      margin-bottom: 4px;
-    }
-
-    .sysreq-block {
-      margin-top: 18px;
-      padding-top: 16px;
-      border-top: 1px solid rgba(30, 58, 95, 0.1);
-    }
-
-    .sysreq-block:first-of-type {
-      margin-top: 14px;
-      padding-top: 0;
-      border-top: none;
-    }
-
-    .sysreq-block-min {
-      min-height: 422px;
-    }
-
-    .sysreq-block-label {
-      display: inline-block;
-      font-family: var(--font-accent);
-      font-weight: 700;
-      font-size: 0.72rem;
-      letter-spacing: 0.06em;
-      color: var(--paper);
-      background: var(--sky-deep);
-      padding: 3px 12px;
-      border-radius: 999px;
-    }
-
-    .sysreq-list {
-      margin: 10px 0 0;
-    }
-
-    .sysreq-list dt {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--sky-deep);
-      letter-spacing: 0.02em;
-      margin-top: 8px;
-    }
-
-    .sysreq-list dt:first-child { margin-top: 0; }
-
-    .sysreq-list dd {
-      margin: 2px 0 0;
-      font-size: 0.86rem;
-      color: var(--ink);
-      opacity: 0.9;
-    }
-
-    /* ---------------- Footer ---------------- */
-    .site-footer {
-      background: var(--ink);
-      color: rgba(255, 255, 255, 0.88);
-      padding: 40px 0;
-      text-align: center;
-    }
-
-    .site-footer a {
-      color: var(--paper);
+    .redirect-links a {
+      color: #1E3A5F;
       font-weight: 700;
       text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .site-footer .copyright {
-      margin-top: 10px;
-      font-size: 0.78rem;
-      opacity: 0.7;
-      font-family: var(--font-accent);
-    }
-
-    /* ---------------- Responsive ---------------- */
-    @media (max-width: 900px) {
-      .feature-grid { grid-template-columns: 1fr; }
-      .step-grid { grid-template-columns: 1fr; }
-      .mode-grid { grid-template-columns: 1fr; }
-      .sysreq-grid { grid-template-columns: 1fr; }
-      .sysreq-block-min { min-height: 0; }
-    }
-
-    @media (max-width: 560px) {
-      .section-pad { padding: 44px 0 56px; }
-      .equation { gap: 8px; }
-      .equation-slime img { width: 78px; }
-      .equation-sign { height: 78px; }
-      .hero { padding-top: 104px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .slime-anim, .equation-slime img, .hero::before {
-        animation: none !important;
-      }
     }
   </style>
+
+  <script is:inline define:vars={{ relBase: REL_BASE }}>
+    (function () {
+      var language = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      var lang = 'en';
+      if (language.indexOf('ja') === 0) {
+        lang = 'ja';
+      } else if (language.indexOf('zh') === 0) {
+        lang = 'cn';
+      }
+      location.replace(relBase + lang + '/');
+    })();
+  </script>
 </head>
 <body>
-
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <h1><img src="/assets/img/games/slime-ten-puzzle/logo.svg" alt="スライムテンパズル(Slime Ten Puzzle)" width="658" height="354"></h1>
-      <p class="catchcopy">
-        <span class="catchcopy-line">「10」をつくって、サクッと快感!</span>
-        <span class="catchcopy-line">癒やし × 脳トレゲーム</span>
-      </p>
-
-      <div class="equation" aria-hidden="false">
-        <div class="equation-slime">
-          <img src="/assets/img/games/slime-ten-puzzle/blue_slime.svg" width="120" height="120" alt="数字4を持つ青いスライム" style="animation-delay:0s">
-        </div>
-        <span class="equation-sign" aria-hidden="true">+</span>
-        <div class="equation-slime">
-          <img src="/assets/img/games/slime-ten-puzzle/green_slime.svg" width="120" height="120" alt="数字6を持つ緑のスライム" style="animation-delay:0.15s">
-        </div>
-        <span class="equation-sign" aria-hidden="true">=</span>
-        <div class="equation-slime is-result">
-          <img src="/assets/img/games/slime-ten-puzzle/yellow_slime.svg" width="120" height="144.44" alt="合体してできた、数字10を持つ黄色いスライム" style="animation-delay:0.3s">
-        </div>
+  <div class="redirect-box">
+    <p>SlimeTenPuzzle</p>
+    <noscript>
+      <div class="redirect-links">
+        <a href="/games/slime-ten-puzzle/ja/">日本語</a>
+        <a href="/games/slime-ten-puzzle/en/">English</a>
+        <a href="/games/slime-ten-puzzle/cn/">简体中文</a>
       </div>
-
-      <div class="hero-store-badges">
-        {/* ストアは未申請のため、公開まではリンク先が404になります */}
-        <a class="store-badge-link is-app-store" href="https://apps.apple.com/jp/app/id6800338320" target="_blank" rel="noopener">
-          <img src="/assets/img/games/slime-ten-puzzle/app-store-badge-ja.svg" width="108.85" height="40" alt="App Storeでダウンロード">
-        </a>
-        {/* ストアは未申請のため、公開まではリンク先が404になります */}
-        <a class="store-badge-link is-steam" href="https://store.steampowered.com/app/2409460/" target="_blank" rel="noopener">
-          <img src="/assets/img/games/slime-ten-puzzle/steam-lockup.png" width="1120" height="400" alt="Steamで入手">
-        </a>
-      </div>
-    </div>
-
-    <div class="wave-divider-wrap" set:html={waveDivider('#FFFFFF')} />
-  </section>
-
-  <!-- ============ HOW TO PLAY ============ -->
-  <section class="bg-paper section-pad" id="how-to-play">
-    <div class="container">
-      <div class="section-head">
-        <h2>あそびかた</h2>
-        <p>操作はとってもシンプル。スライムを選んで、式を選ぶだけです。</p>
-      </div>
-
-      <div class="step-grid">
-        <div class="step-card">
-          <span class="step-number">1</span>
-          <div class="step-illust-wrap">
-            <div class="step-pick-row">
-              <div class="step-pick-item">
-                <div class="tap-icon-wrap" set:html={tapIconSvg()} />
-                <img src="/assets/img/games/slime-ten-puzzle/blue_slime.svg" width="120" height="120" alt="数字4を持つ青いスライム">
-              </div>
-              <div class="step-pick-item">
-                <div class="tap-icon-wrap" set:html={tapIconSvg()} />
-                <img src="/assets/img/games/slime-ten-puzzle/green_slime.svg" width="120" height="120" alt="数字6を持つ緑のスライム">
-              </div>
-            </div>
-          </div>
-          <h3>スライムを2体えらぶ</h3>
-          <p>計算したい2体をタップ(コントローラーでも選択可)。</p>
-        </div>
-
-        <div class="step-card">
-          <span class="step-number">2</span>
-          <div class="step-illust-wrap" set:html={calcPanelSvg()} />
-          <h3>けいさんをえらぶ</h3>
-          <p>a+b / a−b / b−a / a×b / a÷b / b÷a から式をえらぶ。</p>
-        </div>
-
-        <div class="step-card">
-          <span class="step-number">3</span>
-          <div class="step-illust-wrap">
-            <div class="step-result-wrap">
-              <img class="step-result-slime" src="/assets/img/games/slime-ten-puzzle/yellow_slime.svg" width="120" height="144.44" alt="合体してできた、数字10を持つ黄色いスライム">
-              <img class="step-clear-badge" src="/assets/img/games/slime-ten-puzzle/clear.svg" width="270" height="77" alt="Clear!">
-            </div>
-          </div>
-          <h3>くりかえして、さいごの1体を10に!</h3>
-          <p>最後の1体が10ならクリア。10以外だとゲームオーバー。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ POINTS ============ -->
-  <section class="bg-mist section-pad" id="features">
-    <div class="container">
-      <div class="section-head">
-        <h2>おすすめポイント</h2>
-      </div>
-
-      <div class="feature-grid">
-        <div class="feature-card">
-          <h3>計算に強くなる!</h3>
-          <p>遊ぶだけで四則演算の暗算トレーニング。「どの2つで10に近づける?」を考えるうちに、数の組み合わせ感覚が自然と身につきます。</p>
-          <div class="toggle-chips">
-            <div set:html={operatorChip('+')} />
-            <div set:html={operatorChip('−')} />
-            <div set:html={operatorChip('×')} />
-            <div set:html={operatorChip('÷')} />
-          </div>
-        </div>
-
-        <div class="feature-card">
-          <h3>子どもから大人まで</h3>
-          <p>最初はたし算・ひき算だけ。設定で掛け算・割り算・マイナス・分数まで広げられるので、学びの段階に合わせて親子で一緒に楽しめます。</p>
-          <div class="toggle-chips">
-            <div set:html={toggleChip('×', '掛け算')} />
-            <div set:html={toggleChip('÷', '割り算')} />
-            <div set:html={toggleChip('−', 'マイナスの数')} />
-            <div set:html={toggleChip('½', '分数')} />
-          </div>
-        </div>
-
-        <div class="feature-card">
-          <h3>スキマ時間の脳トレ習慣に</h3>
-          <p>1問サクッと解ける気持ちよさ。かわいいスライムに癒やされながら、1分タイムアタックで毎日の脳トレが続きます。</p>
-          <div class="time-chip-row">
-            <span class="time-chip">1分</span>
-            <span class="time-chip">5分</span>
-            <span class="time-chip">10分</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ MODES ============ -->
-  <section class="bg-paper section-pad" id="modes">
-    <div class="container">
-      <div class="section-head">
-        <h2>ゲームモード</h2>
-      </div>
-
-      <div class="mode-grid">
-        <div class="mode-card mode-normal">
-          <div class="mode-screenshot">
-            <img src="/assets/img/games/slime-ten-puzzle/normal_mode.webp" width="1280" height="720" alt="ノーマルモードのプレイ画面" loading="lazy">
-          </div>
-          <div class="mode-body">
-            <span class="mode-icon">
-              <img src="/assets/img/games/slime-ten-puzzle/normal_play_btn.svg" width="224" height="60" alt="Normal play">
-            </span>
-            <h3>ノーマル</h3>
-            <p>時間無制限。クリアするたびに次の問題が出るエンドレスモード。</p>
-          </div>
-        </div>
-
-        <div class="mode-card mode-timeattack">
-          <div class="mode-screenshot">
-            <img src="/assets/img/games/slime-ten-puzzle/time_attack_mode.webp" width="1280" height="720" alt="タイムアタックの時間選択画面" loading="lazy">
-          </div>
-          <div class="mode-body">
-            <span class="mode-icon">
-              <img src="/assets/img/games/slime-ten-puzzle/time_attack_btn.svg" width="224" height="60" alt="Time attack">
-            </span>
-            <h3>タイムアタック</h3>
-            <p>1分・5分・10分から時間を選択。モードごとにハイスコアを記録できます。</p>
-          </div>
-        </div>
-
-        <div class="mode-card mode-tutorial">
-          <div class="mode-screenshot">
-            <img src="/assets/img/games/slime-ten-puzzle/tutorial_mode.webp" width="1280" height="720" alt="チュートリアルのプレイ画面" loading="lazy">
-          </div>
-          <div class="mode-body">
-            <h3>チュートリアル</h3>
-            <p>手のカーソルが次に押すスライムとおすすめの計算をナビゲートしてくれます。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SPEC ============ -->
-  <section class="bg-mist section-pad" id="spec">
-    <div class="container">
-      <div class="section-head">
-        <h2>スペック</h2>
-      </div>
-
-      <div class="sysreq-grid">
-        {SYS_REQUIREMENTS.map((req) => (
-          <div class="sysreq-card">
-            <p class="sysreq-os">{req.os}</p>
-
-            <div class="sysreq-block sysreq-block-min">
-              <span class="sysreq-block-label">最低</span>
-              <dl class="sysreq-list">
-                {req.min.map((item) => (
-                  <>
-                    <dt>{item.label}</dt>
-                    <dd>{item.value}</dd>
-                  </>
-                ))}
-              </dl>
-            </div>
-
-            <div class="sysreq-block">
-              <span class="sysreq-block-label">推奨</span>
-              <dl class="sysreq-list">
-                {req.rec.map((item) => (
-                  <>
-                    <dt>{item.label}</dt>
-                    <dd>{item.value}</dd>
-                  </>
-                ))}
-              </dl>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>Powered by <a href="https://next2d.app/ja/">Next2D</a></p>
-      <p class="copyright">&copy; 2026 Next2D</p>
-    </div>
-  </footer>
-
+    </noscript>
+  </div>
 </body>
 </html>

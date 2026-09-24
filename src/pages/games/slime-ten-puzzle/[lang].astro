@@ -880,33 +880,35 @@ function waveDivider(fill) {
       margin-bottom: 4px;
     }
 
-    .sysreq-block {
-      margin-top: 18px;
-      padding-top: 16px;
-      border-top: 1px solid rgba(30, 58, 95, 0.1);
-    }
-
-    .sysreq-block:first-of-type {
+    .sysreq-tabs {
+      display: flex;
+      gap: 8px;
       margin-top: 14px;
-      padding-top: 0;
-      border-top: none;
     }
 
-    .sysreq-block-min {
-      min-height: 422px;
-    }
-
-    .sysreq-block-label {
+    .sysreq-tab {
       display: inline-block;
+      padding: 3px 12px;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(19, 114, 176, 0.1);
+      color: #1372B0;
+      font: inherit;
       font-family: var(--font-accent);
       font-weight: 700;
       font-size: 0.72rem;
       letter-spacing: 0.06em;
-      color: var(--paper);
-      background: #1372B0;
-      padding: 3px 12px;
-      border-radius: 999px;
+      cursor: pointer;
     }
+
+    .sysreq-tab:hover { background: rgba(19, 114, 176, 0.2); }
+
+    .sysreq-tab[aria-selected="true"] {
+      background: #1372B0;
+      color: var(--paper);
+    }
+
+    .sysreq-block { margin-top: 16px; }
 
     .sysreq-list {
       margin: 10px 0 0;
@@ -957,7 +959,6 @@ function waveDivider(fill) {
       .step-grid { grid-template-columns: 1fr; }
       .mode-grid { grid-template-columns: 1fr; }
       .sysreq-grid { grid-template-columns: 1fr; }
-      .sysreq-block-min { min-height: 0; }
     }
 
     @media (max-width: 560px) {
@@ -1136,33 +1137,43 @@ function waveDivider(fill) {
       </div>
 
       <div class="sysreq-grid">
-        {t.spec.requirements.map((req) => (
+        {t.spec.requirements.map((req, index) => (
           <div class="sysreq-card">
             <p class="sysreq-os">{req.os}</p>
 
-            <div class="sysreq-block sysreq-block-min">
-              <span class="sysreq-block-label">{t.spec.min}</span>
-              <dl class="sysreq-list">
-                {req.min.map((item) => (
-                  <>
-                    <dt>{item.label}</dt>
-                    <dd>{item.value}</dd>
-                  </>
-                ))}
-              </dl>
+            <div class="sysreq-tabs" role="tablist" aria-label={`${req.os} ${t.spec.heading}`}>
+              {(['min', 'rec'] as const).map((level) => (
+                <button
+                  type="button"
+                  class="sysreq-tab"
+                  id={`sysreq-tab-${index}-${level}`}
+                  role="tab"
+                  aria-selected={level === 'min' ? 'true' : 'false'}
+                  aria-controls={`sysreq-panel-${index}-${level}`}
+                  tabindex={level === 'min' ? 0 : -1}
+                >{t.spec[level]}</button>
+              ))}
             </div>
 
-            <div class="sysreq-block">
-              <span class="sysreq-block-label">{t.spec.rec}</span>
-              <dl class="sysreq-list">
-                {req.rec.map((item) => (
-                  <>
-                    <dt>{item.label}</dt>
-                    <dd>{item.value}</dd>
-                  </>
-                ))}
-              </dl>
-            </div>
+            {(['min', 'rec'] as const).map((level) => (
+              <div
+                class="sysreq-block"
+                id={`sysreq-panel-${index}-${level}`}
+                role="tabpanel"
+                aria-labelledby={`sysreq-tab-${index}-${level}`}
+                tabindex="0"
+                hidden={level !== 'min'}
+              >
+                <dl class="sysreq-list">
+                  {req[level].map((item) => (
+                    <>
+                      <dt>{item.label}</dt>
+                      <dd>{item.value}</dd>
+                    </>
+                  ))}
+                </dl>
+              </div>
+            ))}
           </div>
         ))}
       </div>
@@ -1175,9 +1186,41 @@ function waveDivider(fill) {
   <footer class="site-footer">
     <div class="container">
       <p>{t.footerPowered} <a href={t.footerLink}>Next2D</a></p>
-      <p class="copyright">&copy; 2026 Next2D</p>
+      <p class="copyright">&copy; 2026 SlimeTenPuzzle</p>
     </div>
   </footer>
 
+  <script>
+    document.querySelectorAll('.sysreq-tabs').forEach((tablist) => {
+      const tabs = Array.from(tablist.querySelectorAll<HTMLButtonElement>('[role="tab"]'));
+
+      const selectTab = (selected: HTMLButtonElement) => {
+        tabs.forEach((tab) => {
+          const active = tab === selected;
+          tab.setAttribute('aria-selected', String(active));
+          tab.tabIndex = active ? 0 : -1;
+          const panel = document.getElementById(tab.getAttribute('aria-controls')!);
+          if (panel) panel.hidden = !active;
+        });
+      };
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => selectTab(tab));
+        tab.addEventListener('keydown', (event) => {
+          let nextIndex: number;
+          switch (event.key) {
+            case 'ArrowRight': nextIndex = (index + 1) % tabs.length; break;
+            case 'ArrowLeft': nextIndex = (index - 1 + tabs.length) % tabs.length; break;
+            case 'Home': nextIndex = 0; break;
+            case 'End': nextIndex = tabs.length - 1; break;
+            default: return;
+          }
+          event.preventDefault();
+          selectTab(tabs[nextIndex]);
+          tabs[nextIndex].focus();
+        });
+      });
+    });
+  </script>
 </body>
 </html>

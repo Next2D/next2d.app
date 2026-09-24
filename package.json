@@ -16,9 +16,9 @@
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.4",
-    "@playwright/test": "^1.62.1",
+    "@playwright/test": "^1.63.0",
     "aos": "^2.3.4",
-    "astro": "^7.2.10",
+    "astro": "^7.3.5",
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
     "purgecss": "^8.0.0",
@@ -29,6 +29,6 @@
     "lodash": "^4.17.21"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^7.3.0"
+    "@astrojs/markdown-remark": "^7.3.1"
   }
 }

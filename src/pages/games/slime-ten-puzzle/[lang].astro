@@ -39,7 +39,7 @@ const APP_STORE = {
 };
 
 /** 記号のみの動的コピーは翻訳辞書の外に出す共通値 */
-const STEAM_URL = 'https://store.steampowered.com/app/2409460/';
+const STEAM_URL = 'https://store.steampowered.com/app/2409460/SlimeTenPuzzle/';
 
 /* ------------------------------------------------------------------
  * 翻訳辞書
@@ -1004,11 +1004,11 @@ function waveDivider(fill) {
       </div>
 
       <div class="hero-store-badges">
-        {/* ストアは未申請のため、公開まではリンク先が404になります */}
+        {/* ストアは未申請のため、公開まではリンクを非表示
         <a class="store-badge-link is-app-store" href={APP_STORE[lang].href} target="_blank" rel="noopener">
           <img src={APP_STORE[lang].img} width={APP_STORE[lang].width} height="40" alt={t.appStoreAlt}>
         </a>
-        {/* ストアは未申請のため、公開まではリンク先が404になります */}
+        */}
         <a class="store-badge-link is-steam" href={STEAM_URL} target="_blank" rel="noopener">
           <img src="/assets/img/games/slime-ten-puzzle/steam-lockup.png" width="1120" height="400" alt={t.steamAlt}>
         </a>

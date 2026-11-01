@@ -2,7 +2,7 @@
   "name": "next2d-web-site",
   "type": "module",
   "description": "Next2D project provides a WebGL/WebGPU 2D rendering engine, animation tools for creating animations, and a framework to support team development.",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "author": "Toshiyuki Ienaga<ienaga@next2d.app>",
   "license": "Next2D",
   "scripts": {
@@ -16,19 +16,19 @@
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.4",
-    "@playwright/test": "^1.63.0",
+    "@playwright/test": "^1.64.1",
     "aos": "^2.3.4",
-    "astro": "^7.3.5",
+    "astro": "^7.4.4",
     "bootstrap": "^5.3.8",
-    "bootstrap-icons": "^1.13.1",
+    "bootstrap-icons": "^1.13.2",
     "purgecss": "^8.0.0",
     "typescript": "^7.0.2",
-    "unist-util-visit": "^5.1.0"
+    "unist-util-visit": "^5.2.0"
   },
   "overrides": {
     "lodash": "^4.17.21"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^7.3.1"
+    "@astrojs/markdown-remark": "^7.3.5"
   }
 }
